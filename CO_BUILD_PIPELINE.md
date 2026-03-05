@@ -49,7 +49,7 @@ Both tools are **Anthropic-built AI agents running simultaneously** in the same 
 | Source Data | `predictor/`, `theory/`, `practicals/` | Raw source material | Read-only |
 | Specs | `*.md` (root) | Architecture, specs, coordination | Cowork |
 
-**Promotion flow**: Claude Code builds in `website/` → Cowork verifies → writes report to `_audit/` → if PASS, copies to `_deploy/`. See `GUARDRAILS.md` for full failsafe protocol.
+**Deployment flow (Session 8+)**: Claude Code builds in `website/` -> Cowork verifies -> Claude Code commits + pushes -> Vercel auto-deploys (~30s). `_deploy/` is retired. Git provides rollback via `git revert`.
 
 ### Why This Works
 
@@ -315,7 +315,19 @@ If any number changes → something went wrong. Revert immediately.
 - Theory card on landing changed from Coming Soon to Live
 - Cowork role corrected: data prep + visual verification + specs + memory ONLY
 
-### Current State Snapshot (Mar 5, 2026 — end of Session 4)
+### Session 8 — Deployment to Production (Mar 5, 2026)
+- Claude Code initialized git repo, created `.gitignore` (root-anchored paths) + `vercel.json` (3-tier cache)
+- GitHub repo created via `gh repo create`: https://github.com/PostgraduateAvi/mdexamprep (public)
+- Vercel CLI installed (v50.27.1), project linked + GitHub connected via `vercel link`
+- Production deployed via `vercel deploy --prod`: https://mdexamprep.vercel.app/
+- All 5 URLs verified HTTP 200: `/`, `/predictor?demo=1`, `/predictor`, `/practicals`, `/theory`
+- Cache headers verified: assets 30d immutable, data 1d+SWR, theory 1h+SWR
+- Auto-deploy pipeline tested: `git push` -> Vercel rebuilds ~30s -> live
+- `_deploy/` workflow retired — Vercel + git provide rollback
+- Tools used: `gh` CLI, Vercel CLI, Vercel MCP tools (list_teams, list_projects, web_fetch_vercel_url)
+
+### Current State Snapshot (Mar 5, 2026 — end of Session 8)
+**DEPLOYED**: https://mdexamprep.vercel.app/
 ```
 index.html:           130 lines  (trust line fix, theory card live)
 core.css:             468 lines  (proof/method/trust CSS added)

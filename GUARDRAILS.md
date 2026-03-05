@@ -47,13 +47,14 @@
 - Terminal-native operations (git, npm, python, file I/O)
 - Can handle 500+ line files reliably
 - Fast execution (no UI overhead, direct filesystem access)
-- Deployment (Vercel config, production push, deployment verification)
+- Deployment (Vercel CLI, `gh` CLI, Vercel MCP tools, production push, verification)
+- Git operations (`gh` authenticated as PostgraduateAvi, `git push` triggers Vercel auto-deploy)
 
 **Weaknesses:**
 - No visual verification (cannot see what the page looks like)
 - No web search or research capability
 - No Windows desktop interaction
-- No MCP tools (Supabase, Vercel, Gmail)
+- Has Vercel MCP tools but NOT Supabase/Gmail MCP tools
 - Cannot run Playwright for screenshots
 - No access to user's Chrome browser
 - Cannot independently validate "does this match the mockup?"
@@ -120,11 +121,11 @@ MDExamPrep/
 - **What happens**: Screenshots, state snapshots, verification reports, test results
 - **Risk**: Low — these are artifacts, not source code. Overwriting a screenshot is harmless.
 
-### Zone C: Production (`_deploy/`)
-- **Who writes**: Cowork only, and ONLY after verification passes
-- **Who reads**: Both tools (and user for deployment)
-- **What happens**: Verified files are promoted from `website/` to `_deploy/`
-- **Risk**: None if the rule is followed. This zone is the safety net — even if `website/` gets corrupted, `_deploy/` holds the last known good state.
+### Zone C: Production (Vercel — UPDATED Session 8)
+- **Deployment**: `git push origin main` -> Vercel auto-deploys `website/` in ~30s
+- **Rollback**: `git revert` -> push (git history IS the safety net)
+- **`_deploy/` is retired** — Vercel + git provide the same guarantees with zero manual promotion
+- **Live URL**: https://mdexamprep.vercel.app/
 
 ---
 
@@ -164,9 +165,10 @@ Files only enter `_deploy/` when:
 
 ### Failsafe 5: Rollback Path
 If `website/` is corrupted:
-1. `_deploy/` contains the last verified state — copy back
-2. Locked files have known line counts — verify or restore from git
+1. `git revert <commit>` -> push -> Vercel auto-deploys the reverted state
+2. Locked files have known line counts — verify or restore from git history
 3. Data JSONs are Cowork-generated and can be regenerated from source
+4. `git log --oneline` shows full commit history for targeted rollback
 
 ---
 

@@ -1,6 +1,6 @@
 # MD Exam Prep Website -- Project Root
 
-## Status: ACTIVE BUILD (Mar 5, 2026 -- Sessions 1-7 complete)
+## Status: LIVE (Mar 5, 2026 -- Sessions 1-8 complete, deployed to Vercel)
 
 **Built by Avinash Jothish.** Free. Static HTML/JS. No framework. Client-side only.
 
@@ -73,6 +73,12 @@ These files are complete and must not be modified without explicit user instruct
 ---
 
 ## File Inventory (verified Mar 5, 2026)
+
+### Root Config
+```
+.gitignore              31 lines  -- git exclusions (root-anchored paths)
+vercel.json             31 lines  -- Vercel deployment config + cache headers
+```
 
 ### Landing
 ```
@@ -175,6 +181,7 @@ Parser uses `topic-dictionary.json` for matching. Supporting data: `medical-syno
 | 6 | Mar 5 | Phase 1 redesign: trust line, demo topbar, paste/upload tab UI |
 | 7 | Mar 5 | Theory section built (310 flashcards, browse/quiz). Trust line fix. Landing theory card live. |
 | 7 | Mar 5 | Theory section (310 flashcards), directory cleanup (CLEANUP_SPEC), trust attribution, pilot deploy prep |
+| 8 | Mar 5 | Deployment: git init, GitHub repo (PostgraduateAvi/mdexamprep), Vercel production, cache headers |
 
 ---
 
@@ -190,10 +197,19 @@ Parser uses `topic-dictionary.json` for matching. Supporting data: `medical-syno
 - Trust line: FIXED -- "Built by Avinash Jothish" in blockquote + footer
 - Landing theory card: LIVE -- links to `theory/index.html` with arrow
 
+### Completed (Session 8)
+- Deployment: LIVE at https://mdexamprep.vercel.app/
+- Git: GitHub repo at https://github.com/PostgraduateAvi/mdexamprep
+- Auto-deploy: `git push origin main` -> Vercel builds ~30s -> live
+- Cache headers: 3-tier (assets 30d, data 1d, theory 1h)
+
 ### Deferred work
 - 6 practical tools: examination-guide, OSCE-suite, ECG-mastery, xray, neuro-trainer, specialty-reference
 - Theory enhancements: taxonomy browser, Harrison chapter mapping
 - Mobile optimization pass
+- Cleanup: taxonomy-lite.json + test-fixture.json still in website/predictor/data/ (CLAUDE.md said removed but weren't)
+- Data: evaluate flashcards_clean.json vs flashcards.json (Cowork cleanup)
+- Cache bump: theory data 1h -> 1d once flashcards finalized
 
 ---
 
@@ -217,6 +233,23 @@ Parser uses `topic-dictionary.json` for matching. Supporting data: `medical-syno
 - Theory: `renderAnswer()` extracts "Clinical Pearl:" text into styled callout divs
 - Theory: Fisher-Yates shuffle for quiz mode randomization
 
+### Deployment Architecture (Session 8)
+- **Live URL**: https://mdexamprep.vercel.app/
+- **GitHub**: https://github.com/PostgraduateAvi/mdexamprep (public, `main` branch)
+- **Vercel config**: `vercel.json` at root, `outputDirectory: "website"` serves only `website/`
+- **Cache tiers**: Assets `max-age=2592000,immutable` (30d), predictor/practicals data `max-age=86400,SWR=604800` (1d), theory data `max-age=3600,SWR=86400` (1h)
+- **Update workflow**: edit `website/` -> `git commit` -> `git push` -> live in ~30s
+- **Rollback**: `git revert` -> push
+- **Tools**: `gh` CLI (authenticated as PostgraduateAvi), Vercel CLI v50.27.1 (authenticated as postgraduateavi)
+- **`_deploy/` is retired** — Vercel auto-deploys from `website/` on push. Git provides rollback.
+
+### New Files (Session 8)
+```
+.gitignore     31 lines  -- root-anchored exclusions for source data, .claude/, audit, PNGs, .py
+vercel.json    31 lines  -- outputDirectory: website, cleanUrls, 3-tier cache headers
+.vercel/       --        -- Vercel project link (auto-generated, gitignored)
+```
+
 ### Common Pitfalls (from Sessions 4-5+)
 - **EEXIST errors**: Write/Edit tools fail on the project directory. Root cause unclear (possibly filesystem watcher or Cowork). Workaround: write a `.py` script to `C:\Users\AVINASH\` (home dir, not affected), run it with Python to do file I/O into the project dir, then delete the script.
 - **`/tmp` is virtual**: The Write tool's `/tmp` path does NOT map to the real Windows temp dir. Files written there are invisible to Python. Always use `C:\Users\AVINASH\` as the staging location for workaround scripts.
@@ -226,3 +259,4 @@ Parser uses `topic-dictionary.json` for matching. Supporting data: `medical-syno
 - **Flash of wrong state**: Hide all states explicitly at start of demo flow
 - **Page-loader leak**: Clean up loader classes in error handler
 - **Always verify after writing**: CLAUDE.md was silently truncated to 28 lines after a failed write. Run `wc -l` after any file operation to confirm.
+- **`.gitignore` path anchoring**: Use `/predictor/` (leading slash) to anchor to repo root. Without it, `predictor/` matches `website/predictor/` too — breaks deployment.

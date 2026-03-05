@@ -1,7 +1,7 @@
 # MDExamPrep — Master File Index
 
-**Last verified**: 2026-03-05 12:30 (automated scan, every entry confirmed against filesystem)
-**Total files**: 253 (excluding .git, .claude, .skills, .local-plugins)
+**Last verified**: 2026-03-05 19:18 (Session 8 — post-deployment)
+**Total files**: 68 tracked in git (excluding .git, .claude, .vercel, source data dirs)
 **Total size**: ~20MB (cleaned Session 6)
 
 **READ THIS FIRST in any cold session.** This file eliminates the need to search for anything.
@@ -14,6 +14,21 @@
 2. **Need build status?** Read `CO_BUILD_PIPELINE.md` (362 lines) — phase tracker, what's done, what's next.
 3. **Need role boundaries?** Read `GUARDRAILS.md` (225 lines) — who writes what, locked files, failsafes.
 4. **Need a specific file?** Use the tables below — every file is listed with its purpose, size, and line count.
+
+---
+
+## 0. Deployment Infrastructure (Session 8)
+
+| File | Lines | Purpose |
+|------|-------|---------|
+| `.gitignore` | 31 | Root-anchored exclusions: `/predictor/`, `/practicals/`, `/theory/` (source data), `.claude/`, `_audit/`, `*.png`, `*.py` |
+| `vercel.json` | 31 | `outputDirectory: "website"`, `cleanUrls: true`, 3-tier cache headers |
+| `.vercel/` | — | Auto-generated project link (gitignored) |
+
+**Live URL**: https://mdexamprep.vercel.app/
+**GitHub**: https://github.com/PostgraduateAvi/mdexamprep (public)
+**Deploy**: `git push origin main` -> Vercel auto-builds ~30s -> live
+**Rollback**: `git revert` -> push
 
 ---
 
@@ -104,8 +119,24 @@ This is the deployable website. Static HTML/JS/CSS, no framework, no build step.
 | File | Size | Content |
 |------|------|--------|
 | `flashcards.json` | ~170KB | 310 flashcards, 11 systems, 3 difficulties |
+| `flashcards_clean.json` | ~170KB | Cowork-cleaned version (evaluate for replacement) |
 
-### 2h. Predictor Engine (`website/assets/js/`)
+### 2h. Theory Study Tools (`website/theory/tools/`) -- 24 HTML files
+
+Self-contained study tools organized by category:
+
+| Category | Files | Topics |
+|----------|-------|--------|
+| `anatomy/` | 10 | Autonomic NS, brainstem, bronchopulmonary segments, cranial nerves, mediastinum (x2), medulla, nephron (x2), spinal cord |
+| `microbiology/` | 2 | Parasite lifecycle algorithms (v1, v2) |
+| `paper-1/` | 6 | PI exam-specific dashboards and review tools |
+| `paper-3/` | 1 | PIII recall tester |
+| `pharmacology/` | 3 | B vitamins, RAAS/ARNI, DM pathophysiology |
+| `pulmonology/` | 1 | PFT algorithms |
+
+**Note**: `paper-1/` and `paper-3/` tools are exam-specific dashboards — evaluate if they belong on public site.
+
+### 2i. Predictor Engine (`website/assets/js/`)
 
 | File | Lines | Size | Purpose | Status |
 |------|-------|------|---------|--------|
@@ -260,13 +291,10 @@ ECG tracings: `IMG-20250823-WA0019.jpg` through `IMG-20250823-WA0062.jpg`
 
 ---
 
-## 7. `_deploy/` — Production-Ready Files (Cowork writes only)
+## 7. `_deploy/` — RETIRED (Session 8)
 
-| File | Lines | Size | Promoted From |
-|------|-------|------|---------------|
-| `index.html` | 129 | 6KB | Phase 1b PASS |
-| `assets/css/core.css` | 468 | 12KB | Phase 1b PASS |
-| `assets/js/template.js` | 29 | 1KB | Phase 1b PASS |
+Vercel auto-deploys from `website/` on `git push`. `_deploy/` is no longer used.
+Git provides rollback via `git revert`. The `_deploy/` folder remains with its README but is not part of the deployment pipeline.
 
 ---
 
@@ -332,4 +360,5 @@ theory/theory.js:     398 lines  (NEW Session 7)
 
 ### "What's built vs. what's pending?"
 Built: Landing page (trust line fixed Session 7), Predictor engine + UI + upload parser, Practicals hub + 2 tools (Atlas, Viva Forge), Theory section (310 flashcards, browse/quiz, Session 7).
-Pending: 6 more practical tools, mobile optimization pass, deployment.
+Pending: 6 more practical tools, mobile optimization pass.
+Deployed: https://mdexamprep.vercel.app/ (Session 8). Auto-deploys on `git push origin main`.
