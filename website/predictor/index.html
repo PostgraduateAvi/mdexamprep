@@ -14,8 +14,41 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Upload Papers - MD Exam Prep">
   <meta name="twitter:description" content="Upload past papers and get ranked preparation priorities for MD Internal Medicine.">
+  <meta name="theme-color" content="#0F172A">
   <link rel="stylesheet" href="../assets/css/core.css">
   <link rel="stylesheet" href="predictor.css">
+  <style>
+    /* — Floating pill header override (match landing) — */
+    .glass-header {
+      top: 12px; left: 50%; transform: translateX(-50%);
+      width: calc(100% - 32px); max-width: 960px;
+      padding: 10px 24px;
+      background: rgba(15, 23, 42, 0.70);
+      border-radius: 100px;
+      border: 1px solid var(--glass-border);
+    }
+    .glass-header-spacer { height: 70px; }
+    @media (max-width: 768px) {
+      .glass-header { width: calc(100% - 24px); padding: 8px 16px; }
+    }
+
+    /* — Woven evidence — */
+    .cx-evidence {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5625rem; color: var(--text-muted);
+      opacity: 0.6; letter-spacing: 0.02em;
+    }
+
+    /* — Footer enhancement — */
+    .site-footer {
+      border-top: 1px solid var(--border);
+    }
+    .footer-evidence {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5625rem; color: var(--text-muted);
+      opacity: 0.5; margin-top: 6px; letter-spacing: 0.03em;
+    }
+  </style>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" crossorigin="anonymous"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js" crossorigin="anonymous"></script>
 </head>
@@ -29,6 +62,7 @@
       <div class="choose-content">
         <h1>Upload your exam papers.</h1>
         <p class="choose-sub">Paste your questions or upload files. The engine matches topics and ranks your preparation priorities.</p>
+        <span class="cx-evidence">[topic_dictionary: 1718_entries] &middot; [77.4%_match_rate] &middot; [4_format_variants]</span>
         <div class="input-tabs">
           <button id="tab-paste" class="input-tab active">Paste Text</button>
           <button id="tab-upload" class="input-tab">Upload File</button>

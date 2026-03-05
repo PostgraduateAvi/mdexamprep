@@ -7,22 +7,37 @@
   <meta name="description" content="198 flashcards across 11 body systems. Browse by system, filter by difficulty, or quiz yourself with shuffle mode.">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="canonical" href="https://mdexamprep.vercel.app/theory">
-  <meta property="og:title" content="Theory Study Tools � MD Exam Prep">
+  <meta property="og:title" content="Theory Study Tools — MD Exam Prep">
   <meta property="og:description" content="198 flashcards across 11 body systems for MD Internal Medicine exam preparation.">
   <meta property="og:url" content="https://mdexamprep.vercel.app/theory">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Theory Study Tools � MD Exam Prep">
+  <meta name="twitter:title" content="Theory Study Tools — MD Exam Prep">
   <meta name="twitter:description" content="198 flashcards across 11 body systems for MD Internal Medicine exam preparation.">
+  <meta name="theme-color" content="#0F172A">
   <link rel="stylesheet" href="../assets/css/core.css">
   <link rel="stylesheet" href="theory.css">
   <style>
+    /* — Floating pill header override (match landing) — */
+    .glass-header {
+      top: 12px; left: 50%; transform: translateX(-50%);
+      width: calc(100% - 32px); max-width: 960px;
+      padding: 10px 24px;
+      background: rgba(15, 23, 42, 0.70);
+      border-radius: 100px;
+      border: 1px solid var(--glass-border);
+    }
+    .glass-header-spacer { height: 70px; }
+    @media (max-width: 768px) {
+      .glass-header { width: calc(100% - 24px); padding: 8px 16px; }
+    }
+
+    /* — Tools link card (glassmorphic) — */
     .tools-link-card {
       display: flex; align-items: center; justify-content: space-between;
       padding: var(--space-lg); gap: var(--space-md);
       background: var(--glass);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
       border: 1px solid var(--glass-border);
       border-radius: 12px;
       text-decoration: none; color: inherit;
@@ -46,6 +61,23 @@
     .tools-link-card:hover .tools-link-arrow {
       color: var(--accent); transform: translateX(3px);
     }
+
+    /* — Woven evidence — */
+    .cx-evidence {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5625rem; color: var(--text-muted);
+      opacity: 0.6; letter-spacing: 0.02em;
+    }
+
+    /* — Footer enhancement — */
+    .site-footer {
+      border-top: 1px solid var(--border);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .tools-link-card { transition: none; }
+      .tools-link-card:hover { transform: none; }
+    }
   </style>
 </head>
 <body>
@@ -55,6 +87,7 @@
   <section class="theory-hero container">
     <h1>Theory Study Tools</h1>
     <p>Flashcards organized by body system and difficulty. Browse to review or switch to quiz mode for active recall.</p>
+    <span class="cx-evidence">[198_flashcards] &middot; [11_body_systems] &middot; [fisher_yates_shuffle]</span>
   </section>
 
   <div class="container">

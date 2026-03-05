@@ -7,103 +7,212 @@
   <meta name="description" content="Free prediction engine and study tools for MD Internal Medicine exam preparation. 987 questions analyzed across 20 years to rank what matters most.">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="canonical" href="https://mdexamprep.vercel.app/">
-  <meta property="og:title" content="MD Exam Prep � Prediction Engine for MD Internal Medicine">
+  <meta property="og:title" content="MD Exam Prep — Prediction Engine for MD Internal Medicine">
   <meta property="og:description" content="Free prediction engine and study tools for MD Internal Medicine exam preparation. 987 questions analyzed across 20 years.">
   <meta property="og:url" content="https://mdexamprep.vercel.app/">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="MD Exam Prep � Prediction Engine for MD Internal Medicine">
+  <meta name="twitter:title" content="MD Exam Prep — Prediction Engine for MD Internal Medicine">
   <meta name="twitter:description" content="Free prediction engine and study tools for MD Internal Medicine exam preparation. 987 questions analyzed across 20 years.">
   <link rel="stylesheet" href="assets/css/core.css">
   <style>
-    /* ====== CODEX FUTURISM — Landing Only ====== */
-    :root {
-      --teal: #00D4FF;
-      --blue-tool: #6AB0E8;
-      --orange-tool: #E8A04A;
-    }
+    /* ====== CODEX FUTURISM v2 — Landing Only ====== */
 
-    /* — Global overrides for landing — */
     body { overflow-x: hidden; }
 
-    /* — Header — */
+    /* — Floating Pill Header — */
     .cx-header {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      padding: 16px 0;
-      background: rgba(10, 37, 64, 0.85);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--glass-border);
-    }
-    .cx-header .container {
+      position: fixed; top: 12px; left: 50%; transform: translateX(-50%);
+      z-index: 100; width: calc(100% - 32px); max-width: 960px;
+      padding: 10px 24px;
+      background: rgba(15, 23, 42, 0.70);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 100px;
       display: flex; align-items: center; justify-content: space-between;
     }
     .cx-logo {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.9375rem; font-weight: 500;
-      color: var(--teal); letter-spacing: 0.04em;
-      text-shadow: 0 0 20px rgba(0,212,255,0.3);
+      font-size: 0.8125rem; font-weight: 500;
+      color: var(--accent); letter-spacing: 0.04em;
+      text-shadow: 0 0 16px rgba(0,212,255,0.25);
+      white-space: nowrap;
     }
-    .cx-nav { display: flex; align-items: center; gap: 28px; }
+    .cx-nav { display: flex; align-items: center; gap: 24px; }
     .cx-nav-link {
       font-size: 0.8125rem; font-weight: 500;
       color: var(--text-secondary); letter-spacing: 0.02em;
       transition: color 150ms;
     }
     .cx-nav-link:hover { color: var(--text-primary); }
-    .cx-cta-btn {
+    .cx-cta-pill {
       display: inline-flex; align-items: center; gap: 8px;
-      padding: 10px 22px; border-radius: 6px;
+      padding: 8px 20px; border-radius: 100px;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.75rem; font-weight: 500; letter-spacing: 0.05em;
-      background: var(--teal); color: var(--bg-deep);
+      font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.05em;
+      background: var(--accent); color: var(--bg-deep);
       text-transform: uppercase; text-decoration: none;
-      transition: all 150ms; box-shadow: 0 0 20px rgba(0,212,255,0.15);
+      transition: all 200ms var(--ease-out);
+      box-shadow: 0 0 20px rgba(0,212,255,0.25), 0 0 60px rgba(0,212,255,0.10);
     }
-    .cx-cta-btn:hover {
+    .cx-cta-pill:hover {
       background: var(--accent-warm); color: var(--bg-deep);
-      transform: translateY(-1px); box-shadow: 0 4px 24px rgba(0,212,255,0.3);
+      transform: translateY(-1px);
+      box-shadow: 0 0 28px rgba(0,212,255,0.40), 0 0 80px rgba(0,212,255,0.15);
     }
-    .cx-cta-btn svg { width: 14px; height: 14px; }
+    .cx-cta-pill svg { width: 14px; height: 14px; }
 
     /* — Hero — */
     .cx-hero {
-      min-height: 100dvh; display: flex; align-items: center;
+      min-height: 100dvh;
+      display: flex; align-items: center; justify-content: center;
       padding: 120px 0 80px; position: relative; overflow: hidden;
+      text-align: center;
     }
-    .cx-hero-bg {
+    .cx-hero-ambient {
       position: absolute; inset: 0; pointer-events: none; overflow: hidden;
     }
-    .cx-hero-bg svg {
-      position: absolute; top: 50%; right: -5%;
-      transform: translateY(-50%); width: 55%; max-width: 620px;
-      opacity: 0.12;
-    }
     .cx-hero-glow {
-      position: absolute; top: 35%; right: 15%;
-      width: 400px; height: 400px;
+      position: absolute; top: 30%; left: 50%;
+      width: 600px; height: 600px; transform: translate(-50%, -50%);
       background: radial-gradient(circle, rgba(0,212,255,0.06) 0%, transparent 70%);
       animation: cx-pulse 8s ease-in-out infinite;
     }
+    .cx-hero-glow-2 {
+      position: absolute; bottom: 10%; right: 15%;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(0,212,255,0.03) 0%, transparent 70%);
+      animation: cx-pulse 12s ease-in-out infinite reverse;
+    }
     @keyframes cx-pulse {
-      0%, 100% { opacity: 0.4; transform: scale(1); }
-      50% { opacity: 0.8; transform: scale(1.12); }
-    }
-    .cx-hero-content { position: relative; z-index: 2; max-width: 580px; }
-    .cx-hero-content h1 {
-      font-size: 2.75rem; font-weight: 700;
-      letter-spacing: -0.025em; line-height: 1.15;
-      margin-bottom: 24px;
-    }
-    .cx-hero-sub {
-      font-size: 1.0625rem; color: var(--text-secondary);
-      line-height: 1.7; margin-bottom: 40px; max-width: 480px;
+      0%, 100% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); }
+      50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.12); }
     }
 
-    /* — Ranked List Panel — */
+    .cx-hero-layout {
+      position: relative; z-index: 2;
+      display: grid; grid-template-columns: 1fr 380px; gap: 64px;
+      align-items: center; text-align: left;
+    }
+
+    .cx-hero-content h1 {
+      font-size: 2.75rem; font-weight: 700;
+      letter-spacing: -0.03em; line-height: 1.12;
+      margin-bottom: 20px;
+    }
+    .cx-hero-sub {
+      font-size: 1rem; color: var(--text-secondary);
+      line-height: 1.7; margin-bottom: 32px; max-width: 460px;
+    }
+    .cx-hero-cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 32px; border-radius: var(--radius-sm);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.04em;
+      background: var(--accent); color: var(--bg-deep);
+      text-decoration: none; text-transform: uppercase;
+      transition: all 200ms var(--ease-out);
+      box-shadow: 0 0 24px rgba(0,212,255,0.25), 0 0 60px rgba(0,212,255,0.08);
+    }
+    .cx-hero-cta:hover {
+      background: var(--accent-warm); color: var(--bg-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 0 32px rgba(0,212,255,0.40), 0 0 80px rgba(0,212,255,0.12);
+    }
+    .cx-hero-cta svg { width: 16px; height: 16px; }
+    .cx-hero-evidence {
+      margin-top: 20px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5625rem; color: var(--text-muted);
+      letter-spacing: 0.03em; opacity: 0.7;
+    }
+
+    /* — Algorithm Card (floating ranked list mockup) — */
+    .cx-algo-card {
+      background: rgba(15, 23, 42, 0.55);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.3), 0 0 60px rgba(0,212,255,0.04);
+      animation: cx-card-float 6s ease-in-out infinite;
+    }
+    @keyframes cx-card-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    .cx-algo-header {
+      padding: 14px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .cx-algo-header-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.625rem; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--accent);
+    }
+    .cx-algo-header-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem; color: var(--sepia-light);
+      opacity: 0.7; letter-spacing: 0.03em;
+    }
+    .cx-algo-rows { padding: 6px 0; }
+    .cx-algo-row {
+      display: grid; grid-template-columns: 22px 1fr 50px; gap: 10px;
+      align-items: center; padding: 9px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.025);
+      transition: background 150ms;
+    }
+    .cx-algo-row:last-child { border-bottom: none; }
+    .cx-algo-row:hover { background: rgba(0,212,255,0.03); }
+    .cx-algo-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.625rem; color: var(--text-muted);
+      text-align: right;
+    }
+    .cx-algo-topic {
+      display: flex; flex-direction: column; gap: 4px;
+    }
+    .cx-algo-name {
+      font-size: 0.8125rem; font-weight: 500; color: var(--text-primary);
+    }
+    .cx-algo-bar {
+      height: 4px; border-radius: 2px;
+      background: var(--bg-elevated); overflow: hidden;
+    }
+    .cx-algo-fill {
+      height: 100%; border-radius: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-warm));
+      box-shadow: 0 0 8px rgba(0,212,255,0.2);
+    }
+    .cx-algo-score {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6875rem; color: var(--accent);
+      text-align: right;
+    }
+    .cx-algo-footer {
+      padding: 10px 20px;
+      border-top: 1px solid rgba(255,255,255,0.04);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .cx-algo-footer span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem; color: var(--text-muted);
+      letter-spacing: 0.04em; opacity: 0.6;
+    }
+    .cx-algo-status {
+      display: inline-flex; align-items: center; gap: 5px;
+    }
+    .cx-algo-dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--color-positive);
+      box-shadow: 0 0 6px rgba(74,222,128,0.4);
+    }
+
+    /* — Ranked Section (below hero, full explanation) — */
     .cx-ranked {
-      padding: 80px 0;
-      position: relative;
+      padding: 80px 0; position: relative;
     }
     .cx-ranked .container {
       display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
@@ -113,7 +222,7 @@
     }
     .cx-ranked-text p {
       color: var(--text-secondary); font-size: 0.9375rem;
-      line-height: 1.65; margin-bottom: 24px;
+      line-height: 1.65; margin-bottom: 20px;
     }
     .cx-ranked-panel {
       padding: 0; overflow: hidden;
@@ -126,7 +235,7 @@
     .cx-ranked-header span {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.6875rem; letter-spacing: 0.06em;
-      color: var(--teal); text-transform: uppercase;
+      color: var(--accent); text-transform: uppercase;
     }
     .cx-ranked-header .cx-callout {
       font-family: 'JetBrains Mono', monospace;
@@ -151,7 +260,8 @@
     }
     .cx-rank-fill {
       height: 100%; border-radius: 3px;
-      background: linear-gradient(90deg, var(--teal), var(--accent-warm));
+      background: linear-gradient(90deg, var(--accent), var(--accent-warm));
+      box-shadow: 0 0 6px rgba(0,212,255,0.15);
       transition: width 600ms var(--ease-out);
     }
     .cx-rank-label {
@@ -160,7 +270,7 @@
     }
     .cx-rank-score {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.75rem; color: var(--teal);
+      font-size: 0.75rem; color: var(--accent);
       min-width: 52px; text-align: right;
     }
 
@@ -179,32 +289,24 @@
     }
     .cx-timeline-track {
       position: relative;
-      max-width: 640px;
-      margin: 0 auto;
-      padding-left: 48px;
+      max-width: 640px; margin: 0 auto; padding-left: 48px;
     }
-    /* The glowing vertical line */
     .cx-timeline-track::before {
       content: '';
-      position: absolute;
-      top: 0; bottom: 0; left: 23px;
+      position: absolute; top: 0; bottom: 0; left: 23px;
       width: 2px;
-      background: linear-gradient(180deg, var(--teal), rgba(0,212,255,0.15), transparent);
+      background: linear-gradient(180deg, var(--accent), rgba(0,212,255,0.15), transparent);
       opacity: 0.5;
     }
     .cx-tl-step {
-      position: relative;
-      padding-bottom: 56px;
+      position: relative; padding-bottom: 56px;
     }
     .cx-tl-step:last-child { padding-bottom: 0; }
-    /* Glowing node */
     .cx-tl-node {
-      position: absolute;
-      left: -48px; top: 4px;
-      width: 48px; height: 48px;
-      border-radius: 50%;
-      background: var(--glass);
-      backdrop-filter: blur(8px);
+      position: absolute; left: -48px; top: 4px;
+      width: 48px; height: 48px; border-radius: 50%;
+      background: rgba(15, 23, 42, 0.70);
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
       border: 2px solid rgba(0,212,255,0.25);
       display: flex; align-items: center; justify-content: center;
       box-shadow: 0 0 20px var(--glass-glow);
@@ -212,26 +314,40 @@
       z-index: 2;
     }
     .cx-tl-step:hover .cx-tl-node {
-      border-color: var(--teal);
+      border-color: var(--accent);
       box-shadow: 0 0 28px rgba(0,212,255,0.2);
     }
     .cx-tl-node svg {
       width: 20px; height: 20px;
-      stroke: var(--teal); fill: none; stroke-width: 1.5;
+      stroke: var(--accent); fill: none; stroke-width: 1.5;
     }
     .cx-tl-label {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.6875rem; font-weight: 500;
       letter-spacing: 0.08em; text-transform: uppercase;
-      color: var(--teal); margin-bottom: 6px;
+      color: var(--accent); margin-bottom: 6px;
     }
     .cx-tl-title {
-      font-size: 1.0625rem; font-weight: 600;
-      margin-bottom: 8px;
+      font-size: 1.0625rem; font-weight: 600; margin-bottom: 8px;
     }
     .cx-tl-desc {
       font-size: 0.8125rem; color: var(--text-secondary);
       line-height: 1.65; max-width: 420px;
+    }
+    .cx-tl-evidence {
+      margin-top: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem; color: var(--text-muted);
+      letter-spacing: 0.03em; opacity: 0.6;
+    }
+
+    /* — Codex Background — */
+    .cx-codex-bg {
+      position: absolute; pointer-events: none; z-index: 0;
+    }
+    .cx-codex-bg svg {
+      stroke: var(--sepia-mid); fill: none;
+      stroke-width: 0.5; opacity: 0.08;
     }
 
     /* — Tool Cards — */
@@ -246,27 +362,33 @@
       color: var(--text-secondary); font-size: 0.9375rem;
     }
     .cx-tools-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+    }
+    /* Landing-specific card glow reinforcement */
+    .cx-tools .gradient-card--teal:hover {
+      box-shadow: 0 12px 40px rgba(0,212,255,0.12), 0 0 0 1px rgba(0,212,255,0.3);
+    }
+    .cx-tools .gradient-card--blue:hover {
+      box-shadow: 0 12px 40px rgba(59,130,246,0.12), 0 0 0 1px rgba(59,130,246,0.3);
+    }
+    .cx-tools .gradient-card--amber:hover {
+      box-shadow: 0 12px 40px rgba(245,158,11,0.12), 0 0 0 1px rgba(245,158,11,0.3);
+    }
+    .cx-tools .gradient-card-arrow {
+      transition: color 150ms, transform 200ms var(--ease-out);
+    }
+    .cx-tools .gradient-card:hover .gradient-card-arrow {
+      transform: translateX(4px);
     }
 
-    /* — Woven evidence callouts — */
+    /* — Woven Evidence (global) — */
     .cx-evidence {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.5625rem; color: var(--sepia-light);
-      opacity: 0.8; letter-spacing: 0.02em;
+      font-size: 0.5625rem; color: var(--text-muted);
+      opacity: 0.6; letter-spacing: 0.02em;
     }
 
-    /* — Codex background decoration — */
-    .cx-codex-bg {
-      position: absolute; pointer-events: none; z-index: 0;
-    }
-    .cx-codex-bg svg {
-      stroke: var(--sepia-mid); fill: none;
-      stroke-width: 0.5; opacity: 0.08;
-    }
-
-    /* — Trust/Footer — */
+    /* — Footer — */
     .cx-footer {
       padding: 40px 0 24px;
       border-top: 1px solid var(--border);
@@ -289,18 +411,25 @@
       .cx-hero-content h1 { font-size: 3.75rem; }
     }
     @media (max-width: 768px) {
+      .cx-header { width: calc(100% - 24px); padding: 8px 16px; }
       .cx-nav-link { display: none; }
+      .cx-hero-layout { grid-template-columns: 1fr; gap: 40px; }
+      .cx-algo-card { max-width: 380px; margin: 0 auto; }
       .cx-ranked .container { grid-template-columns: 1fr; gap: 40px; }
       .cx-tools-grid { grid-template-columns: 1fr; }
-      .cx-hero-bg svg { width: 90%; opacity: 0.06; right: -20%; }
       .cx-timeline-track { padding-left: 40px; }
       .cx-tl-node { left: -40px; width: 40px; height: 40px; }
       .cx-tl-node svg { width: 16px; height: 16px; }
       .cx-timeline-track::before { left: 19px; }
     }
     @media (prefers-reduced-motion: reduce) {
-      .cx-hero-glow { animation: none; opacity: 0.5; }
+      .cx-hero-glow, .cx-hero-glow-2 { animation: none; opacity: 0.5; }
+      .cx-algo-card { animation: none; }
       .cx-rank-fill { transition: none; }
+      .gradient-card-arrow { transition: none; }
+      .gradient-card:hover .gradient-card-arrow { transform: none; }
+      .gradient-card { transition: none; }
+      .gradient-card:hover { transform: none; }
     }
   </style>
 </head>
@@ -308,92 +437,124 @@
   <a href="#cx-main" class="skip-nav" style="position:absolute;top:-40px;left:0;background:var(--accent);color:var(--bg-deep);padding:8px 16px;z-index:200;font-size:0.875rem;transition:top 150ms;">Skip to content</a>
   <style>.skip-nav:focus{top:0;}</style>
 
-  <!-- Header -->
-  <header class="cx-header">
-    <div class="container">
-      <span class="cx-logo">MD Exam Prep</span>
-      <nav class="cx-nav">
-        <a href="predictor/index.html?demo=1" class="cx-nav-link">Predictor</a>
-        <a href="practicals/index.html" class="cx-nav-link">Practicals</a>
-        <a href="theory/index.html" class="cx-nav-link">Theory</a>
-        <a href="predictor/index.html?demo=1" class="cx-cta-btn">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-            <circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/>
-            <line x1="12" y1="3" x2="12" y2="1"/><line x1="12" y1="23" x2="12" y2="21"/>
-            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
-          </svg>
-          Try the Predictor
-        </a>
-      </nav>
-    </div>
+  <!-- Floating Pill Header -->
+  <header class="cx-header" role="banner">
+    <span class="cx-logo">MD Exam Prep</span>
+    <nav class="cx-nav" aria-label="Main navigation">
+      <a href="predictor/index.html?demo=1" class="cx-nav-link">Predictor</a>
+      <a href="practicals/index.html" class="cx-nav-link">Practicals</a>
+      <a href="theory/index.html" class="cx-nav-link">Theory</a>
+      <a href="predictor/index.html?demo=1" class="cx-cta-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/>
+          <line x1="12" y1="3" x2="12" y2="1"/><line x1="12" y1="23" x2="12" y2="21"/>
+          <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+        </svg>
+        Try Predictor
+      </a>
+    </nav>
   </header>
 
   <!-- Hero -->
   <section class="cx-hero" id="cx-main">
-    <div class="cx-hero-bg">
+    <div class="cx-hero-ambient" aria-hidden="true">
       <div class="cx-hero-glow"></div>
-      <!-- Da Vinci Heart — anatomical cross-section, sepia line art -->
-      <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <defs>
-          <pattern id="hatch" patternUnits="userSpaceOnUse" width="4" height="4" patternTransform="rotate(45)">
-            <line x1="0" y1="0" x2="0" y2="4" stroke="#8B7355" stroke-width="0.3" opacity="0.4"/>
-          </pattern>
-        </defs>
-        <!-- Heart outline -->
-        <path d="M200 420 C200 420 80 340 60 240 C40 140 100 80 160 80 C190 80 200 110 200 110 C200 110 210 80 240 80 C300 80 360 140 340 240 C320 340 200 420 200 420Z" stroke="#8B7355" stroke-width="1.2" fill="none"/>
-        <!-- Aorta -->
-        <path d="M200 110 C200 110 180 60 180 40 C180 20 200 10 220 20 C240 30 260 50 260 80 C260 100 240 120 240 120" stroke="#8B7355" stroke-width="0.8" fill="none"/>
-        <!-- Pulmonary -->
-        <path d="M170 100 C170 100 150 70 130 60 C110 50 100 70 110 90" stroke="#8B7355" stroke-width="0.6" fill="none"/>
-        <!-- Chambers -->
-        <path d="M200 200 L140 200 C140 200 120 200 120 250 C120 300 140 340 200 380" stroke="#8B7355" stroke-width="0.5" fill="none" opacity="0.6"/>
-        <path d="M200 200 L260 200 C260 200 280 200 280 250 C280 300 260 340 200 380" stroke="#8B7355" stroke-width="0.5" fill="none" opacity="0.6"/>
-        <line x1="200" y1="120" x2="200" y2="380" stroke="#8B7355" stroke-width="0.4" opacity="0.3"/>
-        <!-- Hatching fills -->
-        <path d="M200 420 C200 420 80 340 60 240 C40 140 100 80 160 80 C190 80 200 110 200 110 L200 200 L140 200 C140 200 120 200 120 250 C120 300 140 340 200 380Z" fill="url(#hatch)" opacity="0.15"/>
-        <!-- Coronary vessels -->
-        <path d="M160 130 C150 160 130 200 130 240 C130 260 140 290 160 320" stroke="#8B7355" stroke-width="0.4" fill="none" opacity="0.5"/>
-        <path d="M240 130 C250 160 270 200 270 240 C270 260 260 290 240 320" stroke="#8B7355" stroke-width="0.4" fill="none" opacity="0.5"/>
-        <!-- Mathematical notation -->
-        <text x="310" y="160" font-family="serif" font-size="8" fill="#8B7355" opacity="0.3" font-style="italic">&#x2211; f(t) = 987</text>
-        <text x="310" y="175" font-family="serif" font-size="7" fill="#8B7355" opacity="0.25">[987 questions catalogued]</text>
-        <text x="60" y="400" font-family="serif" font-size="7" fill="#8B7355" opacity="0.25">[20 years of pattern data]</text>
-        <text x="300" y="260" font-family="serif" font-size="7" fill="#8B7355" opacity="0.2" font-style="italic">&#x0394;t = 20y</text>
-        <text x="80" y="180" font-family="serif" font-size="6" fill="#8B7355" opacity="0.2" font-style="italic">&#x222B; P(x|D) dx</text>
-        <!-- Dimension lines -->
-        <line x1="50" y1="80" x2="50" y2="420" stroke="#8B7355" stroke-width="0.2" opacity="0.15"/>
-        <line x1="48" y1="80" x2="52" y2="80" stroke="#8B7355" stroke-width="0.3" opacity="0.2"/>
-        <line x1="48" y1="420" x2="52" y2="420" stroke="#8B7355" stroke-width="0.3" opacity="0.2"/>
-      </svg>
+      <div class="cx-hero-glow-2"></div>
     </div>
     <div class="container">
-      <div class="cx-hero-content">
-        <h1>Every year, students prepare everything.<br>The exam tests ten topics.</h1>
-        <p class="cx-hero-sub">We catalogued every MD Internal Medicine question asked over 20 years and discovered the structural patterns examiners follow. The result is a preparation strategy built on evidence, not guesswork.</p>
-        <a href="predictor/index.html?demo=1" class="cx-cta-btn" style="font-size:0.8125rem; padding: 14px 28px;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-            <circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/>
-            <line x1="12" y1="3" x2="12" y2="1"/><line x1="12" y1="23" x2="12" y2="21"/>
-            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
-          </svg>
-          Try the Predictor &mdash; Free Forever
-        </a>
+      <div class="cx-hero-layout">
+        <!-- Left: Rhetoric -->
+        <div class="cx-hero-content">
+          <h1>Every year, students prepare everything.<br>The exam tests ten topics.</h1>
+          <p class="cx-hero-sub">We catalogued every MD Internal Medicine question asked over 20 years and discovered the structural patterns examiners follow. The result is a preparation strategy built on evidence, not guesswork.</p>
+          <a href="predictor/index.html?demo=1" class="cx-hero-cta">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/>
+              <line x1="12" y1="3" x2="12" y2="1"/><line x1="12" y1="23" x2="12" y2="21"/>
+              <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            </svg>
+            Try the Predictor &mdash; Free
+          </a>
+          <p class="cx-hero-evidence">[987_QUESTIONS_CATALOGUED] &middot; [20_YEARS_STRUCTURAL_ANALYSIS] &middot; [44_TOPICS_RANKED]</p>
+        </div>
+
+        <!-- Right: Floating Algorithm Card -->
+        <div class="cx-algo-card" aria-label="Algorithm output preview">
+          <div class="cx-algo-header">
+            <span class="cx-algo-header-title">Prioritized Ranked List</span>
+            <span class="cx-algo-header-meta">[convergence_engine_v1]</span>
+          </div>
+          <div class="cx-algo-rows">
+            <div class="cx-algo-row">
+              <span class="cx-algo-num">01</span>
+              <div class="cx-algo-topic">
+                <span class="cx-algo-name">Cardiology</span>
+                <div class="cx-algo-bar"><div class="cx-algo-fill" style="width:93.5%"></div></div>
+              </div>
+              <span class="cx-algo-score">93.52</span>
+            </div>
+            <div class="cx-algo-row">
+              <span class="cx-algo-num">02</span>
+              <div class="cx-algo-topic">
+                <span class="cx-algo-name">Pulmonology</span>
+                <div class="cx-algo-bar"><div class="cx-algo-fill" style="width:88.2%"></div></div>
+              </div>
+              <span class="cx-algo-score">88.21</span>
+            </div>
+            <div class="cx-algo-row">
+              <span class="cx-algo-num">03</span>
+              <div class="cx-algo-topic">
+                <span class="cx-algo-name">Neurology</span>
+                <div class="cx-algo-bar"><div class="cx-algo-fill" style="width:85.7%"></div></div>
+              </div>
+              <span class="cx-algo-score">85.74</span>
+            </div>
+            <div class="cx-algo-row">
+              <span class="cx-algo-num">04</span>
+              <div class="cx-algo-topic">
+                <span class="cx-algo-name">Endocrinology</span>
+                <div class="cx-algo-bar"><div class="cx-algo-fill" style="width:79.1%"></div></div>
+              </div>
+              <span class="cx-algo-score">79.13</span>
+            </div>
+            <div class="cx-algo-row">
+              <span class="cx-algo-num">05</span>
+              <div class="cx-algo-topic">
+                <span class="cx-algo-name">Nephrology</span>
+                <div class="cx-algo-bar"><div class="cx-algo-fill" style="width:74.8%"></div></div>
+              </div>
+              <span class="cx-algo-score">74.82</span>
+            </div>
+            <div class="cx-algo-row">
+              <span class="cx-algo-num">06</span>
+              <div class="cx-algo-topic">
+                <span class="cx-algo-name">Gastroenterology</span>
+                <div class="cx-algo-bar"><div class="cx-algo-fill" style="width:71.3%"></div></div>
+              </div>
+              <span class="cx-algo-score">71.36</span>
+            </div>
+          </div>
+          <div class="cx-algo-footer">
+            <span class="cx-algo-status"><span class="cx-algo-dot"></span> LIVE</span>
+            <span>[38_of_44_topics_pass_threshold]</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Holographic Ranked List -->
+  <!-- Expanded Ranked Explanation -->
   <section class="cx-ranked">
     <div class="container">
       <div class="cx-ranked-text">
         <h2>Ranked by convergence, not opinion.</h2>
         <p>Each topic earns its rank through frequency analysis, recency weighting, cross-paper signals, and clinical relevance scoring. The algorithm surfaces what matters most.</p>
-        <span class="cx-evidence">[converging data signals] [historical patterns identified]</span>
+        <span class="cx-evidence">[14_reason_codes] &middot; [knowledge_graph_boost] &middot; [portfolio_quota_enforcement]</span>
       </div>
       <div class="cx-ranked-panel glass-panel">
         <div class="cx-ranked-header">
           <span>Predicted Priority &mdash; Top 8</span>
-          <span class="cx-callout">[987 questions catalogued]</span>
+          <span class="cx-callout">[987_questions_catalogued]</span>
         </div>
         <div class="cx-rank-row">
           <span class="cx-rank-num">01</span>
@@ -447,16 +608,14 @@
     </div>
   </section>
 
-  <!-- Vertical Timeline (replaces horizontal process flow) -->
+  <!-- Vertical Timeline -->
   <section class="cx-timeline">
-    <!-- Background codex: brain sketch -->
-    <div class="cx-codex-bg" style="top:0;right:0;width:300px;height:400px;">
-      <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <div class="cx-codex-bg" style="top:0;right:0;width:300px;height:400px;" aria-hidden="true">
+      <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
         <path d="M150 50 C80 50 40 100 40 160 C40 200 60 230 80 250 C60 260 50 290 60 320 C70 350 110 370 150 370 C190 370 230 350 240 320 C250 290 240 260 220 250 C240 230 260 200 260 160 C260 100 220 50 150 50Z" stroke-width="0.8"/>
         <path d="M150 50 C150 50 140 80 120 100 C100 120 80 130 80 160" stroke-width="0.4" opacity="0.5"/>
         <path d="M150 50 C150 50 160 80 180 100 C200 120 220 130 220 160" stroke-width="0.4" opacity="0.5"/>
         <path d="M90 200 C110 190 130 180 150 180 C170 180 190 190 210 200" stroke-width="0.3" opacity="0.4"/>
-        <text x="40" y="390" font-family="serif" font-size="6" opacity="0.5" font-style="italic">[converging data signals]</text>
       </svg>
     </div>
     <div class="container">
@@ -467,27 +626,30 @@
       <div class="cx-timeline-track">
         <div class="cx-tl-step">
           <div class="cx-tl-node">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/><line x1="12" y1="3" x2="12" y2="1"/><line x1="12" y1="23" x2="12" y2="21"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/><line x1="12" y1="3" x2="12" y2="1"/><line x1="12" y1="23" x2="12" y2="21"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
           </div>
           <div class="cx-tl-label">01 Detecting</div>
           <h3 class="cx-tl-title">Structural Detection</h3>
           <p class="cx-tl-desc">Maps each question to the exam&rsquo;s hidden slot structure &mdash; the framework examiners build every paper around.</p>
+          <p class="cx-tl-evidence">[topic_dictionary: 1718_entries] &middot; [77.4%_match_rate]</p>
         </div>
         <div class="cx-tl-step">
           <div class="cx-tl-node">
-            <svg viewBox="0 0 24 24"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg>
           </div>
           <div class="cx-tl-label">02 Scoring</div>
           <h3 class="cx-tl-title">Convergence Scoring</h3>
           <p class="cx-tl-desc">Scored across frequency, recency, cross-paper presence, and clinical relevance. More signals = higher confidence.</p>
+          <p class="cx-tl-evidence">[14_reason_codes] &middot; [kg_boost_active]</p>
         </div>
         <div class="cx-tl-step">
           <div class="cx-tl-node">
-            <svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="4" rx="1"/><rect x="4" y="10" width="12" height="4" rx="1"/><rect x="4" y="17" width="8" height="4" rx="1"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="4" rx="1"/><rect x="4" y="10" width="12" height="4" rx="1"/><rect x="4" y="17" width="8" height="4" rx="1"/></svg>
           </div>
           <div class="cx-tl-label">03 Output</div>
           <h3 class="cx-tl-title">Ranked Priorities</h3>
           <p class="cx-tl-desc">Topics ranked by evidence strength. Each includes a rationale so you understand exactly why it matters.</p>
+          <p class="cx-tl-evidence">[38_of_44_pass] &middot; [portfolio_quota_enforced]</p>
         </div>
       </div>
     </div>
@@ -506,7 +668,7 @@
         <a href="predictor/index.html?demo=1" class="gradient-card gradient-card--teal">
           <div class="gradient-card-illust">
             <img src="assets/images/tool-predictor.png" alt="Da Vinci-style brain cross-section illustration" loading="lazy">
-            <span class="data-node">[20 years of pattern data]</span>
+            <span class="data-node">[20_years_of_pattern_data]</span>
           </div>
           <div class="gradient-card-body">
             <span class="gradient-card-num">01</span>
@@ -524,7 +686,7 @@
         <a href="practicals/index.html" class="gradient-card gradient-card--blue">
           <div class="gradient-card-illust">
             <img src="assets/images/tool-practicals.png" alt="Da Vinci-style lungs with bronchial tree illustration" loading="lazy">
-            <span class="data-node">[21 clinical cases]</span>
+            <span class="data-node">[21_clinical_cases]</span>
           </div>
           <div class="gradient-card-body">
             <span class="gradient-card-num">02</span>
@@ -543,7 +705,7 @@
         <a href="theory/index.html" class="gradient-card gradient-card--amber">
           <div class="gradient-card-illust">
             <img src="assets/images/tool-theory.png" alt="Da Vinci-style brain lateral view illustration" loading="lazy">
-            <span class="data-node">[198 flashcards]</span>
+            <span class="data-node">[198_flashcards]</span>
           </div>
           <div class="gradient-card-body">
             <span class="gradient-card-num">03</span>
@@ -565,7 +727,7 @@
   <footer class="cx-footer">
     <div class="container">
       <p class="cx-footer-text">Built by Avinash Jothish. Validated on real exam data. Free forever.</p>
-      <p class="cx-footer-meta">987 questions catalogued &middot; 20 years of structural analysis &middot; Evidence-based preparation</p>
+      <p class="cx-footer-meta">[987_questions] &middot; [20_years_structural_analysis] &middot; [evidence_based_preparation]</p>
     </div>
   </footer>
 

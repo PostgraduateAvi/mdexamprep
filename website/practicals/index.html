@@ -7,15 +7,31 @@
   <meta name="description" content="Clinical exam preparation tools: case atlas, viva practice, examination guides for MD Internal Medicine.">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="canonical" href="https://mdexamprep.vercel.app/practicals">
-  <meta property="og:title" content="Practical Exam Tools � MD Exam Prep">
+  <meta property="og:title" content="Practical Exam Tools — MD Exam Prep">
   <meta property="og:description" content="Clinical cases, viva questions, examination guides for MD Internal Medicine practical exams.">
   <meta property="og:url" content="https://mdexamprep.vercel.app/practicals">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Practical Exam Tools � MD Exam Prep">
+  <meta name="twitter:title" content="Practical Exam Tools — MD Exam Prep">
   <meta name="twitter:description" content="Clinical cases, viva questions, examination guides for MD Internal Medicine practical exams.">
+  <meta name="theme-color" content="#0F172A">
   <link rel="stylesheet" href="../assets/css/core.css">
   <style>
+    /* — Floating pill header override (match landing) — */
+    .glass-header {
+      top: 12px; left: 50%; transform: translateX(-50%);
+      width: calc(100% - 32px); max-width: 960px;
+      padding: 10px 24px;
+      background: rgba(15, 23, 42, 0.70);
+      border-radius: 100px;
+      border: 1px solid var(--glass-border);
+    }
+    .glass-header-spacer { height: 70px; }
+    @media (max-width: 768px) {
+      .glass-header { width: calc(100% - 24px); padding: 8px 16px; }
+    }
+
+    /* — Page styles — */
     .px-hero {
       padding: calc(var(--space-2xl) + 16px) 0 var(--space-lg);
       position: relative;
@@ -29,9 +45,37 @@
       display: grid; gap: var(--space-lg); padding-bottom: var(--space-2xl);
     }
 
+    /* — Woven evidence — */
+    .cx-evidence {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5625rem; color: var(--text-muted);
+      opacity: 0.6; letter-spacing: 0.02em;
+    }
+    .px-hero .cx-evidence {
+      display: block; margin-top: var(--space-md);
+    }
+
+    /* — Footer enhancement — */
+    .site-footer {
+      border-top: 1px solid var(--border);
+    }
+
+    /* — Card glow reinforcement — */
+    .tools-grid .gradient-card--blue:hover {
+      box-shadow: 0 12px 40px rgba(59,130,246,0.12), 0 0 0 1px rgba(59,130,246,0.3);
+    }
+    .tools-grid .gradient-card--teal:hover {
+      box-shadow: 0 12px 40px rgba(0,212,255,0.12), 0 0 0 1px rgba(0,212,255,0.3);
+    }
+
     @media (min-width: 640px) {
       .px-hero h1 { font-size: 2.5rem; }
       .tools-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .gradient-card { transition: none; }
+      .gradient-card:hover { transform: none; }
     }
   </style>
 </head>
@@ -42,6 +86,7 @@
   <section class="px-hero container">
     <h1>Practical Exam Tools</h1>
     <p>Clinical cases, viva practice, examination techniques, and bedside skills &mdash; everything you need for the practical component of your MD exam.</p>
+    <span class="cx-evidence">[21_clinical_cases] &middot; [110_viva_questions] &middot; [5_body_systems] &middot; [4_study_modes]</span>
   </section>
 
   <div class="container">
@@ -69,7 +114,7 @@
     <a href="clinical-atlas.html" class="gradient-card gradient-card--blue">
       <div class="gradient-card-illust">
         <img src="../assets/images/tool-practicals.png" alt="Da Vinci-style anatomical lung illustration" loading="lazy">
-        <span class="data-node">[21 clinical cases]</span>
+        <span class="data-node">[21_clinical_cases]</span>
       </div>
       <div class="gradient-card-body">
         <span class="gradient-card-num">01</span>
@@ -86,7 +131,7 @@
     <a href="viva-forge.html" class="gradient-card gradient-card--teal">
       <div class="gradient-card-illust">
         <img src="../assets/images/tool-predictor.png" alt="Da Vinci-style anatomical brain illustration" loading="lazy">
-        <span class="data-node">[110 viva questions]</span>
+        <span class="data-node">[110_viva_questions]</span>
       </div>
       <div class="gradient-card-body">
         <span class="gradient-card-num">02</span>
