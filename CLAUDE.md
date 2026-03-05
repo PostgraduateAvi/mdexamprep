@@ -79,6 +79,7 @@ These files are complete and must not be modified without explicit user instruct
 ```
 .gitignore              31 lines  -- git exclusions (root-anchored paths)
 .gitattributes           1 line   -- LF line endings (text=auto eol=lf)
+README.md              149 lines  -- GitHub search-optimized project description
 vercel.json             31 lines  -- Vercel deployment config + cache headers
 ```
 
@@ -109,6 +110,21 @@ system-keywords.json     2 KB  -- fallback system classifier
 ```
 Note: `taxonomy-lite.json` and `test-fixture.json` removed in Session 7 cleanup (deprecated/unused).
 Note: `flashcards_clean.json` deleted in Session 9 (stale intermediate file).
+
+### Theory
+```
+website/theory/index.html          68 lines  -- flashcards page + tools link card
+website/theory/theory.css         369 lines  -- flashcard/quiz styles
+website/theory/theory.js          398 lines  -- browse/quiz logic, Fisher-Yates shuffle
+website/theory/tools/index.html   345 lines  -- interactive study tools hub (23 tools)
+website/theory/tools/             24 HTML files -- standalone study tools (5 categories)
+```
+
+### Theory Data
+```
+website/theory/data/flashcards.json   -- 198 flashcards across 11 systems
+website/theory/data/catalog.json      -- 23 interactive study tools manifest
+```
 
 ### Practicals
 ```
@@ -186,7 +202,7 @@ Parser uses `topic-dictionary.json` for matching. Supporting data: `medical-syno
 | 7 | Mar 5 | Theory section (310 flashcards), directory cleanup (CLEANUP_SPEC), trust attribution, pilot deploy prep |
 | 8 | Mar 5 | Deployment: git init, GitHub repo (PostgraduateAvi/mdexamprep), Vercel production, cache headers |
 | 9 | Mar 5 | Privacy cleanup: removed all institution references, deleted stale flashcards_clean.json |
-| 10 | Mar 5 | Landing redesign (navy/teal), practicals cleanup, theory tools wiring, .gitattributes, font unification |
+| 10 | Mar 5 | Landing redesign (navy/teal), practicals cleanup, theory tools wiring, font unification, README + GitHub SEO |
 
 ---
 
@@ -223,6 +239,8 @@ Parser uses `topic-dictionary.json` for matching. Supporting data: `medical-syno
 - .gitattributes: LF line endings enforced
 - Feature cards: bento-box hover (translateY -4px, teal glow, top-accent border)
 - Micro-badges added to feature cards (44 topics, 21 cases, 198 flashcards)
+- README.md: GitHub search-optimized (149 lines, keyword-rich for MD Internal Medicine domain)
+- GitHub repo: description + 10 topic tags set for search discoverability
 
 ### Deferred work
 - Additional practical tools (examination-guide, OSCE-suite, ECG-mastery, xray, neuro-trainer, specialty-reference)
