@@ -3,31 +3,31 @@
   <url><loc>https://mdexamprep.vercel.app/</loc><priority>1.0</priority></url>
   <url><loc>https://mdexamprep.vercel.app/predictor/</loc><priority>0.9</priority></url>
   <url><loc>https://mdexamprep.vercel.app/practicals/</loc><priority>0.8</priority></url>
-  <url><loc>https://mdexamprep.vercel.app/practicals//clinical-atlas</loc><priority>0.7</priority></url>
-  <url><loc>https://mdexamprep.vercel.app/practicals//viva-forge</loc><priority>0.7</priority></url>
+  <url><loc>https://mdexamprep.vercel.app/practicals/clinical-atlas</loc><priority>0.7</priority></url>
+  <url><loc>https://mdexamprep.vercel.app/practicals/viva-forge</loc><priority>0.7</priority></url>
   <url><loc>https://mdexamprep.vercel.app/theory/</loc><priority>0.8</priority></url>
-  <url><loc>https://mdexamprep.vercel.app/theory//tools</loc><priority>0.6</priority></url>
-  <url><loc>https://mdexamprep.vercel.app/theory//tools/anatomy/nephron_diagram</loc><priority>0.4</priority></url>
-  <url><loc>https://mdexamprep.vercel.app/theory//tools/anatomy/nephron_sequential</loc><priority>0.4</priority></url>
-  <url><loc>https://mdexamprep.vercel.app/theory//tools/anatomy/spinal_cord_tracts</loc><priority>0.4</priority></url>
-  <url><loc>https://mdexamprep.vercel.app/theory//tools/anatomy/cranial_nerves_imprint</loc><priority>0.4</priority></url>
-  <url><loc>https://mdexamprep.vercel.app/theory//tools/anatomy/mediastinum_diagram</loc><priority>0.4</priority></url>
-  <url><loc>https://mdexamprep.vercel.app/theory//tools/anatomy/mediastinum_crosssection</loc><priority>0.4</priority></url>
-  <url><loc>https://mdexamprep.vercel.app/theory//tools/anatomy/medulla_crosssection</loc><priority>0.4</priority></url>
-  <url><loc>https://mdexamprep.vercel.app/theory//tools/anatomy/brainstem_cortical_map</loc><priority>0.4</priority></url>
-  <url><loc>https://mdexamprep.vercel.app/theory//tools/anatomy/autonomic_ns_diagram</loc><priority>0.4</priority></url>
-  <url><loc>https://mdexamprep.vercel.app/theory//tools/anatomy/bronchopulmonary_segments_diagram</loc><priority>0.4</priority></url>
-  <url><loc>https://mdexamprep.vercel.app/theory//tools/pharmacology/cd_raas_arni_recall</loc><priority>0.4</priority></url>
-  <url><loc>https://mdexamprep.vercel.app/theory//tools/pharmacology/dm_pathophysiology_drill</loc><priority>0.4</priority></url>
-  <url><loc>https://mdexamprep.vercel.app/theory//tools/pharmacology/b_vitamin_cluster</loc><priority>0.4</priority></url>
-  <url><loc>https://mdexamprep.vercel.app/theory//tools/pulmonology/pft_algorithms</loc><priority>0.4</priority></url>
-  <url><loc>https://mdexamprep.vercel.app/theory//tools/microbiology/parasite_lifecycle_algorithms</loc><priority>0.4</priority></url>
-  <url><loc>https://mdexamprep.vercel.app/theory//tools/microbiology/parasite_lifecycle_algorithms_v2</loc><priority>0.4</priority></url>
-  <url><loc>https://mdexamprep.vercel.app/theory//tools/paper-1/slot1_nutrition_network</loc><priority>0.4</priority></url>
-  <url><loc>https://mdexamprep.vercel.app/theory//tools/paper-1/crispr_cas9_exam_stats</loc><priority>0.4</priority></url>
-  <url><loc>https://mdexamprep.vercel.app/theory//tools/paper-1/pi_spider_web_full_map</loc><priority>0.4</priority></url>
-  <url><loc>https://mdexamprep.vercel.app/theory//tools/paper-1/pi_slot_dashboard</loc><priority>0.4</priority></url>
-  <url><loc>https://mdexamprep.vercel.app/theory//tools/paper-1/pi_final_review</loc><priority>0.4</priority></url>
-  <url><loc>https://mdexamprep.vercel.app/theory//tools/paper-1/PI_FINAL_WEAPON</loc><priority>0.4</priority></url>
-  <url><loc>https://mdexamprep.vercel.app/theory//tools/paper-3/PIII_Recall_Tester</loc><priority>0.4</priority></url>
+  <url><loc>https://mdexamprep.vercel.app/theory/tools</loc><priority>0.6</priority></url>
+  <url><loc>https://mdexamprep.vercel.app/theory/tools/anatomy/nephron_diagram</loc><priority>0.4</priority></url>
+  <url><loc>https://mdexamprep.vercel.app/theory/tools/anatomy/nephron_sequential</loc><priority>0.4</priority></url>
+  <url><loc>https://mdexamprep.vercel.app/theory/tools/anatomy/spinal_cord_tracts</loc><priority>0.4</priority></url>
+  <url><loc>https://mdexamprep.vercel.app/theory/tools/anatomy/cranial_nerves_imprint</loc><priority>0.4</priority></url>
+  <url><loc>https://mdexamprep.vercel.app/theory/tools/anatomy/mediastinum_diagram</loc><priority>0.4</priority></url>
+  <url><loc>https://mdexamprep.vercel.app/theory/tools/anatomy/mediastinum_crosssection</loc><priority>0.4</priority></url>
+  <url><loc>https://mdexamprep.vercel.app/theory/tools/anatomy/medulla_crosssection</loc><priority>0.4</priority></url>
+  <url><loc>https://mdexamprep.vercel.app/theory/tools/anatomy/brainstem_cortical_map</loc><priority>0.4</priority></url>
+  <url><loc>https://mdexamprep.vercel.app/theory/tools/anatomy/autonomic_ns_diagram</loc><priority>0.4</priority></url>
+  <url><loc>https://mdexamprep.vercel.app/theory/tools/anatomy/bronchopulmonary_segments_diagram</loc><priority>0.4</priority></url>
+  <url><loc>https://mdexamprep.vercel.app/theory/tools/pharmacology/cd_raas_arni_recall</loc><priority>0.4</priority></url>
+  <url><loc>https://mdexamprep.vercel.app/theory/tools/pharmacology/dm_pathophysiology_drill</loc><priority>0.4</priority></url>
+  <url><loc>https://mdexamprep.vercel.app/theory/tools/pharmacology/b_vitamin_cluster</loc><priority>0.4</priority></url>
+  <url><loc>https://mdexamprep.vercel.app/theory/tools/pulmonology/pft_algorithms</loc><priority>0.4</priority></url>
+  <url><loc>https://mdexamprep.vercel.app/theory/tools/microbiology/parasite_lifecycle_algorithms</loc><priority>0.4</priority></url>
+  <url><loc>https://mdexamprep.vercel.app/theory/tools/microbiology/parasite_lifecycle_algorithms_v2</loc><priority>0.4</priority></url>
+  <url><loc>https://mdexamprep.vercel.app/theory/tools/paper-1/slot1_nutrition_network</loc><priority>0.4</priority></url>
+  <url><loc>https://mdexamprep.vercel.app/theory/tools/paper-1/crispr_cas9_exam_stats</loc><priority>0.4</priority></url>
+  <url><loc>https://mdexamprep.vercel.app/theory/tools/paper-1/pi_spider_web_full_map</loc><priority>0.4</priority></url>
+  <url><loc>https://mdexamprep.vercel.app/theory/tools/paper-1/pi_slot_dashboard</loc><priority>0.4</priority></url>
+  <url><loc>https://mdexamprep.vercel.app/theory/tools/paper-1/pi_final_review</loc><priority>0.4</priority></url>
+  <url><loc>https://mdexamprep.vercel.app/theory/tools/paper-1/PI_FINAL_WEAPON</loc><priority>0.4</priority></url>
+  <url><loc>https://mdexamprep.vercel.app/theory/tools/paper-3/PIII_Recall_Tester</loc><priority>0.4</priority></url>
 </urlset>
