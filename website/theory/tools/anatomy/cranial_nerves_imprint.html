@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cranial Nerves — Exam-Weight Visual Imprint</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #1a1a2e;
+    color: #e0e0e0;
+    font-family: 'Georgia', serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  h1 { font-size: 1.3rem; color: #f5c842; text-align: center; margin-bottom: 3px; }
+  .subtitle { color: #aaa; font-size: 0.8rem; margin-bottom: 16px; text-align: center; }
+  .main { max-width: 700px; width: 100%; }
+
+  .section {
+    background: #16213e;
+    border-radius: 12px;
+    padding: 14px;
+    margin-bottom: 12px;
+    border: 1px solid #2a3a5c;
+  }
+  .section h2 {
+    font-size: 0.95rem;
+    color: #f5c842;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .mnemonic {
+    background: #2a2a4e;
+    border: 1px dashed #f5c842;
+    border-radius: 6px;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    text-align: center;
+  }
+  .mnemonic strong { color: #f5c842; }
+
+  .cn-card {
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+    line-height: 1.6;
+  }
+  .cn-card h3 { font-size: 0.9rem; margin-bottom: 6px; }
+  .tag {
+    display: inline-block;
+    padding: 1px 7px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .tag-motor { background: #4CAF50; color: #000; }
+  .tag-sensory { background: #3498db; color: #fff; }
+  .tag-mixed { background: #e67e22; color: #000; }
+  .tag-para { background: #9b59b6; color: #fff; }
+
+  .cn3 { background: #1a2a1a; border: 1.5px solid #4CAF50; }
+  .cn3 h3 { color: #4CAF50; }
+  .cn5 { background: #2a2a1a; border: 1.5px solid #e67e22; }
+  .cn5 h3 { color: #e67e22; }
+  .cn7 { background: #1a1a2e; border: 1.5px solid #3498db; }
+  .cn7 h3 { color: #3498db; }
+  .cn910 { background: #2a1a2a; border: 1.5px solid #9b59b6; }
+  .cn910 h3 { color: #9b59b6; }
+  .cn12 { background: #3a2a1a; border: 1.5px solid #f5c842; }
+  .cn12 h3 { color: #f5c842; }
+
+  .two-col {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .two-col > div { flex: 1; min-width: 250px; }
+
+  .vs-box {
+    display: flex;
+    gap: 0;
+    margin: 10px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 0.78rem;
+  }
+  .vs-left {
+    flex: 1;
+    background: #1a3a1a;
+    padding: 10px;
+    border-right: 2px solid #f5c842;
+  }
+  .vs-right {
+    flex: 1;
+    background: #3a1a1a;
+    padding: 10px;
+  }
+  .vs-left h4 { color: #4CAF50; font-size: 0.82rem; margin-bottom: 4px; }
+  .vs-right h4 { color: #e74c3c; font-size: 0.82rem; margin-bottom: 4px; }
+
+  .key { color: #f5c842; font-weight: bold; }
+  .danger { color: #e74c3c; font-weight: bold; }
+  .safe { color: #4CAF50; }
+
+  .anchors {
+    background: #2a1a3e;
+    border: 1.5px solid #9b59b6;
+    border-radius: 10px;
+    padding: 14px;
+    margin-top: 10px;
+  }
+  .anchors h2 { color: #9b59b6; font-size: 0.9rem; margin-bottom: 8px; text-align: center; }
+  .anchors ol { padding-left: 20px; font-size: 0.8rem; line-height: 1.7; }
+  .highlight { color: #f5c842; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<h1>CRANIAL NERVES — EXAM IMPRINT</h1>
+<div class="subtitle">Only the 5 that earn marks. One image per nerve.</div>
+
+<div class="main">
+
+<!-- MASTER MAP -->
+<div class="section">
+  <h2>THE MAP — WHERE THEY LIVE</h2>
+  <svg viewBox="0 0 500 300" width="100%" style="max-width:500px;">
+    <!-- Brainstem vertical -->
+    <rect x="200" y="10" width="100" height="60" rx="10" fill="#2a1a3e" fill-opacity="0.6" stroke="#9b59b6" stroke-width="1.5"/>
+    <text x="250" y="35" text-anchor="middle" fill="#9b59b6" font-size="12" font-weight="bold">MIDBRAIN</text>
+    <text x="250" y="52" text-anchor="middle" fill="#cac" font-size="10">III, IV</text>
+
+    <rect x="190" y="80" width="120" height="70" rx="10" fill="#1a2a3e" fill-opacity="0.6" stroke="#3498db" stroke-width="1.5"/>
+    <text x="250" y="107" text-anchor="middle" fill="#3498db" font-size="12" font-weight="bold">PONS</text>
+    <text x="250" y="125" text-anchor="middle" fill="#acd" font-size="10">V, VI, VII, VIII</text>
+
+    <rect x="200" y="160" width="100" height="70" rx="10" fill="#1a3a2e" fill-opacity="0.6" stroke="#f5c842" stroke-width="1.5"/>
+    <text x="250" y="188" text-anchor="middle" fill="#f5c842" font-size="12" font-weight="bold">MEDULLA</text>
+    <text x="250" y="206" text-anchor="middle" fill="#dd9" font-size="10">IX, X, XI, XII</text>
+
+    <!-- CN III exiting -->
+    <line x1="200" y1="40" x2="100" y2="40" stroke="#4CAF50" stroke-width="1.5"/>
+    <circle cx="95" cy="40" r="14" fill="none" stroke="#4CAF50" stroke-width="1.5"/>
+    <text x="95" y="44" text-anchor="middle" fill="#4CAF50" font-size="11" font-weight="bold">III</text>
+    <text x="42" y="40" text-anchor="middle" fill="#7c7" font-size="8">→ Eye</text>
+
+    <!-- CN V exiting -->
+    <line x1="190" y1="100" x2="100" y2="80" stroke="#e67e22" stroke-width="1.5"/>
+    <circle cx="95" cy="76" r="14" fill="none" stroke="#e67e22" stroke-width="1.5"/>
+    <text x="95" y="80" text-anchor="middle" fill="#e67e22" font-size="11" font-weight="bold">V</text>
+    <text x="42" y="76" text-anchor="middle" fill="#da9" font-size="8">→ Face</text>
+
+    <!-- CN VII exiting -->
+    <line x1="190" y1="120" x2="100" y2="130" stroke="#3498db" stroke-width="1.5"/>
+    <circle cx="95" cy="133" r="14" fill="none" stroke="#3498db" stroke-width="1.5"/>
+    <text x="95" y="137" text-anchor="middle" fill="#3498db" font-size="11" font-weight="bold">VII</text>
+    <text x="38" y="133" text-anchor="middle" fill="#8bc" font-size="8">→ Face M</text>
+
+    <!-- CN IX,X exiting -->
+    <line x1="200" y1="185" x2="100" y2="190" stroke="#9b59b6" stroke-width="1.5"/>
+    <circle cx="93" cy="192" r="16" fill="none" stroke="#9b59b6" stroke-width="1.5"/>
+    <text x="93" y="196" text-anchor="middle" fill="#9b59b6" font-size="10" font-weight="bold">IX,X</text>
+    <text x="35" y="192" text-anchor="middle" fill="#cac" font-size="8">→ Throat</text>
+
+    <!-- CN XII exiting -->
+    <line x1="200" y1="210" x2="100" y2="240" stroke="#f5c842" stroke-width="1.5"/>
+    <circle cx="95" cy="243" r="14" fill="none" stroke="#f5c842" stroke-width="1.5"/>
+    <text x="95" y="247" text-anchor="middle" fill="#f5c842" font-size="11" font-weight="bold">XII</text>
+    <text x="38" y="243" text-anchor="middle" fill="#dd9" font-size="8">→ Tongue</text>
+
+    <!-- Right side - function summaries -->
+    <text x="370" y="40" text-anchor="middle" fill="#4CAF50" font-size="9">Eye movement + pupil</text>
+    <text x="370" y="80" text-anchor="middle" fill="#e67e22" font-size="9">Face sensation (3 divisions)</text>
+    <text x="370" y="133" text-anchor="middle" fill="#3498db" font-size="9">Face movement + taste</text>
+    <text x="370" y="192" text-anchor="middle" fill="#9b59b6" font-size="9">Swallowing + voice + gag</text>
+    <text x="370" y="243" text-anchor="middle" fill="#f5c842" font-size="9">Tongue movement</text>
+
+    <!-- Memory cue -->
+    <text x="440" y="280" text-anchor="end" fill="#555" font-size="9">2 – 4 – 4 rule</text>
+  </svg>
+</div>
+
+<!-- ======= CN III ======= -->
+<div class="cn-card cn3">
+  <h3>CN III — OCULOMOTOR <span class="tag tag-motor">MOTOR</span> <span class="tag tag-para">+PARA</span></h3>
+
+  <p><span class="key">What it does:</span> ALL eye muscles EXCEPT lateral rectus (VI) and superior oblique (IV). Plus: levator palpebrae (eyelid) + parasympathetic pupil constriction.</p>
+
+  <p style="margin-top:8px;"><span class="key">Memory:</span> CN III does everything. VI and IV are the exceptions. <strong>LR₆SO₄</strong> — Lateral Rectus = VI, Superior Oblique = IV, rest = III.</p>
+
+  <div class="vs-box">
+    <div class="vs-left">
+      <h4>SURGICAL (Compressive) — CN III</h4>
+      <p><strong>Pupil affected FIRST</strong></p>
+      <p>→ Parasympathetic fibers run on the OUTSIDE of the nerve</p>
+      <p>→ Compression hits outer fibers first</p>
+      <p><span class="safe">Causes:</span> Aneurysm (PComm), uncal herniation, tumor</p>
+      <p style="margin-top:4px;"><strong>⚠️ Dilated pupil = EMERGENCY</strong></p>
+    </div>
+    <div class="vs-right">
+      <h4>MEDICAL (Ischaemic) — CN III</h4>
+      <p><strong>Pupil SPARED</strong></p>
+      <p>→ Ischaemia hits the INSIDE (vasa nervorum)</p>
+      <p>→ Outer parasympathetic fibers still get blood from outside</p>
+      <p><span class="danger">Causes:</span> Diabetes, hypertension, vasculitis</p>
+      <p style="margin-top:4px;">Painful but pupil is normal</p>
+    </div>
+  </div>
+
+  <div class="mnemonic">
+    <strong>THE ANCHOR:</strong> Parasympathetic fibers ride on the OUTSIDE of CN III like a passenger on a bus roof.<br>
+    Compression → roof passenger falls first → <strong>pupil dilates</strong> (surgical = emergency)<br>
+    Ischaemia → engine fails inside → <strong>pupil spared</strong> (medical = diabetes)
+  </div>
+</div>
+
+<!-- ======= CN V ======= -->
+<div class="cn-card cn5">
+  <h3>CN V — TRIGEMINAL <span class="tag tag-mixed">MIXED</span></h3>
+
+  <p><span class="key">Three divisions — one image:</span></p>
+
+  <svg viewBox="0 0 460 200" width="100%" style="max-width:460px;display:block;margin:8px auto;">
+    <!-- Face outline -->
+    <ellipse cx="150" cy="100" rx="90" ry="100" fill="none" stroke="#555" stroke-width="1.5"/>
+    <!-- Eyes -->
+    <ellipse cx="120" cy="70" rx="15" ry="8" fill="none" stroke="#888" stroke-width="1"/>
+    <ellipse cx="180" cy="70" rx="15" ry="8" fill="none" stroke="#888" stroke-width="1"/>
+    <!-- Nose -->
+    <line x1="150" y1="80" x2="150" y2="105" stroke="#888" stroke-width="1"/>
+    <!-- Mouth -->
+    <path d="M 125 130 Q 150 145 175 130" fill="none" stroke="#888" stroke-width="1"/>
+
+    <!-- V1 zone - forehead -->
+    <path d="M 60 60 Q 150 5 240 60 L 240 75 Q 150 55 60 75 Z" fill="#e74c3c" fill-opacity="0.2" stroke="#e74c3c" stroke-width="1.5"/>
+    <text x="310" y="55" fill="#e74c3c" font-size="12" font-weight="bold">V1 Ophthalmic</text>
+    <text x="310" y="70" fill="#daa" font-size="9">Forehead + cornea</text>
+    <text x="310" y="83" fill="#daa" font-size="9">Exit: Superior orbital fissure</text>
+
+    <!-- V2 zone - cheek -->
+    <path d="M 60 75 Q 150 55 240 75 L 240 120 Q 150 105 60 120 Z" fill="#f5c842" fill-opacity="0.15" stroke="#f5c842" stroke-width="1.5"/>
+    <text x="310" y="105" fill="#f5c842" font-size="12" font-weight="bold">V2 Maxillary</text>
+    <text x="310" y="120" fill="#dd9" font-size="9">Cheek + upper lip + teeth</text>
+    <text x="310" y="133" fill="#dd9" font-size="9">Exit: Foramen rotundum</text>
+
+    <!-- V3 zone - jaw -->
+    <path d="M 60 120 Q 150 105 240 120 L 240 180 Q 150 200 60 180 Z" fill="#4CAF50" fill-opacity="0.15" stroke="#4CAF50" stroke-width="1.5"/>
+    <text x="310" y="160" fill="#4CAF50" font-size="12" font-weight="bold">V3 Mandibular</text>
+    <text x="310" y="175" fill="#adc" font-size="9">Jaw + lower lip + tongue sens.</text>
+    <text x="310" y="188" fill="#adc" font-size="9">Exit: Foramen ovale + MOTOR</text>
+  </svg>
+
+  <p><span class="key">Motor component:</span> V3 ONLY — muscles of mastication (masseter, temporalis, pterygoids). "V3 = jaw power."</p>
+
+  <p style="margin-top:6px;"><span class="key">Key clinical tests:</span></p>
+  <p>• <strong>Corneal reflex:</strong> Afferent = V1 (ophthalmic), Efferent = VII (facial). Lost in Wallenberg (spinal V nucleus hit).</p>
+  <p>• <strong>Jaw jerk:</strong> V3. Brisk = UMN lesion above pons (pseudobulbar palsy).</p>
+  <p>• <strong>Trigeminal neuralgia:</strong> Electric shock pain in V2/V3 distribution. India: carbamazepine first-line.</p>
+
+  <div class="mnemonic">
+    <strong>Foramen exit mnemonic:</strong> <strong>S</strong>uperior orbital fissure, Foramen <strong>R</strong>otundum, Foramen <strong>O</strong>vale = <strong>S-R-O</strong> = "SiR, One" (V1, V2, V3)<br><br>
+    <strong>Only V3 has motor.</strong> Think: you need your jaw (V3) to chew = motor.
+  </div>
+</div>
+
+<!-- ======= CN VII ======= -->
+<div class="cn-card cn7">
+  <h3>CN VII — FACIAL <span class="tag tag-mixed">MIXED</span></h3>
+
+  <p><span class="key">THE most tested CN distinction in medicine:</span></p>
+
+  <div class="vs-box">
+    <div class="vs-left">
+      <h4>UMN LESION (Stroke)</h4>
+      <p><strong>Forehead SPARED</strong> ✓</p>
+      <p>Only lower face weak (contralateral)</p>
+      <p>→ Upper face gets bilateral cortical supply</p>
+      <p>→ One cortex gone? Other still feeds forehead.</p>
+      <p style="margin-top:6px;">Look for: associated arm/leg weakness</p>
+    </div>
+    <div class="vs-right">
+      <h4>LMN LESION (Bell's Palsy)</h4>
+      <p><strong>ENTIRE half face paralyzed</strong></p>
+      <p>Forehead INCLUDED — can't raise eyebrow</p>
+      <p>→ The nerve itself is damaged below the nucleus</p>
+      <p>→ No alternate supply possible</p>
+      <p style="margin-top:6px;">Look for: hyperacusis, loss of taste ant 2/3, dry eye</p>
+    </div>
+  </div>
+
+  <svg viewBox="0 0 460 170" width="100%" style="max-width:460px;display:block;margin:8px auto;">
+    <!-- UMN side -->
+    <rect x="10" y="10" width="210" height="150" rx="10" fill="#1a3a1a" fill-opacity="0.3" stroke="#4CAF50" stroke-width="1"/>
+    <text x="115" y="30" text-anchor="middle" fill="#4CAF50" font-size="11" font-weight="bold">UMN (Stroke)</text>
+    <!-- Face -->
+    <ellipse cx="115" cy="95" rx="45" ry="55" fill="none" stroke="#888" stroke-width="1"/>
+    <!-- Forehead lines - both work -->
+    <line x1="85" y1="60" x2="145" y2="60" stroke="#4CAF50" stroke-width="1.5"/>
+    <line x1="88" y1="55" x2="142" y2="55" stroke="#4CAF50" stroke-width="1.5"/>
+    <text x="115" y="52" text-anchor="middle" fill="#4CAF50" font-size="7">SPARED ✓</text>
+    <!-- Lower face drooping -->
+    <path d="M 90 110 Q 105 130 115 120 Q 125 130 140 110" fill="none" stroke="#e74c3c" stroke-width="2"/>
+    <text x="115" y="145" text-anchor="middle" fill="#e74c3c" font-size="8">Lower face WEAK</text>
+
+    <!-- LMN side -->
+    <rect x="240" y="10" width="210" height="150" rx="10" fill="#3a1a1a" fill-opacity="0.3" stroke="#e74c3c" stroke-width="1"/>
+    <text x="345" y="30" text-anchor="middle" fill="#e74c3c" font-size="11" font-weight="bold">LMN (Bell's)</text>
+    <!-- Face -->
+    <ellipse cx="345" cy="95" rx="45" ry="55" fill="none" stroke="#888" stroke-width="1"/>
+    <!-- Forehead - flat, no lines -->
+    <text x="345" y="55" text-anchor="middle" fill="#e74c3c" font-size="7">FLAT — can't wrinkle ✗</text>
+    <!-- Entire face drooping -->
+    <path d="M 315 75 Q 340 85 345 80" fill="none" stroke="#e74c3c" stroke-width="2"/>
+    <path d="M 320 110 Q 335 130 345 120 Q 355 130 370 110" fill="none" stroke="#e74c3c" stroke-width="2"/>
+    <text x="345" y="145" text-anchor="middle" fill="#e74c3c" font-size="8">ENTIRE face WEAK</text>
+  </svg>
+
+  <p><span class="key">Bell's palsy extras:</span> Most common CN mononeuropathy. Viral (HSV-1). Steroids within 72h. India: must rule out Hansen's disease (leprosy) — thickened nerve, patch near ear.</p>
+
+  <div class="mnemonic">
+    <strong>Bell's = Below (LMN) = Both (upper AND lower face).</strong><br>
+    <strong>Stroke = Superior (UMN) = Spares forehead.</strong>
+  </div>
+</div>
+
+<!-- ======= CN IX, X ======= -->
+<div class="cn-card cn910">
+  <h3>CN IX (Glossopharyngeal) + X (Vagus) <span class="tag tag-mixed">MIXED</span> <span class="tag tag-para">+PARA</span></h3>
+
+  <p><span class="key">Why together:</span> They travel together through jugular foramen, share nucleus ambiguus, and are tested together clinically.</p>
+
+  <p style="margin-top:6px;"><span class="key">Division of labor:</span></p>
+  <p>• <strong>IX:</strong> Sensation posterior 1/3 tongue + taste post 1/3 + afferent gag reflex + carotid sinus/body</p>
+  <p>• <strong>X:</strong> Motor to palate, pharynx, larynx (recurrent laryngeal nerve) + efferent gag + parasympathetic to thorax/abdomen to splenic flexure</p>
+
+  <p style="margin-top:8px;"><span class="key">Bedside test — "say AAH":</span></p>
+  <p>Unilateral X lesion → uvula deviates <strong>AWAY</strong> from lesion (weak side can't pull) → palate drags toward normal side.</p>
+
+  <p style="margin-top:8px;"><span class="key">Recurrent laryngeal nerve (branch of X):</span></p>
+  <p>Left RLN loops under aortic arch — longer course — more vulnerable.</p>
+  <p>Causes of left RLN palsy: <strong>aortic aneurysm, mitral stenosis (large LA), lung cancer (L hilum), post-thyroidectomy</strong></p>
+  <p>→ Hoarseness of voice. India: think thyroid surgery complication first.</p>
+
+  <div class="mnemonic">
+    <strong>Uvula points AWAY from the bad side.</strong> (Opposite of tongue rule!)<br>
+    Tongue (XII) → deviates TO lesion. Uvula (X) → deviates AWAY from lesion.<br><br>
+    <strong>Left RLN = "Left loops Low" (under aortic arch) = Left is more vulnerable.</strong>
+  </div>
+</div>
+
+<!-- ======= CN XII ======= -->
+<div class="cn-card cn12">
+  <h3>CN XII — HYPOGLOSSAL <span class="tag tag-motor">MOTOR</span></h3>
+
+  <p><span class="key">Pure motor to tongue.</span></p>
+
+  <div class="vs-box">
+    <div class="vs-left">
+      <h4>LMN Lesion (nucleus/nerve)</h4>
+      <p>Tongue deviates <strong>TO</strong> the lesion</p>
+      <p>→ Weak side can't push, strong side pushes tongue toward weak</p>
+      <p>+ Ipsilateral atrophy + fasciculations</p>
+      <p style="margin-top:4px;"><span class="safe">Seen in:</span> Dejerine, tumors, MND</p>
+    </div>
+    <div class="vs-right">
+      <h4>UMN Lesion (cortex/tract)</h4>
+      <p>Tongue deviates <strong>AWAY</strong> from lesion</p>
+      <p>→ CST crosses → cortical damage affects opposite genioglossus</p>
+      <p>No atrophy, no fasciculations</p>
+      <p style="margin-top:4px;"><span class="danger">Seen in:</span> Stroke (with hemiplegia)</p>
+    </div>
+  </div>
+
+  <div class="mnemonic">
+    <strong>LMN tongue: "Licks its wound" — deviates TO the lesion.</strong><br>
+    <strong>UMN tongue: Away from cortical lesion (fibers cross).</strong><br><br>
+    <strong>Bulbar vs Pseudobulbar:</strong><br>
+    Bulbar (LMN — IX,X,XII nuclei) = fasciculations, wasting, quiet nasal speech, absent jaw jerk<br>
+    Pseudobulbar (UMN — bilateral cortex) = spastic tongue, brisk jaw jerk, emotional lability (pathological crying/laughing)
+  </div>
+</div>
+
+<!-- ======= DIRECTION RULES MASTER ======= -->
+<div class="section">
+  <h2>⚠️ DIRECTION RULES — YOUR KNOWN TRAP</h2>
+  <div style="overflow-x:auto;">
+  <table style="width:100%;border-collapse:collapse;font-size:0.8rem;">
+    <tr style="border-bottom:2px solid #f5c842;">
+      <th style="padding:6px;text-align:left;color:#f5c842;">Structure</th>
+      <th style="padding:6px;text-align:left;color:#4CAF50;">LMN lesion → deviates</th>
+      <th style="padding:6px;text-align:left;color:#e74c3c;">UMN lesion → deviates</th>
+      <th style="padding:6px;text-align:left;color:#aaa;">Anchor</th>
+    </tr>
+    <tr style="border-bottom:1px solid #333;">
+      <td style="padding:6px;">Tongue (XII)</td>
+      <td style="padding:6px;color:#4CAF50;"><strong>TO</strong> lesion</td>
+      <td style="padding:6px;color:#e74c3c;">AWAY from lesion</td>
+      <td style="padding:6px;color:#aaa;">LMN "licks its wound"</td>
+    </tr>
+    <tr style="border-bottom:1px solid #333;">
+      <td style="padding:6px;">Uvula (X)</td>
+      <td style="padding:6px;color:#4CAF50;" colspan="2"><strong>AWAY</strong> from lesion (both UMN & LMN)</td>
+      <td style="padding:6px;color:#aaa;">Dragged by strong side</td>
+    </tr>
+    <tr>
+      <td style="padding:6px;">Face (VII)</td>
+      <td style="padding:6px;color:#4CAF50;">Entire half (LMN)</td>
+      <td style="padding:6px;color:#e74c3c;">Lower half only (UMN)</td>
+      <td style="padding:6px;color:#aaa;">Bell's = Both halves</td>
+    </tr>
+  </table>
+  </div>
+</div>
+
+<!-- 5 RETENTION ANCHORS -->
+<div class="anchors">
+  <h2>5 RETENTION ANCHORS</h2>
+  <ol>
+    <li><span class="highlight">CN III pupil: outside = surgical (dilated, emergency), inside = medical (spared, diabetes).</span> Passenger on roof of bus falls first when bus is crushed.</li>
+    <li><span class="highlight">CN VII: Bell's = Below = Both halves.</span> Stroke = Superior = Spares forehead. This one distinction earns 2 marks alone.</li>
+    <li><span class="highlight">Tongue TO the lesion (LMN), Uvula AWAY from lesion.</span> They are OPPOSITES. Tongue licks its wound. Uvula is dragged by the strong side.</li>
+    <li><span class="highlight">Left RLN loops low under aortic arch.</span> Left vocal cord palsy → think aortic aneurysm, mitral stenosis, lung cancer, thyroid surgery.</li>
+    <li><span class="highlight">Corneal reflex: V1 in, VII out.</span> Lost in Wallenberg (V nucleus hit). Tests two nerves in one — examiners love it.</li>
+  </ol>
+</div>
+
+</div>
+</body>
+</html>

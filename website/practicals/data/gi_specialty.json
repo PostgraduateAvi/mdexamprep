@@ -1,0 +1,687 @@
+{
+  "id": "gi_specialty",
+  "system_name": "GI & Specialty",
+  "system": "abdomen",
+
+  "system_examination_technique": {
+    "approach": "Patient supine, arms by sides, knees slightly flexed. Expose from xiphisternum to symphysis pubis. Always start from the right iliac fossa when palpating liver/spleen. Proceed: General Inspection → Hands → Face/Neck → Abdomen (Inspection → Auscultation → Palpation → Percussion). Auscultate BEFORE palpation to avoid altering bowel sounds.",
+    "sequence": "General Inspection → Hands → Face → Abdomen: Inspection → Auscultation → Palpation (superficial → deep → liver → spleen → kidneys → aorta) → Percussion (shifting dullness, liver span, Traube's space)",
+    "steps": [
+      {
+        "phase": "General Inspection",
+        "actions": [
+          "From foot of bed: cachexia, jaundice, pallor, abdominal distension, visible masses, scars, stomas, drains.",
+          "Stigmata of CLD: spider nevi (SVC distribution), gynecomastia, loss of body hair, muscle wasting (temporal, thenar).",
+          "Devices: IV lines, urinary catheter, nasogastric tube, abdominal drains."
+        ]
+      },
+      {
+        "phase": "Hands",
+        "actions": [
+          "Palmar erythema: thenar/hypothenar redness, sparing central palm (hyperestrogenism in CLD, also pregnancy, thyrotoxicosis).",
+          "Dupuytren contracture: thickening of palmar fascia (alcoholic liver disease).",
+          "Leuconychia: white nails (hypoalbuminemia). Clubbing (cirrhosis, IBD, malabsorption).",
+          "Asterixis (flapping tremor): wrists dorsiflexed, fingers spread, 30 seconds — negative myoclonus (hepatic encephalopathy, uremia, CO2 narcosis).",
+          "Koilonychia: spoon nails (iron deficiency). Terry nails: proximal white, distal pink (cirrhosis)."
+        ]
+      },
+      {
+        "phase": "Face and Neck",
+        "actions": [
+          "Icterus: examine sclera in natural light (detectable at bilirubin >2-3 mg/dL).",
+          "Pallor: palpebral conjunctiva (anemia from GI bleed, chronic disease, hypersplenism).",
+          "Fetor hepaticus: sweet musty breath (portosystemic shunting of mercaptans).",
+          "Spider nevi: >5 in SVC territory strongly suggests CLD.",
+          "Parotid enlargement: alcoholic liver disease.",
+          "Virchow's node: left supraclavicular (GI malignancy — Troisier sign)."
+        ]
+      },
+      {
+        "phase": "Abdominal Inspection",
+        "actions": [
+          "Shape: distension (ascites = flanks full; obstruction = central), scaphoid (cachexia).",
+          "Skin: caput medusae (periumbilical veins radiating outward — portal HTN), striae, surgical scars.",
+          "Visible peristalsis (obstruction). Visible pulsations (aortic aneurysm).",
+          "Umbilicus: everted (ascites), Sister Joseph nodule (intra-abdominal malignancy)."
+        ]
+      },
+      {
+        "phase": "Auscultation",
+        "actions": [
+          "Bowel sounds: listen for 30 seconds minimum. Normal = intermittent gurgling. Absent = listen 3 minutes before calling absent (ileus, peritonitis). Hyperactive/tinkling = obstruction.",
+          "Venous hum: Cruveilhier-Baumgarten murmur over epigastrium (recanalized umbilical vein in portal HTN). Continuous low-pitched hum.",
+          "Hepatic bruit: over liver (hepatocellular carcinoma, alcoholic hepatitis, arteriovenous malformation).",
+          "Splenic rub: friction rub over spleen (splenic infarct)."
+        ]
+      },
+      {
+        "phase": "Palpation",
+        "actions": [
+          "Superficial then deep, starting AWAY from pain. Watch patient's face.",
+          "Liver: start from RIGHT ILIAC FOSSA, creep upward with each inspiration. Describe: cm below costal margin, span (percussion: upper border 5th ICS MCL), surface (smooth/nodular), edge (sharp/rounded), consistency (soft/firm/hard), tenderness, pulsatility (TR).",
+          "Spleen: start from RIGHT ILIAC FOSSA, move diagonally toward left costal margin. If not felt supine, roll patient to RIGHT side (45 degrees), left hand supporting ribs posteriorly. Splenic notch confirms spleen. Cannot get above it, moves with respiration, dull to percussion.",
+          "Differentiate spleen vs kidney: spleen — cannot get above it, has notch, moves with respiration, dull, NOT ballotable. Kidney — can get above it, bimanually ballotable, resonant (bowel anterior), no notch.",
+          "Ascites: shifting dullness (>1L fluid), fluid thrill (>2L)."
+        ]
+      },
+      {
+        "phase": "Percussion",
+        "actions": [
+          "Liver span: percuss upper border (5th ICS MCL), palpate lower. Normal span 12-15 cm. Reduced span = cirrhosis (shrunken liver). Absent cardiac/liver dullness = emphysema (hyperinflated lung overlies).",
+          "Spleen percussion: Traube's space — left 6th rib (superior), left costal margin (inferior), left MAL (lateral). Normally resonant (stomach gas). Dull = splenomegaly, left pleural effusion.",
+          "Shifting dullness for ascites: percuss from center to flank (resonant → dull). Mark transition. Roll patient away. Wait 30 seconds. Re-percuss. Shift = free fluid."
+        ]
+      },
+      {
+        "phase": "Completing the Examination",
+        "actions": [
+          "Hernial orifices: inguinal, femoral, umbilical. Ask patient to cough.",
+          "External genitalia: testicular atrophy (alcoholic CLD, hyperestrogenism).",
+          "Per rectal examination: mention you would do it (melena, hemorrhoids, rectal mass, prostate).",
+          "Lower limbs: pedal edema (hypoalbuminemia, RHF)."
+        ]
+      }
+    ]
+  },
+
+  "cross_case_differentials": [
+    {
+      "comparison": "Portal HTN: Pre-hepatic vs Hepatic vs Post-hepatic",
+      "conditions": ["Pre-hepatic", "Hepatic (sinusoidal)", "Post-hepatic"],
+      "features": [
+        {"feature": "Ascites", "values": ["Absent or minimal", "Present (common)", "Present (rapid onset — Budd-Chiari)"]},
+        {"feature": "Liver function", "values": ["Preserved", "Impaired", "May be preserved initially"]},
+        {"feature": "Splenomegaly", "values": ["Often massive", "Moderate", "Present (acute tender hepatomegaly in Budd-Chiari)"]},
+        {"feature": "Varices", "values": ["Present", "Present", "Present"]},
+        {"feature": "CLD stigmata", "values": ["Absent", "Present", "Usually absent"]},
+        {"feature": "Example", "values": ["Portal/splenic vein thrombosis, schistosomiasis", "Cirrhosis (alcohol, viral, NASH)", "Budd-Chiari, IVC obstruction, cardiac"]}
+      ]
+    },
+    {
+      "comparison": "Hepatomegaly: Liver Consistency Differential",
+      "conditions": ["Soft & Tender", "Firm & Non-tender", "Hard & Nodular"],
+      "features": [
+        {"feature": "Examples", "values": ["Acute hepatitis (viral, alcoholic, drug), congestive hepatomegaly (CCF), liver abscess", "Cirrhosis, chronic hepatitis, hemochromatosis, amyloidosis", "HCC (malignancy), metastatic liver disease"]},
+        {"feature": "Surface", "values": ["Smooth", "Smooth or mildly irregular", "Irregular, nodular"]},
+        {"feature": "Edge", "values": ["Rounded, tender", "Firm, may be sharp", "Hard, irregular"]},
+        {"feature": "Additional clue", "values": ["Pulsatile = TR (congestive)", "Reduced span = cirrhosis", "Bruit over liver = HCC"]}
+      ]
+    },
+    {
+      "comparison": "Causes of Massive Splenomegaly",
+      "conditions": ["CML", "Myelofibrosis", "Kala-azar", "Tropical splenomegaly", "Others"],
+      "features": [
+        {"feature": "Key clue", "values": ["High WBC + basophilia + all stages of granulocytes", "Tear-drop cells + leukoerythroblastic picture + dry tap", "Pancytopenia + fever + endemic area + hepatosplenomegaly", "Hyper-reactive malarial splenomegaly + massive IgM", "Gaucher (bone pain, storage), thalassemia major, hairy cell leukemia"]},
+        {"feature": "Diagnosis", "values": ["PBS + BCR-ABL", "Bone marrow biopsy (fibrosis)", "rK39 antigen test, bone marrow", "Response to antimalarial prophylaxis", "Specific enzyme assays / genetics"]}
+      ]
+    }
+  ],
+
+  "cases": [
+    {
+      "id": "cirrhosis_alcoholic",
+      "name": "Alcoholic Cirrhosis — Decompensated",
+      "category": "case",
+      "system": "abdomen",
+      "tags": ["long-case", "CLD", "portal-hypertension", "ascites", "variceal-bleed", "hepatic-encephalopathy"],
+
+      "presentation_script": {
+        "opening": "Sir, I have examined this patient. This is a 48-year-old male, chronic alcohol consumer (80g/day for 20 years), who presented with progressive abdominal distension for 2 months, yellowish discoloration of eyes for 3 weeks, bilateral pedal swelling for 2 weeks, and one episode of hematemesis (approximately 500mL) 3 days ago. He has a history of multiple hospital admissions for similar complaints. Currently on lactulose and spironolactone.",
+        "gpe_findings": "On general examination, the patient is conscious and oriented but appears cachectic with wasting of temporalis and thenar muscles. There is icterus (++), pallor (++), and fetor hepaticus. No cyanosis or lymphadenopathy. Bilateral pedal edema is present (pitting).",
+        "system_findings": "On abdominal examination — Hands: palmar erythema, Dupuytren contracture, leuconychia, clubbing grade I, asterixis (flapping tremor) present. Skin: Spider nevi (>5 in SVC distribution), paper-money skin, sparse body hair, ecchymoses. Chest: bilateral gynecomastia, loss of axillary hair. Abdomen: distended with full flanks, shifting dullness positive (ascites), caput medusae present (veins radiating from umbilicus), spleen palpable 4 cm below costal margin. Liver is NOT palpable below the costal margin (shrunken) — small firm liver edge palpable in the epigastrium.",
+        "diagnosis_statement": "Decompensated alcoholic cirrhosis (Child-Pugh C) with portal hypertension (ascites, splenomegaly, caput medusae, variceal bleed) and hepatocellular failure (icterus, coagulopathy, hypoalbuminemia, asterixis), presenting with variceal upper GI bleeding.",
+        "differentials": [
+          "Hepatitis B/C related cirrhosis (needs viral markers — HBsAg, Anti-HCV)",
+          "NASH cirrhosis (no alcohol history needed, metabolic syndrome features)",
+          "Cardiac cirrhosis (congestive hepatomegaly with pulsatile liver, JVP elevated — not shrunken liver)",
+          "Budd-Chiari syndrome (acute onset, tender hepatomegaly, rapid ascites — different presentation)"
+        ],
+        "tips": [
+          "Group findings into 3 categories: (1) Portal HTN signs, (2) Hepatocellular failure signs, (3) Hyperestrogenism signs — examiners love organized presentation.",
+          "Always state Child-Pugh class in your diagnosis — shows you can grade severity.",
+          "Mention the etiology evidence: AST:ALT >2, Dupuytren, parotid enlargement, peripheral neuropathy all point to alcohol.",
+          "State 'decompensated' explicitly and list which decompensation features are present (AVEJ: Ascites, Variceal bleed, Encephalopathy, Jaundice)."
+        ]
+      },
+
+      "case_scenario": {
+        "demographics": "48-year-old male, daily alcohol consumer for 20 years (approximately 80g/day — country liquor)",
+        "chief_complaint": "Progressive abdominal distension (2 months), yellowish discoloration of eyes (3 weeks), bilateral pedal swelling (2 weeks), hematemesis (~500mL, 3 days ago)",
+        "hpi": "Progressive abdominal distension over 2 months — initially noticed pants becoming tight, then visible distension. Yellowish discoloration of eyes noticed by family 3 weeks ago. Bilateral pedal swelling for 2 weeks — pitting, worse in the evening. One episode of hematemesis 3 days ago — approximately 500mL of dark red blood, no hemoptysis. No melena reported but stool was dark. History of multiple hospital admissions for similar complaints over the past 2 years. Currently on lactulose (for hepatic encephalopathy prophylaxis) and spironolactone (for ascites).",
+        "past_history": "Multiple admissions for decompensated CLD. No diabetes, hypertension, TB, or cardiac disease.",
+        "drug_history": "Lactulose syrup, Spironolactone. No NSAID use. No prior blood transfusions.",
+        "social_history": "80g alcohol/day for 20 years (country liquor). Far exceeds hepatotoxic threshold (>40g/day in men for >10 years). Smoking: occasional bidi.",
+        "family_history": "No family history of liver disease."
+      },
+
+      "clinical_summary": [
+        {"area": "General", "finding": "Icterus", "detail": "Yellow discoloration of sclera and skin (++)", "present": true, "significance": "Impaired bilirubin conjugation and excretion — hepatocellular failure"},
+        {"area": "General", "finding": "Pallor", "detail": "Pale palpebral conjunctiva (++)", "present": true, "significance": "Anemia — GI bleed (acute), chronic disease, hypersplenism, folate/B12 deficiency (alcohol)"},
+        {"area": "General", "finding": "Cachexia", "detail": "Wasting of temporalis and thenar muscles", "present": true, "significance": "Chronic malnutrition + reduced synthetic function + increased catabolism"},
+        {"area": "General", "finding": "Fetor hepaticus", "detail": "Sweet musty breath", "present": true, "significance": "Dimethyl sulfide and mercaptans bypass liver through portosystemic shunts — indicates significant shunting"},
+        {"area": "Hands", "finding": "Palmar erythema", "detail": "Thenar and hypothenar eminences red, central palm spared", "present": true, "significance": "Hyperestrogenism + hyperdynamic circulation (low SVR, high CO in cirrhosis)"},
+        {"area": "Hands", "finding": "Dupuytren contracture", "detail": "Thickened palmar fascia", "present": true, "significance": "Alcoholic liver disease (fibroblast proliferation stimulated by alcohol metabolites)"},
+        {"area": "Hands", "finding": "Leuconychia", "detail": "White nails", "present": true, "significance": "Hypoalbuminemia — reduced albumin synthesis"},
+        {"area": "Hands", "finding": "Asterixis", "detail": "Flapping tremor present bilaterally", "present": true, "significance": "Hepatic encephalopathy (Grade 2+) — ammonia and neurotoxin accumulation"},
+        {"area": "Skin", "finding": "Spider nevi", "detail": ">5 in SVC distribution (face, neck, upper chest, shoulders)", "present": true, "significance": "Hyperestrogenism — liver cannot metabolize estrogen → arteriolar vasodilation"},
+        {"area": "Skin", "finding": "Ecchymoses", "detail": "Bruises on skin", "present": true, "significance": "Coagulopathy — reduced synthesis of clotting factors II, V, VII, IX, X"},
+        {"area": "Chest", "finding": "Gynecomastia", "detail": "Bilateral breast tissue enlargement", "present": true, "significance": "Hyperestrogenism + increased SHBG binding testosterone + spironolactone anti-androgen effect"},
+        {"area": "Abdomen", "finding": "Ascites", "detail": "Distended abdomen, full flanks, shifting dullness positive", "present": true, "significance": "Portal HTN + hypoalbuminemia + splanchnic vasodilation → RAAS activation → Na/water retention"},
+        {"area": "Abdomen", "finding": "Caput medusae", "detail": "Dilated veins radiating from umbilicus", "present": true, "significance": "Portal blood diverts through paraumbilical veins → flow AWAY from umbilicus"},
+        {"area": "Abdomen", "finding": "Splenomegaly", "detail": "Spleen palpable 4 cm below left costal margin", "present": true, "significance": "Venous congestion from portal HTN (splenic vein → portal vein → backed up)"},
+        {"area": "Abdomen", "finding": "Liver", "detail": "NOT palpable in RUQ (shrunken), small firm edge in epigastrium", "present": true, "significance": "Advanced cirrhosis with loss of hepatocyte mass. Caudate lobe hypertrophy (separate blood supply from portal vein spares it)"},
+        {"area": "Extremities", "finding": "Pedal edema", "detail": "Bilateral pitting pedal edema", "present": true, "significance": "Hypoalbuminemia + Na/water retention + raised portal pressure"}
+      ],
+
+      "examination_technique": {
+        "sequence": "General Inspection → Hands → Face → Abdomen: Inspection → Auscultation → Palpation → Percussion",
+        "steps": [
+          {
+            "phase": "General Inspection",
+            "actions": [
+              "From foot of bed: note cachexia, jaundice, abdominal distension.",
+              "Count spider nevi — >5 in SVC distribution = CLD. Check face, neck, chest, arms.",
+              "Look for gynecomastia, loss of body hair."
+            ],
+            "findings_in_this_case": ["Cachexia with temporal wasting", "Icterus visible", "Spider nevi >5", "Gynecomastia bilateral"]
+          },
+          {
+            "phase": "Hands",
+            "actions": [
+              "Check palmar erythema (thenar/hypothenar sparing center).",
+              "Dupuytren contracture — palpate palmar fascia for thickening/nodules.",
+              "Leuconychia, clubbing grade.",
+              "Asterixis: arms outstretched, wrists dorsiflexed, fingers spread, eyes closed, 30 seconds."
+            ],
+            "findings_in_this_case": ["Palmar erythema present", "Dupuytren contracture present", "Leuconychia", "Asterixis positive"]
+          },
+          {
+            "phase": "Abdominal Palpation",
+            "actions": [
+              "Liver: start from RIGHT ILIAC FOSSA, creep upward with inspiration. In cirrhosis, may not feel liver edge in RUQ (shrunken). Check epigastrium for caudate lobe hypertrophy. Percuss liver span (reduced in cirrhosis).",
+              "Spleen: start from RIGHT ILIAC FOSSA, diagonal toward left costal margin. If not felt, roll patient right. Feel for notch.",
+              "Ascites: shifting dullness — percuss from center to flank, mark dull point, roll patient, re-percuss after 30 seconds."
+            ],
+            "findings_in_this_case": ["Liver shrunken — not palpable in RUQ, small firm edge in epigastrium", "Spleen 4 cm below left costal margin", "Shifting dullness positive", "Caput medusae visible"]
+          }
+        ]
+      },
+
+      "findings_with_mechanisms": [
+        {
+          "finding": "Spider nevi (>5 in SVC distribution)",
+          "mechanism": "Liver cannot metabolize estrogen → hyperestrogenism → estrogen promotes arteriolar vasodilation and neovascularization. Central arteriole with radiating branches that blanch from center outward.",
+          "mechanism_chain": "[Hepatocellular failure] → [Reduced estrogen metabolism] → [Hyperestrogenism] → [Arteriolar vasodilation] → [Spider nevi]",
+          "caveat": ">5 in SVC distribution strongly suggests CLD. 1-2 can be normal. Also seen in pregnancy and OCP use. Differentiate from Campbell de Morgan spots (no radiating legs, no central blanching)."
+        },
+        {
+          "finding": "Asterixis (flapping tremor)",
+          "mechanism": "NOT a true tremor — it is negative myoclonus (intermittent loss of sustained posture). Ammonia, mercaptans, and GABA-like substances accumulate due to failed hepatic detoxification + portosystemic shunting → impair reticular activating system → intermittent loss of muscle tone.",
+          "mechanism_chain": "[Hepatocellular failure + Portosystemic shunting] → [Ammonia/neurotoxin accumulation] → [RAS impairment] → [Intermittent loss of posture] → [Asterixis]",
+          "caveat": "Not specific to liver disease — also seen in uremia, CO2 narcosis, severe cardiac failure, drug toxicity. Indicates encephalopathy Grade 2+."
+        },
+        {
+          "finding": "Ascites",
+          "mechanism": "Peripheral arterial vasodilation hypothesis: Portal HTN → splanchnic NO release → vasodilation → effective arterial underfilling → baroreceptors activate RAAS (aldosterone → Na retention), ADH (water retention), sympathetic system (renal vasoconstriction) → retained fluid leaks into peritoneum because of high portal capillary hydrostatic pressure + low oncotic pressure (hypoalbuminemia) + lymphatic overflow.",
+          "mechanism_chain": "[Portal HTN] → [Splanchnic vasodilation] → [Effective underfilling] → [RAAS/ADH activation] → [Na/water retention] → [High hydrostatic + low oncotic pressure] → [Ascites]",
+          "caveat": "SAAG ≥1.1 = portal HTN-related ascites (97% accuracy). SAAG <1.1 = non-portal HTN (TB peritonitis, carcinomatosis, nephrotic)."
+        },
+        {
+          "finding": "Caput medusae",
+          "mechanism": "Portal blood diverts through paraumbilical veins (in ligamentum teres) → reconnects to umbilical vein → drains into superficial epigastric veins → visible dilated veins radiating from umbilicus.",
+          "mechanism_chain": "[Portal HTN] → [Blood seeks low-resistance path] → [Paraumbilical vein → Umbilical vein recanalized] → [Superficial abdominal veins dilate] → [Caput medusae]",
+          "caveat": "Flow direction is AWAY from umbilicus (both up and down). In IVC obstruction, veins are on flanks with flow UPWARD only. Cruveilhier-Baumgarten murmur = continuous venous hum over epigastrium from high-flow recanalized vein."
+        },
+        {
+          "finding": "Fetor hepaticus",
+          "mechanism": "Dimethyl sulfide and mercaptans (from gut bacterial metabolism of methionine) normally cleared by liver. In CLD, portosystemic shunts bypass liver → these compounds enter systemic circulation → excreted via lungs → characteristic sweet musty breath.",
+          "mechanism_chain": "[Gut bacteria produce mercaptans] → [Portosystemic shunting bypasses liver] → [Mercaptans in systemic blood] → [Excreted via lungs] → [Fetor hepaticus]"
+        },
+        {
+          "finding": "Shrunken liver with caudate lobe hypertrophy",
+          "mechanism": "Progressive hepatocyte destruction → replacement by fibrosis → liver shrinks. Caudate lobe is relatively spared because it has independent drainage directly into IVC (not via hepatic veins) and separate portal blood supply, so it hypertrophies compensatorily.",
+          "mechanism_chain": "[Cirrhosis] → [Hepatocyte loss + Fibrosis] → [Liver shrinks]. [Caudate lobe has independent drainage] → [Relatively spared] → [Compensatory hypertrophy]"
+        },
+        {
+          "finding": "Hematemesis (variceal bleed)",
+          "mechanism": "Portal HTN (HVPG >12 mmHg) → portal blood shunts through left gastric vein → esophageal submucosal veins dilate (varices) → thin-walled, high-pressure varices rupture → massive upper GI hemorrhage.",
+          "mechanism_chain": "[Portal HTN >12 mmHg] → [Left gastric vein → Esophageal submucosal varices] → [Variceal rupture] → [Hematemesis]",
+          "caveat": "Variceal bleed carries 20-30% mortality per episode. Not all upper GI bleeds in cirrhotics are variceal — 30% are from portal hypertensive gastropathy or peptic ulcers."
+        }
+      ],
+
+      "diagnosis_and_differentials": {
+        "provisional": "Decompensated alcoholic cirrhosis (Child-Pugh C) with portal hypertension and hepatocellular failure, presenting with variceal upper GI bleeding",
+        "supporting_evidence": [
+          "80g alcohol/day for 20 years (exceeds hepatotoxic threshold)",
+          "Stigmata of CLD: spider nevi, palmar erythema, gynecomastia, testicular atrophy",
+          "Portal HTN signs: ascites, splenomegaly, caput medusae, variceal bleed",
+          "Hepatocellular failure: icterus, asterixis, hypoalbuminemia (leuconychia, edema), coagulopathy (bruises)",
+          "Shrunken liver (advanced cirrhosis)",
+          "Dupuytren contracture (alcohol-specific clue)",
+          "Decompensation features present: Ascites + Variceal bleed + Encephalopathy (asterixis) + Jaundice (all 4 of AVEJ)"
+        ],
+        "differentials": [
+          {
+            "condition": "Hepatitis B/C cirrhosis",
+            "points_for": "Same clinical presentation of decompensated cirrhosis",
+            "why_not": "20-year alcohol history with AST:ALT >2 and Dupuytren strongly favors alcohol. Must check HBsAg and Anti-HCV to exclude co-infection"
+          },
+          {
+            "condition": "NASH cirrhosis",
+            "points_for": "Can present identically with decompensated CLD",
+            "why_not": "Patient is cachectic (not obese), no metabolic syndrome features, significant alcohol history present"
+          },
+          {
+            "condition": "Cardiac cirrhosis (congestive hepatopathy)",
+            "points_for": "Can cause ascites, hepatomegaly, edema",
+            "why_not": "Cardiac cirrhosis has pulsatile tender hepatomegaly with elevated JVP. This patient has shrunken liver + CLD stigmata"
+          },
+          {
+            "condition": "Budd-Chiari syndrome",
+            "points_for": "Hepatomegaly + ascites + portal HTN",
+            "why_not": "Budd-Chiari presents acutely with painful tender hepatomegaly and rapid ascites. Associated with myeloproliferative disorders. This patient has chronic course with CLD stigmata"
+          }
+        ]
+      },
+
+      "investigations": [
+        {"test": "LFT", "expected": "Elevated bilirubin, low albumin, elevated INR/PT. AST:ALT >2:1 (alcoholic). Transaminases may be normal (burnt-out cirrhosis)", "why": "Confirms hepatocellular dysfunction, AST:ALT ratio helps identify alcohol as etiology", "priority": "immediate"},
+        {"test": "CBC", "expected": "Pancytopenia (hypersplenism), macrocytic anemia (alcohol + folate deficiency)", "why": "Assess severity of cytopenias and anemia from GI bleed", "priority": "immediate"},
+        {"test": "Renal function (Cr, BUN, electrolytes)", "expected": "May show hepatorenal syndrome (rising Cr without intrinsic renal disease). Hyponatremia common", "why": "Detect HRS, guide fluid management", "priority": "immediate"},
+        {"test": "Coagulation profile (PT/INR)", "expected": "Prolonged (reduced synthesis of clotting factors)", "why": "Assess bleeding risk, part of Child-Pugh and MELD scoring", "priority": "immediate"},
+        {"test": "USG Abdomen", "expected": "Coarse echotexture, irregular margins, shrunken liver or caudate lobe hypertrophy, splenomegaly, ascites, portal vein dilatation (>13mm), reversed portal flow", "why": "Non-invasive assessment of liver morphology and portal hemodynamics", "priority": "immediate"},
+        {"test": "Upper GI Endoscopy", "expected": "Esophageal varices (grading I-IV), portal hypertensive gastropathy", "why": "Identify source of GI bleed, grade varices, plan band ligation", "priority": "immediate"},
+        {"test": "Ascitic fluid analysis", "expected": "SAAG ≥1.1 (portal HTN). Cell count — neutrophils >250/mm³ = SBP. Protein, culture", "why": "Confirm portal HTN etiology of ascites, rule out SBP", "priority": "immediate"},
+        {"test": "Viral markers (HBsAg, Anti-HCV)", "expected": "Negative (if purely alcoholic)", "why": "Mandatory in ALL cirrhosis — must exclude co-infection", "priority": "routine"},
+        {"test": "AFP (alpha-fetoprotein)", "expected": "Screening for HCC. >200 ng/mL suspicious, >400 diagnostic", "why": "Surveillance for hepatocellular carcinoma in cirrhosis", "priority": "routine"},
+        {"test": "Fibroscan (Transient Elastography)", "expected": "Liver stiffness >12.5 kPa suggests cirrhosis (F4)", "why": "Non-invasive confirmation of cirrhosis if diagnosis uncertain", "priority": "if_indicated"}
+      ],
+
+      "management": {
+        "medical": [
+          {"intervention": "Alcohol abstinence", "rationale": "Single most important intervention — prevents further hepatocyte damage and allows some recovery", "specifics": "Counseling, motivational interviewing, consider disulfiram or acamprosate after acute phase. Require 6 months abstinence for transplant listing"},
+          {"intervention": "Ascites management", "rationale": "Salt restriction + diuretics to reduce fluid accumulation", "specifics": "Salt restriction <2g/day Na. Spironolactone 100mg/day (max 400mg) ± Furosemide 40mg/day (max 160mg), ratio 100:40. Target weight loss 0.5 kg/day (no edema) or 1 kg/day (with edema)"},
+          {"intervention": "Variceal bleed management", "rationale": "Acute hemorrhage control + secondary prophylaxis", "specifics": "Acute: IV octreotide + terlipressin, emergency endoscopy (band ligation), Sengstaken-Blakemore if massive. Secondary prophylaxis: NSBB (propranolol target HR 55-60) + EVL combined"},
+          {"intervention": "Hepatic encephalopathy treatment", "rationale": "Reduce ammonia production and absorption", "specifics": "Lactulose (target 2-3 soft stools/day) + Rifaximin 400mg TDS. Identify and treat precipitant (HEPATICS mnemonic)"},
+          {"intervention": "Nutrition", "rationale": "Counter malnutrition and catabolism", "specifics": "High-calorie (35 kcal/kg), high-protein (1.2-1.5 g/kg — NOT protein-restricted unless Grade 3-4 encephalopathy), late-evening snack"},
+          {"intervention": "SBP prophylaxis", "rationale": "Prevent spontaneous bacterial peritonitis", "specifics": "Norfloxacin 400mg/day if prior SBP or ascitic protein <1.5 with renal dysfunction. During GI bleed: ceftriaxone 1g/day x 7 days"}
+        ],
+        "interventional": "Large-volume paracentesis + albumin (8g per liter if >5L drained) for refractory ascites. TIPS if eligible (decompresses portal system)",
+        "surgical": "Liver transplantation — indications: MELD ≥15, Child-Pugh ≥7, refractory ascites, recurrent encephalopathy, recurrent variceal bleeding, HRS Type 1. Requires 6 months alcohol abstinence. LDLT more common in India",
+        "this_patient": "Immediate: secure airway (GI bleed + encephalopathy), IV fluids, cross-match blood, IV octreotide, emergency endoscopy for band ligation, IV cefotaxime (SBP prophylaxis during bleed). After stabilization: optimize diuretics, lactulose + rifaximin, nutrition, alcohol cessation counseling. Assess MELD for transplant listing",
+        "follow_up": "USG + AFP every 6 months (HCC screening). Endoscopy every 1-2 years (variceal surveillance). LFT, renal function, electrolytes regularly. Monitor for decompensation events"
+      },
+
+      "complications": [
+        {"complication": "Variceal bleeding", "mechanism": "Portal HTN >12 mmHg → esophageal variceal rupture", "presentation": "Hematemesis or melena, hemodynamic instability", "management": "IV octreotide + terlipressin, emergency band ligation, balloon tamponade if massive. Prophylaxis: NSBB + EVL"},
+        {"complication": "Spontaneous bacterial peritonitis", "mechanism": "Bacterial translocation from gut to ascitic fluid (impaired immune defense)", "presentation": "Fever, abdominal pain, worsening encephalopathy. May be asymptomatic in 30%", "management": "IV cefotaxime x 5 days + albumin (1.5g/kg day 1, 1g/kg day 3). Prophylaxis: norfloxacin"},
+        {"complication": "Hepatic encephalopathy", "mechanism": "Ammonia crosses BBB → astrocyte swelling → cerebral edema → altered neurotransmission", "presentation": "Grades 1-4: confusion, asterixis, somnolence, coma", "management": "Lactulose + rifaximin. Treat precipitant (HEPATICS)"},
+        {"complication": "Hepatorenal syndrome", "mechanism": "Splanchnic vasodilation → effective underfilling → renal vasoconstriction → GFR falls", "presentation": "Type 1: rapid Cr rise (median survival 2 weeks). Type 2: gradual, refractory ascites", "management": "Terlipressin + albumin. Definitive: liver transplant"},
+        {"complication": "Hepatocellular carcinoma", "mechanism": "Chronic inflammation + regeneration → dysplasia → malignancy", "presentation": "Worsening liver function, rising AFP, new mass on imaging", "management": "Screen USG + AFP every 6 months. Treatment depends on stage: resection, ablation, TACE, transplant"},
+        {"complication": "Hepatopulmonary syndrome", "mechanism": "Excess NO → intrapulmonary vascular dilatation → V/Q mismatch + shunting", "presentation": "Triad: liver disease + hypoxemia + IPVDs. Platypnea-orthodeoxia (unique)", "management": "Only liver transplantation. O2 as bridge"}
+      ],
+
+      "vivas": [
+        {
+          "question": "What is the SAAG and how does it help?",
+          "answer": "Serum-Ascites Albumin Gradient = serum albumin minus ascites albumin. SAAG ≥1.1 g/dL indicates portal HTN-related ascites (97% accuracy). SAAG <1.1 = non-portal HTN ascites (TB peritonitis, carcinomatosis, nephrotic). SAAG replaces the old transudate/exudate classification. A patient can have high-SAAG with high protein (cardiac ascites: SAAG ≥1.1 AND protein >2.5).",
+          "examiner": "internal"
+        },
+        {
+          "question": "How do you differentiate caput medusae from IVC obstruction?",
+          "answer": "Caput medusae (portal HTN): veins radiate FROM umbilicus, flow AWAY from umbilicus in all directions. IVC obstruction: dilated veins on flanks/lateral wall, flow UPWARD only (blood diverted to SVC). SVC obstruction: upper chest veins, flow DOWNWARD. Test with two-finger milking technique (Trendelenburg test for veins).",
+          "examiner": "internal"
+        },
+        {
+          "question": "What is hepatic encephalopathy and how do you grade it?",
+          "answer": "West Haven Criteria: Minimal — no clinical signs, only psychometric tests. Grade 1 — trivial lack of awareness, altered mood. Grade 2 — lethargy, disorientation, asterixis present. Grade 3 — somnolent but arousable, confused. Grade 4 — coma. Pathophysiology: ammonia crosses BBB, astrocytes convert it to glutamine (osmotically active) → astrocyte swelling → cerebral edema. Precipitants: HEPATICS — Hemorrhage, Electrolytes, Proteins, Alkalosis, Tranquilizers, Infection, Constipation, Shunt.",
+          "examiner": "medicine"
+        },
+        {
+          "question": "What is hepatorenal syndrome and how do you manage it?",
+          "answer": "Functional renal failure in advanced cirrhosis — kidneys are structurally normal. Pathophysiology: portal HTN → splanchnic vasodilation → effective underfilling → renal vasoconstriction → GFR falls. Type 1 (HRS-AKI): Cr doubles in <2 weeks, median survival 2 weeks. Type 2 (HRS-CKD): gradual, refractory ascites. Diagnosis: Cr >1.5 + no improvement after albumin challenge + no nephrotoxic drugs + normal renal USG. Treatment: terlipressin + IV albumin. Definitive: liver transplant.",
+          "examiner": "medicine"
+        },
+        {
+          "question": "What is Wilson disease and how does it cause cirrhosis?",
+          "answer": "Autosomal recessive, ATP7B gene (chromosome 13). Defective copper excretion into bile → copper accumulates in liver, brain, cornea. Clinical triad: liver disease + neuropsychiatric + KF rings. Diagnosis: low ceruloplasmin (<20), high 24hr urine copper (>100 mcg), KF ring on slit-lamp, hepatic copper >250 mcg/g on biopsy. Treatment: D-penicillamine (chelator), trientine, zinc (maintenance). Suspect in ANY unexplained liver disease <40 years.",
+          "examiner": "medicine"
+        },
+        {
+          "question": "Explain the pathogenesis of ascites in cirrhosis.",
+          "answer": "Peripheral arterial vasodilation hypothesis: Portal HTN → splanchnic NO release → vasodilation → effective arterial underfilling → RAAS activation (aldosterone → Na retention), ADH (water retention), sympathetic (renal vasoconstriction) → but retained fluid leaks into peritoneum due to high portal hydrostatic pressure + low oncotic pressure (hypoalbuminemia) + lymphatic overflow exceeding thoracic duct capacity. Vicious cycle: more ascites → more underfilling → more RAAS → more retention.",
+          "examiner": "internal"
+        },
+        {
+          "question": "What is SBP and how do you diagnose and treat it?",
+          "answer": "Spontaneous bacterial peritonitis — infection of ascitic fluid without surgical source. Occurs in 10-30% of hospitalized cirrhotics. Diagnosis: ascitic fluid neutrophils >250/mm3 (even if culture negative). Common organisms: E. coli, Klebsiella. Treatment: IV cefotaxime 2g Q8H x 5 days + albumin 1.5g/kg day 1 and 1g/kg day 3. Prophylaxis: norfloxacin 400mg/day. Rule: tap ascites in EVERY cirrhotic on new admission or any deterioration.",
+          "examiner": "internal"
+        },
+        {
+          "question": "What is TIPS and when is it indicated?",
+          "answer": "Transjugular intrahepatic portosystemic shunt — radiological shunt between hepatic and portal veins via liver parenchyma using stent. Indications: variceal bleeding refractory to endoscopic + medical therapy, refractory ascites, Budd-Chiari, hepatic hydrothorax. Contraindications: severe encephalopathy, Child-Pugh >13, right heart failure. Major complication: hepatic encephalopathy (30-50%) — because TIPS bypasses liver, more ammonia reaches systemic circulation.",
+          "examiner": "medicine"
+        },
+        {
+          "question": "What is hepatopulmonary syndrome?",
+          "answer": "Triad: liver disease + hypoxemia (PaO2 <80 or A-a gradient ≥15) + intrapulmonary vascular dilatation (IPVDs). Unique sign: platypnea-orthodeoxia — dyspnea and desaturation UPRIGHT, improves lying down (opposite of cardiac). IPVDs more prominent in gravity-dependent lung bases. Diagnosis: contrast echo — agitated saline microbubbles appear in LA after 3-6 cardiac cycles (delayed = intrapulmonary). Treatment: only liver transplantation.",
+          "examiner": "medicine"
+        }
+      ]
+    },
+
+    {
+      "id": "hsm_approach",
+      "name": "Hepatosplenomegaly — Systematic Approach",
+      "category": "reference",
+      "system": "abdomen",
+      "tags": ["short-case", "spot", "HSM", "hematology", "portal-hypertension", "reference"],
+
+      "presentation_script": {
+        "opening": "Sir, on abdominal examination of this patient, I have found hepatosplenomegaly. The liver is palpable [X] cm below the right costal margin with [describe surface, edge, consistency, tenderness]. The spleen is palpable [X] cm below the left costal margin with a palpable notch.",
+        "gpe_findings": "On general examination, I would specifically look for: pallor (anemia — hematological cause), icterus (hemolysis, CLD), lymphadenopathy (lymphoma, CLL), petechiae (thrombocytopenia from hypersplenism), CLD stigmata (spider nevi, palmar erythema — cirrhosis), and fever pattern.",
+        "system_findings": "The key is to characterize the HSM: Liver — size (cm below costal margin and span), surface (smooth vs nodular), consistency (soft/firm/hard), tenderness, pulsatility. Spleen — size (graded: just palpable / moderate / massive reaching umbilicus or beyond), notch palpable, moves with respiration, cannot get above it.",
+        "diagnosis_statement": "The approach depends on pattern recognition: HSM + CLD stigmata + ascites = cirrhosis with portal HTN. HSM + lymphadenopathy + B symptoms = lymphoma. HSM + massive spleen + high WBC = CML. HSM + pancytopenia + fever = kala-azar or myelofibrosis.",
+        "differentials": [
+          "Cirrhosis with portal hypertension (CLD stigmata, ascites, shrunken/firm liver)",
+          "CML (massive spleen, very high WBC, basophilia)",
+          "Myelofibrosis (tear-drop cells, dry tap, massive spleen)",
+          "Lymphoma (lymphadenopathy, B symptoms)",
+          "Kala-azar (endemic area, pancytopenia, fever)",
+          "Hemolytic anemia (jaundice, reticulocytosis, splenomegaly)"
+        ],
+        "tips": [
+          "Always describe liver and spleen findings SEPARATELY with all descriptors.",
+          "Massive splenomegaly (beyond umbilicus) has a short differential: CML, myelofibrosis, kala-azar, tropical splenomegaly, Gaucher, thalassemia major, hairy cell leukemia.",
+          "First investigation in any HSM: CBC + peripheral smear — it is the most informative single test."
+        ]
+      },
+
+      "case_scenario": {
+        "demographics": "Variable — HSM is a finding, not a diagnosis. Approach varies by age and context.",
+        "chief_complaint": "Variable. May present with abdominal mass, dragging sensation, early satiety, or be incidental finding.",
+        "hpi": "Document: when noticed, rate of growth, associated symptoms (fever pattern, weight loss, night sweats, bleeding, jaundice).",
+        "past_history": "Ask about: prior blood transfusions, viral hepatitis, alcohol use, travel to endemic areas (kala-azar, malaria), family history of hematological disorders."
+      },
+
+      "clinical_summary": [
+        {"area": "Approach", "finding": "HSM + CLD stigmata + ascites + shrunken liver", "detail": "Spider nevi, palmar erythema, ascites", "present": true, "significance": "Cirrhosis with portal hypertension"},
+        {"area": "Approach", "finding": "HSM + lymphadenopathy + B symptoms", "detail": "Fever, weight loss, night sweats, generalized lymphadenopathy", "present": true, "significance": "Lymphoma"},
+        {"area": "Approach", "finding": "HSM + jaundice + high reticulocytes", "detail": "Jaundice, dark urine, raised LDH, low haptoglobin", "present": true, "significance": "Hemolytic anemia"},
+        {"area": "Approach", "finding": "HSM + bone pain + young + storage features", "detail": "Bone pain, Erlenmeyer flask deformity", "present": true, "significance": "Gaucher disease"},
+        {"area": "Approach", "finding": "HSM + pancytopenia + monocytopenia", "detail": "Unique combination", "present": true, "significance": "Hairy cell leukemia"}
+      ],
+
+      "examination_technique": {
+        "sequence": "Liver palpation (from RIF upward) → Liver percussion (span) → Spleen palpation (from RIF diagonal) → Traube's space percussion → Characterize both organs",
+        "steps": [
+          {
+            "phase": "Liver Palpation",
+            "actions": [
+              "Start from RIGHT ILIAC FOSSA — massive liver can extend there.",
+              "Move upward with each inspiration. Feel liver edge descend during inspiration.",
+              "Describe: cm below costal margin, span (percussion), surface (smooth/nodular), edge (sharp/rounded), consistency (soft/firm/hard), tenderness, pulsatility."
+            ],
+            "findings_in_this_case": ["Varies by underlying cause"]
+          },
+          {
+            "phase": "Spleen Palpation",
+            "actions": [
+              "Start from RIGHT ILIAC FOSSA — massive spleen crosses midline.",
+              "Move diagonally toward left costal margin.",
+              "If not felt supine: roll patient to RIGHT side (45 degrees), left hand supporting ribs posteriorly, right hand palpating.",
+              "Confirm: splenic notch, cannot get above it, moves with respiration, dull to percussion, NOT ballotable."
+            ],
+            "findings_in_this_case": ["Varies by underlying cause"]
+          }
+        ]
+      },
+
+      "findings_with_mechanisms": [
+        {
+          "finding": "Splenomegaly in portal hypertension",
+          "mechanism": "Splenic vein drains into portal vein. Portal HTN → blood backs up → splenic venous congestion → spleen enlarges. Leads to hypersplenism: pancytopenia from sequestration and destruction of blood cells.",
+          "mechanism_chain": "[Portal HTN] → [Splenic venous congestion] → [Splenomegaly] → [Hypersplenism] → [Pancytopenia]"
+        },
+        {
+          "finding": "Massive splenomegaly in CML",
+          "mechanism": "Neoplastic granulocyte proliferation → extramedullary hematopoiesis in spleen → massive infiltration and expansion. BCR-ABL fusion gene drives uncontrolled myeloid proliferation.",
+          "mechanism_chain": "[BCR-ABL] → [Uncontrolled myeloid proliferation] → [Marrow overflow] → [Extramedullary hematopoiesis in spleen] → [Massive splenomegaly]"
+        }
+      ],
+
+      "diagnosis_and_differentials": {
+        "provisional": "Hepatosplenomegaly — requires etiological workup based on clinical pattern",
+        "supporting_evidence": [
+          "Palpable liver below right costal margin with defined characteristics",
+          "Palpable spleen below left costal margin with notch, moving with respiration"
+        ],
+        "differentials": [
+          {"condition": "Cirrhosis with portal HTN", "why_not": "Look for CLD stigmata, ascites, liver character (firm, shrunken or nodular)"},
+          {"condition": "CML", "why_not": "Check for massive spleen, very high WBC, basophilia on PBS"},
+          {"condition": "Myelofibrosis", "why_not": "Tear-drop cells on PBS, dry tap on marrow aspiration"},
+          {"condition": "Lymphoma", "why_not": "Look for lymphadenopathy, B symptoms"},
+          {"condition": "Kala-azar", "why_not": "Endemic area, fever, pancytopenia, rK39 test"},
+          {"condition": "Hemolytic anemia", "why_not": "Jaundice + reticulocytosis + raised LDH + low haptoglobin"}
+        ]
+      },
+
+      "investigations": [
+        {"test": "CBC + Peripheral blood smear", "expected": "Most informative first test. High WBC + basophilia = CML. Tear-drops + leukoerythroblastic = myelofibrosis. Pancytopenia = multiple causes. Atypical lymphocytes = lymphoma.", "why": "Directs entire diagnostic pathway", "priority": "immediate"},
+        {"test": "LFT", "expected": "Elevated transaminases/bilirubin (hepatic cause), low albumin (CLD)", "why": "Assess liver involvement", "priority": "immediate"},
+        {"test": "USG Abdomen", "expected": "Liver and spleen dimensions, echotexture, portal vein, ascites", "why": "Confirm and quantify organomegaly, assess portal hemodynamics", "priority": "immediate"},
+        {"test": "Reticulocyte count + LDH + haptoglobin", "expected": "High retics + high LDH + low haptoglobin = hemolysis", "why": "Screen for hemolytic cause", "priority": "routine"},
+        {"test": "Bone marrow aspiration/biopsy", "expected": "Diagnostic for hematological malignancies, myelofibrosis (dry tap + fibrosis on biopsy)", "why": "Definitive diagnosis for hematological causes", "priority": "if_indicated"}
+      ],
+
+      "management": {
+        "medical": [
+          {"intervention": "Treat underlying cause", "rationale": "HSM is a finding, not a diagnosis — management depends on etiology", "specifics": "CML: imatinib. Myelofibrosis: ruxolitinib. Kala-azar: liposomal amphotericin B. Cirrhosis: address liver disease. Hemolysis: treat cause + folic acid"}
+        ],
+        "this_patient": "Workup-dependent. Start with CBS + PBS to direct further investigations.",
+        "follow_up": "Serial spleen measurements, repeat CBS to monitor treatment response"
+      },
+
+      "vivas": [
+        {
+          "question": "How do you differentiate spleen from kidney on palpation?",
+          "answer": "Spleen: cannot get above it, has notch, moves with respiration, dull to percussion, NOT ballotable. Kidney: CAN get above it, bimanually ballotable, resonant (bowel overlies it), no notch. Spleen extends toward RIF; kidney toward midline.",
+          "examiner": "internal"
+        },
+        {
+          "question": "What is Traube's space and its significance?",
+          "answer": "Semilunar space bounded by: 6th rib (superior), left costal margin (inferior), left mid-axillary line (lateral). Normally resonant (stomach gas). Dull = splenomegaly, left pleural effusion, or full stomach. Percussion of Traube's space can detect splenomegaly even before the spleen is palpable (sensitivity ~60%).",
+          "examiner": "internal"
+        },
+        {
+          "question": "How do you start liver and spleen palpation and why?",
+          "answer": "Both from RIGHT ILIAC FOSSA. Liver: massive hepatomegaly can extend to RIF — starting distally ensures you don't miss a massively enlarged liver by starting too close. Spleen: massive spleen crosses midline to RIF. Move upward/diagonally toward respective costal margins with each respiration.",
+          "examiner": "internal"
+        },
+        {
+          "question": "What are the causes of massive splenomegaly?",
+          "answer": "Mnemonic: CML, Myelofibrosis, Malaria (chronic/tropical splenomegaly), Kala-azar, Gaucher disease, Thalassemia major, Hairy cell leukemia. Massive = below umbilicus or >8 cm below costal margin. In Indian context, most common massive spleen causes: CML and kala-azar.",
+          "examiner": "internal"
+        }
+      ]
+    },
+
+    {
+      "id": "dermatomyositis_long_case",
+      "name": "Dermatomyositis — Long Case",
+      "category": "case",
+      "system": "general",
+      "tags": ["long-case", "inflammatory-myopathy", "rheumatology", "proximal-weakness", "skin-rash", "malignancy-screening"],
+
+      "presentation_script": {
+        "opening": "Sir, I have examined this patient. This is a 23-year-old male, manual laborer, with no prior comorbidities, who presented with rashes over the dorsum of hands and feet for 2 months, progressive bilateral upper and lower limb weakness for 1 month, periorbital facial swelling for 2 weeks, and difficulty swallowing for 5 days.",
+        "gpe_findings": "On general examination, the patient is conscious and oriented with stable vitals. Higher functions and all cranial nerves are intact. Jaw jerk is absent. There is heliotrope rash (violaceous periorbital edema) and Gottron's papules over the dorsal MCP, PIP, and DIP joints of both hands.",
+        "system_findings": "On motor examination — Tone is normal in all four limbs. Power testing reveals a symmetric proximal weakness pattern: shoulder abduction and flexion 3/5 bilaterally, hip flexion 3/5, hip extension and abduction 4/5 bilaterally. Distal power is preserved at 5/5 throughout (elbow, wrist, hand, knee, ankle). Reflexes are preserved but slightly diminished. Sensory examination is completely normal. Plantar response is flexor bilaterally.",
+        "diagnosis_statement": "Dermatomyositis — based on the classic triad of characteristic skin rash (heliotrope + Gottron's papules) with symmetrical proximal weakness and oropharyngeal dysphagia, in a 23-year-old male with rapid progression over 2 months.",
+        "differentials": [
+          "Polymyositis (proximal symmetric weakness but NO rash — PM is DM without skin)",
+          "Inclusion body myositis (inflammatory myopathy but age >50, DISTAL weakness especially finger flexors, and asymmetric)",
+          "Myasthenia gravis (proximal weakness + dysphagia but no rash, has diurnal variation and ptosis, fatigable pattern)",
+          "Hypothyroid myopathy (proximal weakness but no rash, delayed relaxation of reflexes, thyroid signs)",
+          "SLE myopathy (rash but different pattern — SLE spares eyelids and knuckles, SLE myopathy is mild with normal CK)"
+        ],
+        "tips": [
+          "Key distinction: DM rash is ON eyelids (heliotrope) and ON knuckles (Gottron's). SLE rash SPARES eyelids and SPARES knuckles.",
+          "Document proximal weakness with specific functional milestones (what weight, what activity, what support needed).",
+          "Always mention distal power is PRESERVED — this rules out IBM.",
+          "Mention malignancy screening is mandatory — DM carries 6x cancer risk."
+        ]
+      },
+
+      "case_scenario": {
+        "demographics": "23-year-old male, manual laborer (construction worker), no comorbidities",
+        "chief_complaint": "Rashes over hands and feet (2 months), weakness and pain of bilateral UL and LL (1 month), periorbital facial swelling (2 weeks), difficulty swallowing (5 days)",
+        "hpi": "Index event 2 months ago: reddish itchy rash over dorsum of both hands, partially relieved by topical medicine, evolved to blackish discoloration, spread to feet. 1 month ago: bilateral shoulder and thigh pain and weakness — could not lift 5kg bag to shoulder level, difficulty climbing stairs (needed wall support), difficulty getting up from sitting on floor, later from western toilet, then from supine position. Progressive to inability to lift 1-liter bottle. Last 10 days: cannot roll over in bed. 2 weeks ago: periodical periorbital swelling with blackish discoloration. 5 days ago: oropharyngeal dysphagia.",
+        "past_history": "Back pain previously, X-ray LS spine at Manipal Hospital — advised physiotherapy. No diabetes, no similar episodes.",
+        "family_history": "Nothing significant.",
+        "social_history": "Manual laborer — functional descriptions documented (tractor loading, floor sitting for food, bathing activities)."
+      },
+
+      "clinical_summary": [
+        {"area": "Skin", "finding": "Heliotrope rash", "detail": "Violaceous periorbital edema with discoloration", "present": true, "significance": "Pathognomonic for DM — NOT seen in PM. Active disease marker when edematous"},
+        {"area": "Skin", "finding": "Gottron's papules", "detail": "Erythematous to violaceous papules over dorsal MCP, PIP, DIP joints", "present": true, "significance": "Pathognomonic for DM. Key distinction: ON knuckles (DM) vs SPARES knuckles (SLE)"},
+        {"area": "Motor", "finding": "Proximal UL weakness", "detail": "Shoulder abduction/flexion 3/5 bilaterally, distal 5/5", "present": true, "significance": "Symmetric proximal pattern = myopathic. Preserved distal = against IBM and neuropathy"},
+        {"area": "Motor", "finding": "Proximal LL weakness", "detail": "Hip flexion 3/5, hip extension/abduction 4/5, distal 5/5", "present": true, "significance": "Proximal > distal confirms myopathy pattern"},
+        {"area": "Motor", "finding": "Neck flexor weakness", "detail": "Difficulty lifting head from pillow", "present": true, "significance": "Often weak early in DM. If neck EXTENSORS weak — think IBM or MND"},
+        {"area": "Reflexes", "finding": "Preserved but slightly diminished", "detail": "Muscle weak but nerve intact", "present": true, "significance": "Normal or reduced reflexes in myopathy. Brisk = UMN (not myopathy). Absent = neuropathy overlap"},
+        {"area": "Sensory", "finding": "Completely normal", "detail": "All modalities intact", "present": true, "significance": "Pure motor involvement. If sensory loss present → neuropathy, not myopathy"},
+        {"area": "Swallowing", "finding": "Oropharyngeal dysphagia", "detail": "Difficulty initiating swallow, suggestive of pharyngeal weakness", "present": true, "significance": "Present in 30% of DM. Aspiration pneumonia is LEADING cause of mortality in acute DM"}
+      ],
+
+      "examination_technique": {
+        "sequence": "Skin examination (face + hands + trunk) → Motor (proximal then distal power, MRC grading) → Tone → Reflexes → Sensory → Swallowing → Respiratory → Malignancy screening",
+        "steps": [
+          {
+            "phase": "Skin Examination",
+            "actions": [
+              "Face: heliotrope rash (violaceous upper eyelids with/without edema).",
+              "Hands: Gottron's papules (dorsal MCP/PIP/DIP), nail fold capillary changes.",
+              "Elbows/Knees: Gottron's sign (erythema over extensor surfaces).",
+              "Trunk: V-sign (anterior chest), shawl sign (upper back), holster sign (lateral thigh).",
+              "Palms: mechanic's hands (fissured, cracked — antisynthetase syndrome).",
+              "Palpation: calcinosis (subcutaneous nodules)."
+            ],
+            "findings_in_this_case": ["Heliotrope rash present with edema", "Gottron's papules over dorsal hand joints", "Blackish discoloration evolving from redness"]
+          },
+          {
+            "phase": "Motor Power Assessment",
+            "actions": [
+              "Shoulder girdle: 'Raise arms above head' — deltoid, biceps, supraspinatus.",
+              "Hip girdle: 'Rise from chair without arms' (Gower's sign equivalent), hip flexors, quads, abductors.",
+              "Neck flexors: 'Lift head off pillow' — often weak early.",
+              "DISTAL (must document as preserved): grip, finger extension, foot dorsiflexion.",
+              "Grade using MRC scale: 0-5."
+            ],
+            "findings_in_this_case": ["Shoulder abduction/flexion 3/5 bilateral", "Hip flexion 3/5 bilateral", "Distal power 5/5 throughout (preserved)", "Symmetric proximal weakness pattern confirmed"]
+          },
+          {
+            "phase": "Swallowing + Respiratory + Malignancy",
+            "actions": [
+              "Swallowing: ask to swallow water — observe coughing/choking/nasal regurgitation. Palatal movement: 'say aah'.",
+              "Respiratory: auscultate lung bases for fine crackles (ILD in 20-30%). Count in single breath (normal >25).",
+              "Malignancy screening (6x cancer risk — MANDATORY): lymph nodes all stations, breast exam, abdomen for hepatosplenomegaly/masses."
+            ],
+            "findings_in_this_case": ["Oropharyngeal dysphagia present (5 days)", "Lung bases need assessment for ILD", "Malignancy screen needed — ovarian, lung, GI, breast, nasopharyngeal (Asian)"]
+          }
+        ]
+      },
+
+      "findings_with_mechanisms": [
+        {
+          "finding": "Heliotrope rash",
+          "mechanism": "Complement-mediated microangiopathy (C5b-9 membrane attack complex deposits in dermal capillaries) → perivascular inflammation → vasculitis of skin vessels in periorbital region → violaceous discoloration with edema.",
+          "mechanism_chain": "[Autoantibodies] → [Complement activation (C5b-9)] → [Dermal microangiopathy] → [Periorbital vasculitis] → [Heliotrope rash]",
+          "caveat": "Pathognomonic for DM. Not seen in PM. Edematous heliotrope = active disease. May precede muscle weakness."
+        },
+        {
+          "finding": "Gottron's papules",
+          "mechanism": "Same complement-mediated microangiopathy affecting dermal vessels over extensor surfaces of joints. Shear stress over knuckles may contribute to localization.",
+          "mechanism_chain": "[Complement-mediated microangiopathy] → [Dermal inflammation over extensor surfaces] → [Gottron's papules/sign]",
+          "caveat": "DM = ON knuckles. SLE = SPARES knuckles (SLE affects skin BETWEEN joints). This is THE key bedside distinction."
+        },
+        {
+          "finding": "Symmetric proximal weakness",
+          "mechanism": "In DM: perivascular CD4+ T cell and B cell infiltration → complement deposition on endomysial capillaries → capillary dropout → perifascicular ischemia → muscle fiber necrosis (especially at periphery of fascicles = perifascicular atrophy on biopsy). Different from PM which has CD8+ T cells directly invading muscle fibers.",
+          "mechanism_chain": "[Humorally-mediated (DM)] → [Complement on capillaries] → [Capillary dropout] → [Perifascicular ischemia] → [Proximal muscle weakness]",
+          "caveat": "Proximal > distal because proximal muscles have higher metabolic demand and are more susceptible to ischemic injury. Distal preservation rules out IBM."
+        },
+        {
+          "finding": "Oropharyngeal dysphagia",
+          "mechanism": "Involvement of pharyngeal and upper esophageal striated muscles (skeletal muscle like limb muscles). Same inflammatory process affects pharyngeal constrictors → impaired swallowing initiation.",
+          "mechanism_chain": "[Inflammatory myopathy] → [Pharyngeal striated muscle weakness] → [Impaired swallowing initiation] → [Oropharyngeal dysphagia]",
+          "caveat": "Aspiration pneumonia is LEADING cause of mortality in acute DM. Dysphagia = severe disease marker. Monitor closely."
+        }
+      ],
+
+      "diagnosis_and_differentials": {
+        "provisional": "Dermatomyositis — definite, based on Bohan & Peter criteria (characteristic skin rash + 3 of 4 muscle criteria expected)",
+        "supporting_evidence": [
+          "Pathognomonic skin: heliotrope rash + Gottron's papules",
+          "Symmetric proximal weakness (shoulders 3/5, hips 3-4/5)",
+          "Preserved distal power (5/5 throughout)",
+          "Normal sensory examination",
+          "Rapid progression (skin to bedbound in 2 months)",
+          "Oropharyngeal dysphagia (pharyngeal muscle involvement)"
+        ],
+        "differentials": [
+          {"condition": "Polymyositis", "points_for": "Proximal symmetric weakness, inflammatory myopathy", "why_not": "Has RASH (PM = no rash by definition). PM is a diagnosis of exclusion"},
+          {"condition": "Inclusion body myositis (IBM)", "points_for": "Inflammatory myopathy", "why_not": "Age 23 (IBM = age >50), proximal not distal weakness pattern, no finger flexor weakness, no bottle cap difficulty"},
+          {"condition": "Myasthenia gravis", "points_for": "Proximal weakness, dysphagia", "why_not": "No diurnal variation, no ptosis, no fatigability, has skin rash + myalgia, not fatigable pattern"},
+          {"condition": "Hypothyroid myopathy", "points_for": "Proximal weakness", "why_not": "No thyroid signs, no delayed relaxation of reflexes, has rash, acute onset"},
+          {"condition": "SLE", "points_for": "Young patient with rash", "why_not": "DM rash ON knuckles + ON eyelids. SLE SPARES both. SLE myopathy is mild with normal CK"}
+        ]
+      },
+
+      "investigations": [
+        {"test": "Serum CK (Creatine Kinase)", "expected": "Markedly elevated (10-50x normal). Most sensitive muscle enzyme", "why": "Confirms muscle damage, monitors disease activity and treatment response", "priority": "immediate"},
+        {"test": "Aldolase, LDH, AST, ALT", "expected": "All elevated (muscle-derived)", "why": "Supporting muscle enzymes. ALT/AST elevation in myositis is muscular, not hepatic", "priority": "immediate"},
+        {"test": "EMG (Electromyography)", "expected": "Myopathic pattern: short-duration, low-amplitude, polyphasic motor unit potentials + fibrillation potentials + positive sharp waves", "why": "Distinguishes myopathy from neuropathy. Part of Bohan-Peter criteria", "priority": "routine"},
+        {"test": "Muscle biopsy", "expected": "Perifascicular atrophy (PATHOGNOMONIC for DM). Perivascular inflammatory infiltrate. Complement deposition on capillaries", "why": "Gold standard. Perifascicular atrophy distinguishes DM from PM on histology", "priority": "routine"},
+        {"test": "Myositis-specific antibodies", "expected": "Anti-Mi-2 (classic DM, good prognosis), Anti-MDA5 (amyopathic DM + ILD), Anti-TIF1-gamma (cancer-associated DM), Anti-Jo-1 (antisynthetase syndrome with ILD)", "why": "Prognostic and phenotypic classification", "priority": "routine"},
+        {"test": "HRCT chest", "expected": "ILD assessment (present in 20-30%). NSIP pattern most common", "why": "ILD is major cause of morbidity and mortality", "priority": "routine"},
+        {"test": "Age-appropriate malignancy screening", "expected": "CT chest/abdomen/pelvis, tumor markers, age-specific screening", "why": "DM carries 6x cancer risk. Most common: ovarian, lung, GI, breast, nasopharyngeal (Asian)", "priority": "routine"}
+      ],
+
+      "management": {
+        "medical": [
+          {"intervention": "High-dose corticosteroids", "rationale": "First-line immunosuppression for inflammatory myopathy", "specifics": "Prednisolone 1 mg/kg/day (max 80mg) for 4-6 weeks, then slow taper over 9-12 months guided by CK and clinical response"},
+          {"intervention": "Steroid-sparing immunosuppressant", "rationale": "Most patients need additional agent to control disease and reduce steroid side effects", "specifics": "Methotrexate (first choice, 15-25mg/week) or Azathioprine (2-3 mg/kg/day). If ILD: Mycophenolate or Cyclophosphamide"},
+          {"intervention": "IVIG", "rationale": "For refractory disease or as steroid-sparing agent", "specifics": "2g/kg over 2-5 days monthly. Especially useful for skin disease and dysphagia"},
+          {"intervention": "Rituximab", "rationale": "For refractory cases", "specifics": "Anti-CD20 monoclonal antibody. Consider if failed conventional immunosuppression"},
+          {"intervention": "Dysphagia management", "rationale": "Aspiration pneumonia prevention", "specifics": "Speech therapy assessment, modified diet consistency, elevate head of bed. If severe: NG tube feeding. Monitor for aspiration"}
+        ],
+        "this_patient": "Start prednisolone 1mg/kg/day. Add methotrexate as steroid-sparing agent. Aggressive dysphagia management (aspiration precautions, speech therapy). Baseline HRCT for ILD. Complete malignancy screening. Monitor CK weekly initially, then monthly.",
+        "follow_up": "CK levels (monthly — guide taper), muscle strength assessment (quarterly), HRCT (if ILD present — 6 monthly), malignancy screening (annually for 5 years — risk remains elevated)"
+      },
+
+      "vivas": [
+        {
+          "question": "What are the Bohan and Peter criteria for DM diagnosis?",
+          "answer": "Definite DM = characteristic skin rash + 3 of 4 muscle criteria: (1) Symmetrical proximal weakness, (2) Elevated muscle enzymes (CK, aldolase, LDH, AST, ALT), (3) Myopathic EMG (short-duration, low-amplitude, polyphasic + fibrillations), (4) Muscle biopsy showing perifascicular atrophy (pathognomonic for DM). The skin rash alone defines DM over PM.",
+          "examiner": "medicine"
+        },
+        {
+          "question": "How do you distinguish DM rash from SLE rash?",
+          "answer": "DM: rash ON eyelids (heliotrope) and ON knuckles (Gottron's papules). SLE: rash SPARES eyelids and SPARES knuckles (malar butterfly rash spares nasolabial folds, skin involvement between joints not over them). This is the key bedside distinction.",
+          "examiner": "medicine"
+        },
+        {
+          "question": "Why is malignancy screening mandatory in DM?",
+          "answer": "DM carries approximately 6-fold increased cancer risk compared to general population. Cancer may precede, coincide with, or follow DM diagnosis. Most common associated cancers: ovarian (highest risk), lung, GI (colorectal, gastric, pancreatic), breast, nasopharyngeal (especially in Asian populations). Anti-TIF1-gamma antibody strongly associated with cancer-associated DM. Screen at diagnosis and annually for 5 years.",
+          "examiner": "medicine"
+        },
+        {
+          "question": "What is the difference between DM and PM on biopsy?",
+          "answer": "DM: perifascicular atrophy (pathognomonic) — muscle fiber necrosis at the periphery of fascicles, due to complement-mediated capillary dropout causing ischemia. Inflammatory infiltrate is perivascular (CD4+ T cells, B cells). PM: endomysial CD8+ T cell infiltrate that directly invades non-necrotic muscle fibers (MHC-I upregulation on muscle fibers). PM is now considered a diagnosis of exclusion.",
+          "examiner": "medicine"
+        }
+      ]
+    }
+  ]
+}

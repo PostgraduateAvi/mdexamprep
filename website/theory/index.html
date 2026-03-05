@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theory Study Tools &mdash; MD Exam Prep</title>
+  <meta name="description" content="198 flashcards across 11 body systems. Browse by system, filter by difficulty, or quiz yourself with shuffle mode.">
+  <link rel="stylesheet" href="../assets/css/core.css">
+  <link rel="stylesheet" href="theory.css">
+</head>
+<body>
+
+  <div id="site-nav"></div>
+
+  <section class="theory-hero container">
+    <h1>Theory Study Tools</h1>
+    <p>Flashcards organized by body system and difficulty. Browse to review or switch to quiz mode for active recall.</p>
+  </section>
+
+  <div class="container">
+    <div class="stats-row">
+      <div class="stat">
+        <span class="stat-value">198</span>
+        <span class="stat-label">Flashcards</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">11</span>
+        <span class="stat-label">Body systems</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">3</span>
+        <span class="stat-label">Difficulty levels</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container theory-controls">
+    <div class="mode-toggles">
+      <button class="mode-btn active" data-mode="browse">Browse</button>
+      <button class="mode-btn" data-mode="quiz">Quiz</button>
+    </div>
+    <div class="filter-bar">
+      <div class="filter-group" id="system-filters"></div>
+      <div class="filter-group" id="difficulty-filters"></div>
+    </div>
+    <div class="filter-status" id="filter-status">Showing 198 of 198</div>
+  </div>
+
+  <div class="container">
+    <div id="flashcard-deck"></div>
+  </div>
+
+  <div id="site-footer"></div>
+
+  <script src="../assets/js/template.js"></script>
+  <script src="theory.js"></script>
+</body>
+</html>

@@ -1,0 +1,1934 @@
+[
+  {
+    "id": "fc_0001",
+    "question": "Sacubitril / Valsartan combination ( ARNI )",
+    "answer": "Why: ACE inhibitors and ARBs have limitations in heart failure \u2192 What: Neprilysin inhibitor (sacubitril) combined with ARB (valsartan) \u2192 How: Neprilysin breaks down natriuretic peptides; blocking it increases ANP/BNP levels while ARB blocks RAAS because dual mechanism improves cardiac remodeling, therefore superior outcomes in heart failure with reduced ejection fraction",
+    "system": "CVS",
+    "topic": "ARNI (Sacubitril/Valsartan)",
+    "difficulty": "intermediate",
+    "source": "Flashcards_Merged_GDocs.md",
+    "also_from": [
+      "Flash cards continued.txt"
+    ]
+  },
+  {
+    "id": "fc_0002",
+    "question": "A 55-year-old male presents with 2 hours of crushing substernal chest pain radiating to his left arm. What are the key diagnostic criteria for an acute myocardial infarction (MI)?",
+    "answer": "The diagnosis of an acute MI is based on a combination of clinical presentation, electrocardiogram (ECG) changes, and cardiac biomarker elevation.\nClinical Presentation: Acute, persistent chest pain (angina), often with associated symptoms like dyspnea, diaphoresis, and nausea.\nECG Findings: The ECG dictates immediate strategy. STEMI presents with ST-segment elevation requiring immediate reperfusion. NSTEMI may show ST-depression or T-wave inversion.\nCardiac Biomarkers: A rise and/or fall in cardiac troponin levels above the 99th percentile is the cornerstone of diagnosis, confirming myocardial necrosis.\n Clinical Pearl: \"The detection of a rise and/or fall of cardiac troponin values is the cornerstone of diagnosing an acute myocardial infarction. The ECG dictates the immediate treatment strategy (reperfusion for STEMI).\"",
+    "system": "CVS",
+    "topic": "Acute Myocardial Infarction",
+    "difficulty": "advanced",
+    "source": "Full flashcards.txt"
+  },
+  {
+    "id": "fc_0004",
+    "question": "What is Levine's sign, and what condition does it suggest?",
+    "answer": "It is a clenched fist held against the sternum, suggestive of acute myocardial infarction or other acute cardiopulmonary disorders.",
+    "system": "CVS",
+    "topic": "Acute Myocardial Infarction",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0005",
+    "question": "Why is observing a rising and/or falling pattern of cardiac troponin essential for diagnosing an acute MI, especially when using high-sensitivity assays?",
+    "answer": "It helps discriminate acute myocardial injury from chronic troponin elevation due to underlying structural heart disease or renal disease.",
+    "system": "CVS",
+    "topic": "Acute Myocardial Infarction",
+    "difficulty": "intermediate",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0006",
+    "question": "A 68-year-old male with a history of hypertension presents with palpitations and is diagnosed with new-onset atrial fibrillation. What are the primary goals and components of his management?",
+    "answer": "The management of atrial fibrillation is multifaceted, focusing on controlling the ventricular rate, managing the heart rhythm, and preventing thromboembolic events.\nRate Control: This is the initial priority. The goal is typically a heart rate of <110 bpm at rest. Beta-blockers (e.g., metoprolol) or non-dihydropyridine calcium channel blockers (e.g., diltiazem) are first-line agents.\nRhythm Control: This strategy aims to restore and maintain normal sinus rhythm. It is considered in patients who remain symptomatic despite adequate rate control. Methods include electrical or pharmacological cardioversion.\nAnticoagulation: This is critical for stroke prevention. The CHA\u2082DS\u2082-VASc score is used to assess stroke risk and determine the need for oral anticoagulation, with DOACs (e.g., apixaban, rivaroxaban) being preferred over warfarin.\n Clinical Pearl: \"Stroke prevention with anticoagulation is paramount; the decision to anticoagulate is based on the CHA\u2082DS\u2082-VASc score, not on whether the atrial fibrillation is paroxysmal or persistent.\"",
+    "system": "CVS",
+    "topic": "Atrial Fibrillation",
+    "difficulty": "advanced",
+    "source": "Full flashcards.txt"
+  },
+  {
+    "id": "fc_0010",
+    "question": "A patient presents with severe, sudden-onset chest pain described as 'tearing' that radiates to the back between the shoulder blades. What is the most likely diagnosis?",
+    "answer": "Acute aortic dissection involving both the ascending and descending aorta.",
+    "system": "CVS",
+    "topic": "Chest Pain",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0011",
+    "question": "In a patient with chest discomfort, the presence of significant tachycardia and hypotension should prompt a rapid survey for which four most severe conditions?",
+    "answer": "Acute MI with cardiogenic shock, massive pulmonary embolism, pericarditis with tamponade, or tension pneumothorax.",
+    "system": "CVS",
+    "topic": "Chest Pain",
+    "difficulty": "intermediate",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0012",
+    "question": "List the five high-risk, life-threatening conditions of principal concern during the initial evaluation of acute nontraumatic chest discomfort.",
+    "answer": "Acute Coronary Syndrome (ACS), acute aortic syndrome, pulmonary embolism, tension pneumothorax, and pericarditis with tamponade.",
+    "system": "CVS",
+    "topic": "Chest Pain",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0013",
+    "question": "What are the three high-priority categories to consider in the initial diagnostic assessment of a patient with acute, nontraumatic chest discomfort?",
+    "answer": "1. Myocardial ischaemia; 2. Other cardiopulmonary causes (e.g., aortic emergencies, pulmonary conditions); 3. Non-cardiopulmonary causes.",
+    "system": "CVS",
+    "topic": "Chest Pain",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0014",
+    "question": "Which non-cardiac cause of chest pain can closely simulate angina and may be relieved by nitroglycerin?",
+    "answer": "Oesophageal spasm.",
+    "system": "CVS",
+    "topic": "Chest Pain",
+    "difficulty": "intermediate",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0020",
+    "question": "A 72-year-old female with a history of ischemic heart disease presents with progressive dyspnea on exertion and bilateral lower limb edema. What are the pillars of long-term management for chronic heart failure with reduced ejection fraction (HFrEF)?",
+    "answer": "The long-term management of HFrEF focuses on improving symptoms, reducing hospitalizations, and increasing survival through Guideline-Directed Medical Therapy (GDMT).\nFour Pillars of GDMT:\nACE Inhibitor/ARB/ARNI: Drugs like lisinopril, valsartan, or sacubitril/valsartan block the renin-angiotensin-aldosterone system.\nBeta-Blockers: Specific beta-blockers (e.g., carvedilol, metoprolol succinate) are proven to improve survival.\nMineralocorticoid Receptor Antagonists (MRAs): Spironolactone or eplerenone provide additional mortality benefits.\nSGLT2 Inhibitors: Drugs like dapagliflozin and empagliflozin have been shown to reduce cardiovascular death and hospitalizations, regardless of diabetic status.\nDiuretics: Loop diuretics (e.g., furosemide) are used as needed for symptom relief to manage fluid overload but do not provide a mortality benefit.\n Clinical Pearl: \"The four pillars of guideline-directed medical therapy (ARNI, Beta-Blocker, MRA, SGLT2i) should be initiated in all eligible patients with HFrEF to maximize survival benefits.\"",
+    "system": "CVS",
+    "topic": "Heart Failure",
+    "difficulty": "advanced",
+    "source": "Full flashcards.txt"
+  },
+  {
+    "id": "fc_0023",
+    "question": "Hypokalemia management principles",
+    "answer": "Why: K+ replacement needs careful monitoring \u2192 What: Oral preferred over IV, replace 10-20 mEq per day deficit, monitor cardiac rhythm \u2192 How: Each 1 mEq/L decrease represents ~300 mEq total body deficit, IV K+ can cause arrhythmias because rapid correction dangerous, therefore gradual replacement safer",
+    "system": "CVS",
+    "topic": "Hypokalemia",
+    "difficulty": "advanced",
+    "source": "Flashcards_Merged_GDocs.md"
+  },
+  {
+    "id": "fc_0024",
+    "question": "How does obesity affect multiple organ systems?",
+    "answer": "\u2022  Why: Obesity is a systemic disease that affects multiple organ systems, not just an issue of excess weight.]\n\u2022  What: It leads to cardiovascular, metabolic, respiratory, and musculoskeletal complications.]\n\u2022  How: Adipose tissue is metabolically active and produces inflammatory mediators. This excess adiposity causes a state of chronic systemic inflammation, which in turn leads to insulin resistance and contributes to the involvement of multiple organs.]\n\u2022  Clinical Pearl: \"Obesity is associated with increased cardiovascular morbidity and mortality\".",
+    "system": "CVS",
+    "topic": "Obesity",
+    "difficulty": "intermediate",
+    "source": "Full flashcards.txt"
+  },
+  {
+    "id": "fc_0027",
+    "question": "How do autonomic drugs affect the function of the SA node?",
+    "answer": "\u2022 \n\u2022 Why: Autonomic drugs are used to modify the function of the SA node31.\n\u2022 \n\u2022 What: Beta-blockers and calcium channel blockers decrease the heart rate, while atropine and epinephrine increase it32.\n\u2022 \n\u2022 How: Sympathetic stimulation activates Ca$^{2+}$ channels, which increases automaticity33. Parasympathetic stimulation opens K$^{+}$ channels, which decreases automaticity34. Because the autonomic balance controls the SA node, drugs that modulate these systems can alter the heart rate35.\n\u2022  Clinical Pearl: \"Beta-1 adrenergic stimulation results in activation of L-type Ca channels, Ca influx, and as a result, enhanced depolarization rates during phase 4\"36.",
+    "system": "CVS",
+    "topic": "SA Node Physiology",
+    "difficulty": "basic",
+    "source": "Full flashcards.txt"
+  },
+  {
+    "id": "fc_0028",
+    "question": "Pacemaker cell properties",
+    "answer": "Why: Understanding cellular basis helps predict drug actions \u2192 What: No stable resting potential, slower upstroke, Ca++-dependent action potential \u2192 How: Phase 4 diastolic depolarization reaches threshold automatically because lacks fast Na+ channels, therefore different from ventricular myocytes",
+    "system": "CVS",
+    "topic": "SA Node Physiology",
+    "difficulty": "intermediate",
+    "source": "MD_Exam_Flashcards.tsv",
+    "also_from": [
+      "Flashcards_Merged_GDocs.md"
+    ]
+  },
+  {
+    "id": "fc_0029",
+    "question": "SA node drug effects",
+    "answer": "Why: Autonomic drugs modify SA node function \u2192 What: Beta-blockers, Ca channel blockers decrease rate; atropine, epinephrine increase rate \u2192 How: Sympathetic stimulation activates Ca channels increasing automaticity, parasympathetic stimulation opens K channels decreasing automaticity because autonomic balance controls SA node, therefore drugs modulating these systems alter heart rate",
+    "system": "CVS",
+    "topic": "SA Node Physiology",
+    "difficulty": "basic",
+    "source": "MD_Exam_Flashcards.tsv",
+    "also_from": [
+      "Flashcards_Merged_GDocs.md",
+      "Flash cards continued.txt"
+    ]
+  },
+  {
+    "id": "fc_0030",
+    "question": "SA node ionic current types",
+    "answer": "Why: Different ionic currents create SA node action potential \u2192 What: If (funny), ICa-T, ICa-L (calcium), IK (potassium) currents \u2192 How: Depolarizing currents (If, ICa) overcome repolarizing currents (IK) during phase 4 because balance determines automaticity rate, therefore current interplay controls heart rate",
+    "system": "CVS",
+    "topic": "SA Node Physiology",
+    "difficulty": "basic",
+    "source": "Flashcards_Merged_GDocs.md",
+    "also_from": [
+      "Flash cards continued.txt"
+    ]
+  },
+  {
+    "id": "fc_0031",
+    "question": "What are the key ionic currents that create the SA node action potential?",
+    "answer": "\u2022 \n\u2022 Why: Different ionic currents work together to create the action potential in the SA node26.\n\u2022 \n\u2022 What: The primary currents are the funny current (If\n\u2022 \u200b), T-type and L-type calcium currents (ICa\u2212T\n\u2022 \u200b, ICa\u2212L\n\u2022 \u200b), and potassium currents (IK\n\u2022 \u200b)27.\n\u2022 \n\u2022 How: During phase 4, the depolarizing currents (If\n\u2022 \u200b, ICa\n\u2022 \u200b) overcome the repolarizing currents (IK\n\u2022 \u200b)28. The balance between these currents determines the rate of automaticity and therefore controls the heart rate29.\n\u2022  Clinical Pearl: \"Spontaneous phase 4 depolarization results from a combination of slow inward depolarizing sodium currents if, funny currents, along with T-type and L-type calcium channels\"30.",
+    "system": "CVS",
+    "topic": "SA Node Physiology",
+    "difficulty": "basic",
+    "source": "Full flashcards.txt",
+    "also_from": [
+      "MD_Exam_Flashcards.tsv",
+      "Flashcards_Merged_GDocs.md"
+    ]
+  },
+  {
+    "id": "fc_0032",
+    "question": "What are the key properties of pacemaker cells?",
+    "answer": "\u2022 \n\u2022 Why: Understanding the cellular basis of pacemaker cells helps predict the actions of various drugs37.\n\u2022 \n\u2022 What: They have no stable resting potential, a slower upstroke, and a Ca$^{2+}$-dependent action potential38.\n\u2022 \n\u2022 How: The phase 4 diastolic depolarization reaches its threshold automatically39. This is because these cells lack the fast Na$^{+}$ channels found in ventricular myocytes, making them fundamentally different40.\n\u2022  Clinical Pearl: A \"reliable, rhythmic impulse emanates from the SA node\"41.",
+    "system": "CVS",
+    "topic": "SA Node Physiology",
+    "difficulty": "basic",
+    "source": "Full flashcards.txt"
+  },
+  {
+    "id": "fc_0033",
+    "question": "What is the mechanism behind the SA node's automaticity?",
+    "answer": "\u2022 \n\u2022 Why: The heart requires an intrinsic pacemaker to function21.\n\u2022 \n\u2022 What: This is achieved through spontaneous phase 4 depolarization in the sinoatrial (SA) nodal cells22.\n\u2022 \n\u2022 How: The \"funny current\" (If\n\u2022 \u200b) and Ca$^{2+}$ channels drive a gradual depolarization to the threshold potential23. This occurs because the SA node lacks a stable resting potential, leading to automatic depolarization at a rate of 60-100 bpm24.\n\u2022  Clinical Pearl: \"SA nodal tissues exhibit automaticity, such that a reliable, rhythmic impulse emanates from the SA node\"25.",
+    "system": "CVS",
+    "topic": "SA Node Physiology",
+    "difficulty": "basic",
+    "source": "Full flashcards.txt",
+    "also_from": [
+      "MD_Exam_Flashcards.tsv",
+      "Flashcards_Merged_GDocs.md"
+    ]
+  },
+  {
+    "id": "fc_0034",
+    "question": "SGLT2 cardiovascular outcomes",
+    "answer": "Why: Proven cardiovascular benefits beyond glucose lowering \u2192 What: Reduced MACE, heart failure hospitalizations, cardiovascular death \u2192 How: EMPA-REG, CANVAS trials showed benefits through multiple mechanisms because reduces preload, afterload, improves metabolism, therefore recommended in diabetes with CVD",
+    "system": "CVS",
+    "topic": "SGLT2 Inhibitors",
+    "difficulty": "intermediate",
+    "source": "Flashcards_Merged_GDocs.md"
+  },
+  {
+    "id": "fc_0035",
+    "question": "What are the four high-risk features on history that suggest a serious cause of syncope?",
+    "answer": "New onset of chest discomfort, syncope during exertion or while supine, sudden onset of palpitations followed by syncope, or a history of severe structural heart disease.",
+    "system": "CVS",
+    "topic": "Syncope",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0037",
+    "question": "Bullous diseases of Skin",
+    "answer": "Why: Autoantibodies target skin adhesion proteins \u2192 What: Pemphigus, pemphigoid causing intraepidermal or subepidermal blisters \u2192 How: Antibodies against desmoglein or basement membrane proteins cause loss of cell adhesion because autoimmune attack disrupts skin integrity, therefore fluid-filled blisters",
+    "system": "Derm",
+    "topic": "Bullous Skin Diseases",
+    "difficulty": "intermediate",
+    "source": "Flashcards_Merged_GDocs.md",
+    "also_from": [
+      "Flash cards continued.txt"
+    ]
+  },
+  {
+    "id": "fc_0038",
+    "question": "What is the typical presentation of the rash in scarlet fever?",
+    "answer": "Diffuse erythema, a 'strawberry' tongue, and accentuated petechiae in body folds (Pastia\u2019s lines).",
+    "system": "Derm",
+    "topic": "Fever and Hyperthermia",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0039",
+    "question": "Differentiate between a macule and a papule in describing a skin rash.",
+    "answer": "A macule is a flat lesion defined by an area of changed colour, whereas a papule is a raised, solid lesion less than 5 mm in diameter.",
+    "system": "Derm",
+    "topic": "Skin Rash",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0041",
+    "question": "What is the pathophysiology of Diabetic Ketoacidosis (DKA)?",
+    "answer": "*  Why: DKA stems from an absolute or relative deficiency of insulin.\n*  What: It is characterized by the triad of hyperglycemia, ketosis, and metabolic acidosis.\n*  How: The absence of insulin results in unopposed glucagon activity. This imbalance promotes increased gluconeogenesis, glycogenolysis, and lipolysis, leading to the overproduction of ketone bodies. This occurs because insulin's normal function is to suppress these metabolic pathways.\n Clinical Pearl: \"DKA is characterized by hyperglycemia, ketosis, and metabolic acidosis\".",
+    "system": "Endocrine",
+    "topic": "Diabetic Ketoacidosis",
+    "difficulty": "basic",
+    "source": "Full flashcards.txt"
+  },
+  {
+    "id": "fc_0042",
+    "question": "Discuss: ADA guidelines 2023 for Diabetes Mellitus",
+    "answer": "ADA diagnostic criteria for diabetes: FPG \u2265126 mg/dL, 2h OGTT \u2265200 mg/dL, HbA1c \u22656.5%, or random glucose \u2265200 with symptoms (any one, confirmed on repeat). Prediabetes: FPG 100-125 (IFG), 2h OGTT 140-199 (IGT), HbA1c 5.7-6.4%. GDM screening (IADPSG one-step 75g OGTT at 24-28 weeks): FPG \u226592, 1h \u2265180, 2h \u2265153 \u2014 one abnormal value = diagnosis. GDM thresholds (92/180/153) asked 3\u00d7 in PI.\nClinical Pearl: GDM uses LOWER thresholds than DM because fetal risk begins at lower glucose levels. The one-step 75g OGTT replaced the two-step approach in many guidelines.",
+    "system": "Endocrine",
+    "topic": "Discuss: Ada Guidelines 2023 For",
+    "difficulty": "advanced",
+    "source": "Flash cards continued.txt [filled from HTML tools]"
+  },
+  {
+    "id": "fc_0043",
+    "question": "Discuss: Classification of diabetes; recent advances in management of diabetes mellitus",
+    "answer": "T2DM pathophysiology is driven by DeFronzo's Ominous Octet \u2014 8 mechanisms: (1) \u03b2-cell failure (\u2193insulin secretion), (2) \u03b1-cell dysfunction (\u2191glucagon), (3) \u2191hepatic glucose production, (4) \u2193muscle glucose uptake (GLUT4/insulin resistance), (5) \u2191lipolysis (adipocyte IR \u2192 lipotoxicity), (6) \u2193incretin effect (GLP-1/GIP impaired), (7) \u2191renal glucose reabsorption (SGLT2 upregulation), (8) neurotransmitter dysfunction (hypothalamic). Each mechanism maps to a drug class. Recent advances: SGLT2 inhibitors (empagliflozin, dapagliflozin) show CV and renal benefits independent of glucose lowering (EMPA-REG, DAPA-HF, DAPA-CKD). GLP-1 RAs (semaglutide) reduce CV events and promote weight loss.\nClinical Pearl: The ominous octet is a proper-noun gate \u2014 naming all 8 plus corresponding drug classes is a 3-mark table answer.",
+    "system": "Endocrine",
+    "topic": "Discuss: Classification Of Diabetes; Recent",
+    "difficulty": "intermediate",
+    "source": "Flash cards continued.txt [filled from HTML tools]"
+  },
+  {
+    "id": "fc_0044",
+    "question": "Discuss: Genetics inheritance of type 2 diabetes mellitus",
+    "answer": "T2DM has strong genetic component with polygenic inheritance. TCF7L2 (transcription factor 7-like 2) is the strongest and most replicated susceptibility gene \u2014 affects \u03b2-cell function and incretin signaling. Concordance in monozygotic twins: 70-90% for T2DM vs 30-50% for T1DM. Key distinction: T1DM = HLA-DR3/DR4 (autoimmune, chromosome 6p21), T2DM = TCF7L2 (chromosome 10q25). Other T2DM genes: PPARG, KCNJ11, ABCC8, IRS1. Genome-wide association studies have identified >400 loci, but each confers small individual risk. Environmental factors (obesity, sedentary lifestyle) interact with genetic susceptibility.\nClinical Pearl: TCF7L2 = T2DM. HLA-DR3/DR4 = T1DM. The examiner tests this distinction \u2014 don't swap them.",
+    "system": "Endocrine",
+    "topic": "Discuss: Genetics Inheritance Of Type",
+    "difficulty": "intermediate",
+    "source": "Flash cards continued.txt [filled from HTML tools]"
+  },
+  {
+    "id": "fc_0045",
+    "question": "Discuss: Molecular mechanisms of diabetes-related complications",
+    "answer": "Chronic hyperglycemia drives complications through 4 major pathways: (1) Polyol pathway \u2014 glucose \u2192 sorbitol (aldose reductase) \u2192 fructose; sorbitol accumulation causes osmotic damage in lens (cataracts), Schwann cells (neuropathy), pericytes (retinopathy). (2) AGE pathway \u2014 non-enzymatic glycation of proteins \u2192 advanced glycation end-products \u2192 bind RAGE receptors \u2192 inflammation, endothelial dysfunction, basement membrane thickening. (3) PKC pathway \u2014 hyperglycemia \u2192 \u2191DAG \u2192 activates protein kinase C \u2192 vascular permeability, angiogenesis, pro-inflammatory gene expression. (4) Hexosamine pathway \u2014 excess glucose shunted to hexosamine biosynthesis \u2192 O-GlcNAcylation of transcription factors \u2192 altered gene expression. Glucotoxicity: chronic hyperglycemia \u2192 oxidative stress \u2192 \u03b2-cell apoptosis. Lipotoxicity: \u2191FFA \u2192 ceramide \u2192 \u03b2-cell death. Both create a vicious cycle accelerating disease.\nClinical Pearl: All 4 pathways converge on oxidative stress as the unifying mechanism (Brownlee hypothesis). This is why HbA1c targets matter \u2014 reducing glucose exposure reduces all pathway activation.",
+    "system": "Endocrine",
+    "topic": "Discuss: Molecular Mechanisms Of Diabetes-Related",
+    "difficulty": "advanced",
+    "source": "Flash cards continued.txt [filled from HTML tools]"
+  },
+  {
+    "id": "fc_0046",
+    "question": "If first-stage diagnostic tests do not lead to a diagnosis in FUO, what imaging modality is recommended, especially if CRP or ESR is elevated?",
+    "answer": "18F-fluorodeoxyglucose (18F-FDG) positron emission tomography combined with computed tomography (PET/CT).",
+    "system": "Endocrine",
+    "topic": "Fever of Unknown Origin",
+    "difficulty": "intermediate",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0047",
+    "question": "Discuss: Discuss the Pathophysiology of Gestational diabetes, and various diagnostic criteria and complications.",
+    "answer": "GDM pathophysiology: Pregnancy is a diabetogenic state. Placental hormones (hPL, progesterone, cortisol, TNF-\u03b1) create progressive insulin resistance from mid-pregnancy. Normal response: \u03b2-cells compensate with 2-3\u00d7 insulin output. GDM occurs when \u03b2-cell compensation fails. Risk factors: obesity, family history T2DM, prior GDM, PCOS, South Asian ethnicity.\nDiagnostic criteria (IADPSG one-step 75g OGTT at 24-28 weeks): FPG \u226592, 1h \u2265180, 2h \u2265153 mg/dL \u2014 ONE abnormal value = diagnosis. These are LOWER than DM thresholds because fetal risk begins at lower glucose.\nComplications \u2014 Maternal: preeclampsia, cesarean delivery, future T2DM (50% risk within 10 years). Fetal: macrosomia (fetal hyperinsulinemia \u2192 excess growth), neonatal hypoglycemia, shoulder dystocia, RDS, neonatal jaundice, childhood obesity.\nClinical Pearl: GDM numbers 92/180/153 are proper-noun gates \u2014 asked 3\u00d7 in PI exams. Must memorize exactly.",
+    "system": "Endocrine",
+    "topic": "Gestational Diabetes",
+    "difficulty": "advanced",
+    "source": "Flash cards continued.txt [filled from HTML tools]"
+  },
+  {
+    "id": "fc_0048",
+    "question": "GDM diagnostic criteria complications",
+    "answer": "Why: GDM affects 16% of pregnancies worldwide \u2192 What: Associated with macrosomia, neonatal hypoglycemia, future diabetes risk \u2192 How: Children born to GDM mothers have increased metabolic syndrome risk because intrauterine hyperglycemia programs metabolism, therefore lifelong screening needed",
+    "system": "Endocrine",
+    "topic": "Gestational Diabetes",
+    "difficulty": "intermediate",
+    "source": "Flashcards_Merged_GDocs.md"
+  },
+  {
+    "id": "fc_0049",
+    "question": "GDM long-term implications",
+    "answer": "Why: GDM predicts future diabetes risk \u2192 What: 35-60% risk of developing DM in next 10-20 years \u2192 How: Women with GDM history require lifelong screening every 3 years because gestational insulin resistance often precedes type 2 DM, therefore early detection prevents complications",
+    "system": "Endocrine",
+    "topic": "Gestational Diabetes",
+    "difficulty": "intermediate",
+    "source": "Flashcards_Merged_GDocs.md"
+  },
+  {
+    "id": "fc_0050",
+    "question": "GDM pathophysiology mechanism",
+    "answer": "Why: Pregnancy creates unique metabolic challenges \u2192 What: Insulin resistance increases, glucose crosses placenta but insulin does not \u2192 How: Maternal hyperglycemia stimulates fetal insulin secretion causing macrosomia because glucose is teratogenic to developing fetus, therefore tight control essential",
+    "system": "Endocrine",
+    "topic": "Gestational Diabetes",
+    "difficulty": "intermediate",
+    "source": "Flashcards_Merged_GDocs.md"
+  },
+  {
+    "id": "fc_0051",
+    "question": "Gestational diabetes mellitus definition",
+    "answer": "Why: Glucose intolerance develops during pregnancy \u2192 What: Develops in second/third trimester, insulin resistance related to metabolic changes \u2192 How: Increased insulin demands lead to IGT or diabetes because pregnancy hormones cause insulin resistance, therefore screening needed at 24-28 weeks",
+    "system": "Endocrine",
+    "topic": "Gestational Diabetes",
+    "difficulty": "basic",
+    "source": "Flashcards_Merged_GDocs.md"
+  },
+  {
+    "id": "fc_0053",
+    "question": "Discuss: Newer insulins",
+    "answer": "Newer insulin analogs modify amino acid sequences to alter pharmacokinetics. Ultra-rapid acting: Faster aspart (Fiasp) \u2014 added niacinamide for faster absorption; Insulin lispro-aabc (Lyumjev) \u2014 added treprostinil for vasodilation at injection site. Both achieve earlier onset (2.5 min vs 5 min) and better postprandial control. Ultra-long acting: Insulin degludec \u2014 forms multi-hexamer depot, 42-hour duration, flat profile, lower nocturnal hypoglycemia (DEVOTE trial). Insulin icodec \u2014 once-weekly basal insulin (ONWARDS trials), same HbA1c reduction as daily degludec. Concentrated insulins: U-300 glargine (Toujeo) \u2014 slower release, extended duration, less hypoglycemia. U-200 degludec \u2014 smaller injection volume. Smart insulins (in development): glucose-responsive insulins that activate only during hyperglycemia.\nClinical Pearl: Degludec's advantage is its flat PK profile with lower nocturnal hypoglycemia risk. Icodec (weekly) improves adherence \u2014 major benefit for Indian patients with injection fatigue.",
+    "system": "Endocrine",
+    "topic": "Insulin Therapy",
+    "difficulty": "advanced",
+    "source": "Flash cards continued.txt [filled from HTML tools]"
+  },
+  {
+    "id": "fc_0054",
+    "question": "How should insulin be managed if TPN is suddenly interrupted?",
+    "answer": "\u2022  Why: Interrupting TPN removes the primary glucose source, but the effects of administered insulin may continue, risking hypoglycemia.]\n\u2022  What: Patients with Type 1 or pancreatogenic diabetes mellitus require a basal insulin dose of 0.1-0.2 units/kg/day.]\n\u2022  How: A long-acting insulin should be given to cover these basal requirements. This is crucial because insulin-deficient patients need a continuous supply of insulin to prevent ketoacidosis.]\n\u2022  Clinical Pearl: \"Patients with insulin deficiency should also receive long-acting insulin 0.1\u20130.2 units/kg per day to cover basal insulin requirements should the TPN be interrupted\".",
+    "system": "Endocrine",
+    "topic": "Insulin Therapy",
+    "difficulty": "intermediate",
+    "source": "Full flashcards.txt"
+  },
+  {
+    "id": "fc_0055",
+    "question": "Insulin delivery systems and technology",
+    "answer": "Why: Multiple daily injections are inconvenient \u2192 What: Continuous glucose monitoring (CGM), insulin pumps, closed-loop systems \u2192 How: Real-time glucose sensing with automated insulin delivery algorithms because technology integration allows precision dosing, therefore improved time-in-range and quality of life",
+    "system": "Endocrine",
+    "topic": "Insulin Therapy",
+    "difficulty": "intermediate",
+    "source": "Flashcards_Merged_GDocs.md",
+    "also_from": [
+      "Flash cards continued.txt"
+    ]
+  },
+  {
+    "id": "fc_0056",
+    "question": "Long-acting insulin analogs benefits",
+    "answer": "Why: NPH insulin causes nocturnal hypoglycemia and variable absorption \u2192 What: Glargine (24h), detemir (18-24h), degludec (>24h) \u2192 How: pH-dependent precipitation (glargine) or albumin binding (detemir) provides steady release because consistent absorption reduces glucose variability, therefore fewer hypoglycemic episodes",
+    "system": "Endocrine",
+    "topic": "Insulin Therapy",
+    "difficulty": "intermediate",
+    "source": "Flashcards_Merged_GDocs.md",
+    "also_from": [
+      "Flash cards continued.txt"
+    ]
+  },
+  {
+    "id": "fc_0057",
+    "question": "Newer insulin types and classification",
+    "answer": "Why: Traditional insulin has limitations in duration and onset \u2192 What: Rapid-acting analogs (lispro, aspart, glulisine), long-acting analogs (glargine, detemir, degludec), ultra-long acting \u2192 How: Modified amino acid sequences alter pharmacokinetics, providing better physiologic profiles because structure changes affect absorption and duration, therefore improved glycemic control",
+    "system": "Endocrine",
+    "topic": "Insulin Therapy",
+    "difficulty": "basic",
+    "source": "Flashcards_Merged_GDocs.md",
+    "also_from": [
+      "Flash cards continued.txt"
+    ]
+  },
+  {
+    "id": "fc_0058",
+    "question": "Rapid-acting insulin analogs advantages",
+    "answer": "Why: Regular insulin has slow onset and prolonged action \u2192 What: Lispro, aspart, glulisine with 15-minute onset, 2-4 hour duration \u2192 How: Amino acid modifications prevent hexamer formation, faster absorption from injection site because monomeric forms absorb rapidly, therefore better postprandial control",
+    "system": "Endocrine",
+    "topic": "Insulin Therapy",
+    "difficulty": "intermediate",
+    "source": "Flashcards_Merged_GDocs.md",
+    "also_from": [
+      "Flash cards continued.txt"
+    ]
+  },
+  {
+    "id": "fc_0059",
+    "question": "TPN insulin management protocol",
+    "answer": "Why: Need precise glucose control with high glucose loads \u2192 What: Use separate IV insulin infusion initially, then add proportion to TPN solution \u2192 How: After total insulin dose determined, proportion added directly to TPN because initial separate infusion allows rapid titration, therefore stepwise approach ensures safety",
+    "system": "Endocrine",
+    "topic": "Insulin Therapy",
+    "difficulty": "advanced",
+    "source": "Flashcards_Merged_GDocs.md"
+  },
+  {
+    "id": "fc_0060",
+    "question": "TPN interruption insulin management",
+    "answer": "Why: TPN interruption removes glucose source but insulin may continue \u2192 What: Type 1 DM and pancreatogenic DM patients need basal insulin 0.1-0.2 units/kg/day \u2192 How: Long-acting insulin covers basal requirements when TPN interrupted because insulin-deficient patients need continuous insulin, therefore prevents ketoacidosis",
+    "system": "Endocrine",
+    "topic": "Insulin Therapy",
+    "difficulty": "advanced",
+    "source": "Flashcards_Merged_GDocs.md"
+  },
+  {
+    "id": "fc_0061",
+    "question": "What is the standard protocol for managing insulin with TPN?",
+    "answer": "\u2022  Why: The high glucose load in TPN necessitates precise glucose control.]\n\u2022  What: The protocol begins with a separate IV insulin infusion, and later, a proportion of the insulin is added directly to the TPN solution.]\n\u2022  How: This stepwise approach ensures safety. The initial separate infusion allows for rapid titration and adjustment to determine the patient's total daily insulin dose. Once this is stable, a portion of that dose can be added to the TPN bag for maintenance.]\n\u2022  Clinical Pearl: \"After the total insulin dose has been determined, a proportion of this insulin may be added directly to the TPN solution\".",
+    "system": "Endocrine",
+    "topic": "Insulin Therapy",
+    "difficulty": "advanced",
+    "source": "Full flashcards.txt"
+  },
+  {
+    "id": "fc_0062",
+    "question": "Why does Total Parenteral Nutrition (TPN) increase insulin requirements?",
+    "answer": "\u2022  Why: TPN solutions contain high loads of glucose.]\n\u2022  What: This greatly increases a patient's insulin requirements, and can even cause hyperglycemia in non-diabetic individuals.]\n\u2022  How: An intravenous (IV) insulin infusion is the preferred initial method for management because the glucose is concentrated, requiring separate and carefully controlled insulin administration.]\n\u2022  Clinical Pearl: \"TPN or TEN greatly increases insulin requirements. In addition, individuals not previously known to have DM may become hyperglycemic during TPN or TEN\".",
+    "system": "Endocrine",
+    "topic": "Insulin Therapy",
+    "difficulty": "advanced",
+    "source": "Full flashcards.txt",
+    "also_from": [
+      "Flashcards_Merged_GDocs.md"
+    ]
+  },
+  {
+    "id": "fc_0064",
+    "question": "Metformin beneficial effects",
+    "answer": "Why: Benefits beyond glucose lowering \u2192 What: Weight neutral/loss, cardiovascular protection, low hypoglycemia risk \u2192 How: Improves insulin sensitivity without stimulating insulin secretion because mechanism preserves beta cell function, therefore preferred initial therapy",
+    "system": "Endocrine",
+    "topic": "Metformin",
+    "difficulty": "intermediate",
+    "source": "Flashcards_Merged_GDocs.md",
+    "also_from": [
+      "Flash cards continued.txt"
+    ]
+  },
+  {
+    "id": "fc_0065",
+    "question": "Metformin primary mechanism",
+    "answer": "Why: Most prescribed antidiabetic drug worldwide \u2192 What: Decreases hepatic glucose production, improves insulin sensitivity \u2192 How: Activates AMPK pathway, inhibits gluconeogenesis because reduces glucose output from liver, therefore effective first-line therapy",
+    "system": "Endocrine",
+    "topic": "Metformin",
+    "difficulty": "advanced",
+    "source": "Flashcards_Merged_GDocs.md"
+  },
+  {
+    "id": "fc_0066",
+    "question": "Anti-obesity drug mechanisms",
+    "answer": "Why: Pharmacotherapy needed for severe obesity \u2192 What: Appetite suppressants, lipase inhibitors, GLP-1 agonists \u2192 How: Reduce caloric intake or absorption, increase satiety because obesity involves dysregulated appetite/metabolism, therefore multiple therapeutic targets",
+    "system": "Endocrine",
+    "topic": "Obesity",
+    "difficulty": "intermediate",
+    "source": "Flashcards_Merged_GDocs.md"
+  },
+  {
+    "id": "fc_0067",
+    "question": "Bariatric surgery indications",
+    "answer": "Why: Most effective treatment for severe obesity \u2192 What: BMI \u226540 or BMI \u226535 with comorbidities \u2192 How: Restrictive and malabsorptive procedures reduce food intake and nutrient absorption because provides sustained weight loss, therefore reserved for severe cases",
+    "system": "Endocrine",
+    "topic": "Obesity",
+    "difficulty": "advanced",
+    "source": "Flashcards_Merged_GDocs.md"
+  },
+  {
+    "id": "fc_0069",
+    "question": "Obesity systemic effects",
+    "answer": "Why: Obesity affects multiple organ systems \u2192 What: Cardiovascular, metabolic, respiratory, musculoskeletal complications \u2192 How: Adipose tissue produces inflammatory mediators, insulin resistance develops because excess adiposity causes systemic inflammation, therefore multi-organ involvement",
+    "system": "Endocrine",
+    "topic": "Obesity",
+    "difficulty": "intermediate",
+    "source": "Flashcards_Merged_GDocs.md"
+  },
+  {
+    "id": "fc_0070",
+    "question": "What are the primary mechanisms of action for anti-obesity drugs?",
+    "answer": "\u2022  Why: Pharmacotherapy is a necessary tool for managing severe obesity when lifestyle changes are insufficient.]\n\u2022  What: The main classes of drugs include appetite suppressants, lipase inhibitors, and GLP-1 receptor agonists.]\n\u2022  How: These drugs target the dysregulated appetite and metabolism central to obesity. They work by either reducing caloric intake (appetite suppressants), decreasing the absorption of dietary fat (lipase inhibitors), or increasing feelings of satiety (GLP-1 agonists).]\n\u2022  Clinical Pearl: \"Anti-obesity medications work through different mechanisms to reduce body weight\".",
+    "system": "Endocrine",
+    "topic": "Obesity",
+    "difficulty": "basic",
+    "source": "Full flashcards.txt"
+  },
+  {
+    "id": "fc_0071",
+    "question": "When is bariatric surgery indicated for a patient with obesity?",
+    "answer": "\u2022  Why: Bariatric surgery is the most effective long-term treatment for severe obesity.]\n\u2022  What: It is indicated for patients with a Body Mass Index (BMI) of $ \\geq 40 \\text{ kg/m}^2 $, or a BMI of \u226535 kg/m2\n\u2022 with the presence of significant comorbidities (like type 2 diabetes, hypertension, etc.).]\n\u2022  How: The procedures are either restrictive (reducing stomach size) or malabsorptive (altering the digestive tract to reduce nutrient absorption), or a combination of both. Because it provides the most significant and sustained weight loss, it is reserved for the most severe cases.]\n\u2022  Clinical Pearl: \"Bariatric surgery is indicated for patients with BMI \u226540 kg/m2\n\u2022 or BMI \u226535 kg/m2\n\u2022 with significant comorbidities\".",
+    "system": "Endocrine",
+    "topic": "Obesity",
+    "difficulty": "advanced",
+    "source": "Full flashcards.txt"
+  },
+  {
+    "id": "fc_0072",
+    "question": "Discuss: Describe the role of SGLT2 Inhibitors in medicine; add a note on CVOT Trials",
+    "answer": "SGLT2 inhibitors (empagliflozin, dapagliflozin, canagliflozin) block SGLT2 in proximal tubule \u2192 glycosuria \u2192 HbA1c drops 0.5-0.8%. But glucose lowering is the least important effect. Mechanism cascade: (1) Na\u207a also stays in lumen \u2192 natriuresis \u2192 osmotic diuresis \u2192 \u2193BP, \u2193preload. (2) More Na\u207a reaches macula densa \u2192 tubuloglomerular feedback \u2192 afferent constriction \u2192 intraglomerular pressure drops \u2192 renoprotection. (3) URAT1 interaction disrupted \u2192 uric acid excretion increases. (4) Metabolic shift from glucose to fat oxidation \u2192 ketogenesis (basis for euglycemic DKA risk).\nCVOT Trials: EMPA-REG OUTCOME (2015): empagliflozin in T2DM + CVD \u2192 38% \u2193CV death. DAPA-HF (2019): dapagliflozin in HFrEF (even without DM) \u2192 26% \u2193CV death/HF hospitalization. DAPA-CKD (2020): dapagliflozin in CKD (even without DM) \u2192 39% \u2193renal composite. These trials transformed SGLT2i from 'diabetes drug' to 'cardiorenal drug.'\nTrap: Euglycemic DKA \u2014 ketoacidosis with NORMAL glucose. Suspect if metabolic acidosis + anion gap + normal glucose + on SGLT2i. Hold 3 days before surgery.\nClinical Pearl: SGLT2i is now a 4-pillar drug: DM + HF + CKD + gout. The nephron physiology (TGF mechanism) explains WHY it protects kidneys.",
+    "system": "Endocrine",
+    "topic": "SGLT2 Inhibitors",
+    "difficulty": "intermediate",
+    "source": "Flash cards continued.txt [filled from HTML tools]",
+    "also_from": [
+      "Flash cards continued.txt"
+    ]
+  },
+  {
+    "id": "fc_0073",
+    "question": "SGLT2 adverse effects",
+    "answer": "Why: Important risks to understand \u2192 What: UTI, DKA, amputation risk, genital infections, dehydration \u2192 How: Glucose in urine promotes bacterial growth, ketogenesis increases because glycosuria provides infection medium, therefore monitor for complications especially in high-risk patients",
+    "system": "Endocrine",
+    "topic": "SGLT2 Inhibitors",
+    "difficulty": "intermediate",
+    "source": "Flashcards_Merged_GDocs.md"
+  },
+  {
+    "id": "fc_0074",
+    "question": "SGLT2 inhibitor mechanism",
+    "answer": "Why: Novel diabetes drug class with multiple benefits \u2192 What: Block sodium-glucose cotransporter 2 in proximal tubule \u2192 How: Prevents glucose reabsorption causing glycosuria, insulin-independent mechanism because SGLT2 reabsorbs 90% filtered glucose, therefore lowers glucose without hypoglycemia",
+    "system": "Endocrine",
+    "topic": "SGLT2 Inhibitors",
+    "difficulty": "advanced",
+    "source": "Flashcards_Merged_GDocs.md",
+    "also_from": [
+      "Flash cards continued.txt"
+    ]
+  },
+  {
+    "id": "fc_0075",
+    "question": "SGLT2 inhibitors mechanisms and benefits",
+    "answer": "Why: Traditional diabetes drugs focus only on glucose control \u2192 What: Empagliflozin, dapagliflozin, canagliflozin inhibit sodium-glucose cotransporter-2 \u2192 How: Block glucose reabsorption in kidney causing glycosuria and osmotic diuresis because glucose wasting reduces HbA1c and weight, therefore cardiovascular and renal benefits beyond glucose control",
+    "system": "Endocrine",
+    "topic": "SGLT2 Inhibitors",
+    "difficulty": "intermediate",
+    "source": "Flashcards_Merged_GDocs.md",
+    "also_from": [
+      "Flash cards continued.txt"
+    ]
+  },
+  {
+    "id": "fc_0077",
+    "question": "How does hyperglycemia management differ between TPN and Total Enteral Nutrition (TEN)?",
+    "answer": "\u2022  Why: While enteral feeding can cause hyperglycemia, the glucose delivery is different and often less predictable than with TPN.]\n\u2022  What: High-protein enteral formulations may help limit hyperglycemia, but insulin is often still required.]\n\u2022  How: Short-acting insulins are used to cover feedings. This approach minimizes the risk of hypoglycemia if the enteral feeding is unexpectedly stopped or interrupted.]\n\u2022  Clinical Pearl: \"Short-acting insulins should be used to cover bolus or continuous enteral feeding to minimize the risk for hypoglycemia should the TEN be interrupted\".",
+    "system": "Endocrine",
+    "topic": "Total Parenteral Nutrition",
+    "difficulty": "advanced",
+    "source": "Full flashcards.txt",
+    "also_from": [
+      "Flashcards_Merged_GDocs.md"
+    ]
+  },
+  {
+    "id": "fc_0083",
+    "question": "A 45-year-old male with a history of alcohol abuse presents with severe epigastric pain radiating to the back, nausea, and elevated lipase. What are the cornerstones of managing acute pancreatitis?",
+    "answer": "The management of acute pancreatitis is primarily supportive and focuses on fluid resuscitation, pain control, and nutritional support.\nFluid Resuscitation: Aggressive intravenous hydration with crystalloids (e.g., Lactated Ringer's) is the most critical initial step to maintain pancreatic perfusion.\nPain Control: Severe abdominal pain is treated with opioids, often via a patient-controlled analgesia (PCA) pump.\nNutritional Support: Early enteral nutrition is preferred over parenteral nutrition to maintain gut integrity and reduce infections. Bowel rest is no longer recommended for mild cases.\nMonitoring: Patients are closely watched for complications like pancreatic necrosis, pseudocysts, and organ failure.\n Clinical Pearl: \"Aggressive early fluid resuscitation is the single most important intervention to reduce morbidity and mortality in patients with acute pancreat. Metabolic and Thermoregulation Flashcards\nOf course. Here are the additional flashcards you requested, following the same visually appealing format.",
+    "system": "GI",
+    "topic": "Acute Pancreatitis",
+    "difficulty": "advanced",
+    "source": "Full flashcards.txt"
+  },
+  {
+    "id": "fc_0087",
+    "question": "List the obligatory, simple, low-cost diagnostic tests that must be performed in all patients with FUO.",
+    "answer": "Complete blood count with differential, blood cultures, routine blood chemistries, urinalysis, chest x-ray, and abdominal ultrasound.",
+    "system": "GI",
+    "topic": "Fever of Unknown Origin",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0091",
+    "question": "What are the potential complications associated with bariatric surgery?",
+    "answer": "\u2022  Why: As a major surgical intervention, bariatric surgery carries significant risks.]\n\u2022  What: Potential complications include nutritional deficiencies (e.g., iron, B12, calcium), anastomotic leaks (leaks at surgical connection sites), and dumping syndrome (rapid gastric emptying causing nausea, cramping, and diarrhea).]\n\u2022  How: These complications arise from the malabsorption and altered anatomy created by the surgery. Because the normal digestive process is fundamentally disrupted, patients require lifelong monitoring and nutritional supplementation.]\n\u2022  Clinical Pearl: \"Bariatric surgery complications include nutritional deficiencies and surgical complications\".",
+    "system": "GI",
+    "topic": "Obesity",
+    "difficulty": "basic",
+    "source": "Full flashcards.txt",
+    "also_from": [
+      "Flashcards_Merged_GDocs.md"
+    ]
+  },
+  {
+    "id": "fc_0092",
+    "question": "Discuss: Angiotensin Receptor-Neprilysin Inhibitors",
+    "answer": "ARNi = Sacubitril/Valsartan (Entresto). Dual mechanism: Sacubitril inhibits neprilysin \u2192 ANP/BNP survive \u2192 enhanced natriuresis, vasodilation, anti-fibrosis (the Natriuretic Peptide System). Valsartan blocks AT1 receptor \u2192 \u2193RAAS (vasoconstriction, aldosterone, Na\u207a retention). You can't inhibit neprilysin alone because neprilysin also degrades Ang II \u2014 blocking it would paradoxically activate RAAS.\nTrial: PARADIGM-HF (2014) \u2014 sacubitril/valsartan vs enalapril in HFrEF (EF \u226440%), NYHA II-IV. 20% reduction in CV death + HF hospitalization. Stopped early for benefit.\n36-HOUR RULE: Must wait 36 hours after stopping ACEi before starting ARNi. ACEi increases bradykinin (blocks ACE degradation). Sacubitril ALSO increases bradykinin (blocks neprilysin degradation). Both together = massive bradykinin = angioedema. ARB \u2192 ARNi can switch directly.\nSide effects: hypotension (dual vasodilation), hyperK\u207a (\u2193aldosterone), angioedema (if washout not respected).\nClinical Pearl: The 36-hour ACEi washout rule is the exam's most tested ARNi fact. ARB with ARNi = fine (valsartan IS the ARB component).",
+    "system": "General",
+    "topic": "ARNI (Sacubitril/Valsartan)",
+    "difficulty": "intermediate",
+    "source": "Flash cards continued.txt [filled from HTML tools]"
+  },
+  {
+    "id": "fc_0098",
+    "question": "Discuss: Loop of Henle concentration mechanism",
+    "answer": "Loop of Henle creates the medullary concentration gradient via countercurrent multiplication. Descending limb: thin, water-permeable, solute-impermeable \u2192 water leaves (drawn by hypertonic interstitium) \u2192 filtrate concentrates. Ascending limb (thick): water-IMPERMEABLE. NKCC2 transporter pumps Na\u207a/K\u207a/2Cl\u207b out of lumen \u2192 interstitium becomes hypertonic. K\u207a recycling via ROMK creates lumen-positive voltage \u2192 drives paracellular Ca\u00b2\u207a/Mg\u00b2\u207a reabsorption. Fluid leaving ascending limb is dilute ('diluting segment'). The hypertonic medullary gradient (300\u21921200 mOsm) is what AVP later uses at the collecting duct to concentrate urine via AQP2 insertion.\nFurosemide blocks NKCC2: massive natriuresis (most potent diuretic), Ca\u00b2\u207a/Mg\u00b2\u207a wasted (no lumen-positive voltage), hypoK\u207a (more Na\u207a to CD \u2192 K\u207a exchanged), metabolic alkalosis.\nBartter syndrome = born without NKCC2 = chronic furosemide picture: hypoK\u207a + metabolic alkalosis + hypercalciuria + polyuria.\nClinical Pearl: Bartter = hypercalciURIA (like furosemide wastes Ca\u00b2\u207a) vs Gitelman = hypocalciURIA + hypoMg\u00b2\u207a (like thiazide saves Ca\u00b2\u207a). If they give hypoMg\u00b2\u207a \u2192 Gitelman.",
+    "system": "General",
+    "topic": "Discuss: Loop Of Henle Concentration",
+    "difficulty": "intermediate",
+    "source": "Flash cards continued.txt [filled from HTML tools]",
+    "also_from": [
+      "Flash cards continued.txt"
+    ]
+  },
+  {
+    "id": "fc_0101",
+    "question": "Elevated core body temperature classification",
+    "answer": "Why: Different mechanisms cause temperature elevation \u2192 What: Two main categories: fever (hyperpyrexia) and hyperthermia \u2192 How: Fever involves intact thermoregulation with raised set point, hyperthermia involves overwhelmed thermoregulation because mechanisms determine treatment, therefore distinguish pyrogenic vs non-pyrogenic",
+    "system": "General",
+    "topic": "Fever and Hyperthermia",
+    "difficulty": "basic",
+    "source": "Flashcards_Merged_GDocs.md"
+  },
+  {
+    "id": "fc_0102",
+    "question": "How can you clinically differentiate between fever and hyperthermia?",
+    "answer": "\u2022  Why: The treatment approaches for fever and hyperthermia are completely different, making accurate differentiation critical.]\n\u2022  What: Fever is characterized by a gradual onset, sweating (as the body tries to cool down once the set point is reset lower), and a response to antipyretics. Hyperthermia has a rapid onset, hot and dry skin (as thermoregulation has failed), and no response to antipyretics.]\n\u2022  How: The clinical pattern guides management. A fever prompts a workup for an underlying infection, while hyperthermia is a medical emergency requiring immediate physical cooling.]\n\u2022  Clinical Pearl: \"COX-2 is the major isoenzyme involved - selective COX-2 inhibitors are equally efficacious antipyretics\".",
+    "system": "General",
+    "topic": "Fever and Hyperthermia",
+    "difficulty": "advanced",
+    "source": "Full flashcards.txt"
+  },
+  {
+    "id": "fc_0103",
+    "question": "How do pyrogens cause a fever?",
+    "answer": "\u2022  Why: Pyrogens effectively \"reset\" the body's internal thermostat to a higher temperature.]\n\u2022  What: In a fever, the thermoregulatory system is working correctly but is defending an elevated set point. Fevers are responsive to antipyretics.]\n\u2022  How: Pyrogens (fever-inducing substances) trigger the synthesis of prostaglandin E2\n\u2022 \u200b (PGE2\n\u2022 \u200b) in the hypothalamus. This PGE2\n\u2022 \u200b elevation resets the thermostat, causing the body to generate and conserve heat until it reaches the new, higher set point. This is why aspirin and NSAIDs, which block prostaglandin synthesis, are effective.]\n\u2022  Clinical Pearl: \"Pyrogens trigger synthesis of PGE2\n\u2022 \u200b in the hypothalamus, which resets the thermostat to cause fever\".",
+    "system": "General",
+    "topic": "Fever and Hyperthermia",
+    "difficulty": "intermediate",
+    "source": "Full flashcards.txt"
+  },
+  {
+    "id": "fc_0104",
+    "question": "Hyperpyrexia fever mechanism",
+    "answer": "Why: Pyrogens reset thermostat \u2192 What: Intact thermoregulatory system with elevated set point, responsive to antipyretics \u2192 How: Pyrogens trigger PGE2 synthesis in hypothalamus, resets thermostat because thermoregulation intact but set higher, therefore aspirin/NSAIDs effective",
+    "system": "General",
+    "topic": "Fever and Hyperthermia",
+    "difficulty": "intermediate",
+    "source": "Flashcards_Merged_GDocs.md"
+  },
+  {
+    "id": "fc_0105",
+    "question": "In a patient with a low-grade fever or suspected occult disease, what are the two most valuable laboratory markers of inflammatory processes?",
+    "answer": "C-reactive protein (CRP) level and the erythrocyte sedimentation rate (ESR).",
+    "system": "General",
+    "topic": "Fever and Hyperthermia",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0106",
+    "question": "In a patient with an acute fever, a 1\u00b0C increase in body temperature above 37\u00b0C results in a _____ increase in oxygen consumption.",
+    "answer": "A 1\u00b0C increase above 37\u00b0C raises basal metabolic rate by approximately 13%. This is clinically relevant in fever management \u2014 persistent fever increases caloric demands, accelerates dehydration, and can worsen cardiac workload in compromised patients.",
+    "system": "General",
+    "topic": "Fever and Hyperthermia",
+    "difficulty": "intermediate",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0107",
+    "question": "What are the main classifications for an elevated core body temperature?",
+    "answer": "\u2022  Why: Different mechanisms can cause body temperature to rise, and these require different treatments.]\n\u2022  What: The two primary categories are fever (also known as hyperpyrexia) and hyperthermia.]\n\u2022  How: The distinction is critical: fever involves an intact thermoregulatory system where the hypothalamic set point is raised. Hyperthermia occurs when the body's normal thermoregulation is overwhelmed.]\n\u2022  Clinical Pearl: \"PGE2\n\u2022 \u200b may mediate pyrogen induced fever and malaise. Aspirin and other inhibitors of PG synthesis are antipyretic\".",
+    "system": "General",
+    "topic": "Fever and Hyperthermia",
+    "difficulty": "basic",
+    "source": "Full flashcards.txt"
+  },
+  {
+    "id": "fc_0108",
+    "question": "What substance has its levels elevated in hypothalamic tissue during fever, acting as the final step in raising the thermoregulatory set point?",
+    "answer": "Prostaglandin E2 (PGE2).",
+    "system": "General",
+    "topic": "Fever and Hyperthermia",
+    "difficulty": "intermediate",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0113",
+    "question": "Monoclonal antibodies therapeutic revolution",
+    "answer": "Why: Traditional drugs have limited specificity \u2192 What: Rituximab (anti-CD20), adalimumab (anti-TNF), bevacizumab (anti-VEGF) \u2192 How: Engineered antibodies bind specific targets with high affinity and selectivity because precise molecular targeting minimizes off-target effects, therefore effective in cancer, autoimmune diseases, and inflammatory conditions",
+    "system": "General",
+    "topic": "Monoclonal Antibodies",
+    "difficulty": "advanced",
+    "source": "Flashcards_Merged_GDocs.md",
+    "also_from": [
+      "Flash cards continued.txt"
+    ]
+  },
+  {
+    "id": "fc_0114",
+    "question": "What is the clinical triad of a pseudobulbar palsy, resulting from bilateral corticobulbar lesions?",
+    "answer": "Dysarthria, dysphagia, dysphonia, and emotional lability, accompanying bilateral facial weakness and a brisk jaw jerk.",
+    "system": "General",
+    "topic": "Motor Weakness",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0115",
+    "question": "What is the term for weakness so severe that a muscle cannot be contracted at all?",
+    "answer": "Paralysis or plegia.",
+    "system": "General",
+    "topic": "Motor Weakness",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0117",
+    "question": "Pharmacogenomics definition and scope",
+    "answer": "Why: Genetic variations cause 4-6 fold differences in drug response \u2192 What: Study of genetic basis for drug response variability, personalized medicine \u2192 How: Gene polymorphisms affect drug transporters, metabolizing enzymes, receptors because genetic composition controls all drug response determinants, therefore genotype-based therapy emerging",
+    "system": "General",
+    "topic": "Pharmacogenomics",
+    "difficulty": "advanced",
+    "source": "MD_Exam_Flashcards.tsv",
+    "also_from": [
+      "Flashcards_Merged_GDocs.md"
+    ]
+  },
+  {
+    "id": "fc_0118",
+    "question": "What is pharmacogenomics and what is its scope?",
+    "answer": "\u2022  Why: Genetic variations can cause 4-6 fold differences in individual drug responses.\n\u2022  What: Pharmacogenomics is the study of the genetic basis for variability in drug response, which is the foundation of personalized medicine.\n\u2022  How: Gene polymorphisms can affect drug transporters, metabolizing enzymes, and receptors. Genotype-based therapy is emerging because genetic composition controls all determinants of drug response.\n\u2022  Clinical Pearl: \"The dose of a drug to produce the same effect may vary by 4\u20136 fold among different individuals\".\n\ud83e\uddec",
+    "system": "General",
+    "topic": "Pharmacogenomics",
+    "difficulty": "advanced",
+    "source": "Full flashcards.txt"
+  },
+  {
+    "id": "fc_0119",
+    "question": "What is the clinical significance of CYP2D6 polymorphism?",
+    "answer": "\u2022  Why: CYP2D6 is a major drug-metabolizing enzyme that shows significant genetic variation.\n\u2022  What: Individuals can be classified as poor metabolizers (7-10% of people) or extensive metabolizers, leading to different drug responses.\n\u2022  How: Patients who are CYP2D6 deficient are more likely to experience drug toxicity. Additionally, codeine will fail to produce an analgesic effect in these patients because CYP2D6 is required to convert codeine into its active form, morphine.\n\u2022  Clinical Pearl: \"CYP2D6 abnormality causes poor metoprolol-debrisoquin metabolizer status\".\n\ud83e\uddec",
+    "system": "General",
+    "topic": "Pharmacogenomics",
+    "difficulty": "basic",
+    "source": "Full flashcards.txt",
+    "also_from": [
+      "MD_Exam_Flashcards.tsv",
+      "Flashcards_Merged_GDocs.md"
+    ]
+  },
+  {
+    "id": "fc_0124",
+    "question": "Define orthostatic hypotension.",
+    "answer": "A sustained reduction in systolic blood pressure of at least 20 mmHg or diastolic blood pressure of 10 mmHg within 3 minutes of standing.",
+    "system": "General",
+    "topic": "Syncope",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0125",
+    "question": "Discuss: Thiamine deficiency",
+    "answer": "Thiamine (B1) active form: Thiamine pyrophosphate (TPP). Three enzyme roles: (1) Pyruvate dehydrogenase (pyruvate \u2192 acetyl-CoA, links glycolysis to TCA \u2014 deficiency \u2192 lactic acidosis), (2) \u03b1-ketoglutarate dehydrogenase (TCA cycle), (3) Transketolase (pentose phosphate pathway \u2014 erythrocyte transketolase activity = functional assay for B1 status).\nDeficiency syndromes: Wet beriberi (high-output cardiac failure, edema \u2014 responds to IV thiamine). Dry beriberi (symmetric sensorimotor peripheral neuropathy). Wernicke encephalopathy (triad: confusion + ophthalmoplegia + ataxia \u2014 acute, reversible). Korsakoff syndrome (irreversible anterograde amnesia + confabulation). Almost always in alcoholism (poor intake + impaired absorption + increased demand).\nTreatment: IV thiamine 500 mg TDS \u00d7 3 days \u2192 oral.\nCRITICAL RULE: ALWAYS give IV thiamine BEFORE glucose in suspected Wernicke's. Glucose without thiamine precipitates acute Wernicke's by consuming remaining B1 in glycolysis.\nClinical Pearl: 'Banana bag before dextrose' \u2014 the highest-yield B1 exam point. Also watch for refeeding syndrome in malnourished TB/HIV patients.",
+    "system": "General",
+    "topic": "Thiamine Deficiency",
+    "difficulty": "intermediate",
+    "source": "Flash cards continued.txt [filled from HTML tools]"
+  },
+  {
+    "id": "fc_0129",
+    "question": "How is anemia classified based on red blood cell indices?",
+    "answer": "*  Why: Classifying anemia by its mechanism helps narrow the differential diagnosis.\n*  What: Anemia is classified based on the Mean Corpuscular Volume (MCV) into microcytic (low MCV), normocytic (normal MCV), and macrocytic (high MCV) anemia.\n*  How: This classification reflects the underlying pathophysiology. Microcytic anemia (e.g., iron deficiency, thalassemia) is due to defective heme or globin synthesis. Macrocytic anemia (e.g., B12/folate deficiency) results from impaired DNA synthesis. Normocytic anemia has various causes, including acute blood loss and chronic disease.\n Clinical Pearl: \"The MCV is the most useful red cell index for the initial classification of anemia\".",
+    "system": "Heme",
+    "topic": "Anemia Classified Based On Red",
+    "difficulty": "basic",
+    "source": "Full flashcards.txt"
+  },
+  {
+    "id": "fc_0133",
+    "question": "Discuss: Describe the human Folic acid Metabolism. Discuss Preconceptual folate supplementation and neural tube defects.",
+    "answer": "Folate (B9) active form: Tetrahydrofolate (THF) \u2014 one-carbon carrier for DNA synthesis (thymidylate synthase: dUMP \u2192 dTMP). Dietary folate (polyglutamate) \u2192 intestinal conjugase removes glutamate residues \u2192 monoglutamate absorbed in jejunum \u2192 converted to 5-MTHF in enterocyte \u2192 enters portal circulation.\nKey reaction: 5-MTHF + homocysteine \u2192 [B12 as cofactor, methionine synthase] \u2192 THF + methionine. The methyl folate trap: in B12 deficiency, 5-MTHF cannot convert back to THF \u2192 functional folate deficiency \u2192 megaloblastic anemia even with normal folate levels. This is why B12 must be excluded before folate treatment \u2014 folate corrects anemia but MASKS ongoing neurological damage.\nFolate vs B12: Both cause megaloblastic anemia and \u2191homocysteine. Only B12 causes \u2191MMA and neurological disease (SACD).\nNTD prevention: 400 \u03bcg/day for all women of childbearing age. 5 mg/day if previous NTD pregnancy. Start 3 months before conception. Prevents spina bifida and anencephaly.\nClinical Pearl: The methyl folate trap is the single most important concept in B-vitamin biochemistry \u2014 it explains why B12 deficiency mimics folate deficiency hematologically but adds neurological damage.",
+    "system": "Heme",
+    "topic": "Folic Acid Metabolism",
+    "difficulty": "intermediate",
+    "source": "Flash cards continued.txt [filled from HTML tools]"
+  },
+  {
+    "id": "fc_0134",
+    "question": "Discuss: Describe gene therapy for disorders of hemoglobin including sickle anemia and thalassemia",
+    "answer": "Gene therapy for hemoglobinopathies has achieved breakthrough results. Two approaches: (1) Gene addition \u2014 insert functional \u03b2-globin gene using lentiviral vectors into autologous HSCs. Bluebird Bio's LentiGlobin (lovotibeglogene autotemcel/Zynteglo) \u2014 for transfusion-dependent \u03b2-thalassemia, approved 2022. (2) Gene editing \u2014 CRISPR-Cas9 to disrupt BCL11A gene (a repressor of fetal hemoglobin) \u2192 reactivation of HbF production \u2192 compensates for defective adult hemoglobin. Casgevy (exagamglogene autotemcel) \u2014 first CRISPR-based therapy approved (Dec 2023) for both sickle cell disease AND transfusion-dependent \u03b2-thalassemia.\nCRISPR mechanism: Guide RNA directs Cas9 nuclease to BCL11A erythroid enhancer \u2192 double-strand break \u2192 NHEJ repair disrupts the gene \u2192 HbF de-repressed. Autologous HSCs edited ex vivo \u2192 myeloablative conditioning \u2192 reinfusion.\nResults: Casgevy \u2014 93.5% of SCD patients free from vaso-occlusive crises at 12 months; 91% of \u03b2-thal patients transfusion-independent.\nClinical Pearl: The key concept is HbF reactivation via BCL11A disruption \u2014 this is a universal strategy that works for BOTH sickle cell and thalassemia because HbF (\u03b12\u03b32) bypasses the defective \u03b2-globin chain entirely.",
+    "system": "Heme",
+    "topic": "Gene Therapy",
+    "difficulty": "advanced",
+    "source": "Flash cards continued.txt [filled from HTML tools]",
+    "also_from": [
+      "Flash cards continued.txt"
+    ]
+  },
+  {
+    "id": "fc_0137",
+    "question": "G-6-PD deficiency drug reactions",
+    "answer": "Why: X-linked enzyme deficiency affects drug metabolism \u2192 What: Primaquine, chloroquine, nitrofurantoin, sulfonamides cause hemolysis \u2192 How: Oxidizing drugs deplete glutathione, red cells undergo hemolysis because G-6-PD needed for NADPH generation, therefore avoid oxidizing drugs in deficient individuals",
+    "system": "Heme",
+    "topic": "Pharmacogenomics",
+    "difficulty": "intermediate",
+    "source": "MD_Exam_Flashcards.tsv",
+    "also_from": [
+      "Flashcards_Merged_GDocs.md"
+    ]
+  },
+  {
+    "id": "fc_0138",
+    "question": "What are the consequences of G6PD deficiency in relation to certain drugs?",
+    "answer": "\u2022  Why: G6PD deficiency is an X-linked enzyme deficiency that affects drug metabolism.\n\u2022  What: Drugs like primaquine, chloroquine, nitrofurantoin, and sulfonamides can cause hemolysis in affected individuals.\n\u2022  How: These oxidizing drugs deplete glutathione levels, causing red blood cells to undergo hemolysis. This occurs because G6PD is necessary for generating NADPH, so these oxidizing drugs must be avoided in deficient individuals.\n\u2022  Clinical Pearl: \"G-6PD deficiency is responsible for haemolysis with primaquine and other oxidizing drugs\".\n\ud83e\uddec",
+    "system": "Heme",
+    "topic": "Pharmacogenomics",
+    "difficulty": "basic",
+    "source": "Full flashcards.txt"
+  },
+  {
+    "id": "fc_0139",
+    "question": "What is the term for a raised, purpuric lesion that is due to inflammation of the vessel wall with subsequent haemorrhage?",
+    "answer": "Palpable purpura.",
+    "system": "Heme",
+    "topic": "Skin Rash",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0140",
+    "question": "What are the key laboratory findings used to diagnose iron deficiency anemia?",
+    "answer": "*  Why: Accurate diagnosis is essential to identify and treat the underlying cause of iron loss.\n*  What: The diagnosis is confirmed with laboratory tests showing low serum ferritin, low serum iron, high total iron-binding capacity (TIBC), and low transferrin saturation.\n*  How: Serum ferritin is the most sensitive and specific test, as it reflects the body's total iron stores. The other tests collectively paint a picture of iron-deficient erythropoiesis, where the body's iron stores are depleted and the capacity to bind more iron is high.\n Clinical Pearl: \"A low serum ferritin level is the most specific laboratory test for identifying iron deficiency anemia\".\nChat\n\ud83d\udcda\nBasic Science Consolidated Questions 2016-2025",
+    "system": "Heme",
+    "topic": "The Key Laboratory Findings Used",
+    "difficulty": "intermediate",
+    "source": "Full flashcards.txt"
+  },
+  {
+    "id": "fc_0141",
+    "question": "A patient reports persistent fatigue for several months after recovering from an acute viral illness. What is this phenomenon called?",
+    "answer": "Post-infectious fatigue.",
+    "system": "ID",
+    "topic": "A Patient Reports Persistent Fatigue",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0147",
+    "question": "Discuss: Life cycle of Falciparum malaria",
+    "answer": "P. falciparum lifecycle: Female Anopheles mosquito injects sporozoites during blood meal \u2192 sporozoites reach liver within 30 min \u2192 invade hepatocytes \u2192 undergo schizogony (exo-erythrocytic cycle, 5-7 days) \u2192 release merozoites \u2192 enter RBCs (erythrocytic cycle). In RBCs: ring stage \u2192 trophozoite \u2192 schizont \u2192 RBC ruptures releasing merozoites (48h cycle = tertian pattern). Unique to falciparum: parasitized RBCs express PfEMP-1 (knobs) \u2192 cytoadherence to endothelium of cerebral vessels, placenta \u2192 sequestration (why peripheral smear may underestimate parasitemia). NO hypnozoite stage (unlike P. vivax/ovale \u2014 no relapse). Gametocytes form \u2192 picked up by mosquito \u2192 sexual cycle in mosquito gut \u2192 sporozoites migrate to salivary glands.\nFalciparum-specific features: Infects RBCs of ALL ages (not just reticulocytes) \u2192 very high parasitemia. 'Banana-shaped' gametocytes on smear (diagnostic). Can cause severe/cerebral malaria. Drug resistance widespread (chloroquine resistance via PfCRT gene mutation on chromosome 7).\nClinical Pearl: No hypnozoites = no relapse = no primaquine needed for radical cure (unlike vivax). But falciparum has highest mortality due to sequestration \u2192 cerebral malaria.",
+    "system": "ID",
+    "topic": "Discuss: Life Cycle Of Falciparum",
+    "difficulty": "intermediate",
+    "source": "Flash cards continued.txt [filled from HTML tools]"
+  },
+  {
+    "id": "fc_0148",
+    "question": "Discuss: Life cycle of Echinococcus granulosus.",
+    "answer": "Echinococcus granulosus lifecycle: Definitive host = DOG (adult tapeworm in small intestine, 3 proglottids only). Eggs shed in dog feces \u2192 ingested by intermediate host (sheep, cattle, humans \u2014 accidental). In intermediate host: eggs hatch in duodenum \u2192 oncospheres penetrate intestinal wall \u2192 portal circulation \u2192 LIVER (#1 site, 65-70%) \u2192 lungs (#2, 25%) \u2192 hydatid cyst develops (outer laminated + inner germinal layer \u2192 produces protoscolices/brood capsules = 'hydatid sand'). Daughter cysts form within mother cyst. Lifecycle completes when dog eats infected viscera of intermediate host \u2192 protoscolices attach to dog intestine \u2192 mature into adult worms.\nHuman disease: Hydatid cyst grows slowly (1 cm/year). Liver \u2192 RUQ mass, pressure symptoms. Lung \u2192 cough, hemoptysis. RUPTURE \u2192 anaphylaxis (cyst fluid is highly antigenic) \u2192 secondary seeding.\nDiagnosis: Imaging (CT/US \u2014 daughter cysts, 'water lily sign' on CXR). Serology (IgG ELISA). Do NOT aspirate without albendazole cover.\nTreatment: PAIR (Puncture-Aspirate-Inject hypertonic saline-Re-aspirate) for liver cysts + albendazole. Surgery for complicated/large cysts.\nClinical Pearl: NEVER aspirate a hydatid cyst without albendazole pre-treatment \u2014 rupture causes fatal anaphylaxis. The 'daughter cyst within cyst' on imaging is pathognomonic.",
+    "system": "ID",
+    "topic": "Echinococcosis",
+    "difficulty": "intermediate",
+    "source": "Flash cards continued.txt [filled from HTML tools]"
+  },
+  {
+    "id": "fc_0149",
+    "question": "Fever vs hyperthermia differentiation",
+    "answer": "Why: Treatment approaches differ completely \u2192 What: Fever: gradual onset, sweating, antipyretic response; Hyperthermia: rapid onset, hot/dry skin, no antipyretic response \u2192 How: Clinical pattern guides management because fever needs infection workup, hyperthermia needs cooling, therefore recognition critical",
+    "system": "ID",
+    "topic": "Fever and Hyperthermia",
+    "difficulty": "advanced",
+    "source": "Flashcards_Merged_GDocs.md"
+  },
+  {
+    "id": "fc_0150",
+    "question": "What is the classic distribution and evolution of the rash in Rocky Mountain spotted fever?",
+    "answer": "It evolves from macular to petechial, starts on the wrists and ankles, spreads centripetally, and appears on the palms and soles late in the disease.",
+    "system": "ID",
+    "topic": "Fever and Hyperthermia",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0151",
+    "question": "What is the most important initial step in the diagnostic workup of a patient with Fever of Unknown Origin (FUO)?",
+    "answer": "The search for potentially diagnostic clues (PDCs) through a complete and repeated history-taking and physical examination.",
+    "system": "ID",
+    "topic": "Fever and Hyperthermia",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0152",
+    "question": "Why is a low-grade fever of considerable concern in patients receiving anticytokine therapies (e.g., anti-TNF)?",
+    "answer": "These therapies can blunt the febrile response, and the patient is at increased risk of infection due to lowered host defences.",
+    "system": "ID",
+    "topic": "Fever and Hyperthermia",
+    "difficulty": "intermediate",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0153",
+    "question": "What is the general prognosis for patients in whom FUO remains unexplained after an extensive workup?",
+    "answer": "The prognosis is favourable, with low mortality rates related to the febrile disease.",
+    "system": "ID",
+    "topic": "Fever of Unknown Origin",
+    "difficulty": "intermediate",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0155",
+    "question": "Gram negative bacilli classification",
+    "answer": "Why: Gram negative bacteria have different structure requiring specific classification \u2192 What: Enterobacteriaceae, Non-fermenters, Fastidious gram negatives \u2192 How: Based on oxygen requirements, fermentation patterns, morphology because gram negative wall structure differs from gram positive, therefore classification helps predict antibiotic susceptibility",
+    "system": "ID",
+    "topic": "Gram Negative Bacteria",
+    "difficulty": "basic",
+    "source": "MD_Exam_Flashcards.tsv",
+    "also_from": [
+      "Flashcards_Merged_GDocs.md",
+      "Flash cards continued.txt"
+    ]
+  },
+  {
+    "id": "fc_0156",
+    "question": "How are gram-negative bacilli classified?",
+    "answer": "\u2022 \n\u2022 Why: Gram-negative bacteria have a different structure that requires a specific classification system64.\n\u2022 \n\u2022 What: They are classified into groups such as Enterobacteriaceae, Non-fermenters, and Fastidious gram-negatives65.\n\u2022 \n\u2022 How: This classification is based on their oxygen requirements, fermentation patterns, and morphology66. Because their wall structure differs from gram-positive bacteria, this system helps predict antibiotic susceptibility67.\n\u2022  Clinical Pearl: \"Gram-negative bacteria have porin channels formed by specific proteins located in their outer membrane\"68.\n\ud83e\udda0",
+    "system": "ID",
+    "topic": "Gram Negative Bacteria",
+    "difficulty": "basic",
+    "source": "Full flashcards.txt"
+  },
+  {
+    "id": "fc_0157",
+    "question": "What are non-fermenting gram-negative bacilli and why are they important?",
+    "answer": "\u2022  Why: They are an important group known for different antibiotic resistance patterns.\n\u2022  What: This group includes Pseudomonas aeruginosa, Acinetobacter, and Stenotrophomonas.\n\u2022  How: They do not ferment glucose and are often more resistant to antibiotics. Because they lack fermentation pathways, they require specific antimicrobial choices for effective treatment.\n\u2022  Clinical Pearl: \"Pseudomonas aeruginosa exhibit a particular propensity for colonizing damaged airways\".\n\ud83e\udda0",
+    "system": "ID",
+    "topic": "Gram Negative Bacteria",
+    "difficulty": "intermediate",
+    "source": "Full flashcards.txt",
+    "also_from": [
+      "MD_Exam_Flashcards.tsv",
+      "Flashcards_Merged_GDocs.md",
+      "Flash cards continued.txt"
+    ]
+  },
+  {
+    "id": "fc_0158",
+    "question": "What are the key characteristics of the Enterobacteriaceae family?",
+    "answer": "\u2022 \n\u2022 Why: This is a major family of gram-negative bacilli that cause infections69.\n\u2022 \n\u2022 What: This family includes E. coli, Klebsiella, Proteus, Salmonella, and Shigella70.\n\u2022 \n\u2022 How: They share key biochemical pathways: they ferment glucose, are oxidase-negative, and reduce nitrates71. They are grouped together to help guide treatment approaches72.\n\u2022  Clinical Pearl: \"Enterobacteriaceae, other gram-negative bacilli and B. fragilis are not inhibited by penicillin\"73.\n\ud83e\udda0",
+    "system": "ID",
+    "topic": "Gram Negative Bacteria",
+    "difficulty": "intermediate",
+    "source": "Full flashcards.txt",
+    "also_from": [
+      "MD_Exam_Flashcards.tsv",
+      "Flashcards_Merged_GDocs.md"
+    ]
+  },
+  {
+    "id": "fc_0160",
+    "question": "Acute Meningoencephalitis",
+    "answer": "Why: CNS infection causes inflammation \u2192 What: Viral, bacterial, fungal pathogens infecting brain parenchyma and meninges \u2192 How: Pathogens cross blood-brain barrier, trigger inflammatory response because immune activation causes cerebral edema, therefore altered consciousness and neurological deficits",
+    "system": "ID",
+    "topic": "Meningitis",
+    "difficulty": "intermediate",
+    "source": "Flashcards_Merged_GDocs.md",
+    "also_from": [
+      "Flash cards continued.txt"
+    ]
+  },
+  {
+    "id": "fc_0161",
+    "question": "Mucormycosis",
+    "answer": "Why: Opportunistic fungal infection in immunocompromised \u2192 What: Rhizopus, Mucor species causing angioinvasive infection \u2192 How: Spores germinate in tissues, hyphae invade blood vessels causing thrombosis because fungi have tropism for vessels, therefore tissue necrosis and black eschar",
+    "system": "ID",
+    "topic": "Mucormycosis",
+    "difficulty": "intermediate",
+    "source": "Flashcards_Merged_GDocs.md",
+    "also_from": [
+      "Flash cards continued.txt"
+    ]
+  },
+  {
+    "id": "fc_0166",
+    "question": "How is sepsis currently defined and what criteria are used for its diagnosis?",
+    "answer": "*  Why: Sepsis requires a standardized definition for prompt recognition and treatment.\n*  What: Sepsis is defined as a life-threatening organ dysfunction caused by a dysregulated host response to infection.\n*  How: The Sequential [Sepsis-related] Organ Failure Assessment (SOFA) score is used to identify organ dysfunction. A patient is diagnosed with sepsis if there is a suspected infection and an acute increase in the SOFA score of \u22652 points.\n Clinical Pearl: \"The qSOFA score (respiratory rate \u226522/min, altered mentation, systolic blood pressure \u2264100 mmHg) is a bedside tool to identify patients with suspected infection who are at greater risk for a poor outcome\".",
+    "system": "ID",
+    "topic": "Septic Shock",
+    "difficulty": "intermediate",
+    "source": "Full flashcards.txt"
+  },
+  {
+    "id": "fc_0167",
+    "question": "What are the defining characteristics and management priorities for septic shock?",
+    "answer": "*  Why: Septic shock is a subset of sepsis with a much higher mortality rate, requiring immediate intervention.\n*  What: It is characterized by persistent hypotension that requires vasopressors to maintain a mean arterial pressure (MAP) of \u226565 mmHg, along with a serum lactate level >2 mmol/L, despite adequate fluid resuscitation.\n*  How: Management priorities include early administration of broad-spectrum antibiotics, aggressive fluid resuscitation, and the use of vasopressors (with norepinephrine being the first choice) to restore tissue perfusion.\n Clinical Pearl: \"Early recognition and management in the first hours after sepsis develops improves outcomes\".\n*\n##",
+    "system": "ID",
+    "topic": "Septic Shock",
+    "difficulty": "basic",
+    "source": "Full flashcards.txt"
+  },
+  {
+    "id": "fc_0168",
+    "question": "What are the mechanisms of antibiotic resistance in gram-negative bacteria?",
+    "answer": "\u2022  Why: It is crucial to understand the mechanisms behind increasing resistance in gram-negatives.\n\u2022  What: Mechanisms include beta-lactamases, efflux pumps, loss of porin channels, and target modification.\n\u2022  How: The complex outer membrane of gram-negative bacteria acts as a barrier, and they can possess enzymes that destroy antibiotics. This complex structure allows for multiple resistance mechanisms to develop.\n\u2022  Clinical Pearl: \"Some gram-negative bacteria become resistant by loss or alteration of porin channels\".",
+    "system": "ID",
+    "topic": "The Mechanisms Of Antibiotic Resistance",
+    "difficulty": "basic",
+    "source": "Full flashcards.txt",
+    "also_from": [
+      "MD_Exam_Flashcards.tsv",
+      "Flashcards_Merged_GDocs.md",
+      "Flash cards continued.txt"
+    ]
+  },
+  {
+    "id": "fc_0169",
+    "question": "What is the key difference in the distribution of lesions between variola (smallpox) and varicella (chickenpox)?",
+    "answer": "Variola lesions are most prominent on the face and extremities, while varicella lesions are most prominent on the trunk.",
+    "system": "ID",
+    "topic": "Variola vs Varicella",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0170",
+    "question": "What is the only scenario in a patient with abdominal pain that requires immediate transfer to the operating room, bypassing further diagnostic examinations?",
+    "answer": "Exsanguinating intra-abdominal haemorrhage, such as from a ruptured aneurysm.",
+    "system": "Neuro",
+    "topic": "Abdominal Pain",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0171",
+    "question": "How does aphasia caused by a cerebrovascular accident (CVA) typically present and progress compared to aphasia from a neurodegenerative disease?",
+    "answer": "Aphasia from a CVA starts suddenly with maximal deficits at onset, whereas neurodegenerative aphasia has an insidious onset and relentless progression.",
+    "system": "Neuro",
+    "topic": "Aphasia",
+    "difficulty": "intermediate",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0172",
+    "question": "What is confabulation, often seen in amnestic syndromes like Wernicke-Korsakoff syndrome?",
+    "answer": "The recitation of imaginary or distorted memories without the intention to deceive.",
+    "system": "Neuro",
+    "topic": "Aphasia",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0173",
+    "question": "What is the hallmark of Broca's aphasia?",
+    "answer": "Impaired fluency of speech (non-fluent aphasia) with preserved comprehension.",
+    "system": "Neuro",
+    "topic": "Aphasia",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0174",
+    "question": "What is the hallmark of Wernicke's aphasia?",
+    "answer": "Impaired comprehension with fluent but often nonsensical or jargon-filled speech.",
+    "system": "Neuro",
+    "topic": "Aphasia",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0175",
+    "question": "Discuss: Cross section of medulla and short note on any 2 brain stem syndromes",
+    "answer": "Medulla cross-section shows: Anterior (ventral) \u2014 pyramids (corticospinal tracts), medial lemniscus (dorsal column pathway). Posterior (dorsal) \u2014 gracile and cuneate nuclei, inferior cerebellar peduncle (spinocerebellar tracts). Lateral \u2014 spinothalamic tract (pain/temperature), inferior olivary nucleus, CN nuclei (XII medial, X/IX lateral).\nThe key rule: MEDIAL structures = MEDIAL syndrome. LATERAL structures = LATERAL syndrome.\nMedial medullary syndrome (Dejerine): Occlusion of anterior spinal artery/vertebral artery branches. Triad: contralateral hemiplegia (pyramid), contralateral loss of proprioception/vibration (medial lemniscus), ipsilateral tongue deviation (CN XII). Remember: '3M' \u2014 Motor (pyramid) + Medial lemniscus + Medial CN XII.\nLateral medullary syndrome (Wallenberg): Occlusion of PICA (posterior inferior cerebellar artery). Features: ipsilateral facial pain/temperature loss (spinal trigeminal nucleus), contralateral body pain/temperature loss (spinothalamic tract), ipsilateral Horner syndrome (descending sympathetics), ipsilateral cerebellar ataxia (inferior cerebellar peduncle), dysphagia/hoarseness (nucleus ambiguus \u2014 CN IX/X), vertigo/nystagmus (vestibular nuclei).\nClinical Pearl: Wallenberg is the most tested brainstem syndrome. The 'crossed' sensory loss (ipsilateral face + contralateral body pain/temp) is pathognomonic. PICA occlusion \u2014 not the cerebellum itself.",
+    "system": "Neuro",
+    "topic": "Brainstem Syndromes",
+    "difficulty": "intermediate",
+    "source": "Flash cards continued.txt [filled from HTML tools]"
+  },
+  {
+    "id": "fc_0177",
+    "question": "Cerebral venous anatomy",
+    "answer": "Why: Complex anatomy requires systematic understanding \u2192 What: Internal cerebral veins, great vein of Galen, straight sinus pathway \u2192 How: Deep cerebral structures drain via internal cerebral veins \u2192 great vein of Galen \u2192 straight sinus because deep and superficial systems separate, therefore different pathology patterns",
+    "system": "Neuro",
+    "topic": "Cerebral Venous System",
+    "difficulty": "intermediate",
+    "source": "MD_Exam_Flashcards.tsv",
+    "also_from": [
+      "Flashcards_Merged_GDocs.md"
+    ]
+  },
+  {
+    "id": "fc_0178",
+    "question": "Describe the venous drainage pathway for deep cerebral structures.",
+    "answer": "\u2022 \n\u2022 Why: Understanding the complex anatomy of the cerebral venous system is essential for systematic diagnosis16.\n\u2022 \n\u2022 What: The key pathway involves the internal cerebral veins, the great vein of Galen, and the straight sinus17.\n\u2022 \n\u2022 How: Deep cerebral structures are drained via the internal cerebral veins, which flow into the great vein of Galen and then into the straight sinus18. This is because the deep and superficial venous systems are separate, leading to different patterns of pathology19.\n\u2022  Clinical Pearl: \"blood from a ruptured AVM is usually not deposited in the basal cisterns\"20.",
+    "system": "Neuro",
+    "topic": "Cerebral Venous System",
+    "difficulty": "intermediate",
+    "source": "Full flashcards.txt"
+  },
+  {
+    "id": "fc_0180",
+    "question": "Venous drainage pathology",
+    "answer": "Why: Disrupted venous drainage leads to pathologic consequences \u2192 What: Increased intracranial pressure, hemorrhage, and ischemia occur \u2192 How: Venous obstruction \u2192 elevated venous pressure \u2192 blood-brain barrier disruption because normal venous outflow maintains cerebral perfusion pressure, therefore blockage causes brain swelling",
+    "system": "Neuro",
+    "topic": "Cerebral Venous System",
+    "difficulty": "intermediate",
+    "source": "MD_Exam_Flashcards.tsv",
+    "also_from": [
+      "Flashcards_Merged_GDocs.md",
+      "Flash cards continued.txt"
+    ]
+  },
+  {
+    "id": "fc_0181",
+    "question": "What are the pathological consequences of disrupted venous drainage?",
+    "answer": "\u2022 \n\u2022 Why: Disruption in the venous drainage system leads to pathological consequences11.\n\u2022 \n\u2022 What: This can result in increased intracranial pressure, hemorrhage, and ischemia12.\n\u2022 \n\u2022 How: A venous obstruction leads to elevated venous pressure, which in turn causes a disruption of the blood-brain barrier13. Blockage causes brain swelling because normal venous outflow is essential for maintaining cerebral perfusion pressure14.\n\u2022  Clinical Pearl: \"venous sinus thrombosis causes cortical vein hypertension\"15.",
+    "system": "Neuro",
+    "topic": "Cerebral Venous System",
+    "difficulty": "basic",
+    "source": "Full flashcards.txt"
+  },
+  {
+    "id": "fc_0182",
+    "question": "What is the function and process of the cerebral venous system?",
+    "answer": "\u2022 \n\u2022 Why: The brain requires venous drainage to return deoxygenated blood to the heart1.\n\u2022 \n\u2022 What: It is a dual system of superficial and deep veins that drain into the dural sinuses2.\n\u2022 \n\u2022 How: Blood flows from the cerebral veins into the dural sinuses, and then into the internal jugular veins3. This process is necessary because continuous cerebral metabolism produces a constant flow of blood, and venous drainage prevents an increase in intracranial pressure4.\n\u2022  Clinical Pearl: \"dural sinus thrombosis can cause cortical vein hypertension, cerebral edema, and venous infarction\"5.",
+    "system": "Neuro",
+    "topic": "Cerebral Venous System",
+    "difficulty": "basic",
+    "source": "Full flashcards.txt",
+    "also_from": [
+      "MD_Exam_Flashcards.tsv",
+      "Flashcards_Merged_GDocs.md"
+    ]
+  },
+  {
+    "id": "fc_0183",
+    "question": "Which class of drugs is primarily useful for patients with neuropathic pain, particularly pain with a shooting, electric shock-like quality?",
+    "answer": "Anticonvulsants and antiarrhythmics.",
+    "system": "Neuro",
+    "topic": "Class Of Drugs Is Primarily",
+    "difficulty": "intermediate",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0184",
+    "question": "In a comatose patient, what does the presence of 'doll's eyes' (oculocephalic reflexes) indicate?",
+    "answer": "It reflects both reduced cortical influence on the brainstem and intact brainstem pathways from the midbrain to the medulla.",
+    "system": "Neuro",
+    "topic": "Coma and Brain Death",
+    "difficulty": "intermediate",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0185",
+    "question": "What is the only type of brain damage recognised as legally equivalent to death?",
+    "answer": "Brain death, defined as the irreversible cessation of all cerebral and brainstem function.",
+    "system": "Neuro",
+    "topic": "Coma and Brain Death",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0186",
+    "question": "What physical sign heralds central transtentorial herniation?",
+    "answer": "Miotic (constricted) pupils and drowsiness.",
+    "system": "Neuro",
+    "topic": "Coma and Brain Death",
+    "difficulty": "intermediate",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0187",
+    "question": "According to the Confusion Assessment Method (CAM), a diagnosis of delirium requires the presence of which two core features?",
+    "answer": "Feature 1 (Acute Onset and Fluctuating Course) and Feature 2 (Inattention).",
+    "system": "Neuro",
+    "topic": "Delirium",
+    "difficulty": "intermediate",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0188",
+    "question": "What are the three classes of medications that are particularly common offenders in precipitating delirium?",
+    "answer": "Drugs with anticholinergic properties, narcotics, and benzodiazepines.",
+    "system": "Neuro",
+    "topic": "Delirium",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0189",
+    "question": "What are the two most consistently identified risk factors for developing delirium upon hospitalisation?",
+    "answer": "Older age (>65 years) and baseline cognitive dysfunction.",
+    "system": "Neuro",
+    "topic": "Delirium",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0190",
+    "question": "What is the imaging test of choice if a structural cause of delirium is suspected and the initial workup is unrevealing?",
+    "answer": "Magnetic Resonance Imaging (MRI) of the brain.",
+    "system": "Neuro",
+    "topic": "Delirium",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0191",
+    "question": "Which simple nursing interventions are part of standardised protocols to prevent delirium in high-risk hospitalised patients?",
+    "answer": "Managing sleep-wake cycles, promoting mobility, correcting visual/hearing impairment, avoiding sleep deprivation, and ensuring hydration.",
+    "system": "Neuro",
+    "topic": "Delirium",
+    "difficulty": "intermediate",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0192",
+    "question": "What are the core clinical features of Dementia with Lewy Bodies (DLB)?",
+    "answer": "Dementia, fluctuating cognition, visual hallucinations, and parkinsonism.",
+    "system": "Neuro",
+    "topic": "Dementia",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0193",
+    "question": "What specific cognitive domain is typically affected earliest in Alzheimer's disease?",
+    "answer": "Episodic memory (e.g., recall of recent events or a word list after a delay).",
+    "system": "Neuro",
+    "topic": "Dementia",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0197",
+    "question": "Dural venous sinuses classification",
+    "answer": "Why: Brain venous blood must be collected and drained systematically \u2192 What: Superior sagittal, transverse, cavernous, straight sinuses form interconnected system \u2192 How: Large venous channels within dura mater collect blood from cerebral veins because individual cerebral veins cannot directly reach heart, therefore sinuses provide collection system",
+    "system": "Neuro",
+    "topic": "Dural Venous Sinuses Classification",
+    "difficulty": "basic",
+    "source": "MD_Exam_Flashcards.tsv",
+    "also_from": [
+      "Flashcards_Merged_GDocs.md",
+      "Flash cards continued.txt"
+    ]
+  },
+  {
+    "id": "fc_0198",
+    "question": "Discuss: Trace the course of facial nerve and write brief notes on the applied anatomical aspects of each part.",
+    "answer": "Facial nerve (CN VII) is mixed \u2014 motor, sensory, parasympathetic. Course: Motor nucleus in pons \u2192 loops around abducens nucleus (internal genu) \u2192 exits at cerebellopontine angle \u2192 enters internal acoustic meatus \u2192 traverses facial canal in temporal bone (3 segments: labyrinthine, tympanic, mastoid) \u2192 exits via stylomastoid foramen \u2192 enters parotid gland \u2192 divides into 5 terminal branches (Temporal, Zygomatic, Buccal, Marginal mandibular, Cervical \u2014 mnemonic: 'To Zanzibar By Motor Car').\nBranches in facial canal: Greater petrosal nerve (parasympathetic to lacrimal gland), nerve to stapedius (dampens sound), chorda tympani (taste to anterior 2/3 tongue + parasympathetic to submandibular/sublingual glands).\nUMN vs LMN distinction: UMN lesion (stroke) \u2192 contralateral lower face weakness ONLY (forehead spared \u2014 bilateral cortical innervation). LMN lesion (Bell's palsy) \u2192 ipsilateral ENTIRE face weakness (forehead + lower face). This is the single most tested facial nerve concept.\nClinical Pearl: If forehead is spared \u2192 UMN (stroke). If forehead is involved \u2192 LMN (Bell's palsy, parotid tumor, CP angle lesion). The level of lesion determines which branches are affected \u2014 loss of taste + hyperacusis = chorda tympani + stapedial involvement = lesion proximal to stylomastoid foramen.",
+    "system": "Neuro",
+    "topic": "Facial Nerve",
+    "difficulty": "intermediate",
+    "source": "Flash cards continued.txt [filled from HTML tools]"
+  },
+  {
+    "id": "fc_0199",
+    "question": "List four classes of medications commonly associated with an increased risk of falls in the elderly.",
+    "answer": "Benzodiazepines, opioids, antipsychotics, and antidepressants.",
+    "system": "Neuro",
+    "topic": "Falls in Elderly",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0200",
+    "question": "Hyperthermia non-fever mechanism",
+    "answer": "Why: Heat production exceeds heat loss without set point change \u2192 What: Failed/overwhelmed thermoregulation, not responsive to antipyretics \u2192 How: Heat stroke, malignant hyperthermia bypass hypothalamic control because thermoregulation overwhelmed, therefore antipyretics ineffective",
+    "system": "Neuro",
+    "topic": "Fever and Hyperthermia",
+    "difficulty": "intermediate",
+    "source": "Flashcards_Merged_GDocs.md"
+  },
+  {
+    "id": "fc_0201",
+    "question": "What is the mechanism of hyperthermia, and how does it differ from a fever?",
+    "answer": "\u2022  Why: Hyperthermia occurs when heat production exceeds heat loss, without any change in the hypothalamic set point.]\n\u2022  What: This represents a failed or overwhelmed thermoregulatory system. Critically, it does not respond to antipyretic medications.]\n\u2022  How: Conditions like heat stroke or malignant hyperthermia bypass the normal hypothalamic control. The body's ability to dissipate heat is simply overwhelmed, leading to an uncontrolled rise in temperature. Since the set point is not elevated, antipyretics are ineffective.]\n\u2022  Clinical Pearl: \"Malignant hyperthermia after halothane is due to abnormal Ca2+\n\u2022 release channel ryanodine receptor in skeletal muscles\".",
+    "system": "Neuro",
+    "topic": "Fever and Hyperthermia",
+    "difficulty": "basic",
+    "source": "Full flashcards.txt"
+  },
+  {
+    "id": "fc_0202",
+    "question": "For which specific painful condition is gabapentin FDA-approved in doses up to 1800 mg/d?",
+    "answer": "Postherpetic neuralgia.",
+    "system": "Neuro",
+    "topic": "For Which Specific Painful Condition",
+    "difficulty": "intermediate",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0203",
+    "question": "What gait abnormality is characterised by a wide base of support, lateral instability of the trunk, and erratic foot placement?",
+    "answer": "Cerebellar gait ataxia.",
+    "system": "Neuro",
+    "topic": "Gait Disorders",
+    "difficulty": "intermediate",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0204",
+    "question": "How does the pain of low CSF volume headache typically behave?",
+    "answer": "It is positional: it begins when the patient sits or stands upright and resolves upon reclining.",
+    "system": "Neuro",
+    "topic": "Headache",
+    "difficulty": "intermediate",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0205",
+    "question": "What is the defining clinical characteristic of 'new daily persistent headache' (NDPH)?",
+    "answer": "The patient can clearly, and often vividly, recall the moment of onset of a headache that does not remit.",
+    "system": "Neuro",
+    "topic": "Headache",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0206",
+    "question": "What is the most important first step in managing patients with chronic daily headache (CDH)?",
+    "answer": "To diagnose and treat any secondary headache cause.",
+    "system": "Neuro",
+    "topic": "Headache",
+    "difficulty": "intermediate",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0207",
+    "question": "What is the most serious secondary cause of new daily persistent headache (NDPH) that must be excluded?",
+    "answer": "Subarachnoid haemorrhage.",
+    "system": "Neuro",
+    "topic": "Headache",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0208",
+    "question": "What is the term for a state of refractory daily or near-daily headache induced by the overuse of analgesic medication?",
+    "answer": "Medication-overuse headache.",
+    "system": "Neuro",
+    "topic": "Headache",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0209",
+    "question": "In a patient with chronic pain, what clinical finding strongly supports a diagnosis of chronic myofascial pain?",
+    "answer": "The presence of highly localised trigger points (firm bands or knots in muscle) where pain is relieved by local anaesthetic injection.",
+    "system": "Neuro",
+    "topic": "In A Patient With Chronic",
+    "difficulty": "intermediate",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0210",
+    "question": "In a patient with suspected lumbar radiculopathy, which nerve root is most likely affected if the quadriceps (knee) reflex is diminished?",
+    "answer": "The L4 nerve root.",
+    "system": "Neuro",
+    "topic": "In A Patient With Suspected",
+    "difficulty": "intermediate",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0212",
+    "question": "A 19-year-old college student is brought to the ER with a high fever, severe headache, neck stiffness, and photophobia. What is the diagnostic workup for suspected bacterial meningitis?",
+    "answer": "The diagnostic workup for bacterial meningitis must be rapid to allow for prompt initiation of empiric antibiotics.\nLumbar Puncture (LP): This is the most important diagnostic step. Cerebrospinal fluid (CSF) is obtained and sent for analysis.\nCSF Findings: In bacterial meningitis, CSF typically shows high opening pressure, high white blood cell count (neutrophil-predominant), high protein, and low glucose.\nLicensed by Google\nBlood Cultures: Should always be drawn before starting antibiotics.\nHead CT: A CT scan should be performed before the LP if there are signs of increased intracranial pressure (e.g., papilledema, focal neurological deficits) to rule out a mass effect that could cause herniation.\nGram Stain and Culture: CSF Gram stain can rapidly identify the causative organism, guiding targeted antibiotic therapy.\n Clinical Pearl: \"If a lumbar puncture is delayed for a CT scan in a patient with suspected bacterial meningitis, administer empiric antibiotics before the patient goes to imaging. Do not delay treatment.\"",
+    "system": "Neuro",
+    "topic": "Meningitis",
+    "difficulty": "advanced",
+    "source": "Full flashcards.txt"
+  },
+  {
+    "id": "fc_0213",
+    "question": "What are the three main types of neurons whose axons constitute a peripheral nerve?",
+    "answer": "Primary sensory afferents, motor neurons, and sympathetic postganglionic neurons.",
+    "system": "Neuro",
+    "topic": "Motor Weakness",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0214",
+    "question": "What is the typical distribution of weakness from involvement of upper motor neurons (UMN)?",
+    "answer": "It occurs particularly in the extensors and abductors of the upper limb and the flexors of the lower limb.",
+    "system": "Neuro",
+    "topic": "Motor Weakness",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0215",
+    "question": "What two clinical signs strongly indicate that weakness is neuropathic (lower motor neuron type)?",
+    "answer": "Fasciculations and early muscle atrophy.",
+    "system": "Neuro",
+    "topic": "Motor Weakness",
+    "difficulty": "intermediate",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0216",
+    "question": "How is fatiguability, a cardinal sign of myasthenia gravis, clinically distinguished from the general symptom of fatigue?",
+    "answer": "Fatiguability is a clinically evident diminution of muscle force upon repeated contraction, whereas fatigue is a subjective feeling of low energy without objective weakness.",
+    "system": "Neuro",
+    "topic": "Myasthenia Gravis",
+    "difficulty": "intermediate",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0217",
+    "question": "Why are newer anticonvulsants like gabapentin and pregabalin often used as first-line agents for neuropathic pain?",
+    "answer": "They are effective for a broad range of neuropathic pains and have a favourable side effect profile.",
+    "system": "Neuro",
+    "topic": "Newer Anticonvulsants Like Gabapentin And",
+    "difficulty": "advanced",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0218",
+    "question": "Pain referred from the spine to the abdomen is characteristically intensified by what actions?",
+    "answer": "Certain motions such as coughing, sneezing, or straining.",
+    "system": "Neuro",
+    "topic": "Pain Referred From The Spine",
+    "difficulty": "intermediate",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0220",
+    "question": "What are the effects of the NAT2 acetylator polymorphism?",
+    "answer": "\u2022  Why: The N-acetyl transferase (NAT) enzyme shows genetic variation.\n\u2022  What: Slow acetylators are more prone to developing isoniazid-induced neuropathy and drug-induced lupus from procainamide or hydralazine.\n\u2022  How: A polymorphism in the NAT2 gene results in individuals being classified as either rapid or slow acetylators. Because the rate of drug acetylation is genetically determined, dosing may need to be adjusted based on a patient's status.\n\u2022  Clinical Pearl: \"Polymorphism of N-acetyl transferase 2 NAT2 gene results in rapid and slow acetylator status\".\n Clinical Pearl: \"The most important initial step in the treatment of DKA is rapid intravenous fluid administration\".\n*\n##",
+    "system": "Neuro",
+    "topic": "Pharmacogenomics",
+    "difficulty": "basic",
+    "source": "Full flashcards.txt",
+    "also_from": [
+      "MD_Exam_Flashcards.tsv",
+      "Flashcards_Merged_GDocs.md"
+    ]
+  },
+  {
+    "id": "fc_0221",
+    "question": "Discuss: Draw the course of recurrent laryngeal nerve and write a note on its applied anatomy",
+    "answer": "Recurrent laryngeal nerve (branch of CN X/vagus). Right RLN: hooks under right subclavian artery, ascends in tracheoesophageal groove. Left RLN: hooks under arch of aorta (longer course \u2014 more vulnerable to mediastinal pathology), ascends in tracheoesophageal groove. Both enter larynx behind cricothyroid joint.\nMotor supply: ALL intrinsic laryngeal muscles EXCEPT cricothyroid (supplied by external branch of superior laryngeal nerve). The most important muscle it supplies is posterior cricoarytenoid \u2014 the ONLY abductor of vocal cords.\nUnilateral RLN palsy: ipsilateral vocal cord paralysis in paramedian position \u2192 hoarseness (most common presentation). Causes: thyroid surgery (#1 iatrogenic), lung cancer (left \u2014 Pancoast tumor), aortic aneurysm (left), mediastinal lymphadenopathy. Bilateral RLN palsy: both cords in paramedian \u2192 stridor, airway compromise \u2192 emergency tracheostomy.\nClinical Pearl: Left RLN has longer course under aortic arch \u2014 more vulnerable. If hoarseness + left vocal cord palsy \u2192 look for mediastinal pathology (CXR for lung mass, CT chest). Semon's law: abductors (posterior cricoarytenoid) are affected before adductors in progressive lesions.",
+    "system": "Neuro",
+    "topic": "Recurrent Laryngeal Nerve",
+    "difficulty": "intermediate",
+    "source": "Flash cards continued.txt [filled from HTML tools]"
+  },
+  {
+    "id": "fc_0222",
+    "question": "A 'stocking-glove' pattern of sensory deficit is characteristic of what type of neurological disorder?",
+    "answer": "A length-dependent polyneuropathy.",
+    "system": "Neuro",
+    "topic": "Sensory Neuropathy",
+    "difficulty": "intermediate",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0223",
+    "question": "What is the difference between positive and negative sensory symptoms?",
+    "answer": "Positive symptoms represent excessive activity in sensory pathways (e.g., tingling), while negative symptoms represent loss of sensory function (e.g., numbness).",
+    "system": "Neuro",
+    "topic": "Sensory Neuropathy",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0227",
+    "question": "What is the Brown-S\u00e9quard syndrome, resulting from lateral hemisection of the spinal cord?",
+    "answer": "Absent pain and temperature sensation contralaterally, with loss of proprioceptive sensation and power ipsilaterally below the lesion.",
+    "system": "Neuro",
+    "topic": "Spinal Cord Lesions",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0228",
+    "question": "What is the major neurotransmitter released by primary afferent nociceptors in the spinal cord, and what is its effect?",
+    "answer": "Glutamate, which rapidly excites the second-order dorsal horn neurons.",
+    "system": "Neuro",
+    "topic": "Spinal Cord Lesions",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0229",
+    "question": "A 72-year-old female presents to the emergency department with sudden onset of right-sided weakness and aphasia that began 1 hour ago. How should her acute ischemic stroke be managed?",
+    "answer": "The management of acute ischemic stroke is time-critical, focusing on rapid evaluation and restoration of blood flow to the ischemic brain tissue.\nInitial Assessment: An immediate non-contrast head CT is performed to exclude hemorrhage. The NIH Stroke Scale (NIHSS) is used to quantify the deficit.\nReperfusion Therapy:\nIntravenous Thrombolysis: Alteplase (tPA) is the standard of care for eligible patients presenting within a 3 to 4.5-hour window from symptom onset.\nMechanical Thrombectomy: For patients with a large vessel occlusion (LVO), thrombectomy is highly effective and can be performed up to 24 hours after onset in select cases.\nSupportive Care: This includes permissive hypertension (if no thrombolysis), and strict blood pressure, glucose, and temperature control.\n Clinical Pearl: \"Time is brain. The single most important factor in the management of acute ischemic stroke is the time from symptom onset to the initiation of reperfusion therapy.\"",
+    "system": "Neuro",
+    "topic": "Stroke",
+    "difficulty": "advanced",
+    "source": "Full flashcards.txt"
+  },
+  {
+    "id": "fc_0231",
+    "question": "A patient loses consciousness for less than a minute and has brief, arrhythmic, multifocal myoclonic jerks. Is this more consistent with syncope or a generalised seizure?",
+    "answer": "Syncope; myoclonic jerks occur in up to 90% of syncopal episodes and are typically brief (<30 s).",
+    "system": "Neuro",
+    "topic": "Syncope",
+    "difficulty": "intermediate",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0232",
+    "question": "What is the 'coat-hanger headache' sometimes associated with orthostatic hypotension?",
+    "answer": "Neck pain, typically in the suboccipital and shoulder region, thought to be due to neck muscle ischaemia.",
+    "system": "Neuro",
+    "topic": "Syncope",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0233",
+    "question": "What is the underlying pathophysiology of neurally mediated (vasovagal) syncope?",
+    "answer": "A transient change in autonomic efferent activity with increased parasympathetic outflow and sympathoinhibition, leading to bradycardia and/or vasodilation.",
+    "system": "Neuro",
+    "topic": "Syncope",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0234",
+    "question": "What is the core deficit in an amnestic state or syndrome?",
+    "answer": "A disproportionate impairment in the ability to learn and recall new information (anterograde amnesia).",
+    "system": "Neuro",
+    "topic": "The Core Deficit In An",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0235",
+    "question": "How are the dural venous sinuses classified and what is their function?",
+    "answer": "\u2022 \n\u2022 Why: The brain's venous blood must be collected and drained in a systematic way6.\n\u2022 \n\u2022 What: The superior sagittal, transverse, cavernous, and straight sinuses form an interconnected system7. They are large venous channels located within the dura mater that collect blood from the cerebral veins8.\n\u2022 \n\u2022 How: This sinus system is necessary because individual cerebral veins cannot reach the heart directly9.\n\u2022  Clinical Pearl: \"venous sinus thrombosis causes cortical vein hypertension, cerebral edema, and venous infarction\"10.",
+    "system": "Neuro",
+    "topic": "The Dural Venous Sinuses Classified",
+    "difficulty": "basic",
+    "source": "Full flashcards.txt"
+  },
+  {
+    "id": "fc_0236",
+    "question": "What is the initial imaging modality of choice for investigating hemiparesis of acute origin?",
+    "answer": "A CT scan of the brain.",
+    "system": "Neuro",
+    "topic": "The Initial Imaging Modality Of",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0237",
+    "question": "The long-term use of opioids for chronic nonmalignant pain is controversial partly due to a phenomenon where pain may worsen, which is termed _____.",
+    "answer": "Opioid-induced hyperalgesia.",
+    "system": "Neuro",
+    "topic": "The Long-Term Use Of Opioids",
+    "difficulty": "intermediate",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0238",
+    "question": "What is the primary risk associated with fixed-ratio opioid-acetaminophen combination analgesics when the dose is escalated?",
+    "answer": "Ingestion of hepatotoxic levels of acetaminophen, potentially leading to liver failure.",
+    "system": "Neuro",
+    "topic": "The Primary Risk Associated With",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0239",
+    "question": "Which two classes of primary afferent nerve fibres are responsible for transmitting pain signals?",
+    "answer": "The small diameter myelinated A-delta (A\u03b4) and the unmyelinated (C) axons.",
+    "system": "Neuro",
+    "topic": "Two Classes Of Primary Afferent",
+    "difficulty": "intermediate",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0240",
+    "question": "Name two neuropeptides released by primary afferent nociceptors that produce a slower, longer-lasting excitation of dorsal horn neurons.",
+    "answer": "Substance P and Calcitonin Gene-Related Peptide (CGRP).",
+    "system": "Neuro",
+    "topic": "Two Neuropeptides Released By Primary",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0241",
+    "question": "Contrast the key features of peripheral versus central vertigo.",
+    "answer": "Peripheral vertigo often has a sudden onset, is associated with tinnitus or hearing loss, and may be positional; central vertigo has a more gradual onset and is associated with other brainstem signs like diplopia or ataxia.",
+    "system": "Neuro",
+    "topic": "Vertigo",
+    "difficulty": "intermediate",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0242",
+    "question": "What are the three categories of symptoms and signs associated with vestibular disorders?",
+    "answer": "1. Vertigo (illusion of movement); 2. Nystagmus (involuntary eye movements); 3. Impaired standing balance.",
+    "system": "Neuro",
+    "topic": "Vertigo",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0243",
+    "question": "What is the purpose of the Dix-Hallpike manoeuvre?",
+    "answer": "To diagnose posterior canal benign paroxysmal positional vertigo (BPPV) by provoking transient upbeating-torsional nystagmus.",
+    "system": "Neuro",
+    "topic": "Vertigo",
+    "difficulty": "basic",
+    "source": "flashcards.csv"
+  },
+  {
+    "id": "fc_0244",
+    "question": "A 25-year-old known asthmatic presents with severe shortness of breath, audible wheezing, and a non-productive cough. What are the key components of managing an acute asthma exacerbation?",
+    "answer": "Management of an acute asthma exacerbation focuses on rapidly reversing bronchoconstriction and reducing airway inflammation.\nOxygen: Supplemental oxygen should be administered to maintain an SpO\u2082 of 93-95%.\nShort-Acting Beta-Agonists (SABA): Inhaled albuterol is the first-line treatment to provide rapid bronchodilation. It is typically administered via a nebulizer or metered-dose inhaler with a spacer, often in combination with ipratropium (an anticholinergic).\nSystemic Corticosteroids: Oral or IV corticosteroids (e.g., prednisone, methylprednisolone) are crucial for all but the mildest exacerbations. They reduce airway inflammation and help prevent a late-phase recurrence of symptoms. Their effect begins in 4-6 hours.\nMagnesium Sulfate: IV magnesium may be considered for severe exacerbations that are not responding to initial therapy, as it can provide additional bronchodilation.\n Clinical Pearl: \"Systemic corticosteroids are a cornerstone of treatment for moderate to severe asthma exacerbations and should be administered early to reduce inflammation and the need for hospitalization.\"",
+    "system": "RS",
+    "topic": "Asthma",
+    "difficulty": "advanced",
+    "source": "Full flashcards.txt"
+  },
+  {
+    "id": "fc_0251",
+    "question": "A 45-year-old female presents with acute onset of pleuritic chest pain and dyspnea one week after a long-haul flight. What is the diagnostic approach for a suspected pulmonary embolism (PE)?",
+    "answer": "The diagnostic approach for PE involves assessing pre-test probability followed by specific diagnostic tests to confirm or exclude the diagnosis.\nClinical Probability Assessment: The Wells' score or revised Geneva score is used to stratify patients into low, intermediate, or high pre-test probability.\nDiagnostic Testing:\nD-dimer: In patients with low clinical probability, a negative D-dimer test can safely rule out PE.\nCT Pulmonary Angiography (CTPA): This is the primary imaging modality for diagnosing PE in patients with intermediate or high clinical probability, or those with a positive D-dimer.\nVentilation/Perfusion (V/Q) Scan: An alternative for patients with a contraindication to CTPA (e.g., renal failure).\n Clinical Pearl: \"The diagnostic strategy for PE is risk-stratified. A negative D-dimer is powerful for ruling out PE in low-probability patients, but CT pulmonary angiography remains the gold standard for definitive diagnosis in most hemodynamically stable patients.\"",
+    "system": "RS",
+    "topic": "Pulmonary Embolism",
+    "difficulty": "intermediate",
+    "source": "Full flashcards.txt"
+  },
+  {
+    "id": "fc_0256",
+    "question": "Discuss: Acute kidney injury diagnostic criteria",
+    "answer": "AKI diagnostic criteria (KDIGO 2012): Stage 1 \u2014 Creatinine rise \u22650.3 mg/dL within 48h OR \u22651.5\u00d7 baseline within 7 days OR urine output <0.5 mL/kg/h for 6-12h. Stage 2 \u2014 Creatinine \u22652\u00d7 baseline OR UO <0.5 mL/kg/h for \u226512h. Stage 3 \u2014 Creatinine \u22653\u00d7 baseline OR \u22654.0 mg/dL OR initiation of RRT OR UO <0.3 mL/kg/h for \u226524h OR anuria for \u226512h.\nClassification: Pre-renal (\u2193perfusion \u2014 most common, FENa <1%, BUN:Cr >20:1), Intrinsic renal (ATN most common \u2014 FENa >2%, muddy brown casts), Post-renal (obstruction \u2014 hydronephrosis on ultrasound).\nNovel biomarkers: NGAL (neutrophil gelatinase-associated lipocalin) \u2014 rises within 2h of injury vs creatinine which rises in 24-48h. KIM-1 (kidney injury molecule-1) \u2014 specific for proximal tubular injury. Cystatin C \u2014 not affected by muscle mass, better GFR estimate in elderly/sarcopenic.\nClinical Pearl: The 0.3 mg/dL rise in 48 hours is the most clinically useful criterion \u2014 it catches AKI early before creatinine doubles.",
+    "system": "Renal",
+    "topic": "Acute Kidney Injury",
+    "difficulty": "intermediate",
+    "source": "Flash cards continued.txt [filled from HTML tools]"
+  },
+  {
+    "id": "fc_0257",
+    "question": "Metabolic acidosis AKI context",
+    "answer": "Why: AKI commonly causes metabolic acidosis \u2192 What: Usually high anion gap from retention of organic acids \u2192 How: Failed excretion of daily acid load, tissue hypoxia produces lactate because kidney cannot excrete H+ or regenerate HCO3-, therefore acidosis indicates severe kidney dysfunction",
+    "system": "Renal",
+    "topic": "Acute Kidney Injury",
+    "difficulty": "intermediate",
+    "source": "Flashcards_Merged_GDocs.md"
+  },
+  {
+    "id": "fc_0258",
+    "question": "How is Chronic Kidney Disease (CKD) staged, and what are the key parameters used?",
+    "answer": "CKD is staged based on the Glomerular Filtration Rate (GFR) and the level of albuminuria, as these are key indicators of kidney damage and prognosis.\nGFR Categories (G1-G5):\nG1: GFR \u226590 (Normal)\nG2: GFR 60-89 (Mildly decreased)\nG3a: GFR 45-59 (Mild-moderate decrease)\nG3b: GFR 30-44 (Moderate-severe decrease)\nG4: GFR 15-29 (Severely decreased)\nG5: GFR <15 (Kidney failure)\nAlbuminuria Categories (A1-A3):\nA1: ACR <30 mg/g (Normal)\nA2: ACR 30-300 mg/g (Moderately increased)\nA3: ACR >300 mg/g (Severely increased)\n Clinical Pearl: \"Both GFR and albuminuria levels are crucial for assessing the risk of CKD progression and cardiovascular events. Higher albuminuria at any GFR stage indicates a worse prognosis.\"",
+    "system": "Renal",
+    "topic": "Chronic Kidney Disease",
+    "difficulty": "basic",
+    "source": "Full flashcards.txt"
+  },
+  {
+    "id": "fc_0259",
+    "question": "What are the key components of the management protocol for DKA?",
+    "answer": "*  Why: DKA management requires a systematic approach to correct fluid loss, hyperglycemia, and electrolyte imbalances.\n*  What: The protocol involves IV fluids, insulin therapy, and potassium replacement.\n*  How: IV fluids are given first to restore volume and improve renal perfusion. IV insulin is then administered to inhibit ketogenesis and gradually correct hyperglycemia. Potassium levels must be closely monitored and replaced as needed because insulin therapy drives potassium into the cells, risking hypokalemia.Neurophysiology, Gout, and Microbiology Flashcards\nOf course. Here are your flashcards, designed for clarity and visual appeal.",
+    "system": "Renal",
+    "topic": "Diabetic Ketoacidosis",
+    "difficulty": "advanced",
+    "source": "Full flashcards.txt"
+  },
+  {
+    "id": "fc_0262",
+    "question": "Discuss: Drug induced dyselectrolytemia",
+    "answer": "Drug-induced electrolyte disturbances mapped to nephron segments: (1) NSAIDs: block prostaglandins \u2192 afferent constriction \u2192 \u2193GFR \u2192 AKI + hyperK\u207a. (2) ACEi/ARB: efferent dilation \u2192 \u2193GFR acutely + \u2193aldosterone \u2192 hyperK\u207a. (3) SGLT2i: block Na\u207a/glucose reabsorption at PCT \u2192 natriuresis, glucosuria, uricosuria. (4) Furosemide (LOH): blocks NKCC2 \u2192 hypoK\u207a, hypoMg\u00b2\u207a, hypocalcemia, metabolic alkalosis, hyperuricemia. (5) Thiazide (DCT): blocks NCC \u2192 hypoNa\u207a (#1 drug cause), hypoK\u207a, HYPERcalcemia (paradoxical \u2014 enhanced Ca\u00b2\u207a reabsorption via TRPV5/NCX), hypoMg\u00b2\u207a, hyperuricemia, hyperglycemia. (6) Spironolactone (CD): blocks MR \u2192 hyperK\u207a, metabolic acidosis. (7) Lithium: enters CD via ENaC \u2192 disrupts AQP2 \u2192 nephrogenic DI (polyuria + hyperNa\u207a).\nTriple whammy: ACEi + diuretic + NSAID = AKI (common in elderly Indian DM + HTN patients on ramipril + thiazide who take diclofenac for joint pain).\nClinical Pearl: Thiazide is #1 drug cause of hyponatremia; furosemide is the opposite \u2014 it wastes free water and can cause hypernatremia. Don't confuse them.",
+    "system": "Renal",
+    "topic": "Drug-Induced Dyselectrolytemia",
+    "difficulty": "intermediate",
+    "source": "Flash cards continued.txt [filled from HTML tools]"
+  },
+  {
+    "id": "fc_0263",
+    "question": "What is the biochemical pathway for uric acid synthesis?",
+    "answer": "\u2022 \n\u2022 Why: Purine metabolism follows specific pathways to produce uric acid42.\n\u2022 \n\u2022 What: The pathway is: Hypoxanthine \u2192 Xanthine \u2192 Uric Acid, a process catalyzed by the enzyme xanthine oxidase43.\n\u2022 \n\u2022 How: Xanthine oxidase performs sequential oxidation44. This enzyme is the critical rate-limiting step in the degradation of purines to uric acid45.\n\u2022  Clinical Pearl: \"allopurinol is a substrate as well as inhibitor of xanthine oxidase, the enzyme responsible for uric acid synthesis\"46.\n\ud83d\udc8a",
+    "system": "Renal",
+    "topic": "Gout",
+    "difficulty": "basic",
+    "source": "Full flashcards.txt",
+    "also_from": [
+      "MD_Exam_Flashcards.tsv",
+      "Flashcards_Merged_GDocs.md"
+    ]
+  },
+  {
+    "id": "fc_0264",
+    "question": "A 70-year-old male with a history of heart failure and recent diuretic use presents with decreased urine output and elevated creatinine. How is Acute Kidney Injury (AKI) diagnosed?",
+    "answer": "The diagnosis of AKI is based on a sudden deterioration in kidney function, identified by changes in serum creatinine and urine output, according to the KDIGO criteria.\nSerum Creatinine Criteria:\nAn increase in serum creatinine by \u22650.3 mg/dL within 48 hours.\nAn increase in serum creatinine to \u22651.5 times the baseline within the prior 7 days.\nUrine Output Criteria:\nUrine volume <0.5 mL/kg/hour for 6 hours.\nClassification: The cause is categorized as prerenal (decreased perfusion), intrinsic (kidney damage), or postrenal (obstruction).\n Clinical Pearl: \"The most common cause of AKI is prerenal, often due to hypovolemia or decreased cardiac output, which is typically reversible with restoration of renal perfusion.\"\n\u0aa8\u0ac0",
+    "system": "Renal",
+    "topic": "Heart Failure",
+    "difficulty": "basic",
+    "source": "Full flashcards.txt"
+  },
+  {
+    "id": "fc_0268",
+    "question": "Hypokalemia clinical manifestations",
+    "answer": "Why: Potassium affects cellular membrane potential \u2192 What: Muscle weakness, cardiac arrhythmias, nephropathy, paralytic ileus \u2192 How: Hypokalemia affects cardiac conduction, neuromuscular function, renal concentrating ability because K+ determines resting potential, therefore symptoms range from mild to life-threatening",
+    "system": "Renal",
+    "topic": "Hypokalemia",
+    "difficulty": "basic",
+    "source": "Flashcards_Merged_GDocs.md"
+  },
+  {
+    "id": "fc_0269",
+    "question": "Hypokalemia definition and causes",
+    "answer": "Why: Hypokalemia is common electrolyte abnormality with serious consequences \u2192 What: Serum K+ <3.5 mEq/L, causes include GI losses, renal losses, inadequate intake \u2192 How: Body contains 3500 mEq K+, 98% intracellular, transcellular shifts affect serum levels because small changes in distribution cause large serum changes, therefore systematic approach needed",
+    "system": "Renal",
+    "topic": "Hypokalemia",
+    "difficulty": "intermediate",
+    "source": "Flashcards_Merged_GDocs.md"
+  },
+  {
+    "id": "fc_0270",
+    "question": "Hypokalemia diagnostic approach",
+    "answer": "Why: Determining cause guides treatment \u2192 What: 24h urine K+, spot urine K+/Cr ratio, assess volume status \u2192 How: Urine K+ >20 mEq/day suggests renal losses, <20 mEq/day suggests extrarenal losses because kidneys conserve K+ when depleted, therefore urine losses indicate renal pathology",
+    "system": "Renal",
+    "topic": "Hypokalemia",
+    "difficulty": "advanced",
+    "source": "Flashcards_Merged_GDocs.md"
+  },
+  {
+    "id": "fc_0276",
+    "question": "Metabolic acidosis classification",
+    "answer": "Why: Anion gap helps determine cause \u2192 What: High anion gap (MUDPILES) vs normal gap (hyperchloremic) \u2192 How: Anion gap = Na - (Cl + HCO3), normal 8-12, high gap suggests acid accumulation because unmeasured anions present, therefore gap guides differential diagnosis",
+    "system": "Renal",
+    "topic": "Metabolic Acidosis",
+    "difficulty": "basic",
+    "source": "Flashcards_Merged_GDocs.md",
+    "also_from": [
+      "Flash cards continued.txt"
+    ]
+  },
+  {
+    "id": "fc_0277",
+    "question": "Metabolic acidosis definition",
+    "answer": "Why: Common acid-base disorder requires systematic approach \u2192 What: Primary decrease in serum bicarbonate <22 mEq/L, pH <7.35 \u2192 How: Caused by acid gain or bicarbonate loss, compensated by hyperventilation because body maintains pH homeostasis, therefore systematic evaluation needed",
+    "system": "Renal",
+    "topic": "Metabolic Acidosis",
+    "difficulty": "intermediate",
+    "source": "Flashcards_Merged_GDocs.md"
+  },
+  {
+    "id": "fc_0278",
+    "question": "Metabolic acidosis management",
+    "answer": "Why: Treatment depends on severity and cause \u2192 What: Treat underlying cause, consider bicarbonate if pH <7.20 \u2192 How: Bicarbonate 50 mmol in 200 mL sterile water with KCl because rapid correction can cause complications, therefore cautious approach needed",
+    "system": "Renal",
+    "topic": "Metabolic Acidosis",
+    "difficulty": "advanced",
+    "source": "Flashcards_Merged_GDocs.md",
+    "also_from": [
+      "Flash cards continued.txt"
+    ]
+  },
+  {
+    "id": "fc_0279",
+    "question": "Metformin contraindications",
+    "answer": "Why: Lactic acidosis risk requires careful patient selection \u2192 What: eGFR <30, acute illness, contrast procedures \u2192 How: Drug accumulation in renal impairment increases lactate levels because metformin clearance depends on kidney function, therefore temporary discontinuation needed",
+    "system": "Renal",
+    "topic": "Metformin",
+    "difficulty": "basic",
+    "source": "Flashcards_Merged_GDocs.md"
+  },
+  {
+    "id": "fc_0280",
+    "question": "Metformin side effects",
+    "answer": "Why: Generally well tolerated but has specific risks \u2192 What: GI upset, rare lactic acidosis, B12 deficiency \u2192 How: GI effects dose-related and transient, lactic acidosis in renal impairment because drug accumulates when clearance reduced, therefore monitor renal function",
+    "system": "Renal",
+    "topic": "Metformin",
+    "difficulty": "basic",
+    "source": "Flashcards_Merged_GDocs.md"
+  },
+  {
+    "id": "fc_0286",
+    "question": "GFR clinical significance",
+    "answer": "Why: GFR determines CKD stage and treatment \u2192 What: Normal >90, CKD stages 1-5 based on GFR decline \u2192 How: GFR <60 for >3 months defines CKD, <15 is kidney failure because nephron loss is irreversible, therefore early detection prevents progression",
+    "system": "Renal",
+    "topic": "Nephron Physiology",
+    "difficulty": "intermediate",
+    "source": "Flashcards_Merged_GDocs.md"
+  },
+  {
+    "id": "fc_0287",
+    "question": "GFR estimation methods",
+    "answer": "Why: GFR is best measure of kidney function \u2192 What: Creatinine-based equations (MDRD, CKD-EPI), cystatin C, inulin clearance \u2192 How: eGFR calculated from serum creatinine, age, sex because creatinine production relatively constant, therefore provides estimate of filtering capacity",
+    "system": "Renal",
+    "topic": "Nephron Physiology",
+    "difficulty": "basic",
+    "source": "Flashcards_Merged_GDocs.md"
+  },
+  {
+    "id": "fc_0288",
+    "question": "Nephron anatomical structure",
+    "answer": "Why: Functional unit of kidney requires understanding \u2192 What: Glomerulus, Bowman's capsule, proximal tubule, loop of Henle, distal tubule, collecting duct \u2192 How: Each nephron filters blood, reabsorbs/secretes solutes, concentrates urine because 1 million nephrons per kidney, therefore understanding structure explains function",
+    "system": "Renal",
+    "topic": "Nephron Physiology",
+    "difficulty": "basic",
+    "source": "Flashcards_Merged_GDocs.md"
+  },
+  {
+    "id": "fc_0289",
+    "question": "Nephron segment functions",
+    "answer": "Why: Different segments have specific functions \u2192 What: Glomerulus filters, proximal tubule reabsorbs 65%, loop concentrates, distal tubule fine-tunes \u2192 How: Proximal tubule reabsorbs most filtered load, loop of Henle creates concentration gradient, distal segments regulate electrolytes because specialized transport mechanisms, therefore segmental dysfunction causes specific syndromes",
+    "system": "Renal",
+    "topic": "Nephron Physiology",
+    "difficulty": "intermediate",
+    "source": "Flashcards_Merged_GDocs.md"
+  },
+  {
+    "id": "fc_0293",
+    "question": "SGLT2 renal benefits",
+    "answer": "Why: Nephroprotective effects demonstrated \u2192 What: Reduced progression of diabetic kidney disease, decreased eGFR decline \u2192 How: Decreased intraglomerular pressure via tubuloglomerular feedback because afferent arteriole constriction reduces hyperfiltration, therefore slows nephron loss",
+    "system": "Renal",
+    "topic": "SGLT2 Inhibitors",
+    "difficulty": "intermediate",
+    "source": "Flashcards_Merged_GDocs.md"
+  },
+  {
+    "id": "fc_0295",
+    "question": "In Western countries, what category of diseases is the most common cause of Fever of Unknown Origin (FUO)?",
+    "answer": "Noninfectious inflammatory diseases (NIIDs), including autoimmune, autoinflammatory, and granulomatous diseases.",
+    "system": "Rheum",
+    "topic": "Fever and Hyperthermia",
+    "difficulty": "intermediate",
+    "source": "flashcards.csv",
+    "also_from": [
+      "flashcards.csv"
+    ]
+  },
+  {
+    "id": "fc_0296",
+    "question": "Allopurinol mechanism of action",
+    "answer": "Why: Hyperuricemia requires synthesis inhibition \u2192 What: Competitive inhibitor of xanthine oxidase enzyme \u2192 How: Blocks conversion of hypoxanthine and xanthine to uric acid, alloxanthine metabolite provides long-acting inhibition because allopurinol mimics hypoxanthine substrate, therefore enzyme cannot form uric acid",
+    "system": "Rheum",
+    "topic": "Gout",
+    "difficulty": "intermediate",
+    "source": "MD_Exam_Flashcards.tsv",
+    "also_from": [
+      "Flashcards_Merged_GDocs.md",
+      "Flash cards continued.txt"
+    ]
+  },
+  {
+    "id": "fc_0297",
+    "question": "Antigout drug clinical uses",
+    "answer": "Why: Gout has acute and chronic phases requiring different approaches \u2192 What: Acute - NSAIDs, colchicine; Chronic - allopurinol, probenecid \u2192 How: Acute inflammation needs anti-inflammatory drugs, chronic hyperuricemia needs uric acid lowering because acute gout is inflammatory, chronic gout is metabolic, therefore different mechanisms needed",
+    "system": "Rheum",
+    "topic": "Gout",
+    "difficulty": "intermediate",
+    "source": "MD_Exam_Flashcards.tsv",
+    "also_from": [
+      "Flashcards_Merged_GDocs.md",
+      "Flash cards continued.txt"
+    ]
+  },
+  {
+    "id": "fc_0299",
+    "question": "How are different drugs used to treat acute and chronic gout?",
+    "answer": "\u2022 \n\u2022 Why: Gout presents with acute and chronic phases that require different treatment approaches58.\n\u2022 \n\u2022 What: Acute gout is treated with NSAIDs and colchicine59. Chronic gout is managed with allopurinol and probenecid60.\n\u2022 \n\u2022 How: The different approaches are needed because acute gout is an inflammatory condition, while chronic gout is a metabolic one61. Therefore, acute attacks require anti-inflammatory drugs, and chronic management requires uric acid-lowering drugs62.\n\u2022  Clinical Pearl: \"NSAIDs are quite effective in terminating the attack, but may take 12\u201324 hours\"63.",
+    "system": "Rheum",
+    "topic": "Gout",
+    "difficulty": "advanced",
+    "source": "Full flashcards.txt"
+  },
+  {
+    "id": "fc_0300",
+    "question": "How do uricosuric drugs like probenecid work?",
+    "answer": "\u2022 \n\u2022 Why: Hyperuricemia is often caused by the undersecretion of uric acid53.\n\u2022 \n\u2022 What: Probenecid works by blocking the URAT-1 transporter, which inhibits the reabsorption of uric acid54.\n\u2022 \n\u2022 How: It promotes the excretion of uric acid by blocking its active transport in the proximal tubules55. Since a large amount of uric acid is normally reabsorbed, blocking this process increases its elimination from the body56.\n\u2022  Clinical Pearl: \"Uric acid is largely reabsorbed by active transport, while less of it is secreted only 1/10th of the filtered load is excreted in urine. The major transporter involved is URAT-1\"57.\n\ud83d\udc8a",
+    "system": "Rheum",
+    "topic": "Gout",
+    "difficulty": "intermediate",
+    "source": "Full flashcards.txt"
+  },
+  {
+    "id": "fc_0301",
+    "question": "How does allopurinol work to treat hyperuricemia?",
+    "answer": "\u2022 \n\u2022 Why: Hyperuricemia requires the inhibition of uric acid synthesis47.\n\u2022 \n\u2022 What: Allopurinol acts as a competitive inhibitor of the xanthine oxidase enzyme48.\n\u2022 \n\u2022 How: It blocks the conversion of hypoxanthine and xanthine into uric acid49. Allopurinol mimics the hypoxanthine substrate, preventing the enzyme from forming uric acid50. Furthermore, its metabolite, alloxanthine, provides long-acting inhibition51.\n\u2022  Clinical Pearl: \"Allopurinol itself is a short-acting competitive inhibitor of xanthine oxidase, but its major metabolite alloxanthine oxypurine is a long-acting and noncompetitive inhibitor\"52.\n\ud83d\udc8a",
+    "system": "Rheum",
+    "topic": "Gout",
+    "difficulty": "advanced",
+    "source": "Full flashcards.txt"
+  },
+  {
+    "id": "fc_0302",
+    "question": "Uricosuric drug mechanisms",
+    "answer": "Why: Hyperuricemia often due to undersecretion \u2192 What: Probenecid blocks URAT-1 transporter, inhibits reabsorption \u2192 How: Promotes uric acid excretion by blocking active transport in proximal tubules because uric acid is largely reabsorbed normally, therefore blocking reabsorption increases elimination",
+    "system": "Rheum",
+    "topic": "Gout",
+    "difficulty": "intermediate",
+    "source": "MD_Exam_Flashcards.tsv",
+    "also_from": [
+      "Flashcards_Merged_GDocs.md",
+      "Flash cards continued.txt"
+    ]
+  },
+  {
+    "id": "fc_0303",
+    "question": "JAK inhibitors in inflammatory diseases",
+    "answer": "Why: Biologics require injection and are expensive \u2192 What: Tofacitinib, baricitinib block Janus kinases (JAK1, JAK2, JAK3, TYK2) \u2192 How: JAKs mediate cytokine signaling via STAT pathway; blocking them reduces inflammatory cytokine effects because oral small molecules block intracellular signaling, therefore effective in rheumatoid arthritis and inflammatory bowel disease",
+    "system": "Rheum",
+    "topic": "JAK Inhibitors",
+    "difficulty": "intermediate",
+    "source": "Flashcards_Merged_GDocs.md",
+    "also_from": [
+      "Flash cards continued.txt"
+    ]
+  },
+  {
+    "id": "fc_0306",
+    "question": "Define and classify vasculitis syndrome . Discuss",
+    "answer": "Why: Immune-mediated vessel inflammation \u2192 What: Systemic necrotizing inflammation of blood vessels \u2192 How: Autoimmune attack on vessel walls causes necrosis and organ ischemia because inflammatory cells infiltrate vessel walls, therefore multi-organ dysfunction",
+    "system": "Rheum",
+    "topic": "Vasculitis",
+    "difficulty": "basic",
+    "source": "Flashcards_Merged_GDocs.md",
+    "also_from": [
+      "Flash cards continued.txt"
+    ]
+  }
+]

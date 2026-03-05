@@ -1,0 +1,20 @@
+{
+  "description": "Test fixture simulating parsed output from Systemic_Medicine_2023.xlsx. Use this to test PredictorEngine.rank() with uploaded data WITHOUT needing actual file parsing.",
+  "parsed_questions": [
+    {"text": "Discuss aetiology, clinical features, investigations, and management in a case of Aortic dissection", "year": 2023, "subject": "Systemic Medicine"},
+    {"text": "Discuss classification, aetiology, clinical features, investigations, and treatment in a patient with interstitial lung disease.", "year": 2023, "subject": "Systemic Medicine"},
+    {"text": "Discuss Hypertensive Emergencies. Tabulate preferred parenteral drugs for selected Hypertensive Emergencies", "year": 2023, "subject": "Systemic Medicine"},
+    {"text": "Classify Haemolytic Anaemia. Discuss in detail Hereditary Spherocytosis", "year": 2023, "subject": "Systemic Medicine"},
+    {"text": "SGLT-2 inhibiters in clinical practice", "year": 2023, "subject": "Systemic Medicine"},
+    {"text": "Discuss etiopathogenesis and management of Autoimmune Hepatitis", "year": 2023, "subject": "Systemic Medicine"},
+    {"text": "Psoriatic Arthropathy", "year": 2023, "subject": "Systemic Medicine"}
+  ],
+  "expected_matches": [
+    {"topic": "Aortic dissection", "system": "Cardiology"},
+    {"topic": "Interstitial lung disease", "system": "Respiratory"},
+    {"topic": "Hypertensive emergency", "system": "Cardiology"},
+    {"topic": "Haemolytic anaemia", "system": "Hematology"},
+    {"topic": "Autoimmune hepatitis", "system": "Gastrointestinal"},
+    {"topic": "Psoriatic arthritis", "system": "Rheumatology"}
+  ]
+}

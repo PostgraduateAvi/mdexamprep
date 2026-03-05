@@ -1,0 +1,469 @@
+{
+  "id": "general_cases",
+  "system_name": "General & Cross-System Cases",
+  "system": "general",
+
+  "system_examination_technique": {
+    "approach": "Cross-system cases require structured adaptation. For valvular heart disease: use cardiac examination technique (see cardiac.json). For COPD: use respiratory examination technique. For proforma-based cases: follow the universal proforma sequence. The key skill is recognizing which system examination to deploy and completing it systematically.",
+    "sequence": "Identify the dominant system → Deploy system-specific IPPA sequence → Look for cross-system complications → Integrate findings into a syndromic diagnosis",
+    "steps": [
+      {
+        "phase": "Case Proforma — Universal Structure",
+        "actions": [
+          "Opening: '[Name], [Age]-year-old [Sex], [Occupation], from [Place], admitted on [Date] with chief complaints of...'",
+          "Chief complaints: chronological order with SPECIFIC durations.",
+          "HPI opener: 'Patient was apparently asymptomatic [X months/years] back, then developed...'",
+          "Past history Big 6: DM, HTN, TB, Bronchial Asthma, CAD, Thyroid disease. For each: duration, treatment, compliance.",
+          "Drug history: Tab [Drug name] [Dose] — [Frequency as 1-0-1] — since [Duration].",
+          "Personal history: smoking (pack-years), alcohol (g/day × years), CAGE questionnaire for alcohol dependence.",
+          "Family history: relevant genetic/familial conditions.",
+          "GPE: 'Conscious, oriented to time, place, person' — then PICLE + Clubbing at specific sites.",
+          "Vitals block: Pulse (rate/rhythm/volume/character), BP, RR, Temp, SpO2, JVP."
+        ]
+      },
+      {
+        "phase": "System Examination — Cardiovascular",
+        "actions": [
+          "Inspection: scars (sternotomy, thoracotomy, pacemaker), visible apex beat, precordial bulge.",
+          "Palpation: apex location and character, parasternal heave, thrills, palpable P2.",
+          "Auscultation: systematic 4 areas + special positions. Heart sounds (S1, S2, S3, S4). Murmur with ALL 7 features.",
+          "Complete: lung bases, peripheral edema, hepatomegaly, blood pressure."
+        ]
+      },
+      {
+        "phase": "System Examination — Respiratory",
+        "actions": [
+          "Inspection: chest shape, symmetry, breathing pattern, accessory muscles, scars.",
+          "Palpation: tracheal position, chest expansion, vocal fremitus.",
+          "Percussion: all zones bilaterally, compare sides, cardiac/liver dullness.",
+          "Auscultation: breath sounds (vesicular/bronchial), added sounds (creps/rhonchi/wheeze), vocal resonance."
+        ]
+      },
+      {
+        "phase": "System Examination — Neurological",
+        "actions": [
+          "GCS: E4V5M6 = 15. Always document.",
+          "Cranial nerves: at minimum II, III, V, VII, IX/X, XII.",
+          "Motor: tone, power (MRC 0-5, proximal and distal), reflexes (deep + plantar).",
+          "Sensory: light touch, pain, vibration (128 Hz tuning fork), proprioception.",
+          "Cerebellar: finger-nose, heel-shin, rapid alternating movements, Romberg.",
+          "Gait: hemiplegic (circumduction), high-stepping (foot drop), waddling (proximal myopathy), broad-based (cerebellar), Parkinsonian (shuffling)."
+        ]
+      },
+      {
+        "phase": "Diagnosis Statement Formulas",
+        "actions": [
+          "Cardiovascular: [Valve lesion] with [Etiology] — [Complications: AF/HF/PHT] — [NYHA class]",
+          "Respiratory: [Condition] with [Etiology] — [Severity] — [Acute/Chronic] — [Complications]",
+          "Hepatology: [CLD/Cirrhosis] secondary to [Etiology] with [Complications] — Child-Pugh [A/B/C]",
+          "Neurology (UMN): [Syndrome] — [Side] — [UMN/LMN] — [Localization] — [Etiology]",
+          "Neurology (LMN/PNS): [Pattern: mono/polyneuropathy] — [Motor/Sensory/Both] — [Etiology]",
+          "Renal: [AKI/CKD] — Stage [1-5] — [Etiology] — [Complications]",
+          "Endocrine: [Condition] — [Hyper/Hypo] — [Primary/Secondary] — [Complications]"
+        ]
+      }
+    ]
+  },
+
+  "cross_case_differentials": [
+    {
+      "comparison": "Valvular Lesions — Quick Comparison (from Valve Atlas)",
+      "conditions": ["MS", "MR", "AS", "AR"],
+      "features": [
+        {"feature": "Murmur", "values": ["MDM + PSA", "PSM", "ESM", "EDM"]},
+        {"feature": "Pitch/Instrument", "values": ["Low-pitched rumble (bell)", "High-pitched blowing (diaphragm)", "Harsh crescendo-decrescendo", "High-pitched blowing (diaphragm)"]},
+        {"feature": "Best heard", "values": ["Apex, left lateral, bell", "Apex → axilla, diaphragm", "Aortic area → carotids", "Left sternal edge, sitting forward, end-expiration"]},
+        {"feature": "S1", "values": ["Loud (mobile valve) / Soft (calcified)", "Soft", "Normal or soft", "Normal"]},
+        {"feature": "Apex beat", "values": ["Tapping, NOT displaced", "Displaced, hyperdynamic", "Sustained/heaving, NOT displaced", "Displaced, thrusting"]},
+        {"feature": "Pulse", "values": ["Low-volume, irregularly irregular", "Normal volume initially", "Slow-rising, low-volume", "Collapsing/water-hammer"]},
+        {"feature": "LV size", "values": ["Normal/small", "Dilated", "Hypertrophied (thick walls, normal cavity)", "Dilated"]},
+        {"feature": "AF likelihood", "values": ["Very high", "High", "Low (unless late)", "Moderate"]},
+        {"feature": "Commonest etiology (India)", "values": ["RHD", "RHD > MVP", "Degenerative/bicuspid", "RHD > IE"]},
+        {"feature": "Peripheral signs", "values": ["Malar flush", "None specific", "None specific", "Multiple: de Musset, Quincke, Corrigan, Traube, Duroziez, Hill"]},
+        {"feature": "Surgical trigger", "values": ["MVA <1.5 cm², symptoms", "EF ≤60%, LVESD ≥40mm", "Symptomatic (syncope/angina/dyspnea triad)", "EF ≤50%, LVEDD ≥70mm"]}
+      ]
+    },
+    {
+      "comparison": "COPD vs Asthma",
+      "conditions": ["COPD", "Asthma"],
+      "features": [
+        {"feature": "Onset age", "values": [">40 years, smokers", "Childhood/young adult"]},
+        {"feature": "Reversibility", "values": ["Incomplete (<200 mL or <12%)", "Significant (>200 mL AND >12%)"]},
+        {"feature": "Airflow limitation", "values": ["Progressive, irreversible", "Variable, reversible"]},
+        {"feature": "Pathology", "values": ["Structural destruction (alveolar walls, fibrosis)", "Reversible bronchospasm + eosinophilic inflammation"]},
+        {"feature": "FEV1/FVC", "values": ["<0.70 post-bronchodilator (fixed)", "Normalizes between attacks"]},
+        {"feature": "Inflammatory cells", "values": ["Neutrophils, macrophages", "Eosinophils, mast cells"]},
+        {"feature": "Steroid response", "values": ["Limited (only if eosinophilic)", "Excellent"]}
+      ]
+    },
+    {
+      "comparison": "Pink Puffer vs Blue Bloater",
+      "conditions": ["Pink Puffer (Emphysema)", "Blue Bloater (Chronic Bronchitis)"],
+      "features": [
+        {"feature": "Body habitus", "values": ["Thin, barrel chest", "Overweight, cyanosed"]},
+        {"feature": "Breathing", "values": ["Pursed-lip, dyspneic early", "Productive cough, tolerates hypoxia"]},
+        {"feature": "Color", "values": ["Pink (hyperventilates to maintain O2)", "Blue (cyanosed, accepts hypoxia)"]},
+        {"feature": "CO2", "values": ["Low/normal (hyperventilates)", "High (doesn't hyperventilate)"]},
+        {"feature": "Cor pulmonale", "values": ["Late", "Early"]},
+        {"feature": "CXR", "values": ["Hyperinflation, bullae", "Increased bronchovascular markings"]},
+        {"feature": "Polycythemia", "values": ["Uncommon", "Common"]}
+      ]
+    }
+  ],
+
+  "cases": [
+    {
+      "id": "valvular_heart_disease_reference",
+      "name": "Valvular Heart Disease — Cross-System Reference",
+      "category": "reference",
+      "system": "cardiac",
+      "tags": ["reference", "valvular", "MS", "MR", "AS", "AR", "cross-system", "rheumatic"],
+
+      "presentation_script": {
+        "opening": "This reference covers all four major valvular lesions (MS, MR, AS, AR) as a cross-system comparison tool for rapid revision. For detailed case presentations, see cardiac.json individual cases.",
+        "gpe_findings": "Each valve lesion has characteristic GPE findings. MS: malar flush, low-volume irregular pulse. MR: no specific GPE. AS: low-volume slow-rising pulse. AR: collapsing pulse, visible arterial pulsations.",
+        "system_findings": "The key differentiator is the murmur + apex beat combination: MS = MDM + tapping non-displaced apex. MR = PSM + displaced hyperdynamic apex. AS = ESM + sustained non-displaced apex. AR = EDM + displaced thrusting apex.",
+        "diagnosis_statement": "See cross_case_differentials above for comparison table.",
+        "differentials": [
+          "Austin Flint murmur (AR mimicking MS) — distinguish by presence/absence of OS and peripheral AR signs",
+          "Functional murmurs (flow murmurs in anemia, pregnancy, thyrotoxicosis — no structural valve disease)",
+          "Graham Steell murmur (functional PR from severe pulmonary HTN — EDM at pulmonary area)",
+          "HOCM (systolic murmur that increases with Valsalva — opposite of AS)"
+        ],
+        "tips": [
+          "MS: Loud S1 + OS + MDM at apex with bell in left lateral = the triad. Tapping non-displaced apex confirms.",
+          "MR: PSM at apex radiating to axilla. Displaced apex = LV volume overloaded.",
+          "AS: ESM radiating to carotids + slow-rising pulse + sustained apex = the triad.",
+          "AR: EDM at left sternal edge + collapsing pulse + wide pulse pressure + displaced apex + multiple peripheral signs."
+        ]
+      },
+
+      "case_scenario": {
+        "demographics": "Reference tool — covers all ages and presentations of valvular disease",
+        "chief_complaint": "Common presentations: dyspnea (all), palpitations (MS — AF), syncope/angina/dyspnea triad (AS), hemoptysis (MS)",
+        "hpi": "Key history: childhood sore throats (RHD for MS/MR), age >65 with calcific valve (degenerative AS), young with bicuspid aortic valve (congenital AS/AR), IE risk factors",
+        "past_history": "Rheumatic fever history, secondary prophylaxis compliance, prior cardiac surgery, IE prophylaxis"
+      },
+
+      "clinical_summary": [
+        {"area": "MS-specific", "finding": "Malar flush + tapping apex + loud S1 + OS + MDM", "detail": "Full MS triad with severity markers", "present": true, "significance": "Severe MS if short A2-OS interval, loud P2, parasternal heave"},
+        {"area": "MR-specific", "finding": "Displaced hyperdynamic apex + soft S1 + S3 + PSM to axilla", "detail": "Volume-overloaded LV", "present": true, "significance": "Severity: displaced apex, S3, loud PSM, AF"},
+        {"area": "AS-specific", "finding": "Sustained apex + slow-rising pulse + ESM to carotids + soft A2", "detail": "Pressure-overloaded LV", "present": true, "significance": "Severe AS: syncope/angina/dyspnea triad. EF preservation until late"},
+        {"area": "AR-specific", "finding": "Displaced thrusting apex + collapsing pulse + wide PP + EDM", "detail": "Volume-overloaded LV with multiple peripheral signs", "present": true, "significance": "Chronic AR well-tolerated until LV decompensation. Multiple eponymous signs"}
+      ],
+
+      "examination_technique": {
+        "sequence": "General + Pulse → JVP → Precordium: Inspection → Palpation → Auscultation → Lung bases → Edema",
+        "steps": [
+          {
+            "phase": "Pulse Character — The First Clue",
+            "actions": [
+              "Slow-rising (pulsus parvus et tardus) = AS. Assess at CAROTID for character.",
+              "Collapsing/water-hammer = AR. Lift arm, wrap wrist, feel thudding pulse.",
+              "Low-volume irregularly irregular = MS with AF.",
+              "Bisferiens = combined AS + AR or HOCM."
+            ],
+            "findings_in_this_case": ["Pulse character directs the differential before you touch the chest"]
+          },
+          {
+            "phase": "Apex Beat — The Second Clue",
+            "actions": [
+              "Location: 5th ICS MCL. Displaced = volume overload (MR, AR, DCM).",
+              "Character: Tapping = MS (palpable S1). Heaving/sustained = pressure overload (AS, HTN). Hyperdynamic/thrusting = volume overload (MR, AR).",
+              "Not displaced + sustained = AS. Not displaced + tapping = MS."
+            ],
+            "findings_in_this_case": ["Apex character + location narrows to 1-2 diagnoses"]
+          },
+          {
+            "phase": "Auscultation — Confirmation",
+            "actions": [
+              "Use BOTH bell (low-pitched: S3, S4, MDM) and diaphragm (high-pitched: S1, S2, AR, MR).",
+              "MS: apex, left lateral, bell — MDM with PSA + loud S1 + OS.",
+              "MR: apex, diaphragm — PSM radiating to axilla.",
+              "AS: aortic area, diaphragm — ESM radiating to carotids. Check for ejection click (bicuspid).",
+              "AR: left sternal edge, sitting forward, end-expiration, diaphragm — EDM. Also check apex for Austin Flint."
+            ],
+            "findings_in_this_case": ["Special positions are CRITICAL: left lateral for MS, sitting forward for AR"]
+          }
+        ]
+      },
+
+      "findings_with_mechanisms": [
+        {
+          "finding": "Slow-rising pulse in AS",
+          "mechanism": "Narrowed aortic valve orifice → LV must generate high pressure to eject blood → prolonged ejection time → aortic pressure rises slowly → pulse upstroke is slow with delayed peak and reduced amplitude.",
+          "mechanism_chain": "[Stenotic aortic valve] → [Prolonged ejection] → [Slow aortic pressure rise] → [Slow-rising low-volume pulse]",
+          "grading": "Pulsus parvus et tardus (small and late). Absent pulse character abnormality does NOT exclude severe AS in elderly (stiff arteries mask it)."
+        },
+        {
+          "finding": "Collapsing pulse in AR",
+          "mechanism": "In AR, blood regurgitates from aorta back into LV during diastole → rapid fall in diastolic pressure → wide pulse pressure → sharp upstroke (high SV from dilated LV) followed by rapid collapse (diastolic runoff back through incompetent valve).",
+          "mechanism_chain": "[AR] → [Diastolic regurgitation] → [Wide pulse pressure] → [Rapid upstroke + rapid collapse] → [Water-hammer pulse]",
+          "caveat": "Also seen in: hyperdynamic states (thyrotoxicosis, anemia, pregnancy, AV fistula, PDA). In AR, look for other peripheral signs to confirm."
+        },
+        {
+          "finding": "Opening snap in MS",
+          "mechanism": "During isovolumetric relaxation, LV pressure drops below LA pressure. The stenotic but MOBILE valve snaps open under high LA pressure gradient. A2-OS interval inversely proportional to severity — higher LA pressure opens valve earlier.",
+          "mechanism_chain": "[LV relaxation] → [LA pressure > LV pressure] → [Mobile stenotic valve snaps open] → [Opening snap]",
+          "grading": "A2-OS <80ms = severe MS. A2-OS >110ms = mild MS. Absent OS = calcified immobile valve (advanced disease, unsuitable for PBMV)."
+        },
+        {
+          "finding": "Multiple peripheral signs in AR",
+          "mechanism": "All result from wide pulse pressure (high systolic from increased SV, low diastolic from regurgitation): de Musset (head bobbing), Quincke (nail bed pulsation), Corrigan (visible carotid pulsation), Traube (pistol-shot sound over femoral), Duroziez (femoral bruit with distal compression), Hill sign (>20 mmHg difference between popliteal and brachial systolic).",
+          "mechanism_chain": "[AR] → [Wide pulse pressure] → [Exaggerated arterial pulsation throughout body] → [Multiple eponymous signs]"
+        }
+      ],
+
+      "diagnosis_and_differentials": {
+        "provisional": "Valvular heart disease — specific lesion identified by murmur + pulse + apex combination",
+        "supporting_evidence": [
+          "See cross_case_differentials table for complete comparison"
+        ],
+        "differentials": [
+          {"condition": "Austin Flint murmur vs true MS", "why_not": "Austin Flint: NO opening snap, NO loud S1, HAS peripheral AR signs, HAS EDM at LSE. True MS: opening snap present, loud S1, no AR signs"},
+          {"condition": "HOCM vs AS", "why_not": "HOCM: murmur INCREASES with Valsalva (reduced preload). AS: murmur DECREASES with Valsalva. HOCM: bisferiens pulse, asymmetric septal hypertrophy on echo"},
+          {"condition": "Functional murmur vs organic", "why_not": "Functional: soft (<3/6), systolic, no radiation, no associated signs, normal S1/S2, no click/snap, disappears with position change"}
+        ]
+      },
+
+      "investigations": [
+        {"test": "2D Echocardiography with Doppler", "expected": "Gold standard for valve assessment. Valve morphology, orifice area (MS: MVA), gradient (AS: mean gradient), regurgitation severity, LV function, chamber dimensions, pulmonary pressures", "why": "Definitive diagnosis, severity grading, and surgical timing", "priority": "immediate"},
+        {"test": "ECG", "expected": "MS: AF, P-mitrale (broad notched P in II), RVH. MR: LVH, AF. AS: LVH with strain pattern. AR: LVH", "why": "Detect rhythm, chamber hypertrophy", "priority": "immediate"},
+        {"test": "CXR", "expected": "MS: straight left heart border (LA), double density, splayed carina, upper lobe diversion. AR: boot-shaped heart. AS: post-stenotic aortic dilatation", "why": "Chamber enlargement pattern, pulmonary congestion", "priority": "immediate"},
+        {"test": "Cardiac catheterization", "expected": "Invasive hemodynamic assessment when echo-clinical discordance", "why": "Pre-operative assessment, coronary anatomy", "priority": "if_indicated"}
+      ],
+
+      "management": {
+        "medical": [
+          {"intervention": "Rate control in AF (MS, MR)", "rationale": "AF worsens hemodynamics — rapid rate shortens diastole (MS), increases regurgitation (MR)", "specifics": "Beta-blockers or digoxin. Target HR <80 at rest. Anticoagulation for AF (warfarin, target INR 2-3)"},
+          {"intervention": "Diuretics for heart failure", "rationale": "Reduce congestion in symptomatic valvular disease", "specifics": "Furosemide for pulmonary/peripheral congestion. Use cautiously in AS (preload-dependent)"},
+          {"intervention": "Secondary prophylaxis for RHD", "rationale": "Prevent recurrent rheumatic fever and valve damage progression", "specifics": "Benzathine penicillin G 1.2 MU IM every 3-4 weeks. Duration: until age 40 or 10 years post-last episode (whichever is longer)"},
+          {"intervention": "IE prophylaxis", "rationale": "Prosthetic valves and prior IE require antibiotic prophylaxis for dental procedures", "specifics": "Amoxicillin 2g PO 1 hour before procedure"}
+        ],
+        "surgical": "MS: PBMV (percutaneous balloon mitral valvotomy) if Wilkins score ≤8 and mobile valve; surgical MVR if calcified. MR: repair preferred over replacement. AS: AVR when symptomatic (syncope/angina/dyspnea) or EF <50%; TAVI for inoperable. AR: AVR when EF ≤50% or LVEDD ≥70mm or LVESD ≥50mm.",
+        "this_patient": "Management depends on specific lesion and severity — use echo findings + symptoms for timing of intervention.",
+        "follow_up": "Annual echo for moderate disease, 6-monthly for severe. Monitor for progression and new symptoms. Secondary prophylaxis compliance."
+      },
+
+      "vivas": [
+        {
+          "question": "How do you distinguish Austin Flint murmur from true mitral stenosis?",
+          "answer": "Austin Flint is a functional MDM caused by regurgitant jet of AR displacing the anterior mitral leaflet → simulates MS. Key differences: True MS has opening snap (present) and loud S1 (present). Austin Flint has NO opening snap, NO loud S1, but DOES have EDM at left sternal edge (the primary AR murmur) and peripheral AR signs (collapsing pulse, wide PP). Apex is displaced and hyperdynamic in AR (volume overloaded), but tapping and NOT displaced in MS.",
+          "examiner": "cardiology"
+        },
+        {
+          "question": "What is the severity assessment for each valvular lesion?",
+          "answer": "MS: valve area (severe <1.0 cm², moderate 1.0-1.5), mean gradient >10 mmHg, short A2-OS interval. MR: jet area, vena contracta >0.7cm, EROA >0.4 cm², regurgitant volume >60 mL. AS: valve area <1.0 cm² (severe), mean gradient >40 mmHg, peak velocity >4 m/s. AR: vena contracta >0.6cm, EROA >0.3 cm², regurgitant volume >60 mL, holodiastolic flow reversal in descending aorta.",
+          "examiner": "cardiology"
+        }
+      ]
+    },
+
+    {
+      "id": "copd_mastery",
+      "name": "COPD with Cor Pulmonale",
+      "category": "case",
+      "system": "respiratory",
+      "tags": ["long-case", "short-case", "COPD", "cor-pulmonale", "hyperinflation", "smoking", "ABG", "spirometry"],
+
+      "presentation_script": {
+        "opening": "Sir, I have examined this [age]-year-old [sex] patient who is a [smoking history], presenting with [chief complaint].",
+        "gpe_findings": "On general examination: patient is [position — propped up/tripod], [breathing pattern — pursed-lip breathing, accessory muscle use]. [Cyanosis status — central cyanosis present/absent]. [Clubbing — grade]. SpO2 [value]%. RR [rate]/min with I:E ratio [value]. Tar staining of fingers. [Flapping tremor — if CO2 narcosis]. Warm peripheries [CO2 vasodilation].",
+        "system_findings": "On respiratory examination — Inspection: barrel chest (AP:lateral approximately 1:1), subcostal angle >90 degrees, horizontal ribs. Chest expansion globally reduced <2 cm bilaterally. Percussion: hyperresonant bilaterally with loss of cardiac and liver dullness. Auscultation: globally diminished breath sounds, prolonged expiration (I:E 1:3 to 1:4), scattered rhonchi worse on forced expiration. Hoover sign positive (paradoxical inward movement of lower costal margin during inspiration). Signs of cor pulmonale: JVP elevated with prominent 'a' waves, left parasternal heave, loud P2, pansystolic murmur at LLSE increasing with inspiration (Carvallo positive — TR), pulsatile hepatomegaly 4 cm, bilateral pitting pedal edema.",
+        "diagnosis_statement": "Severe COPD (GOLD Stage [—]) with cor pulmonale, in a chronic smoker.",
+        "differentials": [
+          "Bronchial asthma (reversible obstruction >200 mL AND >12%, eosinophilic, no fixed airflow limitation)",
+          "Bronchiectasis (copious purulent sputum, coarse creps, clubbing more prominent, HRCT shows dilated airways)",
+          "Interstitial lung disease (restrictive pattern, fine creps, NOT hyperinflated)",
+          "Congestive cardiac failure (bibasal creps, S3, displaced apex — may coexist)"
+        ],
+        "tips": [
+          "Hoover sign is THE sign to demonstrate — it's the most specific bedside sign of severe hyperinflation.",
+          "Always separate COPD signs from cor pulmonale signs in your presentation.",
+          "If asked about high-flow O2 danger, give ALL THREE mechanisms (Haldane effect is most important, not just hypoxic drive).",
+          "Know the ABG interpretation ladder: compensated → acute-on-chronic → decompensated → NIV → intubation."
+        ]
+      },
+
+      "case_scenario": {
+        "demographics": "62-year-old male, chronic smoker (30 pack-years)",
+        "chief_complaint": "Progressive breathlessness (5 years), worsening over 2 weeks with increased cough and purulent sputum (acute exacerbation)",
+        "hpi": "Progressive exertional dyspnea over 5 years — initially with strenuous activity, now with minimal exertion and occasional rest dyspnea. Chronic productive cough with whitish sputum for >3 years (most days, >3 months/year). Current exacerbation: 2-week history of increased dyspnea, increased sputum volume and purulence (green), low-grade fever. Bilateral pedal swelling noticed 3 months ago. No hemoptysis, no chest pain, no weight loss.",
+        "past_history": "No diabetes, hypertension. No TB. Occasional episodes of 'bronchitis' treated with antibiotics.",
+        "drug_history": "Salbutamol inhaler PRN. No regular bronchodilators. Not on LTOT.",
+        "social_history": "30 pack-years smoking (1 pack/day for 30 years). Still smoking. No alcohol. Manual laborer (dust exposure)."
+      },
+
+      "clinical_summary": [
+        {"area": "GPE", "finding": "Pursed-lip breathing", "detail": "Patient exhales through partially closed lips", "present": true, "significance": "Adaptive mechanism generating auto-PEEP — pushes EPP downstream to large airways with cartilage support, preventing dynamic collapse"},
+        {"area": "GPE", "finding": "Central cyanosis", "detail": "Bluish discoloration of tongue and lips", "present": true, "significance": ">5g/dL deoxygenated hemoglobin — chronic hypoxemia"},
+        {"area": "GPE", "finding": "Accessory muscle use", "detail": "SCM, scalenes visible during inspiration", "present": true, "significance": "Diaphragm at mechanical disadvantage (flat) → poor length-tension → accessory muscles recruited"},
+        {"area": "GPE", "finding": "Tar staining", "detail": "Nicotine staining of fingers", "present": true, "significance": "Confirms smoking history"},
+        {"area": "Hands", "finding": "Flapping tremor (asterixis)", "detail": "Present bilaterally — if CO2 narcosis", "present": false, "significance": "If present: CO2 narcosis (PaCO2 >50). Warm peripheries = CO2 vasodilation"},
+        {"area": "Chest", "finding": "Barrel chest", "detail": "AP:lateral approximately 1:1, subcostal angle >90 degrees, horizontal ribs", "present": true, "significance": "Chronic hyperinflation — chest fixed near TLC from air trapping"},
+        {"area": "Chest", "finding": "Reduced expansion", "detail": "Globally <2 cm bilaterally", "present": true, "significance": "Chest already near TLC → minimal further expansion possible. Bilateral = COPD (unilateral = effusion/collapse/PTX)"},
+        {"area": "Percussion", "finding": "Hyperresonant", "detail": "Bilaterally with loss of cardiac and liver dullness", "present": true, "significance": "Excess trapped air reflects sound. Hyperinflated lung covers heart and liver"},
+        {"area": "Auscultation", "finding": "Diminished breath sounds + prolonged expiration", "detail": "I:E 1:3 to 1:4, scattered rhonchi", "present": true, "significance": "Air trapping → reduced airflow. Turbulent flow through narrowed airways → rhonchi"},
+        {"area": "Special sign", "finding": "Hoover sign", "detail": "Paradoxical INWARD movement of lower costal margin during inspiration", "present": true, "significance": "MOST SPECIFIC bedside sign of severe hyperinflation. Flat diaphragm loses zone of apposition → pulls ribs IN instead of pushing OUT"},
+        {"area": "Cor pulmonale", "finding": "Elevated JVP", "detail": "8 cm with prominent 'a' waves", "present": true, "significance": "RV failure → systemic venous congestion. 'a' waves = RV struggling against high PA pressure"},
+        {"area": "Cor pulmonale", "finding": "Left parasternal heave + loud P2", "detail": "RV hypertrophy, pulmonary HTN", "present": true, "significance": "Chronic hypoxia → HPV → vascular remodeling → fixed PHT → RV pressure overload"},
+        {"area": "Cor pulmonale", "finding": "TR murmur (Carvallo+)", "detail": "PSM at LLSE increasing with inspiration", "present": true, "significance": "Tricuspid regurgitation from RV dilatation. Carvallo sign confirms right-sided origin"},
+        {"area": "Cor pulmonale", "finding": "Pulsatile hepatomegaly + pedal edema", "detail": "Liver 4 cm, tender, pulsatile. Bilateral pitting edema", "present": true, "significance": "Congestive hepatomegaly (TR transmits to hepatic veins). Systemic venous congestion"}
+      ],
+
+      "examination_technique": {
+        "sequence": "General (position, breathing, cyanosis) → Hands → Chest shape → Expansion → Percussion → Auscultation → Hoover sign → Cor pulmonale (JVP → Precordium → Abdomen → Edema)",
+        "steps": [
+          {
+            "phase": "Evidence of COPD",
+            "actions": [
+              "Step 1 — General: from foot of bed — position, pursed-lip breathing, accessory muscles, cyanosis, wasting.",
+              "Step 2 — Hands: tar staining, clubbing (uncommon in pure COPD — think bronchiectasis or lung CA), flapping tremor, warm peripheries.",
+              "Step 3 — Chest shape: barrel chest (AP:lateral ~1:1), subcostal angle >90, horizontal ribs.",
+              "Step 4 — Expansion: hands on lower thorax, thumbs midline — globally reduced <2 cm bilaterally.",
+              "Step 5 — Percussion: hyperresonant bilaterally, loss of cardiac and liver dullness.",
+              "Step 6 — Auscultation: diminished BS, prolonged expiration (I:E 1:3 to 1:4), rhonchi on forced expiration.",
+              "Step 7 — Hoover sign: stand at FOOT of bed, watch lower costal margins — paradoxical inward movement = positive."
+            ],
+            "findings_in_this_case": ["Pursed-lip breathing", "Barrel chest", "Reduced expansion <2cm", "Hyperresonant + loss of cardiac dullness", "Diminished BS + prolonged expiration", "Hoover sign positive"]
+          },
+          {
+            "phase": "Evidence of Cor Pulmonale",
+            "actions": [
+              "Step 8 — JVP: elevated, prominent 'a' waves, 'cv' waves of TR.",
+              "Step 9 — Precordium: left parasternal heave (RV), loud P2, TR murmur (Carvallo sign — increases with inspiration).",
+              "Step 10 — Abdomen: hepatomegaly (tender, pulsatile in TR), ascites.",
+              "Step 11 — Lower limbs: bilateral pitting pedal edema."
+            ],
+            "findings_in_this_case": ["JVP elevated 8 cm", "Parasternal heave + loud P2 + TR murmur", "Hepatomegaly 4 cm pulsatile", "Bilateral pedal edema"]
+          }
+        ]
+      },
+
+      "findings_with_mechanisms": [
+        {
+          "finding": "Barrel chest",
+          "mechanism": "Expiratory flow limitation → air trapping → increased residual volume → increased FRC → chest fixed near TLC at rest. AP diameter increases because ribs become horizontal (normally oblique), subcostal angle widens.",
+          "mechanism_chain": "[Airflow obstruction] → [Air trapping] → [↑RV → ↑FRC] → [Chest at near-TLC] → [Barrel chest]"
+        },
+        {
+          "finding": "Hoover sign",
+          "mechanism": "Normal dome-shaped diaphragm has a vertical Zone of Apposition (ZOA) against inner rib cage. Contraction pushes ribs OUTWARD. In severe hyperinflation, diaphragm is FLAT → ZOA lost → contraction pulls ribs INWARD instead. Paradoxical inward movement of lower costal margin during inspiration.",
+          "mechanism_chain": "[Hyperinflation] → [Flat diaphragm] → [ZOA lost] → [Contraction pulls ribs inward] → [Hoover sign]",
+          "caveat": "Most SPECIFIC bedside sign of severe hyperinflation. Not seen in mild COPD or asthma (unless severe acute attack)."
+        },
+        {
+          "finding": "Pursed-lip breathing",
+          "mechanism": "Exhaling against partially closed lips creates back-pressure (auto-PEEP) → increases pressure inside airways → pushes Equal Pressure Point DOWNSTREAM to larger airways with cartilage → prevents dynamic airway collapse → better gas exchange. Also slows expiration.",
+          "mechanism_chain": "[Pursed lips] → [Back-pressure (auto-PEEP)] → [EPP pushed downstream] → [Large airways with cartilage] → [No collapse] → [Better air exit]",
+          "caveat": "Adaptive mechanism — NEVER discourage it. Same principle used by PEEP/CPAP on ventilators."
+        },
+        {
+          "finding": "Cor pulmonale cascade",
+          "mechanism": "Chronic alveolar hypoxia (PaO2 <60) → Euler-Liljestrand reflex (hypoxic pulmonary vasoconstriction — unique to pulmonary circulation, initially reversible) → chronic HPV → vascular remodeling (intimal fibrosis, medial hypertrophy — now irreversible) → fixed pulmonary HTN (worsened by polycythemia increasing viscosity) → RV pressure overload → RV hypertrophy → RV dilatation → RV failure.",
+          "mechanism_chain": "[Chronic hypoxia] → [HPV] → [Vascular remodeling] → [Fixed PHT] → [RV overload] → [RV failure = Cor pulmonale]",
+          "caveat": "In cor pulmonale, LV is usually NORMAL → no pulmonary edema, no S3 from LV, no displaced apex. If basal crackles + S3 + displaced apex → biventricular failure, not pure cor pulmonale."
+        },
+        {
+          "finding": "CO2 narcosis risk with high-flow O2",
+          "mechanism": "THREE mechanisms (not just hypoxic drive): (1) Hypoxic drive loss (~25%): chronic CO2 retention resets central chemoreceptors → breathing driven by peripheral O2 sensing → high O2 removes drive → hypoventilation. (2) Haldane effect (~75% — MOST IMPORTANT): deoxy-Hb carries more CO2 → high O2 saturates Hb → CO2 displaced into plasma → PaCO2 rises even WITHOUT hypoventilation. (3) V/Q mismatch worsening: O2 releases HPV → blood flows to poorly ventilated areas → increased dead space.",
+          "mechanism_chain": "[High-flow O2] → [Haldane (75%) + Hypoxic drive loss (25%) + HPV release] → [PaCO2 rises] → [CO2 narcosis]",
+          "caveat": "Target SpO2 88-92%. Use Venturi mask 24-28%. If PaCO2 rising + pH dropping → start NIV, don't just reduce O2."
+        }
+      ],
+
+      "diagnosis_and_differentials": {
+        "provisional": "Severe COPD with cor pulmonale, acute infective exacerbation, in a chronic smoker",
+        "supporting_evidence": [
+          "Smoking history (30 pack-years)",
+          "Barrel chest + reduced expansion + hyperresonance + loss of cardiac dullness (hyperinflation)",
+          "Diminished breath sounds + prolonged expiration + rhonchi (airflow limitation)",
+          "Hoover sign positive (severe hyperinflation)",
+          "Cor pulmonale: elevated JVP, parasternal heave, loud P2, TR murmur, pulsatile hepatomegaly, pedal edema",
+          "Current exacerbation: increased dyspnea, purulent sputum, fever"
+        ],
+        "differentials": [
+          {"condition": "Bronchial asthma", "points_for": "Airflow obstruction, wheeze", "why_not": "COPD: incomplete reversibility (<200 mL or <12% post-BD), structural destruction, smoking history, >40 age onset. Asthma: full reversibility, eosinophilic, younger onset"},
+          {"condition": "Bronchiectasis", "points_for": "Chronic productive cough, airflow obstruction", "why_not": "Bronchiectasis: copious purulent sputum, coarse crackles (not rhonchi), more prominent clubbing, HRCT shows dilated airways. Can coexist with COPD"},
+          {"condition": "ILD (Interstitial lung disease)", "points_for": "Dyspnea, chronic", "why_not": "ILD: restrictive pattern (FEV1/FVC normal or raised), fine inspiratory crackles, NOT hyperinflated. COPD: obstructive, hyperinflated"},
+          {"condition": "Congestive cardiac failure", "points_for": "Dyspnea, edema", "why_not": "LVF: bibasal creps, S3, displaced apex, orthopnea. Cor pulmonale: clear lungs, RV signs. Can coexist (biventricular failure)"}
+        ]
+      },
+
+      "investigations": [
+        {"test": "ABG (arterial blood gas)", "expected": "Stable COPD: compensated respiratory acidosis (pH ~7.37, PaCO2 ~52, HCO3 ~30, PaO2 ~62). AECOPD: acute-on-chronic (pH <7.35, rising PaCO2, HCO3 partially compensating)", "why": "Guides O2 therapy, NIV decision (pH <7.35 with PaCO2 >45 = NIV indication), and severity assessment", "priority": "immediate"},
+        {"test": "Spirometry (post-bronchodilator)", "expected": "FEV1/FVC <0.70, FEV1 % predicted determines GOLD stage. GOLD 1: ≥80%, GOLD 2: 50-79%, GOLD 3: 30-49%, GOLD 4: <30%", "why": "Confirms obstructive pattern, grades severity, distinguishes from asthma (incomplete reversibility)", "priority": "routine"},
+        {"test": "CXR", "expected": "Hyperinflation (>6 anterior ribs visible, flat diaphragm), increased retrosternal air space, reduced vascular markings, bullae", "why": "Assess hyperinflation, exclude pneumothorax, consolidation, effusion", "priority": "immediate"},
+        {"test": "ECG", "expected": "P-pulmonale (peaked P in II >2.5mm), RAD, RVH, low voltage (hyperinflated lung attenuates), multifocal atrial tachycardia (AECOPD)", "why": "Detect cor pulmonale electrical changes, arrhythmias", "priority": "immediate"},
+        {"test": "CBC", "expected": "Polycythemia (Hct >55% — chronic hypoxia → EPO → red cell production). Raised WCC in infective exacerbation", "why": "Polycythemia is LTOT eligibility criterion if PaO2 55-60", "priority": "immediate"},
+        {"test": "2D Echo", "expected": "RV dilatation, RV hypertrophy, TR, elevated RVSP (PASP), normal LV function in pure cor pulmonale", "why": "Confirm pulmonary HTN and RV dysfunction, exclude LV pathology", "priority": "routine"},
+        {"test": "Sputum culture", "expected": "H. influenzae, S. pneumoniae, M. catarrhalis most common in AECOPD", "why": "Guide antibiotic selection if purulent exacerbation", "priority": "if_indicated"}
+      ],
+
+      "management": {
+        "medical": [
+          {"intervention": "Controlled O2 therapy", "rationale": "Correct hypoxemia without causing CO2 narcosis", "specifics": "28% Venturi mask. Target SpO2 88-92%. NOT non-rebreather. Check ABG at 1 hour"},
+          {"intervention": "Nebulized bronchodilators", "rationale": "Relieve bronchospasm in exacerbation", "specifics": "Salbutamol 5mg + Ipratropium 500mcg nebulized Q4H"},
+          {"intervention": "Systemic corticosteroids", "rationale": "Reduce airway inflammation in exacerbation", "specifics": "Prednisolone 40mg PO x 5 days (REDUCE trial). Short course only"},
+          {"intervention": "Antibiotics", "rationale": "Treat infective exacerbation (purulent sputum)", "specifics": "Amoxiclav 625 TDS or Doxycycline. Guided by local resistance patterns"},
+          {"intervention": "NIV (BiPAP)", "rationale": "Ventilatory support when pH 7.25-7.35 with PaCO2 >45 despite medical therapy", "specifics": "IPAP 12-20, EPAP 4-6 cmH2O. Recheck ABG at 1-2 hours. Reduces intubation by 50%, mortality by 50%"},
+          {"intervention": "Stable COPD pharmacotherapy", "rationale": "Maintenance bronchodilation based on GOLD ABE groups", "specifics": "Group A: PRN SABA. Group B: LABA+LAMA. Group E: LABA+LAMA, add ICS only if eosinophils >300. ICS not routinely recommended (pneumonia risk)"},
+          {"intervention": "LTOT", "rationale": "ONLY treatment proven to reduce mortality in COPD", "specifics": ">15 hours/day. Criteria: PaO2 <55 (absolute) or 55-60 + polycythemia/cor pulmonale (conditional). Measure in stable state ≥3 weeks post-exacerbation"},
+          {"intervention": "Smoking cessation", "rationale": "Only intervention that slows FEV1 decline", "specifics": "NRT + Varenicline (most effective) + counseling. Never too late"}
+        ],
+        "this_patient": "Acute: Venturi 28% (target SpO2 88-92%), nebs (salbutamol + ipratropium), pred 40mg x 5 days, antibiotics (purulent sputum), ABG at 1 hour. If pH <7.35 → start NIV. DVT prophylaxis. After stabilization: optimize inhalers (LABA+LAMA), smoking cessation, assess for LTOT eligibility, pulmonary rehab referral.",
+        "follow_up": "Spirometry annually, ABG as needed, echo if cor pulmonale suspected, BODE index for prognosis (score ≥7 → lung transplant referral)"
+      },
+
+      "complications": [
+        {"complication": "Acute exacerbation (AECOPD)", "mechanism": "Infection/pollution → airway inflammation → worsened airflow obstruction → respiratory failure", "presentation": "Increased dyspnea, sputum volume/purulence, cough", "management": "O2 (Venturi 28%), nebs, steroids x5d, antibiotics if purulent, NIV if pH <7.35"},
+        {"complication": "CO2 narcosis", "mechanism": "Haldane effect (75%) + hypoxic drive loss (25%) + V/Q worsening", "presentation": "Drowsiness → confusion → coma after high-flow O2", "management": "Reduce to Venturi 28%, START NIV urgently. If GCS <8 → intubate"},
+        {"complication": "Pneumothorax", "mechanism": "Bulla rupture (especially on positive pressure ventilation)", "presentation": "Sudden worsening dyspnea, absent BS one side, tracheal shift", "management": "Emergency needle decompression → chest drain"},
+        {"complication": "Cor pulmonale", "mechanism": "Chronic hypoxia → HPV → vascular remodeling → fixed PHT → RV failure", "presentation": "JVP elevation, parasternal heave, TR, hepatomegaly, edema", "management": "LTOT (cornerstone), diuretics (cautious), treat underlying COPD. CCBs and pulmonary vasodilators NOT proven in COPD-related PHT"}
+      ],
+
+      "vivas": [
+        {
+          "question": "What is the Hoover sign and what does it indicate?",
+          "answer": "Paradoxical inward movement of lower costal margin during inspiration. Normal: dome-shaped diaphragm contracts → descends + pushes ribs outward via Zone of Apposition. Severe hyperinflation: diaphragm FLAT → ZOA lost → contraction pulls ribs INWARD. Most specific bedside sign of severe hyperinflation. Elicit by standing at FOOT of bed watching lower costal margins.",
+          "examiner": "internal"
+        },
+        {
+          "question": "Why should you not give high-flow oxygen in COPD? Give ALL three mechanisms.",
+          "answer": "Three mechanisms: (1) Hypoxic drive loss (~25%): chronic CO2 retention resets central chemoreceptors → breathing driven by peripheral O2 sensing → high O2 removes drive → hypoventilation. (2) Haldane effect (~75% — MOST IMPORTANT): deoxy-Hb carries more CO2 → high O2 saturates Hb → CO2 displaced from Hb into plasma → PaCO2 rises EVEN WITHOUT hypoventilation. (3) V/Q worsening: O2 releases HPV → blood flows to poorly ventilated areas → increased dead space. Target SpO2 88-92% with Venturi mask 24-28%.",
+          "examiner": "medicine"
+        },
+        {
+          "question": "Differentiate pink puffer from blue bloater.",
+          "answer": "Pink puffer (emphysema): thin, barrel chest, pursed-lip, minimal cough, maintains PaO2 by hyperventilating (pink), cor pulmonale LATE, low CO2. Blue bloater (chronic bronchitis): overweight, cyanosed (blue), copious cough, tolerates hypoxia/hypercapnia, pedal edema, cor pulmonale EARLY, polycythemia, high CO2. These are EXTREMES — most patients are mixed. Modern approach uses GOLD classification.",
+          "examiner": "medicine"
+        },
+        {
+          "question": "What is the BODE index?",
+          "answer": "Multidimensional prognostic index, BETTER than FEV1 alone for COPD mortality. B = BMI (<21 = 1 point). O = Obstruction (FEV1 %: ≥65=0, 50-64=1, 36-49=2, ≤35=3). D = Dyspnea (mMRC 0-4). E = Exercise (6MWD: ≥350m=0, 250-349=1, 150-249=2, ≤149=3). Score 0-10. Score 7-10 = ~80% 4-year mortality. Uses: prognosis, lung transplant referral (≥7), response to rehab.",
+          "examiner": "medicine"
+        },
+        {
+          "question": "What are the indications for NIV in AECOPD?",
+          "answer": "Primary: respiratory acidosis — pH 7.25-7.35 with PaCO2 >45 DESPITE optimal medical therapy for 1 hour. Settings: BiPAP IPAP 12-20, EPAP 4-6. Titrate IPAP to improve tidal volume. Contraindications: GCS <8, facial trauma, vomiting risk, hemodynamic instability, undrained PTX. Failure: pH <7.25 or worsening after 2h optimal NIV → intubate. Evidence: reduces intubation 50%, mortality ~50% (Cochrane).",
+          "examiner": "medicine"
+        },
+        {
+          "question": "What is the role of ICS in COPD?",
+          "answer": "ICS NOT routinely recommended (unlike asthma). Add if: eosinophils >300 + frequent exacerbations, ACO, ≥2 moderate or ≥1 severe exacerbation despite LABA+LAMA. Risks: pneumonia (30-50% increase, especially fluticasone), oral candidiasis, osteoporosis. Withdraw if: eosinophils <100, no exacerbations, pneumonia occurred. GOLD 2023: eosinophils guide ICS — >300 add, <100 withdraw.",
+          "examiner": "medicine"
+        },
+        {
+          "question": "Explain the mechanism of cor pulmonale in COPD.",
+          "answer": "Step-by-step: (1) Chronic alveolar hypoxia (PaO2 <60). (2) Euler-Liljestrand reflex — HPV, unique to pulmonary circulation, initially reversible. (3) Chronic HPV → vascular remodeling (intimal fibrosis, medial hypertrophy) — now irreversible. (4) Fixed pulmonary HTN, worsened by polycythemia (viscosity). (5) RV pressure overload → RV hypertrophy → RV dilation → RV failure. Key: LV usually NORMAL → no pulmonary edema. LTOT is cornerstone treatment.",
+          "examiner": "medicine"
+        },
+        {
+          "question": "What are the criteria for LTOT and why >15 hours?",
+          "answer": "Criteria (stable state, ≥3 weeks post-exacerbation): PaO2 <55 mmHg (absolute), or PaO2 55-60 + polycythemia OR cor pulmonale OR PHT (conditional). Why >15h: MRC trial (1981): 15h/day reduced mortality vs none. NOTT trial (1980): continuous better than nocturnal only. Below 15h, cumulative hypoxic damage outpaces repair — HPV is continuous, so O2 must be near-continuous. More hours = more survival benefit.",
+          "examiner": "medicine"
+        }
+      ]
+    }
+  ]
+}

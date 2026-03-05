@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PI FINAL WEAPON — Error Patterns + Polarity Fix + Gaps</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=DM+Sans:wght@400;500;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #0a0a0f;
+    color: #e0e0e0;
+    padding: 12px;
+    line-height: 1.5;
+    max-width: 100%;
+  }
+
+  h1 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.1em;
+    color: #ff6b6b;
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 2px solid #ff6b6b;
+    margin-bottom: 16px;
+  }
+
+  h2 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9em;
+    margin: 16px 0 8px 0;
+    padding: 6px 10px;
+    border-radius: 4px;
+  }
+
+  .section {
+    background: #111118;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 14px;
+    border-left: 3px solid;
+  }
+
+  .polarity { border-color: #ff6b6b; }
+  .polarity h2 { background: #2a0a0a; color: #ff6b6b; }
+
+  .names { border-color: #ffd93d; }
+  .names h2 { background: #2a2a0a; color: #ffd93d; }
+
+  .tail { border-color: #6bcbff; }
+  .tail h2 { background: #0a1a2a; color: #6bcbff; }
+
+  .vocab { border-color: #bb8fce; }
+  .vocab h2 { background: #1a0a2a; color: #bb8fce; }
+
+  .gaps { border-color: #4ecdc4; }
+  .gaps h2 { background: #0a2a26; color: #4ecdc4; }
+
+  .anchors { border-color: #ff9f43; }
+  .anchors h2 { background: #2a1a0a; color: #ff9f43; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82em;
+    margin: 6px 0;
+  }
+
+  th {
+    text-align: left;
+    padding: 5px 6px;
+    color: #888;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78em;
+    border-bottom: 1px solid #333;
+    white-space: nowrap;
+  }
+
+  td {
+    padding: 5px 6px;
+    border-bottom: 1px solid #1a1a22;
+    vertical-align: top;
+  }
+
+  .wrong { color: #e74c3c; font-weight: 700; }
+  .right { color: #4ecdc4; font-weight: 700; }
+  .anchor { color: #ff9f43; font-weight: 700; }
+  .high { color: #ff6b6b; }
+  .med { color: #ffd93d; }
+  .low { color: #6bcbff; }
+
+  .rule-box {
+    background: #1a0a0a;
+    border: 1px solid #ff6b6b;
+    border-radius: 6px;
+    padding: 10px;
+    margin: 8px 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85em;
+    text-align: center;
+    color: #ff6b6b;
+    font-weight: 700;
+  }
+
+  .mnemonic {
+    background: #0a1a0a;
+    border: 1px dashed #4ecdc4;
+    border-radius: 6px;
+    padding: 8px;
+    margin: 4px 0;
+    font-size: 0.85em;
+  }
+
+  .checklist-item {
+    padding: 6px 8px;
+    margin: 4px 0;
+    background: #151520;
+    border-radius: 4px;
+    font-size: 0.85em;
+    display: flex;
+    gap: 8px;
+  }
+
+  .checklist-item .num {
+    color: #ff6b6b;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    min-width: 20px;
+  }
+
+  .meta {
+    text-align: center;
+    font-size: 0.7em;
+    color: #555;
+    padding: 10px 0;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .stat-bar {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 8px 0;
+  }
+
+  .stat {
+    background: #151520;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.75em;
+    font-family: 'JetBrains Mono', monospace;
+  }
+</style>
+</head>
+<body>
+
+<h1>⚔️ PI FINAL WEAPON</h1>
+<div class="stat-bar">
+  <span class="stat" style="color:#ff6b6b">14 Direction Inversions</span>
+  <span class="stat" style="color:#ffd93d">10 Name Swaps</span>
+  <span class="stat" style="color:#6bcbff">7 Tail Drops</span>
+  <span class="stat" style="color:#bb8fce">4 Vocab Errors</span>
+</div>
+
+<!-- ==================== SECTION 1: POLARITY CHECKLIST ==================== -->
+<div class="section polarity">
+  <h2>🔴 SECTION 1: POLARITY CHECKLIST — "Anchor One, Derive The Other"</h2>
+
+  <div class="rule-box">
+    DON'T MEMORIZE PAIRS. STORE ONE ANCHOR.<br>
+    The other side = "whatever isn't that."
+  </div>
+
+  <table>
+    <tr><th>#</th><th>Trap</th><th>ANCHOR (memorize this)</th><th>Derive</th></tr>
+    <tr>
+      <td>1</td>
+      <td>Extrinsic / Intrinsic</td>
+      <td class="right"><strong>EX</strong>trinsic = <strong>EX</strong>press = fast = tissue factor = VII = <strong>PT</strong></td>
+      <td>Intrinsic = the other one = slow = aPTT</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Conn's K⁺</td>
+      <td class="right"><strong>Conn's = aldo UP = K⁺ DOWN</strong> (aldo pushes K out)</td>
+      <td>Addison's = opposite</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Thiazide Ca²⁺</td>
+      <td class="right"><strong>Thiazide = Ca²⁺ SAVED</strong> (treats hypercalciuria)</td>
+      <td>Furosemide = opposite = Ca²⁺ wasted</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Lactulose pH</td>
+      <td class="right"><strong>L</strong>actulose = <strong>L</strong>owers pH (acidifies)</td>
+      <td>Low pH = H⁺ up = NH₃→NH₄⁺ = trapped</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>NHE3 direction</td>
+      <td class="right">Na⁺ INTO <strong>CELL</strong>, H⁺ INTO <strong>LUMEN</strong></td>
+      <td>Na⁺ always goes toward blood</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>PTH + phosphate</td>
+      <td class="right">PTH = Ca²⁺ <strong>UP</strong>, PO₄ <strong>DOWN</strong> — always</td>
+      <td>PTH inhibits NaPi → phosphate wasting</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>Para GI</td>
+      <td class="right">Rest and <strong>DIGEST</strong> = gut <strong>WORKS</strong> = motility UP</td>
+      <td>Sympathetic = fight = gut stops</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>SAAG sides</td>
+      <td class="right"><strong>≥1.1 = portal</strong> = big pressure (cirrhosis, cardiac)</td>
+      <td>&lt;1.1 = non-portal (TB, malignancy)</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>D-xylose test</td>
+      <td class="right"><strong>Normal</strong> D-xylose = <strong>pancreatic</strong> cause (mucosa intact)</td>
+      <td>Low D-xylose = mucosal disease</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>JG cells location</td>
+      <td class="right">JG = <strong>Afferent</strong> arteriole (where blood ENTERS)</td>
+      <td>Macula densa = DCT side</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>BM biopsy site</td>
+      <td class="right"><strong>P</strong>SIS = <strong>P</strong>osterior (P for Poke)</td>
+      <td>NOT ASIS (anterior)</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>Azygos location</td>
+      <td class="right">Azygos = <strong>Posterior</strong> (runs along vertebrae)</td>
+      <td>Middle = heart + pericardium only</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>Eparterial bronchus</td>
+      <td class="right"><strong>E</strong>parterial = <strong>E</strong>levated = Right <strong>UPPER</strong></td>
+      <td>Only bronchus above pulmonary artery</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>V2 receptor</td>
+      <td class="right">V2 → AQP2 insertion → water <strong>IN</strong> (reabsorbed)</td>
+      <td>More V2 = concentrated urine</td>
+    </tr>
+  </table>
+</div>
+
+<!-- ==================== SECTION 2: NAME SWAPS ==================== -->
+<div class="section names">
+  <h2>🟡 SECTION 2: OPPOSITE NAME SUBSTITUTIONS — "If 50/50, Describe Function"</h2>
+
+  <div class="rule-box">
+    IF UNSURE OF THE NAME → DESCRIBE THE FUNCTION<br>
+    Function earns same marks. Wrong name loses marks.
+  </div>
+
+  <table>
+    <tr><th>Trap</th><th class="wrong">YOU SAY</th><th class="right">CORRECT</th><th>Fix Hook</th></tr>
+    <tr>
+      <td>Vit A + WHO</td>
+      <td class="wrong">Mumps</td>
+      <td class="right">MEASLES</td>
+      <td>MEASLES = Mega-dose (both M)</td>
+    </tr>
+    <tr>
+      <td>Thyroid cells</td>
+      <td class="wrong">Swapped para/chief</td>
+      <td class="right">Parafollicular = Calcitonin<br>Chief = PTH</td>
+      <td>Alphabetical: F→C, H→P (para<strong>F</strong>oll→<strong>C</strong>alcitonin)</td>
+    </tr>
+    <tr>
+      <td>K⁺ channel</td>
+      <td class="wrong">ROMTK / RMPK4</td>
+      <td class="right">ROMK</td>
+      <td>Four letters, no T. Renal Outer Medullary K⁺</td>
+    </tr>
+    <tr>
+      <td>B6 depleter</td>
+      <td class="wrong">Cyclophosphamide</td>
+      <td class="right">Cycloserine</td>
+      <td>CycloSERINE = amino acid analog</td>
+    </tr>
+    <tr>
+      <td>B12 marker</td>
+      <td class="wrong">Malonic acid</td>
+      <td class="right">Methylmalonic acid (MMA)</td>
+      <td>The METHYL matters — methylmalonyl-CoA pathway</td>
+    </tr>
+    <tr>
+      <td>Encephalopathy</td>
+      <td class="wrong">Glutamate</td>
+      <td class="right">Glutamine (synthetase)</td>
+      <td>Glutam-<strong>INE</strong> swells (INE ending)</td>
+    </tr>
+    <tr>
+      <td>HLA system</td>
+      <td class="wrong">MHA</td>
+      <td class="right">MHC</td>
+      <td>C for Complex</td>
+    </tr>
+    <tr>
+      <td>TB stain</td>
+      <td class="wrong">AFP</td>
+      <td class="right">AFB (Acid Fast Bacilli)</td>
+      <td>B for Bacilli, not P for Protein</td>
+    </tr>
+    <tr>
+      <td>Parasympathetic CN</td>
+      <td class="wrong">CN II (optic)</td>
+      <td class="right">CN III, VII, IX, X</td>
+      <td>"3-7-9-10 parasympathetic men"</td>
+    </tr>
+    <tr>
+      <td>Hemochromatosis joint</td>
+      <td class="wrong">Metatarsal</td>
+      <td class="right">Metacarpophalangeal</td>
+      <td>CARPO = hand = iron hand</td>
+    </tr>
+  </table>
+</div>
+
+<!-- ==================== SECTION 3: TAIL MARKS ==================== -->
+<div class="section tail">
+  <h2>🔵 SECTION 3: TAIL MARK DROPS — "The Last 3 Marks"</h2>
+
+  <div class="rule-box">
+    BEFORE FINISHING EVERY ANSWER ASK:<br>
+    "Treatment? Indian context? What's new?"
+  </div>
+
+  <table>
+    <tr><th>What You Dropped</th><th>Where</th><th>Marks Lost</th></tr>
+    <tr><td>Entire CD section (aldo, AVP, ENaC, RTA1/4, SIADH, DI)</td><td>Nephron attempt 1</td><td>3–4 marks</td></tr>
+    <tr><td>RAAS cascade + ACEi efferent rule</td><td>Nephron attempt 1</td><td>0.75 marks</td></tr>
+    <tr><td>Phrenic nerve palsy (C3-4-5, sniff test)</td><td>Mediastinum</td><td>Full syndrome</td></tr>
+    <tr><td>Syndrome features (named but no specifics)</td><td>Mediastinum</td><td>Half marks each</td></tr>
+    <tr><td>Deferasirox (oral chelator)</td><td>Hemochromatosis</td><td>Treatment gap</td></tr>
+    <tr><td>Indian context paragraphs</td><td>Multiple topics</td><td>Recurring</td></tr>
+    <tr><td>Phlebotomy volume (500mL not 100mL)</td><td>Hemochromatosis</td><td>Specific detail</td></tr>
+  </table>
+
+  <div class="mnemonic">
+    <strong>THE CD RULE:</strong> If your answer has a nephron/renal component, the Collecting Duct is where 3–4 marks live. Aldosterone → ENaC/ROMK → K⁺. AVP → AQP2 → water. Intercalated → H⁺/HCO₃⁻ → RTA. Don't stop at DCT.
+  </div>
+</div>
+
+<!-- ==================== SECTION 4: VOCAB ERRORS ==================== -->
+<div class="section vocab">
+  <h2>🟣 SECTION 4: VOCABULARY TRAPS</h2>
+
+  <table>
+    <tr><th class="wrong">You Invented</th><th class="right">Correct Term</th><th>Safe Fallback</th></tr>
+    <tr>
+      <td class="wrong">Hydralation</td>
+      <td class="right">Hydrazone</td>
+      <td>"INH forms an inactive complex with PLP"</td>
+    </tr>
+    <tr>
+      <td class="wrong">Euglycemic DKA = "glucose low"</td>
+      <td class="right">Glucose is NORMAL</td>
+      <td>"Euglycemic" literally = normal glucose</td>
+    </tr>
+    <tr>
+      <td class="wrong">LOLA = "binding agent"</td>
+      <td class="right">Substrates for urea cycle + glutamine synthesis</td>
+      <td>L-ornithine L-aspartate → feeds detox pathways</td>
+    </tr>
+    <tr>
+      <td class="wrong">Gilbert = "uptake defect"</td>
+      <td class="right">Conjugation defect (UGT1A1)</td>
+      <td>Gilbert-Crigler-Najjar = conjugation spectrum</td>
+    </tr>
+  </table>
+</div>
+
+<!-- ==================== SECTION 5: UNCOVERED GAPS FROM EXCEL ==================== -->
+<div class="section gaps">
+  <h2>🟢 SECTION 5: OVERLOOKED TOPICS FROM EXCEL — Not In Tracker</h2>
+
+  <p style="font-size:0.8em; color:#888; margin-bottom:8px;">
+    Topics in the Excel ontology (2022–2025 setter era) that don't appear in the coverage tracker:
+  </p>
+
+  <table>
+    <tr><th>Topic</th><th>Year</th><th>Family</th><th>Risk</th></tr>
+    <tr><td>Periodic paralysis</td><td>2022</td><td>Electrolyte</td><td class="med">MED — hypo/hyperK⁺ variant, partly covered</td></tr>
+    <tr><td>Hemochromatosis</td><td>PreF</td><td>Hematology</td><td class="high">COVERED Session 3 — 6.5/10 graded</td></tr>
+    <tr><td>Heme synthesis / Porphyria</td><td>2020</td><td>Hematology</td><td class="high">COVERED Session 3 — AIP deep dive</td></tr>
+    <tr><td>Cachexia</td><td>2022</td><td>Nutrition</td><td class="low">LOW — one-off, no repeat signal</td></tr>
+    <tr><td>Mediterranean diet</td><td>2023</td><td>Nutrition</td><td class="med">MED — PREDIMED, partly in project</td></tr>
+    <tr><td>Metabolic syndrome / Syndrome X</td><td>2023</td><td>DM/Glycemic</td><td class="med">MED — partly via DM pathophys</td></tr>
+    <tr><td>Facial nerve course</td><td>2022</td><td>Neuroanatomy</td><td class="low">LOW — cranial nerve anatomy</td></tr>
+    <tr><td>Recurrent laryngeal nerve</td><td>2023</td><td>Neuroanatomy</td><td class="low">LOW — applied anatomy</td></tr>
+    <tr><td>SCID</td><td>2023</td><td>Other</td><td class="low">LOW — one-off</td></tr>
+    <tr><td>Development of heart</td><td>2023</td><td>Other</td><td class="low">LOW — embryology, not setter's style</td></tr>
+    <tr><td>Tissue engineering</td><td>2023</td><td>Other</td><td class="low">LOW — one-off, no repeat</td></tr>
+    <tr><td>Syphilitic AR pathology</td><td>Jan25</td><td>Valvular</td><td class="med">MED — ×0.25 suppression. Vasa vasorum concept.</td></tr>
+    <tr><td>Thyroid physiology</td><td>2022</td><td>Thyroid</td><td class="med">MED — NIS, TPO, T4→T3. Could appear.</td></tr>
+  </table>
+</div>
+
+<!-- ==================== SECTION 6: 30 SUPER-ANCHORS ==================== -->
+<div class="section anchors">
+  <h2>🟠 SECTION 6: TOP 30 RETENTION ANCHORS — Across All Sessions</h2>
+
+  <p style="font-size:0.78em; color:#888; margin-bottom:8px;">
+    The highest-yield correction items from every graded recall:
+  </p>
+
+  <div class="checklist-item"><span class="num">01</span> <strong>EX</strong>trinsic = <strong>EX</strong>press = fast = PT. Everything else derives.</div>
+  <div class="checklist-item"><span class="num">02</span> Conn's = aldo UP = K⁺ DOWN. Addison's = opposite.</div>
+  <div class="checklist-item"><span class="num">03</span> Thiazide = Ca²⁺ SAVED. Furosemide = Ca²⁺ WASTED.</div>
+  <div class="checklist-item"><span class="num">04</span> <strong>L</strong>actulose = <strong>L</strong>owers pH → traps NH₄⁺.</div>
+  <div class="checklist-item"><span class="num">05</span> MEASLES not mumps for Vitamin A WHO supplementation.</div>
+  <div class="checklist-item"><span class="num">06</span> Parafollicular = Calcitonin. Chief = PTH. (F→C alphabetical)</div>
+  <div class="checklist-item"><span class="num">07</span> ROMK — four letters, no T. Renal Outer Medullary K⁺.</div>
+  <div class="checklist-item"><span class="num">08</span> MMA = Methyl-malonic acid. The METHYL matters for B12.</div>
+  <div class="checklist-item"><span class="num">09</span> Cycloserine (not cyclophosphamide) also depletes B6.</div>
+  <div class="checklist-item"><span class="num">10</span> INH + PLP → hydrazone complex. NOT "hydralation."</div>
+  <div class="checklist-item"><span class="num">11</span> PTH always: Ca²⁺ UP, PO₄ DOWN. Phosphate wasting at PCT.</div>
+  <div class="checklist-item"><span class="num">12</span> JG cells = AFFERENT arteriole. Renin from where blood enters.</div>
+  <div class="checklist-item"><span class="num">13</span> PSIS not ASIS for BM biopsy. P = Posterior = Poke site.</div>
+  <div class="checklist-item"><span class="num">14</span> Metacarpophalangeal (HAND) not metatarsal (FOOT) in hemochromatosis.</div>
+  <div class="checklist-item"><span class="num">15</span> Para GI = INCREASED motility. Rest + DIGEST = gut works.</div>
+  <div class="checklist-item"><span class="num">16</span> CN III, VII, IX, X for parasympathetic. "3-7-9-10."</div>
+  <div class="checklist-item"><span class="num">17</span> Eparterial = Elevated = Right UPPER lobe bronchus.</div>
+  <div class="checklist-item"><span class="num">18</span> Azygos = POSTERIOR mediastinum (along vertebrae).</div>
+  <div class="checklist-item"><span class="num">19</span> Normal D-xylose = pancreatic. Low D-xylose = mucosal.</div>
+  <div class="checklist-item"><span class="num">20</span> SAAG ≥1.1 = portal (cirrhosis + cardiac). Big pressure = wide gap.</div>
+  <div class="checklist-item"><span class="num">21</span> Euglycemic DKA = NORMAL glucose. "Eu" = normal.</div>
+  <div class="checklist-item"><span class="num">22</span> Gilbert = CONJUGATION defect (UGT1A1). Not uptake.</div>
+  <div class="checklist-item"><span class="num">23</span> Glutamine (not glutamate) synthetase → glutamine swells astrocytes.</div>
+  <div class="checklist-item"><span class="num">24</span> LOLA = substrates for urea cycle + glutamine synthesis. Not "binding."</div>
+  <div class="checklist-item"><span class="num">25</span> V2 receptor → AQP2 insertion → water reabsorbed (concentrated urine).</div>
+  <div class="checklist-item"><span class="num">26</span> CD is where 3-4 marks live. Don't stop at DCT.</div>
+  <div class="checklist-item"><span class="num">27</span> Phlebotomy = 500mL (not 100mL). Target ferritin 50-100.</div>
+  <div class="checklist-item"><span class="num">28</span> Factor VII = shortest half-life (6 hours). PT rises first.</div>
+  <div class="checklist-item"><span class="num">29</span> Before finishing: "Treatment? Indian context? What's new?"</div>
+  <div class="checklist-item"><span class="num">30</span> If 50/50 on a name → DESCRIBE THE FUNCTION. Function = same marks. Wrong name = lost marks.</div>
+</div>
+
+<!-- ==================== SESSION SCORES ==================== -->
+<div class="section" style="border-color: #555;">
+  <h2 style="background:#1a1a1a; color:#aaa;">📊 ALL GRADED SCORES — Quick Reference</h2>
+
+  <table>
+    <tr><th>Topic</th><th>Score</th><th>Key Error</th></tr>
+    <tr><td>TPN</td><td><strong>8.5</strong></td><td>—</td></tr>
+    <tr><td>Refeeding syndrome</td><td><strong>8.5</strong></td><td>—</td></tr>
+    <tr><td>Vitamin D</td><td><strong>8.5</strong></td><td>Parafollicular/Chief swap</td></tr>
+    <tr><td>Septic shock</td><td><strong>8</strong></td><td>—</td></tr>
+    <tr><td>Systemic sclerosis</td><td><strong>8</strong></td><td>—</td></tr>
+    <tr><td>Metabolic alkalosis</td><td><strong>8</strong></td><td>—</td></tr>
+    <tr><td>Vitamin K</td><td><strong>8</strong></td><td>—</td></tr>
+    <tr><td>Vitamin B12</td><td><strong>8</strong></td><td>MMA not "malonic acid"</td></tr>
+    <tr><td>Vitamin B6+INH</td><td><strong>7.5</strong></td><td>Hydrazone, cycloserine, 10mg/day</td></tr>
+    <tr><td>Vitamin A</td><td><strong>7.5</strong></td><td>MEASLES not mumps</td></tr>
+    <tr><td>Nephron (attempt 2)</td><td><strong>7.5</strong></td><td>3 direction inversions</td></tr>
+    <tr><td>Hypokalemia</td><td><strong>7</strong></td><td>—</td></tr>
+    <tr><td>Hyperkalemia</td><td><strong>7</strong></td><td>—</td></tr>
+    <tr><td>Iron/Heme</td><td><strong>7</strong></td><td>—</td></tr>
+    <tr><td>Metformin</td><td><strong>7</strong></td><td>—</td></tr>
+    <tr><td>Calcium metabolism</td><td><strong>7</strong></td><td>—</td></tr>
+    <tr><td>Nutritional neuropathy</td><td><strong>7</strong></td><td>PLP not "pyridoxine-PP"</td></tr>
+    <tr><td>BM + LN combined</td><td><strong>7</strong></td><td>PSIS not ASIS</td></tr>
+    <tr><td>Hemochromatosis</td><td><strong>6.5</strong></td><td>MHC not MHA, 500mL, metacarpo</td></tr>
+    <tr><td>Uric acid</td><td><strong>6.5</strong></td><td>—</td></tr>
+    <tr><td>OP poisoning</td><td><strong>6.5</strong></td><td>—</td></tr>
+    <tr><td>Cardiac conduction</td><td><strong>6.5</strong></td><td>—</td></tr>
+  </table>
+
+  <div style="text-align:center; margin-top:8px; font-size:0.8em; color:#888;">
+    Average: <strong style="color:#4ecdc4">7.4/10</strong> across 22 graded topics
+    | Range: 6.5–8.5 | 8+ topics: 7 (32%)
+  </div>
+</div>
+
+<div class="meta">
+  Built: Feb 14, 2026 | PI Exam Day<br>
+  Sources: Excel ontology (84 topics, 35 families) + 6 project files + 8 past chat sessions<br>
+  Every error traced to actual graded recall attempts
+</div>
+
+</body>
+</html>

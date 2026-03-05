@@ -1,0 +1,967 @@
+{
+  "id": "respiratory",
+  "system_name": "Respiratory System",
+  "system": "respiratory",
+
+  "system_examination_technique": {
+    "approach": "Patient sitting upright at 90 degrees (or leaning forward slightly), chest fully exposed front and back. ALWAYS compare both sides symmetrically. Proceed: General Inspection → Hands/Face → Trachea → Chest (Inspection → Palpation → Percussion → Auscultation). Examine BOTH anterior and posterior chest. Posterior chest is MORE informative for lower lobe pathology.",
+    "sequence": "General Inspection → Hands → Face/Neck → Trachea → Chest: Inspection → Palpation (expansion + VF) → Percussion → Auscultation (breath sounds + vocal resonance)",
+    "steps": [
+      {
+        "phase": "General Inspection",
+        "actions": [
+          "From the foot of the bed: respiratory distress (tachypnea, use of accessory muscles — SCM, scalenes, intercostal indrawing), body position (sitting upright = orthopnea, tripod position = COPD/severe asthma), respiratory pattern (Kussmaul = deep rapid in DKA, Cheyne-Stokes = HF/brainstem), audible sounds (stridor = upper airway, wheeze = lower airway, grunting = pneumonia).",
+          "Devices: oxygen (nasal cannula, mask, venturi — note FiO2), nebulizer, chest drain (note level, bubbling, swinging), tracheostomy, non-invasive ventilation.",
+          "Sputum pot: mucoid (COPD), purulent (infection), rusty (pneumococcal pneumonia), blood-streaked (TB, malignancy, PE), pink frothy (pulmonary edema), currant jelly (Klebsiella)."
+        ]
+      },
+      {
+        "phase": "Hands",
+        "actions": [
+          "Clubbing: check nail bed angle >180° and fluctuation of nail bed. Respiratory causes: bronchiectasis, lung abscess, empyema, lung carcinoma, mesothelioma, IPF. NOT seen in COPD or asthma (important negative).",
+          "Tar staining: yellow-brown discoloration of fingers from smoking. Quantifies smoking exposure.",
+          "Peripheral cyanosis: blue nail beds. Central cyanosis (tongue/lips) is more significant — indicates >5g/dL deoxyhemoglobin.",
+          "CO2 retention flap (asterixis): ask patient to extend wrists with arms outstretched, fingers spread. Coarse irregular flapping = hypercapnia (Type 2 respiratory failure). Also seen in hepatic encephalopathy.",
+          "Wasting of small muscles of hand: Pancoast tumor (T1 invasion). Combined with Horner syndrome (ptosis, miosis, anhidrosis)."
+        ]
+      },
+      {
+        "phase": "Face and Neck",
+        "actions": [
+          "Central cyanosis: examine tongue and lips (not just periphery). Blue tongue = SaO2 <85% approximately.",
+          "Pallor: check conjunctival pallor (anemia can contribute to dyspnea without lung pathology).",
+          "JVP: elevated in cor pulmonale (COPD), tension pneumothorax (acutely), SVC obstruction (non-pulsatile, fixed elevation — lung cancer).",
+          "Lymph nodes: cervical and supraclavicular lymphadenopathy (lung malignancy, TB, lymphoma).",
+          "Pemberton sign: raise both arms above head for 1 minute — facial plethora, cyanosis, JVP elevation = SVC obstruction or retrosternal goiter."
+        ]
+      },
+      {
+        "phase": "Trachea",
+        "actions": [
+          "Palpate trachea in the suprasternal notch using index and ring fingers on either side of trachea, middle finger on trachea. The space between trachea and sternocleidomastoid should be EQUAL on both sides.",
+          "Tracheal deviation: TOWARDS the lesion = collapse, fibrosis (volume loss pulls mediastinum). AWAY from the lesion = massive effusion, tension pneumothorax (space-occupying pushes mediastinum).",
+          "Tracheal tug: place finger on cricoid cartilage, feel for downward pull with each inspiration = severe hyperinflation (COPD) — flattened diaphragm pulls trachea down.",
+          "Cricosternal distance: measure distance from cricoid cartilage to sternal notch (normally 3-4 finger breadths). Reduced (<3 fingers) = hyperinflation."
+        ]
+      },
+      {
+        "phase": "Chest Inspection",
+        "actions": [
+          "Shape: barrel chest (increased AP diameter, COPD/chronic asthma), pectus excavatum (funnel chest), pectus carinatum (pigeon chest — childhood asthma), kyphoscoliosis (restrictive lung disease).",
+          "Symmetry: asymmetry — flattening on one side (fibrosis, collapse), bulging (massive effusion, tension pneumothorax).",
+          "Movement: observe respiratory excursion. Reduced on ONE side = unilateral pathology (effusion, pneumothorax, consolidation, collapse). Reduced BOTH sides = bilateral pathology (COPD, bilateral effusion) or generalized weakness.",
+          "Scars: thoracotomy (lateral), chest drain site (mid-axillary 5th ICS), sternotomy, VATS ports.",
+          "Intercostal spaces: widened = hyperinflation (COPD). Narrowed = fibrosis/collapse. Intercostal indrawing = increased work of breathing."
+        ]
+      },
+      {
+        "phase": "Palpation",
+        "actions": [
+          "Chest expansion: place hands symmetrically on chest wall with thumbs meeting in midline (not touching chest). Ask patient to take deep breath. Thumbs should move equally and symmetrically. Normal expansion ≥5 cm. Reduced unilaterally: effusion, pneumothorax, consolidation, collapse on the REDUCED side.",
+          "Vocal fremitus (VF): place ulnar border of hand on chest wall, ask patient to say 'ninety-nine'. Compare symmetrical areas. INCREASED VF = consolidation (solid lung conducts vibrations better). DECREASED VF = effusion (fluid separates lung from chest wall), pneumothorax (air dampens vibrations), collapse (if bronchus blocked).",
+          "Apex beat: may be displaced AWAY by large effusion or tension pneumothorax. May be impalpable in hyperinflation (COPD).",
+          "Subcutaneous emphysema: crackling crepitus on palpation of skin (air tracking into subcutaneous tissue). Causes: pneumothorax with chest drain, chest trauma, bronchopleural fistula, post-procedure."
+        ]
+      },
+      {
+        "phase": "Percussion",
+        "actions": [
+          "Technique: middle finger (pleximeter) pressed firmly on intercostal space, strike with middle finger of other hand at the DIP joint. Compare symmetrical areas systematically: apex → upper → middle → lower zones, anteriorly and posteriorly.",
+          "Normal: resonant (hollow sound over aerated lung).",
+          "Stony dull: effusion (homogeneous fluid column). This is DIFFERENT from 'dull/impaired' — stony dull is completely flat, like percussing the thigh.",
+          "Dull/Impaired: consolidation (solid but heterogeneous — still has patent bronchi, some air). Less flat than stony dull.",
+          "Hyper-resonant: pneumothorax (air in pleural space), emphysema/COPD (hyperinflated lungs).",
+          "Special: liver dullness normally at 5th-6th ICS in right MCL. Pushed down in hyperinflation (COPD). Obliterated cardiac dullness = severe hyperinflation or left pneumothorax.",
+          "Shifting dullness on chest (for hydropneumothorax): fluid level shifts with position change. Unique to hydropneumothorax."
+        ]
+      },
+      {
+        "phase": "Auscultation",
+        "actions": [
+          "Use diaphragm of stethoscope. Listen systematically at same areas as percussion, comparing sides. Listen for: (1) breath sounds, (2) added sounds, (3) vocal resonance.",
+          "Breath sounds — Vesicular: soft, rustling, inspiration longer than expiration, no gap. Normal over peripheral lung. Bronchial: loud, hollow, high-pitched, expiration = inspiration, gap between phases. Normal only over trachea. Pathological over lung = consolidation (sound conducted through solid lung). Absent: pneumothorax, large effusion, severe hyperinflation.",
+          "Added sounds — Crackles/Crepitations: fine (IPF, early pneumonia, pulmonary edema) vs coarse (bronchiectasis, resolving pneumonia). Wheeze/Rhonchi: high-pitched (small airway) vs low-pitched (large airway). Polyphonic (asthma/COPD) vs monophonic (fixed obstruction/tumor). Pleural rub: scratchy, superficial, heard in both phases, localized (pleural inflammation).",
+          "Vocal resonance: ask patient to say 'ninety-nine' while auscultating. INCREASED = consolidation. DECREASED = effusion, pneumothorax. Whispering pectoriloquy: whisper 'one-two-three' — clearly heard = consolidation. Egophony (E-to-A change): at upper border of effusion.",
+          "Coin test (for pneumothorax): place one coin flat on anterior chest, strike with another coin. Listener auscultates posteriorly. Positive = clear metallic click transmitted through air-filled pleural space."
+        ]
+      }
+    ]
+  },
+
+  "cross_case_differentials": [
+    {
+      "comparison": "Pleural Effusion vs Consolidation — The Classic Distinction",
+      "conditions": ["Pleural Effusion", "Consolidation"],
+      "features": [
+        {"feature": "Percussion", "values": ["STONY DULL", "DULL / IMPAIRED (not stony)"]},
+        {"feature": "Vocal fremitus", "values": ["DECREASED", "INCREASED"]},
+        {"feature": "Vocal resonance", "values": ["DECREASED", "INCREASED"]},
+        {"feature": "Breath sounds", "values": ["Absent or decreased", "Bronchial breathing"]},
+        {"feature": "Trachea/mediastinum", "values": ["Shifted AWAY (if massive)", "Central (no shift)"]},
+        {"feature": "Movement", "values": ["Reduced on affected side", "Reduced on affected side"]},
+        {"feature": "Whispering pectoriloquy", "values": ["Negative (absent at base, may be + at upper border)", "Positive"]},
+        {"feature": "Egophony", "values": ["Positive at UPPER BORDER of effusion", "May be positive over consolidation"]},
+        {"feature": "Why VF differs", "values": ["Fluid SEPARATES lung from chest wall — dampens vibrations", "Solid lung is CONTINUOUS with chest wall — conducts vibrations better"]}
+      ]
+    },
+    {
+      "comparison": "Pleural Effusion vs Pneumothorax vs Consolidation",
+      "conditions": ["Effusion", "Pneumothorax", "Consolidation"],
+      "features": [
+        {"feature": "Percussion", "values": ["Stony dull", "Hyper-resonant", "Dull/impaired"]},
+        {"feature": "Vocal fremitus", "values": ["Decreased", "Decreased/absent", "Increased"]},
+        {"feature": "Breath sounds", "values": ["Absent/decreased", "Absent/decreased", "Bronchial"]},
+        {"feature": "Trachea shift", "values": ["Away (if massive)", "Away (if tension)", "Central"]},
+        {"feature": "Chest movement", "values": ["Reduced ipsilateral", "Reduced ipsilateral", "Reduced ipsilateral"]},
+        {"feature": "Mediastinal shift", "values": ["Away", "Away (tension) or central", "None"]},
+        {"feature": "Coin test", "values": ["Negative", "Positive", "Negative"]}
+      ]
+    },
+    {
+      "comparison": "Asthma vs COPD — The Obstructive Pair",
+      "conditions": ["Bronchial Asthma", "COPD"],
+      "features": [
+        {"feature": "Age of onset", "values": ["Childhood / young adult", ">40 years"]},
+        {"feature": "Smoking", "values": ["Not required", "Almost always (>20 pack-years)"]},
+        {"feature": "Pattern", "values": ["Episodic with symptom-free intervals", "Persistent and progressive"]},
+        {"feature": "Diurnal variation", "values": ["Marked (worse at night/early AM)", "Less prominent"]},
+        {"feature": "Reversibility (post-BD)", "values": ["Fully reversible (>12% + 200mL)", "Partially reversible at best"]},
+        {"feature": "Barrel chest", "values": ["Usually absent (unless chronic)", "Common"]},
+        {"feature": "Clubbing", "values": ["ABSENT", "ABSENT (if present, think carcinoma/bronchiectasis)"]},
+        {"feature": "Cor pulmonale", "values": ["Very rare", "Common in advanced disease"]},
+        {"feature": "Sputum cells", "values": ["Eosinophils", "Neutrophils"]},
+        {"feature": "Steroid response", "values": ["Excellent", "Modest"]}
+      ]
+    },
+    {
+      "comparison": "All Respiratory Cases — Quick Physical Sign Comparison",
+      "conditions": ["Effusion", "Pneumothorax", "Consolidation", "Asthma/COPD"],
+      "features": [
+        {"feature": "Percussion", "values": ["Stony dull", "Hyper-resonant", "Impaired/dull", "Hyper-resonant (bilateral)"]},
+        {"feature": "VF", "values": ["Decreased", "Decreased", "Increased", "Normal/decreased bilateral"]},
+        {"feature": "Breath sounds", "values": ["Absent", "Absent", "Bronchial", "Wheeze + prolonged exp"]},
+        {"feature": "Laterality", "values": ["Unilateral", "Unilateral", "Unilateral (usually)", "Bilateral"]},
+        {"feature": "Tracheal shift", "values": ["Away", "Away (tension)", "None", "Central"]},
+        {"feature": "Added sounds", "values": ["None (rub above)", "None", "Coarse creps", "Polyphonic rhonchi"]}
+      ]
+    }
+  ],
+
+  "cases": [
+    {
+      "id": "pleural_effusion",
+      "name": "Pleural Effusion",
+      "category": "case",
+      "system": "respiratory",
+      "tags": ["effusion", "long-case", "short-case", "fluid"],
+
+      "presentation_script": {
+        "opening": "Sir, I have examined this patient. This is a 52-year-old male who presented with progressive breathlessness of 3 weeks duration, now MMRC Grade III, with right-sided dull aching chest pain and dry cough. He has a history of chronic liver disease and has been non-compliant with diuretics.",
+        "gpe_findings": "On general examination, the patient is conscious, oriented, and in mild respiratory distress. Pulse is 96 per minute, regular, normal volume. Blood pressure is 110/70 mmHg. Respiratory rate is 24 per minute. SpO2 is 92% on room air. JVP is elevated. There is bilateral pitting pedal edema. No pallor, no cyanosis, no clubbing, no lymphadenopathy.",
+        "system_findings": "On respiratory examination — Inspection: right hemithorax shows fullness with reduced movement compared to the left. Trachea is shifted to the LEFT (away from the lesion). Palpation: chest expansion is reduced on the right, vocal fremitus is DECREASED on the right infrascapular and infraaxillary regions. Percussion: STONY DULL note on the right from the 5th intercostal space downwards. Auscultation: breath sounds are ABSENT in the right lower zone, with bronchial breathing and egophony at the upper border of the effusion. Vocal resonance is decreased in the dull area.",
+        "diagnosis_statement": "Right-sided moderate-to-large pleural effusion, likely transudative in etiology given the background of chronic liver disease with portal hypertension.",
+        "differentials": [
+          "Consolidation (but percussion would be impaired/dull NOT stony dull, and VF would be INCREASED not decreased)",
+          "Lung collapse (trachea would shift TOWARDS the lesion, not away)",
+          "Empyema (would present with fever, toxemia — clinically indistinguishable from effusion on examination alone)",
+          "Meigs syndrome (if female — ovarian fibroma + pleural effusion + ascites)"
+        ],
+        "tips": [
+          "Always say 'STONY DULL' not just 'dull' — this is the KEY distinction from consolidation.",
+          "Emphasize 'vocal fremitus DECREASED' — this is the single most important sign distinguishing effusion from consolidation.",
+          "Mention tracheal shift AWAY — this proves the lesion is space-occupying (pushing), not volume-losing (pulling).",
+          "State the upper border of dullness and mention egophony/bronchial breathing AT the upper border — shows you understand the anatomy."
+        ]
+      },
+
+      "case_scenario": {
+        "demographics": "52-year-old male, manual laborer",
+        "chief_complaint": "Progressive breathlessness (3 weeks, MMRC Grade III), right-sided chest heaviness, dry cough",
+        "hpi": "Breathlessness began insidiously 3 weeks ago, initially on exertion only, now present with minimal activity. Associated right-sided dull aching chest heaviness, worse on lying on the right side (fluid compresses remaining lung). Dry cough, non-productive, worse when lying flat. No fever, no hemoptysis, no weight loss, no night sweats. No orthopnea or PND initially but has developed over the past week. Progressive abdominal distension for 1 month.",
+        "past_history": "Known chronic liver disease (alcohol-related) for 5 years. Previous episode of ascites drained 6 months ago. Non-compliant with diuretics. No known TB contact, no diabetes, no hypertension.",
+        "drug_history": "Prescribed spironolactone and furosemide — irregular use. No other medications.",
+        "social_history": "Alcohol use: 180mL country liquor daily for 20 years, reduced in past 2 years. 10 pack-year smoking history, quit 3 years ago."
+      },
+
+      "clinical_summary": [
+        {"area": "GPE", "finding": "Respiratory distress", "detail": "RR 24, SpO2 92% on RA", "present": true, "significance": "Mechanical compression of lung by fluid → V/Q mismatch → hypoxemia"},
+        {"area": "GPE", "finding": "Pedal edema", "detail": "Bilateral pitting, up to mid-shin", "present": true, "significance": "Fluid overload — hepatic origin (low albumin) or cardiac"},
+        {"area": "GPE", "finding": "Elevated JVP", "detail": "Visible above clavicle at 45 degrees", "present": true, "significance": "Raised venous pressure — hepatic hydrothorax or associated cardiac disease"},
+        {"area": "GPE", "finding": "Clubbing", "detail": "Absent", "present": false, "significance": "Absence makes empyema, bronchiectasis, and malignancy less likely"},
+        {"area": "Inspection", "finding": "Fullness of right hemithorax", "detail": "Right side appears larger than left", "present": true, "significance": "Space-occupying process (fluid) expanding the hemithorax"},
+        {"area": "Inspection", "finding": "Reduced movement right side", "detail": "Right hemithorax moves less than left during respiration", "present": true, "significance": "Splinting from pain + mechanical restriction by fluid"},
+        {"area": "Trachea", "finding": "Trachea deviated to LEFT", "detail": "Shifted away from the effusion", "present": true, "significance": "Large effusion pushes mediastinum to contralateral side"},
+        {"area": "Palpation", "finding": "Reduced chest expansion (right)", "detail": "Right thumb moves less than left on deep inspiration", "present": true, "significance": "Fluid restricts lung expansion on affected side"},
+        {"area": "Palpation", "finding": "Decreased vocal fremitus", "detail": "VF markedly reduced on right lower zone compared to left", "present": true, "significance": "Fluid layer BETWEEN lung and chest wall dampens vibration transmission — KEY sign"},
+        {"area": "Percussion", "finding": "Stony dull note", "detail": "From right 5th ICS downwards — completely flat, like percussing the thigh", "present": true, "significance": "Homogeneous fluid column absorbs all percussion energy — stony dull is PATHOGNOMONIC of fluid"},
+        {"area": "Auscultation", "finding": "Absent breath sounds", "detail": "No breath sounds audible in right lower zone", "present": true, "significance": "Fluid separates stethoscope from lung → sound cannot traverse fluid to chest wall"},
+        {"area": "Auscultation", "finding": "Bronchial breathing at upper border", "detail": "Heard just above the level of dullness", "present": true, "significance": "Compressed (consolidated) lung at upper margin of effusion conducts bronchial sounds"},
+        {"area": "Auscultation", "finding": "Egophony at upper border", "detail": "E-to-A change at the upper border of effusion", "present": true, "significance": "Compressed lung above effusion alters sound transmission (filters frequencies)"},
+        {"area": "Auscultation", "finding": "Decreased vocal resonance", "detail": "Spoken voice poorly transmitted in right lower zone", "present": true, "significance": "Same mechanism as decreased VF — fluid dampens sound"}
+      ],
+
+      "examination_technique": {
+        "sequence": "Inspection → Trachea → Palpation (expansion + VF) → Percussion → Auscultation",
+        "steps": [
+          {
+            "phase": "Inspection",
+            "actions": [
+              "Look at chest shape from front, side, and back. Compare both hemithoraces for symmetry.",
+              "Note fullness, reduced movement, intercostal space widening on the affected side.",
+              "Look for scars of previous chest drain insertion (5th ICS, mid-axillary line)."
+            ],
+            "findings_in_this_case": ["Right hemithorax fullness", "Reduced movement on right side", "No chest drain scars"]
+          },
+          {
+            "phase": "Palpation",
+            "actions": [
+              "Trachea: palpate in suprasternal notch. In large effusion, trachea shifts AWAY from the affected side.",
+              "Chest expansion: place both hands symmetrically, thumbs at midline. Ask patient to take deep breath. Note which side moves less.",
+              "Vocal fremitus: ulnar border of hand on chest wall, ask patient to say 'ninety-nine'. Compare both sides at same level — DECREASED VF on the side of effusion. Start from apex downwards to identify the UPPER BORDER where VF changes."
+            ],
+            "findings_in_this_case": ["Trachea shifted to LEFT", "Expansion reduced on RIGHT", "VF decreased on right lower zone"]
+          },
+          {
+            "phase": "Percussion",
+            "actions": [
+              "Percuss systematically from apex downwards, comparing sides. Identify the level where resonant becomes stony dull — this is the upper border of the effusion.",
+              "Stony dull note = effusion. Impaired/dull = consolidation or collapse. This distinction is CRITICAL.",
+              "Check for shifting dullness: percuss in sitting position, mark upper border. Then position patient laterally — if the upper border shifts, fluid is FREE (not loculated).",
+              "Determine approximate volume: each intercostal space represents ~250-300 mL of fluid."
+            ],
+            "findings_in_this_case": ["Stony dull from right 5th ICS downwards", "Resonant above 5th ICS"]
+          },
+          {
+            "phase": "Auscultation",
+            "actions": [
+              "Listen with diaphragm at all zones. Breath sounds will be ABSENT in the dull zone.",
+              "At the UPPER BORDER of effusion: bronchial breathing (compressed lung above fluid acts like consolidated lung) and egophony (E-to-A change).",
+              "Vocal resonance: ask 'ninety-nine' while auscultating. Decreased in the effusion zone. Whispering pectoriloquy: negative over effusion, may be positive at upper border.",
+              "Listen for pleural rub ABOVE the effusion — inflamed pleura above fluid level may produce rub."
+            ],
+            "findings_in_this_case": ["Absent breath sounds right lower zone", "Bronchial breathing at upper border", "Egophony at upper border", "Decreased VR in effusion zone"]
+          }
+        ]
+      },
+
+      "findings_with_mechanisms": [
+        {
+          "finding": "Stony dull percussion note",
+          "mechanism": "Pleural fluid creates a homogeneous fluid column between the percussing finger and the chest wall. Unlike consolidation (which is a heterogeneous mix of exudate, air in bronchi, and interstitium), effusion is a UNIFORM fluid medium. This uniform density completely absorbs percussion energy, producing a flat 'stony dull' note identical to percussing the thigh.",
+          "mechanism_chain": "[Fluid in pleural space] → [Uniform high-density medium] → [Complete absorption of percussion wave] → [Stony dull note]",
+          "caveat": "Loculated effusion may not shift with position change. Subpulmonic effusion (fluid trapped below lung base) may mimic elevated hemidiaphragm on CXR and present only as flattened costophrenic angle."
+        },
+        {
+          "finding": "Decreased vocal fremitus",
+          "mechanism": "Voice vibrations travel from larynx through bronchi into lung parenchyma and then to the chest wall. In effusion, a layer of FLUID sits between the lung surface and the chest wall. The fluid-chest wall interface dampens vibration transmission. The vibrations do not cross the fluid layer effectively because the fluid is not continuous with the lung parenchyma — it SEPARATES the vibrating lung from the palpating hand.",
+          "mechanism_chain": "[Voice vibration] → [Travels through lung] → [Reaches pleural fluid layer] → [Dampened at fluid-chest wall interface] → [Decreased VF]",
+          "caveat": "This is the KEY differentiator from consolidation: in consolidation, the SOLID lung IS continuous with the chest wall (no separating layer), so vibrations are transmitted BETTER → increased VF. The physics is about continuity vs separation, not solid vs fluid per se."
+        },
+        {
+          "finding": "Absent breath sounds",
+          "mechanism": "Breath sounds are generated by turbulent airflow in large airways and transmitted through lung parenchyma to the chest wall. In effusion, fluid physically separates the lung from the chest wall. Sound energy is dissipated at the lung-fluid and fluid-chest wall interfaces. Additionally, the collapsed/compressed lung generates less turbulent airflow.",
+          "mechanism_chain": "[Fluid between lung and chest wall] → [Sound cannot traverse fluid layer] → [Absent breath sounds]"
+        },
+        {
+          "finding": "Bronchial breathing at upper border of effusion",
+          "mechanism": "Just above the effusion level, the lung is compressed by the fluid. This compressed lung becomes semi-solid (like consolidation). Bronchial sounds from patent bronchi are conducted through this compressed (semi-consolidated) lung directly to the chest wall, producing bronchial breathing. Below this level, fluid blocks sound. Above this level, normal aerated lung filters bronchial sounds into vesicular sounds.",
+          "mechanism_chain": "[Fluid compresses lung at upper border] → [Compressed lung becomes semi-solid] → [Bronchial sounds conducted through solid medium] → [Bronchial breathing heard at upper border]"
+        },
+        {
+          "finding": "Egophony (E-to-A change) at upper border",
+          "mechanism": "The compressed lung at the upper border of effusion acts as a filter that selectively transmits certain sound frequencies. When the patient says 'ee' (dominant frequency ~200 Hz), the compressed lung preferentially transmits higher frequencies (300-400 Hz), altering the perceived sound to 'ay'. This frequency filtering occurs specifically at the transition zone where lung is partially compressed.",
+          "mechanism_chain": "[Partially compressed lung at effusion border] → [Selective frequency transmission] → ['ee' filtered to 'ay'] → [Egophony positive]"
+        },
+        {
+          "finding": "Tracheal deviation away from effusion",
+          "mechanism": "A large effusion (>1000 mL) acts as a space-occupying lesion in the hemithorax. The accumulated fluid pushes the mediastinal contents (trachea, heart, great vessels) to the contralateral side. The trachea is the most superficial mediastinal structure and therefore the most easily palpated indicator of mediastinal shift.",
+          "mechanism_chain": "[Large fluid volume] → [Increased pressure in affected hemithorax] → [Pushes mediastinum to opposite side] → [Trachea deviated AWAY]",
+          "caveat": "Small effusions (<500 mL) may not shift the trachea. If trachea is shifted TOWARDS the effusion, suspect underlying collapse or a trapped lung (the effusion is filling space left by a collapsed lung, not pushing)."
+        }
+      ],
+
+      "diagnosis_and_differentials": {
+        "provisional": "Right-sided moderate-to-large pleural effusion, likely transudative (hepatic hydrothorax) in the setting of chronic liver disease with portal hypertension",
+        "supporting_evidence": [
+          "Stony dull percussion note on the right from 5th ICS downwards",
+          "Decreased vocal fremitus on the right lower zone",
+          "Absent breath sounds on the right lower zone",
+          "Trachea shifted to the left (away from the lesion — space-occupying)",
+          "Bronchial breathing and egophony at the upper border of effusion",
+          "Background of chronic liver disease with previous ascites",
+          "Bilateral pedal edema and elevated JVP (fluid overload state)"
+        ],
+        "differentials": [
+          {
+            "condition": "Right lower lobe consolidation",
+            "points_for": "Dull percussion, reduced movement on the right",
+            "why_not": "Percussion is STONY DULL (not impaired/dull), VF is DECREASED (not increased), breath sounds are ABSENT (not bronchial). In consolidation, all three would be opposite."
+          },
+          {
+            "condition": "Right lung collapse",
+            "points_for": "Reduced movement, reduced breath sounds on the right",
+            "why_not": "Trachea would shift TOWARDS the lesion in collapse (volume loss pulls mediastinum). Here trachea is shifted AWAY (fluid pushes). Also, collapse narrows ICS; here ICS may be widened."
+          },
+          {
+            "condition": "Empyema",
+            "points_for": "Physical signs identical to effusion (stony dull, decreased VF, absent breath sounds)",
+            "why_not": "Cannot distinguish from simple effusion on examination alone. Empyema is diagnosed by pleural fluid analysis (pus, pH <7.2, glucose <40 mg/dL, LDH >1000, positive gram stain/culture). Would expect more toxemia, fever, leukocytosis."
+          },
+          {
+            "condition": "Malignant effusion",
+            "points_for": "Effusion in an older male, could be lung or mesothelioma",
+            "why_not": "No weight loss, no hemoptysis, no clubbing, no lymphadenopathy. Background of CLD provides a clear transudative cause. However, thoracentesis with cytology is needed to exclude."
+          }
+        ]
+      },
+
+      "investigations": [
+        {"test": "Chest X-ray PA", "expected": "Homogeneous opacity in right lower zone with concave upper border (meniscus sign). Obliteration of right costophrenic angle. Mediastinal shift to left if large. Lateral decubitus film: free fluid layers out along dependent chest wall.", "why": "Confirms effusion, estimates volume (200-300mL needed to blunt costophrenic angle), and helps distinguish from consolidation (air bronchograms absent in effusion).", "priority": "immediate"},
+        {"test": "Ultrasound chest", "expected": "Anechoic (simple transudative) or complex echogenic (exudative/empyema) fluid collection. Can estimate volume, identify septations, and guide aspiration site.", "why": "Most sensitive bedside tool for effusion (detects as little as 50 mL). Guides safe thoracentesis. Identifies loculated collections.", "priority": "immediate"},
+        {"test": "Diagnostic thoracentesis", "expected": "Send for: protein, LDH, glucose, pH, cell count + differential, gram stain + culture, AFB, cytology. Apply Light's criteria to classify.", "why": "Distinguishes transudate vs exudate and identifies etiology. Light's criteria: exudate if ANY of (1) pleural protein/serum protein >0.5, (2) pleural LDH/serum LDH >0.6, (3) pleural LDH >2/3 upper limit of normal serum LDH.", "priority": "immediate"},
+        {"test": "CT chest with contrast", "expected": "Pleural enhancement (empyema — split pleura sign), underlying lung pathology (mass, collapse), loculated collections, mediastinal lymphadenopathy.", "why": "When thoracentesis is inconclusive or malignancy suspected. Split pleura sign is specific for empyema.", "priority": "if_indicated"},
+        {"test": "Serum albumin + LFT", "expected": "Low albumin (<3 g/dL — hepatic origin), deranged LFTs", "why": "Supports transudative etiology. Serum-effusion albumin gradient >1.2 g/dL = transudate.", "priority": "routine"},
+        {"test": "Pleural biopsy", "expected": "Granulomas (TB), malignant cells", "why": "When TB or malignancy suspected and fluid cytology/AFB negative. Abrams needle biopsy or thoracoscopic biopsy.", "priority": "if_indicated"}
+      ],
+
+      "management": {
+        "medical": [
+          {"intervention": "Treat the underlying cause", "rationale": "Transudative effusions resolve when the cause is treated", "specifics": "CLD: diuretics (spironolactone + furosemide), salt restriction, albumin infusion if <2 g/dL. CCF: diuretics, ACEi/ARBs. Nephrotic: steroids if minimal change, diuretics."},
+          {"intervention": "Therapeutic thoracentesis", "rationale": "Symptomatic relief of dyspnea from large effusion", "specifics": "Remove up to 1-1.5L at a time (limit to prevent re-expansion pulmonary edema). Ultrasound-guided preferred. Stop if chest tightness, cough, or pain."},
+          {"intervention": "Oxygen supplementation", "rationale": "Correct hypoxemia from V/Q mismatch", "specifics": "Nasal cannula 2-4 L/min, target SpO2 94-98%."}
+        ],
+        "interventional": "Intercostal drainage (ICD) if empyema, complicated parapneumonic effusion, or hemothorax. Insert in 'safe triangle' (5th ICS, mid-axillary line). Seldinger technique preferred. Connect to underwater seal drain.",
+        "surgical": "Pleurodesis (chemical — talc, tetracycline; or surgical — VATS) for recurrent malignant effusions. PleurX catheter (indwelling tunneled pleural catheter) for palliation in malignant effusions. Decortication for organized empyema with trapped lung.",
+        "this_patient": "Optimize diuretic therapy (spironolactone 100mg + furosemide 40mg, titrate). Salt restriction (<2g/day). Therapeutic thoracentesis for symptomatic relief. Send fluid for Light's criteria to confirm transudative etiology. If hepatic hydrothorax recurs despite diuretics, consider TIPS evaluation.",
+        "follow_up": "Monitor daily weights, I/O charting, repeat CXR after thoracentesis. Check LFT, albumin, coagulation profile. Hepatology referral for liver disease optimization."
+      },
+
+      "complications": [
+        {"complication": "Empyema", "mechanism": "Infection of pleural fluid (parapneumonic effusion → complicated effusion → empyema)", "presentation": "Fever, toxemia, purulent pleural fluid (pH <7.2, glucose <40, LDH >1000)", "management": "Antibiotics + intercostal drainage. If loculated: intrapleural fibrinolytics (tPA + DNase). If failed: VATS debridement or decortication."},
+        {"complication": "Trapped lung", "mechanism": "Organized fibrous peel on visceral pleura prevents lung re-expansion even after drainage", "presentation": "Persistent pneumothorax ex vacuo after drainage, lung fails to re-expand", "management": "Decortication (surgical stripping of fibrous peel)"},
+        {"complication": "Re-expansion pulmonary edema", "mechanism": "Rapid re-expansion of collapsed lung after large-volume drainage → reperfusion injury → increased capillary permeability → unilateral pulmonary edema", "presentation": "Cough, dyspnea, frothy sputum, hypoxemia within hours of drainage", "management": "Supportive (oxygen, diuretics). Prevention: limit drainage to 1-1.5L per session."},
+        {"complication": "Fibrothorax", "mechanism": "Chronic undrained effusion → fibrin deposition → organized fibrous tissue encasing the lung", "presentation": "Chronic restrictive lung disease, reduced expansion, thickened pleura on imaging", "management": "Decortication if symptomatic and lung is viable underneath"}
+      ],
+
+      "vivas": [
+        {
+          "question": "What is Light's criteria and how do you apply it?",
+          "answer": "Light's criteria classifies pleural effusion as EXUDATE if ANY ONE of the following is met: (1) Pleural fluid protein / serum protein > 0.5, (2) Pleural fluid LDH / serum LDH > 0.6, (3) Pleural fluid LDH > 2/3 of the upper limit of normal serum LDH. If NONE are met, it is a transudate. Sensitivity for exudate is 98% but specificity is ~80% — it can misclassify some transudates on diuretics as exudates.",
+          "follow_ups": [
+            {"question": "What causes of transudative effusion do you know?", "answer": "Congestive heart failure (commonest overall), cirrhosis with hepatic hydrothorax, nephrotic syndrome, myxedema, peritoneal dialysis, Meigs syndrome, constrictive pericarditis. Key concept: transudates result from imbalance of hydrostatic and oncotic pressures, NOT from pleural inflammation."},
+            {"question": "What if Light's criteria misclassifies a transudate as exudate?", "answer": "This happens in patients on diuretics (concentrated pleural fluid). Use the serum-effusion albumin gradient: if >1.2 g/dL, it is likely a transudate despite meeting Light's criteria. Also, NT-proBNP >1500 pg/mL in pleural fluid supports cardiac transudate."}
+          ],
+          "examiner": "medicine"
+        },
+        {
+          "question": "Why is vocal fremitus DECREASED in effusion but INCREASED in consolidation?",
+          "answer": "The key concept is CONTINUITY vs SEPARATION. In consolidation, the solidified lung is CONTINUOUS with the chest wall — vibrations from the larynx travel through the bronchial tree into the solid lung parenchyma and directly to the chest wall. Solid transmits vibrations better than air → increased VF. In effusion, a layer of FLUID sits BETWEEN the lung and the chest wall. Although fluid conducts sound, the vibrations are dampened at the fluid-chest wall interface because the fluid is not structurally continuous with the chest wall — it SEPARATES the vibrating lung from the palpating hand → decreased VF.",
+          "follow_ups": [
+            {"question": "Then why does fluid not conduct the vibrations through?", "answer": "It's about impedance mismatch. Sound energy is lost at each interface it crosses. In effusion, vibrations must cross: lung → fluid interface, then fluid → chest wall interface. Each crossing causes energy loss. In consolidation, the solid medium is continuous from bronchus to chest wall — only one medium, minimal energy loss."}
+          ],
+          "examiner": "medicine"
+        },
+        {
+          "question": "What is the difference between stony dull and impaired dull percussion?",
+          "answer": "STONY DULL is completely flat, with no resonance at all — identical to percussing the thigh. It is produced by a homogeneous FLUID column (pleural effusion) that completely absorbs all percussion energy. IMPAIRED or DULL is less resonant than normal but still has some vibration quality — it's produced by HETEROGENEOUS tissue (consolidated lung) which still contains patent bronchi (air), interstitium, and blood vessels. The analogy: stony dull is like hitting a sealed bottle of water (all fluid); impaired dull is like hitting a water-soaked sponge (mixed air-fluid).",
+          "follow_ups": [
+            {"question": "Can you get stony dull percussion in any other condition?", "answer": "Yes — massive consolidation with completely airless lung (rare), large pleural masses (mesothelioma), and the liver/spleen in the abdomen. But in clinical practice, stony dullness on the chest is pleural effusion until proven otherwise."}
+          ],
+          "examiner": "medicine"
+        },
+        {
+          "question": "What is a hepatic hydrothorax and how does it develop?",
+          "answer": "Hepatic hydrothorax is a transudative pleural effusion (usually >500 mL) in a patient with cirrhosis, in the absence of primary cardiac, pulmonary, or pleural disease. It occurs in 5-10% of cirrhotic patients with ascites. Mechanism: ascitic fluid migrates from the peritoneal cavity through microscopic diaphragmatic defects (congenital fenestrations) into the pleural space. The negative intrathoracic pressure during inspiration actively 'sucks' fluid through these defects. Right-sided in 85% of cases (the right hemidiaphragm is thinner).",
+          "follow_ups": [
+            {"question": "How do you prove that pleural fluid comes from ascites?", "answer": "Nuclear medicine study: inject technetium-99m sulfur colloid or labeled albumin into the ascitic fluid via paracentesis. If radiotracer appears in the pleural space within hours, it confirms transdiaphragmatic migration. This is the gold standard for diagnosing hepatic hydrothorax."},
+            {"question": "What is the management?", "answer": "First-line: sodium restriction + diuretics (same as ascites). Second-line: therapeutic thoracentesis for symptoms. TIPS (transjugular intrahepatic portosystemic shunt) for refractory cases. Chemical pleurodesis is usually ineffective because fluid reaccumulates through the diaphragmatic defects. Liver transplant is definitive."}
+          ],
+          "examiner": "medicine"
+        },
+        {
+          "question": "What is the significance of egophony and where is it heard?",
+          "answer": "Egophony (E-to-A change) is heard at the UPPER BORDER of a pleural effusion. It is a sign that helps localize the effusion-lung interface. When the patient says 'ee', the compressed lung at the upper border of effusion filters the sound frequencies, transmitting higher frequencies preferentially, so 'ee' sounds like 'ay' through the stethoscope. It is also heard over areas of consolidation. The mechanism is the same — semi-solid lung tissue alters frequency transmission.",
+          "follow_ups": [
+            {"question": "How do you differentiate it from bronchophony and whispering pectoriloquy?", "answer": "Bronchophony: spoken voice heard louder and more distinctly (increased intensity, no character change). Egophony: spoken 'ee' changes to 'ay' (character changes). Whispering pectoriloquy: whispered words heard clearly (most sensitive for consolidation). Hierarchy of specificity: whispering pectoriloquy > egophony > bronchophony."}
+          ],
+          "examiner": "medicine"
+        },
+        {
+          "question": "How do you differentiate exudative from transudative effusion clinically?",
+          "answer": "Clinical clues BEFORE thoracentesis: Transudate — bilateral effusions, associated pedal edema/ascites/JVP elevation, known heart failure/cirrhosis/nephrotic syndrome, no fever, no chest pain. Exudate — unilateral (usually), fever, pleuritic chest pain, associated consolidation signs, lymphadenopathy, weight loss. However, clinical differentiation is unreliable — thoracentesis with Light's criteria is MANDATORY. Even in a cirrhotic patient, 20% of effusions are exudative (infection, SBE).",
+          "follow_ups": [
+            {"question": "What exudative causes are important in the Indian setting?", "answer": "Tuberculosis (lymphocytic exudate, ADA >40 U/L, low glucose), parapneumonic effusion/empyema (neutrophilic, low pH), malignant effusion (lymphocytic, positive cytology), rheumatoid effusion (very low glucose <30 mg/dL, high LDH). TB is the COMMONEST cause of exudative effusion in India."}
+          ],
+          "examiner": "medicine"
+        }
+      ]
+    },
+
+    {
+      "id": "pneumothorax",
+      "name": "Pneumothorax",
+      "category": "case",
+      "system": "respiratory",
+      "tags": ["pneumothorax", "emergency", "short-case"],
+
+      "presentation_script": {
+        "opening": "Sir, I have examined this patient. This is a 22-year-old tall, thin male who presented with sudden onset right-sided pleuritic chest pain and breathlessness of 2 hours duration, occurring at rest. No history of trauma, no known lung disease.",
+        "gpe_findings": "On general examination, the patient is conscious, anxious, and tachypneic. Pulse is 110 per minute, regular. Blood pressure is 120/80 mmHg. Respiratory rate is 28 per minute. SpO2 is 94% on room air. No pallor, no cyanosis, no clubbing.",
+        "system_findings": "On respiratory examination — Inspection: right hemithorax shows reduced movement compared to the left. Trachea is central. Palpation: chest expansion is reduced on the right, vocal fremitus is ABSENT on the right. Percussion: HYPER-RESONANT note on the entire right hemithorax. Auscultation: breath sounds are ABSENT on the right side. No added sounds. Coin test is positive.",
+        "diagnosis_statement": "Right-sided simple pneumothorax, likely primary spontaneous pneumothorax given the patient's age, habitus (tall, thin), and absence of underlying lung disease.",
+        "differentials": [
+          "Large bulla (emphysematous bulla mimics pneumothorax on CXR — CT differentiates, drainage is dangerous)",
+          "Right-sided pleural effusion (but percussion would be stony DULL, not hyper-resonant)",
+          "Acute PE (sudden dyspnea but no hyper-resonance or absent breath sounds)",
+          "Acute MI (sudden chest pain but no respiratory signs)"
+        ],
+        "tips": [
+          "Always say 'HYPER-RESONANT' — this is the defining percussion note for pneumothorax and the key distinction from effusion (stony dull).",
+          "Mention 'sudden onset at rest' — 80% of primary spontaneous pneumothorax occurs at rest, NOT during exertion.",
+          "If asked about tension pneumothorax: immediately mention tracheal shift AWAY, hypotension, distended neck veins — this is a clinical diagnosis requiring immediate needle decompression, NOT a CXR."
+        ]
+      },
+
+      "case_scenario": {
+        "demographics": "22-year-old male, tall and thin (180 cm, 58 kg), college student",
+        "chief_complaint": "Sudden right-sided chest pain and breathlessness for 2 hours",
+        "hpi": "At rest watching TV when sudden sharp stabbing pain developed in the right side of chest, followed by rapidly progressive breathlessness. Pain is pleuritic (worse with deep breathing and coughing). Dyspnea is progressive since onset. No cough, no hemoptysis, no fever. No trauma. No recent air travel or diving. No previous similar episodes. No connective tissue disease features (no joint hypermobility, no lens dislocation).",
+        "past_history": "No known lung disease, no asthma, no TB. No connective tissue disorders. No previous pneumothorax.",
+        "social_history": "Non-smoker. No drug use (cannabis smoking is a risk factor for PSP). Plays basketball (tall habitus — risk factor)."
+      },
+
+      "clinical_summary": [
+        {"area": "GPE", "finding": "Tall thin habitus", "detail": "Height 180 cm, weight 58 kg, BMI 17.9", "present": true, "significance": "Classic body habitus for PSP — tall thin males have apical subpleural blebs"},
+        {"area": "GPE", "finding": "Tachypnea and tachycardia", "detail": "RR 28, pulse 110", "present": true, "significance": "Compensatory response to reduced gas exchange from collapsed lung"},
+        {"area": "GPE", "finding": "Anxiety", "detail": "Visibly anxious and restless", "present": true, "significance": "Sudden dyspnea triggers anxiety — also monitor for tension pneumothorax signs"},
+        {"area": "Trachea", "finding": "Trachea central", "detail": "No deviation", "present": true, "significance": "Simple pneumothorax — not under tension. If shifted AWAY → suspect tension pneumothorax"},
+        {"area": "Inspection", "finding": "Reduced movement right side", "detail": "Right hemithorax moves less during respiration", "present": true, "significance": "Collapsed lung cannot expand → reduced movement on affected side"},
+        {"area": "Palpation", "finding": "Reduced expansion right side", "detail": "Right thumb moves less than left", "present": true, "significance": "Same mechanism — collapsed lung restricts excursion"},
+        {"area": "Palpation", "finding": "Absent vocal fremitus", "detail": "VF absent on entire right hemithorax", "present": true, "significance": "Air in pleural space blocks vibration transmission. Lung is not in contact with chest wall."},
+        {"area": "Percussion", "finding": "Hyper-resonant note", "detail": "Entire right hemithorax hyper-resonant", "present": true, "significance": "Air in pleural space — air is more resonant than normal aerated lung because there is no tissue to dampen the sound"},
+        {"area": "Auscultation", "finding": "Absent breath sounds", "detail": "No breath sounds audible on right side", "present": true, "significance": "Collapsed lung is not ventilated → no airflow → no sound. Air-filled pleural space does not transmit sounds from mediastinum."},
+        {"area": "Auscultation", "finding": "Coin test positive", "detail": "Metallic click heard posteriorly when coins struck anteriorly", "present": true, "significance": "Sound transmitted clearly through air-filled pleural space — specific for pneumothorax"}
+      ],
+
+      "examination_technique": {
+        "sequence": "Inspection → Trachea → Palpation → Percussion → Auscultation → Coin test",
+        "steps": [
+          {
+            "phase": "Inspection",
+            "actions": [
+              "Compare both hemithoraces for movement. Affected side shows REDUCED movement.",
+              "In tension pneumothorax: look for bulging intercostal spaces, distended neck veins, cyanosis."
+            ],
+            "findings_in_this_case": ["Reduced movement right hemithorax", "No bulging ICS, no neck vein distension"]
+          },
+          {
+            "phase": "Palpation",
+            "actions": [
+              "Trachea FIRST: central (simple) vs shifted AWAY (tension). This determines urgency.",
+              "Chest expansion: reduced on the affected side.",
+              "Vocal fremitus: ABSENT — air in pleural space blocks vibration. VF may be decreased (not absent) in small pneumothorax.",
+              "Subcutaneous emphysema: palpate for crackling crepitus in neck and chest wall (air tracking into subcutaneous tissues — suggests bronchopleural fistula or chest drain complication)."
+            ],
+            "findings_in_this_case": ["Trachea central", "Expansion reduced on right", "VF absent right side", "No subcutaneous emphysema"]
+          },
+          {
+            "phase": "Percussion",
+            "actions": [
+              "HYPER-RESONANT on the affected side — the hallmark percussion finding.",
+              "Compare with contralateral (normal) side for reference.",
+              "In tension pneumothorax: hyper-resonance extends across the entire hemithorax."
+            ],
+            "findings_in_this_case": ["Hyper-resonant entire right hemithorax"]
+          },
+          {
+            "phase": "Auscultation",
+            "actions": [
+              "Breath sounds ABSENT on affected side. If small pneumothorax, breath sounds may be reduced but not absent.",
+              "Coin test: place one coin flat on anterior chest wall. Strike with edge of another coin. Auscultate with stethoscope on POSTERIOR chest at same level. In pneumothorax, a clear metallic click is heard (transmitted through air in pleural space). In normal lung, sound is dampened.",
+              "No vocal resonance on the affected side."
+            ],
+            "findings_in_this_case": ["Absent breath sounds right side", "Coin test positive", "Absent vocal resonance right side"]
+          }
+        ]
+      },
+
+      "findings_with_mechanisms": [
+        {
+          "finding": "Hyper-resonant percussion note",
+          "mechanism": "Normal percussion resonance comes from air within the lung parenchyma being dampened by surrounding tissue. In pneumothorax, air is FREE in the pleural space with no surrounding tissue to dampen the percussion wave. This undampened air-filled cavity resonates MORE than normal aerated lung, producing hyper-resonance. It is similar to hitting an empty drum (more resonant) vs hitting a drum filled with sponge (normal resonance).",
+          "mechanism_chain": "[Air in pleural space] → [No tissue dampening] → [Undampened resonance] → [Hyper-resonant note]",
+          "caveat": "Hyper-resonance can also be heard in emphysema/COPD (bilateral) and large bullae (localized). In thin patients, normal lung can sound hyper-resonant — always compare sides."
+        },
+        {
+          "finding": "Absent breath sounds",
+          "mechanism": "Breath sounds require two things: (1) airflow through airways (generates turbulence → sound), and (2) transmission of that sound through lung parenchyma to chest wall. In pneumothorax, the lung is collapsed away from the chest wall — no ventilation occurs in the collapsed lung (no airflow, no sound generation). Additionally, the air in the pleural space is a poor conductor of sound from the mediastinum/contralateral lung.",
+          "mechanism_chain": "[Lung collapsed] → [No ventilation] → [No sound generation] → [Absent breath sounds]"
+        },
+        {
+          "finding": "Absent vocal fremitus",
+          "mechanism": "Vocal vibrations normally travel from larynx → bronchi → lung parenchyma → chest wall. In pneumothorax, the lung has collapsed away from the chest wall. The vibrations reach the collapsed lung but cannot cross the air-filled pleural space to reach the chest wall. Air is a poor conductor of the low-frequency vibrations produced by the voice.",
+          "mechanism_chain": "[Voice vibrations reach collapsed lung] → [Cannot traverse air-filled pleural space] → [Do not reach chest wall] → [VF absent]"
+        },
+        {
+          "finding": "Positive coin test",
+          "mechanism": "When two coins are struck together on the anterior chest, they produce a high-pitched metallic sound. In pneumothorax, the air-filled pleural space acts as an excellent resonating chamber for these high-frequency metallic sounds, transmitting them clearly to the posterior chest wall. In normal lung, the parenchyma filters and dampens these high-frequency sounds.",
+          "mechanism_chain": "[Metallic high-frequency sound from coins] → [Resonated through air-filled pleural space] → [Clear metallic click heard posteriorly]"
+        }
+      ],
+
+      "diagnosis_and_differentials": {
+        "provisional": "Right-sided primary spontaneous pneumothorax in a tall thin young male",
+        "supporting_evidence": [
+          "Hyper-resonant percussion note on the entire right hemithorax",
+          "Absent vocal fremitus and absent breath sounds on the right",
+          "Reduced chest movement on the right",
+          "Trachea central (simple, not tension)",
+          "Positive coin test",
+          "Classic demographics: tall, thin, young male",
+          "Sudden onset at rest — typical of PSP"
+        ],
+        "differentials": [
+          {
+            "condition": "Large emphysematous bulla",
+            "points_for": "Can produce localized hyper-resonance and reduced breath sounds",
+            "why_not": "Bulla typically occurs in older patients with COPD/emphysema history. Onset is NOT sudden. CT chest differentiates (bulla has thin wall within lung parenchyma, pneumothorax shows air in pleural space). DANGER: inserting a chest drain into a bulla can be catastrophic."
+          },
+          {
+            "condition": "Right pleural effusion",
+            "points_for": "Reduced breath sounds and movement on the right",
+            "why_not": "Percussion is HYPER-RESONANT in pneumothorax vs STONY DULL in effusion. This is the cardinal distinguishing sign."
+          },
+          {
+            "condition": "Tension pneumothorax",
+            "points_for": "Same pathology, more severe",
+            "why_not": "Trachea is central (in tension, it shifts AWAY). No hypotension, no distended neck veins. Blood pressure is maintained. However, must monitor for progression to tension."
+          }
+        ]
+      },
+
+      "investigations": [
+        {"test": "Chest X-ray PA (erect, in expiration)", "expected": "Visible visceral pleural edge as a thin white line parallel to chest wall. Absent lung markings lateral to this line. Lung collapse towards hilum. Deep sulcus sign (if supine film). Expiratory film improves sensitivity (lung becomes denser, making pleural line more visible).", "why": "Confirms diagnosis and estimates size. BTS: large pneumothorax = visible rim >2 cm at level of hilum on PA CXR.", "priority": "immediate"},
+        {"test": "CT chest", "expected": "Air in pleural space, identifies underlying blebs/bullae, distinguishes pneumothorax from bulla", "why": "Not routine for first PSP. Indicated if: uncertainty between bulla and pneumothorax, recurrent pneumothorax (surgical planning), or secondary spontaneous pneumothorax.", "priority": "if_indicated"},
+        {"test": "ABG", "expected": "Hypoxemia (PaO2 reduced), may have respiratory alkalosis from hyperventilation", "why": "Assesses gas exchange impairment. More important in SSP where underlying lung disease limits compensation.", "priority": "immediate"}
+      ],
+
+      "management": {
+        "medical": [
+          {"intervention": "Observation (small PSP, minimal symptoms)", "rationale": "Small pneumothorax (<2 cm rim at hilum) in a stable patient can be observed — air reabsorbs at 1.25-2.2% per day", "specifics": "Admit for 24 hours, repeat CXR at 6 hours and 24 hours. Supplemental oxygen accelerates air reabsorption (increases pleural-blood nitrogen gradient)."},
+          {"intervention": "Needle aspiration (large PSP, first episode)", "rationale": "Less invasive than chest drain. BTS first-line for large primary SP.", "specifics": "14-16G cannula, 2nd ICS MCL. Aspirate up to 2.5L. CXR after aspiration — if successful (lung re-expanded), observe. If fails, proceed to chest drain."},
+          {"intervention": "Intercostal chest drain", "rationale": "For failed aspiration, SSP, bilateral, tension, or associated hemothorax", "specifics": "Small-bore (8-14F) Seldinger technique preferred. Safe triangle: 5th ICS, mid-axillary line. Connect to underwater seal (not suction initially). Watch for bubbling (ongoing air leak) and swinging (confirms intrapleural position)."}
+        ],
+        "interventional": "Ambulatory Heimlich valve: one-way valve attached to small-bore drain allowing outpatient management of simple PSP. Patient can be discharged home with valve and reviewed in 48 hours.",
+        "surgical": "VATS (video-assisted thoracoscopic surgery) with bleb resection + mechanical pleurodesis for: recurrent ipsilateral PSP (2nd episode), first contralateral, bilateral simultaneous, persistent air leak >5-7 days, high-risk occupations (pilots, divers). Recurrence rate drops from 30-50% to <5% after VATS.",
+        "this_patient": "This is a first episode of large PSP in a stable patient. Attempt needle aspiration first (2nd ICS MCL, aspirate up to 2.5L, CXR after). If successful, observe for 6 hours and discharge with follow-up CXR in 2 weeks. If aspiration fails, insert small-bore chest drain with underwater seal. Advise against smoking, flying for 6 weeks, and diving (until bilateral definitive surgery).",
+        "follow_up": "CXR at 2 weeks and 6 weeks. Counsel about recurrence risk (30% within 2 years for first PSP, 50% after second episode). Smoking cessation (reduces recurrence). Advise against diving permanently unless bilateral pleurectomy performed. Flying: wait 1 week after complete resolution on CXR."
+      },
+
+      "complications": [
+        {"complication": "Tension pneumothorax", "mechanism": "One-way valve mechanism — air enters pleural space during inspiration but cannot escape during expiration. Progressive accumulation → increasing positive pressure → mediastinal shift → compression of contralateral lung and great vessels → obstructive shock", "presentation": "Rapidly worsening dyspnea, hypotension, tachycardia, distended neck veins, trachea shifted AWAY, absent breath sounds, hyper-resonance. Cardiac arrest if untreated.", "management": "CLINICAL DIAGNOSIS — do NOT wait for CXR. Immediate needle decompression: 14G cannula, 2nd ICS MCL (or 4-5th ICS anterior axillary line). Rush of air confirms diagnosis. Follow with chest drain."},
+        {"complication": "Recurrence", "mechanism": "Persistent apical blebs/bullae that can rupture again", "presentation": "Repeat sudden chest pain and dyspnea — same side (ipsilateral) or opposite", "management": "After 2nd episode → VATS with bleb resection + pleurodesis. Recurrence: 30% after 1st, 50% after 2nd, 80% after 3rd episode."},
+        {"complication": "Persistent air leak", "mechanism": "Bronchopleural fistula — communication between bronchus and pleural space maintaining the pneumothorax", "presentation": "Continuous bubbling in underwater seal drain >5-7 days, lung not re-expanding", "management": "Low-pressure suction (-10 to -20 cmH2O). If persists >1 week: VATS for repair of air leak + pleurodesis."},
+        {"complication": "Subcutaneous emphysema", "mechanism": "Air tracks from pleural space into subcutaneous tissues through chest wall defect (drain site or penetrating injury)", "presentation": "Crackling crepitus on palpation of chest wall, neck, face. Can be extensive but usually self-limiting.", "management": "Usually benign and self-resolving. Ensure chest drain is functioning properly (not blocked, correctly positioned)."}
+      ],
+
+      "vivas": [
+        {
+          "question": "What is the mechanism of primary spontaneous pneumothorax?",
+          "answer": "PSP occurs due to rupture of subpleural BLEBS (small, <1-2 cm, between visceral pleura and lung parenchyma) located predominantly at the lung APEX. These blebs form because of a gradient in intrapleural pressure — the apex has more negative pressure than the base due to gravity. This higher distending pressure at the apex → overdistension of apical alveoli → bleb formation. Tall thin individuals have a greater apex-to-base pressure gradient (longer lungs) → higher bleb prevalence → higher PSP risk. Rupture of a bleb allows air to enter the pleural space → pneumothorax.",
+          "follow_ups": [
+            {"question": "Why does it occur at rest in most cases?", "answer": "80% of PSP occurs at rest because bleb rupture is not primarily related to exertion. The blebs are thin-walled structures under constant negative pressure. Spontaneous rupture is likely due to cumulative stress on the bleb wall, possibly precipitated by minor changes in transpulmonary pressure (coughing, sneezing, straining). Exercise actually increases intrapleural pressure (more positive during expiration), which may temporarily stabilize blebs."}
+          ],
+          "examiner": "medicine"
+        },
+        {
+          "question": "How do you diagnose tension pneumothorax and what do you do?",
+          "answer": "Tension pneumothorax is a CLINICAL diagnosis — you must NOT wait for imaging. Clinical features: rapidly worsening dyspnea and hypotension, tachycardia, trachea deviated AWAY from the affected side, distended neck veins (from impaired venous return), hyper-resonance and absent breath sounds on the affected side, and in late stages cyanosis and cardiac arrest. Immediate management: needle decompression — insert a 14G IV cannula into the 2nd ICS at the MCL (or 4th-5th ICS anterior axillary line in obese/muscular patients). A rush of air confirms the diagnosis. Follow immediately with formal intercostal chest drain insertion.",
+          "follow_ups": [
+            {"question": "Why does neck vein distension occur?", "answer": "The progressive positive pressure in the affected hemithorax compresses the great veins (SVC and IVC) and the right atrium, obstructing venous return. Blood cannot empty from the venous system into the heart → distended neck veins. Simultaneously, cardiac output falls → hypotension → obstructive shock. This is the same mechanism as cardiac tamponade (external cardiac compression)."},
+            {"question": "What if you are wrong and it's not tension pneumothorax?", "answer": "Needle decompression is a LOW-RISK procedure if performed correctly (2nd ICS MCL avoids major vessels). If the patient is hemodynamically unstable with signs suggestive of tension pneumothorax, the benefit of decompression far outweighs the minimal risk. At worst, you create a small iatrogenic pneumothorax which can be managed with a chest drain."}
+          ],
+          "examiner": "medicine"
+        },
+        {
+          "question": "What is the difference between primary and secondary spontaneous pneumothorax?",
+          "answer": "PRIMARY spontaneous pneumothorax (PSP): occurs in patients WITHOUT known underlying lung disease. Typically young (15-35 years), tall, thin males. Due to rupture of apical subpleural blebs. Generally well-tolerated because the underlying lung is normal. Management can be conservative. SECONDARY spontaneous pneumothorax (SSP): occurs in patients WITH underlying lung disease (COPD, TB, Pneumocystis, cystic fibrosis, LAM, lung cancer). Older patients (>40 years). Poorly tolerated because the already compromised lung cannot compensate. Always requires intercostal drainage (not just aspiration). Higher mortality.",
+          "follow_ups": [
+            {"question": "What is catamenial pneumothorax?", "answer": "Pneumothorax occurring in young women within 24-72 hours of menstruation. Due to thoracic endometriosis — endometrial implants on the diaphragm or visceral pleura. These implants necrose during menstruation, creating diaphragmatic fenestrations (air passes from peritoneum) or direct pleural defects. Right-sided in 90% of cases. Treatment: hormonal suppression (GnRH agonists, OCPs) ± VATS for ablation of implants + pleurodesis."}
+          ],
+          "examiner": "medicine"
+        },
+        {
+          "question": "What is the BTS guideline approach to managing pneumothorax?",
+          "answer": "BTS 2023 guidelines: Step 1 — Assess if PSP or SSP. Step 2 — Assess size: large (visible rim >2 cm at hilum on CXR) vs small. Step 3 — Assess symptoms. For PSP: small + minimal symptoms = observe + supplemental O2. Large or symptomatic = needle aspiration first (up to 2.5L). If aspiration successful = observe and discharge. If aspiration fails (twice) = small-bore chest drain. For SSP: all patients need admission. Small + minimal symptoms = observation with high-flow O2. Large or symptomatic = chest drain directly (not aspiration, because SSP patients cannot tolerate failure of aspiration).",
+          "follow_ups": [
+            {"question": "Why does high-flow oxygen help reabsorb pneumothorax?", "answer": "Normally, air in the pleural space reabsorbs at 1.25-2.2% per day. Administering high-flow 100% oxygen creates a nitrogen gradient: blood nitrogen partial pressure drops (oxygen displaces nitrogen), while the trapped pleural air is 78% nitrogen. This gradient drives nitrogen from the pleural space into the blood → accelerates reabsorption by 3-4 times (up to 5-6% per day)."}
+          ],
+          "examiner": "medicine"
+        },
+        {
+          "question": "What are the indications for surgery in pneumothorax?",
+          "answer": "Indications for VATS (bleb resection + pleurodesis): (1) Second ipsilateral recurrence (>50% will recur again), (2) First contralateral pneumothorax (bilateral risk unacceptable), (3) Bilateral simultaneous pneumothorax, (4) Persistent air leak >5-7 days despite chest drain, (5) Occupational necessity (pilots, divers — any pneumothorax mandates bilateral surgical pleurodesis before returning to work), (6) Tension pneumothorax as first presentation (high-risk for recurrence). Surgery reduces recurrence from 30-50% to <5%.",
+          "examiner": "medicine"
+        }
+      ]
+    },
+
+    {
+      "id": "hydropneumothorax",
+      "name": "Hydropneumothorax",
+      "category": "case",
+      "system": "respiratory",
+      "tags": ["hydropneumothorax", "TB", "short-case"],
+      "presentation_script": {
+        "opening": "Sir, I have examined this patient. This is a 35-year-old male with progressive breathlessness of 2 months, dry cough, and left-sided chest pain, with a history of pulmonary TB treated 3 years ago.",
+        "gpe_findings": "On general examination, patient is conscious, thin-built (BMI 18.2), febrile with low-grade evening rise. Pulse 100/min regular. BP 100/70. RR 26. SpO2 91% on RA. Clubbing Grade 2 present. No cyanosis, no pedal edema.",
+        "system_findings": "On respiratory examination — Inspection: left hemithorax shows reduced movement. Trachea shifted to RIGHT. Palpation: expansion reduced on left, VF ABSENT. Percussion: DUAL PATTERN — STONY DULL below 6th ICS and HYPER-RESONANT above 6th ICS, with HORIZONTAL upper border that shifts with position. Auscultation: breath sounds absent in both zones. Succussion splash POSITIVE. Coin test positive over upper zone.",
+        "diagnosis_statement": "Left-sided hydropneumothorax, most likely secondary to TB with bronchopleural fistula, evidenced by dual pathology of fluid below and air above with positive succussion splash.",
+        "differentials": ["Lung abscess with air-fluid level (localized, amphoric breathing)", "Empyema with BPF (same mechanism, more toxic)", "Ruptured hydatid cyst (eosinophilia, water lily sign)", "Pure pleural effusion (no hyper-resonant zone, no splash)"],
+        "tips": ["DUAL percussion pattern is pathognomonic — stony dull below + hyper-resonant above.", "Succussion splash is the SIGNATURE sign.", "HORIZONTAL upper border distinguishes from effusion (concave meniscus).", "TB etiology is commonest in Indian setting."]
+      },
+      "case_scenario": {
+        "demographics": "35-year-old male, laborer, BMI 18.2",
+        "chief_complaint": "Progressive breathlessness (2 months), dry cough, left chest pain, evening fever, 5 kg weight loss",
+        "hpi": "Gradual breathlessness worsening over 2 weeks. Dry cough. Left-sided dull chest pain. Low-grade evening fever 1 month. Night sweats. Weight loss 5 kg. No hemoptysis.",
+        "past_history": "Pulmonary TB 3 years ago — completed Cat I ATT with sputum conversion. Asymptomatic 2 years post-treatment.",
+        "social_history": "Smoker 10 pack-years, overcrowded housing, poor nutrition."
+      },
+      "clinical_summary": [
+        {"area": "GPE", "finding": "Thin built with weight loss", "detail": "BMI 18.2, 5 kg loss", "present": true, "significance": "Chronic illness — TB reactivation"},
+        {"area": "GPE", "finding": "Clubbing", "detail": "Grade 2", "present": true, "significance": "Chronic suppurative lung disease"},
+        {"area": "Trachea", "finding": "Shifted to RIGHT", "detail": "Away from left lesion", "present": true, "significance": "Space-occupying process"},
+        {"area": "Palpation", "finding": "VF absent left", "detail": "Both zones", "present": true, "significance": "Air and fluid both block transmission"},
+        {"area": "Percussion", "finding": "DUAL PATTERN", "detail": "Stony dull below 6th ICS, hyper-resonant above", "present": true, "significance": "PATHOGNOMONIC — two media in same pleural space"},
+        {"area": "Percussion", "finding": "Horizontal upper border", "detail": "Shifts with position", "present": true, "significance": "Air equalizes pressure — no meniscus forms"},
+        {"area": "Auscultation", "finding": "Absent breath sounds", "detail": "Both zones", "present": true, "significance": "Collapsed lung not ventilated"},
+        {"area": "Auscultation", "finding": "Succussion splash", "detail": "Audible splash when rocked", "present": true, "significance": "PATHOGNOMONIC — air-fluid interface sloshing"},
+        {"area": "Auscultation", "finding": "Coin test positive", "detail": "Metallic click upper zone", "present": true, "significance": "Air in upper pleural space"}
+      ],
+      "examination_technique": {
+        "sequence": "Inspection → Trachea → Palpation → Percussion (dual zones) → Auscultation → Succussion splash",
+        "steps": [
+          {"phase": "Percussion — Key Step", "actions": ["Percuss apex downwards: hyper-resonance (air) transitions to stony dullness (fluid). Transition = air-fluid interface.", "Upper border is HORIZONTAL. Same level from all angles. Pure effusion has concave meniscus.", "Change position → border shifts = free-flowing fluid with air above."], "findings_in_this_case": ["Hyper-resonant above 6th ICS", "Stony dull below", "Horizontal border shifts"]},
+          {"phase": "Succussion Splash", "actions": ["Stethoscope on affected hemithorax. Rock patient quickly side to side.", "Positive = audible splash from air-fluid sloshing. Requires BOTH air and fluid.", "Hippocratic succussion — oldest clinical sign in medicine, 5th century BCE."], "findings_in_this_case": ["Succussion splash positive on left"]}
+        ]
+      },
+      "findings_with_mechanisms": [
+        {"finding": "Dual percussion pattern", "mechanism": "Fluid + air coexist. Gravity separates — fluid settles below (stony dull), air rises above (hyper-resonant). Transition point = air-fluid level.", "mechanism_chain": "[Fluid + air] → [Gravity separates] → [Fluid below = stony dull] + [Air above = hyper-resonant]"},
+        {"finding": "Horizontal upper border", "mechanism": "Pure effusion: negative intrapleural pressure gradient creates meniscus. Hydropneumothorax: air above equalizes pressure — no gradient for meniscus. Fluid surface flat like water in glass.", "mechanism_chain": "[Air above fluid] → [Pressure equalized] → [No meniscus] → [Horizontal border]"},
+        {"finding": "Succussion splash", "mechanism": "Shaking disturbs air-fluid interface. Fluid sloshes against chest wall, air bubbles through surface → audible splash. Requires BOTH air and fluid.", "mechanism_chain": "[Shaking] → [Fluid sloshes + air bubbles] → [Splash sound]"}
+      ],
+      "diagnosis_and_differentials": {
+        "provisional": "Left-sided hydropneumothorax secondary to TB with bronchopleural fistula",
+        "supporting_evidence": ["Dual percussion: stony dull + hyper-resonant", "Horizontal shifting border", "Positive succussion splash", "Coin test positive", "Absent BS both zones", "Trachea away", "Previous TB — commonest BPF cause in India", "Clubbing, weight loss, fever"],
+        "differentials": [
+          {"condition": "Lung abscess", "points_for": "Air-fluid level, fever", "why_not": "Abscess is WITHIN parenchyma (localized), amphoric breathing, thick-walled cavity on CXR."},
+          {"condition": "Empyema with BPF", "points_for": "Same mechanism", "why_not": "Clinically identical — distinguished by fluid analysis (frank pus). More toxemia."},
+          {"condition": "Pure effusion", "points_for": "Stony dullness, absent BS", "why_not": "No hyper-resonant zone, no dual pattern, no splash, concave not horizontal border."}
+        ]
+      },
+      "investigations": [
+        {"test": "CXR PA erect", "expected": "Straight HORIZONTAL air-fluid level. Fluid below (white), air above (black). Collapsed lung. Mediastinal shift away.", "why": "Horizontal air-fluid level is DIAGNOSTIC.", "priority": "immediate"},
+        {"test": "CT chest", "expected": "Air + fluid in pleural space. TB cavities, destroyed lung, BPF.", "why": "Surgical planning, identifies BPF.", "priority": "immediate"},
+        {"test": "Sputum AFB + GeneXpert", "expected": "AFB if reactivation", "why": "Dictates ATT.", "priority": "immediate"},
+        {"test": "Pleural fluid analysis", "expected": "Protein, LDH, glucose, pH, AFB, ADA, culture", "why": "ADA >40 = TB. pH <7.2 = empyema.", "priority": "immediate"}
+      ],
+      "management": {
+        "medical": [
+          {"intervention": "ICD insertion", "rationale": "Drain fluid and air, allow lung re-expansion", "specifics": "Large-bore (24-28F). Monitor air leak (= active BPF) and output."},
+          {"intervention": "ATT if TB active", "rationale": "Treat cause", "specifics": "Cat I: 2HRZE + 4HR. GeneXpert for rifampicin resistance."},
+          {"intervention": "Antibiotics", "rationale": "Treat empyema", "specifics": "Ceftriaxone + metronidazole. Intrapleural fibrinolytics if loculated."}
+        ],
+        "surgical": "Decortication (trapped lung). Thoracoplasty (destroyed lung with chronic BPF). BPF repair: muscle/omental flap.",
+        "this_patient": "ICD left side. Send fluid for AFB, ADA, culture. Start ATT if indicated. Monitor air leak. Non-expanding lung → CT → surgery.",
+        "follow_up": "Daily ICD output, serial CXR, nutritional rehab, ATT compliance."
+      },
+      "complications": [
+        {"complication": "Chronic empyema", "mechanism": "Persistent infection from inadequate drainage/ongoing BPF", "presentation": "Chronic fever, weight loss, clubbing", "management": "Decortication or open thoracostomy"},
+        {"complication": "Destroyed lung", "mechanism": "Chronic TB → extensive parenchymal destruction", "presentation": "Non-expanding lung despite drainage", "management": "Thoracoplasty or pneumonectomy"},
+        {"complication": "Persistent BPF", "mechanism": "TB-damaged tissue maintains communication", "presentation": "Continuous drain bubbling, purulent expectoration", "management": "Surgical closure with flap"}
+      ],
+      "vivas": [
+        {"question": "What is the succussion splash?", "answer": "Audible splashing heard with stethoscope when patient is rocked. Indicates BOTH air and fluid in pleural space. Requires significant volume of both. Oldest sign in medicine — Hippocrates. Also heard in gastric dilatation (abdominal).", "follow_ups": [{"question": "Can it occur in pure effusion or pneumothorax?", "answer": "No. Requires BOTH. Pure effusion has no air for sloshing, pure pneumothorax has no fluid."}], "examiner": "medicine"},
+        {"question": "Why is upper border horizontal not concave?", "answer": "Pure effusion: meniscus from differential negative intrapleural pressure. Hydropneumothorax: air above equalizes pressure — no gradient for meniscus. Flat like water in a glass.", "follow_ups": [{"question": "How to demonstrate clinically?", "answer": "Percuss same level from multiple angles — transition stays same height. In effusion it varies (higher laterally). Position change shifts the horizontal border."}], "examiner": "medicine"},
+        {"question": "What is bronchopleural fistula?", "answer": "Abnormal communication between bronchial tree and pleural space. Allows air into pleural space. Causes: TB (commonest India), post-surgical stump breakdown, necrotizing pneumonia, lung abscess rupture.", "follow_ups": [{"question": "How to diagnose?", "answer": "Continuous drain bubbling, expectoration of pleural fluid (pathognomonic). CT shows communication. Bronchoscopy direct visualization. Methylene blue test."}], "examiner": "medicine"},
+        {"question": "What is the coin test?", "answer": "One coin flat on anterior chest (anvil), strike with edge of another (hammer). Listen posteriorly with stethoscope. Positive: clear metallic click through air-filled pleural space. Negative: dampened by lung tissue.", "examiner": "medicine"}
+      ]
+    },
+
+    {
+      "id": "consolidation",
+      "name": "Consolidation (Lobar Pneumonia)",
+      "category": "case",
+      "system": "respiratory",
+      "tags": ["consolidation", "pneumonia", "short-case", "long-case"],
+      "presentation_script": {
+        "opening": "Sir, I have examined this patient. This is a 55-year-old male, chronic smoker and diabetic, who presented with high-grade fever with rigors for 4 days, productive cough with rusty sputum for 3 days, and right-sided pleuritic chest pain.",
+        "gpe_findings": "On general examination, patient is febrile (39.5°C), tachypneic (RR 28), tachycardic (110/min), SpO2 91% on room air. Toxic but conscious. No pallor, no cyanosis, no clubbing, no pedal edema.",
+        "system_findings": "On respiratory examination — Inspection: right lower chest reduced movement. Trachea central. Palpation: expansion reduced right, VF INCREASED in right infrascapular and infraaxillary regions. Percussion: IMPAIRED DULL note right lower zone — NOT stony dull. Auscultation: BRONCHIAL BREATHING over right infrascapular area — high-pitched, tubular, gap between I and E. Coarse crepitations. VR increased. Whispering pectoriloquy positive.",
+        "diagnosis_statement": "Right lower lobe consolidation, most likely community-acquired pneumonia with probable pneumococcal etiology, in a diabetic smoker.",
+        "differentials": ["Pleural effusion (STONY dull + DECREASED VF — opposite of consolidation)", "Lung collapse (trachea towards, VF decreased if bronchus blocked)", "Lung abscess (amphoric breathing, foul sputum, air-fluid level)", "Obstructive pneumonitis behind carcinoma (non-resolving, weight loss)"],
+        "tips": ["CONSOLIDATION TRIAD: (1) Impaired dull, (2) Increased VF, (3) Bronchial breathing.", "Say 'IMPAIRED/DULL — NOT stony dull' — most asked viva distinction.", "VF INCREASED is the KEY differentiator from effusion.", "Specify LOBE by surface anatomy (infrascapular = lower lobe)."]
+      },
+      "case_scenario": {
+        "demographics": "55-year-old male, diabetic 10 years, smoker 30 pack-years",
+        "chief_complaint": "High fever with rigors (4 days), rusty sputum (3 days), right pleuritic pain (3 days), breathlessness MMRC II (2 days)",
+        "hpi": "Acute high fever 39.5°C with violent rigors. Cough with RUSTY sputum (S. pneumoniae). Right pleuritic chest pain on deep breathing. Progressive dyspnea MMRC II. No hemoptysis, no weight loss, no night sweats.",
+        "past_history": "DM2 10 years (HbA1c 8.2%). No TB, no COPD. No prior pneumonia hospitalization.",
+        "drug_history": "Metformin 1000mg BD, glimepiride 2mg OD.",
+        "social_history": "30 pack-years smoking, occasional alcohol."
+      },
+      "clinical_summary": [
+        {"area": "GPE", "finding": "Toxic febrile", "detail": "39.5°C, rigors", "present": true, "significance": "Systemic inflammatory response, likely bacteremia"},
+        {"area": "GPE", "finding": "Hypoxemia", "detail": "SpO2 91%", "present": true, "significance": "Type 1 RF — intrapulmonary shunt through consolidated lung"},
+        {"area": "Trachea", "finding": "Central", "detail": "No deviation", "present": true, "significance": "Consolidation does NOT shift trachea"},
+        {"area": "Palpation", "finding": "Increased VF", "detail": "Right infrascapular area", "present": true, "significance": "Solid lung transmits vibrations better — KEY distinction from effusion"},
+        {"area": "Percussion", "finding": "Impaired dull", "detail": "NOT stony dull", "present": true, "significance": "Heterogeneous mixture (exudate + air in bronchi) — partial dampening"},
+        {"area": "Auscultation", "finding": "Bronchial breathing", "detail": "High-pitched, tubular, gap between I and E", "present": true, "significance": "Patent bronchus + solid parenchyma = direct sound conduction"},
+        {"area": "Auscultation", "finding": "Increased VR + WP positive", "detail": "Spoken and whispered voice clearly transmitted", "present": true, "significance": "Solid medium transmits all frequencies — WP most sensitive sign"},
+        {"area": "Auscultation", "finding": "Coarse crepitations", "detail": "Inspiratory + early expiratory", "present": true, "significance": "Secretions in consolidated alveoli popping open"}
+      ],
+      "examination_technique": {
+        "sequence": "Inspection → Palpation (expansion + VF) → Percussion → Auscultation (BS + VR + WP)",
+        "steps": [
+          {"phase": "Palpation — VF", "actions": ["Ulnar border of hand, say 'ninety-nine'. Compare sides. INCREASED VF on affected side.", "INCREASED VF is the single most important sign differentiating consolidation from effusion."], "findings_in_this_case": ["VF markedly increased right infrascapular"]},
+          {"phase": "Percussion", "actions": ["IMPAIRED DULL — not stony dull. Still has slight vibration (water-soaked sponge vs sealed water bottle).", "Critical distinction: impaired dull (consolidation) vs stony dull (effusion)."], "findings_in_this_case": ["Impaired dull right lower zone"]},
+          {"phase": "Auscultation", "actions": ["BRONCHIAL BREATHING: high-pitched, hollow, tubular, pause between I and E.", "Requires: (1) patent bronchus, (2) solid parenchyma. Blocked bronchus → absent BS despite solid lung.", "VR + WP: 'say ninety-nine' (VR) and 'whisper one-two-three' (WP). WP positive = consolidation confirmed."], "findings_in_this_case": ["Bronchial breathing right infrascapular", "VR increased, WP positive", "Coarse creps"]}
+        ]
+      },
+      "findings_with_mechanisms": [
+        {"finding": "Increased vocal fremitus", "mechanism": "Alveoli filled with exudate → lung solid. Solid conducts vibrations better than air. Solid parenchyma is CONTINUOUS with chest wall — no separating layer. Vibrations transmitted efficiently.", "mechanism_chain": "[Exudate fills alveoli] → [Lung solid] → [Better vibration conduction] → [Continuous with chest wall] → [Increased VF]", "caveat": "Only if bronchus PATENT. Blocked bronchus → vibrations cannot enter segment → VF DECREASED (same as collapse). This is the trap."},
+        {"finding": "Bronchial breathing", "mechanism": "Normal tracheal sounds are high-pitched tubular. Aerated lung filters high frequencies → soft vesicular sounds. Consolidated lung has no air-tissue filtering → conducts bronchial sounds directly to chest wall.", "mechanism_chain": "[Bronchial sounds at airways] → [No filtering by solid lung] → [Direct conduction] → [Bronchial breathing heard]", "caveat": "REQUIRES patent bronchus. Blocked bronchus → no sound generation → ABSENT BS. Bronchial breathing = consolidation WITH patent airway."},
+        {"finding": "Impaired dull percussion (not stony)", "mechanism": "Consolidated lung is HETEROGENEOUS: exudate + patent bronchi (air) + interstitium + vessels. Partially dampens percussion but not completely (unlike homogeneous fluid in effusion → stony dull).", "mechanism_chain": "[Heterogeneous solid-air mix] → [Partial dampening] → [Impaired dull, not stony]"},
+        {"finding": "Whispering pectoriloquy", "mechanism": "Whispered speech = high-frequency. Normal lung filters high frequencies → whisper inaudible. Consolidated lung transmits ALL frequencies → whisper heard clearly. Most sensitive sign for consolidation.", "mechanism_chain": "[High-frequency whisper] → [Normal lung filters → inaudible] → [Solid lung transmits → audible]"},
+        {"finding": "Rusty sputum", "mechanism": "Red hepatization: alveoli packed with RBCs. Hemoglobin undergoes oxidative breakdown → brown/rust pigment mixes with exudate → rusty sputum. Altered blood, not frank hemoptysis.", "mechanism_chain": "[Red hepatization] → [RBCs in alveoli] → [Hb oxidation] → [Rust pigment] → [Rusty sputum]"}
+      ],
+      "diagnosis_and_differentials": {
+        "provisional": "Right lower lobe consolidation — CAP, likely pneumococcal, in diabetic smoker",
+        "supporting_evidence": ["CONSOLIDATION TRIAD: impaired dull + increased VF + bronchial breathing", "WP positive (most sensitive)", "Coarse crepitations", "Trachea central", "Rusty sputum", "High fever with rigors", "Risk factors: DM + smoking"],
+        "differentials": [
+          {"condition": "Pleural effusion", "points_for": "Dull percussion, reduced movement", "why_not": "Percussion IMPAIRED not STONY. VF INCREASED not decreased. Bronchial breathing present. All three opposite to effusion."},
+          {"condition": "Lung collapse", "points_for": "Dull percussion, reduced movement", "why_not": "Trachea shifts TOWARDS in collapse. VF decreased if bronchus blocked. No bronchial breathing if obstructive."},
+          {"condition": "Lung abscess", "points_for": "Fever, cough", "why_not": "AMPHORIC breathing (not bronchial). FOUL sputum (not rusty). Air-fluid level on CXR."},
+          {"condition": "Obstructive pneumonitis", "points_for": "Consolidation in 55yo smoker", "why_not": "Acute presentation with rigors = infection. But if non-resolving at 6 weeks → investigate malignancy."}
+        ]
+      },
+      "investigations": [
+        {"test": "CXR PA", "expected": "Homogeneous lobar opacity with AIR BRONCHOGRAM. Silhouette sign localizes lobe. No mediastinal shift.", "why": "Confirms consolidation. Air bronchogram pathognomonic.", "priority": "immediate"},
+        {"test": "Blood culture x2", "expected": "Positive in 25% pneumococcal", "why": "Draw BEFORE antibiotics. Guides therapy.", "priority": "immediate"},
+        {"test": "Sputum gram stain + culture + AFB", "expected": "Gram-positive diplococci (pneumococcus) or gram-negative rods (Klebsiella). AFB to rule out TB.", "why": "Identifies organism. AFB mandatory in India.", "priority": "immediate"},
+        {"test": "CBC + CRP/Procalcitonin", "expected": "Neutrophilic leukocytosis. Procalcitonin >0.25 = bacterial.", "why": "Supports bacterial etiology.", "priority": "immediate"},
+        {"test": "ABG", "expected": "Type 1 RF (low PaO2, normal/low PaCO2, wide A-a gradient)", "why": "V/Q mismatch from shunt through consolidated lung.", "priority": "immediate"},
+        {"test": "CURB-65", "expected": "Score determines disposition: 0-1 outpatient, 2 admit, 3-5 ICU", "why": "Severity assessment.", "priority": "immediate"}
+      ],
+      "management": {
+        "medical": [
+          {"intervention": "Empiric antibiotics", "rationale": "Start within 1 hour — each hour delay increases mortality", "specifics": "Inpatient: Ceftriaxone 2g IV OD + Azithromycin 500mg IV OD. ICU: Pip-taz + Azithromycin. Duration 5-7 days."},
+          {"intervention": "Oxygen", "rationale": "Correct hypoxemia", "specifics": "Nasal cannula 2-4 L/min, target SpO2 94-98%."},
+          {"intervention": "Glycemic control", "rationale": "Hyperglycemia worsens outcomes", "specifics": "Switch to insulin sliding scale. Target 140-180 mg/dL."}
+        ],
+        "surgical": "Not needed unless: empyema (drainage), lung abscess (percutaneous/surgical), necrotizing pneumonia.",
+        "this_patient": "Admit. CURB-65. Ceftriaxone + Azithromycin within 1 hour. O2 target 94-98%. Blood cultures before antibiotics. Sputum gram stain, culture, AFB. ABG. Insulin for DM. Reassess 48-72 hours.",
+        "follow_up": "Switch IV→oral when afebrile 24h + oral intake adequate. Repeat CXR only if deteriorating or at 6 weeks. Non-resolving at 6 weeks → CT + bronchoscopy to exclude malignancy."
+      },
+      "complications": [
+        {"complication": "Parapneumonic effusion / Empyema", "mechanism": "Inflammation spreads to pleural space → serous → complicated → empyema", "presentation": "Persistent fever despite antibiotics, new dullness", "management": "Thoracentesis. Complicated/empyema → ICD + antibiotics. Loculated → fibrinolytics. Failed → VATS."},
+        {"complication": "Lung abscess", "mechanism": "Necrosis → cavitation → air-fluid level", "presentation": "Swinging fever, foul copious sputum", "management": "Antibiotics 6-8 weeks covering anaerobes. Postural drainage. CT drainage if fails."},
+        {"complication": "Septic shock", "mechanism": "Bacteremia → SIRS → organ dysfunction", "presentation": "Persistent hypotension, altered sensorium", "management": "Sepsis bundle: fluids 30 mL/kg, cultures, antibiotics within 1h, vasopressors."},
+        {"complication": "ARDS", "mechanism": "Severe pneumonia → diffuse alveolar damage", "presentation": "Bilateral infiltrates, P/F <300", "management": "Lung-protective ventilation (Vt 6 mL/kg, Pplat <30), prone positioning."}
+      ],
+      "vivas": [
+        {"question": "Why is percussion dull not stony dull in consolidation?", "answer": "Stony dull requires HOMOGENEOUS FLUID (effusion — complete absorption). Consolidation is HETEROGENEOUS: exudate + patent bronchi (air) + interstitium. Partial dampening → impaired/dull. Analogy: stony dull = sealed water bottle; impaired = water-soaked sponge.", "examiner": "medicine"},
+        {"question": "What is the air bronchogram sign?", "answer": "Air-filled bronchi visible as radiolucent branches against opacified lung on CXR. Normally invisible (both bronchi and alveoli contain air = no contrast). In consolidation, alveoli opacify while bronchi stay air-filled → contrast. Significance: (1) confirms PARENCHYMAL opacity (effusion never has it), (2) confirms patent bronchi. Absent → think obstruction/collapse.", "follow_ups": [{"question": "Can it be seen in other conditions?", "answer": "Yes: pulmonary edema, ARDS, alveolar cell carcinoma, pulmonary alveolar proteinosis, COP. Indicates alveolar filling, not specifically infection."}], "examiner": "medicine"},
+        {"question": "Differentiate consolidation from collapse.", "answer": "Trachea: consolidation = central; collapse = TOWARDS lesion. VF: consolidation = increased; collapse = decreased (blocked bronchus). BS: consolidation = bronchial; collapse = absent (blocked). Air bronchogram: consolidation = present; obstructive collapse = absent. ICS: consolidation = normal; collapse = narrowed. Volume: consolidation = normal; collapse = reduced hemithorax. KEY: if bronchus patent in collapse, signs overlap — mediastinal shift becomes critical differentiator.", "examiner": "medicine"},
+        {"question": "What are the stages of lobar pneumonia?", "answer": "(1) CONGESTION (day 1-2): vascular engorgement, early creps. (2) RED HEPATIZATION (day 2-4): RBCs + fibrin + PMNs fill alveoli, lung resembles liver. Rusty sputum. Full consolidation signs. (3) GREY HEPATIZATION (day 4-8): RBCs degraded, fibrin + WBCs predominate. Signs maximal. Purulent sputum. (4) RESOLUTION (day 8-21): enzymatic digestion, macrophage cleanup. REDUX CREPITATIONS appear (good sign). Bronchial breathing disappears.", "follow_ups": [{"question": "What are redux crepitations?", "answer": "Crepitations that REAPPEAR during resolution. During hepatization: alveoli packed → no creps (bronchial breathing dominates). Resolution: exudate liquefies → alveoli reopen → air bubbling through semi-liquid → creps return. GOOD prognostic sign."}], "examiner": "medicine"},
+        {"question": "What is the silhouette sign?", "answer": "Felson: loss of normally visible silhouette when adjacent lung opacifies. Two structures of same density in contact cannot be distinguished. Localization: right heart border lost = RML. Left heart border = lingula. Right diaphragm = RLL. Left diaphragm = LLL. Aortic knuckle = LUL.", "examiner": "medicine"},
+        {"question": "What is CURB-65?", "answer": "CAP severity: C = Confusion (AMT ≤8), U = Urea >7 mmol/L, R = RR ≥30, B = BP (SBP <90 or DBP ≤60), 65 = age ≥65. Score 0-1: outpatient. 2: consider admit. 3-5: severe/ICU. ATS/IDSA major ICU criteria: invasive ventilation OR vasopressors.", "examiner": "medicine"}
+      ]
+    },
+
+    {
+      "id": "bronchial_asthma",
+      "name": "Bronchial Asthma",
+      "category": "case",
+      "system": "respiratory",
+      "tags": ["asthma", "obstructive", "short-case", "long-case"],
+      "presentation_script": {
+        "opening": "Sir, I have examined this patient. This is a 28-year-old male who presented with acute breathlessness for 6 hours after dust exposure, with a history of episodic wheeze and breathlessness since age 12, worse at night and early morning, relieved by inhaler use.",
+        "gpe_findings": "On general examination, the patient is sitting upright, unable to complete sentences, in moderate respiratory distress. Pulse 110/min regular. BP 130/80. RR 28. SpO2 93% on room air. No pallor, no cyanosis, no clubbing, no pedal edema.",
+        "system_findings": "On respiratory examination — Inspection: use of accessory muscles (SCM, scalenes), intercostal indrawing, prolonged expiration. Trachea central. Palpation: bilateral symmetrical reduced expansion, VF normal. Percussion: bilateral hyper-resonance (if air trapping). Auscultation: BILATERAL POLYPHONIC EXPIRATORY RHONCHI (wheeze) throughout both lung fields, with PROLONGED EXPIRATORY PHASE (I:E ratio reversed, >1:3).",
+        "diagnosis_statement": "Bronchial asthma, currently in moderate acute exacerbation, evidenced by bilateral polyphonic expiratory rhonchi, prolonged expiration, accessory muscle use, and a history of episodic reversible airflow obstruction since childhood with diurnal variation.",
+        "differentials": ["COPD (age >40, smoking, persistent not episodic, not fully reversible)", "Cardiac asthma / LVF (elderly, S3, basal creps, cardiomegaly, responds to diuretics)", "Upper airway obstruction (monophonic stridor, inspiratory)", "Vocal cord dysfunction (inspiratory stridor, no BD response)", "EGPA / Churg-Strauss (asthma + eosinophilia + vasculitis)"],
+        "tips": ["Say 'POLYPHONIC EXPIRATORY' — polyphonic = multiple airways, expiratory = intrathoracic obstruction.", "Mention 'episodic with symptom-free intervals' — the hallmark distinguishing asthma from COPD.", "If asked about SILENT CHEST — immediately say this is LIFE-THREATENING (airflow too low to generate wheeze).", "Note the absence of clubbing — clubbing is NOT a feature of asthma or COPD."]
+      },
+      "case_scenario": {
+        "demographics": "28-year-old male, software engineer",
+        "chief_complaint": "Acute breathlessness 6 hours after dust exposure, episodic wheeze since age 12",
+        "hpi": "Dust exposure while cleaning triggered acute dyspnea 6 hours ago, progressive. History of episodic wheeze + breathlessness since age 12, worse at NIGHT and early MORNING (diurnal variation). Symptom-free intervals between episodes. Uses salbutamol inhaler PRN only — no controller therapy. Last hospitalization 1 year ago. No recent URTI.",
+        "past_history": "Childhood asthma since age 12. No TB, no cardiac disease. Allergic rhinitis (seasonal).",
+        "family_history": "Mother: allergic rhinitis. Atopic family.",
+        "social_history": "Non-smoker. No pets. Dusty work environment occasionally."
+      },
+      "clinical_summary": [
+        {"area": "GPE", "finding": "Cannot complete sentences", "detail": "Speaks in phrases", "present": true, "significance": "Moderate-severe exacerbation marker"},
+        {"area": "GPE", "finding": "Accessory muscle use", "detail": "SCM, scalenes active, intercostal indrawing", "present": true, "significance": "Increased work of breathing against obstructed airways"},
+        {"area": "GPE", "finding": "Clubbing", "detail": "ABSENT", "present": false, "significance": "Clubbing is NOT a feature of asthma — if present, think bronchiectasis, carcinoma"},
+        {"area": "Inspection", "finding": "Prolonged expiration", "detail": "Visible prolonged expiratory phase", "present": true, "significance": "Airway obstruction → air takes longer to exit"},
+        {"area": "Palpation", "finding": "Bilateral reduced expansion", "detail": "Symmetrical", "present": true, "significance": "BILATERAL = diffuse process (asthma/COPD). Unilateral = localized."},
+        {"area": "Percussion", "finding": "Hyper-resonant bilateral", "detail": "If significant air trapping", "present": true, "significance": "Trapped air → hyperinflation → hyper-resonance"},
+        {"area": "Auscultation", "finding": "Bilateral polyphonic expiratory rhonchi", "detail": "Multiple pitches, throughout both lungs", "present": true, "significance": "Multiple airways of different calibers narrowed = polyphonic. Expiratory = intrathoracic."},
+        {"area": "Auscultation", "finding": "Prolonged expiratory phase", "detail": "I:E >1:3", "present": true, "significance": "Obstruction to expiratory airflow"},
+        {"area": "DANGER", "finding": "Silent chest", "detail": "NOT present in this patient", "present": false, "significance": "If present = LIFE-THREATENING. Airflow too low to generate wheeze."}
+      ],
+      "examination_technique": {
+        "sequence": "General assessment (speech, posture, accessory muscles) → Inspection → Palpation → Percussion → Auscultation → PEFR",
+        "steps": [
+          {"phase": "Quick Severity Assessment", "actions": ["Can patient speak in SENTENCES (mild), PHRASES (moderate), WORDS (severe), or NOT AT ALL (life-threatening)?", "Accessory muscles? Intercostal indrawing? Tripod position?", "SpO2 and pulse — tachycardia >120 = severe, bradycardia = life-threatening (paradoxical)."], "findings_in_this_case": ["Speaks in phrases = moderate", "Accessory muscles active", "SpO2 93%, pulse 110"]},
+          {"phase": "Auscultation — Key Step", "actions": ["POLYPHONIC wheeze = multiple airway sizes narrowed (asthma/COPD). MONOPHONIC = single airway (tumor/FB — investigate).", "Predominantly EXPIRATORY (intrathoracic). Both phases if severe.", "SILENT CHEST = airflow so reduced no wheeze can be generated = imminent arrest.", "Prolonged expiration: count I:E ratio (normal 1:2, asthma >1:3)."], "findings_in_this_case": ["Bilateral polyphonic expiratory rhonchi", "I:E >1:3", "No silent chest"]}
+        ]
+      },
+      "findings_with_mechanisms": [
+        {"finding": "Polyphonic expiratory wheeze", "mechanism": "Asthma causes DIFFUSE airway narrowing (bronchospasm + edema + mucus) affecting multiple airways of different calibers simultaneously. Each narrowed airway generates its own pitch based on diameter and airflow velocity. Multiple pitches = polyphonic. Predominantly expiratory because positive intrathoracic pressure during expiration further compresses already narrowed airways.", "mechanism_chain": "[Diffuse bronchospasm] → [Multiple airways narrowed] → [Each airway = different pitch] → [Polyphonic]. [Expiration] → [Positive intrathoracic pressure] → [Further compression] → [Expiratory predominance]", "caveat": "Monophonic wheeze (single pitch, fixed) = single airway obstruction → think tumor, foreign body. Must investigate."},
+        {"finding": "Prolonged expiration", "mechanism": "During expiration, positive intrathoracic pressure compresses intrathoracic airways. In asthma, already narrowed airways are compressed further → dynamic airway compression → airflow limitation. Air takes longer to exit → prolonged expiratory phase. I:E ratio reverses from normal 1:2 to >1:3.", "mechanism_chain": "[Narrowed airways] → [Expiratory compression] → [Dynamic airway collapse] → [Prolonged expiration]"},
+        {"finding": "Silent chest", "mechanism": "In near-fatal asthma, airflow becomes so severely reduced that there is insufficient air movement to create the turbulence needed for wheeze. The absence of wheeze in a distressed patient is MORE dangerous than loud wheeze — it signals impending respiratory arrest.", "mechanism_chain": "[Severe bronchospasm] → [Near-zero airflow] → [No turbulence] → [No wheeze] → [Silent chest = imminent arrest]"},
+        {"finding": "Pulsus paradoxus", "mechanism": "Severe hyperinflation → exaggerated negative intrathoracic pressure during inspiration → increased venous return to RV → interventricular septum shifts left → reduced LV filling. Plus increased LV afterload. Net: SBP drops >10 mmHg during inspiration.", "mechanism_chain": "[Hyperinflation] → [Exaggerated neg pressure] → [RV distension → LV compression] → [SBP drop >10 mmHg]", "grading": ">15 mmHg = severe. >25 mmHg = life-threatening. Absence in distressed patient = muscle fatigue."}
+      ],
+      "diagnosis_and_differentials": {
+        "provisional": "Bronchial asthma — moderate acute exacerbation, with underlying poorly controlled persistent asthma (reliever-only use)",
+        "supporting_evidence": ["Bilateral polyphonic expiratory rhonchi", "Prolonged expiratory phase", "Episodic history since childhood with symptom-free intervals", "Diurnal variation (worse night/early AM)", "Trigger-related (dust)", "Atopic family (mother — allergic rhinitis)", "Reversible with inhaler use", "No clubbing (expected)"],
+        "differentials": [
+          {"condition": "COPD", "points_for": "Wheeze, prolonged expiration", "why_not": "Age 28 (COPD >40). Non-smoker. EPISODIC with intervals (COPD = persistent progressive). Fully reversible (COPD = partial). No barrel chest."},
+          {"condition": "Cardiac asthma (LVF)", "points_for": "Nocturnal dyspnea, wheeze", "why_not": "Young, no cardiac history, no S3, no basal creps, no cardiomegaly, no pedal edema. Cardiac wheeze responds to diuretics not bronchodilators."},
+          {"condition": "Upper airway obstruction", "points_for": "Dyspnea", "why_not": "Stridor is INSPIRATORY and MONOPHONIC. Asthma wheeze is EXPIRATORY and POLYPHONIC."},
+          {"condition": "ABPA", "points_for": "Asthma + recurrent episodes", "why_not": "No proximal bronchiectasis, no elevated IgE documented, no fleeting infiltrates. Consider if steroid-dependent or very high IgE."}
+        ]
+      },
+      "investigations": [
+        {"test": "PEFR (peak flow)", "expected": "Reduced. >75% = mild, 50-75% = moderate, <50% = severe, <33% = life-threatening", "why": "Best bedside severity and monitoring tool. Serial PEFR tracks response.", "priority": "immediate"},
+        {"test": "ABG", "expected": "Early: respiratory alkalosis (hyperventilation). Late: respiratory ACIDOSIS (fatigue → arrest). Normal PaCO2 in distressed patient is OMINOUS.", "why": "Normal PaCO2 = tiring = impending arrest. Rising PaCO2 = intubate.", "priority": "immediate"},
+        {"test": "CXR", "expected": "Hyperinflation, flattened diaphragms. Rule out pneumothorax, pneumomediastinum.", "why": "Exclude complications, not for diagnosis.", "priority": "immediate"},
+        {"test": "Spirometry + reversibility (stable state)", "expected": "FEV1/FVC <0.7, FEV1 improves ≥12% AND ≥200mL post-salbutamol", "why": "Diagnostic: confirms reversible obstruction.", "priority": "routine"},
+        {"test": "FeNO", "expected": ">50 ppb = eosinophilic inflammation", "why": "Guides ICS therapy. Predicts steroid responsiveness.", "priority": "routine"},
+        {"test": "Serum IgE + skin prick test", "expected": "Elevated IgE, positive to dust mite/pollen", "why": "Identifies atopic phenotype, allergen avoidance targets.", "priority": "if_indicated"}
+      ],
+      "management": {
+        "medical": [
+          {"intervention": "Acute: O-S-A-M-I protocol", "rationale": "Systematic escalation for acute attack", "specifics": "O: High-flow O2 target 93-95%. S: Nebulized salbutamol 5mg back-to-back x3 (q20min x 1hr). A: Ipratropium 500mcg with first 3 nebs. M: IV hydrocortisone 200mg stat then 100mg Q6H, then oral pred 40-50mg x 5-7d. I: If not responding — IV MgSO4 2g/20min, IV aminophylline."},
+          {"intervention": "Long-term: GINA stepwise", "rationale": "Controller therapy prevents exacerbations and remodeling", "specifics": "SABA-only is NO LONGER recommended. All patients need ICS. Step 1-2: low-dose ICS or ICS-formoterol PRN. Step 3: low-dose ICS-LABA (MART). Step 4: medium-dose ICS-LABA. Step 5: high-dose ICS-LABA + biologics (omalizumab, mepolizumab, dupilumab, tezepelumab)."},
+          {"intervention": "Non-pharmacological", "rationale": "Reduce triggers and improve control", "specifics": "Allergen avoidance, smoking cessation, weight management, influenza/pneumococcal vaccination, written action plan (green-yellow-red zones)."}
+        ],
+        "this_patient": "Moderate exacerbation: salbutamol nebs q20min x3 + ipratropium + IV hydrocortisone 200mg. O2 target 93-95%. Reassess after 1 hour. If improving: step down to 4-hourly nebs, start oral pred 40mg x 5 days. Before discharge: start low-dose ICS-LABA (budesonide-formoterol) as MART. Written action plan. Follow-up in 1 week.",
+        "follow_up": "Review in 1 week: PEFR diary, inhaler technique, trigger identification. Step up/down based on control (GINA assessment). Annual spirometry. Refer allergist if poorly controlled."
+      },
+      "complications": [
+        {"complication": "Status asthmaticus", "mechanism": "Severe bronchospasm + mucus plugging not responding to standard therapy within 1 hour", "presentation": "Refractory dyspnea, silent chest, exhaustion, rising PaCO2", "management": "Continuous neb salbutamol 10mg/hr, IV MgSO4, IV aminophylline, consider IV salbutamol, heliox, NIV, intubation (low RR, long I:E 1:4-1:5, permissive hypercapnia)."},
+        {"complication": "Pneumothorax", "mechanism": "Hyperinflation → alveolar rupture → air tracks to pleural space", "presentation": "Sudden worsening during exacerbation, unilateral absent BS", "management": "Chest drain. Suspect if sudden deterioration during attack."},
+        {"complication": "Airway remodeling", "mechanism": "Chronic inflammation → subepithelial fibrosis, smooth muscle hypertrophy, goblet cell metaplasia, basement membrane thickening. IRREVERSIBLE.", "presentation": "Fixed obstruction developing over years, asthma-COPD overlap", "management": "Prevention: early ICS. Once established, partially irreversible."},
+        {"complication": "Pneumomediastinum", "mechanism": "Alveolar rupture → air tracks along bronchovascular sheaths to mediastinum", "presentation": "Subcutaneous emphysema in neck, Hamman sign (crunching sound with heartbeat)", "management": "Usually self-limiting. Observation and analgesia."}
+      ],
+      "vivas": [
+        {"question": "Why is wheeze polyphonic in asthma but monophonic in tumor?", "answer": "Polyphonic (asthma/COPD): multiple airways of different calibers narrowed simultaneously → each generates own pitch → multiple pitches. Changes with cough/position. Monophonic (tumor/FB): single airway narrowed → single pitch, same throughout cycle, unchanged with cough. Fixed monophonic wheeze = investigate for endobronchial lesion.", "examiner": "medicine"},
+        {"question": "What is the significance of pulsus paradoxus?", "answer": "Fall in SBP >10 mmHg during inspiration. In asthma: severe hyperinflation → exaggerated negative intrathoracic pressure → increased RV filling → septum shifts left → reduced LV output. >15 mmHg = severe, >25 mmHg = life-threatening. ABSENCE in distressed patient = respiratory muscle fatigue (cannot generate negative pressure).", "examiner": "medicine"},
+        {"question": "What are signs of life-threatening asthma?", "answer": "Bedside signs (no investigations needed): silent chest, cyanosis, bradycardia (paradoxical), hypotension, exhaustion/drowsiness, inability to speak, paradoxical abdominal movement, PEFR <33%. ABG: normal PaCO2 in distressed patient is OMINOUS (should be hyperventilating). Rising PaCO2 = imminent arrest.", "examiner": "medicine"},
+        {"question": "What is ABPA?", "answer": "Allergic bronchopulmonary aspergillosis: hypersensitivity to Aspergillus fumigatus in asthmatic airways. Criteria: asthma + Aspergillus skin reactivity + IgE >1000 + specific IgE/IgG to Aspergillus + proximal bronchiectasis on CT + eosinophilia + fleeting infiltrates. Treatment: prednisolone + itraconazole. Monitor serial IgE.", "examiner": "medicine"},
+        {"question": "What is the role of IV MgSO4?", "answer": "2g IV over 20 minutes for severe acute asthma not responding to initial therapy. Mechanism: calcium antagonist → inhibits smooth muscle calcium influx → bronchodilation. Also inhibits ACh release and mast cell degranulation. Best evidence in severe exacerbations (FEV1 <25%). Reduces admission by 25-30%. Side effects: hypotension, flushing. Monitor DTRs.", "examiner": "medicine"},
+        {"question": "Explain GINA 2023 key change.", "answer": "SABA-only treatment NO LONGER recommended even for mild asthma. ALL patients need ICS (at minimum PRN ICS-formoterol or ICS taken whenever SABA used). Rationale: even mild asthma has underlying inflammation causing irreversible remodeling if untreated. MART (maintenance and reliever therapy) with single ICS-formoterol inhaler is preferred approach from Step 3.", "examiner": "medicine"}
+      ]
+    },
+    {
+      "id": "copd_cor_pulmonale",
+      "name": "COPD with Cor Pulmonale",
+      "category": "case",
+      "system": "respiratory",
+      "tags": ["COPD", "cor pulmonale", "chronic airflow limitation", "right heart failure", "smoking"],
+      "presentation_script": {
+        "opening": "Sir/Ma'am, I have examined this 62-year-old male patient who is a reformed smoker with 40 pack-year bidi smoking history, presenting with progressive exertional dyspnea over 5 years and bilateral pedal edema for 2 months.",
+        "gpe_findings": "On general examination: Patient is sitting propped up, dyspneic at rest with pursed-lip breathing. Central cyanosis present. Clubbing grade II present. Nicotine staining of fingers. BMI appears low (muscle wasting). Respiratory rate 24/min with prolonged expiratory phase. SpO2 88% on room air. Flapping tremor present (CO2 retention).",
+        "system_findings": "On respiratory examination — Inspection: Barrel-shaped chest with increased AP diameter, AP:lateral ratio approximately 1:1. Use of accessory muscles — SCM and scalenes. Supraclavicular fossa fullness reduced bilaterally. Intercostal recession during inspiration. Palpation: Trachea central, reduced chest expansion bilaterally (<2 cm). Vocal fremitus globally diminished. Apex beat not palpable (hyperinflated lung). Percussion: Hyperresonant bilaterally with loss of cardiac and liver dullness. Diaphragm excursion reduced (<2 cm). Auscultation: Globally diminished breath sounds with prolonged expiration (I:E ratio 1:3-1:4). Scattered rhonchi bilaterally, more during forced expiration. Hoover sign positive — paradoxical inward movement of lower rib cage during inspiration. Signs of cor pulmonale: JVP elevated 8 cm with prominent 'a' waves and 'cv' waves of TR. Left parasternal heave (RV). Loud P2 — splitting difficult to appreciate. Pansystolic murmur at left lower sternal edge increasing with inspiration (Carvallo sign) — tricuspid regurgitation. Hepatomegaly 4 cm below costal margin, tender, pulsatile. Bilateral pitting pedal edema.",
+        "diagnosis_statement": "Severe COPD (likely GOLD Stage III-IV) with cor pulmonale in acute exacerbation, in a chronic bidi smoker.",
+        "differentials": ["Asthma-COPD overlap (reversible component, eosinophilia)", "Bronchiectasis with secondary pulmonary hypertension", "Interstitial lung disease with pulmonary hypertension", "Primary pulmonary arterial hypertension"]
+      },
+      "case_scenario": {
+        "age": 62,
+        "sex": "Male",
+        "setting": "Medicine ward",
+        "chief_complaint": "Progressive breathlessness on exertion for 5 years, worsening over 2 weeks with increased cough and bilateral leg swelling for 2 months",
+        "history_clues": ["40 pack-year bidi smoking, quit 2 years ago", "Chronic productive cough for 10 years (chronic bronchitis)", "Exertional dyspnea: previously walking 200m, now dyspneic at rest", "Recent exacerbation with green sputum and fever", "Bilateral leg swelling for 2 months, progressive", "Orthopnea 3 pillows", "No hemoptysis, no TB contact", "Previous hospitalizations x2 for AECOPD"],
+        "examination_focus": "Chest shape, accessory muscle use, percussion note, breath sounds, expiratory phase, JVP, right heart signs, hepatomegaly, edema"
+      },
+      "clinical_summary": [
+        {"area": "General", "detail": "Propped-up position, pursed-lip breathing, central cyanosis, wasting", "significance": "Chronic severe airflow limitation with hypoxemia. Pursed-lip breathing generates auto-PEEP to splint airways open."},
+        {"area": "Hands", "detail": "Nicotine staining, clubbing grade II, flapping tremor, warm peripheries", "significance": "Smoking history. Clubbing uncommon in pure COPD — consider bronchiectasis, lung CA, or cor pulmonale. Flapping tremor = CO2 narcosis (type II failure). Warm hands = CO2 vasodilation."},
+        {"area": "Chest shape", "detail": "Barrel chest, AP:lateral ≈ 1:1, wide subcostal angle >90°", "significance": "Chronic hyperinflation with air trapping. Diaphragm flattened, ribs horizontally oriented."},
+        {"area": "Accessory muscles", "detail": "SCM, scalene contracting with each breath, intercostal recession", "significance": "Diaphragm disadvantage from hyperinflation — accessory muscles recruited to maintain ventilation."},
+        {"area": "Chest expansion", "detail": "Globally reduced <2 cm bilaterally", "significance": "Hyperinflated chest already near TLC — minimal further expansion possible."},
+        {"area": "Percussion", "detail": "Hyperresonant bilaterally, loss of cardiac and liver dullness", "significance": "Hyperinflated lungs interposed between chest wall and heart/liver. Diaphragm pushed down."},
+        {"area": "Breath sounds", "detail": "Globally diminished, prolonged expiration I:E 1:3-1:4, scattered rhonchi", "significance": "Airflow limitation → turbulent flow through narrowed airways → rhonchi. Diminished sounds = air trapping + reduced airflow."},
+        {"area": "Hoover sign", "detail": "Paradoxical inward movement of lower costal margin during inspiration", "significance": "PATHOGNOMONIC for severe hyperinflation. Flattened diaphragm pulls ribs inward instead of expanding them outward."},
+        {"area": "JVP", "detail": "Elevated 8 cm, prominent 'a' waves, 'cv' waves of TR", "significance": "Right heart failure from pulmonary hypertension. Prominent 'a' = RV struggling against high PA pressure. 'cv' = tricuspid regurgitation."},
+        {"area": "Precordium", "detail": "Left parasternal heave, loud P2, Carvallo-positive TR murmur", "significance": "RV hypertrophy (heave), pulmonary hypertension (loud P2), tricuspid regurgitation (murmur increases with inspiration)."},
+        {"area": "Abdomen", "detail": "Hepatomegaly 4 cm, tender, pulsatile", "significance": "Congestive hepatomegaly from RV failure. Pulsatile = tricuspid regurgitation transmitting to hepatic veins."},
+        {"area": "Lower limbs", "detail": "Bilateral pitting pedal edema", "significance": "Right heart failure → systemic venous congestion → dependent edema."}
+      ],
+      "examination_technique": {
+        "approach": "Focus on: (1) Evidence of COPD — hyperinflation signs, (2) Evidence of cor pulmonale — right heart failure signs, (3) Severity assessment.",
+        "sequence": "Inspect chest shape → Accessory muscles → Palpate expansion → Percuss → Auscultate → Check Hoover sign → JVP → Precordium → Abdomen → Legs",
+        "steps": [
+          {"phase": "COPD severity", "actions": ["Count respiratory rate and I:E ratio", "Check accessory muscle use and pursed-lip breathing", "Barrel chest (AP:lateral ratio)", "Chest expansion (<2 cm = severe)", "Hyperresonance and loss of cardiac/liver dullness", "Hoover sign (look from foot of bed during quiet breathing)"]},
+          {"phase": "Cor pulmonale assessment", "actions": ["JVP: height, waveform ('a' waves, 'cv' waves)", "Parasternal heave (RV)", "P2 intensity (compare A2:P2)", "TR murmur + Carvallo sign (inspiration augments)", "Hepatomegaly (span, tenderness, pulsatility)", "Pedal edema (pitting, extent)"]}
+        ]
+      },
+      "findings_with_mechanisms": [
+        {"finding": "Barrel chest with hyperresonance", "mechanism": "Chronic air trapping → ↑RV (residual volume) → chest fixed near TLC → ribs horizontal, AP diameter increases → percussion note hyperresonant as excess air reflects sound. Loss of cardiac/liver dullness = hyperinflated lung interposed.", "caveats": "Barrel chest also in normal elderly (senile emphysema). Must correlate with airflow limitation."},
+        {"finding": "Hoover sign positive", "mechanism": "Normal inspiration: dome-shaped diaphragm contracts → descends → pulls lower ribs OUT and UP (bucket-handle). In severe hyperinflation: diaphragm FLAT → contraction pulls lower ribs INWARD (paradoxical movement). Zone of apposition is lost.", "caveats": "MOST SPECIFIC bedside sign of severe hyperinflation. Not seen in asthma (reversible hyperinflation) unless very severe."},
+        {"finding": "Pursed-lip breathing", "mechanism": "Patient-generated PEEP (positive end-expiratory pressure): expiring against partially closed lips → creates back-pressure → splints airways open → prevents dynamic airway collapse → improves gas exchange. Increases expiratory time.", "caveats": "Adaptive mechanism — do NOT discourage the patient from doing it. Its presence = significant expiratory flow limitation."},
+        {"finding": "Cor pulmonale signs (elevated JVP, RV heave, loud P2, TR, hepatomegaly, edema)", "mechanism": "Chronic hypoxia → pulmonary arteriolar vasoconstriction (Euler-Liljestrand reflex) → pulmonary vascular remodeling (intimal fibrosis, medial hypertrophy) → FIXED pulmonary hypertension → RV pressure overload → RV hypertrophy → eventual RV failure → systemic venous congestion.", "caveats": "Cor pulmonale = RV enlargement from LUNG disease (not left heart). Differentiate from biventricular failure: in cor pulmonale, LV usually normal, no pulmonary edema, no S3 from LV."},
+        {"finding": "Flapping tremor (asterixis)", "mechanism": "CO2 narcosis: type II respiratory failure → CO2 retention → cerebral vasodilation + direct CNS depression → intermittent loss of postural tone → irregular flapping at wrists. Also seen in hepatic encephalopathy, uremia.", "caveats": "Presence in COPD = type II failure (PaCO2 >50 mmHg). URGENT indication — patient may need NIV. Do NOT give high-flow O2 (removes hypoxic drive)."}
+      ],
+      "diagnosis_and_differentials": {
+        "primary": "Severe COPD (GOLD Stage III-IV) with cor pulmonale in acute infective exacerbation",
+        "evidence_for": ["Chronic smoker with progressive dyspnea", "Barrel chest, hyperresonance, diminished BS, prolonged expiration", "Hoover sign positive", "Cor pulmonale: elevated JVP, RV heave, loud P2, TR murmur, hepatomegaly, edema"],
+        "differentials": [
+          {"condition": "Asthma-COPD Overlap (ACO)", "distinguishing": "History of childhood asthma, atopy, significant bronchodilator reversibility (>400ml), eosinophilia, variable symptoms. ACO responds better to ICS."},
+          {"condition": "Bronchiectasis", "distinguishing": "Copious purulent sputum (cupfuls), hemoptysis, coarse crackles, clubbing more prominent. HRCT: tram-track/signet ring. Lower lobe predominance."},
+          {"condition": "Interstitial lung disease with PHT", "distinguishing": "Dry cough, fine end-inspiratory crackles (velcro), RESTRICTIVE on PFT (not obstructive). HRCT: reticular/honeycombing pattern. No hyperinflation."},
+          {"condition": "Primary PAH", "distinguishing": "Young female, no smoking history, no airflow obstruction on PFT, RV catheterization shows mPAP >20 with normal PCWP, exclude secondary causes."}
+        ]
+      },
+      "investigations": [
+        {"test": "Spirometry (post-bronchodilator)", "expected": "FEV1/FVC <0.70 confirms obstruction. FEV1 <30% predicted = GOLD IV (very severe). Poor bronchodilator reversibility (<200ml or <12%). Flow-volume loop: scooped-out expiratory limb.", "purpose": "Confirm diagnosis and grade severity (GOLD classification)"},
+        {"test": "Arterial blood gas", "expected": "Type II failure: PaO2 <60 mmHg, PaCO2 >50 mmHg, compensated respiratory acidosis (↑HCO3). A-a gradient may be normal (hypoventilation) or elevated (V/Q mismatch).", "purpose": "Assess gas exchange, guide oxygen therapy and NIV"},
+        {"test": "Chest X-ray", "expected": "Hyperinflation: >6 anterior ribs visible, flat diaphragm, increased retrosternal air space, narrow mediastinum, tubular heart. May show bullae. Signs of PHT: prominent pulmonary arteries, pruning of peripheral vessels.", "purpose": "Confirm hyperinflation, exclude differentials, assess heart"},
+        {"test": "HRCT chest", "expected": "Emphysema: low-attenuation areas without walls (centrilobular or panlobular). Bronchial wall thickening. Bullae. Air trapping on expiratory cuts.", "purpose": "Phenotyping (emphysema vs airway-predominant), surgical planning"},
+        {"test": "2D Echocardiography", "expected": "RV dilation, RV hypertrophy, TAPSE <17mm (RV dysfunction), TR jet velocity (estimate PASP), RA dilation. LV usually normal.", "purpose": "Confirm cor pulmonale, estimate pulmonary pressures, exclude LV dysfunction"},
+        {"test": "CBC", "expected": "Secondary polycythemia (Hb >16-17 g/dL) from chronic hypoxia → EPO response. Raised WBC if infective exacerbation.", "purpose": "Polycythemia assessment, infection markers"},
+        {"test": "Alpha-1 antitrypsin level", "expected": "Low in A1AT deficiency (<80 mg/dL). Consider in: early onset COPD (<45 years), basal panlobular emphysema, positive family history, non-smoker with COPD.", "purpose": "Rule out genetic cause, especially if young or non-smoker"}
+      ],
+      "management": {
+        "principles": [
+          {"intervention": "Acute exacerbation (AECOPD)", "rationale": "Treat infection + bronchospasm + hypoxemia", "specifics": "Controlled O2 via Venturi mask 24-28% (target SpO2 88-92% ONLY). Nebulized salbutamol + ipratropium. Systemic steroids (prednisolone 40mg x 5 days — REDUCE trial). Antibiotics if purulent sputum (amoxicillin-clavulanate or doxycycline, azithromycin). DVT prophylaxis."},
+          {"intervention": "Non-invasive ventilation (NIV — BiPAP)", "rationale": "Supports ventilation in type II failure without intubation", "specifics": "Indications: pH <7.35 with PaCO2 >45 despite 1 hour of standard therapy. BiPAP: IPAP 12-20, EPAP 4-6 cmH2O. Reduces intubation by 50%, mortality by 50%. Contraindicated if: GCS <8, vomiting, hemodynamic instability."},
+          {"intervention": "Long-term oxygen therapy (LTOT)", "rationale": "ONLY treatment shown to reduce mortality in COPD", "specifics": "Criteria: PaO2 <55 mmHg, or PaO2 55-60 + polycythemia/cor pulmonale/PHT. >15 hours/day (ideally >20h). Target SpO2 88-92%. Via nasal cannula at 1-2 L/min. MRC trial + NOTT trial evidence."},
+          {"intervention": "Stable COPD pharmacotherapy", "rationale": "GOLD ABCD → ABE approach (2023): reduce symptoms and exacerbations", "specifics": "Group A: PRN SABA/SAMA. Group B: LABA+LAMA (dual bronchodilator). Group E (frequent exacerbations): LABA+LAMA ± ICS (add ICS if eosinophils >300). ICS NOT routinely added — only if eosinophilic phenotype or frequent exacerbations despite dual BD."},
+          {"intervention": "Cor pulmonale management", "rationale": "Treat underlying cause (COPD + hypoxia), not RV failure in isolation", "specifics": "LTOT is cornerstone (reverses hypoxic vasoconstriction). Diuretics for edema (furosemide — cautiously, avoid hypokalemia). Salt restriction. Digoxin ONLY if concurrent AF. Avoid CCBs (worsen V/Q mismatch). Pulmonary vasodilators NOT proven in COPD-related PHT."},
+          {"intervention": "Non-pharmacological", "rationale": "Reduce progression and improve quality of life", "specifics": "Smoking cessation (MOST IMPORTANT single intervention — NRT, varenicline, bupropion). Pulmonary rehabilitation (6-12 weeks, exercise + education — improves dyspnea, QoL, 6MWD). Vaccinations: influenza (annual), pneumococcal (PCV20), COVID. Nutrition support for BMI <20."}
+        ],
+        "this_patient": "AECOPD with cor pulmonale: Controlled O2 28% Venturi (target SpO2 88-92%). Nebs: salbutamol 5mg + ipratropium 500mcg q4h. Prednisolone 40mg PO x 5 days. Amoxicillin-clavulanate 625mg TDS x 7 days (purulent sputum). ABG at 1 hour — if pH <7.35 with ↑PaCO2, start NIV (BiPAP). Furosemide 40mg IV for edema. DVT prophylaxis. After stabilization: optimize LABA+LAMA, assess for LTOT eligibility, pulmonary rehab referral, smoking cessation reinforcement.",
+        "follow_up": "Post-discharge: review in 2 weeks. Repeat ABG at 3 weeks (stable state) for LTOT assessment. Spirometry at 6 weeks. Annual: influenza vaccine, check inhaler technique, assess BODE index (Body mass, Obstruction, Dyspnea, Exercise capacity). Screen for osteoporosis, depression, lung cancer (LDCT if eligible)."
+      },
+      "complications": [
+        {"complication": "Acute respiratory failure (Type II)", "mechanism": "Exacerbation → increased airway resistance → respiratory muscle fatigue → hypoventilation → CO2 retention → acidosis → obtundation → arrest", "presentation": "Drowsiness, confusion, flapping tremor, rising PaCO2, falling pH", "management": "NIV (BiPAP) first line. Intubation if NIV fails or contraindicated. AVOID high-flow O2 (removes hypoxic drive → worsens CO2 retention)."},
+        {"complication": "Pneumothorax", "mechanism": "Rupture of subpleural bulla → air leak into pleural space. COPD bullae are thin-walled, prone to rupture with coughing or positive pressure ventilation.", "presentation": "Sudden worsening dyspnea, pleuritic pain, absent BS unilaterally. May be tension PTX in ventilated patients.", "management": "Chest drain (NOT conservative — high recurrence, poor lung re-expansion). If recurrent: surgical pleurodesis or bullectomy."},
+        {"complication": "Secondary polycythemia", "mechanism": "Chronic hypoxia → renal hypoxia sensing → ↑EPO → ↑RBC production → raised Hb and hematocrit → hyperviscosity", "presentation": "Headache, visual disturbance, plethoric facies, Hct >55%. Risk of stroke and DVT.", "management": "LTOT (reduces EPO drive). If Hct >55%: venesection to target <50%. Hydration."},
+        {"complication": "Cor pulmonale", "mechanism": "Chronic hypoxia → pulmonary arteriolar vasoconstriction (reversible) → vascular remodeling (irreversible) → fixed PHT → RV pressure overload → RV hypertrophy → RV dilation → RV failure", "presentation": "Elevated JVP, hepatomegaly, edema, RV heave, loud P2, TR murmur", "management": "LTOT is cornerstone. Diuretics for fluid overload. Treat underlying COPD aggressively. NOT responsive to standard LV failure drugs (ACEi, BB have limited role)."}
+      ],
+      "vivas": [
+        {"question": "What is the Hoover sign and what does it indicate?", "answer": "Paradoxical inward movement of lower costal margin during inspiration. Normal: diaphragm dome-shaped → contracts → descends → pushes abdominal contents down AND pulls ribs outward (bucket-handle). In severe hyperinflation: diaphragm FLAT → zone of apposition lost → contraction pulls ribs INWARD instead of outward. Most specific bedside sign of severe hyperinflation (COPD). Named after Charles Hoover.", "examiner": "medicine"},
+        {"question": "Why should you not give high-flow oxygen in COPD?", "answer": "Three mechanisms: (1) HYPOXIC DRIVE THEORY (traditional): chronic CO2 retention → central chemoreceptors reset → breathing driven by hypoxic stimulus via peripheral chemoreceptors → remove hypoxia with high O2 → lose respiratory drive → hypoventilation → ↑CO2. (2) HALDANE EFFECT (more important): high PaO2 → oxyhemoglobin cannot carry CO2 as well as deoxyhemoglobin → CO2 displaced from Hb → ↑dissolved CO2 → ↑PaCO2. (3) V/Q mismatch worsening: O2 releases hypoxic pulmonary vasoconstriction → blood flows to poorly ventilated areas → worsens dead space ventilation. Target: SpO2 88-92%.", "examiner": "medicine"},
+        {"question": "Differentiate pink puffer from blue bloater.", "answer": "PINK PUFFER (Emphysema-predominant/Type A): thin, barrel chest, pursed-lip breathing, minimal cough, maintains PaO2 by hyperventilation (pink, not cyanosed), DOES develop dyspnea early. Cor pulmonale late. CXR: hyperinflation, bullae. BLUE BLOATER (Chronic bronchitis-predominant/Type B): overweight, cyanosed (blue), productive cough copious sputum, tolerates hypoxia and hypercapnia, peripheral edema (bloated), cor pulmonale early. Polycythemia more common. NOTE: These are EXTREMES of a spectrum — most patients are mixed. Modern approach: GOLD classification by FEV1 + symptoms + exacerbation history.", "examiner": "medicine"},
+        {"question": "What is the BODE index?", "answer": "Multidimensional prognostic index for COPD mortality, BETTER than FEV1 alone: B = BMI (<21 = 1 point), O = Obstruction (FEV1 % predicted: ≥65=0, 50-64=1, 36-49=2, ≤35=3), D = Dyspnea (mMRC scale 0-4 → 0-3 points), E = Exercise capacity (6-minute walk distance: ≥350m=0, 250-349=1, 150-249=2, ≤149=3). Score 0-10. Score 7-10: ~80% 4-year mortality. Used for: prognosis, lung transplant referral (score ≥7), and gauging response to pulmonary rehab.", "examiner": "medicine"},
+        {"question": "What are indications for NIV in AECOPD?", "answer": "Primary indication: respiratory acidosis pH 7.25-7.35 with PaCO2 >45 mmHg DESPITE optimal medical therapy for 1 hour. Settings: BiPAP with IPAP 12-20, EPAP 4-6 cmH2O. Titrate IPAP to improve tidal volume and reduce PaCO2. CONTRAINDICATIONS: GCS <8, facial trauma/surgery, vomiting/aspiration risk, hemodynamic instability, undrained pneumothorax. Success markers: pH improvement within 1-2 hours, reducing RR, improving consciousness. If pH <7.25 or worsening despite NIV → intubate. NIV reduces intubation by 50% and in-hospital mortality by ~50% (Cochrane evidence).", "examiner": "medicine"},
+        {"question": "What is the role of ICS in COPD?", "answer": "ICS NOT routinely recommended in COPD (unlike asthma). Indications: (1) Blood eosinophils >300 cells/μL with frequent exacerbations, (2) Asthma-COPD overlap, (3) ≥2 moderate or ≥1 severe exacerbation/year DESPITE LABA+LAMA. RISKS of ICS in COPD: pneumonia (↑30-50% risk, especially fluticasone), oral candidiasis, osteoporosis, skin bruising. WITHDRAW ICS if: eosinophils <100, no exacerbations on dual BD, pneumonia occurred. GOLD 2023: eosinophils guide ICS use — >300 favors adding, <100 favors withdrawing. Triple therapy (ICS+LABA+LAMA) only if eosinophilic phenotype with frequent exacerbations.", "examiner": "medicine"}
+      ]
+    }
+  ]
+}

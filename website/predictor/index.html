@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Papers - MD Exam Prep</title>
+  <meta name="description" content="Upload past papers. Get ranked preparation priorities.">
+  <link rel="stylesheet" href="../assets/css/core.css">
+  <link rel="stylesheet" href="predictor.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+  <div id="page-loader" class="page-loader">
+    <div class="page-loader-bar"></div>
+  </div>
+  <div id="site-nav"></div>
+  <main class="container">
+    <section id="state-choose" class="predictor-choose">
+      <div class="choose-content">
+        <h1>Upload your exam papers.</h1>
+        <p class="choose-sub">Paste your questions or upload files. The engine matches topics and ranks your preparation priorities.</p>
+        <div class="input-tabs">
+          <button id="tab-paste" class="input-tab active">Paste Text</button>
+          <button id="tab-upload" class="input-tab">Upload File</button>
+        </div>
+        <div id="pane-paste" class="input-pane">
+          <textarea id="paste-area" class="paste-area" rows="8" placeholder="Paste exam questions here, one per line...&#10;&#10;Example:&#10;Discuss the pathogenesis of diabetic ketoacidosis&#10;Write short notes on rheumatic heart disease&#10;Enumerate causes of hepatosplenomegaly"></textarea>
+          <button id="paste-submit" class="btn btn-primary paste-submit">Analyze Questions</button>
+        </div>
+        <div id="pane-upload" class="input-pane" style="display:none;">
+          <div id="upload-zone" class="upload-zone" role="button" tabindex="0" aria-label="Upload exam papers">
+            <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" /></svg>
+            <p class="upload-label">Drag files here or click to browse</p>
+            <p class="upload-formats mono">.pdf .xlsx .xls</p>
+            <input type="file" id="file-input" multiple accept=".pdf,.xlsx,.xls" hidden>
+          </div>
+        </div>
+        <p class="choose-demo">Or <a href="#" id="demo-link">try with Yenepoya demo data</a><span class="choose-demo-meta">987 questions &middot; 20 years &middot; 44 ranked topics</span></p>
+      </div>
+    </section>
+    <section id="state-parsing" class="predictor-parsing" style="display:none;">
+      <div class="parsing-content">
+        <div class="loading-spinner"></div>
+        <p id="parsing-status" class="parsing-status">Reading files...</p>
+        <div class="parsing-progress"><div id="parsing-bar" class="parsing-bar-fill"></div></div>
+        <p id="parsing-detail" class="parsing-detail mono"></p>
+      </div>
+    </section>
+    <section id="state-results" style="display:none;">
+      <div class="results-topbar">
+        <div class="results-meta">
+          <p id="results-source" class="results-source mono"></p>
+          <button id="start-over" class="btn btn-secondary btn-sm">Upload new papers</button>
+        </div>
+        <div class="results-controls">
+          <div class="view-toggles" id="view-toggles">
+            <button class="btn btn-sm view-btn active" data-view="ranked">Ranked</button>
+            <button class="btn btn-sm view-btn" data-view="slots">By Slot</button>
+            <button class="btn btn-sm view-btn" data-view="systems">By System</button>
+          </div>
+          <div id="predictor-stats" class="stats-bar"></div>
+        </div>
+      </div>
+      <div id="predictor-results" class="results-grid"></div>
+      <section id="upload-invite" class="upload-invite">
+        <hr class="upload-invite-divider">
+        <h2 class="upload-invite-heading">The engine works on any college's papers.</h2>
+        <p class="upload-invite-sub">Drop PDF or Excel files of your past papers. Questions are extracted, matched, and ranked using the same method.</p>
+        <div id="upload-zone-secondary" class="upload-zone upload-zone--compact" role="button" tabindex="0" aria-label="Upload exam papers">
+          <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" /></svg>
+          <p class="upload-label">Drag files here or click to browse</p>
+          <p class="upload-formats mono">.pdf .xlsx .xls</p>
+          <input type="file" id="file-input-secondary" multiple accept=".pdf,.xlsx,.xls" hidden>
+        </div>
+      </section>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="../assets/js/template.js"></script>
+  <script src="../assets/js/predictor-engine.js"></script>
+  <script src="upload-parser.js"></script>
+  <script src="predictor-ui.js"></script>
+</body>
+</html>

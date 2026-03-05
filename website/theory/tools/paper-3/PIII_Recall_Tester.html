@@ -1,0 +1,1648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PIII Recall Tester</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap');
+
+  :root {
+    --bg: #0a0a0c;
+    --surface: #141418;
+    --surface2: #1c1c22;
+    --border: #2a2a33;
+    --text: #e8e6e3;
+    --text-dim: #8a8a95;
+    --accent: #f0c040;
+    --accent-dim: #f0c04030;
+    --red: #e74c3c;
+    --red-dim: #e74c3c25;
+    --green: #2ecc71;
+    --green-dim: #2ecc7125;
+    --yellow: #f39c12;
+    --yellow-dim: #f39c1225;
+    --blue: #3498db;
+    --blue-dim: #3498db25;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Mono', monospace;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header h1 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.02em;
+  }
+  .header-stats {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+  }
+  .header-stats .stat-val {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  /* ── TOPIC GRID VIEW ── */
+  .view { display: none; }
+  .view.active { display: block; }
+
+  .grid-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .tier-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin: 2rem 0 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .topic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 0.75rem;
+  }
+  .topic-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .topic-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+  .topic-card .zone-tag {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-dim);
+    margin-bottom: 0.4rem;
+  }
+  .topic-card .topic-name {
+    font-family: 'Instrument Serif', serif;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+  .topic-card .score-bar {
+    height: 3px;
+    background: var(--border);
+    border-radius: 2px;
+    margin-top: 0.5rem;
+  }
+  .topic-card .score-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 0.3s;
+  }
+  .topic-card .score-text {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    margin-top: 0.3rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  .topic-card .attempt-count {
+    font-size: 0.6rem;
+    color: var(--text-dim);
+  }
+  .topic-card.untested { border-left: 3px solid var(--text-dim); }
+  .topic-card.score-low { border-left: 3px solid var(--red); }
+  .topic-card.score-mid { border-left: 3px solid var(--yellow); }
+  .topic-card.score-high { border-left: 3px solid var(--green); }
+
+  /* ── RECALL TEST VIEW ── */
+  .test-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  .test-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+  }
+  .back-btn {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    transition: all 0.2s;
+  }
+  .back-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+  .question-box {
+    background: var(--surface);
+    border: 1px solid var(--accent-dim);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  .question-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+  .question-text {
+    font-family: 'Instrument Serif', serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: var(--text);
+  }
+
+  .recall-area {
+    width: 100%;
+    min-height: 350px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem;
+    color: var(--text);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    resize: vertical;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .recall-area:focus { border-color: var(--accent); }
+  .recall-area::placeholder { color: var(--text-dim); }
+
+  .test-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    gap: 1rem;
+  }
+  .word-count {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+  }
+  .submit-btn {
+    background: var(--accent);
+    color: var(--bg);
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+  .submit-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+  .submit-btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+
+  /* ── RESULTS VIEW ── */
+  .results-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .score-display {
+    text-align: center;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .score-big {
+    font-family: 'Instrument Serif', serif;
+    font-size: 4rem;
+    font-weight: 400;
+    line-height: 1;
+  }
+  .score-big .denominator {
+    font-size: 1.5rem;
+    color: var(--text-dim);
+  }
+  .score-label {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-top: 0.5rem;
+  }
+
+  .result-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+  }
+  .result-section-header {
+    padding: 0.75rem 1rem;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    border-bottom: 1px solid var(--border);
+    background: var(--surface2);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .result-section-header:hover { background: var(--border); }
+  .result-section-body {
+    padding: 1rem;
+  }
+
+  /* Keyword hits/misses */
+  .keyword-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.4rem;
+  }
+  .kw-item {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.6rem;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .kw-hit {
+    background: var(--green-dim);
+    color: var(--green);
+  }
+  .kw-miss {
+    background: var(--red-dim);
+    color: var(--red);
+  }
+  .kw-icon { font-size: 0.65rem; }
+
+  /* Error pattern alerts */
+  .pattern-alert {
+    background: var(--yellow-dim);
+    border: 1px solid var(--yellow);
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+  }
+  .pattern-alert-title {
+    color: var(--yellow);
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  /* Retention items */
+  .retention-list {
+    list-style: none;
+    counter-reset: ret;
+  }
+  .retention-list li {
+    counter-increment: ret;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+  .retention-list li:last-child { border-bottom: none; }
+  .retention-list li::before {
+    content: counter(ret) ".";
+    color: var(--accent);
+    font-weight: 500;
+    margin-right: 0.5rem;
+  }
+
+  /* Next actions */
+  .next-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .action-btn {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    transition: all 0.2s;
+  }
+  .action-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .action-btn.primary {
+    background: var(--accent);
+    color: var(--bg);
+    border-color: var(--accent);
+  }
+  .action-btn.primary:hover { opacity: 0.9; }
+
+  /* History panel */
+  .history-panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    margin-top: 1.5rem;
+    max-height: 250px;
+    overflow-y: auto;
+  }
+  .history-item {
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .history-item:last-child { border-bottom: none; }
+
+  /* Reset button */
+  .reset-all {
+    margin-top: 2rem;
+    text-align: center;
+  }
+  .reset-all button {
+    background: none;
+    border: 1px solid var(--red);
+    color: var(--red);
+    padding: 0.4rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+  }
+  .reset-all button:hover { opacity: 1; }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .header { flex-direction: column; gap: 0.5rem; }
+    .topic-grid { grid-template-columns: 1fr; }
+    .test-container, .results-container { padding: 1rem; }
+    .recall-area { min-height: 250px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>PIII Recall Tester</h1>
+  <div class="header-stats">
+    <span>Topics: <span class="stat-val" id="stat-tested">0</span>/25</span>
+    <span>Avg: <span class="stat-val" id="stat-avg">—</span></span>
+    <span>Sessions: <span class="stat-val" id="stat-sessions">0</span></span>
+  </div>
+</div>
+
+<!-- VIEW 1: Topic Grid -->
+<div id="view-grid" class="view active">
+  <div class="grid-container">
+    <div class="tier-label">Tier 1 — Highest Convergence (Top 10)</div>
+    <div class="topic-grid" id="tier1-grid"></div>
+
+    <div class="tier-label">Tier 2 — Moderate Convergence</div>
+    <div class="topic-grid" id="tier2-grid"></div>
+
+    <div class="reset-all">
+      <button onclick="resetAll()">Reset all scores</button>
+    </div>
+  </div>
+</div>
+
+<!-- VIEW 2: Recall Test -->
+<div id="view-test" class="view">
+  <div class="test-container">
+    <div class="test-header">
+      <button class="back-btn" onclick="showGrid()">← Back</button>
+      <span id="test-topic-zone" class="zone-tag" style="font-size:0.65rem;color:var(--text-dim);"></span>
+    </div>
+    <div class="question-box">
+      <div class="question-label">Predicted Setter Question</div>
+      <div class="question-text" id="test-question"></div>
+    </div>
+    <textarea class="recall-area" id="recall-input" placeholder="Write your recall here. Include pathophysiology, classification, clinical features, diagnosis, and management. Don't forget Dx + Rx + Key numbers at the end."></textarea>
+    <div class="test-actions">
+      <span class="word-count" id="word-count">0 words</span>
+      <button class="submit-btn" id="submit-btn" onclick="gradeRecall()">Grade Recall</button>
+    </div>
+  </div>
+</div>
+
+<!-- VIEW 3: Results -->
+<div id="view-results" class="view">
+  <div class="results-container" id="results-content"></div>
+</div>
+
+<script>
+// ══════════════════════════════════════════════════
+// TOPIC DATA — All 25 PIII Topics
+// ══════════════════════════════════════════════════
+
+const TOPICS = [
+  // ── TIER 1 (Ranks 1-10) ──
+  {
+    id: "thyroid",
+    name: "Thyroid — Hyperthyroidism / Graves",
+    zone: "Zone H · Endocrine",
+    tier: 1,
+    question: "Discuss the causes, clinical features, diagnosis and management of Hyperthyroidism. Write a note on Thyroid storm.",
+    keywords: [
+      { term: "Graves disease", weight: 1, section: "etiology", aliases: ["graves", "grave's disease"] },
+      { term: "TSH receptor antibodies / TRAb", weight: 1, section: "etiology", aliases: ["trab", "tsi", "tsh receptor", "thyroid stimulating immunoglobulin"] },
+      { term: "Toxic MNG / toxic adenoma", weight: 0.5, section: "etiology", aliases: ["toxic multinodular", "toxic adenoma", "plummer"] },
+      { term: "Free T4 / Free T3 elevated + TSH suppressed", weight: 1, section: "diagnosis", aliases: ["free t4", "ft4", "ft3", "tsh suppressed", "low tsh", "suppressed tsh"] },
+      { term: "Radioactive iodine uptake (RAIU)", weight: 0.5, section: "diagnosis", aliases: ["raiu", "radioactive iodine", "i-131 uptake", "thyroid scan"] },
+      { term: "Antithyroid drugs: Methimazole / Carbimazole / PTU", weight: 1, section: "treatment", aliases: ["methimazole", "carbimazole", "ptu", "propylthiouracil", "antithyroid"] },
+      { term: "PTU preferred in 1st trimester / thyroid storm", weight: 0.5, section: "treatment", aliases: ["ptu first trimester", "ptu pregnancy", "ptu storm"] },
+      { term: "Radioactive iodine ablation (RAI therapy)", weight: 0.5, section: "treatment", aliases: ["rai therapy", "radioactive iodine treatment", "i-131 therapy", "ablation"] },
+      { term: "Beta-blockers (propranolol)", weight: 0.5, section: "treatment", aliases: ["propranolol", "beta blocker", "beta-blocker", "atenolol"] },
+      { term: "Ophthalmopathy / Graves eye disease", weight: 0.5, section: "clinical", aliases: ["ophthalmopathy", "exophthalmos", "proptosis", "graves eye", "lid lag", "lid retraction"] },
+      { term: "Thyroid storm / thyrotoxic crisis", weight: 1, section: "emergency", aliases: ["thyroid storm", "thyrotoxic crisis", "burch-wartofsky", "burch wartofsky"] },
+      { term: "Burch-Wartofsky score", weight: 0.5, section: "emergency", aliases: ["burch wartofsky", "burch-wartofsky score", "point scale storm"] },
+      { term: "Storm Rx: PTU + iodine + steroids + propranolol + cooling", weight: 1, section: "emergency", aliases: ["ptu iodine steroid", "lugol", "potassium iodide", "hydrocortisone storm", "dexamethasone storm"] },
+      { term: "Weight loss / heat intolerance / tremor / tachycardia", weight: 0.5, section: "clinical", aliases: ["weight loss", "heat intolerance", "tremor", "tachycardia", "palpitation"] },
+      { term: "Subclinical hyperthyroidism", weight: 0.5, section: "diagnosis", aliases: ["subclinical", "subclinical hyperthyroid"] },
+    ],
+    retention: [
+      "Burch-Wartofsky score ≥45 = thyroid storm; 25-44 = impending; <25 = unlikely",
+      "PTU blocks peripheral T4→T3 conversion — that's why it's preferred in storm (not just antithyroid effect)",
+      "Iodine must be given 1 hour AFTER PTU to prevent iodine fueling new hormone synthesis (Wolff-Chaikoff escape)",
+      "Graves ophthalmopathy can worsen after RAI — consider steroids if active eye disease",
+      "Amiodarone causes BOTH hyper (Type 1: iodine load in underlying disease; Type 2: destructive thyroiditis) and hypothyroidism"
+    ],
+    errorTraps: {
+      tailDrop: "Thyroid storm management sequence — PTU before iodine timing, steroid dose, cooling measures",
+      oppositeSwap: "Type 1 vs Type 2 amiodarone thyrotoxicosis (excess production vs destruction)",
+      crossContam: "Don't confuse Hashimoto's antibodies (anti-TPO, anti-Tg) with Graves (TRAb/TSI)"
+    }
+  },
+  {
+    id: "heart_failure",
+    name: "Heart Failure — Classification & Rx",
+    zone: "Zone C · Cardiology",
+    tier: 1,
+    question: "Discuss the pathophysiology, classification and management of Heart Failure. Write a note on HFpEF.",
+    keywords: [
+      { term: "NYHA Class I-IV", weight: 1, section: "classification", aliases: ["nyha", "nyha class", "functional class", "class i ii iii iv"] },
+      { term: "ACC/AHA Stages A-D", weight: 0.5, section: "classification", aliases: ["acc aha", "stage a b c d", "stages"] },
+      { term: "HFrEF (EF ≤40%)", weight: 1, section: "classification", aliases: ["hfref", "reduced ejection", "ef less than 40", "ef ≤40", "systolic heart failure"] },
+      { term: "HFpEF (EF ≥50%)", weight: 1, section: "classification", aliases: ["hfpef", "preserved ejection", "ef greater than 50", "ef ≥50", "diastolic heart failure"] },
+      { term: "HFmrEF (EF 41-49%)", weight: 0.5, section: "classification", aliases: ["hfmref", "mildly reduced", "mid-range", "ef 41-49"] },
+      { term: "RAAS blockade: ACEi/ARB/ARNI", weight: 1, section: "treatment", aliases: ["acei", "arb", "arni", "sacubitril", "valsartan", "enalapril", "ramipril", "entresto"] },
+      { term: "Beta-blockers (carvedilol/metoprolol/bisoprolol)", weight: 1, section: "treatment", aliases: ["carvedilol", "metoprolol succinate", "bisoprolol", "beta blocker"] },
+      { term: "MRA (spironolactone/eplerenone)", weight: 0.5, section: "treatment", aliases: ["mra", "spironolactone", "eplerenone", "aldosterone antagonist"] },
+      { term: "SGLT2i (dapagliflozin/empagliflozin)", weight: 1, section: "treatment", aliases: ["sglt2", "dapagliflozin", "empagliflozin", "sglt2 inhibitor", "gliflozin"] },
+      { term: "Quadruple therapy / GDMT", weight: 0.5, section: "treatment", aliases: ["quadruple", "four pillars", "gdmt", "guideline directed"] },
+      { term: "Neurohormonal activation (RAAS + SNS)", weight: 0.5, section: "pathophysiology", aliases: ["neurohormonal", "raas activation", "sympathetic", "aldosterone"] },
+      { term: "BNP / NT-proBNP", weight: 0.5, section: "diagnosis", aliases: ["bnp", "nt-probnp", "natriuretic peptide", "brain natriuretic"] },
+      { term: "Diuretics for congestion", weight: 0.5, section: "treatment", aliases: ["furosemide", "diuretic", "loop diuretic", "decongestion"] },
+      { term: "Device therapy: ICD / CRT", weight: 0.5, section: "treatment", aliases: ["icd", "crt", "cardiac resynchronization", "defibrillator", "biventricular"] },
+      { term: "HFpEF management (diuretics + SGLT2i + comorbidities)", weight: 0.5, section: "hfpef", aliases: ["hfpef treatment", "hfpef management", "emperor preserved", "deliver trial"] },
+    ],
+    retention: [
+      "Quadruple therapy for HFrEF: ARNI + BB + MRA + SGLT2i — all four reduce mortality independently",
+      "SGLT2i is the only drug class with mortality benefit across HFrEF AND HFpEF (EMPEROR-Preserved, DELIVER)",
+      "CRT indicated when LVEF ≤35% + LBBB + QRS ≥150ms + NYHA II-IV despite optimal medical therapy",
+      "Hydralazine-nitrate combination for patients intolerant to ACEi/ARB (especially African Americans — A-HeFT trial)",
+      "HFpEF is primarily diastolic dysfunction — diagnose with elevated filling pressures (E/e' >14, elevated BNP) with preserved EF"
+    ],
+    errorTraps: {
+      tailDrop: "Device therapy criteria (ICD vs CRT indications, EF cutoffs, QRS criteria)",
+      oppositeSwap: "HFrEF vs HFpEF management — don't apply HFrEF drugs to HFpEF (BB/ARNI not proven in HFpEF)",
+      crossContam: "Don't mix up carvedilol (non-selective BB for HF) with metoprolol tartrate (wrong formulation — need succinate)"
+    }
+  },
+  {
+    id: "sle",
+    name: "SLE — Diagnosis & Management",
+    zone: "Zone A · Autoimmune",
+    tier: 1,
+    question: "Discuss the etiopathogenesis, clinical features, diagnosis and management of Systemic Lupus Erythematosus.",
+    keywords: [
+      { term: "ANA (antinuclear antibody) — sensitive", weight: 1, section: "diagnosis", aliases: ["ana", "antinuclear", "ana positive", "ana sensitivity"] },
+      { term: "Anti-dsDNA — specific, correlates with nephritis", weight: 1, section: "diagnosis", aliases: ["anti-dsdna", "dsdna", "double stranded dna", "ds-dna"] },
+      { term: "Anti-Smith — most specific", weight: 0.5, section: "diagnosis", aliases: ["anti-smith", "anti-sm", "sm antibody"] },
+      { term: "ACR/EULAR 2019 criteria", weight: 1, section: "diagnosis", aliases: ["acr eular", "2019 criteria", "classification criteria", "entry criterion ana"] },
+      { term: "Lupus nephritis classes I-VI (ISN/RPS)", weight: 1, section: "renal", aliases: ["lupus nephritis", "class iii", "class iv", "class v", "isn rps", "diffuse proliferative"] },
+      { term: "Complement C3/C4 low — active disease", weight: 0.5, section: "diagnosis", aliases: ["c3", "c4", "complement", "low complement", "hypocomplementemia"] },
+      { term: "Hydroxychloroquine — ALL SLE patients", weight: 1, section: "treatment", aliases: ["hydroxychloroquine", "hcq", "plaquenil"] },
+      { term: "Mycophenolate for nephritis (Class III/IV)", weight: 0.5, section: "treatment", aliases: ["mycophenolate", "mmf", "cellcept", "mycophenolic"] },
+      { term: "Cyclophosphamide for severe/refractory", weight: 0.5, section: "treatment", aliases: ["cyclophosphamide", "cyc", "euro-lupus"] },
+      { term: "Belimumab (anti-BLyS/BAFF)", weight: 0.5, section: "treatment", aliases: ["belimumab", "benlysta", "blys", "baff"] },
+      { term: "Malar rash / discoid rash / photosensitivity", weight: 0.5, section: "clinical", aliases: ["malar rash", "butterfly rash", "discoid", "photosensitivity"] },
+      { term: "APLA syndrome overlap", weight: 0.5, section: "clinical", aliases: ["antiphospholipid", "apla", "lupus anticoagulant", "anti-cardiolipin"] },
+      { term: "Drug-induced lupus (hydralazine, procainamide, isoniazid)", weight: 0.5, section: "differential", aliases: ["drug induced lupus", "dil", "anti-histone", "hydralazine lupus", "procainamide"] },
+      { term: "Voclosporin / anifrolumab — newer agents", weight: 0.5, section: "treatment", aliases: ["voclosporin", "anifrolumab", "lupkynis", "saphnelo"] },
+    ],
+    retention: [
+      "ANA is the entry criterion in ACR/EULAR 2019 — must be ≥1:80 before scoring clinical/immunological domains",
+      "Class IV (diffuse proliferative GN) is the most common and most severe form of lupus nephritis",
+      "Drug-induced lupus has anti-histone antibodies (not anti-dsDNA), spares kidneys and CNS",
+      "Hydroxychloroquine reduces flares, damage accrual, and mortality — continue even in remission",
+      "Pregnancy in SLE: anti-Ro/SSA causes neonatal lupus + congenital heart block; APLA causes recurrent miscarriage"
+    ],
+    errorTraps: {
+      tailDrop: "Newer biologics (belimumab, voclosporin, anifrolumab) and pregnancy-specific management",
+      oppositeSwap: "ANA = sensitive vs Anti-Sm = specific (don't swap these roles)",
+      crossContam: "Don't confuse lupus nephritis Class V (membranous) with primary membranous nephropathy (PLA2R)"
+    }
+  },
+  {
+    id: "ms",
+    name: "Multiple Sclerosis",
+    zone: "Zone G · Neurology",
+    tier: 1,
+    question: "Discuss the etiopathogenesis, clinical features, diagnosis and management of Multiple Sclerosis. Differentiate from NMO.",
+    keywords: [
+      { term: "Demyelinating disease / CNS autoimmune", weight: 0.5, section: "pathology", aliases: ["demyelinating", "demyelination", "autoimmune cns", "white matter"] },
+      { term: "McDonald criteria 2017 (DIS + DIT)", weight: 1, section: "diagnosis", aliases: ["mcdonald", "dissemination in space", "dissemination in time", "dis dit"] },
+      { term: "Relapsing-remitting MS (RRMS) — most common", weight: 1, section: "classification", aliases: ["rrms", "relapsing remitting", "relapsing-remitting"] },
+      { term: "SPMS / PPMS subtypes", weight: 0.5, section: "classification", aliases: ["spms", "ppms", "secondary progressive", "primary progressive"] },
+      { term: "Oligoclonal bands in CSF", weight: 0.5, section: "diagnosis", aliases: ["oligoclonal", "ocb", "oligoclonal bands", "csf bands"] },
+      { term: "MRI: periventricular / juxtacortical / infratentorial / spinal lesions", weight: 1, section: "diagnosis", aliases: ["periventricular", "dawson fingers", "juxtacortical", "infratentorial", "t2 flair"] },
+      { term: "Optic neuritis (presenting feature)", weight: 0.5, section: "clinical", aliases: ["optic neuritis", "visual loss", "marcus gunn", "rapd", "painful vision loss"] },
+      { term: "Acute relapse: IV methylprednisolone", weight: 0.5, section: "treatment", aliases: ["methylprednisolone", "iv steroids", "pulse steroids", "acute relapse treatment"] },
+      { term: "DMTs: Interferon-beta / Glatiramer / Natalizumab / Ocrelizumab / Fingolimod", weight: 1, section: "treatment", aliases: ["interferon", "glatiramer", "natalizumab", "ocrelizumab", "fingolimod", "dmt"] },
+      { term: "Natalizumab risk: PML (JC virus)", weight: 0.5, section: "treatment", aliases: ["pml", "jc virus", "progressive multifocal", "natalizumab risk"] },
+      { term: "NMO / NMOSD: AQP4 antibody", weight: 1, section: "differential", aliases: ["nmo", "nmosd", "neuromyelitis optica", "aqp4", "aquaporin"] },
+      { term: "MS vs NMO: NMO has longitudinally extensive transverse myelitis (≥3 segments)", weight: 0.5, section: "differential", aliases: ["letm", "longitudinally extensive", "3 segments", "long segment"] },
+      { term: "Uhthoff phenomenon (heat worsening)", weight: 0.5, section: "clinical", aliases: ["uhthoff", "heat sensitivity", "hot bath sign"] },
+      { term: "Lhermitte sign (neck flexion → electric shock)", weight: 0.5, section: "clinical", aliases: ["lhermitte", "electric shock", "neck flexion"] },
+    ],
+    retention: [
+      "McDonald 2017: DIS needs ≥2 of 4 areas (periventricular, juxtacortical, infratentorial, spinal); DIT needs new lesion on follow-up OR simultaneous enhancing + non-enhancing",
+      "NMO: AQP4-IgG positive, attacks are severe (bilateral optic neuritis, LETM ≥3 segments), treat with rituximab/eculizumab — NOT beta-interferon (worsens NMO)",
+      "Ocrelizumab is the ONLY approved DMT for primary progressive MS (PPMS)",
+      "Natalizumab: check JC virus serology before starting — PML risk increases with JCV+ AND prior immunosuppression AND >2 years on drug",
+      "MS lesions are perpendicular to ventricles (Dawson fingers) vs NMO lesions are centrally located in spinal cord (gray matter)"
+    ],
+    errorTraps: {
+      tailDrop: "DMT comparison table — which drug for which subtype, and NMO-specific treatment (rituximab, eculizumab)",
+      oppositeSwap: "Beta-interferon helps MS but WORSENS NMO — critical distinction",
+      crossContam: "Don't confuse MOG-associated disease (MOG-AD) with AQP4+ NMO — different antibody, different prognosis"
+    }
+  },
+  {
+    id: "cushing",
+    name: "Cushing Syndrome",
+    zone: "Zone H · Endocrine",
+    tier: 1,
+    question: "Discuss the etiology, clinical features, diagnostic evaluation and management of Cushing's syndrome.",
+    keywords: [
+      { term: "ACTH-dependent vs ACTH-independent", weight: 1, section: "classification", aliases: ["acth dependent", "acth independent", "acth-dependent", "acth-independent"] },
+      { term: "Cushing disease = pituitary adenoma (most common endogenous)", weight: 1, section: "etiology", aliases: ["cushing disease", "pituitary adenoma", "pituitary corticotroph", "cushing's disease"] },
+      { term: "Ectopic ACTH (small cell lung ca)", weight: 0.5, section: "etiology", aliases: ["ectopic acth", "small cell", "sclc", "ectopic cushing", "bronchial carcinoid"] },
+      { term: "Adrenal adenoma/carcinoma (ACTH-independent)", weight: 0.5, section: "etiology", aliases: ["adrenal adenoma", "adrenal carcinoma", "adrenal cushing"] },
+      { term: "Screening: 24h urine cortisol / overnight DST / late-night salivary cortisol", weight: 1, section: "diagnosis", aliases: ["24 hour urine", "overnight dexamethasone", "1mg dst", "salivary cortisol", "screening test"] },
+      { term: "Low-dose DST (confirms Cushing) → ACTH level → High-dose DST / CRH / IPSS", weight: 1, section: "diagnosis", aliases: ["low dose dst", "high dose dst", "crh stimulation", "ipss", "inferior petrosal sinus"] },
+      { term: "IPSS (inferior petrosal sinus sampling)", weight: 0.5, section: "diagnosis", aliases: ["ipss", "petrosal sinus", "petrosal sampling"] },
+      { term: "Centripetal obesity / moon facies / buffalo hump / striae", weight: 0.5, section: "clinical", aliases: ["moon face", "buffalo hump", "centripetal", "truncal obesity", "purple striae", "striae"] },
+      { term: "Hypertension / diabetes / osteoporosis / proximal myopathy", weight: 0.5, section: "clinical", aliases: ["proximal myopathy", "hypertension cushing", "diabetes cushing", "osteoporosis"] },
+      { term: "Transsphenoidal surgery (Cushing disease)", weight: 0.5, section: "treatment", aliases: ["transsphenoidal", "tss", "pituitary surgery"] },
+      { term: "Medical: Ketoconazole / Metyrapone / Osilodrostat / Pasireotide", weight: 0.5, section: "treatment", aliases: ["ketoconazole", "metyrapone", "osilodrostat", "pasireotide", "medical management cushing"] },
+      { term: "Pseudo-Cushing (depression, alcoholism)", weight: 0.5, section: "differential", aliases: ["pseudo cushing", "pseudo-cushing", "alcoholic cushing"] },
+    ],
+    retention: [
+      "Diagnostic algorithm: Screen (any of 3 tests) → Confirm (low-dose DST or repeat abnormal screening) → Localize (ACTH level → high-dose DST/CRH → IPSS if ambiguous)",
+      "IPSS: central:peripheral ACTH ratio >2 (basal) or >3 (after CRH) = pituitary source",
+      "Ectopic ACTH: does NOT suppress on high-dose DST, severe hypokalemic alkalosis, skin pigmentation (very high ACTH)",
+      "Nelson syndrome: pituitary adenoma enlargement after bilateral adrenalectomy — hyperpigmentation + mass effect",
+      "Iatrogenic Cushing (exogenous steroids) is by far the most common cause — always exclude before workup"
+    ],
+    errorTraps: {
+      tailDrop: "Nelson syndrome, adrenal crisis risk post-surgery, perioperative steroid replacement",
+      oppositeSwap: "High-dose DST: pituitary Cushing DOES suppress (>50%), ectopic does NOT — don't reverse this",
+      crossContam: "Don't confuse Cushing (hypercortisolism) with Addison (hypocortisolism) — opposite ends of same axis"
+    }
+  },
+  {
+    id: "myeloma",
+    name: "Multiple Myeloma",
+    zone: "Zone B · Hematology",
+    tier: 1,
+    question: "Discuss the clinical features, diagnostic criteria and management of Multiple Myeloma. Differentiate MGUS from SMM.",
+    keywords: [
+      { term: "CRAB criteria (Calcium, Renal, Anemia, Bone)", weight: 1, section: "diagnosis", aliases: ["crab", "calcium renal anemia bone", "end organ damage"] },
+      { term: "SLiM-CRAB (myeloma-defining events)", weight: 0.5, section: "diagnosis", aliases: ["slim crab", "slim-crab", "myeloma defining events", "sixty percent", "light chain ratio"] },
+      { term: "M-protein / monoclonal spike on SPEP", weight: 1, section: "diagnosis", aliases: ["m protein", "m-protein", "monoclonal spike", "spep", "serum protein electrophoresis", "m spike"] },
+      { term: "Bone marrow: ≥10% clonal plasma cells", weight: 0.5, section: "diagnosis", aliases: ["plasma cells", "bone marrow biopsy", "clonal plasma cells", "≥10%"] },
+      { term: "MGUS → SMM → MM spectrum", weight: 1, section: "classification", aliases: ["mgus", "smoldering", "smm", "spectrum", "premalignant"] },
+      { term: "Free light chain ratio (kappa/lambda)", weight: 0.5, section: "diagnosis", aliases: ["free light chain", "kappa lambda", "light chain ratio", "freelite"] },
+      { term: "Bence Jones protein (urine light chains)", weight: 0.5, section: "diagnosis", aliases: ["bence jones", "urine light chain", "upep"] },
+      { term: "Skeletal survey / PET-CT (lytic lesions)", weight: 0.5, section: "diagnosis", aliases: ["lytic lesion", "skeletal survey", "punched out", "pet ct"] },
+      { term: "VRd (Bortezomib-Lenalidomide-Dexamethasone)", weight: 1, section: "treatment", aliases: ["vrd", "bortezomib", "lenalidomide", "velcade", "revlimid"] },
+      { term: "Autologous stem cell transplant (eligible patients)", weight: 0.5, section: "treatment", aliases: ["asct", "autologous transplant", "stem cell transplant", "transplant eligible"] },
+      { term: "Bisphosphonates / Denosumab for bone disease", weight: 0.5, section: "treatment", aliases: ["zoledronic acid", "bisphosphonate", "denosumab", "bone disease"] },
+      { term: "Renal: light chain cast nephropathy", weight: 0.5, section: "complications", aliases: ["cast nephropathy", "myeloma kidney", "light chain deposition"] },
+      { term: "ISS / R-ISS staging", weight: 0.5, section: "staging", aliases: ["iss", "r-iss", "international staging", "beta-2 microglobulin", "albumin staging"] },
+    ],
+    retention: [
+      "MGUS: M-protein <3g/dL + clonal PC <10% + NO CRAB. Progresses to MM at ~1%/year",
+      "SLiM-CRAB added 3 biomarkers as myeloma-defining: S=Sixty% PC, Li=Light chain ratio ≥100, M=MRI >1 focal lesion",
+      "R-ISS staging uses β2-microglobulin + albumin + LDH + high-risk cytogenetics (del17p, t(4;14), t(14;16))",
+      "Avoid contrast dye and NSAIDs — both worsen myeloma nephropathy",
+      "Daratumumab (anti-CD38) now standard in frontline regimens (D-VRd) for transplant-eligible patients"
+    ],
+    errorTraps: {
+      tailDrop: "R-ISS staging details, maintenance therapy (lenalidomide), supportive care (EPO, bisphosphonates)",
+      oppositeSwap: "MGUS is benign (<10% PC, no CRAB) vs SMM is intermediate (≥10% PC, no CRAB) vs MM (CRAB+)",
+      crossContam: "Don't confuse MM (IgG/IgA) with Waldenström (IgM) — different disease, different treatment"
+    }
+  },
+  {
+    id: "ckd",
+    name: "CKD — Staging & Complications",
+    zone: "Zone D · Nephrology",
+    tier: 1,
+    question: "Discuss the staging, complications and management of Chronic Kidney Disease. Write a note on CKD-MBD.",
+    keywords: [
+      { term: "KDIGO staging: G1-G5 + Albuminuria A1-A3", weight: 1, section: "classification", aliases: ["kdigo", "gfr staging", "g1 g2 g3 g4 g5", "albuminuria staging"] },
+      { term: "GFR <60 for ≥3 months = CKD", weight: 0.5, section: "definition", aliases: ["gfr less than 60", "gfr <60", "3 months", "definition ckd"] },
+      { term: "Diabetes + Hypertension = top causes", weight: 0.5, section: "etiology", aliases: ["diabetic nephropathy", "hypertensive nephrosclerosis", "commonest cause"] },
+      { term: "ACEi/ARB for proteinuria reduction", weight: 0.5, section: "treatment", aliases: ["acei ckd", "arb ckd", "proteinuria reduction", "raas blockade ckd"] },
+      { term: "SGLT2i (dapagliflozin — DAPA-CKD)", weight: 0.5, section: "treatment", aliases: ["sglt2i ckd", "dapagliflozin ckd", "dapa-ckd", "credence"] },
+      { term: "CKD-MBD: ↑PTH ↑Phosphate ↓Calcium ↓Vitamin D", weight: 1, section: "complications", aliases: ["ckd-mbd", "ckd mbd", "mineral bone disease", "renal osteodystrophy", "secondary hyperparathyroidism"] },
+      { term: "Phosphate binders (calcium carbonate, sevelamer)", weight: 0.5, section: "treatment", aliases: ["phosphate binder", "sevelamer", "calcium carbonate binder", "lanthanum"] },
+      { term: "Calcitriol / active vitamin D", weight: 0.5, section: "treatment", aliases: ["calcitriol", "active vitamin d", "1,25 dihydroxy", "alfacalcidol"] },
+      { term: "Erythropoietin (EPO) for renal anemia", weight: 0.5, section: "treatment", aliases: ["epo", "erythropoietin", "epo ckd", "renal anemia", "darbepoetin"] },
+      { term: "Dialysis indications (AEIOU)", weight: 1, section: "treatment", aliases: ["dialysis indication", "aeiou", "acidosis electrolyte intoxication overload uremia"] },
+      { term: "Hyperkalemia management in CKD", weight: 0.5, section: "complications", aliases: ["hyperkalemia ckd", "potassium restriction", "patiromer", "sodium zirconium"] },
+      { term: "Metabolic acidosis correction (NaHCO3)", weight: 0.5, section: "complications", aliases: ["metabolic acidosis", "sodium bicarbonate", "nahco3 ckd"] },
+      { term: "Cardiovascular disease = #1 cause of death in CKD", weight: 0.5, section: "complications", aliases: ["cardiovascular ckd", "cv death ckd", "accelerated atherosclerosis"] },
+    ],
+    retention: [
+      "KDIGO: G3 split into G3a (45-59) and G3b (30-44) — this is where most referrals to nephrology happen",
+      "CKD-MBD sequence: ↓GFR → ↓1α-hydroxylase → ↓calcitriol → ↓Ca²⁺ absorption → ↑PTH → phosphate retention worsens the cycle",
+      "Target Hb with EPO: 10-11.5 g/dL — do NOT normalize (CHOIR/TREAT trials showed harm with higher targets)",
+      "Finerenone (non-steroidal MRA) reduces CKD progression in diabetic kidney disease (FIDELIO/FIGARO)",
+      "Dialysis usually initiated at GFR <10 (or <15 in diabetics) with uremic symptoms — not based on GFR alone"
+    ],
+    errorTraps: {
+      tailDrop: "Finerenone, patiromer/SZC for hyperkalemia, and transplant evaluation criteria",
+      oppositeSwap: "1α-hydroxylase is ↓ in CKD (not ↑) — this produces ↓ active vitamin D, not excess",
+      crossContam: "Don't confuse CKD-MBD (chronic, PTH-driven) with tumor lysis syndrome (acute, phosphate dump)"
+    }
+  },
+  {
+    id: "epilepsy",
+    name: "Epilepsy / Status Epilepticus",
+    zone: "Zone G · Neurology",
+    tier: 1,
+    question: "Classify seizures (ILAE 2017). Discuss the management of Status Epilepticus.",
+    keywords: [
+      { term: "ILAE 2017 classification", weight: 1, section: "classification", aliases: ["ilae 2017", "ilae classification", "new classification"] },
+      { term: "Focal onset (aware vs impaired awareness)", weight: 0.5, section: "classification", aliases: ["focal onset", "focal aware", "focal impaired awareness", "partial seizure"] },
+      { term: "Generalized onset (motor: tonic-clonic, absence, myoclonic)", weight: 0.5, section: "classification", aliases: ["generalized onset", "tonic clonic", "absence", "myoclonic", "gtcs"] },
+      { term: "Status epilepticus: seizure >5 min or recurrent without recovery", weight: 1, section: "definition", aliases: ["status epilepticus", "se definition", ">5 minutes", "continuous seizure"] },
+      { term: "SE Step 1: Benzodiazepine (lorazepam IV / diazepam / midazolam IM)", weight: 1, section: "treatment", aliases: ["lorazepam", "diazepam", "midazolam", "benzodiazepine", "first line se"] },
+      { term: "SE Step 2: Fosphenytoin / Phenytoin / Levetiracetam / Valproate IV", weight: 1, section: "treatment", aliases: ["fosphenytoin", "phenytoin", "levetiracetam", "valproate", "second line se"] },
+      { term: "SE Step 3 (Refractory): Propofol / Midazolam / Thiopentone infusion + EEG", weight: 0.5, section: "treatment", aliases: ["refractory se", "propofol", "thiopentone", "pentobarbital", "rse"] },
+      { term: "Super-refractory SE: >24 hours despite anesthesia", weight: 0.5, section: "treatment", aliases: ["super refractory", "srse", ">24 hours"] },
+      { term: "AED selection by seizure type (Valproate for generalized, Carbamazepine/Levetiracetam for focal)", weight: 1, section: "treatment", aliases: ["valproate generalized", "carbamazepine focal", "levetiracetam", "lamotrigine", "aed selection"] },
+      { term: "Carbamazepine/Phenytoin can worsen absence/myoclonic", weight: 0.5, section: "treatment", aliases: ["worsen absence", "worsen myoclonic", "carbamazepine absence", "sodium channel blocker"] },
+      { term: "SUDEP (sudden unexpected death in epilepsy)", weight: 0.5, section: "complications", aliases: ["sudep", "sudden unexpected death"] },
+      { term: "EEG for diagnosis / classification", weight: 0.5, section: "diagnosis", aliases: ["eeg", "electroencephalogram", "3 hz spike wave", "generalized spike"] },
+      { term: "Women: teratogenicity (valproate contraindicated in pregnancy)", weight: 0.5, section: "treatment", aliases: ["teratogenic", "valproate pregnancy", "neural tube defect", "lamotrigine pregnancy safe"] },
+    ],
+    retention: [
+      "SE treatment timeline: 0-5 min = benzodiazepine, 5-20 min = second-line AED, 20-40 min = RSE protocol (anesthesia + EEG)",
+      "Carbamazepine and phenytoin WORSEN absence and myoclonic seizures — never use for generalized epilepsies (use valproate/levetiracetam)",
+      "Valproate: teratogenic (NTDs, cognitive effects) → lamotrigine or levetiracetam preferred in women of childbearing age",
+      "ILAE 2017 replaced 'partial' with 'focal' and added 'unknown onset' category — examiners expect new terminology",
+      "Lorazepam is preferred benzodiazepine for SE (longer duration of action in brain vs diazepam despite shorter half-life)"
+    ],
+    errorTraps: {
+      tailDrop: "Super-refractory SE management, SUDEP counseling, women-specific AED considerations",
+      oppositeSwap: "Carbamazepine = good for focal, BAD for generalized absence/myoclonic — don't reverse",
+      crossContam: "Don't confuse SE definition (>5 min operational, >30 min pathological) with NCSE (non-convulsive — needs EEG)"
+    }
+  },
+  {
+    id: "cirrhosis",
+    name: "Cirrhosis + Complications",
+    zone: "Zone F · Gastro-Hepatology",
+    tier: 1,
+    question: "Discuss the etiology, complications and management of Cirrhosis. Write notes on SBP and Hepatorenal syndrome.",
+    keywords: [
+      { term: "Child-Pugh score (A/B/C)", weight: 1, section: "staging", aliases: ["child pugh", "child-turcotte-pugh", "child a b c", "ctp score"] },
+      { term: "MELD score (transplant listing)", weight: 0.5, section: "staging", aliases: ["meld", "meld score", "model for end stage liver", "meld-na"] },
+      { term: "Portal hypertension (HVPG >5, clinically significant >10)", weight: 0.5, section: "pathophysiology", aliases: ["portal hypertension", "hvpg", "portal htn"] },
+      { term: "Variceal bleeding: banding + octreotide/terlipressin + antibiotics", weight: 1, section: "complications", aliases: ["variceal bleed", "band ligation", "octreotide", "terlipressin", "variceal hemorrhage"] },
+      { term: "NSBB (propranolol/carvedilol) for primary/secondary prophylaxis", weight: 0.5, section: "treatment", aliases: ["nsbb", "propranolol varices", "carvedilol varices", "baveno"] },
+      { term: "Ascites: Na restriction + spironolactone ± furosemide", weight: 0.5, section: "complications", aliases: ["ascites management", "spironolactone ascites", "sodium restriction"] },
+      { term: "SBP: PMN >250/mm³, empiric cefotaxime, albumin day 1+3", weight: 1, section: "complications", aliases: ["sbp", "spontaneous bacterial peritonitis", "pmn >250", "cefotaxime", "ascitic fluid"] },
+      { term: "SBP prophylaxis (norfloxacin / TMP-SMX)", weight: 0.5, section: "complications", aliases: ["sbp prophylaxis", "norfloxacin", "prophylactic antibiotic sbp"] },
+      { term: "HRS: Type 1 (rapid, AKI) vs Type 2 (gradual)", weight: 1, section: "complications", aliases: ["hrs", "hepatorenal", "hrs type 1", "hrs type 2", "hepatorenal syndrome"] },
+      { term: "HRS Rx: Terlipressin + albumin (first-line)", weight: 0.5, section: "complications", aliases: ["terlipressin albumin", "hrs treatment", "midodrine octreotide"] },
+      { term: "Hepatic encephalopathy: lactulose + rifaximin", weight: 0.5, section: "complications", aliases: ["hepatic encephalopathy", "lactulose", "rifaximin", "ammonia", "west haven"] },
+      { term: "TIPS (transjugular intrahepatic portosystemic shunt)", weight: 0.5, section: "treatment", aliases: ["tips", "transjugular", "portosystemic shunt"] },
+      { term: "Liver transplant (definitive)", weight: 0.5, section: "treatment", aliases: ["liver transplant", "transplant", "olt"] },
+    ],
+    retention: [
+      "Child-Pugh uses 5 variables: Bilirubin, Albumin, INR/PT, Ascites, Encephalopathy (1-3 points each, max 15)",
+      "SBP diagnosis: ascitic PMN >250 AND culture positive. Treat empirically even if culture pending — 20% mortality if delayed",
+      "HRS-AKI (formerly Type 1): Cr rise >0.3 mg/dL in 48h or >50% in 7 days, no improvement with albumin challenge + diuretic withdrawal",
+      "NSBB controversial in refractory ascites (Baveno VII) — may worsen hypotension. Stop if SBP <90 or Na <125",
+      "Albumin infusion in SBP (1.5 g/kg day 1, 1 g/kg day 3) reduces HRS and mortality — this is a key examiner question"
+    ],
+    errorTraps: {
+      tailDrop: "TIPS indications, transplant criteria (Milan for HCC), NSBB contraindications in advanced cirrhosis",
+      oppositeSwap: "HRS-AKI (Type 1) = rapid & lethal vs HRS-NAKI (Type 2) = gradual & more stable — don't flip",
+      crossContam: "Don't confuse SBP (PMN >250, usually single organism) with secondary peritonitis (polymicrobial, surgery needed)"
+    }
+  },
+  {
+    id: "pht",
+    name: "Pulmonary Hypertension",
+    zone: "Zone E · Pulmonology",
+    tier: 1,
+    question: "Classify Pulmonary Hypertension (WHO groups). Discuss the clinical features and management of PAH.",
+    keywords: [
+      { term: "WHO Group 1-5 classification", weight: 1, section: "classification", aliases: ["who group", "group 1", "group 2", "group 3", "group 4", "group 5", "nice classification"] },
+      { term: "PAH (Group 1): idiopathic / CTD / CHD / drugs", weight: 0.5, section: "classification", aliases: ["pah", "pulmonary arterial", "ipah", "group 1 pah"] },
+      { term: "Group 2: Left heart disease (most common overall)", weight: 0.5, section: "classification", aliases: ["group 2", "left heart", "pvh", "post-capillary"] },
+      { term: "Group 3: Lung disease/hypoxia (COPD, ILD)", weight: 0.5, section: "classification", aliases: ["group 3", "copd pht", "ild pht", "hypoxic"] },
+      { term: "Group 4: CTEPH", weight: 0.5, section: "classification", aliases: ["cteph", "chronic thromboembolic", "group 4"] },
+      { term: "mPAP >20 mmHg (definition, updated from >25)", weight: 0.5, section: "diagnosis", aliases: ["mpap", "mean pulmonary arterial pressure", ">20 mmhg", "hemodynamic definition"] },
+      { term: "Right heart catheterization (gold standard)", weight: 0.5, section: "diagnosis", aliases: ["rhc", "right heart cath", "catheterization", "swan ganz"] },
+      { term: "Acute vasoreactivity testing → CCB if positive", weight: 0.5, section: "treatment", aliases: ["vasoreactivity", "acute vasodilator test", "ccb responder", "nitric oxide test"] },
+      { term: "ERA: Bosentan / Ambrisentan / Macitentan", weight: 0.5, section: "treatment", aliases: ["era", "bosentan", "ambrisentan", "macitentan", "endothelin receptor"] },
+      { term: "PDE5i: Sildenafil / Tadalafil", weight: 0.5, section: "treatment", aliases: ["pde5", "sildenafil", "tadalafil", "phosphodiesterase"] },
+      { term: "Prostanoids: Epoprostenol / Iloprost / Treprostinil", weight: 0.5, section: "treatment", aliases: ["prostanoid", "epoprostenol", "iloprost", "treprostinil", "prostacyclin"] },
+      { term: "Riociguat (sGC stimulator)", weight: 0.5, section: "treatment", aliases: ["riociguat", "sgc stimulator", "soluble guanylate cyclase"] },
+      { term: "Combination therapy + early referral for transplant", weight: 0.5, section: "treatment", aliases: ["combination therapy", "upfront combination", "lung transplant pah"] },
+      { term: "CTEPH: Pulmonary endarterectomy (PEA) curative", weight: 0.5, section: "treatment", aliases: ["pea", "endarterectomy", "cteph surgery"] },
+    ],
+    retention: [
+      "Updated hemodynamic definition (2022): mPAP >20 mmHg + PVR >2 WU (replaces old >25 mmHg cutoff)",
+      "Only ~10% of PAH patients are vasoreactivity-positive (respond to CCB) — the rest need PAH-specific therapy",
+      "Group 2 PH (left heart disease) is the MOST COMMON cause of PH overall — don't treat with PAH-specific drugs (harmful)",
+      "Riociguat is contraindicated with PDE5i (hypotension risk) — never combine",
+      "CTEPH is the only CURABLE form of PH — pulmonary endarterectomy (PEA) is curative; riociguat or BPA for inoperable"
+    ],
+    errorTraps: {
+      tailDrop: "CTEPH workup (V/Q scan before CTPA), balloon pulmonary angioplasty, transplant referral criteria",
+      oppositeSwap: "Pre-capillary (PAH, Group 1) vs Post-capillary (LHD, Group 2) — PCWP ≤15 vs >15",
+      crossContam: "Don't treat Group 2/3 PH with PAH drugs — sildenafil/bosentan only for Group 1 (and riociguat for Group 4)"
+    }
+  },
+
+  // ── TIER 2 (Ranks 11-25) ──
+  {
+    id: "sarcoidosis",
+    name: "Sarcoidosis",
+    zone: "Zone E · Pulmonology",
+    tier: 2,
+    question: "Discuss the etiopathogenesis, clinical features, diagnosis and management of Sarcoidosis.",
+    keywords: [
+      { term: "Non-caseating granulomas", weight: 1, section: "pathology", aliases: ["non-caseating", "noncaseating", "epithelioid granuloma", "granulomatous"] },
+      { term: "Bilateral hilar lymphadenopathy (BHL)", weight: 1, section: "radiology", aliases: ["bilateral hilar", "bhl", "hilar lymphadenopathy"] },
+      { term: "Scadding staging I-IV", weight: 0.5, section: "classification", aliases: ["scadding", "stage i ii iii iv", "staging sarcoidosis"] },
+      { term: "Elevated ACE / Hypercalcemia (1α-hydroxylase by macrophages)", weight: 0.5, section: "diagnosis", aliases: ["ace level", "angiotensin converting enzyme", "hypercalcemia sarcoidosis", "1 alpha hydroxylase"] },
+      { term: "Löfgren syndrome (BHL + erythema nodosum + fever + polyarthralgia)", weight: 0.5, section: "clinical", aliases: ["lofgren", "löfgren", "erythema nodosum", "bilateral hilar arthralgia"] },
+      { term: "Steroids first-line for organ-threatening disease", weight: 0.5, section: "treatment", aliases: ["prednisone sarcoidosis", "steroids sarcoidosis", "corticosteroid"] },
+      { term: "Methotrexate as steroid-sparing agent", weight: 0.5, section: "treatment", aliases: ["methotrexate", "steroid sparing", "azathioprine sarcoidosis"] },
+      { term: "Multisystem: eyes (uveitis), skin, liver, heart, neuro", weight: 0.5, section: "clinical", aliases: ["uveitis", "cardiac sarcoid", "neurosarcoidosis", "lupus pernio"] },
+    ],
+    retention: [
+      "Scadding Stage I (BHL alone) has 80% spontaneous remission — don't treat unless symptomatic",
+      "Hypercalcemia in sarcoidosis: macrophages express 1α-hydroxylase → excess calcitriol → ↑Ca²⁺ absorption",
+      "Löfgren syndrome has EXCELLENT prognosis — often self-limiting, rarely needs treatment",
+      "Cardiac sarcoidosis: AV block + cardiomyopathy — screen with ECG + echocardiogram + FDG-PET",
+      "Lupus pernio (violaceous facial plaques) indicates chronic sarcoidosis with poor prognosis"
+    ],
+    errorTraps: {
+      tailDrop: "Cardiac sarcoid workup, neurosarcoidosis (CN VII palsy), infliximab for refractory",
+      oppositeSwap: "1α-hydroxylase is ↑ in sarcoidosis (granuloma macrophages) vs ↓ in CKD",
+      crossContam: "Non-caseating (sarcoidosis) vs caseating (TB) granulomas — don't mix"
+    }
+  },
+  {
+    id: "pituitary",
+    name: "Pituitary Tumors",
+    zone: "Zone H · Endocrine",
+    tier: 2,
+    question: "Classify pituitary tumors. Discuss the clinical features, diagnosis and management of Prolactinoma.",
+    keywords: [
+      { term: "Prolactinoma (most common functioning adenoma)", weight: 1, section: "classification", aliases: ["prolactinoma", "prolactin secreting", "lactotroph"] },
+      { term: "Cabergoline first-line (dopamine agonist)", weight: 1, section: "treatment", aliases: ["cabergoline", "dopamine agonist", "bromocriptine"] },
+      { term: "Stalk effect (mild ↑ prolactin from mass effect)", weight: 0.5, section: "diagnosis", aliases: ["stalk effect", "stalk compression", "disconnect"] },
+      { term: "Bitemporal hemianopia (chiasmal compression)", weight: 0.5, section: "clinical", aliases: ["bitemporal", "hemianopia", "visual field defect", "chiasm"] },
+      { term: "GH-secreting → Acromegaly / Gigantism", weight: 0.5, section: "classification", aliases: ["acromegaly", "gh secreting", "igf-1", "gigantism"] },
+      { term: "ACTH-secreting → Cushing disease", weight: 0.5, section: "classification", aliases: ["acth secreting", "cushing disease", "corticotroph"] },
+      { term: "Non-functioning adenoma (mass effect only)", weight: 0.5, section: "classification", aliases: ["non-functioning", "nfpa", "clinically non-functioning"] },
+      { term: "Pituitary apoplexy (acute hemorrhage/infarction)", weight: 0.5, section: "emergency", aliases: ["pituitary apoplexy", "apoplexy", "hemorrhage pituitary", "sheehan"] },
+    ],
+    retention: [
+      "Prolactinoma: treat medically first (cabergoline) — surgery only if drug-resistant or intolerant",
+      "Stalk effect: any sellar mass can ↑ prolactin by compressing the stalk (blocks dopamine inhibition) — levels usually <100 ng/mL",
+      "Prolactin >200 ng/mL is virtually diagnostic of macroprolactinoma — no need for biopsy",
+      "Acromegaly: IGF-1 elevated → confirm with oral glucose tolerance test (GH fails to suppress <1 μg/L)",
+      "Pituitary apoplexy: sudden headache + visual loss + hypopituitarism — urgent steroids + possible surgery"
+    ],
+    errorTraps: {
+      tailDrop: "Apoplexy management, Sheehan syndrome (postpartum), panhypopituitarism replacement protocol",
+      oppositeSwap: "Prolactinoma = medical first (cabergoline) vs GH-secreting = surgery first (transsphenoidal)",
+      crossContam: "Stalk effect (mild ↑PRL from any mass) vs true prolactinoma (very high PRL from tumor secretion)"
+    }
+  },
+  {
+    id: "valvular",
+    name: "Valvular Heart Disease",
+    zone: "Zone C · Cardiology",
+    tier: 2,
+    question: "Discuss the etiology, clinical features, and indications for intervention in Aortic Stenosis and Mitral Regurgitation.",
+    keywords: [
+      { term: "Aortic stenosis: degenerative/calcific (most common in elderly)", weight: 0.5, section: "etiology", aliases: ["aortic stenosis", "calcific", "degenerative as"] },
+      { term: "Severe AS: valve area <1.0 cm², gradient >40 mmHg", weight: 0.5, section: "diagnosis", aliases: ["severe as", "valve area", "gradient", "mean gradient"] },
+      { term: "Symptoms of AS: angina, syncope, heart failure (SAD triad)", weight: 0.5, section: "clinical", aliases: ["angina syncope", "sad triad", "as symptoms"] },
+      { term: "TAVR vs SAVR", weight: 0.5, section: "treatment", aliases: ["tavr", "savr", "transcatheter", "surgical avr"] },
+      { term: "Mitral regurgitation: primary (organic) vs secondary (functional)", weight: 0.5, section: "classification", aliases: ["primary mr", "secondary mr", "mitral regurgitation", "functional mr"] },
+      { term: "MVP (mitral valve prolapse) — commonest cause primary MR", weight: 0.5, section: "etiology", aliases: ["mvp", "mitral valve prolapse", "myxomatous"] },
+      { term: "RHD — commonest cause in India", weight: 0.5, section: "etiology", aliases: ["rhd", "rheumatic", "rheumatic heart disease", "mitral stenosis rhd"] },
+    ],
+    retention: [
+      "Once AS becomes symptomatic, prognosis is poor without intervention: angina (5yr), syncope (3yr), HF (2yr)",
+      "TAVR now approved for low-risk patients — not just for high-surgical-risk anymore",
+      "Primary MR: repair > replacement (better outcomes); Secondary MR: treat HF first, intervention controversial",
+      "Auscultation: AS = crescendo-decrescendo systolic murmur radiating to carotids; MR = pansystolic at apex radiating to axilla",
+      "RHD: Mitral stenosis is the hallmark (commissural fusion), but MR can coexist"
+    ],
+    errorTraps: {
+      tailDrop: "TAVR indications by risk category, endocarditis prophylaxis, pregnancy management",
+      oppositeSwap: "AS = systolic murmur vs MS = diastolic rumble — don't reverse timing",
+      crossContam: "AS crescendo-decrescendo vs HOCM (also systolic, but ↑ with Valsalva, ↓ with squatting)"
+    }
+  },
+  {
+    id: "dka_hhs",
+    name: "DKA vs HHS",
+    zone: "Zone H · Endocrine",
+    tier: 2,
+    question: "Compare and contrast DKA and HHS. Discuss the management of Diabetic Ketoacidosis.",
+    keywords: [
+      { term: "DKA: Type 1, ketosis + acidosis + hyperglycemia", weight: 0.5, section: "definition", aliases: ["dka", "diabetic ketoacidosis", "type 1"] },
+      { term: "HHS: Type 2, severe hyperglycemia >600, high osmolality, no significant ketosis", weight: 0.5, section: "definition", aliases: ["hhs", "hyperosmolar", "hyperglycemic state", ">600"] },
+      { term: "AG metabolic acidosis (pH <7.3, HCO3 <18)", weight: 0.5, section: "diagnosis", aliases: ["anion gap", "metabolic acidosis", "ph <7.3", "bicarbonate"] },
+      { term: "Fluid resuscitation first (NS then switch to half-NS)", weight: 0.5, section: "treatment", aliases: ["fluid resuscitation", "normal saline", "iv fluid", "ns then half ns"] },
+      { term: "Insulin infusion (0.1 U/kg/hr)", weight: 0.5, section: "treatment", aliases: ["insulin infusion", "insulin drip", "0.1 units", "regular insulin"] },
+      { term: "Potassium replacement before/with insulin", weight: 1, section: "treatment", aliases: ["potassium replacement", "hypokalemia", "k+ before insulin", "potassium monitoring"] },
+      { term: "Dextrose when glucose <250 (prevent hypoglycemia while closing AG)", weight: 0.5, section: "treatment", aliases: ["dextrose", "d5", "glucose <250", "switch to dextrose"] },
+      { term: "Resolution criteria: AG closed, pH >7.3, HCO3 >15", weight: 0.5, section: "treatment", aliases: ["resolution criteria", "anion gap closed", "dka resolved"] },
+      { term: "Cerebral edema (children, rapid correction)", weight: 0.5, section: "complications", aliases: ["cerebral edema", "brain edema", "complication dka"] },
+    ],
+    retention: [
+      "ALWAYS check K+ before starting insulin — if K+ <3.3, replace K+ first (insulin drives K+ intracellular → fatal hypokalemia)",
+      "DKA can occur in Type 2 (ketosis-prone T2DM) — don't assume T1DM exclusively",
+      "HHS mortality (~15-20%) is HIGHER than DKA (~1-5%) despite less acidosis — older patients, more comorbid",
+      "Don't give bicarbonate unless pH <6.9 — it worsens intracellular acidosis and hypokalemia",
+      "Euglycemic DKA (SGLT2i-related): glucose normal but ketosis + acidosis present — check ketones even if normoglycemic"
+    ],
+    errorTraps: {
+      tailDrop: "Euglycemic DKA (SGLT2i), cerebral edema risk factors, transition to subcutaneous insulin protocol",
+      oppositeSwap: "K+ appears high initially (acidosis shifts K+ out of cells) but TOTAL body K+ is depleted — don't withhold replacement",
+      crossContam: "Don't confuse DKA (AG metabolic acidosis) with lactic acidosis (also AG but different mechanism and treatment)"
+    }
+  },
+  {
+    id: "mg",
+    name: "Myasthenia Gravis",
+    zone: "Zone G · Neurology",
+    tier: 2,
+    question: "Discuss the pathophysiology, clinical features, diagnosis and management of Myasthenia Gravis. Write a note on myasthenic crisis.",
+    keywords: [
+      { term: "Anti-AChR antibodies (85% seropositive)", weight: 1, section: "pathophysiology", aliases: ["achr antibody", "anti-acetylcholine receptor", "achr ab"] },
+      { term: "Anti-MuSK antibodies (subset)", weight: 0.5, section: "pathophysiology", aliases: ["anti-musk", "musk antibody", "muscle specific kinase"] },
+      { term: "Fatigable weakness / fluctuating", weight: 0.5, section: "clinical", aliases: ["fatigable", "fluctuating weakness", "fatigue worse evening"] },
+      { term: "Ptosis + diplopia (ocular onset)", weight: 0.5, section: "clinical", aliases: ["ptosis", "diplopia", "ocular myasthenia"] },
+      { term: "Edrophonium test / Ice pack test", weight: 0.5, section: "diagnosis", aliases: ["edrophonium", "tensilon", "ice pack test"] },
+      { term: "RNS (repetitive nerve stimulation): decremental response", weight: 0.5, section: "diagnosis", aliases: ["rns", "repetitive nerve stimulation", "decremental", "emg"] },
+      { term: "Pyridostigmine (AChE inhibitor, symptomatic)", weight: 0.5, section: "treatment", aliases: ["pyridostigmine", "mestinon", "anticholinesterase"] },
+      { term: "Thymectomy (thymoma + non-thymoma benefit)", weight: 0.5, section: "treatment", aliases: ["thymectomy", "thymoma", "thymus"] },
+      { term: "Immunosuppression: steroids + azathioprine / MMF", weight: 0.5, section: "treatment", aliases: ["azathioprine mg", "immunosuppression mg", "steroid mg"] },
+      { term: "Myasthenic crisis: respiratory failure, IVIG / plasmapheresis", weight: 1, section: "emergency", aliases: ["myasthenic crisis", "crisis", "respiratory failure mg", "ivig", "plasmapheresis", "plex"] },
+      { term: "Drugs to avoid (aminoglycosides, beta-blockers, etc.)", weight: 0.5, section: "treatment", aliases: ["drugs avoid mg", "aminoglycoside", "contraindicated mg"] },
+    ],
+    retention: [
+      "Myasthenic crisis vs cholinergic crisis: both cause weakness, but cholinergic crisis has excessive secretions (SLUDGE) — give edrophonium to differentiate (improves myasthenic, worsens cholinergic)",
+      "MGTX trial: thymectomy benefits even non-thymoma MG patients (anti-AChR positive, age 18-65)",
+      "Anti-MuSK MG: more bulbar, doesn't respond well to AChE inhibitors, thymectomy less helpful",
+      "Crisis triggers: infection, surgery, medication errors (aminoglycosides, quinolones, beta-blockers, magnesium)",
+      "Start steroids slowly (or with IVIG cover) — rapid initiation can transiently worsen weakness"
+    ],
+    errorTraps: {
+      tailDrop: "MuSK-specific treatment differences, crisis triggers list, steroid initiation protocol",
+      oppositeSwap: "Myasthenic crisis (undertreatment/disease flare) vs cholinergic crisis (overtreatment with AChE inhibitors)",
+      crossContam: "MG (NMJ, postsynaptic) vs Lambert-Eaton (NMJ, presynaptic — improves with repetition, anti-VGCC)"
+    }
+  },
+  {
+    id: "ards",
+    name: "ARDS",
+    zone: "Zone E · Pulmonology",
+    tier: 2,
+    question: "Define ARDS (Berlin criteria). Discuss the pathophysiology and management including ventilatory strategies.",
+    keywords: [
+      { term: "Berlin definition 2012 (timing + imaging + origin + oxygenation)", weight: 1, section: "definition", aliases: ["berlin", "berlin definition", "berlin criteria"] },
+      { term: "PaO2/FiO2 ratio: mild >200, moderate 100-200, severe <100", weight: 1, section: "classification", aliases: ["pf ratio", "pao2/fio2", "p/f ratio", "oxygenation index"] },
+      { term: "Within 7 days of insult", weight: 0.5, section: "definition", aliases: ["within 7 days", "acute onset", "1 week"] },
+      { term: "Bilateral opacities not fully explained by effusion/atelectasis", weight: 0.5, section: "definition", aliases: ["bilateral opacities", "bilateral infiltrates"] },
+      { term: "Not fully explained by cardiac failure / fluid overload", weight: 0.5, section: "definition", aliases: ["not cardiogenic", "non-cardiogenic", "not fully explained"] },
+      { term: "Low tidal volume ventilation (6 mL/kg IBW — ARDSNet)", weight: 1, section: "treatment", aliases: ["low tidal volume", "6 ml/kg", "ardsnet", "lung protective"] },
+      { term: "Prone positioning (>12 hours for severe)", weight: 0.5, section: "treatment", aliases: ["prone", "proning", "prone positioning", "proseva"] },
+      { term: "PEEP titration", weight: 0.5, section: "treatment", aliases: ["peep", "positive end expiratory", "peep table"] },
+      { term: "Plateau pressure <30 cmH2O", weight: 0.5, section: "treatment", aliases: ["plateau pressure", "<30", "pplat"] },
+      { term: "Conservative fluid strategy", weight: 0.5, section: "treatment", aliases: ["conservative fluid", "dry strategy", "factt"] },
+    ],
+    retention: [
+      "ARDSNet protocol: TV 6 mL/kg IBW, Pplat <30, pH target 7.30-7.45, FiO2/PEEP table",
+      "PROSEVA trial: prone positioning ≥16 hr/day in severe ARDS (P/F <150) reduces mortality",
+      "Neuromuscular blockade (cisatracurium) for 48h in early severe ARDS — ACURASYS showed benefit, ROSE was equivocal",
+      "Dexamethasone in moderate-severe ARDS (DEXA-ARDS trial) — not just COVID-related",
+      "Driving pressure (Pplat - PEEP) <15 cmH2O may be better predictor of outcome than Pplat alone"
+    ],
+    errorTraps: {
+      tailDrop: "Driving pressure concept, ECMO criteria, steroid role in ARDS",
+      oppositeSwap: "Low tidal volume (6 mL/kg) is PROTECTIVE; high tidal volume (12 mL/kg) causes VILI — don't reverse",
+      crossContam: "ARDS (diffuse alveolar damage) vs cardiogenic pulmonary edema (hydrostatic) — PCWP helps differentiate"
+    }
+  },
+  {
+    id: "dic",
+    name: "DIC",
+    zone: "Zone B · Hematology",
+    tier: 2,
+    question: "Discuss the etiology, pathophysiology, diagnosis and management of Disseminated Intravascular Coagulation.",
+    keywords: [
+      { term: "Consumption of clotting factors + platelets", weight: 0.5, section: "pathophysiology", aliases: ["consumption coagulopathy", "consumptive", "factor consumption"] },
+      { term: "↑PT, ↑aPTT, ↓fibrinogen, ↑D-dimer, ↓platelets", weight: 1, section: "diagnosis", aliases: ["prolonged pt aptt", "low fibrinogen", "high d-dimer", "thrombocytopenia"] },
+      { term: "ISTH DIC score (≥5 = overt DIC)", weight: 0.5, section: "diagnosis", aliases: ["isth score", "dic score", "overt dic", "≥5"] },
+      { term: "Schistocytes on smear", weight: 0.5, section: "diagnosis", aliases: ["schistocyte", "fragmented rbc", "maha"] },
+      { term: "Treat underlying cause (most important)", weight: 1, section: "treatment", aliases: ["treat underlying", "treat cause", "supportive"] },
+      { term: "Sepsis / obstetric / malignancy — common triggers", weight: 0.5, section: "etiology", aliases: ["sepsis dic", "obstetric dic", "malignancy dic", "apl dic"] },
+      { term: "FFP for bleeding + low factors", weight: 0.5, section: "treatment", aliases: ["ffp", "fresh frozen plasma", "cryoprecipitate"] },
+      { term: "Platelets if <50K + bleeding", weight: 0.5, section: "treatment", aliases: ["platelet transfusion", "platelets <50"] },
+    ],
+    retention: [
+      "DIC is ALWAYS secondary — finding and treating the trigger is the single most important step",
+      "ISTH score: platelets + D-dimer + prolonged PT + fibrinogen level → score ≥5 = overt DIC",
+      "Acute DIC (sepsis, obstetric) = bleeding dominance; Chronic DIC (malignancy) = thrombosis dominance",
+      "Cryoprecipitate preferred over FFP when fibrinogen is critically low (<100 mg/dL) — more concentrated fibrinogen",
+      "APL (acute promyelocytic leukemia) is a classic cause of severe DIC — treat with ATRA which corrects the coagulopathy"
+    ],
+    errorTraps: {
+      tailDrop: "ATRA in APL-associated DIC, heparin role in chronic DIC, cryoprecipitate vs FFP choice",
+      oppositeSwap: "Acute DIC = bleeding; Chronic DIC = thrombosis — don't flip the clinical presentation",
+      crossContam: "DIC (consumption of ALL factors) vs TTP/HUS (thrombocytopenia + MAHA but normal PT/aPTT/fibrinogen)"
+    }
+  },
+  {
+    id: "ra",
+    name: "Rheumatoid Arthritis",
+    zone: "Zone A · Autoimmune",
+    tier: 2,
+    question: "Discuss the clinical features, diagnosis and management of Rheumatoid Arthritis. Write a note on extra-articular manifestations.",
+    keywords: [
+      { term: "Symmetric polyarthritis (small joints, MCP/PIP)", weight: 0.5, section: "clinical", aliases: ["symmetric", "polyarthritis", "mcp", "pip", "small joint"] },
+      { term: "RF + Anti-CCP (more specific)", weight: 1, section: "diagnosis", aliases: ["rf", "rheumatoid factor", "anti-ccp", "acpa", "anti-citrullinated"] },
+      { term: "ACR/EULAR 2010 classification criteria", weight: 0.5, section: "diagnosis", aliases: ["acr eular 2010", "ra criteria", "classification criteria ra"] },
+      { term: "Methotrexate — anchor DMARD", weight: 1, section: "treatment", aliases: ["methotrexate", "mtx", "anchor drug", "first line dmard"] },
+      { term: "Biologics: TNF inhibitors / Rituximab / Tocilizumab / JAK inhibitors", weight: 0.5, section: "treatment", aliases: ["tnf inhibitor", "rituximab ra", "tocilizumab", "jak inhibitor", "tofacitinib", "adalimumab"] },
+      { term: "Treat-to-target (DAS28 remission)", weight: 0.5, section: "treatment", aliases: ["treat to target", "das28", "t2t", "remission"] },
+      { term: "Extra-articular: ILD, vasculitis, Felty, nodules, atlantoaxial", weight: 0.5, section: "clinical", aliases: ["extra-articular", "ild ra", "felty", "rheumatoid nodules", "atlantoaxial"] },
+    ],
+    retention: [
+      "Anti-CCP is more specific than RF for RA (95% vs 80%) and predicts erosive disease",
+      "Methotrexate: start within 3 months of diagnosis, supplement with folic acid, monitor LFTs + CBC",
+      "Felty syndrome: RA + splenomegaly + neutropenia — increased infection risk",
+      "RA-ILD: UIP or NSIP pattern, MTX can cause drug-induced ILD (distinguish from RA-ILD)",
+      "Atlantoaxial subluxation: screen with lateral flexion X-ray before intubation in RA patients"
+    ],
+    errorTraps: {
+      tailDrop: "JAK inhibitor specifics (tofacitinib, baricitinib), cardiovascular risk warnings, ILD screening",
+      oppositeSwap: "RF = sensitive; Anti-CCP = specific — don't swap these diagnostic roles",
+      crossContam: "RA (symmetric, erosive, RF+) vs psoriatic arthritis (asymmetric, DIP, dactylitis, RF−)"
+    }
+  },
+  {
+    id: "vasculitis",
+    name: "Vasculitis — Classification & Mx",
+    zone: "Zone A · Autoimmune",
+    tier: 2,
+    question: "Classify vasculitis (Chapel Hill). Discuss the clinical features and management of ANCA-associated vasculitis.",
+    keywords: [
+      { term: "Chapel Hill classification: large/medium/small vessel", weight: 1, section: "classification", aliases: ["chapel hill", "large vessel", "medium vessel", "small vessel"] },
+      { term: "GPA (Wegener): upper+lower resp + kidneys, c-ANCA/PR3", weight: 0.5, section: "types", aliases: ["gpa", "wegener", "c-anca", "pr3", "granulomatosis with polyangiitis"] },
+      { term: "MPA: pauci-immune GN + pulmonary, p-ANCA/MPO", weight: 0.5, section: "types", aliases: ["mpa", "microscopic polyangiitis", "p-anca", "mpo"] },
+      { term: "EGPA (Churg-Strauss): asthma + eosinophilia + vasculitis", weight: 0.5, section: "types", aliases: ["egpa", "churg-strauss", "eosinophilic", "churg strauss"] },
+      { term: "Cyclophosphamide + steroids for induction", weight: 0.5, section: "treatment", aliases: ["cyclophosphamide induction", "cyc steroids"] },
+      { term: "Rituximab alternative for induction (RAVE trial)", weight: 0.5, section: "treatment", aliases: ["rituximab vasculitis", "rave trial", "rituximab induction"] },
+      { term: "Maintenance: Azathioprine / Rituximab", weight: 0.5, section: "treatment", aliases: ["azathioprine maintenance", "maintenance vasculitis"] },
+      { term: "Avacopan (C5a receptor inhibitor) — newer", weight: 0.5, section: "treatment", aliases: ["avacopan", "c5a inhibitor"] },
+    ],
+    retention: [
+      "GPA triad: upper airway (sinusitis, saddle nose) + lower airway (pulmonary nodules/hemorrhage) + kidneys (crescentic GN)",
+      "c-ANCA (PR3) = GPA; p-ANCA (MPO) = MPA/EGPA — this is the single most tested association",
+      "EGPA: must have asthma (typically preceding vasculitis by years) + peripheral eosinophilia + vasculitis",
+      "Rituximab is now non-inferior to cyclophosphamide for induction AND superior for relapsing disease (RAVE trial)",
+      "PAN (polyarteritis nodosa): medium vessel, spares lungs (unlike GPA/MPA), associated with HBV, ANCA-negative"
+    ],
+    errorTraps: {
+      tailDrop: "Avacopan, plasma exchange indications (severe renal/pulmonary hemorrhage), PAN-specific management",
+      oppositeSwap: "GPA = c-ANCA/PR3 vs MPA = p-ANCA/MPO — this is the classic swap error",
+      crossContam: "GPA (granulomatous) vs MPA (non-granulomatous) — both are small vessel but different histology"
+    }
+  },
+  {
+    id: "scleroderma",
+    name: "Systemic Sclerosis",
+    zone: "Zone A · Autoimmune",
+    tier: 2,
+    question: "Discuss the clinical features, diagnosis and management of Systemic Sclerosis. Differentiate limited from diffuse.",
+    keywords: [
+      { term: "Limited (CREST) vs Diffuse cutaneous SSc", weight: 1, section: "classification", aliases: ["limited", "diffuse", "crest", "lcssc", "dcssc"] },
+      { term: "Anti-centromere (limited) vs Anti-Scl-70/topoisomerase (diffuse)", weight: 1, section: "diagnosis", aliases: ["anti-centromere", "anti-scl-70", "topoisomerase", "scl-70"] },
+      { term: "Raynaud phenomenon (earliest feature)", weight: 0.5, section: "clinical", aliases: ["raynaud", "raynaud's", "raynaud phenomenon"] },
+      { term: "ILD (NSIP pattern) — leading cause of death", weight: 0.5, section: "complications", aliases: ["ild ssc", "nsip", "pulmonary fibrosis ssc"] },
+      { term: "PAH — especially limited SSc", weight: 0.5, section: "complications", aliases: ["pah ssc", "pulmonary hypertension ssc"] },
+      { term: "Scleroderma renal crisis: ACEi (captopril)", weight: 0.5, section: "emergency", aliases: ["renal crisis", "scleroderma renal crisis", "captopril", "acei renal crisis"] },
+      { term: "Nintedanib / Tocilizumab for ILD", weight: 0.5, section: "treatment", aliases: ["nintedanib ssc", "tocilizumab ssc", "mycophenolate ssc"] },
+    ],
+    retention: [
+      "Limited SSc = CREST (Calcinosis, Raynaud, Esophageal dysmotility, Sclerodactyly, Telangiectasia) + anti-centromere + PAH risk",
+      "Diffuse SSc = rapid skin thickening + anti-Scl-70 + ILD + renal crisis risk",
+      "Scleroderma renal crisis: sudden HTN + AKI + MAHA → ACEi (captopril) is life-saving; do NOT use steroids (precipitate crisis)",
+      "ILD is now the #1 cause of death in SSc (surpassed renal crisis since ACEi became available)",
+      "Anti-RNA polymerase III antibody = highest risk for renal crisis AND cancer-associated scleroderma"
+    ],
+    errorTraps: {
+      tailDrop: "Anti-RNA polymerase III, autologous HSCT for severe diffuse SSc, nailfold capillaroscopy",
+      oppositeSwap: "Anti-centromere = limited; Anti-Scl-70 = diffuse — classic swap error",
+      crossContam: "SSc renal crisis: ACEi = SAVE lives; SLE renal: ACEi = PROTECT (different context, same drug class)"
+    }
+  },
+  {
+    id: "spondy",
+    name: "Spondyloarthropathy",
+    zone: "Zone A · Autoimmune",
+    tier: 2,
+    question: "Discuss the classification, clinical features and management of Axial Spondyloarthropathy. Write a note on HLA-B27.",
+    keywords: [
+      { term: "HLA-B27 association", weight: 0.5, section: "pathogenesis", aliases: ["hla-b27", "hla b27", "b27"] },
+      { term: "Inflammatory back pain (IBP) — morning stiffness >30 min, improves with exercise", weight: 1, section: "clinical", aliases: ["inflammatory back pain", "ibp", "morning stiffness", "improves exercise"] },
+      { term: "ASAS classification criteria", weight: 0.5, section: "diagnosis", aliases: ["asas", "asas criteria", "assessment spondyloarthritis"] },
+      { term: "Sacroiliitis on imaging (X-ray or MRI)", weight: 0.5, section: "diagnosis", aliases: ["sacroiliitis", "si joint", "sacroiliac"] },
+      { term: "NSAIDs first-line", weight: 0.5, section: "treatment", aliases: ["nsaid", "nsaids first line", "indomethacin"] },
+      { term: "TNF inhibitors for NSAID-refractory", weight: 0.5, section: "treatment", aliases: ["tnf inhibitor spa", "adalimumab spa", "infliximab spa"] },
+      { term: "IL-17 inhibitors (secukinumab)", weight: 0.5, section: "treatment", aliases: ["il-17", "secukinumab", "ixekizumab"] },
+      { term: "Extra-articular: anterior uveitis, psoriasis, IBD, enthesitis, dactylitis", weight: 0.5, section: "clinical", aliases: ["anterior uveitis", "enthesitis", "dactylitis", "extra-articular spa"] },
+    ],
+    retention: [
+      "IBP criteria: onset <40 years, insidious, improves with exercise, does NOT improve with rest, night pain — opposite of mechanical",
+      "ASAS: imaging arm (sacroiliitis + ≥1 SpA feature) OR clinical arm (HLA-B27 + ≥2 SpA features)",
+      "MTX does NOT work for axial disease — only for peripheral arthritis in SpA",
+      "Anterior uveitis in SpA is acute, unilateral, alternating — unlike chronic bilateral uveitis of JIA",
+      "Nr-axSpA (non-radiographic): MRI-positive sacroiliitis but normal X-ray — same disease continuum as AS"
+    ],
+    errorTraps: {
+      tailDrop: "Nr-axSpA concept, IL-17 inhibitor role, JAK inhibitors (upadacitinib), exercise prescription",
+      oppositeSwap: "IBP improves with EXERCISE, worsens with REST — the classic inversion error (you've made this before)",
+      crossContam: "SpA = enthesitis + dactylitis vs RA = synovitis + erosions — different pathological targets"
+    }
+  },
+  {
+    id: "pe_dvt",
+    name: "PE / DVT — Diagnosis & Rx",
+    zone: "Zone C · Cardiology",
+    tier: 2,
+    question: "Discuss the diagnosis and management of Pulmonary Embolism. Write a note on risk stratification.",
+    keywords: [
+      { term: "Wells score / Geneva score", weight: 0.5, section: "diagnosis", aliases: ["wells", "wells score", "geneva", "pre-test probability"] },
+      { term: "D-dimer (rule out if low probability)", weight: 0.5, section: "diagnosis", aliases: ["d-dimer", "d dimer", "negative predictive"] },
+      { term: "CTPA (gold standard imaging)", weight: 0.5, section: "diagnosis", aliases: ["ctpa", "ct pulmonary angiography", "ct angiogram"] },
+      { term: "Risk stratification: massive/submassive/low-risk", weight: 0.5, section: "classification", aliases: ["massive pe", "submassive", "risk stratification pe"] },
+      { term: "Anticoagulation: DOAC (rivaroxaban/apixaban) first-line", weight: 0.5, section: "treatment", aliases: ["doac", "rivaroxaban", "apixaban", "anticoagulation pe"] },
+      { term: "Thrombolysis for massive PE (alteplase)", weight: 0.5, section: "treatment", aliases: ["thrombolysis", "alteplase", "tpa", "massive pe treatment"] },
+      { term: "Duration: 3 months (provoked) vs extended (unprovoked)", weight: 0.5, section: "treatment", aliases: ["3 months", "duration anticoagulation", "provoked unprovoked"] },
+      { term: "IVC filter (contraindication to anticoagulation)", weight: 0.5, section: "treatment", aliases: ["ivc filter", "vena cava filter"] },
+    ],
+    retention: [
+      "Algorithm: Pre-test probability (Wells) → if low/intermediate: D-dimer → if negative: PE excluded; if positive: CTPA",
+      "Massive PE = hemodynamic instability (SBP <90) → thrombolysis is indicated (alteplase 100mg over 2h)",
+      "DOAC is now first-line over warfarin for most PE (EINSTEIN, AMPLIFY trials) — exception: APLA syndrome",
+      "Submassive PE (RV dysfunction, elevated troponin but stable BP): anticoagulate, consider thrombolysis if deteriorating",
+      "V/Q scan preferred over CTPA in: renal insufficiency, contrast allergy, pregnancy (lower breast radiation)"
+    ],
+    errorTraps: {
+      tailDrop: "Catheter-directed therapy, PERT teams, pregnancy PE management, cancer-associated VTE (LMWH or edoxaban)",
+      oppositeSwap: "Massive = hemodynamically unstable; Submassive = stable but RV strain — don't conflate",
+      crossContam: "D-dimer rules OUT PE (high NPV) but does NOT rule IN PE (low specificity) — one-directional test"
+    }
+  },
+  {
+    id: "approach_fever",
+    name: "Approach to Fever of Unknown Origin",
+    zone: "Zone D · General Medicine",
+    tier: 2,
+    question: "Define FUO. Discuss the approach to diagnosis and common causes of Fever of Unknown Origin in India.",
+    keywords: [
+      { term: "Classic FUO: fever >38.3°C, >3 weeks, no diagnosis after 1 week", weight: 1, section: "definition", aliases: ["fuo definition", "fever unknown origin", ">3 weeks", "petersdorf"] },
+      { term: "Four categories: infections, malignancy, autoimmune/inflammatory, miscellaneous", weight: 0.5, section: "classification", aliases: ["four categories", "infections malignancy autoimmune", "classic categories"] },
+      { term: "TB — #1 cause of FUO in India", weight: 0.5, section: "etiology", aliases: ["tuberculosis fuo", "tb fuo", "commonest cause india"] },
+      { term: "Autoimmune: Adult-onset Still disease, SLE, vasculitis", weight: 0.5, section: "etiology", aliases: ["still disease", "sle fuo", "vasculitis fuo"] },
+      { term: "Malignancy: lymphoma (most common malignant cause)", weight: 0.5, section: "etiology", aliases: ["lymphoma fuo", "malignancy fuo"] },
+      { term: "Systematic workup: cultures, imaging, biopsy", weight: 0.5, section: "diagnosis", aliases: ["blood culture", "ct scan", "pet-ct fuo", "bone marrow biopsy", "liver biopsy"] },
+      { term: "FDG PET-CT in undiagnosed FUO", weight: 0.5, section: "diagnosis", aliases: ["pet ct", "fdg pet", "pet scan fuo"] },
+      { term: "Naproxen test (fever responds to naproxen → think neoplastic)", weight: 0.5, section: "diagnosis", aliases: ["naproxen test", "nsaid response"] },
+    ],
+    retention: [
+      "In India: TB > lymphoma > connective tissue diseases are the top 3 causes of classic FUO",
+      "FDG PET-CT has ~60-70% diagnostic yield in unresolved FUO — increasingly used early in workup",
+      "Adult-onset Still disease: quotidian (daily) fever, evanescent salmon rash, ferritin >10,000, negative RF/ANA",
+      "Drug fever: temporal correlation with drug start, often with eosinophilia, resolves with drug withdrawal",
+      "~30% of FUO cases remain undiagnosed despite extensive workup — prognosis in undiagnosed cases is generally good"
+    ],
+    errorTraps: {
+      tailDrop: "PET-CT role, Still disease features (ferritin, glycosylated ferritin), drug fever recognition",
+      oppositeSwap: "Naproxen test: response suggests neoplastic (not infection) — counterintuitive",
+      crossContam: "FUO (>3 weeks) vs PUO (shorter duration, different diagnostic weight)"
+    }
+  },
+  {
+    id: "sjs_ten",
+    name: "SJS / TEN",
+    zone: "Zone I · Dermatology Crossover",
+    tier: 2,
+    question: "Discuss the etiology, clinical features and management of Stevens-Johnson Syndrome and Toxic Epidermal Necrolysis.",
+    keywords: [
+      { term: "SJS: <10% BSA; TEN: >30% BSA; overlap: 10-30%", weight: 1, section: "classification", aliases: ["sjs", "ten", "bsa", "body surface area", "overlap"] },
+      { term: "Drug-induced (most common): allopurinol, carbamazepine, phenytoin, sulfonamides, nevirapine", weight: 1, section: "etiology", aliases: ["allopurinol", "carbamazepine sjs", "phenytoin sjs", "sulfonamide", "drug induced sjs"] },
+      { term: "Target/targetoid lesions, mucosal involvement, Nikolsky positive", weight: 0.5, section: "clinical", aliases: ["target lesion", "nikolsky", "mucosal", "mucous membrane"] },
+      { term: "SCORTEN prognostic score", weight: 0.5, section: "prognosis", aliases: ["scorten", "prognostic score", "mortality score"] },
+      { term: "Withdraw offending drug (most important step)", weight: 1, section: "treatment", aliases: ["withdraw drug", "stop offending", "drug withdrawal"] },
+      { term: "Supportive care (burn unit / ICU, fluid, wound care)", weight: 0.5, section: "treatment", aliases: ["burn unit", "supportive care", "wound care", "fluid management"] },
+      { term: "HLA-B*5801 (allopurinol) / HLA-B*1502 (carbamazepine)", weight: 0.5, section: "prevention", aliases: ["hla-b5801", "hla-b1502", "pharmacogenomics", "screening"] },
+      { term: "IVIG / Cyclosporine — controversial role", weight: 0.5, section: "treatment", aliases: ["ivig sjs", "cyclosporine ten", "etanercept ten"] },
+    ],
+    retention: [
+      "SCORTEN: 7 variables scored at admission — each point increases mortality (0-1: 3.2%; 5+: >90%)",
+      "HLA-B*1502 screening before carbamazepine in Southeast/South Asian populations — prevents SJS/TEN",
+      "HLA-B*5801 screening before allopurinol — especially in Korean, Han Chinese, African American populations",
+      "Mucosal involvement (oral, ocular, genital) is present in >90% of SJS/TEN cases — eye care is critical to prevent sequelae",
+      "Mortality: SJS ~5%, SJS-TEN overlap ~30%, TEN ~30-50% — this is a dermatologic emergency"
+    ],
+    errorTraps: {
+      tailDrop: "HLA pharmacogenomics, long-term ocular sequelae, SCORTEN variables",
+      oppositeSwap: "SJS <10% BSA vs TEN >30% BSA — don't flip the cutoffs",
+      crossContam: "SJS/TEN (keratinocyte apoptosis, Nikolsky+) vs EM major (target lesions, post-infectious, better prognosis)"
+    }
+  },
+];
+
+// ══════════════════════════════════════════════════
+// STATE MANAGEMENT
+// ══════════════════════════════════════════════════
+
+const STORAGE_KEY = "piii_recall_v2";
+
+function loadState() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch { return {}; }
+}
+
+function saveState(state) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+}
+
+function getTopicState(topicId) {
+  const state = loadState();
+  return state[topicId] || { attempts: [], bestScore: null, lastScore: null };
+}
+
+function saveAttempt(topicId, score, hits, misses, total) {
+  const state = loadState();
+  if (!state[topicId]) state[topicId] = { attempts: [], bestScore: null, lastScore: null };
+  const attempt = {
+    date: new Date().toISOString(),
+    score,
+    hits,
+    misses,
+    total
+  };
+  state[topicId].attempts.push(attempt);
+  state[topicId].lastScore = score;
+  state[topicId].bestScore = Math.max(state[topicId].bestScore || 0, score);
+  saveState(state);
+}
+
+function resetAll() {
+  if (confirm("Reset ALL scores and history? This cannot be undone.")) {
+    localStorage.removeItem(STORAGE_KEY);
+    renderGrid();
+    updateStats();
+  }
+}
+
+// ══════════════════════════════════════════════════
+// GRADING ENGINE
+// ══════════════════════════════════════════════════
+
+function gradeRecall() {
+  const input = document.getElementById("recall-input").value.trim();
+  if (!input || input.length < 30) {
+    alert("Write at least a few sentences before grading.");
+    return;
+  }
+
+  const topic = TOPICS.find(t => t.id === currentTopicId);
+  if (!topic) return;
+
+  const inputLower = input.toLowerCase();
+  const words = inputLower.split(/\s+/);
+  const wordCount = words.length;
+
+  // Keyword matching
+  let hits = [];
+  let misses = [];
+  let totalWeight = 0;
+  let earnedWeight = 0;
+
+  topic.keywords.forEach(kw => {
+    totalWeight += kw.weight;
+    const allTerms = [kw.term.toLowerCase(), ...(kw.aliases || []).map(a => a.toLowerCase())];
+    const found = allTerms.some(term => {
+      // Multi-word matching
+      if (term.includes(" ")) {
+        return inputLower.includes(term);
+      }
+      // Single word — check if it appears
+      return words.some(w => w.includes(term) || term.includes(w));
+    });
+    if (found) {
+      hits.push(kw);
+      earnedWeight += kw.weight;
+    } else {
+      misses.push(kw);
+    }
+  });
+
+  // Calculate score (0-10)
+  let rawScore = (earnedWeight / totalWeight) * 10;
+
+  // Penalty: very short answers
+  if (wordCount < 100) rawScore = Math.min(rawScore, 5);
+  if (wordCount < 50) rawScore = Math.min(rawScore, 3);
+
+  // Round to 0.5
+  const score = Math.round(rawScore * 2) / 2;
+
+  // Detect error patterns
+  const patterns = detectErrorPatterns(topic, inputLower, hits, misses);
+
+  // Save
+  saveAttempt(topic.id, score, hits.length, misses.length, topic.keywords.length);
+
+  // Render results
+  renderResults(topic, score, hits, misses, patterns, wordCount);
+}
+
+function detectErrorPatterns(topic, inputLower, hits, misses) {
+  const patterns = [];
+
+  // TAIL-DROP: Check if treatment/management keywords are mostly missing
+  const txKeywords = misses.filter(k => k.section === "treatment" || k.section === "emergency");
+  const txTotal = [...hits, ...misses].filter(k => k.section === "treatment" || k.section === "emergency");
+  if (txTotal.length > 0 && txKeywords.length / txTotal.length > 0.5) {
+    patterns.push({
+      type: "TAIL-DROP",
+      title: "⚠ Tail-Drop Pattern Detected",
+      detail: `You missed ${txKeywords.length}/${txTotal.length} treatment/management keywords. ${topic.errorTraps.tailDrop}`
+    });
+  }
+
+  // OPPOSITE-SWAP: Check for known swap pairs
+  if (topic.errorTraps.oppositeSwap) {
+    patterns.push({
+      type: "OPPOSITE-SWAP-WARNING",
+      title: "🔄 Opposite-Swap Checkpoint",
+      detail: topic.errorTraps.oppositeSwap
+    });
+  }
+
+  // CROSS-CONTAMINATION warning
+  if (topic.errorTraps.crossContam) {
+    patterns.push({
+      type: "CROSS-CONTAM-WARNING",
+      title: "🔀 Cross-Contamination Checkpoint",
+      detail: topic.errorTraps.crossContam
+    });
+  }
+
+  return patterns;
+}
+
+// ══════════════════════════════════════════════════
+// RENDERING
+// ══════════════════════════════════════════════════
+
+let currentTopicId = null;
+
+function renderGrid() {
+  const state = loadState();
+
+  ["tier1-grid", "tier2-grid"].forEach(gridId => {
+    const tier = gridId === "tier1-grid" ? 1 : 2;
+    const grid = document.getElementById(gridId);
+    grid.innerHTML = "";
+
+    TOPICS.filter(t => t.tier === tier).forEach(topic => {
+      const ts = state[topic.id];
+      const score = ts?.lastScore;
+      const best = ts?.bestScore;
+      const attempts = ts?.attempts?.length || 0;
+
+      let scoreClass = "untested";
+      let fillColor = "var(--text-dim)";
+      let fillWidth = 0;
+      if (score !== null && score !== undefined) {
+        if (score >= 7) { scoreClass = "score-high"; fillColor = "var(--green)"; }
+        else if (score >= 5) { scoreClass = "score-mid"; fillColor = "var(--yellow)"; }
+        else { scoreClass = "score-low"; fillColor = "var(--red)"; }
+        fillWidth = (score / 10) * 100;
+      }
+
+      const card = document.createElement("div");
+      card.className = `topic-card ${scoreClass}`;
+      card.onclick = () => startTest(topic.id);
+      card.innerHTML = `
+        <div class="zone-tag">${topic.zone}</div>
+        <div class="topic-name">${topic.name}</div>
+        <div class="score-bar"><div class="score-fill" style="width:${fillWidth}%;background:${fillColor}"></div></div>
+        <div class="score-text">
+          <span>${score !== null && score !== undefined ? score + '/10' : 'Not tested'}</span>
+          <span class="attempt-count">${attempts > 0 ? attempts + ' attempt' + (attempts > 1 ? 's' : '') : ''}</span>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  });
+}
+
+function updateStats() {
+  const state = loadState();
+  let tested = 0, totalScore = 0, totalSessions = 0;
+
+  TOPICS.forEach(t => {
+    const ts = state[t.id];
+    if (ts && ts.lastScore !== null && ts.lastScore !== undefined) {
+      tested++;
+      totalScore += ts.lastScore;
+    }
+    if (ts && ts.attempts) totalSessions += ts.attempts.length;
+  });
+
+  document.getElementById("stat-tested").textContent = tested;
+  document.getElementById("stat-avg").textContent = tested > 0 ? (totalScore / tested).toFixed(1) : "—";
+  document.getElementById("stat-sessions").textContent = totalSessions;
+}
+
+function showView(viewId) {
+  document.querySelectorAll(".view").forEach(v => v.classList.remove("active"));
+  document.getElementById(viewId).classList.add("active");
+}
+
+function showGrid() {
+  renderGrid();
+  updateStats();
+  showView("view-grid");
+}
+
+function startTest(topicId) {
+  currentTopicId = topicId;
+  const topic = TOPICS.find(t => t.id === topicId);
+  if (!topic) return;
+
+  document.getElementById("test-topic-zone").textContent = topic.zone;
+  document.getElementById("test-question").textContent = topic.question;
+  document.getElementById("recall-input").value = "";
+  document.getElementById("word-count").textContent = "0 words";
+  document.getElementById("submit-btn").disabled = false;
+
+  showView("view-test");
+  document.getElementById("recall-input").focus();
+}
+
+function renderResults(topic, score, hits, misses, patterns, wordCount) {
+  let scoreColor = "var(--red)";
+  if (score >= 7) scoreColor = "var(--green)";
+  else if (score >= 5) scoreColor = "var(--yellow)";
+
+  const ts = getTopicState(topic.id);
+
+  let html = `
+    <div class="test-header">
+      <button class="back-btn" onclick="showGrid()">← Back to Grid</button>
+    </div>
+
+    <div class="score-display">
+      <div class="score-big" style="color:${scoreColor}">${score}<span class="denominator">/10</span></div>
+      <div class="score-label">${topic.name} · ${wordCount} words</div>
+    </div>
+  `;
+
+  // Error pattern alerts
+  patterns.forEach(p => {
+    html += `
+      <div class="pattern-alert">
+        <div class="pattern-alert-title">${p.title}</div>
+        ${p.detail}
+      </div>
+    `;
+  });
+
+  // Keyword hits
+  html += `
+    <div class="result-section">
+      <div class="result-section-header" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'">
+        Keywords Hit (${hits.length}/${hits.length + misses.length})
+        <span>▼</span>
+      </div>
+      <div class="result-section-body">
+        <div class="keyword-grid">
+          ${hits.map(k => `<div class="kw-item kw-hit"><span class="kw-icon">✓</span>${k.term}</div>`).join("")}
+        </div>
+      </div>
+    </div>
+  `;
+
+  // Keyword misses
+  html += `
+    <div class="result-section">
+      <div class="result-section-header" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'">
+        Keywords Missed (${misses.length})
+        <span>▼</span>
+      </div>
+      <div class="result-section-body">
+        <div class="keyword-grid">
+          ${misses.map(k => `<div class="kw-item kw-miss"><span class="kw-icon">✗</span>${k.term} <span style="opacity:0.6;font-size:0.65rem">[${k.section}]</span></div>`).join("")}
+        </div>
+      </div>
+    </div>
+  `;
+
+  // 5 Retention items
+  html += `
+    <div class="result-section">
+      <div class="result-section-header" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'">
+        5 Retention Items — Burn These In
+        <span>▼</span>
+      </div>
+      <div class="result-section-body">
+        <ol class="retention-list">
+          ${topic.retention.map(r => `<li>${r}</li>`).join("")}
+        </ol>
+      </div>
+    </div>
+  `;
+
+  // History
+  if (ts.attempts && ts.attempts.length > 0) {
+    html += `
+      <div class="result-section">
+        <div class="result-section-header" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'">
+          Attempt History (${ts.attempts.length})
+          <span>▼</span>
+        </div>
+        <div class="result-section-body" style="display:none;">
+          ${ts.attempts.slice().reverse().map(a => {
+            const d = new Date(a.date);
+            const dateStr = d.toLocaleDateString() + ' ' + d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
+            return `<div class="history-item"><span>${dateStr}</span><span style="font-weight:500">${a.score}/10 (${a.hits}/${a.total} keywords)</span></div>`;
+          }).join("")}
+        </div>
+      </div>
+    `;
+  }
+
+  // Next actions
+  html += `
+    <div class="next-actions">
+      <button class="action-btn primary" onclick="startTest('${topic.id}')">Retry This Topic</button>
+      <button class="action-btn" onclick="startNextWeakest()">Next Weakest Topic</button>
+      <button class="action-btn" onclick="showGrid()">Back to Grid</button>
+    </div>
+  `;
+
+  document.getElementById("results-content").innerHTML = html;
+  showView("view-results");
+}
+
+function startNextWeakest() {
+  const state = loadState();
+
+  // Find untested tier 1 first, then lowest-scored
+  let candidate = null;
+  let lowestScore = 11;
+
+  // Priority 1: untested Tier 1
+  for (const t of TOPICS.filter(x => x.tier === 1)) {
+    const ts = state[t.id];
+    if (!ts || ts.lastScore === null || ts.lastScore === undefined) {
+      candidate = t.id;
+      break;
+    }
+  }
+
+  // Priority 2: lowest-scored Tier 1
+  if (!candidate) {
+    for (const t of TOPICS.filter(x => x.tier === 1)) {
+      const ts = state[t.id];
+      if (ts && ts.lastScore < lowestScore) {
+        lowestScore = ts.lastScore;
+        candidate = t.id;
+      }
+    }
+  }
+
+  // Priority 3: untested Tier 2
+  if (!candidate) {
+    for (const t of TOPICS.filter(x => x.tier === 2)) {
+      const ts = state[t.id];
+      if (!ts || ts.lastScore === null || ts.lastScore === undefined) {
+        candidate = t.id;
+        break;
+      }
+    }
+  }
+
+  // Priority 4: lowest-scored Tier 2
+  if (!candidate) {
+    for (const t of TOPICS.filter(x => x.tier === 2)) {
+      const ts = state[t.id];
+      if (ts && ts.lastScore < lowestScore) {
+        lowestScore = ts.lastScore;
+        candidate = t.id;
+      }
+    }
+  }
+
+  if (candidate) startTest(candidate);
+  else showGrid();
+}
+
+// Word count
+document.getElementById("recall-input").addEventListener("input", function() {
+  const words = this.value.trim().split(/\s+/).filter(w => w.length > 0).length;
+  document.getElementById("word-count").textContent = words + " words";
+});
+
+// Init
+renderGrid();
+updateStats();
+</script>
+</body>
+</html>

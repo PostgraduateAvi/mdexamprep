@@ -1,0 +1,1188 @@
+{
+  "id": "neuro",
+  "system_name": "Neurological System",
+  "system": "neuro",
+
+  "system_examination_technique": {
+    "approach": "Patient supine, fully exposed limbs. Proceed systematically: General Inspection → Higher Mental Functions → Cranial Nerves → Motor (Inspection → Tone → Power → Bulk) → Sensory → Reflexes & Plantar → Coordination & Cerebellar → Gait. Always compare both sides. Determine UMN vs LMN first.",
+    "sequence": "General Inspection → Higher Mental Functions → Cranial Nerves → Motor (Inspection → Tone → Power) → Sensory → Reflexes & Plantar → Coordination → Gait",
+    "steps": [
+      {
+        "phase": "General Inspection",
+        "actions": [
+          "From foot of bed: consciousness, orientation, posture (Wernicke-Mann posture — arm flexed, leg extended = UMN; frog-leg posture = LMN), wasting (symmetric vs asymmetric), fasciculations (watch 30 seconds), involuntary movements (tremor, chorea, dystonia).",
+          "Devices: catheter (neurogenic bladder), wheelchair, orthoses (AFO, KAFO), nasogastric tube (bulbar weakness), tracheostomy.",
+          "Bedside clues: walking aids, pressure sores (sacrum, heels = immobility), contractures, muscle wasting pattern.",
+          "Spine: gibbus (Pott's), scoliosis, scars, sinuses. Palpate spinous processes for tenderness."
+        ]
+      },
+      {
+        "phase": "Higher Mental Functions",
+        "actions": [
+          "Level of consciousness: GCS or alert/drowsy/stuporous/comatose.",
+          "Orientation: time, place, person.",
+          "Speech: Broca's aphasia (non-fluent, comprehension preserved, repetition impaired — frontal lobe), Wernicke's aphasia (fluent but nonsensical, comprehension impaired — temporal lobe), global aphasia (both affected — large MCA territory).",
+          "Neglect: double simultaneous stimulation (parietal lobe, non-dominant hemisphere)."
+        ]
+      },
+      {
+        "phase": "Cranial Nerves",
+        "actions": [
+          "CN I (Olfactory): Test each nostril with coffee/cloves. Anosmia = frontal lobe lesion, post-trauma.",
+          "CN II (Optic): Visual acuity (Snellen), visual fields (confrontation), fundoscopy (papilledema, optic atrophy, disc pallor), pupillary reflexes (direct, consensual, RAPD/Marcus Gunn pupil with swinging flashlight test).",
+          "CN III, IV, VI (Eye movements): Follow H-pattern. CN III palsy = ptosis + dilated pupil + eye down-and-out. CN IV = diplopia on looking down and in (reading/stairs). CN VI = medial deviation, cannot abduct. Nystagmus: direction, type.",
+          "CN V (Trigeminal): Sensory — light touch and pinprick in V1/V2/V3. Motor — masseter/temporalis (clench jaw). Corneal reflex (afferent V1, efferent VII). Jaw jerk (brisk = bilateral UMN).",
+          "CN VII (Facial): Upper vs lower face distinction. 'Raise eyebrows' (UMN spares forehead, LMN affects all). 'Show teeth', 'puff cheeks', 'close eyes tight'.",
+          "CN VIII (Vestibulocochlear): Rinne and Weber tests. Sensorineural vs conductive hearing loss.",
+          "CN IX, X (Glossopharyngeal, Vagus): 'Say ah' — uvula deviates AWAY from lesion. Gag reflex. Palatal movement. Nasal speech = palatal weakness.",
+          "CN XI (Accessory): Shrug shoulders against resistance (trapezius). Turn head against resistance (sternocleidomastoid — turns head to OPPOSITE side).",
+          "CN XII (Hypoglossal): 'Stick out tongue'. LMN: tongue deviates TOWARDS lesion (wasting + fasciculations on affected side). UMN: tongue deviates AWAY from lesion."
+        ]
+      },
+      {
+        "phase": "Motor — Inspection",
+        "actions": [
+          "Posture: Wernicke-Mann (UMN — arm flexed at elbow/wrist, leg extended), frog-leg (LMN — bilateral hip abduction/external rotation from hypotonia).",
+          "Wasting: Compare both sides. Measure limb circumference at fixed points. Generalized (disuse) vs focal (denervation). Thenar/hypothenar (T1, median/ulnar), dorsal interossei (ulnar), quadriceps (femoral).",
+          "Fasciculations: Rippling contractions under skin = anterior horn cell disease (MND) or nerve root compression. Watch each muscle group for 30 seconds in good light."
+        ]
+      },
+      {
+        "phase": "Motor — Tone",
+        "actions": [
+          "Patient must be completely relaxed. Support limb and perform passive movements at each joint.",
+          "Spasticity (UMN): Velocity-dependent, clasp-knife quality (resistance increases then suddenly gives way). Test by rapid passive flexion/extension at elbow and knee. Predominant in flexors of upper limb, extensors of lower limb.",
+          "Rigidity (extrapyramidal): Velocity-independent, lead-pipe (uniform resistance throughout range) or cogwheel (lead-pipe + superimposed tremor). Present in ALL directions of movement.",
+          "Hypotonia (LMN/cerebellar): Floppy limb, no resistance to passive movement.",
+          "Clonus: Rapidly dorsiflex ankle and maintain pressure. Sustained clonus (≥3 beats) = pathological UMN sign. Unsustained (1-2 beats) may be normal in anxious patients."
+        ]
+      },
+      {
+        "phase": "Motor — Power",
+        "actions": [
+          "MRC grading: 0 = no contraction, 1 = flicker/trace, 2 = movement with gravity eliminated, 3 = against gravity, 4 = against resistance (4-, 4, 4+), 5 = normal.",
+          "Pyramidal pattern (UMN): Upper limb extensors weaker than flexors (wrist/finger drop), lower limb flexors weaker than extensors (hip flexion, knee flexion, ankle dorsiflexion weak).",
+          "Test systematically: Shoulder abduction (C5), elbow flexion (C5-C6), elbow extension (C7), wrist extension (C6-C7), grip (C8-T1), finger abduction (T1). Hip flexion (L1-L2), knee extension (L3-L4), ankle dorsiflexion (L4-L5), ankle plantarflexion (S1-S2), great toe extension (L5).",
+          "Pronator drift test: Arms extended, palms up, eyes closed 10 seconds. Affected arm pronates and drifts downward = subtle pyramidal weakness (detects grade 4+ weakness that formal testing may miss)."
+        ]
+      },
+      {
+        "phase": "Sensory Examination",
+        "actions": [
+          "Spinothalamic tract (lateral): Pain (pinprick — NEW pin each patient) and temperature (cold tuning fork). Crosses 1-2 segments above entry → contralateral loss.",
+          "Dorsal columns (posterior): Vibration (128Hz tuning fork on bony prominences — medial malleolus → tibial tuberosity → ASIS → sternum) and joint position sense (start with great toe DIP). Ipsilateral loss.",
+          "Light touch: Carried by BOTH anterior spinothalamic and dorsal columns — lost only when both pathways damaged.",
+          "Cortical sensory functions: Two-point discrimination, stereognosis (identify object in hand), graphesthesia (identify number drawn on palm). Requires intact primary sensation.",
+          "Finding the sensory level: Start from insensate area and move UPWARD until patient reports change. Repeat from normal area DOWNWARD. Two points should converge at same dermatome.",
+          "Key dermatome landmarks: C4 = cape/shoulders, T4 = nipple, T6 = xiphisternum, T10 = umbilicus, L1 = inguinal ligament, L3 = medial knee, L5 = dorsum of foot, S1 = lateral foot, S3-S5 = perianal.",
+          "Dissociated sensory loss: Pain/temperature lost with preserved proprioception → anterior cord/syringomyelia. Proprioception lost with preserved pain → posterior cord (B12 deficiency, tabes dorsalis)."
+        ]
+      },
+      {
+        "phase": "Reflexes & Plantar",
+        "actions": [
+          "Deep tendon reflexes — root values: Biceps (C5-C6), Triceps (C6-C7-C8), Supinator/Brachioradialis (C5-C6), Knee (L2-L3-L4), Ankle (L5-S1-S2).",
+          "Grading: 0 = absent, 1+ = diminished (with reinforcement), 2+ = normal, 3+ = brisk without clonus, 4+ = clonus. Always compare sides.",
+          "Reinforcement (Jendrassik maneuver): If absent reflexes — ask patient to clench teeth or interlock fingers and pull apart. Reduces descending inhibition on spinal reflexes.",
+          "Inverted reflex: Absent reflex at one level + exaggerated reflex below = lesion AT that segment (LMN at level, UMN below). Example: absent biceps jerk with brisk triceps = C5-C6 lesion.",
+          "Hoffmann's sign (upper limb Babinski equivalent): Flick middle finger DIP downward — positive = involuntary thumb/index flexion. Asymmetric positive = definite UMN.",
+          "Superficial reflexes: Abdominal (T7-T12) — absent below cord level. Cremasteric (L1-L2). Anal reflex (S4-S5).",
+          "Plantar response (Babinski): Stroke lateral border of sole from heel → across metatarsal heads. Extensor (big toe dorsiflexion + toe fanning) = UMN. Flexor = normal. Mechanism: UMN lesion disinhibits the primitive flexion-withdrawal reflex."
+        ]
+      },
+      {
+        "phase": "Coordination & Cerebellar",
+        "actions": [
+          "Finger-nose test: Intention tremor (worsens approaching target) = cerebellar hemisphere lesion. Past-pointing = ipsilateral cerebellar hemisphere.",
+          "Heel-shin test: Run heel smoothly down opposite shin. Incoordination = ipsilateral cerebellar hemisphere.",
+          "Rapid alternating movements (dysdiadochokinesia): Tap palm alternately with palm/dorsum of other hand. Irregular rhythm/amplitude = cerebellar.",
+          "Rebound phenomenon: Patient pushes against your hand → suddenly release → affected arm overshoots (loss of check) = cerebellar.",
+          "Romberg's test: Stand feet together, eyes open then closed. Positive Romberg (falls with eyes closed) = SENSORY ataxia (proprioceptive loss — posterior columns). Cerebellar ataxia → unsteady with eyes OPEN AND closed.",
+          "Vermis vs hemisphere: Vermis = truncal ataxia, broad-based gait, no limb ataxia. Hemisphere = ipsilateral limb ataxia (dysmetria, intention tremor, dysdiadochokinesia)."
+        ]
+      },
+      {
+        "phase": "Gait Assessment",
+        "actions": [
+          "Hemiplegic gait (circumduction): Spastic leg swings outward in semicircle, foot scrapes floor. Arm held flexed. = UMN hemisphere lesion.",
+          "Spastic paraparetic gait (scissoring): Both legs stiff and adducted, crossing midline. = bilateral cord lesion.",
+          "High-stepping (steppage) gait: Foot drop → lifts knee high to clear foot. = Common peroneal nerve palsy or L5 radiculopathy.",
+          "Waddling gait: Trunk sways side to side. = Proximal myopathy (hip girdle weakness — Trendelenburg).",
+          "Ataxic gait (cerebellar): Broad-based, unsteady, irregular stride, cannot tandem walk. = Cerebellar vermis.",
+          "Sensory ataxic gait: High-stepping, stamping, worse in dark/eyes closed. = Posterior column disease (B12 deficiency, tabes dorsalis).",
+          "Parkinsonian gait: Short shuffling steps, reduced arm swing, difficulty initiating (freezing), festination (progressively shorter faster steps).",
+          "Tandem gait (heel-to-toe): Most sensitive test for mild cerebellar dysfunction."
+        ]
+      }
+    ]
+  },
+
+  "cross_case_differentials": [
+    {
+      "comparison": "UMN vs LMN Lesion",
+      "conditions": ["UMN", "LMN"],
+      "features": [
+        {"feature": "Tone", "values": ["Increased — spasticity (clasp-knife, velocity-dependent)", "Decreased — flaccidity, hypotonia"]},
+        {"feature": "Power", "values": ["Pyramidal distribution (extensors weak in arm, flexors weak in leg)", "Specific myotome/nerve distribution"]},
+        {"feature": "Reflexes", "values": ["Exaggerated (hyperreflexia), clonus may be present", "Diminished or absent (hyporeflexia/areflexia)"]},
+        {"feature": "Plantar", "values": ["Extensor (Babinski positive)", "Flexor or absent"]},
+        {"feature": "Wasting", "values": ["Absent or late (disuse atrophy after months)", "Early and prominent (denervation atrophy)"]},
+        {"feature": "Fasciculations", "values": ["Absent", "Present (spontaneous motor unit firing)"]},
+        {"feature": "Distribution", "values": ["Pyramidal pattern", "Root, nerve, or segmental"]}
+      ]
+    },
+    {
+      "comparison": "GBS vs Transverse Myelitis",
+      "conditions": ["GBS", "Transverse Myelitis"],
+      "features": [
+        {"feature": "Type", "values": ["LMN (peripheral nerve)", "UMN (spinal cord)"]},
+        {"feature": "Tone", "values": ["Flaccid always", "Spastic (or initially flaccid → becomes spastic)"]},
+        {"feature": "Reflexes", "values": ["Areflexic always", "Hyperreflexic (or initially areflexic → becomes brisk)"]},
+        {"feature": "Plantar", "values": ["Flexor or absent — NEVER extensor", "Extensor (Babinski positive)"]},
+        {"feature": "Sensory", "values": ["Glove-stocking paresthesias, NO level", "SENSORY LEVEL (sharp dermatomal cutoff)"]},
+        {"feature": "Bladder", "values": ["Late and mild", "Early and severe (retention from day 1)"]},
+        {"feature": "Pattern", "values": ["Ascending (feet → legs → arms)", "Acute paraplegia, not ascending"]},
+        {"feature": "CSF", "values": ["Albuminocytologic dissociation (protein up, cells normal)", "Pleocytosis + elevated protein"]}
+      ]
+    },
+    {
+      "comparison": "Cortical vs Capsular Hemiplegia",
+      "conditions": ["Cortical (MCA)", "Internal Capsule"],
+      "features": [
+        {"feature": "Distribution", "values": ["Face + Arm >> Leg (or Leg >> Arm if ACA)", "Face = Arm = Leg (equal, dense)"]},
+        {"feature": "Cortical signs", "values": ["Present: aphasia (dominant), neglect (non-dominant), astereognosis", "Absent: pure motor deficit without cortical sensory signs"]},
+        {"feature": "Visual field", "values": ["Homonymous hemianopia (optic radiation)", "May have hemianopia if posterior limb involved"]},
+        {"feature": "Seizures", "values": ["More common (cortical irritation)", "Less common"]},
+        {"feature": "Eyes", "values": ["Deviate TOWARDS the lesion", "Usually no eye deviation"]},
+        {"feature": "Recovery", "values": ["Variable — arm often recovers less than leg", "Often poor (dense motor pathway damage in compact area)"]}
+      ]
+    },
+    {
+      "comparison": "Conus Medullaris vs Cauda Equina",
+      "conditions": ["Conus Medullaris", "Cauda Equina"],
+      "features": [
+        {"feature": "Onset", "values": ["Sudden, bilateral, symmetric", "Gradual, asymmetric initially"]},
+        {"feature": "Pain", "values": ["Less prominent", "Severe radicular pain"]},
+        {"feature": "Motor", "values": ["Symmetric, mild", "Asymmetric, marked, with wasting"]},
+        {"feature": "Sensory", "values": ["Saddle anesthesia (symmetric), dissociated loss possible", "Saddle + radicular, asymmetric"]},
+        {"feature": "Bladder", "values": ["Early and severe (LMN atonic bladder)", "Late (unless S2-S4 roots compressed)"]},
+        {"feature": "Reflexes", "values": ["Knee jerk preserved, ankle jerk lost", "Both may be lost depending on root level"]},
+        {"feature": "Plantar", "values": ["Mute or flexor", "Flexor or absent"]}
+      ]
+    },
+    {
+      "comparison": "Short-Segment vs Long-Segment Myelitis",
+      "conditions": ["Short-segment (MS)", "Long-segment/LETM (NMO)"],
+      "features": [
+        {"feature": "Length on MRI", "values": ["<2 vertebral segments", "≥3 contiguous vertebral segments"]},
+        {"feature": "Cord cross-section", "values": ["Peripheral/dorsolateral, eccentric, partial", "Central, involving grey matter, complete"]},
+        {"feature": "Severity", "values": ["Usually milder, partial syndrome", "Usually severe, complete transverse syndrome"]},
+        {"feature": "Brain MRI", "values": ["Periventricular lesions (Dawson's fingers)", "Normal or NMO-specific (area postrema, periependymal)"]},
+        {"feature": "Antibody", "values": ["OCBs positive in CSF (~95%)", "AQP4-IgG positive (~80%)"]},
+        {"feature": "Recovery", "values": ["Good (MS relapses generally recover well)", "Variable — NMO has poor recovery"]}
+      ]
+    }
+  ],
+
+  "cases": [
+    {
+      "id": "hemiplegia",
+      "name": "Hemiplegia (UMN — MCA Territory Stroke)",
+      "category": "case",
+      "system": "neuro",
+      "tags": ["long-case", "short-case", "UMN", "stroke", "MCA", "cardioembolic", "hemiplegia"],
+      "presentation_script": {
+        "opening": "Sir, I have examined this patient. This is a 58-year-old male who is conscious and oriented with Broca's aphasia.",
+        "gpe_findings": "On general examination, the patient is conscious, oriented, with non-fluent aphasia. Pulse is irregularly irregular at 88/min suggesting atrial fibrillation. No pallor, icterus, cyanosis, clubbing, or pedal edema.",
+        "system_findings": "On neurological examination, there is right-sided UMN facial palsy with lower face weakness and forehead sparing. Motor examination reveals spastic tone in the right upper and lower limbs with clasp-knife spasticity. Power is 2/5 in the right upper limb and 3/5 in the right lower limb, with face and arm weaker than leg suggesting MCA territory. Deep tendon reflexes are exaggerated on the right side with sustained ankle clonus. Plantar response is extensor on the right (Babinski positive) and flexor on the left. There is cortical sensory loss on the right side with impaired two-point discrimination and astereognosis. Gait is circumduction type.",
+        "diagnosis_statement": "This patient has right-sided upper motor neuron type hemiplegia with UMN facial palsy, most likely due to a left middle cerebral artery territory ischemic stroke, as evidenced by right-sided spastic hemiparesis (face, arm > leg), UMN 7th nerve palsy, brisk deep tendon reflexes, extensor plantar response, circumduction gait, and Broca's aphasia, in the setting of hypertension and atrial fibrillation.",
+        "differentials": [
+          "Left MCA territory ischemic stroke — cardioembolic (AF)",
+          "Left MCA territory ischemic stroke — large artery atherosclerosis",
+          "Left internal capsule lacunar infarct (but would be pure motor, equal face/arm/leg, no cortical signs)",
+          "Left MCA territory hemorrhagic stroke (but no headache/vomiting/LOC at onset)",
+          "Space-occupying lesion (tumor, abscess) — but sudden onset favors vascular"
+        ],
+        "tips": [
+          "Always state Side + UMN/LMN type + Topographic diagnosis (cortical/capsular/brainstem) + Etiological diagnosis (infarct/hemorrhage) + Supporting signs + Risk factors.",
+          "Face + arm > leg = MCA territory. Leg > arm = ACA territory. Equal face/arm/leg = internal capsule.",
+          "In acute stroke (<24h), reflexes may be normal or depressed (spinal shock/diaschisis) — do not exclude stroke based on normal reflexes acutely."
+        ]
+      },
+      "case_scenario": {
+        "demographics": "58-year-old male, right-handed, retired teacher",
+        "chief_complaint": "Right-sided weakness of body and difficulty in speaking for 3 months",
+        "hpi": "Patient woke up 3 months ago with sudden onset right-sided weakness involving face, arm, and leg, with arm weaker than leg. Associated difficulty in speaking (non-fluent speech, comprehension relatively preserved). No headache, vomiting, or loss of consciousness at onset. Known hypertensive for 12 years and diabetic for 8 years. Known to have irregular heartbeat (atrial fibrillation) — not on anticoagulation.",
+        "past_history": "Hypertension 12 years (on amlodipine), Type 2 DM 8 years (on metformin), Atrial fibrillation — not anticoagulated",
+        "drug_history": "Amlodipine 5mg, Metformin 500mg BD, Aspirin 75mg (started after stroke)",
+        "social_history": "Non-smoker, occasional alcohol"
+      },
+      "clinical_summary": [
+        {"area": "General", "finding": "Broca's aphasia", "detail": "Non-fluent speech, comprehension preserved, repetition impaired, irregularly irregular pulse (AF)", "present": true, "significance": "Left hemisphere cortical lesion + cardiac source of embolism"},
+        {"area": "Cranial Nerves", "finding": "Right UMN facial palsy", "detail": "Lower face weak, forehead spared. No other CN deficit", "present": true, "significance": "UMN 7th = supranuclear lesion. Forehead spared because upper face has bilateral cortical representation"},
+        {"area": "Motor — Tone", "finding": "Right-sided spasticity", "detail": "Clasp-knife type in right UL and LL. Flexor pattern in arm, extensor pattern in leg (Wernicke-Mann posture)", "present": true, "significance": "UMN lesion → spasticity. Wernicke-Mann: arm flexed, leg extended"},
+        {"area": "Motor — Power", "finding": "Right hemiparesis", "detail": "Right UL 2/5 (arm > forearm), Right LL 3/5 (hip > knee > ankle). Left side 5/5", "present": true, "significance": "Face and arm > leg = MCA territory. Leg > arm = ACA territory"},
+        {"area": "Reflexes", "finding": "Right-sided hyperreflexia", "detail": "Exaggerated biceps, triceps, supinator, knee, ankle jerks on right. Left normal", "present": true, "significance": "UMN type hyperreflexia — loss of descending inhibition on spinal reflexes"},
+        {"area": "Plantar", "finding": "Right extensor plantar", "detail": "Right Babinski positive. Left flexor", "present": true, "significance": "The hallmark UMN sign — disinhibition of the flexion withdrawal reflex"},
+        {"area": "Gait", "finding": "Circumduction gait", "detail": "Right leg swings outward in semicircle, foot scrapes floor. Right arm held in flexion", "present": true, "significance": "Spastic leg cannot flex adequately at hip/knee → compensatory circumduction"},
+        {"area": "Sensory", "finding": "Cortical sensory loss", "detail": "Right side: impaired 2-point discrimination, astereognosis, agraphesthesia", "present": true, "significance": "Parietal cortex involvement (MCA territory includes somatosensory cortex)"}
+      ],
+      "examination_technique": {
+        "sequence": "General Inspection → Cranial Nerves (especially VII) → Motor (Tone → Power → Pronator drift) → Reflexes & Plantar → Sensory → Coordination → Gait",
+        "steps": [
+          {
+            "phase": "Inspection",
+            "actions": [
+              "Observe Wernicke-Mann posture: shoulder adducted, elbow flexed, wrist flexed, fingers curled (UL); hip extended, knee extended, ankle plantarflexed (LL).",
+              "Note wasting: In chronic hemiplegia, disuse atrophy may be visible. Measure limb circumference at fixed points and compare sides.",
+              "Fasciculations: Absent in UMN lesion. If present → consider LMN component or MND."
+            ],
+            "findings_in_this_case": [
+              "Wernicke-Mann posture on right side",
+              "Mild disuse atrophy of right limbs (3 months duration)",
+              "No fasciculations"
+            ]
+          },
+          {
+            "phase": "Tone Assessment",
+            "actions": [
+              "Ensure patient is relaxed. Support forearm and passively flex/extend elbow slowly then rapidly. Note velocity-dependent increase (spasticity) vs uniform resistance (rigidity).",
+              "Test ankle clonus: rapidly dorsiflex foot and maintain pressure. Sustained ≥3 beats = pathological UMN sign.",
+              "In acute stroke (<24-48h), tone may be flaccid (spinal shock/diaschisis) before spasticity emerges."
+            ],
+            "findings_in_this_case": [
+              "Right-sided clasp-knife spasticity at elbow and knee",
+              "Sustained ankle clonus on right (>5 beats)",
+              "Left side: normal tone"
+            ]
+          },
+          {
+            "phase": "Power Testing",
+            "actions": [
+              "Test MRC grading in pyramidal distribution: UL extensors (wrist/finger extension) and LL flexors (hip flexion, knee flexion, ankle dorsiflexion) are preferentially weak in UMN.",
+              "Pronator drift test: arms extended, palms up, eyes closed 10 seconds. Affected arm pronates and drifts down — detects subtle grade 4+ weakness.",
+              "Pseudoweakness (pain, non-cooperation) causes variable inconsistent power; true pyramidal weakness is consistent and follows flexor-extensor pattern."
+            ],
+            "findings_in_this_case": [
+              "Right UL: 2/5 (arm > forearm), right LL: 3/5 (hip > knee > ankle)",
+              "Left side: 5/5 throughout",
+              "Pyramidal distribution confirmed"
+            ]
+          },
+          {
+            "phase": "Reflexes",
+            "actions": [
+              "Test all DTRs bilaterally. Grade 0-4+. Compare sides — asymmetry is as important as absolute value.",
+              "Hoffmann's sign: flick middle finger DIP downward — positive = involuntary thumb/index flexion. Asymmetric positive = definite UMN.",
+              "Babinski: stroke lateral sole from heel → across metatarsal heads. Extensor = UMN. In acute stroke (<24h), reflexes may be normal or depressed."
+            ],
+            "findings_in_this_case": [
+              "Right: 3+ at all sites. Left: 2+ (normal)",
+              "Right Hoffmann positive, left negative",
+              "Right Babinski positive, left flexor"
+            ]
+          },
+          {
+            "phase": "Gait",
+            "actions": [
+              "Ask patient to walk if safe. Observe circumduction pattern: spastic leg swings outward in semicircle because it cannot flex at hip/knee.",
+              "Note reduced arm swing on affected side.",
+              "Distinguish from foot drop (isolated dorsiflexor weakness = peroneal nerve palsy, NOT stroke — stroke produces complete pyramidal pattern weakness)."
+            ],
+            "findings_in_this_case": [
+              "Right-sided circumduction gait",
+              "Absent right arm swing",
+              "Left side normal"
+            ]
+          }
+        ]
+      },
+      "findings_with_mechanisms": [
+        {
+          "finding": "Spasticity (clasp-knife)",
+          "mechanism": "UMN lesion removes descending inhibition from reticulospinal tract on spinal stretch reflex → hyperexcitable alpha motor neurons → velocity-dependent increase in muscle tone",
+          "mechanism_chain": "Cortical/capsular lesion → loss of descending inhibition → hyperactive stretch reflex → spasticity",
+          "caveat": "In acute stroke (<48h), tone may be flaccid (diaschisis). Spasticity emerges over 24-72 hours as spinal circuits recover from shock.",
+          "grading": "Modified Ashworth Scale 0-4"
+        },
+        {
+          "finding": "Babinski sign (extensor plantar)",
+          "mechanism": "Corticospinal tract normally INHIBITS the flexion-withdrawal reflex. UMN lesion releases this primitive reflex → big toe dorsiflexes as part of triple flexion response (hip, knee, ankle all flex)",
+          "mechanism_chain": "Corticospinal tract damage → loss of inhibition → primitive flexion-withdrawal reflex re-emerges → big toe extends + toes fan",
+          "caveat": "Withdrawal response (all toes flex with hip/knee flexion) is NOT a true Babinski. In acute stroke, may take hours to emerge."
+        },
+        {
+          "finding": "UMN facial palsy (forehead sparing)",
+          "mechanism": "Upper facial nucleus receives bilateral cortical input; lower facial nucleus receives only contralateral input. Cortical/capsular lesion → only contralateral lower face weakens, forehead spared",
+          "mechanism_chain": "Left hemisphere lesion → right lower facial nucleus loses contralateral input → lower face weak. Upper facial nucleus still receives ipsilateral input → forehead preserved",
+          "caveat": "In LMN (Bell's palsy), BOTH upper and lower face affected ipsilaterally because the nerve itself is damaged below the nucleus."
+        },
+        {
+          "finding": "Broca's aphasia",
+          "mechanism": "Broca's area (posterior inferior frontal gyrus, Brodmann area 44-45) in dominant (left) hemisphere is the motor speech area. Lesion → non-fluent speech with preserved comprehension",
+          "mechanism_chain": "Left MCA territory stroke → Broca's area damaged → loss of motor programming for speech → non-fluent, telegraphic speech with intact comprehension",
+          "caveat": "Right hemisphere lesions in left-handed patients can cause aphasia (crossed aphasia). Right hemisphere lesions cause neglect, not aphasia, in right-handed patients."
+        },
+        {
+          "finding": "Circumduction gait",
+          "mechanism": "Spastic leg held in extension cannot flex at hip/knee. To clear the foot, patient tilts pelvis and swings the stiff leg outward in semicircular arc",
+          "mechanism_chain": "UMN lesion → spastic extension of leg → cannot flex hip/knee/ankle during swing phase → compensatory circumduction + foot scraping",
+          "caveat": "Isolated foot drop (peroneal palsy) causes steppage gait, NOT circumduction — because hip/knee are normal."
+        },
+        {
+          "finding": "Hyperreflexia",
+          "mechanism": "Loss of descending corticospinal inhibition on spinal reflex arcs → exaggerated monosynaptic stretch reflex",
+          "mechanism_chain": "UMN lesion → loss of descending inhibition → spinal reflex arc hyperexcitable → brisk reflexes",
+          "caveat": "In acute stroke (<24h), reflexes may be normal or depressed due to spinal shock/diaschisis. Hyperreflexia emerges over 24-72 hours."
+        }
+      ],
+      "diagnosis_and_differentials": {
+        "provisional": "Left middle cerebral artery territory ischemic stroke (cardioembolic — atrial fibrillation) with right UMN hemiplegia, UMN facial palsy, and Broca's aphasia, now in the established stroke (chronic) phase",
+        "supporting_evidence": [
+          "Right-sided UMN signs (spasticity, hyperreflexia, Babinski, circumduction gait)",
+          "Face + arm > leg distribution = MCA territory",
+          "Broca's aphasia = left hemisphere (dominant) involvement",
+          "Atrial fibrillation = cardioembolic source",
+          "Sudden onset during sleep = vascular etiology",
+          "No headache/vomiting/LOC = against hemorrhagic (though not absolute)"
+        ],
+        "differentials": [
+          {"condition": "Internal capsule lacunar infarct", "points_for": "UMN hemiplegia", "why_not": "Face + arm > leg (not equal), cortical signs present (aphasia, cortical sensory loss) — capsular lesions produce pure motor hemiplegia WITHOUT cortical signs"},
+          {"condition": "Hemorrhagic stroke", "points_for": "Sudden onset hemiplegia, hypertension", "why_not": "No headache, vomiting, or LOC at onset (hemorrhagic strokes usually have these). CT brain would differentiate."},
+          {"condition": "Space-occupying lesion (tumor, abscess)", "points_for": "Focal neurological deficit", "why_not": "Sudden onset favors vascular. SOL typically has progressive course with features of raised ICP (headache, vomiting, papilledema)."},
+          {"condition": "Brainstem stroke", "points_for": "Hemiplegia", "why_not": "No ipsilateral cranial nerve palsy (crossed signs). No cerebellar signs. UMN facial palsy (not LMN). Aphasia = cortical, not brainstem."}
+        ]
+      },
+      "investigations": [
+        {"test": "CT brain (non-contrast)", "expected": "Hypodense area in left MCA territory (established infarct). Hemorrhage would be hyperdense (white)", "why": "First investigation in acute stroke to EXCLUDE hemorrhage", "priority": "immediate"},
+        {"test": "MRI brain (DWI)", "expected": "Restricted diffusion in left MCA territory. Gold standard for acute ischemic stroke — detects within minutes", "why": "Confirms ischemic infarct location and extent", "priority": "immediate"},
+        {"test": "CT/MR angiography", "expected": "May show MCA occlusion or stenosis. Carotid stenosis assessment", "why": "Identifies occluded vessel. Essential for thrombectomy planning", "priority": "immediate"},
+        {"test": "ECG", "expected": "Atrial fibrillation (irregularly irregular, no P waves, fibrillation baseline)", "why": "Confirms cardioembolic source. 24h Holter if paroxysmal AF suspected", "priority": "immediate"},
+        {"test": "Echocardiography", "expected": "LA enlargement, LA appendage thrombus (TEE superior). Rule out valvular disease, LV thrombus, PFO", "why": "Identifies cardiac source of embolism", "priority": "routine"},
+        {"test": "Carotid Doppler", "expected": "Carotid stenosis quantification. >70% stenosis → consider carotid endarterectomy", "why": "Assess for large artery atherosclerosis", "priority": "routine"},
+        {"test": "Blood tests", "expected": "CBC, RBS, HbA1c, lipid profile, renal function, coagulation profile", "why": "Baseline assessment and risk factor quantification", "priority": "routine"}
+      ],
+      "management": {
+        "medical": [
+          {"intervention": "Anticoagulation for AF", "rationale": "Cardioembolic stroke from AF — anticoagulation prevents recurrence", "specifics": "Start warfarin/DOAC after 2-14 days (delay for large infarct — hemorrhagic transformation risk). DOACs preferred for non-valvular AF. Target INR 2-3 for warfarin."},
+          {"intervention": "Risk factor control", "rationale": "Secondary prevention", "specifics": "BP target <130/80 (SPRINT), HbA1c <7%, LDL <70 (high-dose statin), smoking cessation"},
+          {"intervention": "Rehabilitation", "rationale": "Maximize functional recovery", "specifics": "Physiotherapy (strengthen weak limbs, prevent contractures), occupational therapy (ADL retraining), speech therapy (Broca's aphasia), psychological support (post-stroke depression in 30%)"}
+        ],
+        "interventional": "Thrombolysis (IV alteplase 0.9mg/kg within 4.5h) and mechanical thrombectomy (LVO, up to 24h with perfusion imaging) — in the acute phase",
+        "surgical": "Decompressive craniectomy for malignant MCA infarction with cerebral edema. Carotid endarterectomy if symptomatic carotid stenosis >70%.",
+        "this_patient": "This patient is 3 months post-stroke — now in the chronic/rehabilitation phase. Anticoagulation for AF (DOAC preferred), risk factor optimization, ongoing rehabilitation. Dual antiplatelet not needed since AF is the etiology (anticoagulation replaces antiplatelet).",
+        "follow_up": "Regular INR monitoring if on warfarin. CHA2DS2-VASc score assessment. HbA1c and BP monitoring. Rehabilitation progress assessment. Screen for post-stroke depression."
+      },
+      "complications": [
+        {"complication": "Hemorrhagic transformation", "mechanism": "Reperfusion of infarcted tissue → damaged blood vessels leak → bleeding into infarct", "presentation": "Clinical worsening, headache, decreased consciousness", "management": "Repeat CT. Reverse anticoagulation if on warfarin. Supportive care."},
+        {"complication": "Post-stroke depression", "mechanism": "Biological (neurotransmitter disruption) + psychological (disability, loss of independence)", "presentation": "Affects 30% of stroke survivors. Apathy, anhedonia, sleep disturbance", "management": "SSRIs (fluoxetine, sertraline). Psychological support."},
+        {"complication": "Spasticity and contractures", "mechanism": "Chronic UMN lesion → sustained spasticity → muscle fibrosis → fixed contracture", "presentation": "Fixed joint deformity, pain, hygiene problems in hand", "management": "Physiotherapy, botulinum toxin, baclofen, serial casting"},
+        {"complication": "Deep vein thrombosis / PE", "mechanism": "Immobility → venous stasis → thrombosis", "presentation": "Leg swelling, Homan's sign, dyspnea/chest pain (PE)", "management": "LMWH prophylaxis, compression stockings, early mobilization"}
+      ],
+      "vivas": [
+        {
+          "question": "How do you differentiate UMN from LMN facial palsy?",
+          "answer": "The facial nerve nucleus has two parts: upper half (frontalis, orbicularis oculi) receives BILATERAL cortical input; lower half (lower face) receives only CONTRALATERAL input. In UMN lesion: contralateral lower face weak, forehead spared. In LMN lesion (Bell's palsy, CPA tumor): the nerve itself is damaged → BOTH upper and lower face paralyzed on the same side.",
+          "follow_ups": [
+            {"question": "How do you test this clinically?", "answer": "'Raise your eyebrows' (tests frontalis) — equal in UMN, asymmetric in LMN. 'Show your teeth' (tests lower face) — asymmetric in both. UMN: eyebrows equal, lower face asymmetric. LMN: both asymmetric on same side."},
+            {"question": "What is Bell's phenomenon?", "answer": "When asked to close eyes, the eyeball rolls upward and outward (normal protective reflex). Visible in LMN facial palsy because the eye cannot close fully, revealing the upward rolling. Not a pathological sign itself — it's a normal reflex made visible by the palsy."}
+          ],
+          "examiner": "neurology"
+        },
+        {
+          "question": "How do you differentiate cortical from capsular hemiplegia?",
+          "answer": "Cortical (MCA): face + arm > leg (or leg > arm if ACA), cortical signs present (aphasia, neglect, astereognosis, agraphesthesia), homonymous hemianopia, eyes deviate TOWARDS lesion, seizures more common. Capsular: equal face = arm = leg (dense pure motor hemiplegia), NO cortical signs, variable hemianopia. Internal capsule: motor fibers densely packed in posterior limb → small lesion causes devastating equal hemiplegia.",
+          "follow_ups": [
+            {"question": "What is the blood supply of the internal capsule?", "answer": "Anterior limb: medial striate artery (ACA), recurrent artery of Heubner. Genu: direct ICA branches. Posterior limb: lateral striate (lenticulostriate) arteries from MCA — 'arteries of stroke' — small penetrating end-arteries vulnerable to hypertensive lipohyalinosis. Charcot's 'artery of cerebral hemorrhage' is a lateral striate artery."}
+          ],
+          "examiner": "neurology"
+        },
+        {
+          "question": "Name the crossed brainstem syndromes.",
+          "answer": "Weber syndrome (midbrain ventral): ipsilateral CN3 palsy + contralateral hemiplegia. Benedikt syndrome (midbrain tegmentum): CN3 + contralateral tremor/ataxia (red nucleus) + hemiplegia. Millard-Gubler (pons ventral): ipsilateral CN6 + CN7 (LMN) + contralateral hemiplegia. Foville (pons tegmentum): Millard-Gubler + lateral gaze palsy (PPRF) — eyes deviate AWAY from lesion. Wallenberg (lateral medulla): NOT a crossed hemiplegia — ipsilateral Horner, facial pain/temp loss, cerebellar ataxia, palate/vocal cord palsy + contralateral body pain/temp loss. PICA occlusion.",
+          "follow_ups": [
+            {"question": "Why are brainstem syndromes 'crossed'?", "answer": "Cranial nerve nuclei and their fascicles are at the level of the brainstem → ipsilateral LMN palsy. The corticospinal tract hasn't decussated yet (decussation at lower medulla pyramidal decussation) → contralateral hemiplegia. The cranial nerve palsy localizes the LEVEL."}
+          ],
+          "examiner": "neurology"
+        },
+        {
+          "question": "Explain the mechanism of Babinski sign.",
+          "answer": "The plantar response is a spinal reflex. Normally, the corticospinal tract INHIBITS the flexion-withdrawal reflex component that extends the big toe. When the corticospinal tract is damaged (UMN lesion), this inhibition is lost → the primitive flexion-withdrawal reflex re-emerges → big toe extends (dorsiflexes) as part of the withdrawal pattern. 'Extensor plantar' means the big toe dorsiflexes — in anatomical terms this IS extension of the hallux, but functionally it is part of the FLEXION withdrawal reflex (the whole limb flexes).",
+          "follow_ups": [
+            {"question": "What is the difference between spasticity and rigidity?", "answer": "Spasticity (UMN/pyramidal): velocity-DEPENDENT, clasp-knife (resistance increases then suddenly gives way), affects antigravity muscles predominantly (flexors in arm, extensors in leg). Rigidity (extrapyramidal/basal ganglia): velocity-INDEPENDENT, lead-pipe or cogwheel (uniform resistance throughout range), affects ALL muscle groups equally in all directions."}
+          ],
+          "examiner": "medicine"
+        },
+        {
+          "question": "What is the CHA2DS2-VASc score and how does it guide anticoagulation?",
+          "answer": "CHA2DS2-VASc: Congestive heart failure (1), Hypertension (1), Age ≥75 (2), Diabetes (1), Stroke/TIA/thromboembolism (2), Vascular disease (1), Age 65-74 (1), Sex category female (1). Score 0: no anticoagulation. Score 1 in males/2 in females: consider anticoagulation. Score ≥2 in males/≥3 in females: anticoagulate. This patient scores at least 4 (HTN 1 + DM 1 + Stroke 2) — definite anticoagulation indication.",
+          "follow_ups": [
+            {"question": "Why are DOACs preferred over warfarin for non-valvular AF?", "answer": "DOACs (rivaroxaban, apixaban, dabigatran, edoxaban) have predictable pharmacokinetics (no INR monitoring), fewer drug/food interactions, rapid onset, similar/lower bleeding risk, and similar/better stroke prevention vs warfarin. Exceptions: valvular AF (RHD/mechanical valve) → warfarin only. APS → warfarin only (TRAPS trial showed DOACs inferior)."}
+          ],
+          "examiner": "medicine"
+        }
+      ]
+    },
+    {
+      "id": "paraplegia",
+      "name": "Paraplegia (UMN — Pott's Spine / Spinal TB)",
+      "category": "case",
+      "system": "neuro",
+      "tags": ["long-case", "short-case", "UMN", "paraplegia", "spinal-cord", "TB", "Pott-spine", "sensory-level"],
+      "presentation_script": {
+        "opening": "Sir, I have examined this patient. This is a young male who is wheelchair-bound with an indwelling urethral catheter.",
+        "gpe_findings": "On general examination, the patient is emaciated, febrile with low-grade temperature, has grade 3 pressure sores over the sacrum, and is catheterized. No pallor, icterus, cyanosis, or clubbing.",
+        "system_findings": "On spine examination, there is a gibbus deformity (angular kyphosis) at the T8-T9 vertebral level with tenderness over spinous processes T7-T10 and paraspinal muscle spasm. Motor examination of both lower limbs reveals spasticity with clasp-knife tone, bilateral sustained ankle clonus, power of 1/5 at hips and knees and 2/5 at ankles bilaterally, with upper limbs 5/5. Deep tendon reflexes are exaggerated bilaterally at knees and ankles (3+) with sustained clonus. Plantar response is extensor bilaterally (bilateral Babinski positive). Superficial abdominal reflexes are absent below T10. Sensory examination shows complete loss of all modalities below T10 (umbilicus) bilaterally with a sharply demarcated sensory level. The patient has neurogenic bladder with catheter in situ.",
+        "diagnosis_statement": "This patient has UMN-type paraplegia with T10 sensory level secondary to Pott's spine (spinal tuberculosis) causing cord compression at the thoracic level, as evidenced by gibbus deformity, spastic paraplegia, bilateral hyperreflexia, bilateral Babinski, complete sensory loss below T10, and neurogenic bladder, in the setting of constitutional symptoms.",
+        "differentials": [
+          "Pott's spine (spinal TB) — most likely given gibbus, constitutional symptoms, endemic area",
+          "Metastatic spinal cord compression (but age against it, no known primary)",
+          "Transverse myelitis (but gradual onset, gibbus favors TB, not acute/subacute)",
+          "Spinal cord tumor — meningioma/neurofibroma (gradual, but no gibbus)",
+          "Epidural abscess (but gibbus suggests chronic destruction, not acute abscess)"
+        ],
+        "tips": [
+          "Always state: Type (UMN/LMN) + Sensory level + Bladder/bowel involvement + Topographic diagnosis (cord level) + Etiological diagnosis + Supporting signs.",
+          "First determination the examiner expects: 'Sir, this is an UMN-type / LMN-type paraplegia.' Everything follows from this.",
+          "Paraplegia (power 0/5) vs paraparesis (power 1-4/5) — use the precise term based on your power grading."
+        ]
+      },
+      "case_scenario": {
+        "demographics": "25-year-old male, manual laborer",
+        "chief_complaint": "Progressive bilateral lower limb weakness with inability to walk for 4 months, urinary retention for 2 months",
+        "hpi": "Patient noticed gradual onset bilateral lower limb weakness starting 4 months ago, initially difficulty climbing stairs, progressing to inability to stand or walk. Associated with back pain at T8-T9 level for 6 months preceding weakness. Urinary retention requiring catheterization for 2 months. Constitutional symptoms: low-grade fever, night sweats, weight loss of 8 kg over 6 months, loss of appetite.",
+        "past_history": "No prior TB treatment. No known contact with TB. No history of trauma, malignancy, or autoimmune disease.",
+        "drug_history": "None prior to admission",
+        "social_history": "Manual laborer, low socioeconomic status, crowded living conditions"
+      },
+      "clinical_summary": [
+        {"area": "General", "finding": "Emaciated, febrile, immobile", "detail": "Low-grade fever, pressure sores sacrum (grade 3), catheterized, wheelchair-bound", "present": true, "significance": "Chronic illness with complications of immobility. Catheter = neurogenic bladder"},
+        {"area": "Spine", "finding": "Gibbus deformity", "detail": "Angular kyphosis at T8-T9, tenderness over T7-T10 spinous processes, paraspinal muscle spasm", "present": true, "significance": "Gibbus = vertebral body collapse (anterior wedging). Angular kyphosis = Pott's spine. Smooth kyphosis = Scheuermann's or osteoporotic"},
+        {"area": "Motor — Tone", "finding": "Bilateral spasticity", "detail": "Clasp-knife spasticity both LL, bilateral sustained ankle clonus (>5 beats)", "present": true, "significance": "UMN lesion → spasticity. Bilateral = cord lesion. Sustained clonus = severe UMN dysfunction"},
+        {"area": "Motor — Power", "finding": "Paraplegia", "detail": "Hips 1/5, knees 1/5, ankles 2/5 bilaterally. Upper limbs 5/5", "present": true, "significance": "Paraplegia (both LL, UL spared) = lesion below cervical cord. Roughly equal bilaterally = midline cord compression"},
+        {"area": "Reflexes", "finding": "Bilateral hyperreflexia", "detail": "Knee 3+, ankle 3+ bilaterally with sustained clonus. Abdominal reflexes absent below T10", "present": true, "significance": "UMN. Absent abdominal reflexes confirm cord level (upper T7-T9, lower T10-T12)"},
+        {"area": "Plantar", "finding": "Bilateral Babinski positive", "detail": "Bilateral extensor plantar response", "present": true, "significance": "Bilateral Babinski = bilateral corticospinal tract involvement = cord lesion"},
+        {"area": "Sensory", "finding": "Complete sensory loss below T10", "detail": "All modalities (light touch, pinprick, vibration, JPS) lost below umbilicus bilaterally. Sharp demarcation", "present": true, "significance": "Complete transverse cord lesion → all tracts interrupted. T10 = umbilicus landmark"},
+        {"area": "Bladder", "finding": "Neurogenic bladder", "detail": "Catheterized. Initial retention → reflex bladder (automatic emptying with residual)", "present": true, "significance": "UMN bladder: loss of voluntary control. Initially retention (spinal shock), then reflex bladder. LMN bladder: atonic, overflow incontinence"}
+      ],
+      "examination_technique": {
+        "sequence": "General Inspection → Spine Examination → Motor (Tone → Power → Bulk) → Sensory Level → Reflexes & Plantar → Bladder Assessment",
+        "steps": [
+          {
+            "phase": "General Inspection",
+            "actions": [
+              "Posture: legs extended (UMN) vs frog-leg (LMN). Catheter, pressure sores, wheelchair, orthoses.",
+              "Wasting: symmetric or asymmetric. Fasciculations: watch 30 seconds.",
+              "Constitutional signs: emaciation, febrile, lymphadenopathy."
+            ],
+            "findings_in_this_case": ["Extended leg posture (UMN)", "Catheterized", "Sacral pressure sores", "Emaciated and febrile"]
+          },
+          {
+            "phase": "Spine Examination",
+            "actions": [
+              "Inspection: gibbus (angular kyphosis = Pott's), smooth kyphosis, scoliosis, scars, sinuses.",
+              "Palpation: run fingers down spinous processes — tenderness identifies level. Paraspinal spasm. Step deformity.",
+              "Percussion: tap each spinous process with hammer — localized pain at pathology level.",
+              "Gibbus: sharp angulation = vertebral body collapse (TB, fracture). Smooth curve = degenerative/postural."
+            ],
+            "findings_in_this_case": ["Angular gibbus at T8-T9", "Tenderness T7-T10", "Paraspinal muscle spasm", "No sinus or scar"]
+          },
+          {
+            "phase": "Motor Examination",
+            "actions": [
+              "Tone: passive movements at hip, knee, ankle. Spasticity (clasp-knife) vs hypotonia.",
+              "Power: test each myotome — hip flexion (L1-2), hip extension (L5-S1), knee extension (L3-4), knee flexion (L5-S1), ankle dorsiflexion (L4-5), ankle plantarflexion (S1-2), great toe extension (L5).",
+              "Wasting: compare sides. Measure thigh circumference 15cm above medial knee."
+            ],
+            "findings_in_this_case": ["Bilateral clasp-knife spasticity", "Sustained ankle clonus bilaterally", "Power 1/5 hips and knees, 2/5 ankles", "Mild symmetric disuse wasting"]
+          },
+          {
+            "phase": "Sensory Level",
+            "actions": [
+              "Technique: start from insensate area (below lesion) and move UPWARD until patient reports change. Repeat from normal area DOWNWARD. Two points should converge at same dermatome.",
+              "Test modalities separately: pinprick (spinothalamic), light touch, vibration (dorsal column — 128Hz tuning fork), joint position sense.",
+              "Dissociated sensory loss: pain/temp lost with preserved proprioception → anterior cord. Proprioception lost with preserved pain → posterior cord.",
+              "Sacral sparing: perianal sensation preserved = incomplete injury (central cord pattern) — CRITICAL prognostic sign."
+            ],
+            "findings_in_this_case": ["Complete loss all modalities below T10 (umbilicus)", "No sacral sparing", "No dissociation — complete transverse lesion"]
+          },
+          {
+            "phase": "Reflexes",
+            "actions": [
+              "DTR: knee (L3-4), ankle (S1-2). Compare sides.",
+              "Superficial: abdominal reflexes (T7-T12) — absent below cord level. Cremasteric (L1-2). Anal reflex (S4-5).",
+              "Plantar: Babinski technique. Extensor = UMN.",
+              "Beevor's sign: flex neck, observe umbilicus. Moves upward = lower rectus weak (T10 level cord lesion)."
+            ],
+            "findings_in_this_case": ["Knee and ankle jerks 3+ bilaterally", "Abdominal reflexes absent below T10", "Bilateral Babinski positive"]
+          }
+        ]
+      },
+      "findings_with_mechanisms": [
+        {
+          "finding": "Gibbus deformity",
+          "mechanism": "TB bacilli (hematogenous spread from primary focus) infect anterior vertebral body → caseating granulomatous inflammation → bone destruction → anterior wedge collapse of vertebral bodies → angular kyphosis",
+          "mechanism_chain": "TB hematogenous spread → anterior vertebral body infection → caseation + bone destruction → anterior wedge collapse → angular kyphosis (gibbus)",
+          "caveat": "TB destroys disc space (unlike metastases which SPARE disc space — a key distinguishing MRI feature). Smooth kyphosis = not TB (degenerative or Scheuermann's)."
+        },
+        {
+          "finding": "Bilateral Babinski with sensory level",
+          "mechanism": "Cord compression by TB mass/abscess/vertebral collapse → bilateral corticospinal tract damage → bilateral UMN signs including Babinski",
+          "mechanism_chain": "Vertebral collapse → cord compression → bilateral corticospinal tracts damaged → bilateral extensor plantar",
+          "caveat": "Bilateral Babinski = bilateral corticospinal tract involvement = cord lesion. Unilateral Babinski = hemisphere or unilateral cord (Brown-Sequard)."
+        },
+        {
+          "finding": "Sensory level at T10",
+          "mechanism": "Complete transverse cord compression interrupts all ascending sensory tracts (spinothalamic + dorsal columns) at the lesion level → complete sensory loss below",
+          "mechanism_chain": "Cord compression at T8-T9 vertebral level → sensory tracts interrupted → sensory level at T10 (cord segment is 1-2 levels below vertebral level in thoracic region)",
+          "caveat": "The cord segment is always HIGHER than the vertebral segment in the thoracic region. Cord ends at L1 vertebra. T10 sensory level → lesion at approximately T8 cord segment / T6-T7 vertebral level."
+        },
+        {
+          "finding": "UMN bladder (neurogenic)",
+          "mechanism": "Cord lesion above conus (S2-S4) disrupts descending voluntary control of micturition. Initially: retention (spinal shock → detrusor areflexia). Later: reflex/spastic bladder (automatic emptying at low volumes, urgency, incontinence)",
+          "mechanism_chain": "Cord lesion above conus → loss of voluntary micturition control → initially retention (spinal shock) → later reflex bladder (detrusor hyperreflexia + detrusor-sphincter dyssynergia)",
+          "caveat": "LMN bladder (conus/cauda lesion) = atonic, large capacity, overflow incontinence, no urgency. The distinction determines catheter management strategy."
+        }
+      ],
+      "diagnosis_and_differentials": {
+        "provisional": "UMN-type paraplegia with T10 sensory level secondary to Pott's spine (spinal tuberculosis) causing cord compression at thoracic level",
+        "supporting_evidence": [
+          "Gibbus deformity at T8-T9 (angular kyphosis = vertebral body collapse)",
+          "UMN signs: spasticity, hyperreflexia, bilateral Babinski, clonus",
+          "Complete sensory level at T10",
+          "Neurogenic bladder with early retention",
+          "Constitutional symptoms: fever, weight loss, night sweats",
+          "Young male in TB-endemic area",
+          "Progressive course over months (not acute)"
+        ],
+        "differentials": [
+          {"condition": "Spinal cord tumor (meningioma/neurofibroma)", "points_for": "Progressive course, sensory level, bladder involvement", "why_not": "Gibbus favors TB. Tumors usually cause pain worse at night/lying down. No weight loss expected in benign tumors"},
+          {"condition": "Transverse myelitis", "points_for": "Young age, complete cord syndrome", "why_not": "Usually acute/subacute (days, not months). No gibbus. No constitutional symptoms. Often post-infectious"},
+          {"condition": "Epidural abscess", "points_for": "Fever, back pain, progressive weakness", "why_not": "Abscess is usually acute/subacute. Gibbus suggests chronic vertebral destruction rather than acute abscess"},
+          {"condition": "NMO spectrum disorder", "points_for": "Can cause longitudinally extensive transverse myelitis", "why_not": "Usually relapsing course with optic neuritis. No gibbus. Predominantly affects women"},
+          {"condition": "Metastatic cord compression", "points_for": "Back pain, progressive paraplegia", "why_not": "Young age (metastases more common >50). No known primary. TB far more common at this age in India. MRI: TB destroys disc, metastases spare disc"}
+        ]
+      },
+      "investigations": [
+        {"test": "MRI spine with gadolinium", "expected": "Anterior vertebral body destruction, paravertebral abscess (psoas abscess may extend to groin), cord compression, disc involvement. TB destroys disc; metastasis SPARES disc — key distinguishing feature", "why": "Gold standard imaging for cord compression and etiology", "priority": "immediate"},
+        {"test": "Plain radiograph spine", "expected": "Vertebral collapse, reduced disc space, gibbus, erosion. Vertebra plana (complete collapse)", "why": "First investigation. Shows bony destruction", "priority": "immediate"},
+        {"test": "ESR", "expected": "Markedly elevated (>50mm/hr)", "why": "Non-specific but useful for monitoring treatment response", "priority": "routine"},
+        {"test": "Mantoux test", "expected": "Often strongly positive (>15mm). Negative does NOT rule out TB (anergy in disseminated TB)", "why": "Supportive evidence for TB", "priority": "routine"},
+        {"test": "CT-guided biopsy", "expected": "Caseating granulomas, AFB stain positive, culture positive", "why": "Gold standard for histopathological confirmation when clinical picture is unclear", "priority": "routine"},
+        {"test": "GeneXpert (CBNAAT)", "expected": "Detects MTB DNA + rifampicin resistance in 2 hours", "why": "Rapid molecular test on biopsy tissue", "priority": "routine"},
+        {"test": "Chest X-ray", "expected": "30-50% have concurrent pulmonary TB", "why": "Screen for pulmonary TB", "priority": "routine"},
+        {"test": "CSF analysis", "expected": "Lymphocytic pleocytosis, elevated protein in TB. Also useful if TM/NMO/MS suspected", "why": "If non-compressive cause needs exclusion", "priority": "if_indicated"}
+      ],
+      "management": {
+        "medical": [
+          {"intervention": "Anti-tubercular therapy (ATT)", "rationale": "Treat the underlying TB infection and reduce inflammation/compression", "specifics": "Category I: 2HRZE/4HR (2 months intensive: Isoniazid, Rifampicin, Pyrazinamide, Ethambutol → 4 months continuation: HR). Total 9-12 months for skeletal TB (some extend to 18 months for extensive disease). Extended due to poor drug penetration into avascular necrotic bone and caseous tissue."},
+          {"intervention": "Supportive care", "rationale": "Prevent complications of immobility", "specifics": "Pressure sore care (air mattress, 2-hourly turning), bladder care (CIC > indwelling catheter), DVT prophylaxis (LMWH + compression), nutritional support, physiotherapy (passive ROM, prevent contractures)"}
+        ],
+        "interventional": "CT-guided biopsy for histopathological confirmation if diagnosis uncertain",
+        "surgical": "Indications: progressive neurological deficit despite adequate ATT (4-6 weeks), severe cord compression with rapid deterioration, large epidural abscess, severe kyphotic deformity (>50 degrees) with instability. Procedures: anterior decompression + fusion (debridement of caseous tissue + bone grafting + instrumented fixation)",
+        "this_patient": "Start ATT immediately (do not wait for biopsy if clinical picture is classic). Monitor neurological status weekly. Supportive care for pressure sores and bladder. Surgical consultation if no improvement in 4-6 weeks.",
+        "follow_up": "Monthly neurological assessment, ESR monitoring for treatment response, MRI at 3 and 6 months, compliance monitoring (DOTS), assess for drug side effects (hepatotoxicity, optic neuritis with ethambutol)"
+      },
+      "complications": [
+        {"complication": "Cold abscess (psoas abscess)", "mechanism": "Caseating material tracks along fascial planes from vertebral body → forms collection in psoas sheath → may present as groin swelling", "presentation": "Fluctuant groin swelling, back pain, fever. May track to thigh", "management": "CT-guided drainage + ATT. Surgical drainage if large"},
+        {"complication": "Kyphotic deformity (progressive)", "mechanism": "Ongoing vertebral body destruction → increasing angular kyphosis → cosmetic and functional impairment", "presentation": "Visible gibbus, back pain, potential respiratory compromise if severe", "management": "ATT to halt disease. Surgical correction and stabilization if >50 degrees"},
+        {"complication": "Pressure sores", "mechanism": "Immobility + sensory loss → sustained pressure on bony prominences → tissue ischemia → necrosis", "presentation": "Sacrum, heels, trochanters. Grade 1-4", "management": "Air mattress, 2-hourly turning, wound care, nutritional optimization"},
+        {"complication": "Drug-resistant TB", "mechanism": "MDR-TB (resistant to INH + rifampicin) from inadequate treatment or primary resistance", "presentation": "Failure to improve on standard ATT", "management": "GeneXpert for rifampicin resistance. Modified regimen with second-line drugs (fluoroquinolones, aminoglycosides, linezolid)"}
+      ],
+      "vivas": [
+        {
+          "question": "How do you find and document the sensory level?",
+          "answer": "Start from an area of NO sensation (below the lesion) and move UPWARD until the patient reports a change. Mark that point. Repeat from normal area DOWNWARD. The two points should converge at the same dermatome — this is the sensory level. Test modalities separately: pinprick (spinothalamic), vibration (dorsal column). Key landmarks: T4 = nipple, T6 = xiphisternum, T10 = umbilicus, L1 = inguinal ligament.",
+          "follow_ups": [
+            {"question": "What is the significance of the cord-vertebral level discrepancy?", "answer": "The cord is shorter than the vertebral column (ends at L1). In thoracic region: cord segment = vertebral level + 2-3. So T10 sensory level corresponds to cord lesion at approximately T8 segment, which sits at T6-T7 vertebral level. This is why the gibbus at T8-T9 vertebra causes a T10 sensory level."},
+            {"question": "What is Beevor's sign?", "answer": "Ask patient to flex neck (chin to chest) while supine. Observe umbilicus. If it moves UPWARD → lower rectus abdominis weak (below T10) with preserved upper rectus (T7-T9). Localizes cord lesion to T10. Highly specific for T10 level cord lesion."}
+          ],
+          "examiner": "neurology"
+        },
+        {
+          "question": "How do you differentiate UMN from LMN type bladder?",
+          "answer": "UMN bladder (cord lesion above conus S2-S4): spastic, small capacity, reflex emptying, urgency, detrusor-sphincter dyssynergia, retention initially (spinal shock) then automatic bladder. LMN bladder (conus/cauda equina lesion): atonic, large capacity, overflow incontinence, no urgency, bladder expressible. UMN bladder retains residual urine due to dyssynergia; LMN bladder has continuous dribbling.",
+          "follow_ups": [
+            {"question": "What is the management of neurogenic bladder?", "answer": "Clean intermittent catheterization (CIC) is preferred over indwelling catheter (lower infection risk). Anticholinergics (oxybutynin) for detrusor hyperreflexia after spinal shock resolves. Alpha-blockers (tamsulosin) for sphincter dyssynergia. Suprapubic catheter if CIC not possible. Monitor for UTIs and renal function."}
+          ],
+          "examiner": "medicine"
+        },
+        {
+          "question": "What are the cord syndromes and how do you distinguish them?",
+          "answer": "Complete transverse: ALL motor + sensory + autonomic lost below level. Brown-Sequard (hemisection): ipsilateral UMN weakness + proprioception loss, contralateral pain/temperature loss. Anterior cord: bilateral motor + pain/temp loss, PRESERVED proprioception (posterior columns supplied by posterior spinal arteries — spared). Central cord: arms > legs weakness (cervical fibers medial, sacral lateral), cape-like dissociated sensory loss. Posterior cord: proprioception/vibration/discriminative touch loss, motor and pain/temp preserved.",
+          "follow_ups": [
+            {"question": "What causes anterior spinal artery syndrome?", "answer": "Anterior spinal artery occlusion — the cord's 'stroke'. Causes: aortic surgery/clamping, aortic dissection, atherosclerosis, vasculitis. Presents: sudden onset bilateral motor loss + pain/temperature loss with PRESERVED proprioception. Worst prognosis of incomplete syndromes."}
+          ],
+          "examiner": "neurology"
+        },
+        {
+          "question": "How do you differentiate compressive from non-compressive myelopathy?",
+          "answer": "Compressive (extramedullary): back pain (often first symptom), localized tenderness, progressive course, radicular symptoms, MRI shows extrinsic compression (tumor, abscess, TB). Non-compressive (intramedullary/medical): acute/subacute onset, no localized spine tenderness, MRI shows cord signal change without compression (TM, NMO, MS, vascular). Key: compressive causes are potentially surgical emergencies requiring urgent decompression. The MRI differentiates — this is why urgent MRI is mandatory.",
+          "follow_ups": [
+            {"question": "What MRI features distinguish TB from metastatic compression?", "answer": "TB: anterior vertebral body destruction, DISC SPACE INVOLVED (destroyed), paravertebral abscess (psoas), contiguous vertebral involvement, subligamentous spread. Metastases: vertebral body replaced BUT DISC SPACE SPARED (tumor does not cross disc), posterior elements often involved, multiple skip lesions, pedicle destruction early."}
+          ],
+          "examiner": "medicine"
+        }
+      ]
+    },
+    {
+      "id": "gbs",
+      "name": "Guillain-Barré Syndrome (AIDP)",
+      "category": "case",
+      "system": "neuro",
+      "tags": ["long-case", "short-case", "LMN", "GBS", "AIDP", "ascending-paralysis", "areflexia", "respiratory-failure"],
+      "presentation_script": {
+        "opening": "Sir, I have examined this patient. This is a 35-year-old male who is alert and cooperative, on continuous cardiac monitoring.",
+        "gpe_findings": "On general examination, the patient is tachycardic at 110/min with labile blood pressure (160/90 supine → 100/60 standing), respiratory rate 22/min, using accessory muscles of respiration. No pallor, icterus, cyanosis, or clubbing.",
+        "system_findings": "Cranial nerve examination reveals bilateral LMN facial palsy — cannot close eyes, cannot smile, cannot puff cheeks bilaterally — with nasal speech and weak palatal movement. Motor examination shows marked flaccid hypotonia in all four limbs. Power: neck flexion 3/5, deltoids 2/5, biceps 3/5, grip 3/5, hip flexors 2/5, knee extension 2/5, ankle dorsiflexion 1/5 — symmetric, with distal > proximal weakness. ALL deep tendon reflexes are absent bilaterally (generalized areflexia). Plantar responses are flexor bilaterally. Sensory examination: subjective paresthesias in hands and feet but intact objective sensation. Respiratory assessment: single breath count 15, neck flexion 3/5, accessory muscle use.",
+        "diagnosis_statement": "This patient has Guillain-Barré syndrome (AIDP variant) with respiratory compromise, bilateral facial palsy, and autonomic instability, preceded by Campylobacter enteritis, as evidenced by acute ascending symmetric flaccid quadriparesis, generalized areflexia, minimal sensory signs, bilateral LMN facial palsy, and autonomic dysfunction.",
+        "differentials": [
+          "GBS (AIDP) — ascending paralysis, areflexia, preceding infection, bilateral facial palsy",
+          "Transverse myelitis (but areflexia + flaccidity + no sensory level + no bladder = LMN, not UMN)",
+          "Myasthenia gravis (but MG has fluctuating/fatigable weakness, preserved reflexes, ptosis/diplopia)",
+          "Acute poliomyelitis (but polio is ASYMMETRIC, pure motor, fever at onset)",
+          "Hypokalemic paralysis (but no sensory symptoms, rapid recovery with K+)",
+          "Botulism (DESCENDING, not ascending — starts cranial nerves → arms → legs)"
+        ],
+        "tips": [
+          "State: Onset pattern (acute, ascending) + LMN type + Distribution (quadriparesis) + Areflexia + Cranial nerve involvement + Autonomic features + Preceding illness + Specific variant.",
+          "Areflexia is the HALLMARK — present from early. If reflexes are brisk → NOT GBS, think cord lesion.",
+          "Always assess respiratory function (FVC, single breath count, neck flexion) — this is the life-threatening component."
+        ]
+      },
+      "case_scenario": {
+        "demographics": "35-year-old male, software engineer",
+        "chief_complaint": "Progressive weakness of all four limbs for 5 days, bilateral facial weakness for 3 days, difficulty breathing for 1 day",
+        "hpi": "Patient developed tingling in feet 5 days ago, followed by ascending weakness starting in feet → legs → arms over 5 days. Bilateral facial weakness noticed 3 days ago. Difficulty breathing, palpitations, and dizziness on standing for 1 day. History of diarrheal illness (watery diarrhea, abdominal cramps) 2 weeks prior which resolved spontaneously in 3 days. No fever, no headache, no bladder symptoms initially.",
+        "past_history": "No prior neurological illness. No diabetes, hypertension.",
+        "drug_history": "None",
+        "social_history": "Non-smoker, occasional alcohol"
+      },
+      "clinical_summary": [
+        {"area": "General", "finding": "Autonomic instability", "detail": "Tachycardia 110/min resting, BP labile (160/90 supine → 100/60 standing), RR 22/min", "present": true, "significance": "Autonomic dysfunction in 70% of GBS. Tachycardia, BP fluctuations, arrhythmias — can be LIFE-THREATENING"},
+        {"area": "Cranial Nerves", "finding": "Bilateral LMN facial palsy", "detail": "Cannot close eyes, smile, or puff cheeks BILATERALLY. Nasal speech. Weak palatal movement", "present": true, "significance": "LMN facial palsy (nerve affected, not UMN pathway). Bilateral = GBS pattern (Bell's palsy is typically unilateral). Bulbar weakness → aspiration risk"},
+        {"area": "Motor — Tone", "finding": "Generalized flaccid hypotonia", "detail": "All four limbs markedly flaccid", "present": true, "significance": "LMN → loss of alpha motor neuron drive → flaccidity. Distinguishes from cord lesion (spasticity)"},
+        {"area": "Motor — Power", "finding": "Symmetric flaccid quadriparesis", "detail": "Neck flexion 3/5. Deltoids 2/5. Biceps 3/5. Grip 3/5. Hip flexors 2/5. Knee extension 2/5. Ankle dorsiflexion 1/5", "present": true, "significance": "Symmetric, ascending pattern. All four limbs = quadriparesis. MRC sum score for monitoring"},
+        {"area": "Reflexes", "finding": "Generalized areflexia", "detail": "ALL DTRs absent bilaterally (biceps, triceps, supinator, knee, ankle)", "present": true, "significance": "Generalized areflexia is the HALLMARK of GBS. Due to interruption of reflex arc at peripheral nerve level"},
+        {"area": "Plantar", "finding": "Bilateral flexor", "detail": "Flexor or absent/mute bilaterally", "present": true, "significance": "NO extensor plantar = NO UMN involvement. RULES OUT cord lesion"},
+        {"area": "Sensory", "finding": "Minimal objective sensory signs", "detail": "Subjective paresthesias hands/feet. Intact light touch, pinprick, vibration, JPS throughout", "present": true, "significance": "Sensory SYMPTOMS with minimal/absent sensory SIGNS = classic GBS"},
+        {"area": "Respiratory", "finding": "Respiratory compromise", "detail": "Single breath count 15 (normal >20). Neck flexion 3/5. Accessory muscles in use", "present": true, "significance": "Respiratory muscle involvement = MEDICAL EMERGENCY. Monitor FVC serially. FVC <20 mL/kg → consider intubation"}
+      ],
+      "examination_technique": {
+        "sequence": "Vitals + Autonomic → Respiratory Assessment → Cranial Nerves → Motor (Tone → Power) → Reflexes & Plantar → Sensory",
+        "steps": [
+          {
+            "phase": "Vitals & Autonomic",
+            "actions": [
+              "HR variability: tachycardia then sudden bradycardia.",
+              "BP supine and standing: postural drop >20 systolic.",
+              "Continuous cardiac monitoring should be in place."
+            ],
+            "findings_in_this_case": ["Tachycardia 110/min", "BP labile: 160/90 → 100/60 postural drop", "Continuous monitoring in place"]
+          },
+          {
+            "phase": "Respiratory Assessment",
+            "actions": [
+              "Respiratory rate, single breath count (normal >20, <15 = significant, <10 = imminent failure).",
+              "Neck flexion power (shares C3-C5 innervation with diaphragm — neck flexion <4/5 = diaphragm likely weakening).",
+              "Look for accessory muscle use, paradoxical breathing (abdomen IN during inspiration = diaphragm paralysis).",
+              "Do NOT rely on SpO2/ABG alone — by the time these are abnormal, patient is in extremis. FVC is the sensitive early indicator."
+            ],
+            "findings_in_this_case": ["Single breath count 15", "Neck flexion 3/5", "Accessory muscle use present", "No paradoxical breathing yet"]
+          },
+          {
+            "phase": "Cranial Nerves",
+            "actions": [
+              "Facial: bilateral LMN weakness (cannot close eyes, wrinkle forehead, smile — ALL of face affected bilaterally).",
+              "Bulbar: gag reflex, palatal movement, nasal speech, secretion pooling.",
+              "Eye movements: check for MFS overlap (ophthalmoplegia)."
+            ],
+            "findings_in_this_case": ["Bilateral complete LMN facial palsy", "Nasal speech, weak palate", "Eye movements normal (no MFS)"]
+          },
+          {
+            "phase": "Motor & Reflexes",
+            "actions": [
+              "Power: grade all major muscle groups. MRC sum score (6 groups bilaterally, total /60). Score <40 = severe. <48 at admission = predictor of ventilation need.",
+              "Tone: flaccid throughout.",
+              "Reflexes: test ALL — generalized areflexia expected. Early preservation does NOT exclude GBS.",
+              "Plantar: flexor or mute. NEVER extensor (extensor = wrong diagnosis)."
+            ],
+            "findings_in_this_case": ["Symmetric flaccid quadriparesis, distal > proximal", "Generalized areflexia", "Bilateral flexor plantar"]
+          }
+        ]
+      },
+      "findings_with_mechanisms": [
+        {
+          "finding": "Ascending flaccid paralysis",
+          "mechanism": "Molecular mimicry: Campylobacter jejuni surface gangliosides resemble peripheral nerve gangliosides → immune antibodies attack nerve myelin (AIDP) or axonal membrane (AMAN) → conduction block/failure → weakness starting distally (longest nerves affected first) and ascending",
+          "mechanism_chain": "Campylobacter infection → molecular mimicry → anti-ganglioside antibodies → peripheral nerve demyelination/axonal damage → ascending paralysis",
+          "caveat": "Not all GBS is post-Campylobacter. Other triggers: CMV, EBV, Mycoplasma, influenza, Zika, COVID-19 vaccination (rare). In 30% no trigger is identified."
+        },
+        {
+          "finding": "Generalized areflexia",
+          "mechanism": "Demyelination of peripheral nerves interrupts the afferent and/or efferent limb of the monosynaptic stretch reflex arc → reflexes lost early",
+          "mechanism_chain": "Peripheral nerve demyelination → reflex arc interrupted at nerve level → areflexia",
+          "caveat": "Occasional early preservation of reflexes does NOT exclude GBS (may still be evolving). Areflexia develops within days in most patients."
+        },
+        {
+          "finding": "Bilateral LMN facial palsy",
+          "mechanism": "GBS affects peripheral nerves including cranial nerves. Facial nerve is commonly involved (50%). Bilateral involvement is characteristic of GBS (unlike Bell's palsy which is unilateral)",
+          "mechanism_chain": "Immune attack on facial nerve myelin bilaterally → bilateral LMN facial weakness (entire face affected on both sides)",
+          "caveat": "Unilateral facial palsy in the context of GBS can occur but is less typical. Always check for bilateral involvement."
+        },
+        {
+          "finding": "Autonomic instability",
+          "mechanism": "Immune attack on autonomic nerve fibers → both sympathetic and parasympathetic dysfunction → tachycardia, BP fluctuations, arrhythmias",
+          "mechanism_chain": "Autoimmune attack → autonomic nerve demyelination → sympathetic/parasympathetic imbalance → labile HR and BP",
+          "caveat": "Autonomic dysfunction causes most GBS deaths (arrhythmias, sudden asystole). Avoid triggers: aggressive suctioning, bladder distension. Have atropine at bedside."
+        },
+        {
+          "finding": "Albuminocytologic dissociation (CSF)",
+          "mechanism": "Inflammation at nerve root level → blood-nerve barrier breakdown → protein leaks into CSF. But inflammation is at the nerve, NOT in the meninges → no cellular infiltration into CSF",
+          "mechanism_chain": "Nerve root inflammation → blood-nerve barrier breakdown → protein leaks into CSF → elevated protein with NORMAL cell count",
+          "caveat": "CSF may be NORMAL in the first week (protein rises over 1-2 weeks). Normal LP in first 3-5 days does NOT exclude GBS. If cell count >50 → think HIV, Lyme, sarcoid."
+        }
+      ],
+      "diagnosis_and_differentials": {
+        "provisional": "Guillain-Barré syndrome (AIDP variant) with respiratory compromise, bilateral facial palsy, and autonomic instability, preceded by Campylobacter enteritis",
+        "supporting_evidence": [
+          "Ascending symmetric flaccid paralysis (feet → legs → arms over days)",
+          "Generalized areflexia (hallmark)",
+          "Bilateral LMN facial palsy",
+          "Autonomic instability (tachycardia, labile BP)",
+          "Preceding diarrheal illness 2 weeks prior (Campylobacter)",
+          "Minimal sensory signs despite sensory symptoms",
+          "Flexor plantar responses (NO UMN signs)"
+        ],
+        "differentials": [
+          {"condition": "Transverse myelitis", "points_for": "Acute weakness, could be quadriparesis", "why_not": "GBS has areflexia + flaccidity; myelitis has UMN signs (hyperreflexia, Babinski). Myelitis has sensory LEVEL. Early bladder in myelitis. TRAP: acute myelitis spinal shock mimics GBS — but myelitis has sensory level and early bladder."},
+          {"condition": "Myasthenia gravis", "points_for": "Bulbar weakness, limb weakness", "why_not": "MG has fluctuating/fatigable weakness, preserved reflexes, ptosis + diplopia (not typical of GBS), NO sensory symptoms. MG is NOT ascending."},
+          {"condition": "Acute poliomyelitis", "points_for": "Acute flaccid paralysis, preceding viral illness", "why_not": "Polio is ASYMMETRIC, affects lower limbs preferentially, fever at onset, PURE motor (no sensory at all)."},
+          {"condition": "Hypokalemic paralysis", "points_for": "Acute flaccid quadriparesis, areflexia", "why_not": "No sensory symptoms, rapid recovery with K+ replacement, no facial involvement, serum K+ low."},
+          {"condition": "Botulism", "points_for": "Bulbar involvement, paralysis", "why_not": "Botulism is DESCENDING (cranial → arms → legs — OPPOSITE of GBS). Pupillary dilatation. Contaminated food history."}
+        ]
+      },
+      "investigations": [
+        {"test": "CSF analysis (lumbar puncture)", "expected": "Albuminocytologic dissociation: elevated protein (>0.45 g/L, often 1-10 g/L) with NORMAL cell count (<10 cells/uL). May be normal in first week — repeat at 1 week if high suspicion.", "why": "The hallmark CSF finding. If cell count >50 → consider HIV, Lyme, sarcoid", "priority": "immediate"},
+        {"test": "Nerve conduction studies (NCS)", "expected": "AIDP: prolonged distal latencies, slowed conduction velocities (<70% LLN), conduction block, temporal dispersion, prolonged/absent F-waves. AMAN: reduced CMAP amplitudes, normal velocities, normal sensory potentials.", "why": "Distinguishes AIDP from AMAN — affects prognosis. May be normal in first 1-2 weeks; earliest finding is absent F-waves.", "priority": "routine"},
+        {"test": "Serial FVC (every 4-6 hours)", "expected": "FVC declining. Intubate if: FVC <20 mL/kg or <1L, MIP <-30 cmH2O, MEP <40 cmH2O, FVC declining >30%", "why": "The single most important bedside investigation. Do NOT rely on SpO2/ABG — by the time abnormal, patient is in extremis", "priority": "immediate"},
+        {"test": "Anti-ganglioside antibodies", "expected": "Anti-GQ1b (MFS >90%), anti-GM1/GD1a (AMAN). Not required for diagnosis but helpful for variant classification", "why": "Variant classification and prognosis", "priority": "if_indicated"},
+        {"test": "Serum electrolytes", "expected": "Normal K+, Na+, Ca2+, Mg2+", "why": "Rule out hypokalemic paralysis (a mimic)", "priority": "immediate"},
+        {"test": "Stool culture/PCR for Campylobacter", "expected": "May confirm preceding Campylobacter infection", "why": "Confirms trigger. PCR more sensitive than culture", "priority": "routine"},
+        {"test": "HIV test", "expected": "Negative (HIV can cause GBS-like picture with CSF pleocytosis)", "why": "Exclude HIV-associated GBS", "priority": "routine"}
+      ],
+      "management": {
+        "medical": [
+          {"intervention": "IVIg (0.4 g/kg/day x 5 days)", "rationale": "Immunomodulation — neutralizes pathogenic antibodies, modulates complement, downregulates immune attack", "specifics": "Total 2 g/kg over 5 days. Check IgA levels before first infusion (anaphylaxis risk in IgA-deficient patients). Side effects: headache, aseptic meningitis, renal failure, thromboembolism."},
+          {"intervention": "Plasma exchange (PLEX)", "rationale": "Physical removal of pathogenic antibodies, complement, and cytokines from circulation", "specifics": "5 exchanges over 2 weeks (200-250 mL/kg total). Contraindications: hemodynamic instability, sepsis. Equivalent efficacy to IVIg. Do NOT combine IVIg + PLEX (no additional benefit)."},
+          {"intervention": "Supportive care", "rationale": "Prevent complications during paralysis and recovery", "specifics": "DVT prophylaxis (LMWH + compression), pain management (gabapentin/pregabalin for neuropathic pain), NG feeding if bulbar weakness, passive ROM physiotherapy from day 1, continuous cardiac monitoring, atropine at bedside for bradycardia, psychological support."}
+        ],
+        "interventional": "Elective intubation and mechanical ventilation if FVC <20 mL/kg or <1L, or rapid decline. Do NOT wait for respiratory arrest.",
+        "surgical": "Not applicable",
+        "this_patient": "This patient needs ICU admission (respiratory compromise + autonomic instability + rapid progression). Start IVIg immediately. Serial FVC every 4 hours. Low threshold for intubation. Continuous cardiac monitoring. DVT prophylaxis. Pain management.",
+        "follow_up": "Serial neurological assessment (MRC sum score). Respiratory weaning protocol after improvement. Rehabilitation: progressive mobilization as power improves. 80% walk independently at 6 months. 5-10% have significant residual disability. Mortality 3-5%."
+      },
+      "complications": [
+        {"complication": "Respiratory failure", "mechanism": "Ascending paralysis reaches diaphragm (C3-C5) and intercostal muscles → ventilatory failure", "presentation": "Declining FVC, paradoxical breathing, inability to cough, hypoxia (late sign)", "management": "Elective intubation. 20/30/40 rule. Do NOT rely on SpO2."},
+        {"complication": "Autonomic crisis", "mechanism": "Sympathetic and parasympathetic nerve involvement → unopposed surges", "presentation": "Sudden bradycardia/asystole, severe hypertension, cardiac arrhythmias", "management": "Continuous monitoring, atropine for bradycardia, short-acting antihypertensives, avoid triggers (suctioning, bladder distension)"},
+        {"complication": "Pulmonary embolism", "mechanism": "Immobility → DVT → PE", "presentation": "Sudden dyspnea, chest pain, hemodynamic collapse", "management": "LMWH prophylaxis, compression stockings, early mobilization"},
+        {"complication": "Neuropathic pain", "mechanism": "Nerve inflammation and damage → central sensitization", "presentation": "Severe back pain, limb pain, paresthesias. Often undertreated", "management": "Gabapentin/pregabalin first-line. Carbamazepine or tricyclics second-line."}
+      ],
+      "vivas": [
+        {
+          "question": "What is albuminocytologic dissociation and why does it occur in GBS?",
+          "answer": "Elevated CSF protein with NORMAL cell count. In GBS, inflammation is at the nerve ROOT level → blood-nerve barrier breakdown → protein leaks into CSF. But the inflammation is at the nerve, NOT in the meninges → no cellular infiltration into CSF. Contrast with meningitis where both cells AND protein rise. Other causes: spinal cord tumor (Froin's syndrome), CIDP, diabetic radiculoplexopathy.",
+          "follow_ups": [
+            {"question": "When might CSF be normal in GBS?", "answer": "In the first 3-5 days. Protein rises over 1-2 weeks, peaks at 4-6 weeks. A normal CSF in week 1 does NOT exclude GBS — repeat at 1 week."},
+            {"question": "When should you suspect an alternative diagnosis from CSF?", "answer": "If cell count >50 cells/uL → consider HIV-associated GBS, Lyme disease, CMV polyradiculitis, lymphomatous meningitis, sarcoidosis. These cause GBS-like picture WITH pleocytosis."}
+          ],
+          "examiner": "neurology"
+        },
+        {
+          "question": "How do you differentiate GBS from transverse myelitis at the bedside?",
+          "answer": "GBS: LMN (flaccid, areflexic, flexor plantar ALWAYS), ascending pattern, sensory symptoms but NO sensory LEVEL, bladder late/mild, bilateral facial palsy common, CSF shows albuminocytologic dissociation. TM: UMN (after spinal shock — spastic, hyperreflexic, Babinski positive), NOT ascending, SENSORY LEVEL (sharp cutoff), bladder EARLY and severe, no facial weakness, CSF shows pleocytosis. TRAP: acute myelitis has spinal shock initially (flaccid, areflexic) mimicking GBS. Key differentiator: TM has sensory LEVEL and early bladder even during spinal shock.",
+          "follow_ups": [],
+          "examiner": "neurology"
+        },
+        {
+          "question": "What is Miller Fisher syndrome?",
+          "answer": "A variant of GBS with the triad: ophthalmoplegia + ataxia + areflexia, WITHOUT limb weakness. Anti-GQ1b antibodies positive in >90%. GQ1b ganglioside is concentrated in oculomotor nerves (→ ophthalmoplegia) and muscle spindles (→ ataxia/areflexia). Excellent prognosis — most recover completely. May overlap with GBS (Fisher-GBS overlap — adding limb weakness).",
+          "follow_ups": [
+            {"question": "What is Bickerstaff brainstem encephalitis?", "answer": "Ophthalmoplegia + ataxia + ALTERED CONSCIOUSNESS (unlike MFS where consciousness is normal). Anti-GQ1b positive. Overlaps with MFS on the GQ1b-antibody spectrum but involves CNS (brainstem) in addition to PNS."}
+          ],
+          "examiner": "neurology"
+        },
+        {
+          "question": "Why don't corticosteroids work in GBS?",
+          "answer": "Multiple RCTs show no benefit of steroids in GBS. GBS involves predominantly HUMORAL immunity (antibodies, complement) which steroids don't effectively suppress. This contrasts with CIDP where steroids DO work because CIDP involves more T-cell mediated immunity. Combined IVIg + steroids also show no benefit. This is a key exam point.",
+          "follow_ups": [
+            {"question": "How does IVIg work in GBS?", "answer": "Multiple mechanisms: neutralization of pathogenic autoantibodies by anti-idiotypic antibodies, Fc receptor blockade on macrophages (reduces antibody-dependent cell-mediated cytotoxicity), complement inhibition, modulation of cytokine production, acceleration of pathogenic IgG catabolism."}
+          ],
+          "examiner": "medicine"
+        }
+      ]
+    },
+    {
+      "id": "transverse_myelitis",
+      "name": "Transverse Myelitis (Acute — Post-Infectious)",
+      "category": "case",
+      "system": "neuro",
+      "tags": ["long-case", "short-case", "UMN", "myelitis", "cord", "NMO", "MS", "sensory-level", "LETM"],
+      "presentation_script": {
+        "opening": "Sir, I have examined this patient. This is a 22-year-old female who is wheelchair-bound with a urinary catheter in situ.",
+        "gpe_findings": "On general examination, the patient is afebrile, no skin rash, no joint swelling, no lymphadenopathy. Catheterized.",
+        "system_findings": "Spine examination is normal — no gibbus, no tenderness, no deformity. Full range of neck movement, no Lhermitte's sign. Visual acuity is normal, no RAPD, fundoscopy normal — no optic neuritis. Motor examination shows evolving tone — initial hypotonia transitioning to spasticity (currently day 5). Power: both hips 1/5, knees 1/5, ankles 0/5 bilaterally. Upper limbs 5/5. Reflexes: knee and ankle jerks brisk 3+ bilaterally, abdominal reflexes absent below T6. Bilateral extensor plantar (Babinski positive). Sensory examination: complete loss of all modalities below T6 (xiphisternum) with band-like dysesthesia at T6 level. Bladder in retention (catheter draining 800mL).",
+        "diagnosis_statement": "This patient has acute transverse myelitis (post-infectious, idiopathic), with complete transverse cord syndrome at T6 level, as evidenced by UMN paraplegia with hyperreflexia, bilateral Babinski, complete sensory loss below T6, neurogenic bladder with retention, acute onset over 48 hours following URI, and normal spine with no compressive pathology, pending AQP4/MOG antibodies and MRI characterization to exclude NMO and MS.",
+        "differentials": [
+          "Idiopathic acute transverse myelitis (post-infectious — most likely given acute onset, preceding URI, no prior episodes)",
+          "NMO spectrum disorder (young female, severe complete cord syndrome — need AQP4 antibodies)",
+          "MS first presentation (young female, inflammatory myelitis — but MS rarely causes complete transverse syndrome)",
+          "Cord compression by tumor/abscess (but normal spine, no tenderness, MRI will differentiate)",
+          "Anterior spinal artery occlusion (but vascular is hyperacute minutes, not days)"
+        ],
+        "tips": [
+          "State: Age + sex + UMN type + Sensory level + Bladder + Temporal profile + Preceding illness + 'Transverse myelitis' + pending MRI/antibody characterization.",
+          "The critical distinction is: idiopathic ATM vs MS vs NMO. Getting this right determines long-term treatment. NMO drugs can worsen MS and vice versa.",
+          "In acute phase, spinal shock may produce flaccidity and areflexia — mimicking GBS. But sensory LEVEL and early bladder point to cord."
+        ]
+      },
+      "case_scenario": {
+        "demographics": "22-year-old female, college student",
+        "chief_complaint": "Bilateral lower limb weakness progressing over 48 hours, band-like sensation around chest at T6 level, urinary retention",
+        "hpi": "Patient developed band-like tightness around the chest (T6 level) 3 days ago, followed by rapidly progressive bilateral lower limb weakness over 48 hours — from mild difficulty walking to complete inability to stand. Urinary retention requiring catheterization within 24 hours of weakness onset. Had an upper respiratory infection (sore throat, coryza) 10 days prior which resolved. No visual symptoms, no prior similar episodes. No headache, no vomiting, no seizures.",
+        "past_history": "No prior neurological episodes. No autoimmune disease. No family history of MS or NMO.",
+        "drug_history": "None",
+        "social_history": "Non-smoker, college student"
+      },
+      "clinical_summary": [
+        {"area": "General", "finding": "Young female, catheterized", "detail": "No fever, no rash, no joint swelling — less likely SLE or vasculitis", "present": true, "significance": "Catheter = neurogenic bladder. No systemic features to suggest connective tissue disease"},
+        {"area": "Spine", "finding": "Normal spine", "detail": "No gibbus, no tenderness, no deformity. Full neck ROM. No Lhermitte's sign", "present": false, "significance": "Normal spine → non-compressive myelopathy. Absent Lhermitte's (though can be positive in MS/NMO with cervical involvement)"},
+        {"area": "Eyes", "finding": "No optic neuritis", "detail": "Visual acuity normal, no RAPD, fundoscopy normal", "present": false, "significance": "No optic neuritis — important for excluding NMO (which has optic neuritis as other hallmark)"},
+        {"area": "Motor — Tone", "finding": "Evolving tone", "detail": "Initial hypotonia (day 3 — spinal shock phase), now transitioning to spasticity (day 5)", "present": true, "significance": "Acute cord lesion → initial flaccidity (spinal shock). UMN signs emerge as shock resolves over days-weeks"},
+        {"area": "Motor — Power", "finding": "Paraplegia", "detail": "Hips 1/5, knees 1/5, ankles 0/5 bilaterally. UL 5/5", "present": true, "significance": "Thoracic level cord lesion (LL involved, UL spared)"},
+        {"area": "Reflexes", "finding": "Emerging hyperreflexia", "detail": "Knee 3+, ankle 3+ bilaterally. Abdominals absent below T6", "present": true, "significance": "UMN pattern emerging as spinal shock resolves"},
+        {"area": "Plantar", "finding": "Bilateral Babinski positive", "detail": "Bilateral extensor plantar", "present": true, "significance": "Bilateral corticospinal tract involvement = cord lesion"},
+        {"area": "Sensory", "finding": "Sensory level T6", "detail": "Complete loss all modalities below T6 (xiphisternum). Band-like dysesthesia at T6 level", "present": true, "significance": "Complete transverse myelopathy at T6. Band dysesthesia = posterior column/dorsal root entry zone involvement at lesion level"},
+        {"area": "Bladder", "finding": "Urinary retention", "detail": "Catheter draining 800mL. No voluntary voiding", "present": true, "significance": "Cord lesion disrupting descending voluntary micturition control. Initially atonic (spinal shock), will become spastic UMN bladder"}
+      ],
+      "examination_technique": {
+        "sequence": "Confirm cord syndrome → Define sensory level → Characterize completeness → Look for extra-spinal clues → Spine examination",
+        "steps": [
+          {
+            "phase": "Confirm Cord Syndrome",
+            "actions": [
+              "Bilateral motor + sensory + bladder involvement with a sensory level = CORD.",
+              "Demonstrate UMN signs (hyperreflexia, Babinski). If very acute (spinal shock) → demonstrate flaccidity and state you expect UMN signs to emerge.",
+              "Key distinction even during spinal shock: sensory LEVEL and early bladder = cord, NOT GBS."
+            ],
+            "findings_in_this_case": ["Bilateral paraplegia + sensory level T6 + bladder retention = cord syndrome confirmed", "UMN signs emerging (hyperreflexia, Babinski)"]
+          },
+          {
+            "phase": "Define Sensory Level",
+            "actions": [
+              "Pin from insensate area upward AND from normal area downward. Mark where they converge.",
+              "Key dermatome landmarks: T4 = nipple, T6 = xiphisternum, T10 = umbilicus."
+            ],
+            "findings_in_this_case": ["Complete loss all modalities below T6", "Band dysesthesia at T6"]
+          },
+          {
+            "phase": "Characterize Completeness",
+            "actions": [
+              "Complete transverse (all modalities lost) vs partial (dissociated sensory loss, asymmetric motor).",
+              "Complete → more likely NMO/idiopathic ATM. Partial → more likely MS.",
+              "Check sacral sparing (perianal sensation) — if preserved = incomplete injury."
+            ],
+            "findings_in_this_case": ["Complete transverse — all modalities lost bilaterally", "No sacral sparing"]
+          },
+          {
+            "phase": "Extra-Spinal Clues",
+            "actions": [
+              "Eyes: RAPD (optic neuritis → NMO/MS), reduced acuity, disc pallor (previous optic neuritis).",
+              "Skin: butterfly rash (SLE), erythema nodosum (sarcoid), oral ulcers (Behcet).",
+              "Joints: synovitis (SLE, RA).",
+              "Salivary glands: enlargement (Sjogren)."
+            ],
+            "findings_in_this_case": ["No RAPD, normal vision, normal fundi", "No rash, no joint swelling", "No dry eyes/mouth"]
+          },
+          {
+            "phase": "Spine Examination",
+            "actions": [
+              "Rule out tenderness (compression), gibbus (TB).",
+              "Full neck movements — Lhermitte's sign (electric shock down spine on neck flexion → demyelination in posterior columns of cervical cord)."
+            ],
+            "findings_in_this_case": ["No tenderness, no gibbus, no deformity", "No Lhermitte's sign"]
+          }
+        ]
+      },
+      "findings_with_mechanisms": [
+        {
+          "finding": "Band-like dysesthesia at lesion level",
+          "mechanism": "Inflammation at the cord level involves posterior columns and dorsal root entry zone → abnormal sensory processing at the level of the lesion → constricting tightness sensation",
+          "mechanism_chain": "Cord inflammation at T6 → posterior column/dorsal root entry zone involvement → aberrant sensory processing → band sensation",
+          "caveat": "Band sensation/girdle pain is the CLASSIC early symptom of transverse myelitis. Often precedes motor weakness by hours-days. A patient with progressive band sensation should raise suspicion for myelitis."
+        },
+        {
+          "finding": "Complete transverse cord syndrome",
+          "mechanism": "Inflammation spans the entire WIDTH of the cord (hence 'transverse') → all tracts interrupted: corticospinal (motor), spinothalamic (pain/temp), dorsal columns (proprioception), autonomic (bladder)",
+          "mechanism_chain": "Inflammatory attack across cord width → all motor + sensory + autonomic tracts damaged → bilateral weakness + all-modality sensory loss + bladder retention",
+          "caveat": "Complete transverse syndrome → more likely NMO or idiopathic ATM. MS typically causes PARTIAL cord syndrome (asymmetric, one tract predominates)."
+        },
+        {
+          "finding": "Spinal shock transitioning to UMN signs",
+          "mechanism": "Acute cord lesion → sudden loss of all descending input to spinal circuits → initial areflexia and flaccidity (spinal shock, duration days-weeks). As spinal circuits recover autonomous function → hyperexcitable reflexes emerge → spasticity + hyperreflexia + Babinski",
+          "mechanism_chain": "Acute cord lesion → spinal shock (flaccidity, areflexia) → spinal circuit recovery → UMN signs emerge (spasticity, hyperreflexia, Babinski)",
+          "caveat": "Spinal shock in acute myelitis MIMICS GBS at the bedside. Key differentiator: myelitis has sensory LEVEL and early bladder even during spinal shock. GBS does not."
+        }
+      ],
+      "diagnosis_and_differentials": {
+        "provisional": "Acute transverse myelitis (post-infectious, idiopathic), with complete transverse cord syndrome at T6 level, pending AQP4/MOG antibodies and MRI characterization to exclude NMO and MS",
+        "supporting_evidence": [
+          "Acute onset over 48 hours (within 4h-21d inflammatory window)",
+          "Bilateral motor + sensory + autonomic (bladder) involvement",
+          "Clearly defined sensory level at T6",
+          "Post-infectious trigger (URI 10 days prior)",
+          "No compressive pathology on spine exam",
+          "Young female — classic demographic"
+        ],
+        "differentials": [
+          {"condition": "NMO spectrum disorder", "points_for": "Young female, severe complete cord syndrome (NMO tends to be severe)", "why_not": "No optic neuritis, first episode. But NMO can present as isolated myelitis first. Need AQP4-Ab urgently. If LETM (>=3 segments) on MRI → high suspicion for NMO."},
+          {"condition": "MS first presentation", "points_for": "Young female, inflammatory myelitis", "why_not": "MS typically causes SHORT-segment (<2 vertebrae), PARTIAL cord syndrome (not complete transverse). MS rarely causes severe complete paraplegia at first presentation."},
+          {"condition": "Cord compression (tumor/abscess)", "points_for": "Acute cord syndrome with bladder", "why_not": "Normal spine exam (no tenderness, no gibbus). MRI will distinguish — URGENT MRI is mandatory to exclude this."},
+          {"condition": "Anterior spinal artery occlusion", "points_for": "Acute cord syndrome", "why_not": "Vascular is hyperacute (seconds-minutes, not days). Produces anterior cord syndrome (motor + pain/temp lost, proprioception PRESERVED — not complete transverse)."},
+          {"condition": "SLE myelitis", "points_for": "Young female, myelitis", "why_not": "No systemic SLE features (rash, joints, serositis). Need ANA/dsDNA."}
+        ]
+      },
+      "investigations": [
+        {"test": "MRI spine with gadolinium (URGENT)", "expected": "Cord swelling, T2 hyperintensity (edema), gadolinium enhancement (active inflammation). MUST exclude compression first. Count vertebral segments: <2 = short (MS), >=3 = LETM (NMO/MOG/idiopathic). Location: central grey matter = NMO, peripheral dorsolateral = MS.", "why": "First investigation — exclude compression (surgical emergency), then characterize the inflammatory lesion", "priority": "immediate"},
+        {"test": "Brain MRI (MANDATORY)", "expected": "Look for MS lesions (Dawson's fingers, periventricular), NMO lesions (area postrema, periependymal), or normal brain (idiopathic ATM)", "why": "Critical for distinguishing MS vs NMO vs idiopathic ATM", "priority": "immediate"},
+        {"test": "AQP4-IgG (cell-based assay)", "expected": "THE test for NMO. Sensitivity ~80%, specificity ~99%. Must use cell-based assay. Test BEFORE starting immunosuppression.", "why": "Positive = NMO spectrum disorder. Determines long-term treatment entirely.", "priority": "immediate"},
+        {"test": "MOG-IgG (cell-based assay)", "expected": "Test if AQP4 negative and clinical picture suggests NMO phenotype", "why": "MOG-AD overlaps with NMO phenotype. Different prognosis and treatment.", "priority": "immediate"},
+        {"test": "CSF analysis", "expected": "Mild-moderate lymphocytic pleocytosis (10-200 cells), elevated protein (0.5-2 g/L), OCBs (present >95% MS, absent most NMO/ATM). IgG index elevated in MS.", "why": "OCBs are KEY distinguishing test between MS and NMO", "priority": "immediate"},
+        {"test": "Autoimmune screen", "expected": "ANA, dsDNA, complement C3/C4 (SLE), anti-Ro/La (Sjogren), ACE level (sarcoid)", "why": "Exclude disease-associated myelitis", "priority": "routine"},
+        {"test": "HIV, VDRL/TPHA", "expected": "Exclude infection-related myelitis", "why": "Infectious myelitis requires different treatment", "priority": "routine"}
+      ],
+      "management": {
+        "medical": [
+          {"intervention": "IV Methylprednisolone 1g daily x 3-5 days", "rationale": "Reduces cord edema, suppresses immune attack, reduces blood-cord barrier permeability", "specifics": "Start ASAP once infection and compression are excluded. Most patients improve within 3-5 days. Short oral taper 2-4 weeks in severe cases."},
+          {"intervention": "Plasma exchange (PLEX) if no response", "rationale": "Removes pathogenic antibodies. Strongest evidence in NMO-spectrum myelitis. Some centers use as first-line for suspected NMO.", "specifics": "5-7 exchanges over 10-14 days. When: no improvement after 5 days of methylprednisolone, or severe/worsening symptoms."},
+          {"intervention": "Long-term immunosuppression (etiology-dependent)", "rationale": "Prevent relapses in relapsing conditions", "specifics": "Idiopathic ATM (monophasic): no long-term treatment. NMO (AQP4+): rituximab, eculizumab, inebilizumab, satralizumab — NEVER MS drugs. MS: DMTs (ocrelizumab, natalizumab, etc.). MOG-AD if relapsing: steroids, mycophenolate, azathioprine."},
+          {"intervention": "Supportive care", "rationale": "Manage complications of acute paralysis", "specifics": "CIC for bladder, DVT prophylaxis (LMWH), neuropathic pain management (gabapentin/pregabalin), spasticity (baclofen), physiotherapy, psychological support."}
+        ],
+        "interventional": "Surgical decompression if MRI shows compressive cause (must be excluded first)",
+        "surgical": "Not applicable for inflammatory myelitis",
+        "this_patient": "Start IV methylprednisolone 1g daily immediately after urgent MRI excludes compression. Send AQP4/MOG antibodies, CSF. If no response in 5 days → PLEX. Long-term treatment depends on antibody results and MRI characterization.",
+        "follow_up": "AQP4/MOG antibody results (determines long-term management). Repeat MRI at 3-6 months. Monitor for relapse (→ reclassify if recurs). Ophthalmology review (screen for subclinical optic neuritis). Rehabilitation."
+      },
+      "complications": [
+        {"complication": "Relapse (reclassification to MS or NMO)", "mechanism": "First episode of myelitis may be the presenting feature of a relapsing condition", "presentation": "Second episode of myelitis, or new optic neuritis, or brain lesions on follow-up MRI", "management": "Reclassify and start appropriate long-term immunosuppression"},
+        {"complication": "Permanent neurological deficit", "mechanism": "Severe inflammatory damage → axonal loss (irreversible) + demyelination (potentially reversible)", "presentation": "Persistent weakness, sensory loss, bladder dysfunction despite treatment", "management": "Rehabilitation, symptomatic management, adaptive devices"},
+        {"complication": "Neuropathic pain", "mechanism": "Cord damage → abnormal sensory processing → central neuropathic pain", "presentation": "Burning, shooting pain below the level of lesion. Often chronic.", "management": "Gabapentin, pregabalin, duloxetine, tricyclics"}
+      ],
+      "vivas": [
+        {
+          "question": "What are the TM Consortium Working Group 2002 diagnostic criteria?",
+          "answer": "Inclusion: (1) sensory/motor/autonomic dysfunction attributable to cord, (2) bilateral signs, (3) defined sensory level, (4) inflammation demonstrated by CSF pleocytosis OR elevated IgG index OR gadolinium enhancement, (5) progression to nadir between 4 hours and 21 days. Exclusion: prior radiation, clear anterior spinal artery pattern, MRI evidence of compressive cause, connective tissue disease (classified as 'disease-associated'). Why time window: <4h = vascular, >21d = progressive myelopathy. After confirming ATM, classify as disease-associated (MS, NMO, SLE) or idiopathic (exclusion diagnosis).",
+          "follow_ups": [],
+          "examiner": "neurology"
+        },
+        {
+          "question": "What is LETM and why is it significant?",
+          "answer": "LETM = Longitudinally Extensive Transverse Myelitis: cord lesion extending >=3 contiguous vertebral segments on MRI T2-weighted sagittal images. Significance: LETM is the hallmark MRI pattern of NMOSD. When you see LETM, AQP4 antibodies MUST be tested. MS rarely causes LETM (short-segment is the MS signature). Probability of NMO given LETM is ~50-70%. Other causes of LETM: MOG-AD, idiopathic ATM, SLE myelitis, sarcoid, infectious. NOT MS.",
+          "follow_ups": [
+            {"question": "What is the area postrema syndrome?", "answer": "Area postrema: circumventricular organ at floor of 4th ventricle, LACKS blood-brain barrier, high AQP4 expression → accessible to circulating antibodies. Presents as intractable nausea/vomiting/hiccups unexplained by GI evaluation. Can be the FIRST manifestation of NMO — preceding optic neuritis or myelitis by months-years. Patient with unexplained intractable vomiting + normal GI workup → think NMO, check AQP4 antibodies."}
+          ],
+          "examiner": "neurology"
+        },
+        {
+          "question": "How do you differentiate TM from GBS at the bedside?",
+          "answer": "TM: UMN (after spinal shock — spastic, hyperreflexic, Babinski positive), NOT ascending, SENSORY LEVEL (sharp cutoff), bladder EARLY and severe, no facial weakness, CSF shows pleocytosis. GBS: LMN (flaccid, areflexic, flexor plantar ALWAYS), ASCENDING, NO sensory level, bladder late/mild, bilateral facial palsy common, CSF shows albuminocytologic dissociation. The TRAP: acute myelitis (spinal shock) produces flaccidity and areflexia mimicking GBS. Key differentiator even then: TM has sensory LEVEL and early bladder retention.",
+          "follow_ups": [],
+          "examiner": "neurology"
+        },
+        {
+          "question": "Why is misdiagnosing NMO as MS dangerous?",
+          "answer": "MS drugs (interferon-beta, fingolimod, natalizumab) can WORSEN NMO — triggering severe relapses. Conversely, NMO-specific treatments (rituximab, eculizumab) are highly effective and should not be withheld. NMO is astrocyte-primary (AQP4 on astrocyte foot processes → complement-mediated astrocyte destruction → secondary demyelination). MS is myelin-primary. Different pathology requires different treatment. The distinction hinges on: MRI pattern (LETM vs short-segment), antibodies (AQP4/MOG vs OCBs), and clinical features.",
+          "follow_ups": [
+            {"question": "What is the role of OCBs?", "answer": "Oligoclonal bands in CSF = intrathecal IgG synthesis. Present in >95% of MS (highly sensitive). Absent in most NMO and idiopathic ATM. A KEY distinguishing test. OCB-positive CSF + short-segment myelitis + periventricular brain lesions = MS. OCB-negative CSF + LETM + AQP4 positive = NMO."}
+          ],
+          "examiner": "neurology"
+        }
+      ]
+    },
+    {
+      "id": "cvd_stroke_young",
+      "name": "CVD Stroke in Young (APLA Syndrome)",
+      "category": "case",
+      "system": "neuro",
+      "tags": ["long-case", "short-case", "UMN", "stroke", "young-stroke", "APLA", "APS", "hemiplegia", "thrombophilia"],
+      "presentation_script": {
+        "opening": "Sir, I have examined this patient. This is a 28-year-old female who is conscious and oriented.",
+        "gpe_findings": "On general examination, the patient has livedo reticularis on both lower limbs and a healed DVT scar on the left calf. No pallor, icterus, cyanosis, or clubbing. Pulse is regular.",
+        "system_findings": "On neurological examination, there is left-sided neglect on double simultaneous stimulation. Left UMN facial palsy with lower face weakness and forehead sparing. Motor examination reveals spastic tone in left upper and lower limbs. Power is 2/5 in left upper limb (arm > hand) and 3/5 in left lower limb. Deep tendon reflexes are exaggerated on the left (3+). Plantar response is extensor on the left (Babinski positive), flexor on the right. Cortical sensory loss on the left: impaired two-point discrimination, astereognosis, extinction on double simultaneous stimulation. No aphasia (right hemisphere lesion in right-handed patient).",
+        "diagnosis_statement": "This patient has right MCA territory ischemic stroke secondary to antiphospholipid antibody syndrome, evidenced by left UMN hemiplegia with face and arm > leg, cortical sensory loss, left-sided neglect, in a young female with recurrent pregnancy losses, prior DVT, and livedo reticularis — all pointing to a prothrombotic state.",
+        "differentials": [
+          "APLA syndrome (recurrent abortions + DVT + livedo reticularis + stroke = classic APS)",
+          "SLE with secondary APS (young female, APS features may be secondary to SLE — need ANA/dsDNA)",
+          "Cerebral venous sinus thrombosis (young female, prothrombotic — but typical arterial territory pattern here)",
+          "Cardioembolism via PFO (young patient, paradoxical embolism — needs bubble echo)",
+          "Arterial dissection (young age — but no preceding neck trauma/pain/Horner)",
+          "Moyamoya disease (young female — but more common in East Asian)"
+        ],
+        "tips": [
+          "State: Age emphasis + UMN/LMN type + side + Vascular territory + Supporting signs + Young stroke etiology list + Clues pointing to specific cause.",
+          "Young stroke (<45 years) = different etiological spectrum. Do NOT default to atherosclerotic risk factors.",
+          "Always look for systemic clues: livedo reticularis, DVT scars, joint swelling, rash, absent pulses — these point to specific etiologies."
+        ]
+      },
+      "case_scenario": {
+        "demographics": "28-year-old female, married, right-handed",
+        "chief_complaint": "Sudden onset left-sided weakness of body for 2 weeks",
+        "hpi": "Patient woke up 2 weeks ago with sudden onset left-sided weakness involving face, arm, and leg, with arm weaker than leg. Associated left-sided inattention (bumping into objects on left side). No headache, vomiting, seizures, or loss of consciousness at onset. No conventional vascular risk factors (no HTN, DM, dyslipidemia, smoking).",
+        "past_history": "History of 2 first-trimester spontaneous abortions (recurrent pregnancy loss). History of left leg deep vein thrombosis 2 years ago treated with warfarin for 6 months. No history of autoimmune disease diagnosed.",
+        "drug_history": "No current medications (warfarin stopped after 6 months for DVT)",
+        "social_history": "Non-smoker, no oral contraceptive use"
+      },
+      "clinical_summary": [
+        {"area": "General", "finding": "Young female with systemic clues", "detail": "No aphasia (right hemisphere, non-dominant). Left-sided neglect. Livedo reticularis both LL. Healed DVT scar left calf", "present": true, "significance": "Right MCA territory. Non-dominant → neglect not aphasia. Livedo + DVT = APLA syndrome"},
+        {"area": "Skin", "finding": "Livedo reticularis", "detail": "Non-blanching reticular violaceous pattern on both lower limbs", "present": true, "significance": "Strongly associated with APS. Sneddon syndrome = livedo reticularis + cerebrovascular events"},
+        {"area": "Cranial Nerves", "finding": "Left UMN facial palsy", "detail": "Lower face weak, forehead spared", "present": true, "significance": "Supranuclear lesion (right hemisphere) → contralateral lower face weak"},
+        {"area": "Motor — Tone", "finding": "Left-sided spasticity", "detail": "Clasp-knife spasticity left UL and LL. Right side normal", "present": true, "significance": "UMN lesion, established (2 weeks)"},
+        {"area": "Motor — Power", "finding": "Left hemiparesis", "detail": "Left UL 2/5 (arm > hand), left LL 3/5. Right 5/5", "present": true, "significance": "Face + arm > leg = MCA territory"},
+        {"area": "Reflexes", "finding": "Left-sided hyperreflexia", "detail": "3+ at biceps, triceps, knee, ankle on left. Right normal (2+)", "present": true, "significance": "UMN pattern, unilateral = hemisphere lesion"},
+        {"area": "Plantar", "finding": "Left Babinski positive", "detail": "Left extensor, right flexor", "present": true, "significance": "Confirms UMN lesion on left (right hemisphere)"},
+        {"area": "Sensory", "finding": "Left cortical sensory loss", "detail": "Impaired two-point discrimination, astereognosis, extinction on double simultaneous stimulation", "present": true, "significance": "Parietal cortex involvement (right MCA territory)"}
+      ],
+      "examination_technique": {
+        "sequence": "Standard Hemiplegia Assessment + Systematic Search for Systemic Clues to Etiology",
+        "steps": [
+          {
+            "phase": "Neurological Assessment",
+            "actions": [
+              "Standard hemiplegia workup: tone, power, reflexes, plantar, sensory, gait, cranial nerves.",
+              "Key: identify vascular territory (MCA/ACA/PCA) and confirm UMN pattern."
+            ],
+            "findings_in_this_case": ["Right MCA territory: left hemiplegia, face + arm > leg, cortical sensory loss, neglect", "UMN confirmed: spasticity, hyperreflexia, Babinski"]
+          },
+          {
+            "phase": "Systemic Clue Search",
+            "actions": [
+              "Skin: livedo reticularis (APLA), butterfly rash (SLE), angiokeratomas (Fabry), needle marks (IV drugs → IE), purpura (vasculitis/TTP).",
+              "Eyes: lens subluxation (homocystinuria/Marfan), corneal verticillata (Fabry), Roth spots (IE), Horner syndrome (carotid dissection).",
+              "Cardiovascular: ALL pulses (absent/asymmetric → Takayasu, dissection), BP both arms, murmurs (RHD, IE, PDA, MVP), carotid bruit.",
+              "Joints: arthropathy (SLE, RA → vasculitis), hypermobility (Ehlers-Danlos → dissection).",
+              "Abdomen: splenomegaly (IE, hematological malignancy)."
+            ],
+            "findings_in_this_case": ["Livedo reticularis both LL", "Healed DVT scar left calf", "No rash, no joint swelling, no absent pulses", "No murmur, no Horner"]
+          }
+        ]
+      },
+      "findings_with_mechanisms": [
+        {
+          "finding": "Livedo reticularis",
+          "mechanism": "Thrombosis of dermal arterioles → interrupted blood flow in watershed areas of skin → purple reticular (net-like) pattern representing deoxygenated blood in surrounding venules",
+          "mechanism_chain": "APLA → dermal arteriolar thrombosis → interrupted blood flow → venular congestion → reticular purple pattern",
+          "caveat": "Also seen in cholesterol embolization, cryoglobulinemia, PAN, and physiological (cutis marmorata in cold). In context of stroke + DVT + abortions → APLA."
+        },
+        {
+          "finding": "Arterial AND venous thrombosis",
+          "mechanism": "Antiphospholipid antibodies bind beta-2 glycoprotein I on endothelial cells → activate endothelium, platelets, and complement → prothrombotic state affecting BOTH arterial and venous beds",
+          "mechanism_chain": "aPL antibodies → beta-2 GP1 binding → endothelial activation + platelet activation + complement activation → arterial (stroke) AND venous (DVT) thrombosis",
+          "caveat": "Combined arterial + venous thrombosis in the same patient is HIGHLY suggestive of APS. Most thrombophilias (protein C/S, Factor V Leiden) are predominantly venous."
+        },
+        {
+          "finding": "Recurrent pregnancy loss",
+          "mechanism": "aPL antibodies → placental thrombosis + complement-mediated trophoblast injury → placental insufficiency → fetal loss",
+          "mechanism_chain": "aPL → placental vessel thrombosis + trophoblast damage → placental insufficiency → first-trimester abortions or later stillbirth",
+          "caveat": "Recurrent pregnancy loss is a CLINICAL criterion for APS diagnosis (Sydney criteria). Must exclude other causes: chromosomal, anatomical, hormonal."
+        },
+        {
+          "finding": "Left-sided neglect",
+          "mechanism": "Right parietal cortex (non-dominant hemisphere) lesion → loss of attention to contralateral (left) space. The right hemisphere is dominant for spatial attention — left hemisphere cannot compensate",
+          "mechanism_chain": "Right MCA stroke → right parietal lobe damage → loss of left-sided spatial awareness → left neglect",
+          "caveat": "Left hemisphere (dominant) lesions cause APHASIA, not neglect. Right hemisphere lesions cause NEGLECT, not aphasia (in right-handed patients)."
+        }
+      ],
+      "diagnosis_and_differentials": {
+        "provisional": "Right MCA territory ischemic stroke secondary to antiphospholipid antibody syndrome, evidenced by recurrent pregnancy losses, prior DVT, livedo reticularis, and young age without conventional risk factors",
+        "supporting_evidence": [
+          "Young female (28 years) with stroke — mandates unusual etiology search",
+          "Recurrent pregnancy loss (2 first-trimester abortions) — APS clinical criterion",
+          "Prior DVT — APS clinical criterion (venous thrombosis)",
+          "Livedo reticularis — strongly associated with APS (Sneddon syndrome)",
+          "Arterial (stroke) + venous (DVT) thrombosis in same patient — highly suggestive of APS",
+          "No conventional risk factors (no HTN, DM, smoking, AF)"
+        ],
+        "differentials": [
+          {"condition": "SLE with secondary APS", "points_for": "Young female, APS features may be secondary to SLE", "why_not": "No malar rash, no joint pain, no serositis, no oral ulcers — but need ANA, dsDNA to rule out. Treatment of APS is the same regardless."},
+          {"condition": "PFO with paradoxical embolism", "points_for": "Young cryptogenic stroke", "why_not": "Would not explain DVT or recurrent abortions. But PFO should be excluded with bubble echo as a co-factor."},
+          {"condition": "Arterial dissection", "points_for": "Young age", "why_not": "No neck trauma, no headache, no Horner syndrome. Would not explain DVT or abortions."},
+          {"condition": "Moyamoya disease", "points_for": "Young female with stroke", "why_not": "More common in East Asian populations. Would not explain systemic features (DVT, abortions, livedo)."},
+          {"condition": "CNS vasculitis", "points_for": "Young female with stroke", "why_not": "Usually presents with multifocal symptoms, headache, encephalopathy. Single territory stroke without systemic inflammation is less typical."}
+        ]
+      },
+      "investigations": [
+        {"test": "APLA panel", "expected": "Anticardiolipin IgG/IgM (medium-high titer), anti-beta-2 glycoprotein I IgG/IgM, lupus anticoagulant. Must be positive on 2 occasions >=12 weeks apart. Triple positivity (all 3) = highest risk.", "why": "Confirms APS diagnosis (Sydney laboratory criteria). Test BEFORE starting anticoagulation.", "priority": "immediate"},
+        {"test": "CT brain / MRI brain with DWI", "expected": "Right MCA territory infarct. MRI superior for acute ischemia (DWI restriction). Multiple territory involvement suggests embolic source.", "why": "Confirms stroke location and type", "priority": "immediate"},
+        {"test": "MRA/CTA head and neck", "expected": "Assess circle of Willis, carotid, vertebral arteries. Rule out dissection, moyamoya, stenosis.", "why": "Vascular imaging essential in young stroke", "priority": "immediate"},
+        {"test": "Autoimmune screen", "expected": "ANA, dsDNA, complement C3/C4 — rule out SLE. ANCA if vasculitis suspected.", "why": "Determine if APS is primary or secondary to SLE", "priority": "routine"},
+        {"test": "Echocardiography (TTE + TEE)", "expected": "Libman-Sacks vegetations (non-bacterial, in APS/SLE), PFO (bubble study with Valsalva), valvular disease, LA thrombus", "why": "Cardiac source workup. TEE superior for PFO and aortic arch atheroma.", "priority": "routine"},
+        {"test": "Thrombophilia workup", "expected": "Protein C/S, antithrombin III, Factor V Leiden, prothrombin mutation. Test BEFORE anticoagulation or >2 weeks after stopping.", "why": "Complete prothrombotic workup in young stroke", "priority": "routine"},
+        {"test": "Homocysteine level", "expected": "Fasting. If elevated → check B12, folate, MTHFR mutation", "why": "Hyperhomocysteinemia = premature atherosclerosis and thrombosis. Common in Indian vegetarians.", "priority": "routine"},
+        {"test": "Hb electrophoresis", "expected": "Exclude sickle cell disease/trait", "why": "Sickle cell causes stroke in young via vaso-occlusion", "priority": "if_indicated"},
+        {"test": "ECG + Holter", "expected": "Rule out paroxysmal AF (may not be caught on single ECG)", "why": "Cardioembolic source even in young patients", "priority": "routine"}
+      ],
+      "management": {
+        "medical": [
+          {"intervention": "Warfarin (lifelong anticoagulation)", "rationale": "APS with arterial thrombosis (stroke) requires lifelong anticoagulation. Target INR 2-3.", "specifics": "DOACs are NOT recommended for APS (TRAPS trial 2018: rivaroxaban inferior to warfarin in triple-positive APS — trial stopped early due to excess events in rivaroxaban arm). Warfarin is standard of care for APS."},
+          {"intervention": "Hydroxychloroquine", "rationale": "Adjunct in APS — reduces thrombotic risk through anti-inflammatory and anti-thrombotic properties", "specifics": "200-400mg daily. Especially if SLE coexists. Also used in primary APS as adjunct."},
+          {"intervention": "Rehabilitation", "rationale": "Maximize functional recovery from stroke", "specifics": "Physiotherapy, occupational therapy. Younger patients generally have better rehabilitation potential."}
+        ],
+        "interventional": "Acute: thrombolysis (alteplase within 4.5h) and thrombectomy (LVO up to 24h) — same criteria regardless of age",
+        "surgical": "Not typically applicable. PFO closure if paradoxical embolism confirmed.",
+        "this_patient": "Start warfarin with target INR 2-3 lifelong (NOT DOACs per TRAPS trial). Confirm APS with repeat APLA panel at 12 weeks. Add hydroxychloroquine. Autoimmune screen to determine primary vs secondary APS. Obstetric counseling for future pregnancies (aspirin + LMWH throughout pregnancy — warfarin is teratogenic in first trimester). Rehabilitation.",
+        "follow_up": "INR monitoring (therapeutic 2-3). Repeat APLA panel at 12 weeks for confirmation. Monitor for SLE development (serial ANA). Obstetric counseling. Rehabilitation progress. Screen for other organ involvement (renal, cardiac)."
+      },
+      "complications": [
+        {"complication": "Catastrophic APS (CAPS)", "mechanism": ">=3 organs involved within 1 week with histopathological evidence of small vessel thrombosis. Multi-organ failure.", "presentation": "Renal failure, cerebral infarcts, cardiac involvement, pulmonary, cutaneous — developing rapidly", "management": "Triple therapy: anticoagulation + high-dose steroids + PLEX or IVIg. Rituximab + eculizumab in refractory. Mortality ~50%."},
+        {"complication": "Recurrent thrombosis despite anticoagulation", "mechanism": "Subtherapeutic INR or persistent high antibody titers", "presentation": "New stroke, DVT, PE, or other thrombotic event while on warfarin", "management": "Ensure INR 2-3 consistently. Some advocate higher target (3-4) for arterial events. Add hydroxychloroquine. Consider rituximab."},
+        {"complication": "Warfarin-related bleeding", "mechanism": "Over-anticoagulation (INR >3)", "presentation": "GI bleeding, intracranial hemorrhage, other sites", "management": "Regular INR monitoring, patient education, avoid interacting drugs/foods"}
+      ],
+      "vivas": [
+        {
+          "question": "How do you approach the etiological workup of stroke in a young patient?",
+          "answer": "Step 1: Confirm stroke (sudden focal deficit, CT/MRI). Step 2: Ischemic vs hemorrhagic (CT). Step 3: Vascular territory (MCA/ACA/PCA). Step 4: Etiological workup — four categories: (A) Cardiac: Echo, ECG, Holter, bubble study (PFO). (B) Vascular: CTA/MRA (dissection, moyamoya, FMD, vasculitis). (C) Hematological: APLA panel, thrombophilia screen, Hb electrophoresis, homocysteine. (D) Other: drug screen, infections (HIV, syphilis, TB meningitis), genetic (CADASIL/Fabry/MELAS), hormonal (OCP, pregnancy). Step 5: Treat based on etiology — this is where young stroke management differs from elderly (not just antiplatelets + statins).",
+          "follow_ups": [
+            {"question": "What is the most common etiology of young stroke in India?", "answer": "Cardioembolism (20-35%) — particularly rheumatic heart disease (still common in India, unlike Western countries where PFO and non-valvular AF dominate). Hematological causes (APLA, etc.) account for 5-15%. Cryptogenic (no cause found) in 25-40%."}
+          ],
+          "examiner": "medicine"
+        },
+        {
+          "question": "Why are DOACs not recommended in APS?",
+          "answer": "The TRAPS trial (2018) randomized triple-positive APS patients to rivaroxaban vs warfarin. Trial STOPPED EARLY due to excess thromboembolic events (12%) AND major bleeding in rivaroxaban arm vs 0% events in warfarin arm. Why DOACs fail: APS pathophysiology involves multiple coagulation pathways (thrombin generation, complement, platelet activation, endothelial activation). DOACs target only single factors (Xa or thrombin), while warfarin inhibits multiple vitamin K-dependent factors (II, VII, IX, X). Warfarin provides broader anticoagulation coverage needed for the complex prothrombotic state of APS.",
+          "follow_ups": [
+            {"question": "What is the lupus anticoagulant paradox?", "answer": "Lupus anticoagulant PROLONGS the aPTT in vitro (hence 'anticoagulant') — it interferes with phospholipid-dependent coagulation assays. But in vivo it is PROthrombotic. The paradox: the test suggests anticoagulation, but the clinical effect is thrombosis. This is because LA antibodies target beta-2 GP1/phospholipid complexes → activating endothelium and platelets in vivo, while in vitro they interfere with the phospholipid surface needed for clotting assays."}
+          ],
+          "examiner": "medicine"
+        },
+        {
+          "question": "What is Sneddon syndrome?",
+          "answer": "Sneddon syndrome = livedo reticularis + cerebrovascular events (stroke/TIA). A clinical syndrome, not a specific disease. Most common association: antiphospholipid antibody syndrome (but can occur without aPL antibodies). Pathology: non-inflammatory thrombotic vasculopathy of small/medium arteries in skin and brain. Livedo reticularis + recurrent strokes in a young patient → check APLA panel. Some cases are aPL-negative Sneddon syndrome — mechanism unclear.",
+          "follow_ups": [],
+          "examiner": "neurology"
+        },
+        {
+          "question": "What is paradoxical embolism through a PFO?",
+          "answer": "A venous thrombus (from deep veins) crosses from right to left heart through a PFO → embolizes to cerebral arteries → ischemic stroke. The 'paradox': venous thrombus causes arterial event. Requires: (1) source of venous thrombus, (2) right-to-left shunt (PFO/ASD), (3) transient rise in right atrial pressure (Valsalva/coughing/straining). PFO present in 25% general population but 40-50% of cryptogenic young strokes. Diagnosed by: TCD bubble study (screening), TTE with agitated saline, TEE (gold standard). Treatment: PFO closure device + antiplatelet in selected patients (CLOSE, RESPECT, DEFENSE-PFO trials).",
+          "follow_ups": [],
+          "examiner": "neurology"
+        },
+        {
+          "question": "What is TB meningitis arteritis and how does it cause stroke?",
+          "answer": "TB meningitis produces thick inflammatory exudate in the basal cisterns of the brain. This exudate engulfs the arteries running through the basal cisterns (especially MCA and ACA at the circle of Willis) → inflammatory infiltration of vessel walls (endarteritis obliterans) → vessel narrowing/occlusion → ischemic stroke. Most commonly: MCA territory infarcts and basal ganglia lacunar infarcts. Clinical: fever + meningismus + cranial nerve palsies (6th, 3rd — traversing the exudate) + stroke. CSF: lymphocytic pleocytosis, low glucose, high protein.",
+          "follow_ups": [],
+          "examiner": "medicine"
+        }
+      ]
+    }
+  ]
+}

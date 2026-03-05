@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PI Spider Web</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0f;color:#e0e0e0;font-family:'Courier New',monospace;padding:12px}
+h1{text-align:center;color:#00ff88;font-size:1.3em;margin-bottom:4px}
+.sub{text-align:center;color:#888;font-size:0.75em;margin-bottom:14px}
+.leg{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:16px;font-size:0.7em}
+.leg span{display:flex;align-items:center;gap:4px}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+.sec{margin-bottom:20px;border:1px solid #222;border-radius:6px;overflow:hidden}
+.sh{padding:8px 12px;font-weight:bold;font-size:0.9em;display:flex;justify-content:space-between;align-items:center}
+.sp{font-size:0.7em;padding:2px 7px;border-radius:8px;color:#000;font-weight:bold}
+.sb{padding:8px 12px;background:#0d0d14}
+.nr{display:flex;align-items:flex-start;margin-bottom:8px;padding:6px;border-radius:5px;border-left:3px solid transparent}
+.nr.d{border-left-color:#00ff88;background:rgba(0,255,136,0.04)}
+.nr.b{border-left-color:#ffaa00;background:rgba(255,170,0,0.04)}
+.nr.gh{border-left-color:#ff3355;background:rgba(255,51,85,0.04)}
+.nr.gm{border-left-color:#ff6644;background:rgba(255,102,68,0.04)}
+.nr.gl{border-left-color:#555;background:rgba(85,85,85,0.02)}
+.nr.ex{border-left-color:#333;opacity:0.45}
+.nr.em{border-left-color:#44aaff;background:rgba(68,170,255,0.04)}
+.ns{width:22px;min-width:22px;text-align:center;margin-right:8px;padding-top:1px}
+.nc{flex:1}
+.nn{font-weight:bold;font-size:0.8em}
+.sc{display:inline-block;font-size:0.65em;padding:1px 5px;border-radius:6px;margin-left:4px;color:#000;font-weight:bold}
+.nd{font-size:0.68em;color:#999;margin-top:2px}
+.cn{display:flex;flex-wrap:wrap;gap:3px;margin-top:3px}
+.ct{font-size:0.6em;padding:1px 5px;border-radius:6px;background:#1a1a2e;color:#7788aa;border:1px solid #2a2a3e}
+.ct.a{background:#0a2a1a;color:#00ff88;border-color:#00ff88}
+.nb{display:inline-block;font-size:0.55em;padding:1px 4px;border-radius:5px;margin-left:4px;font-weight:bold}
+.mc{background:#2a0a0a;color:#ff6666;border:1px solid #ff4444}
+.lv{background:#2a1a0a;color:#ffaa44;border:1px solid #ff8800}
+.rn{background:#0a1a2a;color:#44aaff;border:1px solid #2288ff}
+.inf{background:#0a2a1a;color:#44ff88;border:1px solid #22cc66}
+.neu{background:#1a0a2a;color:#aa66ff;border:1px solid #8844dd}
+.s1 .sh{background:#1a2a1a;color:#00ff88}.s1 .sp{background:#00ff88}
+.s2 .sh{background:#1a1a2a;color:#4488ff}.s2 .sp{background:#4488ff}
+.s3 .sh{background:#2a1a2a;color:#cc66ff}.s3 .sp{background:#cc66ff}
+.s4 .sh{background:#2a2a1a;color:#ffcc00}.s4 .sp{background:#ffcc00}
+.s5 .sh{background:#2a1a1a;color:#ff6644}.s5 .sp{background:#ff6644}
+.s6 .sh{background:#1a2a2a;color:#44dddd}.s6 .sp{background:#44dddd}
+.s7 .sh{background:#1a2a20;color:#44ddaa}.s7 .sp{background:#44ddaa}
+.s8 .sh{background:#20201a;color:#ddaa44}.s8 .sp{background:#ddaa44}
+.s9 .sh{background:#2a1a1a;color:#ff4444}.s9 .sp{background:#ff4444}
+.s10 .sh{background:#1a1a20;color:#8888cc}.s10 .sp{background:#8888cc}
+.sum{margin-top:20px;padding:12px;background:#111118;border-radius:6px;border:1px solid #222}
+.sum h2{color:#00ff88;font-size:0.95em;margin-bottom:8px}
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:6px}
+.scd{background:#0d0d14;border-radius:5px;padding:6px;text-align:center;border:1px solid #222}
+.sn{font-size:1.3em;font-weight:bold}
+.sl{font-size:0.6em;color:#888;margin-top:2px}
+.act{margin-top:16px;padding:12px;background:#1a0a0a;border:1px solid #ff3355;border-radius:6px}
+.act h2{color:#ff3355;font-size:0.95em;margin-bottom:6px}
+.ai{font-size:0.75em;margin-bottom:5px;padding-left:14px;position:relative}
+.ai::before{content:'→';position:absolute;left:0;color:#ff3355}
+.netsum{font-size:0.75em;line-height:1.7;margin-top:4px}
+</style>
+</head>
+<body>
+<h1>PI SPIDER WEB — FULL COVERAGE MAP</h1>
+<div class="sub">Feb 13, 2026 | Exam: Feb 14 | ~36 hours remaining</div>
+
+<div class="leg">
+<span><div class="dot" style="background:#00ff88"></div>Done/Graded</span>
+<span><div class="dot" style="background:#ffaa00"></div>Built/Needs Recall</span>
+<span><div class="dot" style="background:#44aaff"></div>Embedded</span>
+<span><div class="dot" style="background:#ff3355"></div>Gap HIGH</span>
+<span><div class="dot" style="background:#ff6644"></div>Gap MED</span>
+<span><div class="dot" style="background:#555"></div>Gap LOW</span>
+<span><div class="dot" style="background:#333"></div>Excluded</span>
+</div>
+<div class="leg">
+<span><span class="nb mc">M-CVD</span>Metabolic-CVD</span>
+<span><span class="nb lv">LIVER</span>Liver</span>
+<span><span class="nb rn">RENAL</span>Renal</span>
+<span><span class="nb inf">INFECT</span>Infection</span>
+<span><span class="nb neu">NEURO</span>Neuro-Nutrition</span>
+</div>
+
+<!-- SLOT 1 NUTRITION -->
+<div class="sec s1"><div class="sh">SLOT 1: NUTRITION / VITAMIN — 1-3 Qs<span class="sp">P=1.00</span></div><div class="sb">
+
+<div class="nr d"><div class="ns">✅</div><div class="nc"><div class="nn">Vitamin B12 (Cobalamin)<span class="sc" style="background:#00ff88">8/10</span><span class="nb neu">NEURO</span></div><div class="nd">MMA ↑ specific. Neuro without anemia 28%. Methyl trap → folate.</div><div class="cn"><span class="ct a">Folate</span><span class="ct a">Spinal cord/SACD</span><span class="ct a">Nutritional neuro</span><span class="ct">Metformin ↓B12</span></div></div></div>
+
+<div class="nr d"><div class="ns">✅</div><div class="nc"><div class="nn">Vitamin B6 (Pyridoxine) + INH<span class="sc" style="background:#00ff88">7.5/10</span><span class="nb neu">NEURO</span><span class="nb inf">INFECT</span></div><div class="nd">PLP (Pyridoxal 5'-Phosphate) active form. Hydrazone complex. 10mg/day prophylaxis.</div><div class="cn"><span class="ct a">INH/TB</span><span class="ct a">Sideroblastic anemia</span><span class="ct">NAT2 pharmacogenomics</span></div></div></div>
+
+<div class="nr b"><div class="ns">📋</div><div class="nc"><div class="nn">Vitamin B1 (Thiamine)<span class="nb neu">NEURO</span></div><div class="nd">Blueprint. Thiamine BEFORE glucose. Wernicke's triad. Beriberi wet/dry. Pyruvate dehydrogenase cofactor.</div><div class="cn"><span class="ct a">Nutritional neuro</span><span class="ct a">Refeeding</span><span class="ct">TPN</span></div></div></div>
+
+<div class="nr ex"><div class="ns">⬜</div><div class="nc"><div class="nn">Vitamin B3 (Niacin) — EXCLUDED ×0.10</div><div class="nd">Sep25. Pellagra 3Ds. Safety net via B6-INH overlap.</div></div></div>
+
+<div class="nr ex"><div class="ns">⬜</div><div class="nc"><div class="nn">Vitamin B9 (Folic Acid) — EXCLUDED ×0.25</div><div class="nd">Jan25. NTDs. Methyl trap in B12 answer.</div></div></div>
+
+<div class="nr d"><div class="ns">✅</div><div class="nc"><div class="nn">Vitamin C (Ascorbic Acid)</div><div class="nd">Fe³⁺→Fe²⁺ iron absorption. Collagen hydroxylation. Scurvy.</div><div class="cn"><span class="ct a">Iron absorption</span></div></div></div>
+
+<div class="nr d"><div class="ns">✅</div><div class="nc"><div class="nn">Vitamin D (Cholecalciferol)<span class="sc" style="background:#00ff88">8.5/10</span><span class="nb rn">RENAL</span></div><div class="nd">Parafollicular=Calcitonin. Chief=PTH. 1,25(OH)₂D₃ active. CKD→↓1α-hydroxylase.</div><div class="cn"><span class="ct a">Calcium metabolism</span><span class="ct a">Nephron</span><span class="ct a">PTH axis</span></div></div></div>
+
+<div class="nr d"><div class="ns">✅</div><div class="nc"><div class="nn">Vitamin A (Retinol)<span class="sc" style="background:#00ff88">7.5/10</span></div><div class="nd">MEASLES not mumps. Bitot's spots. Teratogenic. Rhodopsin.</div><div class="cn"><span class="ct a">Measles protocol</span><span class="ct">Xerophthalmia staging</span></div></div></div>
+
+<div class="nr d"><div class="ns">✅</div><div class="nc"><div class="nn">Vitamin K (Phylloquinone)<span class="sc" style="background:#00ff88">8/10</span></div><div class="nd">Gamma-carboxyglutamate. Factors II,VII,IX,X. Bridging protects. Warfarin antagonism.</div><div class="cn"><span class="ct a">Coagulation</span><span class="ct a">Warfarin</span></div></div></div>
+
+<div class="nr b"><div class="ns">⚠️</div><div class="nc"><div class="nn">Vitamin E (Tocopherol)<span class="nb mc">M-CVD</span><span class="nb neu">NEURO</span></div><div class="nd">MINIMAL. Spinocerebellar. Lipid peroxidation. Antioxidant in olive oil/nuts.</div><div class="cn"><span class="ct">SACD</span><span class="ct">Mediterranean</span><span class="ct">Atherosclerosis</span></div></div></div>
+
+<div class="nr d"><div class="ns">✅</div><div class="nc"><div class="nn">Iron / Heme<span class="sc" style="background:#00ff88">7/10</span><span class="nb lv">LIVER</span></div><div class="nd">Hepcidin-ferroportin axis. Hepcidin ↑ inflammation → iron trapping.</div><div class="cn"><span class="ct a">Vitamin C</span><span class="ct a">Anemia workup</span><span class="ct">Hemochromatosis</span><span class="ct">Heme synthesis</span></div></div></div>
+
+<div class="nr d"><div class="ns">✅</div><div class="nc"><div class="nn">TPN (Total Parenteral Nutrition)<span class="sc" style="background:#00ff88">8.5/10</span></div><div class="nd">Soybean oil lipid. Cycle 12-16hr. Trace: Zn,Cu,Mn,Cr,Se.</div><div class="cn"><span class="ct a">Refeeding</span><span class="ct">NAFLD</span><span class="ct">Critically ill</span></div></div></div>
+
+<div class="nr d"><div class="ns">✅</div><div class="nc"><div class="nn">Refeeding Syndrome<span class="sc" style="background:#00ff88">8.5/10</span></div><div class="nd">BMI<16. PO₄ hallmark killer. Insulin surge→intracellular shift. Thiamine first.</div><div class="cn"><span class="ct a">Thiamine</span><span class="ct a">Electrolytes</span><span class="ct a">PEM</span></div></div></div>
+
+<div class="nr d"><div class="ns">✅</div><div class="nc"><div class="nn">Nutritional Neurological Disorders<span class="sc" style="background:#00ff88">7/10</span><span class="nb neu">NEURO</span></div><div class="nd">Victor-Adams. PLP=Pyridoxal 5'-Phosphate. Umbrella: B12/B1/B6/Cu/E.</div><div class="cn"><span class="ct a">B12/SACD</span><span class="ct a">B1/Wernicke's</span><span class="ct a">Spinal cord</span></div></div></div>
+
+<div class="nr d"><div class="ns">✅</div><div class="nc"><div class="nn">Malabsorption Tests</div><div class="nd">D-xylose normal=pancreatic. D-xylose abnormal=mucosal. H₂ early=SIBO.</div><div class="cn"><span class="ct a">Investigation slot</span><span class="ct">Tropical sprue</span></div></div></div>
+
+<div class="nr em"><div class="ns">🔗</div><div class="nc"><div class="nn">Mediterranean Diet<span class="nb mc">M-CVD</span></div><div class="nd">FAILSAFE 3-4 lines. PREDIMED=30% CVD↓. Indian: mustard oil, fish, millets.</div><div class="cn"><span class="ct a">Atherosclerosis</span><span class="ct a">Obesity</span><span class="ct a">Omega-3</span></div></div></div>
+
+<div class="nr d"><div class="ns">✅</div><div class="nc"><div class="nn">Obesity / BMI<span class="sc" style="background:#ffaa00">6/10</span><span class="nb mc">M-CVD</span></div><div class="nd">ANCHOR. Waist 90M/80F. Thin-fat phenotype. Leptin RESISTANCE. Errors: BP=130/85, FIB-4=fibrosis.</div><div class="cn"><span class="ct a">Met syndrome</span><span class="ct a">DM pathophys</span><span class="ct a">Atherosclerosis</span><span class="ct a">OHA</span><span class="ct a">Lipid drugs</span><span class="ct a">NAFLD</span><span class="ct a">Anti-obesity drugs</span></div></div></div>
+
+<div class="nr em"><div class="ns">🔗</div><div class="nc"><div class="nn">Metabolic Syndrome / Syndrome X<span class="nb mc">M-CVD</span></div><div class="nd">In obesity. IDF: waist mandatory+any 2. Indian waist 90M/80F. ATP III: any 3/5.</div><div class="cn"><span class="ct a">Obesity</span><span class="ct a">DM</span><span class="ct a">Dyslipidemia</span><span class="ct a">HTN/ACEi</span></div></div></div>
+
+<div class="nr em"><div class="ns">🔗</div><div class="nc"><div class="nn">Omega-3/6 Fatty Acids<span class="nb mc">M-CVD</span></div><div class="nd">In lipid section. PUFA. REDUCE-IT (icosapent ethyl). Coastal fish diet.</div><div class="cn"><span class="ct a">Mediterranean</span><span class="ct a">Lipid lowering</span></div></div></div>
+
+<div class="nr gh"><div class="ns">❌</div><div class="nc"><div class="nn">Iodine Deficiency Disorders</div><div class="nd">GAP-HIGH. Coastal paradox. Goiter, cretinism. Wolff-Chaikoff. Thyroid link.</div><div class="cn"><span class="ct">Thyroid pathophys</span><span class="ct">Selenium</span><span class="ct">Mangalore</span></div></div></div>
+
+<div class="nr gm"><div class="ns">❌</div><div class="nc"><div class="nn">Zinc<span class="nb neu">NEURO</span></div><div class="nd">GAP-MED. Excess Zn→Cu depletion→SACD mimic. Acrodermatitis enteropathica.</div><div class="cn"><span class="ct">Cu deficiency/SACD</span><span class="ct">TPN trace</span><span class="ct">Wilson's (inverse)</span></div></div></div>
+
+<div class="nr gm"><div class="ns">❌</div><div class="nc"><div class="nn">PEM (Protein-Energy Malnutrition)</div><div class="nd">GAP-MED. Kwashiorkor vs Marasmus. Wellcome classification. Indian TB/HIV.</div><div class="cn"><span class="ct">Refeeding</span><span class="ct">Albumin</span><span class="ct">Indian public health</span></div></div></div>
+
+<div class="nr gl"><div class="ns">○</div><div class="nc"><div class="nn">Selenium</div><div class="nd">GAP-LOW. Keshan (cardiomyopathy), Kashin-Beck. Thyroid deiodinase.</div></div></div>
+<div class="nr gl"><div class="ns">○</div><div class="nc"><div class="nn">Chromium</div><div class="nd">GAP-LOW. Glucose tolerance factor. Potentiates insulin.</div></div></div>
+<div class="nr gl"><div class="ns">○</div><div class="nc"><div class="nn">Enteral Nutrition</div><div class="nd">GAP-LOW. EN vs PN. "If gut works, use it."</div></div></div>
+<div class="nr gl"><div class="ns">○</div><div class="nc"><div class="nn">ICMR RDA / Fluorosis</div><div class="nd">GAP-LOW. Programme territory. Fluorosis belt.</div></div></div>
+
+</div></div>
+
+<!-- SLOT 2 ANATOMY -->
+<div class="sec s2"><div class="sh">SLOT 2: ANATOMY / PHYSIOLOGY — 1-2 Qs<span class="sp">P=1.00</span></div><div class="sb">
+
+<div class="nr d"><div class="ns">✅</div><div class="nc"><div class="nn">Coronary Circulation<span class="nb mc">M-CVD</span></div><div class="nd">Ungraded. LAD="widow maker." RCA→SA(60%),AV(80%). Right dominant 85%. Diastolic filling.</div><div class="cn"><span class="ct a">Atherosclerosis</span><span class="ct a">Cardiac conduction</span><span class="ct a">ACEi</span></div></div></div>
+
+<div class="nr b"><div class="ns">📋</div><div class="nc"><div class="nn">Cardiac Conduction System</div><div class="nd">Blueprint. SA→AV→His→Branches→Purkinje. SA blood supply RCA 60%.</div><div class="cn"><span class="ct a">Coronary</span><span class="ct">Antiarrhythmics</span></div></div></div>
+
+<div class="nr ex"><div class="ns">⬜</div><div class="nc"><div class="nn">Cerebral Circulation — EXCLUDED ×0.10</div><div class="nd">Sep25. Lateral medullary covered.</div></div></div>
+
+<div class="nr d"><div class="ns">✅</div><div class="nc"><div class="nn">Spinal Cord Tracts<span class="nb neu">NEURO</span></div><div class="nd">Cross-section built. SACD=posterior columns+lateral corticospinal. B12/Cu/E localization.</div><div class="cn"><span class="ct a">B12/SACD</span><span class="ct a">Nutritional neuro</span><span class="ct a">Zinc→Cu→SACD</span></div></div></div>
+
+<div class="nr ex"><div class="ns">⬜</div><div class="nc"><div class="nn">Nephron / Renal — EXCLUDED ×0.25<span class="nb rn">RENAL</span></div><div class="nd">Jan25. Segment functions, GFR estimation.</div></div></div>
+
+<div class="nr gl"><div class="ns">○</div><div class="nc"><div class="nn">GI Arterial Supply</div><div class="nd">GAP-LOW. Celiac, SMA, IMA. Watershed areas.</div></div></div>
+
+<div class="nr b"><div class="ns">⚠️</div><div class="nc"><div class="nn">Portal System<span class="nb lv">LIVER</span></div><div class="nd">PARTIAL. Portacaval anastomoses from portal HTN context.</div><div class="cn"><span class="ct">Bilirubin</span><span class="ct">Hepatic encephalopathy</span><span class="ct">Schistosoma</span></div></div></div>
+
+<div class="nr ex"><div class="ns">⬜</div><div class="nc"><div class="nn">Temperature Regulation — EXCLUDED ×0.10</div><div class="nd">Sep25.</div></div></div>
+
+</div></div>
+
+<!-- SLOT 3 PHARMACOLOGY -->
+<div class="sec s3"><div class="sh">SLOT 3: PHARMACOLOGY — 1 Q<span class="sp">P=1.00</span></div><div class="sb">
+
+<div class="nr d"><div class="ns">✅</div><div class="nc"><div class="nn">ACE Inhibitors (ACEi)<span class="sc" style="background:#00ff88">Strong</span><span class="nb mc">M-CVD</span><span class="nb rn">RENAL</span></div><div class="nd">RAAS. Renoprotective. Cough (bradykinin). CI: bilateral RAS, pregnancy.</div><div class="cn"><span class="ct a">Met syndrome/HTN</span><span class="ct a">Diabetic nephropathy</span><span class="ct">Hyperkalemia</span></div></div></div>
+
+<div class="nr d"><div class="ns">✅</div><div class="nc"><div class="nn">Metformin<span class="sc" style="background:#00ff88">7/10</span><span class="nb mc">M-CVD</span></div><div class="nd">AMPK activation. Weight neutral. Lactic acidosis rare. ↓B12 long-term.</div><div class="cn"><span class="ct a">DM pathophys</span><span class="ct a">OHA</span><span class="ct a">Obesity</span><span class="ct">B12</span></div></div></div>
+
+<div class="nr b"><div class="ns">📋</div><div class="nc"><div class="nn">OHA Full Class<span class="nb mc">M-CVD</span></div><div class="nd">BUILT, needs recall. SGLT2i (empagliflozin, dapagliflozin)→CVD+renal. GLP-1RA (semaglutide, liraglutide)→weight+CVD. DPP-4i (sitagliptin)→neutral. SU→weight gain. TZD (pioglitazone)→NASH but weight gain.</div><div class="cn"><span class="ct a">DM pathophys</span><span class="ct a">Obesity</span><span class="ct a">CVD trials</span><span class="ct a">Electrolytes (DKA)</span></div></div></div>
+
+<div class="nr b"><div class="ns">📋</div><div class="nc"><div class="nn">Lipid Lowering Agents<span class="nb mc">M-CVD</span></div><div class="nd">BUILT, needs recall. Statins (HMG-CoA reductase). Ezetimibe (NPC1L1). PCSK9i (evolocumab, alirocumab). Inclisiran (siRNA). Bempedoic acid (ACL inhibitor). Fibrates (PPARα). Icosapent ethyl (EPA).</div><div class="cn"><span class="ct a">Atherosclerosis</span><span class="ct a">Dyslipidemia</span><span class="ct a">CVD trials</span></div></div></div>
+
+<div class="nr b"><div class="ns">📋</div><div class="nc"><div class="nn">Anti-Obesity Drugs<span class="nb mc">M-CVD</span></div><div class="nd">BUILT, needs recall. Orlistat (lipase INHIBITOR). Semaglutide 2.4mg. Tirzepatide (GIP+GLP-1). Naltrexone-bupropion. SELECT trial.</div><div class="cn"><span class="ct a">Obesity</span><span class="ct a">GLP-1RA overlap</span></div></div></div>
+
+<div class="nr ex"><div class="ns">⬜</div><div class="nc"><div class="nn">Antiarrhythmics — EXCLUDED ×0.10</div><div class="nd">Sep25.</div></div></div>
+<div class="nr ex"><div class="ns">⬜</div><div class="nc"><div class="nn">Bedaquiline — EXCLUDED ×0.25</div><div class="nd">Jan25. ATP synthase inhibitor. MDR-TB.</div></div></div>
+
+<div class="nr gm"><div class="ns">❌</div><div class="nc"><div class="nn">ARNi — Sacubitril/Valsartan<span class="nb mc">M-CVD</span></div><div class="nd">GAP-MED. Asked 2023. Neprilysin inhibition→↑natriuretic peptides. PARADIGM-HF.</div><div class="cn"><span class="ct a">ACEi</span><span class="ct">Heart failure</span></div></div></div>
+
+</div></div>
+
+<!-- SLOT 4 PATHOPHYSIOLOGY -->
+<div class="sec s4"><div class="sh">SLOT 4: PATHOPHYSIOLOGY<span class="sp">P=0.80</span></div><div class="sb">
+
+<div class="nr b"><div class="ns">⚠️</div><div class="nc"><div class="nn">DM Pathophysiology<span class="nb mc">M-CVD</span></div><div class="nd">ATTEMPTED. Ominous octet (DeFronzo). Insulin resistance→β-cell failure. NEEDS FINISHING.</div><div class="cn"><span class="ct a">Obesity</span><span class="ct a">OHA</span><span class="ct a">Met syndrome</span><span class="ct a">Atherosclerosis</span><span class="ct">DKA</span></div></div></div>
+
+<div class="nr d"><div class="ns">✅</div><div class="nc"><div class="nn">Septic Shock<span class="sc" style="background:#00ff88">8/10</span></div><div class="nd">Cytokine cascade. SIRS→Sepsis→Shock. TNF-α, IL-1, IL-6. Vasodilation, DIC.</div></div></div>
+
+<div class="nr d"><div class="ns">✅</div><div class="nc"><div class="nn">Atherosclerosis<span class="nb mc">M-CVD</span></div><div class="nd">Ungraded. Endothelial dysfunction→foam cells→plaque→rupture→thrombosis.</div><div class="cn"><span class="ct a">Coronary</span><span class="ct a">Obesity</span><span class="ct a">Lipid drugs</span><span class="ct a">Mediterranean</span><span class="ct a">DM</span></div></div></div>
+
+<div class="nr gl"><div class="ns">○</div><div class="nc"><div class="nn">Heme Synthesis / Porphyria<span class="nb lv">LIVER</span></div><div class="nd">GAP-LOW. ALA synthase rate-limiting. Lead inhibits ALA dehydratase + ferrochelatase.</div></div></div>
+
+<div class="nr gm"><div class="ns">❌</div><div class="nc"><div class="nn">Bilirubin Metabolism<span class="nb lv">LIVER</span></div><div class="nd">GAP-MED. 2×2023. Conjugated/unconjugated. Gilbert's, Crigler-Najjar, Dubin-Johnson, Rotor. UGT1A1.</div><div class="cn"><span class="ct">Heme</span><span class="ct">Iron</span><span class="ct">Hepatic enceph</span><span class="ct">Portal</span></div></div></div>
+
+<div class="nr gm"><div class="ns">❌</div><div class="nc"><div class="nn">Hepatic Encephalopathy<span class="nb lv">LIVER</span></div><div class="nd">GAP-MED. Ammonia. Astrocyte swelling. West Haven I-IV. Lactulose, rifaximin.</div><div class="cn"><span class="ct">Bilirubin</span><span class="ct">Portal</span><span class="ct">Respiratory alkalosis</span></div></div></div>
+
+<div class="nr gm"><div class="ns">❌</div><div class="nc"><div class="nn">Thyroid Pathophysiology</div><div class="nd">GAP-MED. Could migrate from PIV. HPT axis. Hashimoto's vs Graves'. Links to iodine.</div><div class="cn"><span class="ct">Iodine</span><span class="ct">Selenium</span><span class="ct">Mangalore coastal</span></div></div></div>
+
+</div></div>
+
+<!-- SLOT 5 PARASITOLOGY -->
+<div class="sec s5"><div class="sh">SLOT 5: PARASITOLOGY / LIFECYCLE<span class="sp">P=0.75</span></div><div class="sb">
+
+<div class="nr b"><div class="ns">📋</div><div class="nc"><div class="nn">Strongyloides stercoralis<span class="nb inf">INFECT</span></div><div class="nd">HTML built. Hyperinfection immunosuppressed. Autoinfection unique. Needs recall.</div><div class="cn"><span class="ct a">DIMAOE</span><span class="ct">Eosinophilia</span><span class="ct">Karnataka tropical</span></div></div></div>
+
+<div class="nr ex"><div class="ns">⬜</div><div class="nc"><div class="nn">Echinococcus — EXCLUDED ×0.25</div><div class="nd">Jan25. Hydatid cyst.</div></div></div>
+<div class="nr ex"><div class="ns">⬜</div><div class="nc"><div class="nn">Taenia solium — EXCLUDED ×0.10</div><div class="nd">Sep25. Cysticercosis.</div></div></div>
+
+<div class="nr gl"><div class="ns">○</div><div class="nc"><div class="nn">Plasmodium falciparum</div><div class="nd">LOW. 2022 (×0.10). Cerebral malaria. Banana gametocytes.</div></div></div>
+
+<div class="nr gm"><div class="ns">❌</div><div class="nc"><div class="nn">Leishmania donovani<span class="nb inf">INFECT</span></div><div class="nd">GAP-MED. Kala-azar. Sandfly. LD bodies. Pancytopenia+HSM. Amphotericin B. NVBDCP.</div><div class="cn"><span class="ct">DIMAOE</span><span class="ct">Indian programme</span></div></div></div>
+
+<div class="nr gm"><div class="ns">❌</div><div class="nc"><div class="nn">Wuchereria bancrofti<span class="nb inf">INFECT</span></div><div class="nd">GAP-MED. Lymphatic filariasis. Karnataka endemic. Culex. Nocturnal periodicity. DEC. MDA.</div><div class="cn"><span class="ct">DIMAOE</span><span class="ct">Karnataka</span><span class="ct">Eosinophilia</span></div></div></div>
+
+<div class="nr gl"><div class="ns">○</div><div class="nc"><div class="nn">Schistosoma<span class="nb lv">LIVER</span></div><div class="nd">GAP-LOW. Portal HTN. Periportal fibrosis.</div></div></div>
+
+<div class="nr d"><div class="ns">✅</div><div class="nc"><div class="nn">DIMAOE Framework</div><div class="nd">Universal lifecycle template built. Applied to all parasites.</div></div></div>
+
+</div></div>
+
+<!-- SLOT 6 ELECTROLYTE -->
+<div class="sec s6"><div class="sh">SLOT 6: ELECTROLYTE<span class="sp">P=0.50</span></div><div class="sb">
+
+<div class="nr d"><div class="ns">✅</div><div class="nc"><div class="nn">Hypokalemia<span class="sc" style="background:#00ff88">7/10</span><span class="nb rn">RENAL</span></div><div class="nd">U-waves. GI loss, renal loss, RTA. ROMK.</div><div class="cn"><span class="ct a">Drug-induced</span><span class="ct a">RTA</span><span class="ct">Met alkalosis</span></div></div></div>
+
+<div class="nr d"><div class="ns">✅</div><div class="nc"><div class="nn">Hyperkalemia<span class="sc" style="background:#00ff88">7/10</span><span class="nb rn">RENAL</span></div><div class="nd">Peaked T→sine wave. ACEi, SGLT2i, spironolactone. Ca gluconate→insulin+glucose→dialysis.</div><div class="cn"><span class="ct a">ACEi</span><span class="ct a">Drug-induced</span><span class="ct a">CKD</span></div></div></div>
+
+<div class="nr b"><div class="ns">⚠️</div><div class="nc"><div class="nn">Hyponatremia</div><div class="nd">MENTIONED, needs grading. SIADH, dilutional, depletional. Osmolality algorithm.</div><div class="cn"><span class="ct">Vaptans</span><span class="ct">Osmotic demyelination</span></div></div></div>
+
+<div class="nr d"><div class="ns">✅</div><div class="nc"><div class="nn">Calcium Metabolism<span class="sc" style="background:#00ff88">7/10</span><span class="nb rn">RENAL</span></div><div class="nd">PTH-VitD-Calcitonin. Chvostek's, Trousseau's. Corrected Ca formula.</div><div class="cn"><span class="ct a">Vitamin D</span><span class="ct a">Nephron</span></div></div></div>
+
+<div class="nr b"><div class="ns">⚠️</div><div class="nc"><div class="nn">Drug-Induced Dyselectrolytemia<span class="nb mc">M-CVD</span><span class="nb rn">RENAL</span></div><div class="nd">UNGRADED. SGLT2i→euglycemic DKA. Loop→hypoK,hypoMg. Thiazide→hypoNa. ACEi→hyperK.</div><div class="cn"><span class="ct a">OHA</span><span class="ct a">ACEi</span><span class="ct a">All electrolytes</span></div></div></div>
+
+<div class="nr gl"><div class="ns">○</div><div class="nc"><div class="nn">Magnesium Disorders</div><div class="nd">GAP-LOW. Orphan. Refractory hypoK+hypoCa=think hypoMg. Torsades. PPI-induced.</div></div></div>
+
+</div></div>
+
+<!-- SLOT 7 ACID-BASE -->
+<div class="sec s7"><div class="sh">SLOT 7: ACID-BASE<span class="sp">P=0.50</span></div><div class="sb">
+
+<div class="nr d"><div class="ns">✅</div><div class="nc"><div class="nn">Metabolic Alkalosis<span class="sc" style="background:#00ff88">8/10</span></div><div class="nd">Saline-responsive vs resistant. Urine Cl⁻ key test.</div><div class="cn"><span class="ct a">Hypokalemia</span><span class="ct">Diuretics</span></div></div></div>
+
+<div class="nr b"><div class="ns">⚠️</div><div class="nc"><div class="nn">Metabolic Acidosis / HAGMA<span class="nb mc">M-CVD</span></div><div class="nd">UNGRADED. MUDPILES. AG=Na-(Cl+HCO₃). DKA, lactic acidosis, uremia.</div><div class="cn"><span class="ct a">DKA/DM</span><span class="ct a">Lactic (metformin, sepsis)</span><span class="ct">Poisoning</span></div></div></div>
+
+<div class="nr gm"><div class="ns">❌</div><div class="nc"><div class="nn">RTA (Renal Tubular Acidosis)<span class="nb rn">RENAL</span></div><div class="nd">GAP-MED. Type1=distal,pH>5.5. Type2=proximal,HCO₃⁻. Type4=hypoaldo,hyperK.</div><div class="cn"><span class="ct">Nephron</span><span class="ct">HypoK(1,2)</span><span class="ct">HyperK(4)</span></div></div></div>
+
+<div class="nr gl"><div class="ns">○</div><div class="nc"><div class="nn">Respiratory Acid-Base</div><div class="nd">GAP-LOW. COPD, PE, hepatic encephalopathy.</div></div></div>
+<div class="nr gl"><div class="ns">○</div><div class="nc"><div class="nn">Mixed Disorders</div><div class="nd">GAP-LOW. Delta-delta. Salicylate=mixed.</div></div></div>
+
+</div></div>
+
+<!-- SLOT 8 INVESTIGATION -->
+<div class="sec s8"><div class="sh">SLOT 8: INVESTIGATION<span class="sp">P=0.60</span></div><div class="sb">
+
+<div class="nr b"><div class="ns">📋</div><div class="nc"><div class="nn">PFTs (Pulmonary Function Tests)</div><div class="nd">HTML drill built. FEV₁/FVC<0.7=obstructive. Normal/↑=restrictive. DLCO.</div><div class="cn"><span class="ct">COPD</span><span class="ct">ILD</span><span class="ct">Asthma</span></div></div></div>
+
+<div class="nr ex"><div class="ns">⬜</div><div class="nc"><div class="nn">CBNAAT — EXCLUDED ×0.25</div><div class="nd">Jan25. GeneXpert. MTB+Rif resistance.</div></div></div>
+
+<div class="nr em"><div class="ns">🔗</div><div class="nc"><div class="nn">Metabolic Investigation Panel<span class="nb mc">M-CVD</span></div><div class="nd">In obesity. HOMA-IR, hsCRP, FIB-4, non-HDL-C, ApoB, Lp(a), OGTT, ASCVD score, EOSS.</div></div></div>
+
+<div class="nr gl"><div class="ns">○</div><div class="nc"><div class="nn">Bone Marrow Studies</div><div class="nd">GAP-LOW. 2022. Aspiration vs biopsy.</div></div></div>
+<div class="nr gl"><div class="ns">○</div><div class="nc"><div class="nn">Lymph Node Biopsy</div><div class="nd">GAP-LOW. 2023. Excision vs FNAC.</div></div></div>
+<div class="nr gl"><div class="ns">○</div><div class="nc"><div class="nn">Flow Cytometry</div><div class="nd">GAP-LOW. Pre-final PIV. CD markers.</div></div></div>
+
+</div></div>
+
+<!-- SLOT 9 POISONING -->
+<div class="sec s9"><div class="sh">SLOT 9: POISONING<span class="sp">P=0.40</span></div><div class="sb">
+
+<div class="nr d"><div class="ns">✅</div><div class="nc"><div class="nn">OP Poisoning<span class="sc" style="background:#ffaa00">6.5/10</span></div><div class="nd">AChE inhibition. DUMBELS. Atropine+Pralidoxime. Intermediate syndrome.</div><div class="cn"><span class="ct">Agricultural Karnataka</span></div></div></div>
+
+<div class="nr ex"><div class="ns">⬜</div><div class="nc"><div class="nn">Paracetamol — EXCLUDED ×0.10</div><div class="nd">Sep25. NAPQI. NAC. Rumack-Matthew.</div></div></div>
+
+<div class="nr gl"><div class="ns">○</div><div class="nc"><div class="nn">Heavy Metals</div><div class="nd">GAP-LOW. Lead, arsenic. Chelation: DMSA, EDTA, BAL.</div></div></div>
+
+<div class="nr gm"><div class="ns">❌</div><div class="nc"><div class="nn">Snake Venom</div><div class="nd">GAP-MED. Krait=neurotoxic. Viper=vasculotoxic/DIC. ASV. 20-min WBCT.</div><div class="cn"><span class="ct">Coagulation</span><span class="ct">Mangalore coastal</span></div></div></div>
+
+<div class="nr gl"><div class="ns">○</div><div class="nc"><div class="nn">Scorpion</div><div class="nd">GAP-LOW. Autonomic storm. Prazosin.</div></div></div>
+
+<div class="nr gm"><div class="ns">❌</div><div class="nc"><div class="nn">Copper / Wilson's<span class="nb lv">LIVER</span></div><div class="nd">GAP-MED. ATP7B. KF rings. ↓Ceruloplasmin. Penicillamine, zinc, trientine.</div><div class="cn"><span class="ct">Zinc</span><span class="ct">Bilirubin/liver</span><span class="ct">Basal ganglia</span></div></div></div>
+
+</div></div>
+
+<!-- SLOT 10 GENETICS -->
+<div class="sec s10"><div class="sh">SLOT 10: GENETICS / PROGRAMME / OTHER<span class="sp">P=0.20-0.30</span></div><div class="sb">
+
+<div class="nr b"><div class="ns">⚠️</div><div class="nc"><div class="nn">Gene Therapy</div><div class="nd">UNGRADED. AAV, lentivirus. Ex vivo/in vivo. CAR-T, Luxturna, Zolgensma.</div></div></div>
+
+<div class="nr gl"><div class="ns">○</div><div class="nc"><div class="nn">Clinical Trials</div><div class="nd">GAP-LOW. Phase I-IV. Helsinki. ICMR.</div></div></div>
+<div class="nr gl"><div class="ns">○</div><div class="nc"><div class="nn">Pharmacogenomics</div><div class="nd">GAP-LOW. NAT2, CYP2D6, CYP2C19, VKORC1.</div><div class="cn"><span class="ct">B6+INH</span><span class="ct">Warfarin</span></div></div></div>
+
+<div class="nr ex"><div class="ns">⬜</div><div class="nc"><div class="nn">Biomedical Waste — EXCLUDED ×0.10</div><div class="nd">Sep25.</div></div></div>
+<div class="nr ex"><div class="ns">⬜</div><div class="nc"><div class="nn">NACP — EXCLUDED ×0.10</div><div class="nd">Sep25.</div></div></div>
+
+<div class="nr gl"><div class="ns">○</div><div class="nc"><div class="nn">Hypersensitivity Reactions</div><div class="nd">GAP-LOW. Gell-Coombs I-IV.</div></div></div>
+
+</div></div>
+
+<!-- SUMMARY -->
+<div class="sum">
+<h2>COVERAGE SUMMARY</h2>
+<div class="sg">
+<div class="scd"><div class="sn" style="color:#00ff88">15</div><div class="sl">DONE & GRADED</div></div>
+<div class="scd"><div class="sn" style="color:#ffaa00">10</div><div class="sl">BUILT / RECALL NEEDED</div></div>
+<div class="scd"><div class="sn" style="color:#44aaff">6</div><div class="sl">EMBEDDED</div></div>
+<div class="scd"><div class="sn" style="color:#ff3355">1</div><div class="sl">GAP HIGH</div></div>
+<div class="scd"><div class="sn" style="color:#ff6644">12</div><div class="sl">GAP MED</div></div>
+<div class="scd"><div class="sn" style="color:#555">16</div><div class="sl">GAP LOW</div></div>
+<div class="scd"><div class="sn" style="color:#333">10</div><div class="sl">EXCLUDED</div></div>
+</div>
+</div>
+
+<div class="sum" style="margin-top:12px">
+<h2>NETWORK CLUSTERS</h2>
+<div class="netsum">
+<div><span class="nb mc">M-CVD</span> <strong>Metabolic-CVD</strong> — 13 nodes, 4 slots. Anchor: Obesity. Strongest. Newest.</div>
+<div><span class="nb lv">LIVER</span> <strong>Liver</strong> — 7 nodes, 3 slots. Anchor: Bilirubin (GAP). Iron done. Portal partial.</div>
+<div><span class="nb rn">RENAL</span> <strong>Renal</strong> — 7 nodes, 4 slots. Anchor: Nephron (excluded). Electrolytes mostly done. RTA gap.</div>
+<div><span class="nb inf">INFECT</span> <strong>Infection</strong> — 5 nodes, 2 slots. Anchor: Strongyloides (built). Leishmania, Wuchereria gaps.</div>
+<div><span class="nb neu">NEURO</span> <strong>Neuro-Nutrition</strong> — 7 nodes, 2 slots. Anchor: Spinal cord (done). Most complete cluster.</div>
+</div>
+</div>
+
+<div class="act">
+<h2>36-HOUR PRIORITIES</h2>
+<div class="ai"><strong>Recall-test built nodes:</strong> Obesity errors, OHA, Lipid lowering, Strongyloides, PFTs</div>
+<div class="ai"><strong>Close HIGH gap:</strong> Iodine (Mangalore coastal, standalone risk)</div>
+<div class="ai"><strong>Close MED gaps (yield):</strong> PEM, DM pathophys (finish), Bilirubin, RTA, Snake venom</div>
+<div class="ai"><strong>Gold/sand filter + memory hooks:</strong> Queued for next session</div>
+<div class="ai"><strong>PII/PIII/PIV data incoming:</strong> Will reshape drug placement understanding</div>
+</div>
+
+</body>
+</html>

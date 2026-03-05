@@ -1,0 +1,568 @@
+[
+  {
+    "rank": 1,
+    "canonical_topic": "Acute Kidney Injury — criteria/causes/work-up",
+    "system": "Renal",
+    "reason_codes": [
+      "Bridge↑",
+      "Manual↑"
+    ],
+    "anchor_pages": [
+      "ID_UPDATED_2025-09-15: p2–3",
+      "Systemic_UPDATED_2025-09-15: p4"
+    ],
+    "what_to_memorize": "KDIGO staging, prerenal vs intrinsic algorithm, urgent indications for RRT."
+  },
+  {
+    "rank": 2,
+    "canonical_topic": "Hypercalcaemia — classify & approach",
+    "system": "Endocrine/Metabolic",
+    "reason_codes": [
+      "Bridge↑",
+      "Manual↑"
+    ],
+    "anchor_pages": [
+      "Basic_UPDATED_2025-09-15: p3",
+      "Systemic_UPDATED_2025-09-15: p4"
+    ],
+    "what_to_memorize": "PTH/PTHrP/Vit-D algorithm; fluids, calcitonin, bisphosphonate timings."
+  },
+  {
+    "rank": 3,
+    "canonical_topic": "Acute Myocardial Infarction — dx/tx/complications",
+    "system": "Cardiology",
+    "reason_codes": [
+      "Manual↑",
+      "ConfusablePair↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p4",
+      "Systemic_UPDATED_2025-09-15: p3"
+    ],
+    "what_to_memorize": "STEMI/NSTEMI pathways; antiplatelet/antithrombotic doses; post-MI complications."
+  },
+  {
+    "rank": 4,
+    "canonical_topic": "Acute Meningoencephalitis — algorithm",
+    "system": "Neurology",
+    "reason_codes": [
+      "Bridge↑",
+      "Manual↑",
+      "Algorithm↑"
+    ],
+    "anchor_pages": [
+      "ID_UPDATED_2025-09-15: p3",
+      "Systemic_UPDATED_2025-09-15: p4"
+    ],
+    "what_to_memorize": "CT vs LP sequence; empiric antimicrobials; HSV coverage; ICU triggers."
+  },
+  {
+    "rank": 5,
+    "canonical_topic": "Vasculitis — define/classify & mechanisms",
+    "system": "Rheumatology",
+    "reason_codes": [
+      "Bridge↑",
+      "Manual↑",
+      "ProgramUpdate↑"
+    ],
+    "anchor_pages": [
+      "ID_UPDATED_2025-09-15: p3",
+      "Systemic_UPDATED_2025-09-15: p4"
+    ],
+    "what_to_memorize": "Small/medium/large-vessel schema; ANCA patterns; induction/maintenance outline."
+  },
+  {
+    "rank": 6,
+    "canonical_topic": "ILD — classify + investigation algorithm",
+    "system": "Respiratory",
+    "reason_codes": [
+      "Algorithm↑",
+      "Recency↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p3–4"
+    ],
+    "what_to_memorize": "HRCT-first algorithm, ILD vs HP clues, biopsy indications, antifibrotic basics."
+  },
+  {
+    "rank": 7,
+    "canonical_topic": "Hypertensive emergencies — IV drugs table",
+    "system": "Cardiology",
+    "reason_codes": [
+      "Dose↑",
+      "ConfusablePair↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p3"
+    ],
+    "what_to_memorize": "Drug→dose→onset tables; aortic dissection, preeclampsia, ACS targets."
+  },
+  {
+    "rank": 8,
+    "canonical_topic": "Aortic dissection — chest pain differential",
+    "system": "Cardiology",
+    "reason_codes": [
+      "ConfusablePair↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p3"
+    ],
+    "what_to_memorize": "Stanford A/B, imaging ladder, BP/HR control sequence."
+  },
+  {
+    "rank": 9,
+    "canonical_topic": "Inflammatory Bowel Disease — features & mgmt",
+    "system": "Gastroenterology",
+    "reason_codes": [
+      "Manual↑",
+      "ProgramUpdate↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p4"
+    ],
+    "what_to_memorize": "UC vs Crohn’s contrasts; step-up meds; biologic indications & monitoring."
+  },
+  {
+    "rank": 10,
+    "canonical_topic": "Delirium — assessment & management algorithm",
+    "system": "Geriatrics/Neuro",
+    "reason_codes": [
+      "Algorithm↑",
+      "Recency↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p3"
+    ],
+    "what_to_memorize": "4AT/CAM flow, reversible causes bundle, antipsychotic cautions."
+  },
+  {
+    "rank": 11,
+    "canonical_topic": "Autoimmune hepatitis — dx & treatment",
+    "system": "Hepatology",
+    "reason_codes": [
+      "Recency↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p3"
+    ],
+    "what_to_memorize": "IAIHG scoring gist; steroid/azathioprine plan; transplant triggers."
+  },
+  {
+    "rank": 12,
+    "canonical_topic": "Lupus nephritis — class-based management",
+    "system": "Nephrology/Rheum",
+    "reason_codes": [
+      "Bridge↑",
+      "Recency↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p3"
+    ],
+    "what_to_memorize": "ISN/RPS classes; induction vs maintenance; monitoring schedule."
+  },
+  {
+    "rank": 13,
+    "canonical_topic": "Osteoporosis — diagnostic triggers & therapy",
+    "system": "Endocrine/Metabolic",
+    "reason_codes": [
+      "Sleeper↑",
+      "Bridge↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p3"
+    ],
+    "what_to_memorize": "FRAX/BMD thresholds; bisphosphonate sequences; calcium/vitamin D dosing."
+  },
+  {
+    "rank": 14,
+    "canonical_topic": "Light-chain renal disorders",
+    "system": "Renal/Heme",
+    "reason_codes": [
+      "Sleeper↑",
+      "Bridge↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p3"
+    ],
+    "what_to_memorize": "Proteinuria + AKI pitfall; SPEP/UPEP/free light chains; supportive care."
+  },
+  {
+    "rank": 15,
+    "canonical_topic": "Myelodysplastic syndromes",
+    "system": "Hematology",
+    "reason_codes": [
+      "Sleeper↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p3"
+    ],
+    "what_to_memorize": "Cytopenia patterns; IPSS-R gist; transfusion & ESA concepts."
+  },
+  {
+    "rank": 16,
+    "canonical_topic": "Asthma management / Pulmonary rehabilitation",
+    "system": "Respiratory",
+    "reason_codes": [
+      "Sleeper↑",
+      "Balance↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p3"
+    ],
+    "what_to_memorize": "Stepwise therapy; rehab goals; ILD vs airway differentiation pearls."
+  },
+  {
+    "rank": 17,
+    "canonical_topic": "Bullous diseases of skin",
+    "system": "Dermatology",
+    "reason_codes": [
+      "Manual↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p4"
+    ],
+    "what_to_memorize": "Pemphigus vs bullous pemphigoid contrast; biopsy & DIF basics."
+  },
+  {
+    "rank": 18,
+    "canonical_topic": "Raynaud phenomenon & MCTD",
+    "system": "Rheumatology",
+    "reason_codes": [
+      "Manual↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p4"
+    ],
+    "what_to_memorize": "Primary vs secondary flags; scleroderma overlap; vasodilator ladder."
+  },
+  {
+    "rank": 19,
+    "canonical_topic": "Haemolytic anaemia → hereditary spherocytosis focus",
+    "system": "Hematology",
+    "reason_codes": [
+      "Recency↑",
+      "FormatPattern↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p3"
+    ],
+    "what_to_memorize": "Classify hemolysis; HS diagnostics (osmotic fragility/EMA); splenectomy cautions."
+  },
+  {
+    "rank": 20,
+    "canonical_topic": "Prerenal vs intrinsic renal dysfunction — distinctions",
+    "system": "Renal",
+    "reason_codes": [
+      "Foundation↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p5"
+    ],
+    "what_to_memorize": "BUN/Cr, FeNa/FeUrea use; urinalysis patterns; response-to-fluids logic."
+  },
+  {
+    "rank": 21,
+    "canonical_topic": "COPD exacerbation — assessment & management",
+    "system": "Respiratory",
+    "reason_codes": [
+      "Balance↑",
+      "ConfusablePair↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p3"
+    ],
+    "what_to_memorize": "AECOPD severity ladders; O2/ventilation targets; steroids/antibiotic criteria."
+  },
+  {
+    "rank": 22,
+    "canonical_topic": "Sarcoidosis — staging & treatment overview",
+    "system": "Respiratory/Immunology",
+    "reason_codes": [
+      "Sleeper↑",
+      "Bridge↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p5"
+    ],
+    "what_to_memorize": "Stage I–IV schema; indications for steroids; extrapulmonary red flags."
+  },
+  {
+    "rank": 23,
+    "canonical_topic": "Systemic sclerosis (SSc) — systemic involvement",
+    "system": "Rheumatology",
+    "reason_codes": [
+      "Sleeper↑",
+      "ILD-Link↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p5"
+    ],
+    "what_to_memorize": "Diffuse vs limited; ILD and PAH screening; renal crisis precautions."
+  },
+  {
+    "rank": 24,
+    "canonical_topic": "Chronic pancreatitis — features & management",
+    "system": "Gastroenterology",
+    "reason_codes": [
+      "Sleeper↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p6"
+    ],
+    "what_to_memorize": "Pain control ladder; EPI management; diabetes in CP; imaging cues."
+  },
+  {
+    "rank": 25,
+    "canonical_topic": "Ischemic stroke/TIA — acute approach (non-thrombolysis details)",
+    "system": "Neurology",
+    "reason_codes": [
+      "Foundation↑",
+      "Algorithm↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p2–3"
+    ],
+    "what_to_memorize": "FAST bedside filters; BP/glucose/temperature; antiplatelet and DVT prophylaxis."
+  },
+  {
+    "rank": 26,
+    "canonical_topic": "Diabetic ketoacidosis — diagnostic/therapy bundle",
+    "system": "Endocrine/Metabolic",
+    "reason_codes": [
+      "CoreFloor↑",
+      "Dose↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p2–3",
+      "Basic_UPDATED_2025-09-15: p3"
+    ],
+    "what_to_memorize": "Anion gap/ketone logic; insulin/fluids/potassium doses; resolution criteria."
+  },
+  {
+    "rank": 27,
+    "canonical_topic": "Thyroid emergencies — thyroid storm vs myxedema coma",
+    "system": "Endocrine",
+    "reason_codes": [
+      "Foundation↑",
+      "Algorithm↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p2–3"
+    ],
+    "what_to_memorize": "Burch–Wartofsky idea, multi-drug sequence; myxedema coma supportive bundle."
+  },
+  {
+    "rank": 28,
+    "canonical_topic": "Hyponatremia (SIADH) — approach",
+    "system": "Endocrine/Electrolytes",
+    "reason_codes": [
+      "Foundation↑",
+      "Algorithm↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p2–3"
+    ],
+    "what_to_memorize": "Serum/urine osm, urine Na; acute vs chronic correction limits; vaptan caveats."
+  },
+  {
+    "rank": 29,
+    "canonical_topic": "Pulmonary embolism — diagnostic pathway & initial therapy",
+    "system": "Respiratory/Cardio",
+    "reason_codes": [
+      "ConfusablePair↑",
+      "Algorithm↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p2–3"
+    ],
+    "what_to_memorize": "Wells/Geneva→D-dimer/CTPA; anticoag ladder; RV strain/lysis indications."
+  },
+  {
+    "rank": 30,
+    "canonical_topic": "Bronchiectasis — evaluation & management",
+    "system": "Respiratory",
+    "reason_codes": [
+      "Sleeper↑",
+      "Balance↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p5"
+    ],
+    "what_to_memorize": "CT signs; airway-clearance; macrolide strategy; exacerbation antibiotics."
+  },
+  {
+    "rank": 31,
+    "canonical_topic": "Gout — acute & chronic management",
+    "system": "Rheumatology",
+    "reason_codes": [
+      "Sleeper↑",
+      "ProgramUpdate↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p5"
+    ],
+    "what_to_memorize": "Colchicine/NSAID/steroid choices; urate-lowering starts/stops; target urate."
+  },
+  {
+    "rank": 32,
+    "canonical_topic": "Ankylosing spondylitis — diagnosis & therapy",
+    "system": "Rheumatology",
+    "reason_codes": [
+      "Sleeper↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p5"
+    ],
+    "what_to_memorize": "ASAS criteria; NSAIDs/biologics; extra-articular screening (uveitis)."
+  },
+  {
+    "rank": 33,
+    "canonical_topic": "Budd–Chiari syndrome — evaluation & management",
+    "system": "Hepatology/Vascular",
+    "reason_codes": [
+      "Sleeper↑",
+      "Foil↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p3"
+    ],
+    "what_to_memorize": "Doppler/CT venography; anticoag/angioplasty/TIPS; hypercoagulable workup."
+  },
+  {
+    "rank": 34,
+    "canonical_topic": "Nephrotic syndrome — approach",
+    "system": "Nephrology",
+    "reason_codes": [
+      "Foundation↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p2–3"
+    ],
+    "what_to_memorize": "Selectivity clues; biopsy indications; edema/proteinuria management basics."
+  },
+  {
+    "rank": 35,
+    "canonical_topic": "Upper GI bleed — non-variceal initial management",
+    "system": "Gastroenterology",
+    "reason_codes": [
+      "Dose↑",
+      "Algorithm↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p2–3"
+    ],
+    "what_to_memorize": "Resuscitation targets; PPI dosing; endoscopic timing; Rockall vibe."
+  },
+  {
+    "rank": 36,
+    "canonical_topic": "Community-acquired pneumonia (CAP) — adult guidelines basics",
+    "system": "Respiratory/ID crossover",
+    "reason_codes": [
+      "Dose↑",
+      "Algorithm↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p2–3"
+    ],
+    "what_to_memorize": "CURB-65; empiric regimens; severity triage; follow-up imaging."
+  },
+  {
+    "rank": 37,
+    "canonical_topic": "CKD complications — anemia & MBD overview",
+    "system": "Nephrology/Endocrine",
+    "reason_codes": [
+      "Bridge↑",
+      "Sleeper↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p5"
+    ],
+    "what_to_memorize": "ESA thresholds; iron strategy; Ca/PO4/PTH goals; binder choices."
+  },
+  {
+    "rank": 38,
+    "canonical_topic": "Peripheral arterial disease — evaluation & basics of management",
+    "system": "Cardiology/Vascular",
+    "reason_codes": [
+      "Sleeper↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p5"
+    ],
+    "what_to_memorize": "ABI thresholds; exercise therapy; statin/antiplatelet; revascularization cues."
+  },
+  {
+    "rank": 39,
+    "canonical_topic": "TIA mimics & differentials — rapid bedside distinctions",
+    "system": "Neurology",
+    "reason_codes": [
+      "ConfusablePair↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p2–3"
+    ],
+    "what_to_memorize": "Migraine, seizures, hypoglycemia; imaging windows; antiplatelet start."
+  },
+  {
+    "rank": 40,
+    "canonical_topic": "Hyperkalemia — emergency management",
+    "system": "Electrolytes/Renal",
+    "reason_codes": [
+      "Dose↑",
+      "Algorithm↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p2–3"
+    ],
+    "what_to_memorize": "Stabilize-shift-remove sequence; exact doses for calcium/insulin/beta-agonists."
+  },
+  {
+    "rank": 41,
+    "canonical_topic": "Pleuritic chest pain — pericarditis basics",
+    "system": "Cardiology",
+    "reason_codes": [
+      "Foil↑",
+      "Sleeper↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p5"
+    ],
+    "what_to_memorize": "ECG triad; NSAID/colchicine; red flags for tamponade."
+  },
+  {
+    "rank": 42,
+    "canonical_topic": "Anemia of chronic disease vs IDA — distinctions",
+    "system": "Hematology",
+    "reason_codes": [
+      "Foundation↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p5"
+    ],
+    "what_to_memorize": "Ferritin/TfS patterns; CRP context; trial of iron vs investigate route."
+  },
+  {
+    "rank": 43,
+    "canonical_topic": "Hepatorenal syndrome — recognition & first-line therapy",
+    "system": "Hepatology/Nephrology",
+    "reason_codes": [
+      "Bridge↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p5"
+    ],
+    "what_to_memorize": "Albumin + vasoconstrictor choices; diagnostic criteria; transplant signal."
+  },
+  {
+    "rank": 44,
+    "canonical_topic": "TIA/Stroke secondary prevention — essentials",
+    "system": "Neurology",
+    "reason_codes": [
+      "ProgramUpdate↑"
+    ],
+    "anchor_pages": [
+      "Systemic_UPDATED_2025-09-15: p5"
+    ],
+    "what_to_memorize": "DAPT window basics; statin intensity; BP/DM targets; carotid/AF logic."
+  }
+]

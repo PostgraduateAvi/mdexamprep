@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nephron Sequential Walkthrough</title>
+<style>
+body{background:#0a0a0f;color:#e0e0e0;font-family:Georgia,serif;padding:10px;line-height:1.6;max-width:740px;margin:0 auto}
+h1{font-family:monospace;font-size:1em;color:#ff6b35;text-align:center;margin-bottom:2px}
+.sub{text-align:center;font-size:0.7em;color:#666;margin-bottom:12px}
+.step{margin-bottom:14px;border-radius:8px;overflow:hidden}
+.sh{padding:7px 10px;font-family:monospace;font-size:0.85em;font-weight:700;display:flex;justify-content:space-between;align-items:center}
+.sb{padding:8px 10px;font-size:0.82em}
+.sb p{margin:0 0 6px}
+.arr{text-align:center;font-family:monospace;color:#555;font-size:1.2em;margin:4px 0}
+.hl{color:#4ecdc4;font-weight:600}
+.warn{color:#f7dc6f;font-weight:600}
+.danger{color:#e74c3c;font-weight:600}
+.purple{color:#bb8fce;font-weight:600}
+.drug{font-family:monospace;font-size:0.85em;padding:1px 4px;border-radius:3px;background:#1a1a2e;border:1px solid #333}
+.clin{background:#0d0d18;border:1px solid #333;border-radius:6px;padding:6px 8px;margin-top:6px;font-size:0.8em}
+.clin strong{color:#ff6b35}
+.n{font-size:0.75em;color:#888;font-style:italic}
+
+.c1{border:1px solid #bb8fce}.c1 .sh{background:#1a0d26;color:#bb8fce}
+.c2{border:1px solid #bb8fce}.c2 .sh{background:#1a0d26;color:#bb8fce}
+.c3{border:1px solid #4ecdc4}.c3 .sh{background:#0d2926;color:#4ecdc4}
+.c4{border:1px solid #45b7d1}.c4 .sh{background:#0d1f26;color:#45b7d1}
+.c5{border:1px solid #f7dc6f}.c5 .sh{background:#262310;color:#f7dc6f}
+.c6{border:1px solid #e74c3c}.c6 .sh{background:#260d0d;color:#e74c3c}
+.c7{border:1px solid #666}.c7 .sh{background:#1a1a1a;color:#ccc}
+</style>
+</head>
+<body>
+
+<h1>NEPHRON: THE SEQUENTIAL STORY</h1>
+<div class="sub">Follow the blood. Every step builds on the previous one. If you know WHY each step exists, you won't screw up the sequence.</div>
+
+<!-- STEP 1: AFFERENT -->
+<div class="step c1">
+<div class="sh"><span>STEP 1: BLOOD ARRIVES — Afferent Arteriole</span><span>🔴→</span></div>
+<div class="sb">
+<p>Renal artery → branches down → <span class="purple">afferent arteriole</span> carries blood INTO the glomerulus.</p>
+<p><strong>Key job:</strong> Deliver blood at the RIGHT pressure for filtration. Too little pressure = no filtration. Too much = glomerular damage.</p>
+<p><strong>Who controls its width?</strong></p>
+<p>— <span class="hl">Prostaglandins DILATE it</span> → keeps blood flowing in, especially when BP drops (autoregulation). This is why prostaglandins are "renal protective."</p>
+<p>— <span class="danger">NSAIDs BLOCK prostaglandins → afferent CONSTRICTS → less blood enters → GFR drops.</span> This is why NSAIDs cause AKI in dehydrated patients and are avoided in CKD.</p>
+<div class="clin"><strong>Clinical:</strong> Elderly patient with knee pain takes ibuprofen daily + is on a diuretic (volume-depleted) → afferent constricts (no PG) + low volume = AKI. Stop the NSAID.</div>
+</div>
+</div>
+
+<div class="arr">▼ blood enters glomerulus</div>
+
+<!-- STEP 2: GLOMERULUS -->
+<div class="step c2">
+<div class="sh"><span>STEP 2: FILTRATION — Glomerulus</span><span>🟣</span></div>
+<div class="sb">
+<p>Blood is pushed through the <span class="purple">glomerular capillary tuft</span> inside Bowman's capsule. Hydrostatic pressure forces fluid out of blood into Bowman's space. This fluid = <strong>ultrafiltrate</strong> (= plasma minus proteins).</p>
+<p><strong>What gets filtered?</strong> Everything small: water, Na⁺, K⁺, glucose, amino acids, HCO₃⁻, urea, creatinine, uric acid, PO₄, drugs. NOT filtered: albumin, globulins, RBCs (too big).</p>
+<p><strong>GFR</strong> = ~120 mL/min = ~180 L/day. You filter your ENTIRE blood volume 60 times/day. 99% is reabsorbed — only 1-2L becomes urine.</p>
+<p><strong>What maintains filtration pressure?</strong> The balance between afferent (in) and efferent (out). The efferent arteriole is the EXIT — its constriction is critical:</p>
+<p>— <span class="purple">Angiotensin II CONSTRICTS the efferent</span> → blood can't leave easily → pressure BUILDS inside glomerulus → GFR maintained even when BP is low. This is a rescue mechanism.</p>
+<p>— <span class="danger">ACEi/ARB BLOCK Ang II → efferent DILATES → pressure inside glomerulus DROPS → GFR falls acutely.</span></p>
+<p>But wait — this drop in pressure is actually GOOD long-term. High glomerular pressure damages the filtration membrane (especially in DM). By LOWERING it, ACEi/ARB <span class="hl">protect the kidney from hyperfiltration damage</span>.</p>
+<div class="clin"><strong>Clinical rule:</strong> You start ACEi in a DM patient. Creatinine rises 20%. Do you stop? <span class="hl">NO — ≤30% rise is expected and renoprotective. Keep going.</span> Only stop if >30% rise (think bilateral renal artery stenosis — both kidneys depend on Ang II to maintain GFR, remove it = both kidneys fail).</div>
+<div class="clin"><strong>Triple whammy:</strong> ACEi (efferent dilated) + diuretic (volume depleted) + NSAID (afferent constricted) = blood can't get in AND can't build pressure = <span class="danger">AKI</span>. Common in Indian elderly: DM + HTN on ACEi + thiazide, takes diclofenac for joint pain.</div>
+</div>
+</div>
+
+<div class="arr">▼ ultrafiltrate enters Bowman's space → flows into PCT</div>
+
+<!-- STEP 3: PCT -->
+<div class="step c3">
+<div class="sh"><span>STEP 3: BULK REABSORPTION — PCT</span><span style="font-size:0.8em">"65% of everything comes back here"</span></div>
+<div class="sb">
+<p>The ultrafiltrate (180L/day) enters the <span class="hl">proximal convoluted tubule</span>. PCT's job is simple: <strong>grab back everything valuable before it's lost.</strong></p>
+
+<p><strong>What comes back and HOW:</strong></p>
+<p>— <strong>Na⁺ (65%):</strong> Via NHE3 (Na⁺/H⁺ exchanger) on apical side. Na⁺ in, H⁺ out. The H⁺ that goes out combines with filtered HCO₃⁻ in the lumen → H₂CO₃ → CO₂ + H₂O (via carbonic anhydrase IV on brush border). CO₂ diffuses back into cell → carbonic anhydrase II regenerates HCO₃⁻ inside → HCO₃⁻ exits basolateral into blood. <strong>Net result: ALL filtered HCO₃⁻ is reclaimed.</strong></p>
+<p>— <strong>Glucose (100%):</strong> Via <span class="hl">SGLT2</span> (90%) in early PCT and SGLT1 (10%) in late PCT. Cotransported WITH Na⁺. Normally ALL glucose reabsorbed — none in urine.</p>
+<p>— <strong>Amino acids (100%):</strong> Multiple specific cotransporters with Na⁺.</p>
+<p>— <strong>PO₄ (85%):</strong> Na⁺/PO₄ cotransporter (NaPi-IIa). PTH INHIBITS this → more PO₄ wasted in urine (why PTH lowers serum PO₄).</p>
+<p>— <strong>Uric acid (90%):</strong> Via <span class="hl">URAT1</span> on apical membrane. Reabsorbed back into blood. Also secreted via OAT transporters. Net = 90% reabsorbed.</p>
+<p>— <strong>Water (65%):</strong> Follows Na⁺ passively (osmotic gradient). PCT is freely water-permeable — no hormone needed.</p>
+
+<p><strong>When SGLT2i (dapagliflozin/empagliflozin) blocks SGLT2:</strong></p>
+<p>1. Glucose stays in lumen → <span class="hl">glucosuria</span> (HbA1c drops 0.5-0.8%)</p>
+<p>2. Na⁺ that would have cotransported with glucose ALSO stays in lumen → <span class="hl">natriuresis</span> → osmotic diuresis → ↓BP, ↓preload</p>
+<p>3. More Na⁺ reaches <strong>macula densa</strong> (at junction of LOH and DCT) → macula densa senses "too much Na⁺ arriving" → triggers <strong>tubuloglomerular feedback (TGF)</strong> → afferent arteriole CONSTRICTS → <span class="hl">intraglomerular pressure DROPS → renoprotection</span></p>
+<p>4. Changed intracellular dynamics at PCT → <span class="hl">URAT1 interaction disrupted → uric acid excretion increases → serum urate drops</span> → gout protective</p>
+
+<div class="clin"><strong>The 4-pillar drug:</strong> SGLT2i helps DM (glucose) + HF (preload reduction) + CKD (TGF renoprotection) + gout (uricosuria). Trials: EMPA-REG (38% ↓CV death), DAPA-HF (HFrEF even without DM), DAPA-CKD (CKD even without DM).</div>
+
+<div class="clin"><strong>TRAP — Euglycemic DKA:</strong> SGLT2i shifts fuel from glucose to fat → ketogenesis. Patient develops ketoacidosis but glucose is NORMAL or near-normal. You miss it because you're looking for high glucose. <span class="danger">Suspect if: metabolic acidosis + anion gap + normal glucose + on SGLT2i.</span> Risk: fasting (Ramadan), perioperative, alcohol. Rule: hold SGLT2i 3 days before surgery.</div>
+
+<p><strong>When PCT globally fails = Fanconi syndrome:</strong></p>
+<p>Everything PCT reabsorbs is lost: glucose + amino acids + PO₄ + HCO₃⁻ + uric acid all appear in urine. Causes: multiple myeloma (light chains damage PCT), ifosfamide, tenofovir, Wilson's disease. <span class="n">Think Fanconi when you see "glycosuria with normal blood glucose + aminoaciduria + phosphaturia + type 2 RTA" together.</span></p>
+
+<p><strong>RTA Type 2 (proximal):</strong> Isolated HCO₃⁻ reabsorption failure at PCT. Carbonic anhydrase doesn't work → HCO₃⁻ floods downstream → lost in urine → metabolic acidosis. The HCO₃⁻ loss carries Na⁺ with it → more Na⁺ delivered to CD → more K⁺ secreted at CD → <span class="danger">hypoK⁺</span>. Urine pH: initially >5.5 when serum HCO₃⁻ is above the new (lower) threshold, but once serum HCO₃⁻ drops below threshold, distal acidification works → pH can drop <5.5. This is why RTA2 urine pH is "variable" — unlike RTA1 which is ALWAYS >5.5.</p>
+</div>
+</div>
+
+<div class="arr">▼ remaining filtrate (now ~35% of original Na⁺, zero glucose) flows into Loop of Henle</div>
+
+<!-- STEP 4: LOH -->
+<div class="step c4">
+<div class="sh"><span>STEP 4: CONCENTRATION — Loop of Henle</span><span style="font-size:0.8em">"The countercurrent engine"</span></div>
+<div class="sb">
+<p>The filtrate descends into the <span style="color:#45b7d1;font-weight:600">Loop of Henle</span> — a hairpin turn that dips deep into the medulla and comes back up.</p>
+
+<p><strong>Descending limb:</strong> Thin. Water-PERMEABLE, solute-impermeable. Water leaves (drawn out by the hypertonic medullary interstitium) → fluid becomes concentrated as it descends.</p>
+
+<p><strong>Ascending limb (thick):</strong> The action segment. Water-IMPERMEABLE. <strong>NKCC2 transporter</strong> (Na⁺/K⁺/2Cl⁻) on the apical membrane actively pumps Na⁺, K⁺, and 2Cl⁻ OUT of the lumen into the cell, then into the interstitium.</p>
+
+<p><strong>Why this matters:</strong></p>
+<p>1. Na⁺/K⁺/2Cl⁻ removal from the lumen → makes the INTERSTITIUM hypertonic (this is what creates the medullary concentration gradient that AVP/ADH will later use at the collecting duct to concentrate urine)</p>
+<p>2. K⁺ that enters the cell via NKCC2 recycles back into the lumen via ROMK channel → creates a <strong>lumen-positive voltage</strong> → this drives paracellular (between cells) reabsorption of <strong>Ca²⁺ and Mg²⁺</strong></p>
+<p>3. Fluid leaving the ascending limb is now DILUTE (solute removed, water kept) → "diluting segment"</p>
+
+<p><strong>Furosemide blocks NKCC2:</strong></p>
+<p>— Na⁺/K⁺/2Cl⁻ stay in lumen → massive natriuresis (most potent diuretic)</p>
+<p>— No K⁺ recycling → no lumen-positive voltage → <span class="danger">Ca²⁺ and Mg²⁺ NOT reabsorbed → lost in urine</span></p>
+<p>— More Na⁺ delivered to CD → exchanged for K⁺ at ENaC/ROMK → <span class="danger">hypoK⁺</span></p>
+<p>— Volume loss → contraction alkalosis + H⁺/K⁺ loss → <span class="danger">metabolic alkalosis</span></p>
+<p>— Volume depletion → PCT ramps up reabsorption of everything including uric acid → <span class="warn">hyperuricemia</span></p>
+
+<p><strong>Bartter syndrome = born without working NKCC2:</strong></p>
+<p>Exact same picture as chronic furosemide: hypoK⁺ + metabolic alkalosis + hypercalciuria + polyuria. Severe — presents in neonates/infants. Polyhydramnios in utero (fetal polyuria). <strong>B</strong>artter = <strong>B</strong>ig (severe), <strong>B</strong>aby, <strong>B</strong>ig loop.</p>
+
+<div class="clin"><strong>Bartter vs Gitelman distinction at exam:</strong> Both have hypoK⁺ + metabolic alkalosis. The differentiator: <span class="hl">Bartter = hypercalciURIA (like furosemide wastes Ca²⁺)</span> vs <span class="warn">Gitelman = hypocalciURIA + hypoMg²⁺ (like thiazide saves Ca²⁺)</span>. If they give you hypoMg²⁺ in the stem → Gitelman.</div>
+</div>
+</div>
+
+<div class="arr">▼ dilute fluid (~10% original Na⁺) passes macula densa → enters DCT</div>
+
+<!-- STEP 5: MACULA DENSA -->
+<div class="step" style="border:1px solid #555;border-radius:8px">
+<div class="sh" style="background:#1a1a1a;color:#aaa"><span>STEP 4.5: MACULA DENSA — The Sensor</span><span style="font-size:0.8em">junction of LOH and DCT</span></div>
+<div class="sb">
+<p>Specialized cells at the junction between ascending LOH and DCT. They <strong>sense Na⁺/Cl⁻ concentration</strong> in the tubular fluid passing by.</p>
+<p><strong>Low Na⁺ at macula densa</strong> (= "not enough filtered, kidneys underperfused") → signals JG cells on afferent arteriole → <span class="purple">RENIN released → starts RAAS cascade</span> → Ang II → efferent constriction + aldosterone → save Na⁺ and water.</p>
+<p><strong>High Na⁺ at macula densa</strong> (= "too much filtered") → <strong>tubuloglomerular feedback (TGF)</strong> → afferent arteriole CONSTRICTS → GFR drops → less filtered → protection from hyperfiltration.</p>
+<div class="clin"><strong>This is exactly how SGLT2i works:</strong> SGLT2i blocks Na⁺ reabsorption at PCT → MORE Na⁺ reaches macula densa → TGF triggered → afferent constricts → intraglomerular pressure drops → <span class="hl">renoprotection</span>. The GFR dip in the first weeks is the TGF kicking in — it's therapeutic, not harmful. (Same logic as ACEi creatinine bump.)</div>
+</div>
+</div>
+
+<div class="arr">▼ into DCT</div>
+
+<!-- STEP 5: DCT -->
+<div class="step c5">
+<div class="sh"><span>STEP 5: FINE TUNING — DCT</span><span style="font-size:0.8em">"Small volume, big consequences"</span></div>
+<div class="sb">
+<p>Only 5% of Na⁺ reabsorption happens here via <span class="warn">NCC (Na⁺/Cl⁻ cotransporter)</span>. Sounds trivial — but the SIDE EFFECTS of blocking it are enormous.</p>
+
+<p><strong>Ca²⁺ reabsorption — the thiazide paradox:</strong></p>
+<p>At DCT, Ca²⁺ enters the cell via <strong>TRPV5</strong> channel (apical), shuttled by calbindin, exits via NCX (Na⁺/Ca²⁺ exchanger, basolateral) and Ca²⁺-ATPase.</p>
+<p>When thiazide blocks NCC → less Na⁺ enters cell → intracellular Na⁺ drops → the basolateral Na⁺/Ca²⁺ exchanger works HARDER (more Na⁺ in, more Ca²⁺ out) → cell Ca²⁺ drops → more Ca²⁺ pulled in from lumen via TRPV5 → <span class="hl">net: MORE Ca²⁺ reabsorbed.</span></p>
+<p>This is why thiazide causes mild <span class="hl">hypercalcemia</span> and is used to TREAT idiopathic hypercalciuria (recurrent kidney stones). <span class="n">Opposite of furosemide which WASTES Ca²⁺.</span></p>
+
+<p><strong>Thiazide side effects — the full list mapped to mechanism:</strong></p>
+<p>— <span class="danger">HypoNa⁺</span>: #1 drug cause of hyponatremia, especially in elderly. Mechanism debated: impaired dilution (blocks NCC in diluting segment) + continued water intake + possible AVP-like effect.</p>
+<p>— <span class="danger">HypoK⁺</span>: More Na⁺ delivered to CD → exchanged for K⁺ via ROMK.</p>
+<p>— <span class="warn">Hyperuricemia</span>: Thiazide-induced volume contraction → ↑PCT urate reabsorption. Also: competition at OAT secretory pathway. → precipitates gout.</p>
+<p>— <span class="danger">HypoMg²⁺</span>: Impaired Mg²⁺ reabsorption at DCT (mechanism less clear).</p>
+<p>— <span class="hl">HyperCa²⁺</span>: As explained above (paradoxical).</p>
+<p>— <span class="warn">Hyperglycemia</span>: HypoK⁺ impairs insulin secretion.</p>
+<p>— <span class="warn">Hyperlipidemia</span>: Mild, mechanism unclear.</p>
+
+<p><strong>Gitelman syndrome = born without working NCC:</strong></p>
+<p>= "genetic thiazide." Milder than Bartter. Adolescent/adult onset. Triad: hypoK⁺ + <strong>hypoMg²⁺</strong> (the distinguishing feature) + <strong>hypocalciuria</strong> (like thiazide saves Ca²⁺). <strong>G</strong>itelman = <strong>G</strong>entle, low ma<strong>G</strong>nesium.</p>
+
+<div class="clin"><strong>Indian clinical scenario:</strong> 65-year-old on thiazide for HTN + low-dose aspirin for CAD. Both raise uric acid. Gets acute gout flare during monsoon (dehydration compounds it). Solution: switch to losartan (only ARB that lowers uric acid via URAT1 inhibition) + consider SGLT2i if diabetic (also lowers uric acid at PCT). Pharmacological elegance from understanding the nephron map.</div>
+</div>
+</div>
+
+<div class="arr">▼ into Collecting Duct — where hormones take command</div>
+
+<!-- STEP 6: CD -->
+<div class="step c6">
+<div class="sh"><span>STEP 6: FINAL DECISIONS — Collecting Duct</span><span style="font-size:0.8em">"Two masters, three cell types"</span></div>
+<div class="sb">
+<p>Everything upstream was mostly autonomous — transporters doing their job. The CD is different: it waits for <strong>hormonal instructions</strong> before deciding what to do with the remaining fluid.</p>
+
+<p style="padding:6px;background:#260d0d;border-radius:4px;border:1px solid #f7dc6f;margin:8px 0"><strong><span class="warn">MASTER 1 — ALDOSTERONE</span></strong> (controls Na⁺/K⁺ balance)<br>
+Source: zona glomerulosa of adrenal cortex. Mnemonic: "GFR" = Glomerulosa (mineralocorticoid/salt), Fasciculata (glucocorticoid/sugar), Reticularis (androgen/sex). "Deeper you go, sweeter it gets" — salt → sugar → sex.<br><br>
+<strong>Stimuli:</strong> Angiotensin II (from RAAS — primary), Hyperkalemia (direct — independent of RAAS, the safety valve), ACTH (minor).<br><br>
+<strong>What it does at CD principal cell:</strong><br>
+Binds mineralocorticoid receptor (MR) → nuclear → transcription → upregulates:<br>
+1. <strong>ENaC</strong> (epithelial Na⁺ channel, apical) → Na⁺ reabsorbed from lumen<br>
+2. <strong>ROMK</strong> (renal outer medullary K⁺ channel, apical) → K⁺ secreted into lumen<br>
+3. <strong>Na⁺/K⁺-ATPase</strong> (basolateral) → drives the gradient<br>
+4. <strong>H⁺-ATPase</strong> → H⁺ secretion (minor contribution → metabolic alkalosis when excess aldo)<br><br>
+<strong>Net: Na⁺ IN, K⁺ OUT, H⁺ OUT → volume expansion + hypoK⁺ + metabolic alkalosis</strong>
+</p>
+
+<p><strong>Too much aldosterone (Conn's syndrome):</strong> Adrenal adenoma → autonomous aldo → Na⁺ retention → <strong>resistant HTN</strong> + hypoK⁺ + metabolic alkalosis. Renin is SUPPRESSED (volume-expanded). Screen: aldosterone:renin ratio (ARR) >30. Indian: underdiagnosed cause of secondary HTN.</p>
+
+<p><strong>Too little aldosterone (= RTA Type 4):</strong> ENaC/ROMK underactive → can't secrete K⁺ or H⁺ → <span class="danger">hyperK⁺ + mild metabolic acidosis</span>. But α-intercalated cells still work → can still acidify urine → pH <5.5 (this distinguishes from Type 1). The problem is ↓NH₃ buffer production (needs aldosterone signal), not H⁺ pump failure.<br>
+<strong>#1 cause: DM nephropathy</strong> (damages JG cells → ↓renin → ↓Ang II → ↓aldo = "hyporeninemic hypoaldosteronism"). Also caused by ACEi/ARB (↓Ang II → ↓aldo), spironolactone (blocks MR), NSAIDs (↓renin).<br>
+<span class="danger">Commonest RTA in clinical practice.</span> Every DM patient on ACEi with mild hyperK⁺ = think Type 4.</p>
+
+<p><strong>Aldosterone escape:</strong> In CHF and cirrhosis, RAAS is chronically activated → aldo → Na⁺ retention. But after a few days, ANP/BNP rise and cause "escape" from Na⁺ retention. However, K⁺ wasting does NOT escape → persistent hypoK⁺ risk. This is why <strong>spironolactone works in CHF</strong> (RALES trial — 30% ↓mortality) and <strong>cirrhotic ascites</strong> — it blocks the aldo that continues to cause harm even after Na⁺ escape.</p>
+
+<p style="padding:6px;background:#260d0d;border-radius:4px;border:1px solid #e74c3c;margin:8px 0"><strong><span class="danger">MASTER 2 — AVP/ADH/VASOPRESSIN</span></strong> (controls water balance)<br>
+Same molecule, three names: Arginine Vasopressin (AVP) = Antidiuretic Hormone (ADH) = Vasopressin. 9 amino acid peptide.<br><br>
+<strong>Source:</strong> Synthesized in <strong>supraoptic nucleus</strong> (mainly) + paraventricular nucleus of hypothalamus. Transported down axons. Stored in <strong>posterior pituitary</strong>.<br><br>
+<strong>Release triggers:</strong><br>
+— Osmotic: ↑serum osmolality >285 mOsm/kg → osmoreceptors in hypothalamus fire → AVP released. Steep response above 290.<br>
+— Non-osmotic: ↓blood volume (baroreceptors in carotid/aorta — this OVERRIDES the osmostat, which is why hypovolemic patients retain water even if hypo-osmolar), pain, nausea, stress, Ang II, drugs.<br>
+— <strong>Ang II stimulates AVP release</strong> — this links RAAS to water retention. In CHF: ↑RAAS → ↑Ang II → ↑AVP → water retention → dilutional hypoNa⁺. This is why CHF patients are hyponatremic.<br><br>
+<strong>Receptors:</strong><br>
+— <strong>V1a</strong> (vascular smooth muscle) → Gq → vasoconstriction. This is the "vasopressin" action. Used therapeutically: vasopressin drip in septic shock (V1a-mediated vasoconstriction).<br>
+— <strong>V2</strong> (CD principal cell, basolateral) → Gs → cAMP → PKA → <strong>aquaporin-2 (AQP2) insertion</strong> into apical membrane → water channels open → water reabsorbed from lumen → concentrated urine.<br>
+— <strong>V1b/V3</strong> (anterior pituitary) → ACTH release (stress response link).<br><br>
+<strong>Thirst:</strong> Activates at ~295 mOsm/kg (HIGHER than AVP threshold of 285). AVP is the first defense; thirst is backup. This is why elderly with impaired thirst are vulnerable to hypernatremia.
+</p>
+
+<p><strong>AVP disorders at the CD — the decision tree:</strong></p>
+<p>1. <strong>SIADH</strong> (too much AVP): AQP2 always ON → water pours back in → dilutes serum → <span class="danger">euvolemic hyponatremia</span>. Diagnosis: serum Na⁺ <135, serum osm <275, urine osm >100 (inappropriately concentrated), urine Na⁺ >40, euvolemic (no edema, no dehydration). Causes: <strong>SCLC</strong> (ectopic AVP), pneumonia, CNS disorders (meningitis, SAH, stroke), drugs (SSRIs, carbamazepine, cyclophosphamide, ecstasy). Rx: fluid restriction first-line → tolvaptan (V2 antagonist, "aquaretic") if refractory → 3% hypertonic saline if seizures/severe. <span class="danger">Correct ≤8-10 mEq/L/24h or risk ODS (osmotic demyelination = central pontine myelinolysis → locked-in syndrome).</span></p>
+
+<p>2. <strong>Central DI</strong> (no AVP production): Posterior pituitary damaged → no AVP → AQP2 never inserted → water NOT reabsorbed → massive dilute polyuria (>3L/day, urine osm <300). Causes: pituitary surgery (#1), craniopharyngioma, Sheehan syndrome, autoimmune, idiopathic. <strong>Water deprivation test:</strong> urine does NOT concentrate. <strong>Desmopressin (DDAVP) test:</strong> urine DOES concentrate → proves kidney is fine, problem is no AVP. Rx: <strong>desmopressin</strong> (synthetic V2 agonist, intranasal or oral).</p>
+
+<p>3. <strong>Nephrogenic DI</strong> (kidney ignores AVP): V2 receptor or AQP2 defect → same polyuria/polydipsia. <strong>Desmopressin test: urine does NOT concentrate</strong> → kidney is the problem. Causes: <strong>lithium</strong> (#1 drug — accumulates in CD via ENaC, damages AQP2 signaling), hypercalcemia, chronic hypokalemia, sickle cell (medullary damage). Rx: remove cause + <strong>thiazide</strong> (paradoxical antidiuresis — volume depletion → PCT reabsorbs more → less delivered to CD → less urine) + <strong>amiloride</strong> (blocks ENaC → blocks lithium entry into cell, specific for lithium-induced).</p>
+
+<p><strong>α-Intercalated cells (the acid secretors):</strong></p>
+<p>These sit alongside principal cells in the CD. Their job: secrete H⁺ via H⁺-ATPase (apical) → acidify urine. Simultaneously, HCO₃⁻ exits basolateral (via AE1/Band 3) into blood → regenerates buffer.</p>
+<p><strong>RTA Type 1 (distal):</strong> These cells fail → cannot secrete H⁺ → urine stays alkaline (<span class="danger">pH >5.5 — THE diagnostic clue</span>). Systemic acidosis accumulates. K⁺ is wasted (H⁺ can't compete for secretion → K⁺ secreted instead → <span class="danger">hypoK⁺</span>). Alkaline urine → calcium phosphate precipitates → <span class="danger">nephrocalcinosis + kidney stones</span>. Causes: Sjögren's, SLE, amphotericin B, toluene/glue sniffing, medullary sponge kidney. Indian: Sjögren's underdiagnosed in South India. Amphotericin for mucormycosis or kala-azar → iatrogenic Type 1.</p>
+</div>
+</div>
+
+<div class="arr">▼ final urine exits → ureter → bladder</div>
+
+<!-- STEP 7: INTEGRATION -->
+<div class="step c7">
+<div class="sh"><span>STEP 7: THE RAAS-NPS AXIS (ties it all together)</span></div>
+<div class="sb">
+<p><strong>RAAS pathway (sequential):</strong></p>
+<p>↓ Renal perfusion / ↓ Na⁺ at macula densa / ↑ sympathetic → <strong>JG cells</strong> (afferent arteriole) release <strong>RENIN</strong></p>
+<p>→ Renin cleaves angiotensinogen (made by liver, always circulating) → <strong>Angiotensin I</strong> (inactive)</p>
+<p>→ <strong>ACE</strong> (angiotensin-converting enzyme, mainly in lung endothelium) converts Ang I → <strong>Angiotensin II</strong> (active)</p>
+<p>→ Ang II does 6 things: (1) vasoconstriction, (2) aldosterone release from adrenal, (3) efferent arteriole constriction, (4) AVP/ADH release, (5) thirst stimulation, (6) sympathetic activation</p>
+<p>→ Aldosterone → CD → ENaC → Na⁺ retention + K⁺ excretion</p>
+
+<p><strong>ACE also degrades bradykinin.</strong> Block ACE → bradykinin accumulates → cough (15-20% of patients), angioedema (rare but dangerous). This is why ARBs (block AT1 receptor, don't affect bradykinin) don't cause cough. This is also why you need a <span class="danger">36-hour washout from ACEi before starting ARNi</span> — sacubitril ALSO increases bradykinin (via neprilysin inhibition) → double bradykinin → angioedema risk.</p>
+
+<p><strong>Natriuretic Peptide System (NPS) — the counter-RAAS:</strong></p>
+<p>Atrial stretch → <strong>ANP</strong> (atrial natriuretic peptide). Ventricular stretch → <strong>BNP</strong> (B-type/brain natriuretic peptide).</p>
+<p>ANP/BNP → natriuresis + vasodilation + ↓aldosterone + ↓ADH = <strong>exact opposite of RAAS</strong>.</p>
+<p>Problem: an enzyme called <strong>neprilysin</strong> rapidly degrades ANP/BNP → RAAS wins.</p>
+<p>Solution: <strong>Sacubitril</strong> inhibits neprilysin → ANP/BNP SURVIVE → enhanced counter-RAAS effect.</p>
+
+<p><strong>ARNi = Sacubitril + Valsartan (Entresto):</strong></p>
+<p>Dual mechanism: sacubitril (↑NPS) + valsartan (↓RAAS) = simultaneous brake on RAAS + boost to NPS.</p>
+<p>Trial: <strong>PARADIGM-HF</strong> (2014) — sacubitril/valsartan vs enalapril in HFrEF (EF ≤40%). 20% ↓ CV death + HF hospitalization. Stopped early for benefit.</p>
+<p>Indication: HFrEF, NYHA II-IV, replacing ACEi/ARB.</p>
+<p><span class="danger">36-hour ACEi washout rule.</span> ARB with ARNi = fine (valsartan IS the ARB component).</p>
+<p>Side effects: hypotension (dual vasodilation — careful in low-BMI Indian patients), hyperK⁺ (↓aldo), angioedema (if ACEi overlap).</p>
+<p>Indian: young HFrEF from RHD + DM cardiomyopathy. Cost barrier but PMJAY may cover.</p>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practical Exam Tools — MD Exam Prep</title>
+  <meta name="description" content="Clinical exam preparation tools: case atlas, viva practice, examination guides, OSCE stations, and ECG mastery.">
+  <link rel="stylesheet" href="../assets/css/core.css">
+  <style>
+    .practicals-hero {
+      padding: var(--space-2xl) 0 var(--space-lg);
+    }
+    .practicals-hero h1 {
+      font-size: 2rem;
+      margin-bottom: var(--space-sm);
+    }
+    .practicals-hero p {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      max-width: 540px;
+    }
+    .tools-grid {
+      display: grid;
+      gap: var(--space-lg);
+      padding-bottom: var(--space-2xl);
+    }
+    .tool-card {
+      padding: var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+    }
+    .tool-card:hover { color: inherit; }
+    .tool-card-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--accent);
+    }
+    .tool-card h3 {
+      margin: 0;
+      transition: color var(--duration-fast) var(--ease-out);
+    }
+    .tool-card:hover h3 { color: var(--accent-warm); }
+    .tool-card p {
+      color: var(--text-secondary);
+      font-size: 0.9375rem;
+      margin: 0;
+    }
+    .tool-card-meta {
+      display: flex;
+      gap: var(--space-sm);
+      flex-wrap: wrap;
+      margin-top: auto;
+      padding-top: var(--space-sm);
+    }
+    .tool-card .tag { font-size: 0.6875rem; }
+    .tool-card-soon {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    .tool-card-soon::after {
+      content: 'Coming Soon';
+      position: absolute;
+      top: var(--space-md);
+      right: var(--space-md);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.625rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      background: var(--bg-elevated);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .stats-row {
+      display: flex;
+      gap: var(--space-xl);
+      padding: var(--space-lg) 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: var(--space-xl);
+      flex-wrap: wrap;
+    }
+    .stat {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .stat-value {
+      font-family: 'Source Serif 4', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--accent-warm);
+    }
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+    }
+    @media (min-width: 640px) {
+      .practicals-hero h1 { font-size: 2.5rem; }
+      .tools-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 960px) {
+      .tools-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="site-nav"></div>
+
+  <section class="practicals-hero container">
+    <h1>Practical Exam Tools</h1>
+    <p>Clinical cases, viva practice, examination techniques, and bedside skills — everything you need for the practical component of your MD exam.</p>
+  </section>
+
+  <div class="container">
+    <div class="stats-row">
+      <div class="stat">
+        <span class="stat-value">21</span>
+        <span class="stat-label">Clinical cases</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">110</span>
+        <span class="stat-label">Viva questions</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">5</span>
+        <span class="stat-label">Body systems</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">4</span>
+        <span class="stat-label">Study modes</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="tools-grid container">
+    <a href="clinical-atlas.html" class="card tool-card">
+      <span class="tool-card-num">01</span>
+      <h3>Clinical Atlas</h3>
+      <p>21 clinical cases across 5 body systems. Browse case presentations, examination techniques, findings with mechanisms, and differential diagnosis.</p>
+      <div class="tool-card-meta">
+        <span class="tag tag-gold">21 cases</span>
+        <span class="tag tag-blue">4 modes</span>
+      </div>
+    </a>
+
+    <a href="viva-forge.html" class="card tool-card">
+      <span class="tool-card-num">02</span>
+      <h3>Viva Forge</h3>
+      <p>Practice viva questions with reveal-to-answer, stress mode with countdown timer, and dialogue transcripts. 109 questions across 16 cases.</p>
+      <div class="tool-card-meta">
+        <span class="tag tag-gold">109 questions</span>
+        <span class="tag tag-blue">Stress mode</span>
+      </div>
+    </a>
+
+    <a href="#" class="card tool-card tool-card-soon">
+      <span class="tool-card-num">03</span>
+      <h3>Examination Guide</h3>
+      <p>Step-by-step examination techniques for every system. IPPA format with expected findings and clinical correlates.</p>
+      <div class="tool-card-meta">
+        <span class="tag tag-gold">12 systems</span>
+      </div>
+    </a>
+
+    <a href="#" class="card tool-card tool-card-soon">
+      <span class="tool-card-num">04</span>
+      <h3>OSCE Suite</h3>
+      <p>Timed OSCE station practice with structured mark schemes, candidate instructions, and model answers.</p>
+      <div class="tool-card-meta">
+        <span class="tag tag-gold">Stations</span>
+      </div>
+    </a>
+
+    <a href="#" class="card tool-card tool-card-soon">
+      <span class="tool-card-num">05</span>
+      <h3>ECG Mastery</h3>
+      <p>43 real ECG tracings with systematic interpretation, clinical correlation, and pattern recognition drills.</p>
+      <div class="tool-card-meta">
+        <span class="tag tag-gold">43 ECGs</span>
+      </div>
+    </a>
+
+    <a href="#" class="card tool-card tool-card-soon">
+      <span class="tool-card-num">06</span>
+      <h3>X-ray & Investigations</h3>
+      <p>Chest X-ray interpretation, ABG analysis, and investigation planning for common clinical scenarios.</p>
+      <div class="tool-card-meta">
+        <span class="tag tag-gold">Imaging</span>
+      </div>
+    </a>
+
+    <a href="#" class="card tool-card tool-card-soon">
+      <span class="tool-card-num">07</span>
+      <h3>Neuro Trainer</h3>
+      <p>Focused neurological examination practice — cranial nerves, motor/sensory examination, and localization.</p>
+      <div class="tool-card-meta">
+        <span class="tag tag-gold">Neuro</span>
+      </div>
+    </a>
+
+    <a href="#" class="card tool-card tool-card-soon">
+      <span class="tool-card-num">08</span>
+      <h3>Specialty Reference</h3>
+      <p>Quick-access reference for dermatology, rheumatology, endocrinology, and other specialty examination cases.</p>
+      <div class="tool-card-meta">
+        <span class="tag tag-gold">Reference</span>
+      </div>
+    </a>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="../assets/js/template.js"></script>
+</body>
+</html>

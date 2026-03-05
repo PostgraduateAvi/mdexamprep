@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#0e0d11">
+  <title>Clinical Atlas — MD Exam Prep</title>
+  <meta name="description" content="22 clinical cases across 5 body systems. Browse presentations, examination techniques, findings, differentials, and viva questions.">
+  <link rel="stylesheet" href="../assets/css/core.css">
+  <link rel="stylesheet" href="practicals.css">
+</head>
+<body>
+
+  <!-- Loading -->
+  <div class="tool-loading" id="loading">
+    <div class="loader">
+      <div class="loader-title">Clinical Atlas</div>
+      <div class="loader-bar-wrap"><div class="loader-bar" id="loader-bar"></div></div>
+      <div class="loader-status" id="loader-status">Initializing...</div>
+    </div>
+  </div>
+
+  <!-- App Shell -->
+  <div class="tool-app" id="app">
+
+    <!-- Topbar -->
+    <div class="tool-topbar">
+      <button class="hamburger" id="hamburger" aria-label="Toggle sidebar">&#9776;</button>
+      <a href="index.html" class="back-link" aria-label="Back to Practicals">&larr;</a>
+      <span class="tool-title">Clinical Atlas</span>
+      <div class="mode-tabs" id="mode-tabs">
+        <button class="mode-tab active" data-mode="atlas">Atlas</button>
+        <button class="mode-tab" data-mode="xref">Cross-Ref</button>
+        <button class="mode-tab" data-mode="viva">Viva Drill</button>
+        <button class="mode-tab" data-mode="audit">Quick Audit</button>
+      </div>
+      <div class="search-box">
+        <span class="search-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+        <input type="text" id="search-input" placeholder="Search cases..." autocomplete="off">
+      </div>
+    </div>
+
+    <div class="tool-body">
+      <!-- Sidebar -->
+      <aside class="tool-sidebar" id="sidebar"></aside>
+      <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+      <!-- Content -->
+      <main class="tool-content" id="content">
+        <div class="empty-state">
+          <h2>Select a case</h2>
+          <p>Choose a clinical case from the sidebar to begin studying.</p>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="clinical-atlas.js"></script>
+</body>
+</html>

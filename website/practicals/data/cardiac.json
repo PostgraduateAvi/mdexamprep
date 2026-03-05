@@ -1,0 +1,1206 @@
+{
+  "id": "cardiac",
+  "system_name": "Cardiovascular System",
+  "system": "cardiac",
+
+  "system_examination_technique": {
+    "approach": "Patient supine at 45 degrees, chest exposed. Always compare both sides. Proceed systematically: General Inspection → Hands → Face/Neck → Precordium (Inspection → Palpation → Auscultation). End with peripheral signs if valvular disease suspected.",
+    "sequence": "General Inspection → Pulse → JVP → Precordium: Inspection → Palpation → Auscultation → Lung bases → Peripheral edema",
+    "steps": [
+      {
+        "phase": "General Inspection",
+        "actions": [
+          "From the foot of the bed: consciousness, comfort, respiratory distress, orthopnea (propped up on pillows?), body habitus, pallor, cyanosis (central vs peripheral), malar flush, diaphoresis.",
+          "Devices: IV lines, oxygen, cardiac monitor, pacemaker/ICD bulge, sternotomy scar, drain sites.",
+          "Positioning: If patient cannot lie flat → suspect LV failure or severe MS with pulmonary congestion."
+        ]
+      },
+      {
+        "phase": "Hands",
+        "actions": [
+          "Clubbing: check nail bed angle >180° (IE, cyanotic CHD). Splinter hemorrhages: linear dark streaks in nailbed (IE — distal microemboli from valve vegetations, also trauma).",
+          "Osler nodes (tender, fingertip pads — immune complex deposition in IE) vs Janeway lesions (painless, palmar — septic microemboli in acute IE).",
+          "Peripheral cyanosis: check nail beds and fingertips. Tar staining (smoking → atherosclerosis risk). Tendon xanthomata (familial hypercholesterolemia).",
+          "Temperature: cool peripheries = low cardiac output."
+        ]
+      },
+      {
+        "phase": "Pulse",
+        "actions": [
+          "Radial pulse: rate (count for 15 seconds × 4), rhythm (regular, regularly irregular, irregularly irregular), volume (normal, low, bounding).",
+          "Character — MUST assess at carotid for accuracy: slow-rising (AS), collapsing/water-hammer (AR — lift arm above heart level, wrap fingers around wrist, feel thudding pulse), bisferiens (mixed AS+AR or HOCM), pulsus alternans (severe LV failure).",
+          "Radio-radial delay (coarctation), radio-femoral delay (coarctation). Pulse deficit (AF — count apical simultaneously, radial separately; difference = deficit = beats too weak to transmit)."
+        ]
+      },
+      {
+        "phase": "JVP",
+        "actions": [
+          "Position: 45 degrees, head turned slightly left. Identify right internal jugular vein (between the two heads of sternocleidomastoid). JVP has biphasic flicker (vs carotid = single impulse).",
+          "Measure: height in cm above sternal angle (normal ≤4 cm). Elevated JVP = RV failure, fluid overload, PE, tamponade, constrictive pericarditis.",
+          "Waveform: 'a' wave (atrial contraction — absent in AF, giant in pulmonary HTN/tricuspid stenosis, cannon waves in complete heart block). 'v' wave (venous filling during systole — giant in TR). 'x' descent (atrial relaxation). 'y' descent (rapid ventricular filling — steep in constrictive pericarditis).",
+          "Hepatojugular reflux: press over liver for 10-15 seconds. Sustained JVP rise >3 cm = RV failure (cannot handle increased venous return)."
+        ]
+      },
+      {
+        "phase": "Precordial Inspection",
+        "actions": [
+          "Visible apex beat (thin patients, hyperdynamic circulation). Scars: midline sternotomy (CABG, valve replacement), left lateral thoracotomy (closed mitral valvotomy, coarctation repair), pacemaker/ICD scar (left infraclavicular).",
+          "Precordial bulge: long-standing RV hypertrophy in childhood (e.g., ASD, pulmonary HTN)."
+        ]
+      },
+      {
+        "phase": "Palpation",
+        "actions": [
+          "Apex beat location: normally 5th intercostal space, midclavicular line. Count down from 2nd ICS (angle of Louis). Displaced = LV dilatation (MR, AR, DCM). Not displaced = MS (LV is small), AS (LV hypertrophied but not dilated — until late).",
+          "Apex character: tapping (palpable S1 — MS with mobile valve), heaving/sustained (pressure overload — AS, HTN), hyperdynamic/thrusting (volume overload — MR, AR), diffuse (DCM).",
+          "Left parasternal heave: heel of hand at left sternal edge. Systolic lift = RV hypertrophy (pulmonary HTN, MS). Also palpable in severe LA enlargement pushing RV anteriorly.",
+          "Thrills: palpable murmur (grade ≥4/6). Apex systolic thrill = MR. Aortic area systolic thrill = AS. Left sternal border systolic thrill = VSD.",
+          "Palpable P2: left 2nd intercostal space. Present = severe pulmonary HTN (forceful pulmonary valve closure).",
+          "Palpable S1 at apex = tapping apex = MS with mobile valve."
+        ]
+      },
+      {
+        "phase": "Auscultation",
+        "actions": [
+          "Use BOTH bell (low-pitched: S3, S4, MDM of MS) and diaphragm (high-pitched: S1, S2, AR, MR). Listen systematically at 4 areas + additional positions.",
+          "Aortic area (right 2nd ICS): AS murmur, A2 component of S2. Sitting forward, end-expiration for AR.",
+          "Pulmonary area (left 2nd ICS): P2 component (loud P2 = pulmonary HTN), pulmonary stenosis murmur, Graham Steell murmur.",
+          "Tricuspid area (left lower sternal border): TR murmur, VSD murmur. Carvallo sign: murmur increases with inspiration = right-sided origin.",
+          "Mitral area (apex): S1, S3, S4, MR murmur, MS murmur. LEFT LATERAL DECUBITUS with bell for MS (MDM is low-pitched, best heard with bell at apex in this position).",
+          "Heart sounds: S1 (mitral + tricuspid closure) — loud in MS, soft in MR/calcified MS. S2 (aortic + pulmonary closure) — splitting (fixed = ASD, paradoxical = LBBB/AS, wide = RBBB/pulmonary HTN). S3 (rapid ventricular filling — pathological if >40y, suggests volume overload/HF). S4 (atrial contraction against stiff ventricle — absent in AF, present in HTN, AS, HOCM).",
+          "Murmur characterization: Timing (systolic/diastolic/continuous), Shape (crescendo-decrescendo/pansystolic/decrescendo/low-pitched rumble), Location (where loudest), Radiation, Grade (1-6), Pitch (use bell for low, diaphragm for high), Response to maneuvers."
+        ]
+      },
+      {
+        "phase": "Completing the Examination",
+        "actions": [
+          "Lung bases: bibasal crepitations = pulmonary edema (LV failure). Pleural effusion = transudative in HF.",
+          "Peripheral edema: sacral (bedbound) or pedal (ambulatory). Pitting? Bilateral = systemic (HF, nephrotic). Unilateral = local (DVT).",
+          "Hepatomegaly: congestive hepatomegaly (pulsatile in TR). Hepatojugular reflux.",
+          "Blood pressure: wide pulse pressure (AR, thyrotoxicosis), narrow pulse pressure (AS, tamponade, shock)."
+        ]
+      }
+    ]
+  },
+
+  "cross_case_differentials": [
+    {
+      "comparison": "Mitral Stenosis vs Mitral Regurgitation",
+      "conditions": ["MS", "MR"],
+      "features": [
+        {"feature": "Murmur timing", "values": ["Mid-diastolic (MDM) ± PSA", "Pansystolic (PSM)"]},
+        {"feature": "Murmur pitch", "values": ["Low-pitched rumble (bell)", "High-pitched blowing (diaphragm)"]},
+        {"feature": "Best heard", "values": ["Apex, left lateral, expiration, bell", "Apex, radiates to axilla, diaphragm"]},
+        {"feature": "S1", "values": ["Loud (mobile valve) / Soft (calcified)", "Soft (valve doesn't close properly)"]},
+        {"feature": "Apex beat", "values": ["Tapping, NOT displaced (LV small)", "Displaced, hyperdynamic (LV volume overloaded)"]},
+        {"feature": "S3", "values": ["Absent (LV not volume overloaded)", "Present (rapid LV filling from LA)"]},
+        {"feature": "Opening snap", "values": ["Present (mobile valve)", "Absent"]},
+        {"feature": "LV size", "values": ["Normal or small", "Dilated"]},
+        {"feature": "LA size", "values": ["Enlarged (pressure overload)", "Enlarged (volume overload)"]},
+        {"feature": "Pulse", "values": ["Low-volume, irregularly irregular (AF)", "Normal volume initially, AF later"]}
+      ]
+    },
+    {
+      "comparison": "Aortic Stenosis vs Aortic Regurgitation",
+      "conditions": ["AS", "AR"],
+      "features": [
+        {"feature": "Murmur timing", "values": ["Ejection systolic (ESM)", "Early diastolic (EDM)"]},
+        {"feature": "Murmur character", "values": ["Crescendo-decrescendo, harsh", "Decrescendo, blowing, high-pitched"]},
+        {"feature": "Best heard", "values": ["Aortic area → carotids", "Left sternal border, sitting forward, end-expiration"]},
+        {"feature": "Pulse character", "values": ["Slow-rising, low-volume (pulsus parvus et tardus)", "Collapsing/water-hammer, high-volume"]},
+        {"feature": "Pulse pressure", "values": ["Narrow", "Wide"]},
+        {"feature": "Apex beat", "values": ["Sustained/heaving, NOT displaced (pressure overload)", "Displaced, hyperdynamic/thrusting (volume overload)"]},
+        {"feature": "Peripheral signs", "values": ["None specific", "Multiple: de Musset, Quincke, Corrigan, Traube, Duroziez, Hill"]},
+        {"feature": "S2", "values": ["Soft/absent A2 (calcified valve)", "Normal or single loud A2"]},
+        {"feature": "Ejection click", "values": ["Present (bicuspid valve, mobile)", "Absent"]},
+        {"feature": "Associated findings", "values": ["LVH on ECG, syncope/angina/dyspnea triad", "LVH on ECG, Austin Flint murmur (functional MS)"]}
+      ]
+    },
+    {
+      "comparison": "Mitral Stenosis vs Aortic Regurgitation (Austin Flint Murmur Trap)",
+      "conditions": ["True MS", "Austin Flint (AR)"],
+      "features": [
+        {"feature": "Opening snap", "values": ["Present", "Absent (KEY differentiator)"]},
+        {"feature": "Loud S1", "values": ["Present", "Absent"]},
+        {"feature": "EDM at left sternal border", "values": ["Absent", "Present (the primary AR murmur)"]},
+        {"feature": "Peripheral AR signs", "values": ["Absent", "Present (collapsing pulse, wide PP)"]},
+        {"feature": "Apex beat", "values": ["Tapping, not displaced", "Displaced, hyperdynamic"]}
+      ]
+    },
+    {
+      "comparison": "All Valvular Lesions — Quick Comparison",
+      "conditions": ["MS", "MR", "AS", "AR"],
+      "features": [
+        {"feature": "Murmur", "values": ["MDM + PSA", "PSM", "ESM", "EDM"]},
+        {"feature": "LV size", "values": ["Normal/small", "Dilated", "Hypertrophied (thick walls, normal cavity)", "Dilated"]},
+        {"feature": "Apex", "values": ["Tapping", "Displaced, hyperdynamic", "Sustained, not displaced", "Displaced, thrusting"]},
+        {"feature": "AF likelihood", "values": ["Very high (LA dilated)", "High (LA dilated)", "Low (unless late)", "Moderate"]},
+        {"feature": "Commonest etiology (India)", "values": ["RHD", "RHD > MVP", "Degenerative/bicuspid", "RHD > IE"]},
+        {"feature": "Surgical trigger", "values": ["MVA <1.5 cm², symptoms", "EF ≤60%, LVESD ≥40mm", "Symptomatic (any of triad)", "EF ≤50%, LVEDD ≥70mm"]}
+      ]
+    }
+  ],
+
+  "cases": [
+    {
+      "id": "mitral_stenosis",
+      "name": "Mitral Stenosis",
+      "category": "case",
+      "system": "cardiac",
+      "tags": ["valvular", "rheumatic", "long-case", "pregnancy"],
+
+      "presentation_script": {
+        "opening": "Sir, I have examined this patient. This is a 32-year-old pregnant female, G2P1 at 5 months gestation, who presented with progressive exertional dyspnea of 2 years duration, now NYHA Class III, palpitations for 6 months, and an episode of hemoptysis 2 weeks ago. She has a history of recurrent sore throats in childhood and was diagnosed with a heart problem at age 14 but was non-compliant with follow-up and secondary prophylaxis.",
+        "gpe_findings": "On general examination, the patient is conscious, oriented, and has malar flush. She is not in acute distress at rest. Pulse is irregularly irregular, low volume, rate 88 per minute. Blood pressure is 110/80 mmHg. JVP is elevated. There is no pallor, cyanosis, clubbing, or pedal edema.",
+        "system_findings": "On cardiovascular examination — Inspection: no scars, no visible apex beat. Palpation: apex beat is tapping in character, located in the 5th intercostal space at the midclavicular line, NOT displaced. There is a left parasternal heave and palpable P2. No thrills. Auscultation: S1 is loud. There is an opening snap followed by a low-pitched mid-diastolic murmur with presystolic accentuation, best heard at the apex in the left lateral decubitus position with the bell of the stethoscope. P2 is loud. No S3 or S4.",
+        "diagnosis_statement": "Severe rheumatic mitral stenosis with atrial fibrillation, pulmonary arterial hypertension, and NYHA Class III symptoms, complicated by hemoptysis, in the setting of pregnancy.",
+        "differentials": [
+          "Left atrial myxoma (positional murmur, tumor plop, constitutional symptoms — absent here)",
+          "Austin Flint murmur of severe AR (no peripheral AR signs, no EDM, opening snap present — favors true MS)",
+          "Lutembacher syndrome — MS with ASD (fixed split S2 would be expected — not described here)",
+          "Cor triatriatum (rare congenital — presents in childhood)"
+        ],
+        "tips": [
+          "Always mention pulse character and rhythm early — AF with low-volume pulse immediately points to MS.",
+          "State 'tapping apex, NOT displaced' — this distinguishes MS from MR and AR where apex IS displaced.",
+          "Describe the murmur with ALL qualifiers: timing (mid-diastolic), character (low-pitched rumble), special feature (presystolic accentuation), location (apex), position (left lateral), instrument (bell).",
+          "Mention opening snap separately from the murmur — it proves valve mobility and is a key severity marker (short A2-OS = severe)."
+        ]
+      },
+
+      "case_scenario": {
+        "demographics": "32-year-old female, homemaker, G2P1, 5 months pregnant",
+        "chief_complaint": "Progressive exertional dyspnea (2 years, now NYHA III), palpitations (6 months), hemoptysis (2 weeks ago)",
+        "hpi": "Dyspnea began insidiously 2 years ago, initially only with heavy exertion (NYHA I). Progressed to dyspnea with routine housework (NYHA II) over the next year. In current pregnancy, deteriorated to dyspnea with minimal activity and occasional rest dyspnea (NYHA III). Palpitations: awareness of rapid, irregular heartbeats for 6 months, worse with exertion. Hemoptysis: single episode of frank blood (not frothy, not streaked) 2 weeks ago, approximately 2 tablespoons, spontaneously resolved. No chest pain, no syncope, no peripheral edema, no orthopnea, no PND.",
+        "past_history": "Recurrent sore throats in childhood (5-6 episodes per year, ages 8-12). Diagnosed with 'heart problem' at age 14 at a local hospital. Advised monthly penicillin injections — took irregularly for 2 years, then stopped. First pregnancy at age 28 was uneventful (mild dyspnea in third trimester, attributed to pregnancy). No prior hospitalizations for cardiac decompensation.",
+        "drug_history": "Non-compliant with secondary prophylaxis (benzathine penicillin). No current cardiac medications. Prenatal iron and folic acid supplements.",
+        "family_history": "No family history of cardiac disease. No known rheumatic fever in siblings."
+      },
+
+      "clinical_summary": [
+        {"area": "GPE", "finding": "Malar flush", "detail": "Bilateral pink flush of cheeks, butterfly distribution", "present": true, "significance": "Chronic pulmonary HTN + low cardiac output → cutaneous vasodilation"},
+        {"area": "GPE", "finding": "Build", "detail": "Low body weight for height", "present": true, "significance": "Cardiac cachexia from chronic low CO + elevated TNF-alpha"},
+        {"area": "Pulse", "finding": "Rate and rhythm", "detail": "88/min, irregularly irregular", "present": true, "significance": "Atrial fibrillation — chaotic atrial depolarization, variable AV conduction"},
+        {"area": "Pulse", "finding": "Volume", "detail": "Low volume", "present": true, "significance": "Reduced stroke volume from restricted LV filling through stenotic valve"},
+        {"area": "Pulse", "finding": "Character", "detail": "No specific character abnormality", "present": true, "significance": "Not slow-rising (excludes AS), not collapsing (excludes AR)"},
+        {"area": "JVP", "finding": "Elevated JVP", "detail": "Raised above normal", "present": true, "significance": "RV failure from pulmonary HTN → raised RA pressure"},
+        {"area": "Precordium", "finding": "Apex beat location", "detail": "5th ICS, MCL — NOT displaced", "present": true, "significance": "LV is normal-sized (stenosis restricts inflow, LV not volume-overloaded)"},
+        {"area": "Precordium", "finding": "Apex character", "detail": "Tapping", "present": true, "significance": "Palpable S1 — mobile, non-calcified stenotic valve snapping shut forcefully"},
+        {"area": "Precordium", "finding": "Left parasternal heave", "detail": "Systolic lift at left sternal border", "present": true, "significance": "RV hypertrophy from pulmonary HTN"},
+        {"area": "Precordium", "finding": "Palpable P2", "detail": "Palpable impulse at left 2nd ICS", "present": true, "significance": "Severe pulmonary HTN → forceful pulmonary valve closure"},
+        {"area": "Auscultation", "finding": "S1", "detail": "Loud", "present": true, "significance": "Mobile valve kept wide open by high LA pressure → forceful snap closure on LV contraction"},
+        {"area": "Auscultation", "finding": "Opening snap", "detail": "High-pitched click after S2", "present": true, "significance": "Mobile valve snapping open under high LA pressure. Short A2-OS interval = severe MS"},
+        {"area": "Auscultation", "finding": "Murmur", "detail": "Low-pitched mid-diastolic murmur with presystolic accentuation at apex, left lateral, bell", "present": true, "significance": "Turbulent diastolic flow through stenotic mitral orifice. PSA = atrial contraction boosting flow (absent if AF established)"},
+        {"area": "Auscultation", "finding": "P2", "detail": "Loud", "present": true, "significance": "Pulmonary HTN → forceful closure of pulmonary valve"},
+        {"area": "Auscultation", "finding": "S3", "detail": "Absent", "present": false, "significance": "LV not volume-overloaded (inflow restricted). Presence would suggest coexisting MR"},
+        {"area": "Lungs", "finding": "Bibasal crepitations", "detail": "Fine creps at both lung bases", "present": true, "significance": "Pulmonary venous congestion from elevated LA pressure"}
+      ],
+
+      "examination_technique": {
+        "sequence": "Inspection → Palpation → Auscultation (focus on apex in left lateral with bell)",
+        "steps": [
+          {
+            "phase": "Inspection",
+            "actions": [
+              "Look for malar flush from the foot of the bed — bilateral pink cheeks sparing the nose.",
+              "Note body habitus — cardiac cachexia suggests chronicity.",
+              "Check for sternotomy or lateral thoracotomy scars (prior mitral surgery)."
+            ],
+            "findings_in_this_case": ["Malar flush present", "Low body weight (cardiac cachexia)", "No surgical scars"]
+          },
+          {
+            "phase": "Palpation",
+            "actions": [
+              "Locate apex beat: count down from 2nd ICS at sternal angle. Normal = 5th ICS MCL. In MS, apex is NOT displaced (LV not dilated). Character should be TAPPING (palpable S1).",
+              "Left parasternal heave: place heel of palm on left sternal border. Feel for sustained systolic lift (RV hypertrophy).",
+              "Palpable P2: feel at left 2nd ICS for a discrete impulse coinciding with S2 (severe pulmonary HTN).",
+              "Diastolic thrill at apex: rare but possible in severe MS. Roll patient to left lateral, palpate with palm at apex."
+            ],
+            "findings_in_this_case": ["Tapping apex at 5th ICS MCL, NOT displaced", "Left parasternal heave present", "Palpable P2 present"]
+          },
+          {
+            "phase": "Auscultation",
+            "actions": [
+              "Start with diaphragm at aortic area — listen for S2, assess A2-P2 splitting, check for AR murmur (co-existing AR common in RHD).",
+              "Pulmonary area with diaphragm — assess loudness of P2. Loud P2 = pulmonary HTN. Listen for Graham Steell murmur (EDM of functional PR from severe pulmonary HTN).",
+              "Tricuspid area with diaphragm — listen for TR murmur (functional, from RV dilatation). Check Carvallo sign (increases with inspiration).",
+              "CRITICAL STEP — Mitral area: First listen with diaphragm for S1 loudness. Then switch to BELL, position patient in LEFT LATERAL DECUBITUS, and ask patient to exhale and hold. Listen for: (1) Opening snap (brief, high-pitched, after S2), (2) Mid-diastolic murmur (low-pitched rumble), (3) Presystolic accentuation (crescendo just before S1, from atrial contraction — absent in AF).",
+              "Time the murmur against carotid pulse to confirm it is diastolic (between S2 and next S1)."
+            ],
+            "findings_in_this_case": ["Loud S1", "Opening snap present", "MDM with PSA at apex in left lateral with bell", "Loud P2", "No AR murmur (excludes significant co-existing AR)"]
+          }
+        ]
+      },
+
+      "findings_with_mechanisms": [
+        {
+          "finding": "Loud S1",
+          "mechanism": "In MS, high LA pressure keeps mitral valve leaflets wide apart at end-diastole (maximally open position). When LV contracts, ventricular pressure rapidly exceeds LA pressure, slamming the widely-separated leaflets shut with force. This forceful closure generates a loud S1. In normal hearts, leaflets are already partially closed by end-diastole, so closure is gentler.",
+          "mechanism_chain": "[High LA pressure] → [Valve wide open at end-diastole] → [LV contraction slams valve shut] → [Loud S1]",
+          "caveat": "Soft S1 = calcified, rigid valve that cannot snap. Indicates advanced MS. Loss of loud S1 means valve is unsuitable for PBMV (balloon valvotomy requires mobile leaflets)."
+        },
+        {
+          "finding": "Opening snap (OS)",
+          "mechanism": "During isovolumetric relaxation, LV pressure drops below LA pressure. The stenotic but mobile mitral valve suddenly opens under the high LA pressure gradient, producing a sharp snap sound. The A2-OS interval is inversely proportional to severity: higher LA pressure opens valve earlier → shorter interval.",
+          "mechanism_chain": "[LV relaxation] → [LA pressure > LV pressure] → [Mobile stenotic valve snaps open] → [Opening snap]",
+          "caveat": "Absent OS = calcified, immobile valve (advanced disease). Differentiate OS from split S2: OS is heard at apex, split S2 at pulmonary area. OS does not vary with respiration.",
+          "grading": "A2-OS <80ms = severe MS. A2-OS >110ms = mild MS."
+        },
+        {
+          "finding": "Mid-diastolic murmur with presystolic accentuation",
+          "mechanism": "Blood flows from LA to LV through the narrowed mitral orifice during diastole. The restricted orifice creates turbulent flow → low-frequency vibrations → low-pitched rumbling murmur. Presystolic accentuation occurs when atrial contraction (in sinus rhythm) produces a final surge of blood through the stenotic valve, increasing turbulence just before S1.",
+          "mechanism_chain": "[LA-LV pressure gradient in diastole] → [Turbulent flow through stenotic orifice] → [MDM]. [Atrial contraction] → [Extra flow surge] → [PSA crescendo before S1]",
+          "caveat": "PSA disappears in AF (no coordinated atrial contraction). EXAM TRAP: examiner may ask 'Your patient has AF — will you hear PSA?' Answer: No. PSA requires sinus rhythm."
+        },
+        {
+          "finding": "Tapping apex beat (not displaced)",
+          "mechanism": "The tapping character IS the palpable equivalent of loud S1 — the forceful valve closure transmitted to the chest wall. Apex is not displaced because in pure MS, the LV receives reduced filling (obstruction at mitral valve) → LV is normal-sized or even small. Displaced apex would indicate volume overload (MR, AR) which is NOT the hemodynamic problem in MS.",
+          "mechanism_chain": "[Stenotic valve restricts LV filling] → [LV not dilated] → [Apex in normal position]. [Forceful valve closure] → [Palpable S1] → [Tapping character]"
+        },
+        {
+          "finding": "Left parasternal heave",
+          "mechanism": "MS → elevated LA pressure → retrograde transmission to pulmonary veins → pulmonary venous HTN → reactive pulmonary arteriolar vasoconstriction → pulmonary arterial HTN → RV must pump against increased afterload → RV hypertrophies → enlarged RV pushes anterior chest wall during systole → palpable heave.",
+          "mechanism_chain": "[MS] → [↑LA pressure] → [Pulmonary venous HTN] → [Pulmonary arterial HTN] → [RV hypertrophy] → [Parasternal heave]"
+        },
+        {
+          "finding": "Malar flush (mitral facies)",
+          "mechanism": "Chronic low cardiac output + pulmonary HTN → systemic hypoxia → compensatory cutaneous vasodilation in the cheeks (rich anastomotic venous network). CO2 retention from pulmonary congestion may contribute. The butterfly distribution spares the nasal bridge (less vascular).",
+          "mechanism_chain": "[Chronic low CO + pulmonary congestion] → [Systemic hypoxia] → [Facial vasodilation] → [Malar flush]",
+          "caveat": "Malar flush can also be seen in SLE (butterfly rash — but that is erythematous, not cyanotic-pink) and polycythemia. In MS context, it is pathognomonic."
+        },
+        {
+          "finding": "Irregularly irregular pulse (AF)",
+          "mechanism": "Chronic LA dilatation from pressure overload → atrial wall stretch → atrial remodeling (fibrosis, electrical inhomogeneity) → multiple re-entrant circuits → chaotic atrial depolarization at 350-600/min → AV node conducts randomly → ventricles beat at irregular intervals → irregularly irregular pulse.",
+          "mechanism_chain": "[LA dilatation from MS] → [Atrial fibrosis/remodeling] → [Multiple re-entry circuits] → [AF] → [Irregularly irregular pulse]",
+          "caveat": "AF in MS dramatically worsens hemodynamics: loss of atrial kick reduces LV filling by ~25%, and rapid ventricular rate shortens diastole (less time for blood to cross stenotic valve). AF onset often precipitates acute decompensation."
+        },
+        {
+          "finding": "Hemoptysis",
+          "mechanism": "Five types in MS: (1) Bronchial vein rupture (MOST COMMON) — pulmonary venous HTN → bronchial veins engorge → rupture → frank hemoptysis. (2) Pulmonary apoplexy — sudden massive rupture from acute LA pressure surge. (3) Pink frothy sputum — acute pulmonary edema (not true hemoptysis). (4) Blood-streaked sputum — chronic bronchial irritation. (5) Pulmonary infarction — from in-situ PA thrombosis or LA thrombus embolism.",
+          "mechanism_chain": "[Severe MS] → [↑Pulmonary venous pressure] → [Bronchial vein engorgement] → [Rupture] → [Hemoptysis]",
+          "caveat": "Hemoptysis in MS signals severe disease. Paradoxically, hemoptysis may decrease as pulmonary HTN progresses (protective arteriolar vasoconstriction reduces capillary bed pressure)."
+        }
+      ],
+
+      "diagnosis_and_differentials": {
+        "provisional": "Severe rheumatic mitral stenosis with atrial fibrillation, pulmonary arterial hypertension, NYHA Class III, complicated by hemoptysis, in pregnancy",
+        "supporting_evidence": [
+          "Low-pitched MDM with PSA at apex in left lateral with bell",
+          "Loud S1 + opening snap (mobile, non-calcified valve)",
+          "Tapping apex beat, NOT displaced (LV not dilated)",
+          "Left parasternal heave + palpable P2 + loud P2 (pulmonary HTN)",
+          "Irregularly irregular pulse (AF)",
+          "History: childhood sore throats + diagnosed RHD age 14 + non-compliance",
+          "Malar flush (chronicity marker)",
+          "Hemoptysis (severity marker)"
+        ],
+        "differentials": [
+          {
+            "condition": "Left atrial myxoma",
+            "points_for": "Can produce MDM (tumor obstructs mitral valve), constitutional symptoms, emboli",
+            "why_not": "No tumor plop (low-pitched sound from tumor hitting valve), no positional variation of murmur (myxoma murmur changes with body position), no constitutional symptoms (fever, weight loss, elevated ESR). OS present (myxoma doesn't produce OS). History of RHD clinches the diagnosis."
+          },
+          {
+            "condition": "Austin Flint murmur (severe AR)",
+            "points_for": "Produces a mid-diastolic rumble at apex mimicking MS",
+            "why_not": "No peripheral AR signs (no collapsing pulse, no wide pulse pressure, no de Musset/Quincke). No EDM at left sternal border. Opening snap PRESENT (Austin Flint does not produce OS — this is the KEY differentiator). Apex not displaced (in AR, apex would be displaced and hyperdynamic)."
+          },
+          {
+            "condition": "Lutembacher syndrome (MS + ASD)",
+            "points_for": "Has MS component, may present similarly",
+            "why_not": "Would expect fixed splitting of S2 (from ASD causing equalized atrial pressures throughout respiratory cycle). No fixed split S2 described. ASD also produces a pulmonary flow murmur (ESM at pulmonary area from increased right-sided flow)."
+          },
+          {
+            "condition": "Cor triatriatum",
+            "points_for": "Membrane in LA mimics MS hemodynamically",
+            "why_not": "Extremely rare. Typically presents in infancy/childhood with severe pulmonary HTN. No opening snap (no valve involvement). This patient has classical RHD history."
+          }
+        ]
+      },
+
+      "investigations": [
+        {"test": "ECG", "expected": "Atrial fibrillation (absent P waves, irregularly irregular QRS). If in sinus rhythm: P-mitrale (broad bifid P wave >120ms in lead II — LA enlargement). Right axis deviation, RV hypertrophy pattern (tall R in V1, deep S in V5-6). NO LVH (unlike MR, AR, AS).", "why": "Confirms AF, assesses RV strain. Absence of LVH supports MS over MR/AR.", "priority": "immediate"},
+        {"test": "Chest X-ray", "expected": "Straight left heart border (LA appendage enlargement). Double density sign (enlarged LA behind RV). Splayed carina (LA pushes bronchi apart). Kerley B lines (interstitial edema from pulmonary venous HTN). Upper lobe pulmonary venous distension (cephalization). Mitral valve calcification. Normal-sized LV.", "why": "LA enlargement pattern + pulmonary congestion WITHOUT LV enlargement is classic MS.", "priority": "immediate"},
+        {"test": "Echocardiography", "expected": "Mitral valve: thickened leaflets, restricted opening, commissural fusion, hockey-stick appearance of anterior mitral leaflet. MVA by planimetry <1.0 cm² (severe), 1.0-1.5 cm² (moderate). Mean gradient >10 mmHg (severe). LA dilated (>40mm). PA systolic pressure elevated. Wilkins score ≤8 favors PBMV. Check for LA clot (TEE if needed), coexisting MR, other valve involvement.", "why": "Confirms diagnosis, grades severity, determines suitability for PBMV vs surgery.", "priority": "immediate"},
+        {"test": "CBC", "expected": "May show polycythemia (chronic hypoxia compensation)", "why": "Baseline before any intervention.", "priority": "routine"},
+        {"test": "Coagulation profile", "expected": "Baseline INR (will need anticoagulation for AF)", "why": "AF in MS mandates anticoagulation (high thromboembolic risk).", "priority": "immediate"},
+        {"test": "Thyroid function", "expected": "Rule out thyrotoxicosis as cause of AF", "why": "New-onset AF always warrants thyroid check, even if MS is obvious cause.", "priority": "routine"}
+      ],
+
+      "management": {
+        "medical": [
+          {"intervention": "Rate control for AF", "rationale": "Slow ventricular rate to prolong diastolic filling time across stenotic valve", "specifics": "Beta-blockers (metoprolol) preferred. Digoxin if beta-blockers contraindicated. Target HR 60-80/min. Avoid calcium channel blockers (diltiazem/verapamil) in pregnancy."},
+          {"intervention": "Anticoagulation", "rationale": "AF + MS = very high thromboembolic risk (stroke, systemic embolism). LA clot risk is highest among all valvular AF.", "specifics": "Pregnancy considerations: LMWH in 1st trimester (warfarin teratogenic weeks 6-12), warfarin in 2nd trimester (safer, better efficacy), switch to LMWH/UFH at 36 weeks before delivery. INR target 2.0-3.0."},
+          {"intervention": "Diuretics (conservative)", "rationale": "Reduce pulmonary congestion and symptoms", "specifics": "Furosemide at lowest effective dose. Avoid aggressive diuresis in pregnancy (reduced placental perfusion)."},
+          {"intervention": "Secondary prophylaxis", "rationale": "Prevent recurrent rheumatic fever and further valve damage", "specifics": "Benzathine penicillin G 1.2 MU IM every 3-4 weeks. Continue until age 40 (or lifelong if severe valve disease). This patient's non-compliance caused disease progression."},
+          {"intervention": "IE prophylaxis", "rationale": "Rheumatic valve disease is at risk for infective endocarditis", "specifics": "Amoxicillin 2g PO 30-60 min before high-risk dental procedures. Not routine for all procedures."}
+        ],
+        "interventional": "PBMV (Percutaneous Balloon Mitral Valvotomy): Ideal for this patient IF Wilkins score ≤8, no significant MR (≤Grade 2), no LA clot on TEE. Can be performed in 2nd trimester with abdominal shielding. Success rate 80-90%, mortality <2%. Splits fused commissures, increasing valve area from ~1.0 to ~1.8-2.0 cm².",
+        "surgical": "Open mitral commissurotomy (if PBMV fails or anatomy unfavorable). Mitral valve replacement (mechanical — requires lifelong warfarin; bioprosthetic — avoids warfarin but degenerates in 10-15 years, may need redo in young patient). In pregnancy: surgery carries 5-10% fetal mortality, reserved for refractory cases.",
+        "this_patient": "Stabilize medically through pregnancy (rate control, anticoagulation, conservative diuresis). Plan PBMV in 2nd trimester if Wilkins score favorable and no LA clot. If PBMV not feasible, continue medical management and plan intervention postpartum. Ensure secondary prophylaxis compliance lifelong.",
+        "follow_up": "Serial echo every 3-6 months. Obstetric-cardiology joint follow-up. Plan elective delivery at 37-38 weeks with hemodynamic monitoring. Avoid Valsalva (assisted 2nd stage). Epidural preferred over general anesthesia."
+      },
+
+      "complications": [
+        {"complication": "Atrial fibrillation", "mechanism": "LA dilatation → atrial fibrosis → electrical remodeling → re-entrant circuits", "presentation": "Palpitations, irregular pulse, acute worsening of dyspnea", "management": "Rate control + anticoagulation. Cardioversion rarely successful long-term if LA >50mm."},
+        {"complication": "Thromboembolism (stroke)", "mechanism": "AF + LA stasis + endothelial damage → LA/LAA thrombus → systemic embolization", "presentation": "Acute hemiplegia, limb ischemia, mesenteric ischemia, renal infarction", "management": "Lifelong anticoagulation. TEE to detect LA clot before any intervention."},
+        {"complication": "Pulmonary arterial hypertension", "mechanism": "Passive (from elevated LA pressure) + reactive (arteriolar vasoconstriction) + fixed (vascular remodeling)", "presentation": "RV failure signs: elevated JVP, hepatomegaly, edema, TR murmur", "management": "Treat the MS (relieve obstruction). Pulmonary HTN is reversible if MS is corrected early; becomes fixed if long-standing."},
+        {"complication": "Hemoptysis", "mechanism": "Bronchial vein rupture from pulmonary venous HTN (most common), pulmonary edema, pulmonary infarction", "presentation": "Frank blood (bronchial vein rupture) vs pink frothy sputum (pulmonary edema) vs blood-streaked sputum (chronic bronchitis)", "management": "Upright positioning, oxygen, control HR (slow rate), urgent diuresis, consider emergency PBMV if recurrent/massive."},
+        {"complication": "Infective endocarditis", "mechanism": "Damaged rheumatic valve → platelet-fibrin deposition → bacteremia seeding → vegetation formation", "presentation": "Fever, new/changing murmur, embolic phenomena (splinter hemorrhages, Osler nodes, Janeway lesions)", "management": "Prolonged IV antibiotics (4-6 weeks). TEE for vegetation. Surgery if large vegetation, abscess, or recurrent emboli."},
+        {"complication": "Ortner syndrome (cardiovocal)", "mechanism": "Massively enlarged LA compresses left recurrent laryngeal nerve against aortic arch or left main bronchus", "presentation": "Hoarseness of voice", "management": "Treat underlying MS. Voice may recover after valve intervention."}
+      ],
+
+      "vivas": [
+        {
+          "question": "Why is S1 loud in mitral stenosis?",
+          "answer": "In MS, high LA pressure keeps the mitral valve leaflets maximally open at end-diastole. When LV contracts, the large pressure gradient slams the widely-separated leaflets shut with force, producing a loud S1. This is the palpable equivalent of the 'tapping apex beat.' S1 becomes soft when the valve calcifies and becomes rigid — it can no longer snap shut.",
+          "follow_ups": [
+            {"question": "When does S1 become soft in MS?", "answer": "When the valve calcifies and becomes rigid. The leaflets can no longer snap shut forcefully. Soft S1 in MS indicates advanced disease with calcification. This also means the opening snap will disappear (OS also requires mobile leaflets). A calcified valve is NOT suitable for PBMV."},
+            {"question": "What is the clinical significance of losing S1 loudness?", "answer": "It indicates progression from a mobile, potentially balloon-treatable valve to a calcified, rigid valve requiring surgical replacement. The Wilkins score component for leaflet mobility directly assesses this."}
+          ]
+        },
+        {
+          "question": "What is the A2-OS interval and what does it signify?",
+          "answer": "The A2-OS interval is the time between aortic valve closure (A2) and the opening snap (OS). It is inversely proportional to the severity of MS. In severe MS, LA pressure is very high, so the mitral valve opens earlier after aortic closure (shorter interval, <80ms). In mild MS, LA pressure is lower, valve opens later (longer interval, >110ms).",
+          "follow_ups": [
+            {"question": "How do you differentiate OS from a split S2?", "answer": "OS is best heard at the APEX (mitral area), while split S2 is heard at the PULMONARY area (left 2nd ICS). OS does NOT vary with respiration, while physiological S2 splitting widens on inspiration. OS has a distinctive high-pitched quality (use diaphragm), described as a brief click."}
+          ]
+        },
+        {
+          "question": "Will you hear presystolic accentuation in a patient with MS and AF?",
+          "answer": "No. Presystolic accentuation (PSA) is caused by atrial contraction producing a final surge of blood across the stenotic valve just before S1. In AF, there is no coordinated atrial contraction, so PSA disappears. You will hear only the mid-diastolic murmur without the crescendo ending. This is a classic exam trap.",
+          "follow_ups": [
+            {"question": "Can PSA ever be heard in AF?", "answer": "There is a rare exception — some authorities describe a 'pseudo-PSA' in AF caused by acceleration of blood flow as the narrowing orifice creates increasing turbulence toward the end of long diastolic pauses. But for exam purposes, the standard answer is: PSA is absent in AF."}
+          ]
+        },
+        {
+          "question": "What are the mechanisms of hemoptysis in mitral stenosis?",
+          "answer": "Five mechanisms: (1) Bronchial vein rupture — most common, from pulmonary venous HTN causing bronchial vein engorgement and rupture. (2) Pulmonary apoplexy — sudden massive hemorrhage from acute LA pressure surge. (3) Pink frothy sputum from acute pulmonary edema. (4) Blood-streaked sputum from chronic bronchitis due to recurrent congestion. (5) Pulmonary infarction from in-situ PA thrombosis or LA thrombus embolism.",
+          "follow_ups": [
+            {"question": "Why does hemoptysis sometimes decrease in advanced MS?", "answer": "Paradoxically, as pulmonary arterial HTN becomes severe and fixed, the reactive arteriolar vasoconstriction acts as a 'second stenosis' protecting the pulmonary capillary bed from the full force of LA pressure. This reduces the pressure transmitted to bronchial veins, decreasing hemoptysis. But it comes at the cost of worsening RV failure."}
+          ]
+        },
+        {
+          "question": "Why is MS the most dangerous valvular lesion in pregnancy?",
+          "answer": "Pregnancy causes: (1) 30-50% increase in blood volume peaking at 28-32 weeks, (2) 15-20 bpm increase in heart rate (shortens diastole), (3) 30-50% increase in cardiac output. A normal mitral valve dilates to accommodate increased flow. A stenotic, fixed-orifice mitral valve CANNOT dilate — it cannot increase flow proportionate to volume demand. LA pressure rises acutely, causing decompensation (pulmonary edema, AF, hemoptysis). Maternal mortality in untreated severe MS in pregnancy: 5-15%.",
+          "follow_ups": [
+            {"question": "When during pregnancy is the risk highest?", "answer": "28-32 weeks (peak hemodynamic stress from maximum blood volume expansion), during labor (pain, anxiety, autotransfusion from uterine contractions adding 300-500ml per contraction), and immediately postpartum (sudden autotransfusion of uterine blood into maternal circulation)."},
+            {"question": "How do you manage MS in pregnancy?", "answer": "Rate control (beta-blockers), anticoagulation (trimester-specific: LMWH → warfarin → LMWH near delivery), conservative diuresis, bed rest for severe cases. PBMV can be performed in 2nd trimester with abdominal shielding if medical therapy fails. Avoid aggressive diuresis (reduces placental perfusion)."}
+          ]
+        },
+        {
+          "question": "What is the Wilkins score and why does it matter?",
+          "answer": "The Wilkins (or Massachusetts General Hospital) score assesses suitability for PBMV by grading 4 valve characteristics on echo, each scored 1-4: (1) Leaflet mobility, (2) Leaflet thickening, (3) Subvalvular thickening, (4) Calcification. Total score ranges 4-16. Score ≤8 = favorable anatomy for PBMV (80-90% success). Score >8 = less favorable, consider surgical options. Score >12 = PBMV contraindicated.",
+          "follow_ups": [
+            {"question": "What are the other contraindications to PBMV?", "answer": "LA clot (risk of embolization — must do TEE to exclude), significant MR (≥Grade 3 — balloon will worsen it), heavily calcified valve (Wilkins >12), and severe bicommissural calcification."}
+          ]
+        },
+        {
+          "question": "What is a Graham Steell murmur?",
+          "answer": "An early diastolic murmur (EDM) at the pulmonary area (left 2nd ICS) caused by functional pulmonary regurgitation from severe pulmonary HTN. The elevated PA pressure dilates the pulmonary valve ring, causing the leaflets to fail to coapt, allowing diastolic regurgitation.",
+          "follow_ups": [
+            {"question": "How do you differentiate Graham Steell from AR murmur?", "answer": "Both are EDMs. Graham Steell: heard best at pulmonary area, increases with inspiration (right-sided), associated with loud P2 and signs of pulmonary HTN, NO peripheral AR signs. AR murmur: heard best at left sternal border/aortic area, does NOT increase with inspiration, associated with wide pulse pressure, collapsing pulse, and multiple eponymous peripheral signs."}
+          ]
+        },
+        {
+          "question": "What is the natural history of untreated MS?",
+          "answer": "10-20 year asymptomatic period after acute rheumatic fever (progressive commissural fusion). Once symptoms begin, 10-year survival is ~50-60% without intervention. After onset of AF, survival drops to 3-5 years without treatment. After pulmonary HTN develops, survival is 2-3 years. Once right heart failure occurs, survival is <1 year without intervention.",
+          "follow_ups": [
+            {"question": "What is the valve area at which symptoms typically begin?", "answer": "Normal MVA is 4-6 cm². Symptoms begin at <2.5 cm² (mild exercise intolerance). Significant symptoms at <1.5 cm² (moderate MS). Severe symptoms at rest at <1.0 cm² (severe MS). Critical MS is <0.5 cm²."}
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "mitral_regurgitation",
+      "name": "Mitral Regurgitation",
+      "category": "case",
+      "system": "cardiac",
+      "tags": ["valvular", "rheumatic", "long-case", "heart-failure"],
+
+      "presentation_script": {
+        "opening": "Sir, I have examined this patient. This is a 55-year-old male who presented with progressive exertional dyspnea of 3 years duration, now NYHA Class III, orthopnea requiring 3 pillows, paroxysmal nocturnal dyspnea for 6 months, and fatigue limiting daily activities. He was diagnosed with rheumatic heart disease at age 20, had an episode of infective endocarditis 5 years ago treated with 6 weeks of IV antibiotics, and discontinued secondary prophylaxis at age 30.",
+        "gpe_findings": "On general examination, the patient is conscious but appears fatigued. Pulse is irregularly irregular, normal volume, rate 92 per minute. Blood pressure is 120/70 mmHg. JVP is elevated. There is bilateral pitting pedal edema. No pallor, cyanosis, or clubbing.",
+        "system_findings": "On cardiovascular examination — Inspection: midline sternotomy scar absent, no visible apex beat. Palpation: apex beat is displaced to the 6th intercostal space in the anterior axillary line, hyperdynamic and thrusting in character. No parasternal heave. No thrills. Auscultation: S1 is soft. There is a pansystolic murmur, high-pitched and blowing, best heard at the apex, radiating to the left axilla. S3 is present. P2 is normal. No opening snap, no diastolic murmur.",
+        "diagnosis_statement": "Chronic severe mitral regurgitation of rheumatic etiology with prior infective endocarditis, atrial fibrillation, LV dilatation, and NYHA Class III heart failure — likely approaching surgical threshold.",
+        "differentials": [
+          "Tricuspid regurgitation (murmur at left sternal border, increases with inspiration — Carvallo sign, prominent v waves in JVP — absent here, murmur at apex radiating to axilla favors MR)",
+          "VSD (pansystolic murmur but at left sternal border, not apex; no axillary radiation; thrill at LSB)",
+          "Aortic stenosis (ejection systolic, crescendo-decrescendo, radiates to carotids — not pansystolic at apex)",
+          "HOCM (ESM increases with Valsalva, bisferiens pulse — not present here)"
+        ],
+        "tips": [
+          "Emphasize displaced apex — this is the key distinction from MS (where apex is NOT displaced).",
+          "Say 'pansystolic' not 'systolic' — timing precision matters. Pansystolic = starts WITH S1, ends AT S2, no gaps.",
+          "Mention S3 — in MR context, S3 indicates volume overload from regurgitant blood returning to LV in diastole.",
+          "If examiner asks about EF: remember MR EF threshold is ≤60% (not ≤40%) because LV ejects into low-resistance LA, artificially inflating EF."
+        ]
+      },
+
+      "case_scenario": {
+        "demographics": "55-year-old male, manual laborer",
+        "chief_complaint": "Progressive exertional dyspnea (3 years, NYHA III), orthopnea (3-pillow), PND (6 months), fatigue",
+        "hpi": "Dyspnea began 3 years ago with heavy exertion, progressed to dyspnea with routine activity. Orthopnea: cannot lie flat, sleeps propped on 3 pillows. PND: wakes 2-3 times/week gasping for air, relieved by sitting upright for 15-20 minutes. Fatigue: unable to perform manual labor for past 6 months. Acute decompensation 2 weeks ago requiring IV furosemide at local hospital. No syncope, no chest pain, no hemoptysis.",
+        "past_history": "Diagnosed RHD age 20 (rheumatic fever in adolescence with polyarthritis). Secondary prophylaxis with benzathine penicillin — discontinued at age 30 (25 years without prophylaxis). IE episode 5 years ago: fever + new murmur, treated with 6 weeks IV antibiotics (organism not recalled). No prior cardiac surgery.",
+        "drug_history": "Current medications: digoxin 0.25mg OD, furosemide 40mg BD, enalapril 5mg BD, warfarin (for AF, INR target 2-3). Discontinued penicillin prophylaxis 25 years ago.",
+        "family_history": "No family history of cardiac disease."
+      },
+
+      "clinical_summary": [
+        {"area": "GPE", "finding": "General appearance", "detail": "Fatigued, mildly dyspneic at rest", "present": true, "significance": "Low cardiac output state, chronic heart failure"},
+        {"area": "Pulse", "finding": "Rate and rhythm", "detail": "92/min, irregularly irregular", "present": true, "significance": "Atrial fibrillation from LA dilatation"},
+        {"area": "Pulse", "finding": "Volume", "detail": "Normal volume", "present": true, "significance": "Unlike MS (low volume) — LV stroke volume maintained initially by increased preload"},
+        {"area": "JVP", "finding": "Elevated", "detail": "Raised JVP", "present": true, "significance": "Right heart failure from chronic pulmonary venous HTN"},
+        {"area": "Peripheral", "finding": "Pedal edema", "detail": "Bilateral pitting", "present": true, "significance": "Right heart failure, fluid overload"},
+        {"area": "Precordium", "finding": "Apex beat location", "detail": "6th ICS, anterior axillary line — DISPLACED", "present": true, "significance": "LV dilatation from chronic volume overload (regurgitant blood returns to LV each diastole)"},
+        {"area": "Precordium", "finding": "Apex character", "detail": "Hyperdynamic, thrusting", "present": true, "significance": "Volume overload causes vigorous LV contraction with large stroke volume"},
+        {"area": "Precordium", "finding": "Parasternal heave", "detail": "Absent", "present": false, "significance": "No significant RV hypertrophy yet (pulmonary HTN less severe than in MS)"},
+        {"area": "Auscultation", "finding": "S1", "detail": "Soft", "present": true, "significance": "Incompetent valve cannot close properly → diminished closure sound"},
+        {"area": "Auscultation", "finding": "Murmur", "detail": "Pansystolic, high-pitched, blowing, apex → left axilla", "present": true, "significance": "Blood regurgitates from LV to LA throughout systole"},
+        {"area": "Auscultation", "finding": "S3", "detail": "Present", "present": true, "significance": "Rapid filling of LV from large volume of blood stored in dilated LA → sudden distension of LV walls → S3"},
+        {"area": "Auscultation", "finding": "Opening snap", "detail": "Absent", "present": false, "significance": "No mitral stenosis component (pure MR)"},
+        {"area": "Lungs", "finding": "Bibasal crepitations", "detail": "Present", "present": true, "significance": "Pulmonary congestion from elevated LA pressure"}
+      ],
+
+      "examination_technique": {
+        "sequence": "Inspection → Palpation (apex location is KEY) → Auscultation (diaphragm at apex, radiate to axilla)",
+        "steps": [
+          {
+            "phase": "Palpation — The Critical Step",
+            "actions": [
+              "Locate apex beat precisely. In MR, apex is DISPLACED laterally and inferiorly (6th ICS, anterior or mid-axillary line). This immediately distinguishes MR from MS.",
+              "Character: hyperdynamic/thrusting — large stroke volume (forward SV + regurgitant volume) causes vigorous contraction.",
+              "Check for parasternal heave (present if pulmonary HTN has developed, but less common than in MS).",
+              "Systolic thrill at apex: present if MR is severe (grade ≥4/6)."
+            ],
+            "findings_in_this_case": ["Apex displaced to 6th ICS AAL", "Hyperdynamic thrusting character", "No parasternal heave", "No thrill"]
+          },
+          {
+            "phase": "Auscultation",
+            "actions": [
+              "S1: typically soft (incompetent valve cannot close properly). If S1 is loud, consider coexisting MS.",
+              "Murmur: pansystolic (holosystolic) — starts WITH S1, extends THROUGH to S2, no gap. High-pitched, blowing quality. Best at apex. Radiates to LEFT AXILLA (follows the direction of the regurgitant jet posterolaterally). Use DIAPHRAGM (high-pitched).",
+              "S3: listen with bell at apex. In MR, S3 occurs because the large volume of blood stored in the dilated LA during systole rushes into the LV during rapid filling phase, causing sudden LV wall distension.",
+              "Check for MDM: a brief mid-diastolic flow murmur may occur in severe MR (large regurgitant volume flooding back creates high-flow across normal-sized mitral orifice). This is NOT MS — no opening snap, and it is a functional murmur.",
+              "Check aortic area for AR murmur (multi-valve RHD is common)."
+            ],
+            "findings_in_this_case": ["Soft S1", "PSM at apex radiating to left axilla", "S3 present", "No MDM", "No AR murmur"]
+          }
+        ]
+      },
+
+      "findings_with_mechanisms": [
+        {
+          "finding": "Displaced, hyperdynamic apex beat",
+          "mechanism": "In MR, blood regurgitates from LV to LA during systole. This regurgitant volume returns to LV in diastole (added to normal pulmonary venous return), causing chronic LV volume overload. LV adapts via eccentric hypertrophy (sarcomeres added in series → chamber dilatation). Dilated LV pushes apex laterally and inferiorly. The large total stroke volume (forward + regurgitant) causes hyperdynamic contraction.",
+          "mechanism_chain": "[MR] → [Regurgitant volume returns to LV each diastole] → [LV volume overload] → [Eccentric hypertrophy + dilatation] → [Displaced, hyperdynamic apex]"
+        },
+        {
+          "finding": "Pansystolic murmur at apex radiating to axilla",
+          "mechanism": "Throughout systole, LV pressure exceeds LA pressure (from the moment the mitral valve should close until the end of ejection). Blood regurgitates continuously through the incompetent valve, creating a murmur that starts with S1 and extends to S2 without gaps. The jet is directed posterolaterally (toward the axilla) because the posterior leaflet is typically the one restricted by rheumatic disease.",
+          "mechanism_chain": "[LV pressure > LA pressure throughout systole] → [Continuous regurgitation] → [Pansystolic murmur]. [Posterior leaflet restriction] → [Jet directed posterolaterally] → [Axillary radiation]",
+          "caveat": "In acute MR (chordal rupture, papillary muscle rupture), the murmur may be decrescendo or even absent (LA pressure rises rapidly, equalizing with LV → reduced gradient → shorter/softer murmur). ACUTE MR IS A SURGICAL EMERGENCY."
+        },
+        {
+          "finding": "Soft S1",
+          "mechanism": "The mitral valve leaflets fail to coapt (close properly) due to rheumatic damage. Incomplete closure → reduced force of closure → diminished S1 amplitude.",
+          "mechanism_chain": "[Incompetent valve leaflets] → [Incomplete closure] → [Reduced closure force] → [Soft S1]",
+          "caveat": "If S1 is loud in a patient with MR murmur, suspect coexisting MS (rheumatic disease often affects both stenosis and regurgitation of the same valve — mixed mitral valve disease)."
+        },
+        {
+          "finding": "S3 gallop",
+          "mechanism": "During diastolic rapid filling phase, the large volume of blood stored in the dilated LA during systole rushes into the LV. This sudden, rapid filling causes abrupt distension of the already volume-loaded LV walls, generating the low-pitched S3 sound. S3 in MR specifically indicates volume overload, not necessarily failure.",
+          "mechanism_chain": "[Large LA volume during systole] → [Rapid emptying into LV in early diastole] → [Sudden LV wall distension] → [S3]",
+          "caveat": "S3 is pathological in adults >40 years. In young athletes, S3 can be physiological. In this clinical context, S3 confirms hemodynamically significant MR with volume overload."
+        },
+        {
+          "finding": "The 'deceptive EF' phenomenon",
+          "mechanism": "In MR, the LV ejects blood into TWO low-pressure chambers: the aorta (forward) AND the LA (backward). Ejecting into the low-resistance LA is 'easy work,' so EF remains artificially elevated even as true contractile function declines. An EF of 60% in MR actually represents early LV dysfunction. The surgical threshold is EF ≤60% (not ≤40% as in other conditions).",
+          "mechanism_chain": "[MR] → [LV ejects into low-resistance LA] → [EF artificially elevated] → [True dysfunction masked until EF drops to 60%]",
+          "caveat": "EXAM TRAP: Examiner asks 'EF is 58%, is the LV function normal?' Answer: NO — in MR, EF ≤60% indicates LV dysfunction and is an indication for surgery."
+        }
+      ],
+
+      "diagnosis_and_differentials": {
+        "provisional": "Chronic severe mitral regurgitation (rheumatic + post-IE damage) with atrial fibrillation, LV dilatation, and decompensated heart failure (NYHA III)",
+        "supporting_evidence": [
+          "Pansystolic murmur at apex radiating to left axilla",
+          "Soft S1 (incompetent valve closure)",
+          "S3 gallop (volume overload)",
+          "Displaced, hyperdynamic apex (LV dilatation from eccentric hypertrophy)",
+          "History of RHD + prior IE (dual-etiology valve damage)",
+          "AF (LA dilatation from chronic volume overload)",
+          "Signs of decompensated HF (orthopnea, PND, pedal edema, elevated JVP)"
+        ],
+        "differentials": [
+          {
+            "condition": "Tricuspid regurgitation",
+            "points_for": "Also a pansystolic murmur, can occur in RHD",
+            "why_not": "TR murmur is loudest at LEFT STERNAL BORDER (not apex), INCREASES with inspiration (Carvallo sign — opposite of MR). TR has prominent cv waves in JVP, pulsatile hepatomegaly. MR radiates to axilla, TR does not."
+          },
+          {
+            "condition": "VSD (ventricular septal defect)",
+            "points_for": "Also a pansystolic murmur",
+            "why_not": "VSD murmur is loudest at LEFT STERNAL BORDER (3rd-4th ICS), not at apex. Often has a palpable thrill at LSB. Does not radiate to axilla. No history of congenital heart disease."
+          },
+          {
+            "condition": "Dilated cardiomyopathy with functional MR",
+            "points_for": "Dilated LV + MR murmur + heart failure",
+            "why_not": "DCM causes global LV dysfunction → functional MR is secondary. In primary MR (this case), the valve is structurally abnormal (RHD + IE damage). Echo differentiates: primary MR shows leaflet pathology; DCM shows globally hypokinetic LV with dilated mitral annulus."
+          },
+          {
+            "condition": "Mixed mitral valve disease (MS + MR)",
+            "points_for": "RHD commonly causes both stenosis and regurgitation",
+            "why_not": "No MDM, no opening snap, S1 is soft (not loud). If both were present, would need to determine dominant lesion for surgical planning. Dominant MR: displaced apex, S3, soft S1. Dominant MS: tapping apex, loud S1, OS."
+          }
+        ]
+      },
+
+      "investigations": [
+        {"test": "ECG", "expected": "AF. LVH (tall R in V5-V6, deep S in V1-V2, strain pattern — ST depression, T inversion in lateral leads). Unlike MS, LVH is present because LV is dilated and hypertrophied.", "why": "Confirms LV involvement (vs MS where only RVH is seen).", "priority": "immediate"},
+        {"test": "Chest X-ray", "expected": "Cardiomegaly (cardiothoracic ratio >50%). LA enlargement (double density, splayed carina). LV enlargement (apex extends below diaphragm, lateral displacement). Pulmonary congestion (upper lobe diversion, interstitial edema).", "why": "Both LV and LA enlarged (vs MS where only LA enlarged).", "priority": "immediate"},
+        {"test": "Echocardiography", "expected": "Structural: leaflet thickening, restricted motion (rheumatic), healed vegetation (post-IE), flail leaflet if chordal damage. Severity: vena contracta >7mm (severe), regurgitant volume >60ml, regurgitant fraction >50%, EROA >0.40 cm². LV dimensions: LVEDD >65mm, LVESD >40mm = surgical threshold. EF ≤60% = LV dysfunction. Color Doppler: large systolic jet into LA.", "why": "Grades severity, assesses LV function, determines surgical timing.", "priority": "immediate"},
+        {"test": "TEE (transesophageal echo)", "expected": "Better visualization of mitral valve anatomy, vegetations, leaflet pathology. Essential for surgical planning (repair vs replacement).", "why": "Determines if repair is feasible (preferred) or replacement needed.", "priority": "if_indicated"},
+        {"test": "BNP/NT-proBNP", "expected": "Elevated (correlates with degree of LV volume overload and heart failure severity)", "why": "Objective marker of HF severity, useful for monitoring treatment response.", "priority": "routine"}
+      ],
+
+      "management": {
+        "medical": [
+          {"intervention": "ACE inhibitors (enalapril)", "rationale": "Reduces afterload → increases forward stroke volume, reduces regurgitant fraction", "specifics": "Enalapril 5-20mg BD. Titrate to maximum tolerated dose. Monitor creatinine and potassium."},
+          {"intervention": "Beta-blockers (carvedilol/metoprolol)", "rationale": "Heart failure standard therapy: reduces HR, allows more diastolic filling time, cardioprotective remodeling", "specifics": "Start low, titrate slow. Carvedilol 3.125mg BD → 25mg BD."},
+          {"intervention": "Diuretics (furosemide)", "rationale": "Reduce pulmonary and systemic congestion", "specifics": "Furosemide 40-80mg BD. Add spironolactone 25mg for HFrEF."},
+          {"intervention": "Anticoagulation (warfarin)", "rationale": "AF with valvular heart disease mandates warfarin (NOACs not approved for valvular AF)", "specifics": "INR target 2.0-3.0. Warfarin specifically (NOT dabigatran/rivaroxaban in mechanical valves or rheumatic AF)."},
+          {"intervention": "Digoxin", "rationale": "Rate control for AF + mild positive inotrope", "specifics": "0.125-0.25mg OD. Monitor levels (therapeutic 0.5-0.9 ng/ml). Toxicity risk with renal impairment, hypokalemia."}
+        ],
+        "interventional": "Not applicable for MR (no balloon procedure available for regurgitation, unlike PBMV for MS). Percutaneous MitraClip increasingly used for high-surgical-risk patients (clips leaflets together to reduce regurgitation).",
+        "surgical": "Mitral valve REPAIR preferred over replacement when anatomy permits (preserves native valve, avoids anticoagulation, better long-term outcomes). If repair not feasible: MVR with bioprosthetic (avoids warfarin, degenerates in 10-15 years) or mechanical (lifelong warfarin but lasts longer). Surgical indications: EF ≤60%, LVESD ≥40mm, symptoms despite optimal medical therapy, new-onset AF, pulmonary HTN.",
+        "this_patient": "Currently decompensated — optimize medical therapy first (uptitrate ACE inhibitor, optimize diuresis, rate control). Once stabilized, assess for surgery. With NYHA III symptoms, AF, and likely LV dysfunction (prior IE damage + 25 years of non-compliance), he likely meets surgical criteria. TEE to determine repair vs replacement.",
+        "follow_up": "Serial echo every 6 months to track LV dimensions and EF. If EF approaches 60% or LVESD approaches 40mm, intervene even if asymptomatic — waiting for symptoms in MR means LV damage may be irreversible."
+      },
+
+      "complications": [
+        {"complication": "LV dysfunction (the 'silent killer')", "mechanism": "Chronic volume overload → eccentric hypertrophy → eventually myocyte death and fibrosis → irreversible LV dysfunction. Masked by artificially preserved EF (ejecting into low-resistance LA).", "presentation": "Gradual fatigue, exercise intolerance. EF may still be 55-60% (appears 'normal' but is actually depressed for MR).", "management": "Early surgical intervention before EF drops below 60%. Once EF <30%, surgery carries high risk and LV recovery is unlikely."},
+        {"complication": "Atrial fibrillation", "mechanism": "Chronic LA dilatation from volume overload → atrial remodeling → AF", "presentation": "Palpitations, worsening dyspnea, irregular pulse", "management": "Rate control + anticoagulation. New-onset AF in MR is an indication for surgery even if otherwise asymptomatic."},
+        {"complication": "Pulmonary hypertension", "mechanism": "Chronic elevated LA pressure → pulmonary venous HTN → reactive arteriolar constriction → fixed vascular changes", "presentation": "Progressive dyspnea, RV failure signs", "management": "Treat MR (valve surgery). Reversible if early; fixed if long-standing."},
+        {"complication": "Recurrent IE", "mechanism": "Damaged rheumatic valve with prior IE → abnormal endothelial surface → platelet-fibrin deposition → bacteremia seeding", "presentation": "Fever, new/changing murmur, embolic phenomena", "management": "IE prophylaxis before high-risk procedures. High clinical suspicion for any febrile illness. This patient had prior IE — recurrence risk is elevated."}
+      ],
+
+      "vivas": [
+        {
+          "question": "Why is the EF threshold for surgery ≤60% in MR (not ≤40% like other conditions)?",
+          "answer": "In MR, the LV ejects into two outlets: the aorta (forward, high resistance) and the LA (backward, low resistance). Ejecting into the low-resistance LA is easy work, so EF remains artificially elevated even as contractile function declines. A 'normal' EF of 65% in MR may actually represent early dysfunction. By the time EF drops to 40%, the LV is severely and often irreversibly damaged. Therefore, the surgical threshold is ≤60% — at this point, true contractility is already significantly impaired.",
+          "follow_ups": [
+            {"question": "What other parameter is used for surgical timing?", "answer": "LVESD (LV end-systolic dimension) ≥40mm. End-systolic dimension reflects contractile function better than end-diastolic (which is volume-dependent and always dilated in MR). LVESD ≥40mm indicates the LV cannot contract down to a normal size — objective evidence of myocardial dysfunction."}
+          ]
+        },
+        {
+          "question": "How do you distinguish primary from secondary (functional) MR?",
+          "answer": "Primary MR: structural valve abnormality (rheumatic thickening, prolapse, flail leaflet, IE vegetation). The valve itself is the problem. Secondary/Functional MR: normal valve leaflets but dilated LV → dilated mitral annulus → leaflets cannot coapt. The ventricle is the problem. Distinguish on echo: primary shows leaflet pathology, secondary shows globally dilated/hypokinetic LV with tethered but structurally normal leaflets.",
+          "follow_ups": [
+            {"question": "Why does this distinction matter?", "answer": "Primary MR: fix the valve (repair/replace) = curative. Secondary MR: fixing the valve alone doesn't help because the underlying LV dysfunction persists. Treatment of secondary MR is optimization of heart failure therapy (ACE/ARB, beta-blocker, CRT if indicated). Valve surgery in secondary MR has worse outcomes."}
+          ]
+        },
+        {
+          "question": "What is the Carpentier classification?",
+          "answer": "Carpentier classifies MR by leaflet motion: Type I: normal leaflet motion (annular dilatation, perforation from IE). Type II: excessive leaflet motion (prolapse, flail from chordal rupture). Type IIIa: restricted motion in diastole (rheumatic — leaflet thickened, commissures fused). Type IIIb: restricted motion in systole (functional — papillary muscle displacement from LV dilatation tethers leaflets). This patient likely has Type IIIa (rheumatic restriction) with possible Type I component (post-IE perforation).",
+          "follow_ups": [
+            {"question": "Which types are most amenable to repair?", "answer": "Type II (prolapse/flail) has the highest repair success rate (>95%). Type I with annular dilatation can be repaired with annuloplasty ring. Type IIIa (rheumatic) is harder to repair — often requires replacement. Type IIIb is not addressed by valve surgery alone."}
+          ]
+        },
+        {
+          "question": "What is the difference between acute and chronic MR?",
+          "answer": "Chronic MR: gradual onset → LA dilates to accommodate regurgitant volume (high compliance) → LA pressure only mildly elevated → pulmonary edema develops slowly → LV dilates (eccentric hypertrophy) → EF preserved initially. Patient tolerates for years. Acute MR (chordal rupture, papillary infarction, IE): sudden onset → LA cannot dilate acutely (low compliance) → LA pressure rises dramatically → flash pulmonary edema → cardiogenic shock. Murmur may be short/soft (rapid LA-LV pressure equalization). SURGICAL EMERGENCY.",
+          "follow_ups": [
+            {"question": "Why is the murmur sometimes soft in acute MR?", "answer": "In acute MR, the small non-compliant LA cannot absorb the regurgitant volume. LA pressure rises rapidly, approaching LV pressure by late systole. The diminished pressure gradient means less turbulent flow → shorter, softer murmur. This is paradoxically dangerous — severe acute MR with a soft murmur can be missed clinically."}
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "aortic_stenosis",
+      "name": "Aortic Stenosis",
+      "category": "case",
+      "system": "cardiac",
+      "tags": ["valvular", "degenerative", "long-case", "surgical-emergency"],
+
+      "presentation_script": {
+        "opening": "Sir, I have examined this patient. This is a 68-year-old male who presented with exertional syncope — 2 episodes over 3 months — progressive exertional dyspnea of 2 years duration (NYHA II-III), and new-onset exertional angina for 6 months with no known coronary artery disease. A murmur was detected 15 years ago but was never investigated. He has no history of rheumatic fever.",
+        "gpe_findings": "On general examination, the patient is conscious and oriented. Pulse is regular, low volume, rate 72 per minute, with a slow-rising character best appreciated at the carotid. Blood pressure is 110/90 mmHg with a narrow pulse pressure of 20 mmHg. JVP is normal. No pallor, cyanosis, clubbing, or edema.",
+        "system_findings": "On cardiovascular examination — Palpation: apex beat is in the 5th intercostal space, midclavicular line, NOT displaced, with a sustained heaving character. There is a systolic thrill at the aortic area. No parasternal heave. Auscultation: S1 is normal. There is an ejection click followed by a harsh, crescendo-decrescendo ejection systolic murmur, loudest at the aortic area (right 2nd intercostal space), radiating to both carotids. A2 is soft. S4 is present. No S3, no diastolic murmur.",
+        "diagnosis_statement": "Severe symptomatic aortic stenosis (likely degenerative calcific or bicuspid aortic valve) with the classic symptomatic triad of angina, syncope, and dyspnea — indication for urgent aortic valve replacement.",
+        "differentials": [
+          "HOCM (murmur INCREASES with Valsalva — AS decreases; bisferiens pulse in HOCM vs slow-rising in AS; young patient with FH of sudden death)",
+          "Supravalvular aortic stenosis (Williams syndrome — elfin facies, BP higher in right arm, rare)",
+          "Subvalvular aortic stenosis (no ejection click — click indicates valvular level; membranous or fibromuscular ring below valve)",
+          "Aortic sclerosis (ESM in elderly but NO hemodynamic obstruction — normal pulse character, no thrill, no symptoms)"
+        ],
+        "tips": [
+          "The symptomatic TRIAD is critical: angina (5-year survival), syncope (3-year survival), dyspnea (2-year survival). If all three present, this is an URGENT surgical case.",
+          "Always check pulse character at the CAROTID (radial is unreliable for character). Say 'slow-rising' or 'pulsus parvus et tardus.'",
+          "Narrow pulse pressure (SBP − DBP <30) is a key sign — demonstrates fixed obstruction limiting stroke volume.",
+          "S4 is expected (stiff, hypertrophied LV from pressure overload). S3 would indicate decompensation."
+        ]
+      },
+
+      "case_scenario": {
+        "demographics": "68-year-old male, retired schoolteacher",
+        "chief_complaint": "Exertional syncope (2 episodes in 3 months), progressive exertional dyspnea (2 years, NYHA II-III), exertional angina (6 months, no known CAD)",
+        "hpi": "Syncope: first episode while climbing stairs — felt lightheaded, vision greyed out, lost consciousness for ~30 seconds, no preceding palpitations, no post-ictal confusion (distinguishes from epilepsy). Second episode while walking uphill. Both exertional. Dyspnea: gradual onset 2 years ago, initially with vigorous activity, now with routine walking and one flight of stairs. Angina: central chest tightness on exertion for 6 months, relieved by rest within 5 minutes. No rest angina, no nocturnal angina.",
+        "past_history": "Murmur detected incidentally 15 years ago at routine health check — told it was 'innocent,' no follow-up. No history of rheumatic fever. No hypertension, no diabetes. Non-smoker.",
+        "drug_history": "No cardiac medications. No aspirin. Paracetamol for occasional headaches.",
+        "family_history": "Father died of 'heart attack' at age 72. No known family history of sudden cardiac death or cardiomyopathy."
+      },
+
+      "clinical_summary": [
+        {"area": "Pulse", "finding": "Character", "detail": "Slow-rising (pulsus parvus et tardus) at carotid", "present": true, "significance": "Fixed outflow obstruction → slow ejection of blood through stenotic valve → gradual rise in arterial pressure waveform"},
+        {"area": "Pulse", "finding": "Volume", "detail": "Low volume", "present": true, "significance": "Reduced stroke volume from fixed obstruction"},
+        {"area": "BP", "finding": "Narrow pulse pressure", "detail": "110/90 mmHg (PP = 20)", "present": true, "significance": "Fixed obstruction limits systolic ejection → low SBP. Compensatory vasoconstriction maintains DBP."},
+        {"area": "Precordium", "finding": "Apex beat", "detail": "5th ICS MCL, NOT displaced, sustained heaving", "present": true, "significance": "Concentric LVH (pressure overload) — walls thicken but cavity doesn't dilate (until late decompensation)"},
+        {"area": "Precordium", "finding": "Systolic thrill", "detail": "Palpable at aortic area", "present": true, "significance": "Murmur grade ≥4/6 — hemodynamically significant obstruction"},
+        {"area": "Auscultation", "finding": "Ejection click", "detail": "Early systolic, high-pitched", "present": true, "significance": "Bicuspid valve (mobile, not yet calcified). Click disappears with calcification."},
+        {"area": "Auscultation", "finding": "Murmur", "detail": "Harsh, crescendo-decrescendo ESM, aortic area, radiates to carotids", "present": true, "significance": "Turbulent systolic flow through stenotic valve. Late-peaking ESM = more severe."},
+        {"area": "Auscultation", "finding": "A2", "detail": "Soft", "present": true, "significance": "Calcified, immobile aortic valve leaflets cannot produce a crisp closure sound"},
+        {"area": "Auscultation", "finding": "S4", "detail": "Present", "present": true, "significance": "Atrial contraction against stiff, hypertrophied LV. Indicates diastolic dysfunction from LVH."},
+        {"area": "Auscultation", "finding": "S2 splitting", "detail": "Single S2 or paradoxical splitting", "present": true, "significance": "Prolonged LV ejection time (fixed obstruction) → A2 delayed → A2 coincides with or follows P2 → single or paradoxically split S2"}
+      ],
+
+      "examination_technique": {
+        "sequence": "Pulse character (CAROTID) → Palpation (apex character + thrill) → Auscultation (ESM at aortic area → carotids)",
+        "steps": [
+          {
+            "phase": "Pulse — The Diagnostic Clue",
+            "actions": [
+              "MUST assess character at the CAROTID artery (not radial — radial dampens the waveform in elderly due to stiff arteries, making slow-rising difficult to detect).",
+              "Place index and middle fingers on carotid (one side at a time). Feel for: (1) Rate of rise (slow in AS), (2) Peak (delayed in AS), (3) Volume (low in AS).",
+              "The combination 'pulsus parvus et tardus' (small and slow) is pathognomonic for significant AS.",
+              "Check blood pressure: narrow pulse pressure (<30 mmHg) supports hemodynamically significant AS."
+            ],
+            "findings_in_this_case": ["Slow-rising pulse at carotid", "Low volume", "BP 110/90 (PP = 20)"]
+          },
+          {
+            "phase": "Palpation",
+            "actions": [
+              "Apex beat: locate precisely. In AS, apex is NOT displaced (LV hypertrophies concentrically — thick walls, normal cavity size). Character is SUSTAINED/HEAVING (pressure overload — sustained force against fixed obstruction).",
+              "Contrast with MR/AR where apex IS displaced (volume overload → dilatation).",
+              "Systolic thrill at aortic area (right 2nd ICS): place flat of hand. Palpable thrill = murmur grade ≥4/6 = significant AS.",
+              "Thrill may also be palpable in suprasternal notch and over carotids (transmitted vibration)."
+            ],
+            "findings_in_this_case": ["Sustained heaving apex at normal position", "Systolic thrill at aortic area"]
+          },
+          {
+            "phase": "Auscultation",
+            "actions": [
+              "Aortic area (RUSB): use diaphragm. Listen for: (1) Ejection click (early systolic, high-pitched — indicates bicuspid valve that is still mobile), (2) ESM (harsh, crescendo-decrescendo, peaks in mid-to-late systole).",
+              "Radiation: follow the murmur to the carotids bilaterally. AS murmur radiates to carotids because the jet is directed into the ascending aorta toward the neck vessels.",
+              "Severity clues from auscultation: Late-peaking ESM = more severe. Soft/absent A2 = calcified valve = more severe. Paradoxical splitting of S2 = prolonged LV ejection. S4 = diastolic dysfunction from LVH.",
+              "GALLAVARDIN PHENOMENON: AS murmur can have TWO components — harsh ESM at aortic area (standard) + musical/high-pitched component at apex (mimics MR). This is NOT two separate lesions. The high-frequency harmonics of the AS murmur are selectively transmitted to the apex."
+            ],
+            "findings_in_this_case": ["Ejection click present", "Harsh ESM at aortic area → carotids", "Soft A2", "S4 present"]
+          }
+        ]
+      },
+
+      "findings_with_mechanisms": [
+        {
+          "finding": "Slow-rising pulse (pulsus parvus et tardus)",
+          "mechanism": "The stenotic aortic valve acts as a fixed obstruction. Blood can only exit the LV through the narrowed orifice at a limited rate. This produces a slow rate of rise in the arterial pressure waveform (tardus) and reduced peak amplitude (parvus). The pulse takes longer to reach its peak and the peak is blunted.",
+          "mechanism_chain": "[Fixed aortic obstruction] → [Slow, limited ejection through narrow orifice] → [Slow-rising, low-amplitude pulse]",
+          "caveat": "In elderly patients with stiff, atherosclerotic arteries, the 'slow-rising' character may be masked — stiff arteries transmit the pulse wave faster, making it feel more normal. Always interpret pulse in clinical context. The carotid is more reliable than the radial for this reason."
+        },
+        {
+          "finding": "Narrow pulse pressure",
+          "mechanism": "Fixed obstruction limits the volume ejected per beat → systolic pressure cannot rise normally → SBP relatively low. Sympathetic activation and arterial vasoconstriction maintain diastolic pressure → DBP relatively preserved or elevated. Net result: narrow PP (SBP − DBP <30).",
+          "mechanism_chain": "[Fixed obstruction] → [Low SBP] + [Maintained DBP from vasoconstriction] → [Narrow pulse pressure]"
+        },
+        {
+          "finding": "Sustained heaving apex (not displaced)",
+          "mechanism": "Pressure overload from AS → LV responds with concentric hypertrophy (sarcomeres added in parallel → wall thickening without cavity dilatation). The thickened LV generates sustained, forceful contraction against high afterload. Because the cavity is not dilated, the apex remains in normal position. The 'heaving' character reflects the prolonged systolic contraction against obstruction.",
+          "mechanism_chain": "[AS → pressure overload] → [Concentric LVH] → [Thick walls, normal cavity] → [Sustained apex, not displaced]",
+          "caveat": "If apex IS displaced in AS → indicates decompensation (LV has failed and dilated). This is a late, ominous sign."
+        },
+        {
+          "finding": "Ejection click",
+          "mechanism": "In bicuspid aortic valve, the two fused leaflets are still mobile in early disease. At the onset of systole, LV pressure rises rapidly and forcefully opens the mobile but abnormal valve, producing a brief high-pitched sound (ejection click) just after S1. The click indicates VALVULAR level obstruction (vs subvalvular or supravalvular where no click occurs).",
+          "mechanism_chain": "[Bicuspid valve] → [Mobile but abnormal leaflets] → [Forceful opening at start of systole] → [Ejection click]",
+          "caveat": "Click DISAPPEARS with progressive calcification (immobile valve cannot snap open). Absence of click in severe AS suggests heavily calcified valve."
+        },
+        {
+          "finding": "Exertional syncope",
+          "mechanism": "During exercise, peripheral vasodilation occurs (working muscles need blood). Normally, cardiac output increases to compensate. In AS, the fixed obstruction prevents adequate CO increase. Peripheral vasodilation + fixed CO = drop in systemic BP → cerebral hypoperfusion → syncope. This is an EXERTIONAL phenomenon — not postural or at rest.",
+          "mechanism_chain": "[Exercise] → [Peripheral vasodilation] → [Fixed CO from AS] → [BP drop] → [Cerebral hypoperfusion] → [Syncope]",
+          "caveat": "Exertional syncope in AS is a CLASS I indication for valve replacement. Survival after onset of syncope without surgery: ~3 years."
+        },
+        {
+          "finding": "Exertional angina (without CAD)",
+          "mechanism": "LVH increases myocardial oxygen demand (more muscle mass, higher wall stress). Simultaneously, coronary perfusion is compromised: (1) subendocardial compression from high LV wall stress, (2) reduced diastolic coronary perfusion pressure (low diastolic BP), (3) shortened diastole at higher heart rates. Supply-demand mismatch → angina, even with normal coronary arteries.",
+          "mechanism_chain": "[LVH] → [↑O₂ demand + ↓O₂ supply (subendocardial compression + low DBP)] → [Supply-demand mismatch] → [Angina]"
+        }
+      ],
+
+      "diagnosis_and_differentials": {
+        "provisional": "Severe symptomatic aortic stenosis with the classic triad (angina, syncope, dyspnea) — likely degenerative calcific or bicuspid aortic valve — urgent indication for aortic valve replacement",
+        "supporting_evidence": [
+          "Slow-rising, low-volume pulse with narrow pulse pressure",
+          "Harsh ESM at aortic area radiating to carotids with systolic thrill",
+          "Ejection click (bicuspid valve)",
+          "Soft A2 (calcified valve)",
+          "Sustained heaving apex, NOT displaced (concentric LVH)",
+          "S4 (diastolic dysfunction from LVH)",
+          "Classic triad: angina + syncope + dyspnea",
+          "Murmur detected 15 years ago — long subclinical period consistent with AS natural history"
+        ],
+        "differentials": [
+          {
+            "condition": "HOCM (hypertrophic obstructive cardiomyopathy)",
+            "points_for": "ESM, LVH on ECG, syncope, angina",
+            "why_not": "HOCM murmur INCREASES with Valsalva and standing (reduced preload worsens obstruction); AS murmur DECREASES. HOCM pulse is bisferiens (spike-and-dome); AS pulse is slow-rising. HOCM typically presents in younger patients with FH of sudden death. No ejection click in HOCM (obstruction is subvalvular)."
+          },
+          {
+            "condition": "Aortic sclerosis",
+            "points_for": "ESM at aortic area in elderly patient",
+            "why_not": "Aortic sclerosis = valve thickening WITHOUT significant obstruction. Normal pulse character, normal pulse pressure, no thrill, no symptoms. Murmur is softer and does not radiate as prominently to carotids. A2 is preserved."
+          },
+          {
+            "condition": "Subvalvular aortic stenosis",
+            "points_for": "ESM, can mimic valvular AS",
+            "why_not": "No ejection click (obstruction below valve level). May have AR (jet hits valve and damages it). Echo differentiates: membrane or fibromuscular ridge below valve."
+          }
+        ]
+      },
+
+      "investigations": [
+        {"test": "ECG", "expected": "LVH with strain pattern (Sokolow-Lyon criteria, tall R in aVL >11mm, ST depression + T inversion in lateral leads). Left atrial abnormality. May show LBBB in advanced disease.", "why": "Confirms pressure overload. LBBB explains paradoxical S2 splitting.", "priority": "immediate"},
+        {"test": "Chest X-ray", "expected": "Normal heart size or mild cardiomegaly (LV hypertrophied but not dilated until late). Post-stenotic dilatation of ascending aorta. Calcification of aortic valve (may be visible). No pulmonary congestion (until decompensation).", "why": "Normal heart size with symptoms + post-stenotic dilatation is classic AS.", "priority": "immediate"},
+        {"test": "Echocardiography", "expected": "Valve anatomy: bicuspid vs tricuspid, calcification degree. Severity: peak velocity >4 m/s (severe), mean gradient >40 mmHg (severe), AVA <1.0 cm² (severe), <0.6 cm² (critical). LV: concentric hypertrophy, preserved EF initially. Doppler: high-velocity jet across valve.", "why": "Gold standard for diagnosis and severity grading. Determines timing of intervention.", "priority": "immediate"},
+        {"test": "Coronary angiography", "expected": "Assess for coexisting CAD (this patient has angina — need to determine if CAD contributes)", "why": "All patients >40 years with AS planned for surgery need coronary assessment. If significant CAD: combined AVR + CABG.", "priority": "immediate"},
+        {"test": "Exercise testing", "expected": "CONTRAINDICATED if symptomatic (risk of cardiac arrest). In asymptomatic AS, may unmask symptoms or abnormal BP response.", "why": "NEVER exercise test symptomatic severe AS.", "priority": "routine"}
+      ],
+
+      "management": {
+        "medical": [
+          {"intervention": "No medical therapy prevents progression", "rationale": "Unlike other valvular lesions, no medication slows AS progression. Statins were studied but showed no benefit.", "specifics": "Medical therapy is ONLY for: (1) bridging to surgery, (2) patients who refuse/cannot undergo surgery."},
+          {"intervention": "Avoid vasodilators", "rationale": "In AS, cardiac output is fixed (cannot increase to compensate for afterload reduction). Vasodilators → peripheral vasodilation → drop in BP without compensatory increase in CO → syncope/death.", "specifics": "ACE inhibitors use with extreme caution. Avoid nitrates for angina (use beta-blockers instead). Avoid vigorous diuresis."},
+          {"intervention": "Maintain sinus rhythm", "rationale": "LV depends on atrial kick for filling (stiff, hypertrophied LV). Loss of atrial contraction (AF) → 25% drop in CO → acute decompensation.", "specifics": "If AF develops, cardiovert urgently. Rate control alone insufficient."}
+        ],
+        "interventional": "TAVI (Transcatheter Aortic Valve Implantation): increasingly used for elderly patients and those at intermediate-to-high surgical risk. Catheter-based delivery of bioprosthetic valve without open-heart surgery. Similar outcomes to SAVR in many populations.",
+        "surgical": "SAVR (Surgical Aortic Valve Replacement): gold standard. Mechanical valve (lifelong warfarin) for younger patients (<60 years). Bioprosthetic (no warfarin, degenerates in 10-20 years) for older patients (>60-65 years). Ross procedure (autograft: patient's own pulmonary valve moved to aortic position) for very young patients.",
+        "this_patient": "URGENT surgical referral. All three symptoms present = high risk of sudden death. AVR (SAVR or TAVI based on surgical risk assessment). Coronary angiography before surgery. If significant CAD: combined AVR + CABG.",
+        "follow_up": "Post-AVR: lifelong follow-up with echo. Mechanical valve: lifelong warfarin (INR 2.0-3.0). Bioprosthetic: annual echo to monitor degeneration. IE prophylaxis for prosthetic valve."
+      },
+
+      "complications": [
+        {"complication": "Sudden cardiac death", "mechanism": "Ventricular arrhythmias triggered by LVH, subendocardial ischemia, or acute hemodynamic collapse during exertion", "presentation": "Collapse during exercise, ventricular fibrillation", "management": "Only prevention is timely valve replacement. SCD risk is 1-2% per year in severe symptomatic AS."},
+        {"complication": "Heart failure", "mechanism": "Prolonged pressure overload → LVH → diastolic dysfunction → eventually systolic dysfunction → decompensation", "presentation": "Dyspnea (the 3rd symptom in the triad). Once HF develops, 2-year survival without surgery ~50%.", "management": "Urgent AVR. Cautious diuresis (avoid excessive volume depletion). Avoid vasodilators."},
+        {"complication": "Infective endocarditis", "mechanism": "Turbulent flow across stenotic valve damages endothelium → platelet-fibrin deposition → bacteremia seeding", "presentation": "Fever, new AR murmur (vegetation preventing valve closure), embolic phenomena", "management": "Prolonged antibiotics. Surgery if complications (abscess, large vegetation, hemodynamic instability)."},
+        {"complication": "Gastrointestinal bleeding (Heyde syndrome)", "mechanism": "Severe AS causes shear-stress degradation of von Willebrand factor multimers → acquired type 2A von Willebrand disease → bleeding from colonic angiodysplasia", "presentation": "Chronic GI bleeding, iron deficiency anemia, angiodysplasia on colonoscopy", "management": "Resolves after AVR (shear stress eliminated → vWF normalizes). Often recurrent until valve replaced."}
+      ],
+
+      "vivas": [
+        {
+          "question": "What are the causes of aortic stenosis at different ages?",
+          "answer": "<40 years: unicuspid or bicuspid aortic valve (congenital). 40-70 years: bicuspid AV with superimposed calcification (most common cause in this age group). >70 years: degenerative calcific AS of a tricuspid valve (senile calcific AS, most common overall in Western countries). Rheumatic AS: always associated with mitral valve involvement (isolated AS is NOT rheumatic). In India, rheumatic etiology is more common in younger patients.",
+          "follow_ups": [
+            {"question": "How common is bicuspid aortic valve?", "answer": "1-2% of the population — the most common congenital cardiac anomaly. Most are asymptomatic for decades. Progressive calcification and stenosis develop 10-20 years earlier than tricuspid valve degeneration. Associated with aortopathy (ascending aortic dilatation, dissection risk)."}
+          ]
+        },
+        {
+          "question": "What is the significance of the symptomatic triad in AS?",
+          "answer": "Angina → 5-year average survival without surgery. Syncope → 3-year average survival. Dyspnea/heart failure → 2-year average survival. The onset of ANY symptom is an indication for valve replacement. Once symptoms appear, the disease trajectory is rapid and fatal without intervention. Sudden death can occur at any stage once symptoms begin (1-2% per year).",
+          "follow_ups": [
+            {"question": "Should you replace the valve in asymptomatic severe AS?", "answer": "Controversial but increasingly yes in selected patients. Indications for intervention in asymptomatic severe AS: (1) Very severe AS (peak velocity >5 m/s), (2) Rapid progression (velocity increase >0.3 m/s per year), (3) Abnormal exercise test (symptoms, BP drop, arrhythmia), (4) EF <50% (decompensation), (5) BNP >3x normal. Close surveillance (echo every 6 months) if none of these present."}
+          ]
+        },
+        {
+          "question": "How does the AS murmur change with severity?",
+          "answer": "Mild AS: early-peaking ESM, soft, A2 preserved. Moderate AS: mid-peaking ESM, louder, A2 preserved but softer. Severe AS: LATE-peaking ESM (murmur peaks closer to S2), loud with thrill, A2 soft or absent, paradoxical S2 splitting, S4 present. Critical/end-stage AS: murmur becomes SOFTER again (low cardiac output cannot generate turbulence) — this is deceptive. A patient with severe symptoms and a soft murmur = critical low-flow AS.",
+          "follow_ups": [
+            {"question": "What is low-flow, low-gradient AS?", "answer": "EF <40% + AVA <1.0 cm² + mean gradient <40 mmHg. The low gradient is misleading — it's low because the weak LV can't generate enough flow to push through the valve. Dobutamine stress echo differentiates: true severe AS (gradient increases with dobutamine as flow increases) vs pseudo-severe AS (gradient doesn't increase because valve opens more with increased flow — the valve isn't truly severely stenotic)."}
+          ]
+        },
+        {
+          "question": "What is the Gallavardin phenomenon?",
+          "answer": "The AS murmur has two frequency components: a low-frequency harsh component heard at the aortic area (the 'typical' AS murmur) and a high-frequency musical component that is selectively transmitted to the apex. At the apex, this high-pitched musical murmur can mimic MR. This is NOT two separate valvular lesions — it is the same AS murmur with frequency-selective transmission. Distinguishing clue: the apex component is still crescendo-decrescendo (AS pattern), not pansystolic (MR pattern). And the pulse character remains slow-rising (confirming AS).",
+          "follow_ups": []
+        }
+      ]
+    },
+
+    {
+      "id": "aortic_regurgitation",
+      "name": "Aortic Regurgitation",
+      "category": "case",
+      "system": "cardiac",
+      "tags": ["valvular", "rheumatic", "long-case", "peripheral-signs"],
+
+      "presentation_script": {
+        "opening": "Sir, I have examined this patient. This is a 42-year-old male who presented with progressive exertional dyspnea of 18 months duration (NYHA II-III), awareness of forceful heartbeats — described as palpitations worse when lying on the left side — and nocturnal dyspnea for 3 months. He was diagnosed with acute rheumatic fever at age 16 with polyarthritis and carditis, and has been irregular with secondary prophylaxis.",
+        "gpe_findings": "On general examination, the patient is conscious and comfortable at rest. There are visible head bobbing movements synchronous with the pulse — de Musset's sign. Pulse is high volume, collapsing in character with a rate of 78 per minute, regular rhythm. Blood pressure is 160/50 mmHg with a wide pulse pressure of 110 mmHg. JVP is normal. No pallor, cyanosis, or clubbing.",
+        "system_findings": "On cardiovascular examination — Palpation: apex beat is displaced to the 6th intercostal space in the anterior axillary line, hyperdynamic and thrusting. No parasternal heave. No thrill. Auscultation: there is a high-pitched, blowing, early diastolic decrescendo murmur, best heard at the left sternal border in the 3rd intercostal space, with the patient sitting forward in end-expiration. S1 is normal. A2 is present. A mid-diastolic rumble is heard at the apex — Austin Flint murmur. Peripheral signs: Corrigan's sign (visible carotid pulsations), Quincke's sign (nail bed capillary pulsation), and Traube's sign (pistol-shot sounds over femoral artery) are all positive.",
+        "diagnosis_statement": "Chronic severe aortic regurgitation of rheumatic etiology with LV dilatation and early decompensation (PND onset), with multiple peripheral signs of hyperdynamic circulation.",
+        "differentials": [
+          "Graham Steell murmur (functional PR from pulmonary HTN) — EDM but at pulmonary area, increases with inspiration, associated with loud P2 and pulmonary HTN signs, NO peripheral AR signs",
+          "Patent ductus arteriosus (continuous machinery murmur, not just diastolic; congenital history; wide PP can be similar)",
+          "High-output states (thyrotoxicosis, severe anemia, AV fistula) — wide PP and bounding pulse but NO valve murmur, no EDM",
+          "Dilated cardiomyopathy with functional AR — no peripheral AR signs, globally hypokinetic LV on echo"
+        ],
+        "tips": [
+          "Peripheral signs are the showpiece of AR examination — mention AT LEAST 3-4 eponymous signs. Examiners love testing these.",
+          "Wide pulse pressure is the HEMODYNAMIC hallmark — always state the numbers (SBP/DBP and calculated PP).",
+          "Austin Flint murmur differentiator from true MS: NO opening snap, NO loud S1 in Austin Flint.",
+          "Always state acute vs chronic: this patient has chronic AR (peripheral signs present, LV dilated). Acute AR is a surgical emergency with NONE of these signs."
+        ]
+      },
+
+      "case_scenario": {
+        "demographics": "42-year-old male, office worker",
+        "chief_complaint": "Progressive exertional dyspnea (18 months, NYHA II-III), palpitations (forceful heartbeats, worse lying left), PND (3 months)",
+        "hpi": "Dyspnea began 18 months ago with vigorous activity, now occurs with walking 200 meters on flat ground. Palpitations: awareness of strong, bounding heartbeat, especially at night lying on left side (can feel heart pounding against the mattress). PND: wakes 2-3 times per month gasping for air, needs to sit upright for 15-20 minutes. Wife has noticed his head bobbing with each heartbeat (de Musset's sign reported by family). No syncope, no chest pain, no hemoptysis.",
+        "past_history": "Acute rheumatic fever at age 16: polyarthritis (migratory, large joints) + carditis (pericardial rub documented). Treated with aspirin and bed rest. Prescribed benzathine penicillin prophylaxis — took irregularly for 10 years, then stopped. No other comorbidities.",
+        "drug_history": "No current medications. Discontinued penicillin prophylaxis 16 years ago.",
+        "family_history": "No family history of cardiac disease or rheumatic fever."
+      },
+
+      "clinical_summary": [
+        {"area": "GPE", "finding": "de Musset's sign", "detail": "Head bobbing with each heartbeat", "present": true, "significance": "Large stroke volume transmitted to carotids causes head oscillation"},
+        {"area": "Pulse", "finding": "Character", "detail": "Collapsing (water-hammer)", "present": true, "significance": "Rapid rise from high SV, rapid fall from diastolic runoff back into LV"},
+        {"area": "Pulse", "finding": "Volume", "detail": "High volume, bounding", "present": true, "significance": "Large total stroke volume (forward + regurgitant volume refilling LV)"},
+        {"area": "BP", "finding": "Wide pulse pressure", "detail": "160/50 mmHg (PP = 110)", "present": true, "significance": "High SBP (large SV) + low DBP (diastolic runoff into LV through incompetent valve)"},
+        {"area": "Precordium", "finding": "Apex beat", "detail": "6th ICS AAL, displaced, hyperdynamic thrusting", "present": true, "significance": "LV dilatation from chronic volume overload (eccentric hypertrophy)"},
+        {"area": "Auscultation", "finding": "EDM", "detail": "High-pitched, blowing, decrescendo, left sternal border 3rd ICS, sitting forward, end-expiration", "present": true, "significance": "Blood regurgitating from aorta into LV through incompetent valve during diastole"},
+        {"area": "Auscultation", "finding": "Austin Flint murmur", "detail": "Mid-diastolic rumble at apex", "present": true, "significance": "AR jet impinges on anterior mitral leaflet, pushing it partially closed → functional MS → diastolic rumble"},
+        {"area": "Peripheral", "finding": "Corrigan's sign", "detail": "Visible vigorous carotid pulsation", "present": true, "significance": "Large SV causes visible arterial distension in neck"},
+        {"area": "Peripheral", "finding": "Quincke's sign", "detail": "Nail bed capillary pulsation", "present": true, "significance": "Wide PP transmitted to capillary bed → visible systolic flushing/diastolic blanching"},
+        {"area": "Peripheral", "finding": "Traube's sign", "detail": "Pistol-shot sounds over femoral artery", "present": true, "significance": "Abrupt arterial distension from high SV produces audible sound over large arteries"},
+        {"area": "Peripheral", "finding": "Duroziez's sign", "detail": "Systolic and diastolic bruit over femoral with light compression", "present": true, "significance": "THE ONLY peripheral sign directly demonstrating retrograde diastolic flow (regurgitation)"}
+      ],
+
+      "examination_technique": {
+        "sequence": "Pulse character (collapsing test) → BP (wide PP) → Peripheral signs → Precordium → Auscultation (sitting forward, end-expiration at LSB)",
+        "steps": [
+          {
+            "phase": "Pulse and Peripheral Signs",
+            "actions": [
+              "COLLAPSING PULSE TEST: Lift patient's arm above heart level. Wrap your fingers around the wrist. In AR, you feel a thudding/slapping pulse against your fingers (rapid rise and rapid fall). Compare with the other arm.",
+              "Blood pressure: specifically note the DBP. Very low DBP (<50 mmHg) with wide PP (>80 mmHg) is highly suggestive of severe AR.",
+              "Corrigan's sign: look at the neck — visible vigorous carotid pulsation (dance of the carotids).",
+              "de Musset's sign: observe patient's head from the side — rhythmic bobbing with each heartbeat.",
+              "Quincke's sign: gently press on the nail bed with your thumb to partially blanch it. Release and watch for alternating flushing (systole) and blanching (diastole).",
+              "Traube's sign: place stethoscope over femoral artery WITHOUT compression. In AR, you hear a sharp 'pistol shot' sound with each systole.",
+              "Duroziez's sign: place stethoscope over femoral artery with LIGHT proximal compression. You hear a systolic bruit (forward flow) AND a diastolic bruit (retrograde flow from AR). This is the only sign that directly demonstrates regurgitant flow.",
+              "Hill's sign: measure BP at ankle (popliteal) and arm. Difference >20 mmHg = AR. >60 mmHg = severe AR."
+            ],
+            "findings_in_this_case": ["Collapsing pulse", "BP 160/50 (PP 110)", "Corrigan's, de Musset's, Quincke's, Traube's, Duroziez's all positive"]
+          },
+          {
+            "phase": "Auscultation — The Definitive Finding",
+            "actions": [
+              "Position patient SITTING FORWARD with full expiration held. This brings the aortic root closer to the chest wall and maximizes audibility of the EDM.",
+              "Listen at LEFT STERNAL BORDER (not aortic area) at 3rd-4th ICS with the DIAPHRAGM (high-pitched murmur).",
+              "Character: high-pitched, blowing, decrescendo (loudest at start of diastole, fading as pressure gradient between aorta and LV equalizes). Duration correlates with severity: longer EDM = more severe.",
+              "Also listen at apex for Austin Flint murmur: mid-diastolic rumble caused by AR jet hitting the anterior mitral leaflet. Differentiate from true MS: Austin Flint has NO opening snap, NO loud S1.",
+              "Check for coexisting AS (ESM at aortic area) — mixed AS+AR is common in RHD and bicuspid valve disease."
+            ],
+            "findings_in_this_case": ["EDM at LSB in sitting forward position", "Austin Flint murmur at apex", "No ESM (pure AR)"]
+          }
+        ]
+      },
+
+      "findings_with_mechanisms": [
+        {
+          "finding": "Collapsing (water-hammer) pulse",
+          "mechanism": "In diastole, blood regurgitates from the aorta back into the LV through the incompetent aortic valve. This diastolic runoff causes rapid fall in arterial pressure. In systole, the LV ejects a very large stroke volume (forward output + regurgitant volume that refilled the LV) causing rapid rise. The combination produces the characteristic rapid rise + rapid fall waveform.",
+          "mechanism_chain": "[Large SV in systole → rapid rise] + [Diastolic runoff into LV → rapid fall] → [Collapsing pulse]"
+        },
+        {
+          "finding": "Wide pulse pressure (high SBP, low DBP)",
+          "mechanism": "High SBP: LV ejects a very large total stroke volume (forward + regurgitant volumes combined) → arterial system receives a large bolus → SBP elevated. Low DBP: during diastole, blood runs off into LV through the regurgitant valve → aortic pressure falls rapidly → DBP drops. The wider the PP, the more severe the AR.",
+          "mechanism_chain": "[Large SV] → [High SBP]. [Diastolic runoff] → [Low DBP]. [High SBP - Low DBP] → [Wide PP]",
+          "grading": "PP >80 mmHg suggests severe AR. DBP <50 mmHg suggests severe AR."
+        },
+        {
+          "finding": "Austin Flint murmur",
+          "mechanism": "The AR jet strikes the anterior leaflet of the mitral valve during diastole, pushing it partially closed. This creates functional narrowing of the mitral orifice → turbulent diastolic flow from LA to LV → mid-diastolic rumble mimicking MS. Crucially, there is NO opening snap (the mitral valve is structurally normal) and S1 is NOT loud.",
+          "mechanism_chain": "[AR jet] → [Hits anterior mitral leaflet] → [Partial closure/restriction] → [Functional MS] → [MDM at apex]",
+          "caveat": "KEY EXAM QUESTION: How to differentiate Austin Flint from true MS? (1) No opening snap, (2) No loud S1, (3) Peripheral AR signs present, (4) EDM at LSB present. If examiner asks and you mention opening snap as the differentiator, full marks."
+        },
+        {
+          "finding": "Acute vs chronic AR — why peripheral signs are absent in acute",
+          "mechanism": "In chronic AR, the LV gradually dilates over months-years (eccentric hypertrophy), accommodating the regurgitant volume. Total stroke volume is very large → all peripheral signs develop. In acute AR (IE, dissection), the LV is normal-sized and cannot accommodate the sudden regurgitant volume → LVEDP rises dramatically → LA pressure rises → flash pulmonary edema. Because the LV hasn't had time to dilate, total SV is not increased → no wide PP, no bounding pulse, no peripheral signs. The murmur is short (rapid equalization of aortic and LV pressures). Acute AR is a SURGICAL EMERGENCY.",
+          "mechanism_chain": "[Acute AR] → [Normal-sized LV] → [Cannot accommodate regurgitant volume] → [↑↑LVEDP] → [Flash pulmonary edema] → [NO peripheral signs]"
+        }
+      ],
+
+      "diagnosis_and_differentials": {
+        "provisional": "Chronic severe aortic regurgitation of rheumatic etiology with LV dilatation and early decompensation (onset of PND)",
+        "supporting_evidence": [
+          "High-pitched EDM at left sternal border (sitting forward, end-expiration)",
+          "Collapsing pulse with wide pulse pressure (160/50, PP = 110)",
+          "Multiple peripheral signs: de Musset, Corrigan, Quincke, Traube, Duroziez",
+          "Displaced, hyperdynamic apex (LV dilatation from volume overload)",
+          "Austin Flint murmur at apex (severe AR impinging on mitral valve)",
+          "History of ARF with carditis at age 16",
+          "PND onset indicates early decompensation"
+        ],
+        "differentials": [
+          {
+            "condition": "Graham Steell murmur (pulmonary regurgitation)",
+            "points_for": "Also an EDM in diastole",
+            "why_not": "Graham Steell is heard at PULMONARY area (left 2nd ICS), increases with inspiration (right-sided origin). Associated with loud P2, signs of pulmonary HTN, RV failure. NO peripheral AR signs, NO wide pulse pressure. In this patient, multiple peripheral signs confirm AR."
+          },
+          {
+            "condition": "High-output states (thyrotoxicosis, severe anemia)",
+            "points_for": "Wide pulse pressure, bounding pulse, hyperdynamic circulation",
+            "why_not": "No EDM (valve is structurally normal). Look for specific signs: thyrotoxicosis (tremor, exophthalmos, goiter), anemia (pallor, koilonychia). Echo would show normal valve."
+          },
+          {
+            "condition": "Mixed aortic valve disease (AS + AR)",
+            "points_for": "Can occur together in RHD and bicuspid valve",
+            "why_not": "No ESM heard. Pulse is collapsing, not slow-rising (which would be expected if significant AS coexisted). If both present, need to determine which is dominant — affects surgical approach."
+          }
+        ]
+      },
+
+      "investigations": [
+        {"test": "ECG", "expected": "LVH with volume overload pattern (tall R waves in V5-V6, deep Q waves in lateral leads — 'LV volume' pattern). ST-T changes. May show sinus rhythm (AF less common in AR than in mitral lesions — LA pressure is not as severely elevated).", "why": "Confirms LV involvement. Sinus rhythm is more common in AR than MS/MR.", "priority": "immediate"},
+        {"test": "Chest X-ray", "expected": "Cardiomegaly with LV configuration (apex displaced laterally and inferiorly — 'boot-shaped' heart). Uncoiled, dilated ascending aorta. No pulmonary congestion until late decompensation.", "why": "LV enlargement without pulmonary congestion until late = chronic compensated AR.", "priority": "immediate"},
+        {"test": "Echocardiography", "expected": "Valve: thickened leaflets (rheumatic), poor coaptation, regurgitant jet. Severity: vena contracta >6mm, regurgitant volume >60ml, holodiastolic flow reversal in descending aorta (severe), pressure half-time <200ms (severe). LV: dilated (LVEDD >65mm), hyperdynamic initially, EF begins to decline at 50-55% (already significant dysfunction in AR). LVESD >50mm = surgical threshold.", "why": "Grades severity and determines surgical timing.", "priority": "immediate"},
+        {"test": "Cardiac MRI", "expected": "Accurate quantification of regurgitant fraction. Useful when echo is suboptimal.", "why": "Gold standard for quantifying regurgitation when echo is equivocal.", "priority": "if_indicated"}
+      ],
+
+      "management": {
+        "medical": [
+          {"intervention": "Vasodilators (ACE inhibitors, nifedipine)", "rationale": "Reduce afterload → increase forward stroke volume → reduce regurgitant fraction", "specifics": "ACE inhibitors (enalapril, ramipril) or nifedipine. Use in symptomatic patients not yet ready for surgery, or asymptomatic with LV dilatation."},
+          {"intervention": "Avoid pure beta-blockers", "rationale": "Slowing HR prolongs diastole → more time for regurgitation → worsens AR hemodynamics", "specifics": "Exception: if AF develops, rate control is necessary. Use cautiously."},
+          {"intervention": "Secondary prophylaxis", "rationale": "Prevent further rheumatic valve damage", "specifics": "Benzathine penicillin G every 3-4 weeks until age 40 or lifelong with severe disease."}
+        ],
+        "interventional": "No percutaneous option for AR currently (unlike TAVI for AS). Emerging: transcatheter AR repair devices under investigation.",
+        "surgical": "AVR (aortic valve replacement). Indications: (1) Symptomatic severe AR (any symptoms), (2) Asymptomatic with EF ≤50%, (3) LVEDD ≥70mm or LVESD ≥50mm (progressive dilatation). Mechanical vs bioprosthetic same considerations as AS. Valve-sparing root repair in selected patients (Marfan, annuloaortic ectasia).",
+        "this_patient": "PND onset = decompensation beginning. Needs urgent echo for LV dimensions and EF. If EF ≤50% or LVESD ≥50mm → proceed to surgery. If borderline, optimize medical therapy and reassess in 3 months with serial echo. Restart secondary prophylaxis immediately.",
+        "follow_up": "Serial echo every 6 months for LV dimensions. If LVEDD increasing >5mm/year, consider surgery even if asymptomatic. Post-AVR follow-up as per AS."
+      },
+
+      "complications": [
+        {"complication": "LV failure", "mechanism": "Chronic volume overload → eccentric hypertrophy → eventually myocyte dysfunction → EF drops → decompensation", "presentation": "PND, orthopnea, pulmonary edema", "management": "AVR before irreversible LV damage. EF <50% = already significant damage."},
+        {"complication": "Aortic dissection", "mechanism": "Chronic aortic root dilatation (especially in Marfan, bicuspid aortopathy) → weakened aortic wall → dissection", "presentation": "Tearing chest pain radiating to back, acute severe AR, hypotension", "management": "Emergency surgical repair. Type A dissection = immediate surgery."},
+        {"complication": "Infective endocarditis", "mechanism": "Regurgitant jet damages endothelium → nidus for infection", "presentation": "Fever, new or worsening murmur, embolic phenomena", "management": "Prolonged IV antibiotics, surgery if vegetations/abscess/hemodynamic instability."}
+      ],
+
+      "vivas": [
+        {
+          "question": "Name the eponymous peripheral signs of AR and their mechanisms.",
+          "answer": "All peripheral signs result from WIDE PULSE PRESSURE (high SV → high SBP; diastolic runoff → low DBP). (1) de Musset: head bobbing from carotid pulsation. (2) Corrigan: visible carotid 'dance.' (3) Quincke: nail bed capillary pulsation. (4) Traube: pistol-shot sounds over femoral without compression. (5) Duroziez: systolic AND diastolic bruit over femoral with light compression — the ONLY sign directly demonstrating regurgitant flow. (6) Hill: popliteal SBP >20mmHg above brachial. (7) Mueller: uvular pulsation. (8) Lighthouse: alternating facial flushing/pallor. (9) Landolfi: pupillary pulsation. (10) Rosenbach: hepatic pulsation. (11) Gerhardt: splenic pulsation.",
+          "follow_ups": [
+            {"question": "Which sign is most specific for AR?", "answer": "Duroziez's sign — it is the only sign that directly demonstrates diastolic retrograde flow (the diastolic bruit). Other signs are manifestations of wide PP which can also occur in high-output states. Duroziez's confirms that the wide PP is from valvular regurgitation specifically."}
+          ]
+        },
+        {
+          "question": "How do you differentiate Austin Flint murmur from true MS?",
+          "answer": "Austin Flint: NO opening snap (mitral valve is structurally normal), S1 is NOT loud, EDM present at left sternal border (the primary AR murmur), peripheral AR signs present (collapsing pulse, wide PP), apex displaced (LV dilated). True MS: opening snap PRESENT, S1 IS loud, NO EDM at LSB, NO peripheral AR signs, apex NOT displaced (tapping). The OPENING SNAP is the single most reliable differentiator.",
+          "follow_ups": []
+        },
+        {
+          "question": "Contrast acute and chronic AR.",
+          "answer": "Chronic: gradual onset, LV dilates (compensates), large total SV, wide PP, all peripheral signs present, long EDM, symptoms develop over years. Acute (IE, dissection, trauma): sudden onset, LV is normal-sized (no time to dilate), LVEDP rises dramatically, LA pressure rises (premature mitral closure on echo), flash pulmonary edema, NARROW or normal PP, NO peripheral signs, short/soft EDM, cardiogenic shock. Acute AR is a SURGICAL EMERGENCY — mortality without surgery is very high.",
+          "follow_ups": [
+            {"question": "What echo finding is pathognomonic for acute severe AR?", "answer": "Premature closure of the mitral valve — the LV pressure rises so rapidly in diastole (from regurgitant volume filling the non-compliant LV) that it exceeds LA pressure BEFORE atrial systole, slamming the mitral valve shut early. This does not occur in chronic AR because the dilated LV accommodates the volume at lower pressures."}
+          ]
+        },
+        {
+          "question": "What are the surgical indications for AR?",
+          "answer": "Class I indications: (1) Symptomatic severe AR (any symptoms — dyspnea, angina, syncope). (2) Asymptomatic with EF ≤50%. (3) Asymptomatic undergoing other cardiac surgery (CABG, ascending aorta). Class IIa: LVEDD ≥70mm or LVESD ≥50mm (progressive dilatation even with preserved EF). (4) Rapid decline in EF or increase in LV dimensions on serial echo.",
+          "follow_ups": [
+            {"question": "Why is EF threshold 50% in AR (lower than MR's 60%)?", "answer": "Unlike MR (where LV ejects into low-resistance LA, inflating EF), AR involves ejecting the regurgitant volume back into the aorta (high resistance) in systole. The EF is not as artificially elevated as in MR. Therefore, EF ≤50% in AR represents roughly equivalent myocardial dysfunction to EF ≤60% in MR. Both thresholds aim to intervene before irreversible damage."}
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "infective_endocarditis",
+      "name": "Infective Endocarditis",
+      "category": "case",
+      "system": "cardiac",
+      "tags": ["valvular", "infectious", "short-case", "duke-criteria"],
+
+      "presentation_script": {
+        "opening": "Sir, I have examined this patient. This is a 38-year-old male who presented with an insidious fever of 6 weeks duration, progressive fatigue, weight loss of 5 kg, night sweats, and new-onset joint pains. He has a known history of rheumatic heart disease with mitral regurgitation diagnosed at age 22. He underwent a dental extraction 2 months ago without antibiotic prophylaxis.",
+        "gpe_findings": "On general examination, the patient is conscious, febrile (temperature 38.4°C), appears unwell and cachectic. Pulse is regular, 96 per minute, normal volume. Blood pressure is 130/70 mmHg. On examining the hands, I note splinter hemorrhages in two nailbeds and a tender, erythematous nodule on the pad of the left index finger — Osler node. There are non-tender, erythematous macules on the right palm — Janeway lesions. Petechiae are present on the conjunctivae. No clubbing. Splenomegaly is palpable.",
+        "system_findings": "On cardiovascular examination — apex beat is displaced to the 6th intercostal space in the anterior axillary line, hyperdynamic. There is a pansystolic murmur at the apex radiating to the axilla — consistent with mitral regurgitation — which the patient reports is different from his previously known murmur (new or changed murmur). There is no diastolic murmur.",
+        "diagnosis_statement": "Subacute infective endocarditis on a background of rheumatic mitral regurgitation, likely precipitated by dental extraction without prophylaxis, with Duke criteria fulfilled — 2 major (predisposing valve + new/changed murmur likely positive, pending blood cultures and echo) plus minor criteria (fever, vascular phenomena: splinter hemorrhages, Janeway lesions; immunological phenomena: Osler nodes, conjunctival petechiae).",
+        "differentials": [
+          "Systemic lupus erythematosus (fever, joint pains, rash — but Libman-Sacks endocarditis typically asymptomatic, different rash pattern)",
+          "Lymphoma (fever, weight loss, night sweats — B symptoms — but no murmur, no embolic phenomena)",
+          "Atrial myxoma (constitutional symptoms, embolization — but tumor plop on echo, not vegetations)",
+          "Rheumatic fever recurrence (fever, arthritis, carditis — but Jones criteria differ from Duke criteria, migratory arthritis pattern)"
+        ],
+        "tips": [
+          "ALWAYS mention Duke criteria framework when presenting IE — examiners expect you to classify as definite, probable, or possible.",
+          "The triad: fever + new murmur + embolic phenomena = IE until proven otherwise.",
+          "Distinguish Osler nodes (PAINFUL, fingertips, IMMUNE complex) from Janeway lesions (PAINLESS, palms/soles, SEPTIC emboli).",
+          "Mention the predisposing event (dental extraction without prophylaxis) — this shows clinical reasoning."
+        ]
+      },
+
+      "case_scenario": {
+        "demographics": "38-year-old male, office worker",
+        "chief_complaint": "Low-grade fever (6 weeks), fatigue, weight loss (5 kg), night sweats, arthralgias",
+        "hpi": "Insidious onset of evening fever (38-39°C) with rigors for 6 weeks. Progressive fatigue limiting work. Unintentional weight loss of 5 kg. Drenching night sweats requiring change of bedclothes. Diffuse arthralgias (non-migratory, affects small joints of hands — different from rheumatic migratory polyarthritis). Noticed reddish spots on palms 2 weeks ago. Wife noted pallor. No cough, no dysuria, no skin abscesses.",
+        "past_history": "RHD diagnosed age 22 — known to have MR. Was advised monthly penicillin — takes irregularly. Dental extraction 2 months ago at local clinic — no antibiotic prophylaxis given. No prior episodes of IE. No IV drug use.",
+        "drug_history": "Irregular benzathine penicillin. No anticoagulants. No immunosuppressants.",
+        "family_history": "No relevant family history."
+      },
+
+      "clinical_summary": [
+        {"area": "GPE", "finding": "Fever", "detail": "38.4°C, pattern: evening spikes with rigors", "present": true, "significance": "Continuous bacteremia from valve vegetation seeding blood constantly"},
+        {"area": "GPE", "finding": "Cachexia", "detail": "5 kg weight loss, appears unwell", "present": true, "significance": "Chronic infection → elevated cytokines (TNF, IL-1, IL-6) → catabolism"},
+        {"area": "Hands", "finding": "Splinter hemorrhages", "detail": "Linear dark streaks in 2 nailbeds", "present": true, "significance": "Microemboli from valve vegetation lodging in nailbed capillaries (vascular phenomenon)"},
+        {"area": "Hands", "finding": "Osler nodes", "detail": "Tender erythematous nodule on left index fingertip pad", "present": true, "significance": "Immune complex deposition in skin (immunological phenomenon). PAINFUL = immune."},
+        {"area": "Hands", "finding": "Janeway lesions", "detail": "Non-tender erythematous macules on right palm", "present": true, "significance": "Septic microemboli causing infarction in dermis (vascular phenomenon). PAINLESS = septic."},
+        {"area": "Eyes", "finding": "Conjunctival petechiae", "detail": "Petechial spots on palpebral conjunctiva", "present": true, "significance": "Microemboli or immune complex deposition in conjunctival vessels"},
+        {"area": "Abdomen", "finding": "Splenomegaly", "detail": "Palpable spleen", "present": true, "significance": "Immune complex deposition + reticuloendothelial activation from chronic bacteremia"},
+        {"area": "Precordium", "finding": "Murmur", "detail": "PSM at apex → axilla (MR), changed from previously known", "present": true, "significance": "New or changing murmur = vegetation causing further valve destruction"},
+        {"area": "Precordium", "finding": "Apex", "detail": "Displaced, hyperdynamic", "present": true, "significance": "Pre-existing MR with LV dilatation, now worsening from active valve destruction"}
+      ],
+
+      "examination_technique": {
+        "sequence": "Temperature → Hands (splinters, Osler, Janeway) → Eyes (Roth spots, petechiae) → Mouth (dental health) → Precordium (murmur change) → Abdomen (splenomegaly) → Urine (hematuria) → Neuro (focal signs from cerebral emboli)",
+        "steps": [
+          {
+            "phase": "Hands — The Diagnostic Clues",
+            "actions": [
+              "Examine ALL nailbeds for splinter hemorrhages (linear, dark red-brown streaks in the distal third of the nailbed). Note: also caused by trauma — look for distribution pattern and clinical context.",
+              "Feel fingertip pads for Osler nodes: tender, raised, erythematous lesions. Press gently — patient will report pain. These are IMMUNE complex deposits.",
+              "Examine palms for Janeway lesions: non-tender, flat, erythematous macules. These are SEPTIC emboli causing dermal infarction. Painless on pressure.",
+              "Clubbing: develops in chronic (weeks-months) IE. Absent in acute IE.",
+              "Check for petechiae on hands and forearms."
+            ],
+            "findings_in_this_case": ["Splinter hemorrhages (2 nails)", "Osler node (left index)", "Janeway lesions (right palm)"]
+          },
+          {
+            "phase": "Systemic Examination",
+            "actions": [
+              "Eyes: pull down lower eyelid — conjunctival petechiae. Fundoscopy if available: Roth spots (pale-centered retinal hemorrhages from immune complex vasculitis).",
+              "Mouth: dental health (source of bacteremia), petechiae on palate.",
+              "Abdomen: palpate for splenomegaly (present in 25-60% of subacute IE). Check for renal angle tenderness (renal infarction from emboli).",
+              "Neurological: brief screening for focal deficits (stroke from cerebral emboli — occurs in 20-40% of IE).",
+              "Urine: dipstick for hematuria (glomerulonephritis from immune complex deposition — immunological criterion)."
+            ],
+            "findings_in_this_case": ["Conjunctival petechiae", "Splenomegaly palpable", "No focal neurological deficit"]
+          }
+        ]
+      },
+
+      "findings_with_mechanisms": [
+        {
+          "finding": "Osler nodes vs Janeway lesions",
+          "mechanism": "Osler nodes: circulating immune complexes (antigen-antibody) deposit in skin of fingertips/toes → complement activation → local vasculitis → painful, raised, erythematous nodules. More common in SUBACUTE IE (time for immune complex formation). Janeway lesions: septic microemboli from vegetation lodge in dermal arterioles of palms/soles → focal necrosis/infarction → painless, flat, erythematous macules. More common in ACUTE IE (S. aureus, large vegetations).",
+          "mechanism_chain": "[Immune complexes] → [Fingertip deposition] → [Vasculitis] → [Painful Osler nodes]. [Septic emboli] → [Dermal infarction] → [Painless Janeway lesions]",
+          "caveat": "Memory aid: OsLer = Larger, Painful (Immune); JAneway = Flat, PAINless (Septic). Or: Osler = Ouch (painful); Janeway = Painless."
+        },
+        {
+          "finding": "Modified Duke criteria",
+          "mechanism": "Major criteria (2 points each): (1) Blood cultures: typical organism from 2 separate cultures OR persistently positive cultures. (2) Endocardial involvement: echo showing vegetation, abscess, new dehiscence, OR new valvular regurgitation. Minor criteria (1 point each): (1) Predisposing condition or IV drug use. (2) Fever ≥38°C. (3) Vascular phenomena: arterial emboli, septic pulmonary infarcts, mycotic aneurysm, Janeway lesions, conjunctival hemorrhages. (4) Immunological: Osler nodes, Roth spots, glomerulonephritis, positive rheumatoid factor. (5) Microbiological evidence not meeting major criteria. Definite IE: 2 major, OR 1 major + 3 minor, OR 5 minor.",
+          "mechanism_chain": "[Predisposing valve + bacteremia] → [Vegetation] → [Continuous seeding] → [Fever + emboli + immune phenomena]"
+        },
+        {
+          "finding": "New or changing murmur",
+          "mechanism": "Vegetation on the valve causes progressive destruction of leaflet tissue → worsening regurgitation → murmur becomes louder or changes character. New regurgitation through a previously competent valve = new murmur. This is the most specific clinical sign for IE (in conjunction with fever).",
+          "mechanism_chain": "[Vegetation] → [Valve destruction] → [Worsening regurgitation] → [New/changed murmur]",
+          "caveat": "Murmur may be ABSENT in right-sided IE (tricuspid — low-pressure, small vegetations). Up to 15% of IE cases have no murmur at presentation. A new murmur + fever = IE until proven otherwise."
+        }
+      ],
+
+      "diagnosis_and_differentials": {
+        "provisional": "Subacute infective endocarditis on rheumatic MR, likely viridans streptococcal, precipitated by dental extraction without prophylaxis",
+        "supporting_evidence": [
+          "Fever for 6 weeks (subacute course)",
+          "Predisposing: known RHD with MR + dental extraction without prophylaxis",
+          "New/changed murmur",
+          "Vascular phenomena: splinter hemorrhages, Janeway lesions",
+          "Immunological phenomena: Osler nodes, conjunctival petechiae",
+          "Constitutional: weight loss, night sweats, fatigue",
+          "Splenomegaly"
+        ],
+        "differentials": [
+          {
+            "condition": "SLE (Libman-Sacks endocarditis)",
+            "points_for": "Fever, arthralgia, renal involvement, can have sterile vegetations",
+            "why_not": "Libman-Sacks vegetations are typically asymptomatic (small, located on atrial side of mitral valve). SLE has butterfly rash, photosensitivity, serositis, ANA positivity. Joint involvement in SLE is non-erosive polyarthritis. Blood cultures will be sterile in SLE."
+          },
+          {
+            "condition": "Atrial myxoma",
+            "points_for": "Fever, weight loss, embolic phenomena, raised ESR",
+            "why_not": "Myxoma produces tumor plop (not vegetations on echo), positional murmur variation, no splinter hemorrhages/Osler nodes/Janeway lesions pattern. Blood cultures negative."
+          },
+          {
+            "condition": "Acute rheumatic fever recurrence",
+            "points_for": "Known RHD, fever, arthritis, carditis",
+            "why_not": "RF arthritis is MIGRATORY (large joints), not fixed small joint arthralgias. RF does not cause embolic phenomena (Osler, Janeway, splinters). Jones criteria differ from Duke criteria. ASO/anti-DNase B titers elevated in RF."
+          }
+        ]
+      },
+
+      "investigations": [
+        {"test": "Blood cultures (3 sets from 3 different sites)", "expected": "Viridans streptococci (most common in subacute native valve IE). Positive from ≥2 sets = major Duke criterion.", "why": "MUST be taken BEFORE starting antibiotics. 3 sets 30 min apart from different venipuncture sites.", "priority": "immediate"},
+        {"test": "Echocardiography (TTE then TEE)", "expected": "Vegetation on mitral valve (oscillating mass on leaflet). TEE sensitivity 90-95% (TTE only 60-75%). May show abscess, leaflet perforation, new MR jet.", "why": "Major Duke criterion. TEE is mandatory if TTE negative but clinical suspicion high.", "priority": "immediate"},
+        {"test": "CBC", "expected": "Normocytic anemia (anemia of chronic disease), leukocytosis (neutrophilia), thrombocytopenia (DIC/splenomegaly)", "why": "Baseline + assesses severity of systemic infection.", "priority": "immediate"},
+        {"test": "ESR/CRP", "expected": "Markedly elevated (ESR >50, CRP elevated). ESR is a sensitive but non-specific marker.", "why": "Monitors treatment response (should normalize with successful therapy).", "priority": "immediate"},
+        {"test": "Urinalysis", "expected": "Microscopic hematuria, RBC casts (immune complex glomerulonephritis — minor Duke criterion)", "why": "Assesses renal involvement from immune complex deposition.", "priority": "immediate"},
+        {"test": "Rheumatoid factor", "expected": "Positive in ~50% of subacute IE (non-specific immune activation)", "why": "Minor Duke criterion (immunological).", "priority": "routine"},
+        {"test": "CT brain (if neurological symptoms)", "expected": "Cerebral infarct (embolic), mycotic aneurysm, hemorrhage", "why": "Cerebral emboli occur in 20-40% of IE. Rule out before anticoagulation.", "priority": "if_indicated"}
+      ],
+
+      "management": {
+        "medical": [
+          {"intervention": "Empiric IV antibiotics (before culture results)", "rationale": "High clinical suspicion — start treatment immediately after blood cultures drawn", "specifics": "Native valve, subacute: IV ampicillin + gentamicin (covers streptococci + enterococci). Adjust based on culture sensitivity. Total duration: 4-6 weeks IV."},
+          {"intervention": "Culture-directed therapy", "rationale": "Targeted antibiotic based on organism and sensitivity", "specifics": "Viridans strep (MIC ≤0.12): IV penicillin G or ceftriaxone × 4 weeks. With gentamicin synergy × 2 weeks shortens to 2-week regimen. Enterococci: ampicillin + gentamicin × 4-6 weeks. S. aureus: IV nafcillin/oxacillin (MSSA) or vancomycin (MRSA) × 6 weeks."},
+          {"intervention": "Supportive care", "rationale": "Manage complications, maintain nutrition", "specifics": "Monitor renal function (gentamicin nephrotoxicity, immune complex GN). Repeat blood cultures at 48-72h to document clearance. Serial echo to monitor vegetation size."}
+        ],
+        "interventional": "Not applicable.",
+        "surgical": "Surgery indicated for: (1) Heart failure from valve destruction (most common indication). (2) Uncontrolled infection (persistent bacteremia >7 days despite appropriate antibiotics, abscess formation). (3) Prevention of embolism (large vegetation >10mm with embolic events, OR >15mm even without events — increasingly recommended). (4) Fungal or resistant organism IE. Surgery = debridement + valve repair or replacement.",
+        "this_patient": "Draw 3 sets of blood cultures immediately, then start empiric IV ampicillin + gentamicin. Urgent TTE (TEE if TTE inconclusive). Monitor for embolic events (daily neuro exam, renal function). If vegetation >10mm or hemodynamic deterioration → early surgical referral. Ensure secondary prophylaxis lifelong after recovery.",
+        "follow_up": "Weekly blood cultures until negative. Serial echo (weekly initially, then 4-6 weeks after completion). Monitor renal function. Dental evaluation and treatment of any dental sources. IE prophylaxis before all future high-risk procedures. Secondary penicillin prophylaxis lifelong."
+      },
+
+      "complications": [
+        {"complication": "Embolic stroke", "mechanism": "Vegetation fragments detach → travel to cerebral circulation → lodge in cerebral arteries → infarction", "presentation": "Acute focal neurological deficit (hemiplegia, aphasia, visual loss)", "management": "CT brain urgently. Anticoagulation controversial (risk of hemorrhagic transformation). Early surgical intervention for vegetation removal."},
+        {"complication": "Mycotic aneurysm", "mechanism": "Septic emboli lodge in vasa vasorum of cerebral/systemic arteries → infection weakens arterial wall → aneurysm formation", "presentation": "Sudden severe headache (SAH from rupture), focal neuro signs", "management": "CTA/MRA to detect. Neurosurgical/endovascular intervention if ruptured."},
+        {"complication": "Heart failure from valve destruction", "mechanism": "Progressive leaflet destruction → worsening regurgitation → acute volume overload → pulmonary edema", "presentation": "Acute dyspnea, pulmonary edema, cardiogenic shock", "management": "Most common indication for surgery in IE. Urgent valve repair/replacement."},
+        {"complication": "Perivalvular abscess", "mechanism": "Infection extends beyond valve leaflet into surrounding tissue (aortic root, interventricular septum)", "presentation": "Persistent fever despite antibiotics, new conduction abnormality on ECG (PR prolongation — abscess near AV node)", "management": "TEE to diagnose. Surgery required — antibiotics alone insufficient for abscess."},
+        {"complication": "Immune complex glomerulonephritis", "mechanism": "Circulating immune complexes deposit in glomerular basement membrane → complement activation → inflammation", "presentation": "Microscopic hematuria, proteinuria, rising creatinine, RBC casts on urine microscopy", "management": "Treat the IE (eliminate antigen source). Renal function usually recovers with infection control."}
+      ],
+
+      "vivas": [
+        {
+          "question": "Explain the Modified Duke Criteria for diagnosing IE.",
+          "answer": "MAJOR criteria: (1) Microbiological: typical organism from 2 separate blood cultures (viridans strep, S. bovis, HACEK, S. aureus, enterococci without primary focus) OR persistently positive cultures (≥2 samples >12h apart, or 3/3, or majority of ≥4 samples). (2) Endocardial involvement: echo showing oscillating vegetation, abscess, new partial dehiscence of prosthetic valve, OR new valvular regurgitation. MINOR criteria: (1) Predisposition (valvular disease, IV drug use). (2) Fever ≥38°C. (3) Vascular: emboli, Janeway, mycotic aneurysm, intracranial hemorrhage. (4) Immunological: Osler, Roth spots, GN, RF positive. (5) Micro not meeting major criteria. DEFINITE: 2 major, 1 major + 3 minor, or 5 minor.",
+          "follow_ups": [
+            {"question": "This patient — how many criteria does he meet?", "answer": "Major: (1) Predisposing condition + new murmur (pending echo confirmation for vegetation) — likely 1 major (echo). Pending blood cultures for 2nd major. Minor: (1) Predisposing valve, (2) Fever, (3) Vascular: splinter hemorrhages + Janeway lesions, (4) Immunological: Osler nodes + conjunctival petechiae. At minimum 1 major + 4 minor = DEFINITE IE even before blood culture results."}
+          ]
+        },
+        {
+          "question": "Differentiate Osler nodes from Janeway lesions.",
+          "answer": "Osler nodes: PAINFUL, tender, raised, erythematous nodules on FINGERTIPS/TOE PADS. Mechanism: IMMUNE COMPLEX deposition → vasculitis. More common in SUBACUTE IE. Janeway lesions: PAINLESS, flat, erythematous macules on PALMS/SOLES. Mechanism: SEPTIC microemboli → dermal infarction. More common in ACUTE IE (S. aureus). Memory: Osler = Ouch (painful, immune); Janeway = Painless (septic). Both are on the Duke criteria — Osler = immunological criterion, Janeway = vascular criterion.",
+          "follow_ups": []
+        },
+        {
+          "question": "When is surgery indicated in IE?",
+          "answer": "4 main indications: (1) Heart failure from valve destruction — MOST COMMON indication, don't delay for completion of antibiotics. (2) Uncontrolled infection: persistent fever/bacteremia >7 days despite appropriate antibiotics, OR abscess formation (paravalvular). (3) Prevention of embolism: vegetation >10mm with 1 embolic event, OR vegetation >15mm even without events. (4) Specific organisms: fungal IE, highly resistant organisms (MRSA with poor response). Surgery = debridement of infected tissue + valve repair (preferred) or replacement.",
+          "follow_ups": [
+            {"question": "Should you complete antibiotics before surgery?", "answer": "NO — do not delay surgery to complete antibiotic course if there is a clear surgical indication. Continue antibiotics postoperatively to complete the total planned duration (counting from the date of surgery as day 1 if valve cultures are positive, or continuing the pre-operative count if valve cultures are negative)."}
+          ]
+        },
+        {
+          "question": "What organisms cause IE in different clinical settings?",
+          "answer": "Native valve — subacute: viridans streptococci (most common), Streptococcus bovis (always colonoscopy to rule out colon cancer). Native valve — acute: Staphylococcus aureus (most common in acute, most common overall in developed countries). IV drug use: S. aureus (typically right-sided — tricuspid valve). Prosthetic valve — early (<60 days): coagulase-negative staphylococci, S. aureus. Prosthetic valve — late (>60 days): viridans strep, enterococci. Culture-negative: HACEK group (Haemophilus, Aggregatibacter, Cardiobacterium, Eikenella, Kingella) — slow-growing, need prolonged incubation.",
+          "follow_ups": [
+            {"question": "Why must you do colonoscopy for S. bovis IE?", "answer": "Streptococcus bovis (now S. gallolyticus) bacteremia/IE has a strong association with colorectal neoplasia (cancer or polyps) — found in up to 25-50% of cases. The organism colonizes the colonic mucosa, particularly near neoplastic lesions (disrupted mucosal barrier allows translocation). Colonoscopy is MANDATORY even if the patient has no GI symptoms."}
+          ]
+        }
+      ]
+    }
+  ]
+}
+
