@@ -66,7 +66,7 @@ var PredictorUI = (function () {
   }
 
   function loadDemoData() {
-    var base = 'data/';
+    var base = '/predictor/data/';
     return Promise.all([
       loadJSON(base + 'ranked-list.json'),
       loadJSON(base + 'kg-triples.json'),
@@ -80,7 +80,7 @@ var PredictorUI = (function () {
   }
 
   function loadSupportData() {
-    var base = 'data/';
+    var base = '/predictor/data/';
     return Promise.all([
       loadJSON(base + 'topic-dictionary.json'),
       loadJSON(base + 'medical-synonyms.json'),

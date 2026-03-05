@@ -18,7 +18,7 @@ var TheoryUI = (function () {
   // --- Data loading ---
 
   function loadData() {
-    return fetch('data/flashcards.json')
+    return fetch('/theory/data/flashcards.json')
       .then(function (r) {
         if (!r.ok) throw new Error('Failed to load flashcards');
         return r.json();

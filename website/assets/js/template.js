@@ -22,8 +22,7 @@
   }
 
   function inject() {
-    var base = getBasePath();
-    if (!base) return;
+    var base = "/";
 
     var section = currentSection();
 
@@ -31,9 +30,9 @@
     var nav = document.getElementById("site-nav");
     if (nav) {
       var links = [
-        { href: base + "predictor/index.html?demo=1", label: "Predictor", key: "predictor" },
-        { href: base + "practicals/index.html", label: "Practicals", key: "practicals" },
-        { href: base + "theory/index.html", label: "Theory", key: "theory" }
+        { href: "/predictor?demo=1", label: "Predictor", key: "predictor" },
+        { href: "/practicals", label: "Practicals", key: "practicals" },
+        { href: "/theory", label: "Theory", key: "theory" }
       ];
 
       var navLinksHtml = links.map(function (l) {
@@ -44,7 +43,7 @@
       nav.innerHTML =
         '<header class="glass-header">' +
           '<div class="container">' +
-            '<a href="' + base + 'index.html" class="glass-header-logo">MD Exam Prep</a>' +
+            '<a href="/" class="glass-header-logo">MD Exam Prep</a>' +
             '<nav class="glass-header-nav">' +
               navLinksHtml +
             '</nav>' +
