@@ -7,12 +7,12 @@
   --sidebar-w: 260px;
   --topbar-h: 52px;
   --content-max: 780px;
-  --bg-card-hover: #163554;
-  --bg-inset: #0A2540;
+  --bg-card-hover: #334155;
+  --bg-inset: #0F172A;
   --border-subtle: rgba(255,255,255,0.06);
   --border-active: rgba(255,255,255,0.15);
-  --text-dim: #4A6B8A;
-  --text-inverse: #0A2540;
+  --text-dim: #64748B;
+  --text-inverse: #0F172A;
   --red: #FF6B6B;
   --red-bg: rgba(255, 107, 107, 0.08);
   --green: #4ADE80;
@@ -69,7 +69,7 @@
 .tool-topbar {
   display: flex; align-items: center; gap: 0.5rem;
   padding: 0 1rem; height: var(--topbar-h); min-height: var(--topbar-h);
-  background: rgba(10, 37, 64, 0.85);
+  background: rgba(15, 23, 42, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--glass-border);

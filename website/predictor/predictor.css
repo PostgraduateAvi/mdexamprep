@@ -164,7 +164,7 @@
   position: sticky;
   top: 54px; /* below glass-header */
   z-index: 9;
-  background: rgba(10, 37, 64, 0.85);
+  background: rgba(15, 23, 42, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--glass-border);
