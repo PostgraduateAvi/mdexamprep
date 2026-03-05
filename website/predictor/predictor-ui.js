@@ -15,20 +15,20 @@ var PredictorUI = (function () {
 
   // --- Reason code narratives ---
   var REASON_NARRATIVES = {
-    'Algorithm\u2191': 'Algorithmic topic \u2014 structured clinical approach',
-    'Balance\u2191': 'Portfolio balance \u2014 fills a system coverage gap',
-    'Bridge\u2191': 'Cross-paper bridge \u2014 signals across multiple papers',
-    'ConfusablePair\u2191': 'Confusable pair \u2014 commonly tested differential',
-    'CoreFloor\u2191': 'Core foundation topic \u2014 baseline exam coverage',
-    'Dose\u2191': 'Dose-anchored \u2014 specific drug dosing frequently tested',
-    'Foil\u2191': 'Exam foil \u2014 used as distractor in past papers',
-    'FormatPattern\u2191': 'Format pattern \u2014 fits recurring question structure',
-    'Foundation\u2191': 'Foundation topic \u2014 appears consistently across exams',
-    'ILD-Link\u2191': 'Connected to ILD topic family \u2014 high-yield cluster',
-    'Manual\u2191': 'Expert-flagged \u2014 manual review elevated priority',
-    'ProgramUpdate\u2191': 'Curriculum update \u2014 recently added to program',
-    'Recency\u2191': 'Recent frequency increase \u2014 rising in recent sessions',
-    'Sleeper\u2191': 'Sleeper topic \u2014 long gap, overdue for appearance'
+    'Algorithm\u2191': 'Structured topic \u2014 key for organized exam answers',
+    'Balance\u2191': 'Rounds out your coverage \u2014 this system needs attention',
+    'Bridge\u2191': 'Shows up across multiple papers \u2014 a recurring favourite',
+    'ConfusablePair\u2191': 'Often confused \u2014 examiners love testing this distinction',
+    'CoreFloor\u2191': 'Bread-and-butter topic \u2014 expected on almost every exam',
+    'Dose\u2191': 'Drug dosing comes up often \u2014 know the key numbers',
+    'Foil\u2191': 'Common trick option \u2014 worth knowing so you don\u2019t fall for it',
+    'FormatPattern\u2191': 'Fits a question style they keep repeating',
+    'Foundation\u2191': 'Keeps appearing year after year \u2014 reliable and important',
+    'ILD-Link\u2191': 'Part of a high-yield topic cluster \u2014 study them together',
+    'Manual\u2191': 'Flagged during review \u2014 deserves extra attention',
+    'ProgramUpdate\u2191': 'Recently added to the curriculum \u2014 likely to be tested',
+    'Recency\u2191': 'Showing up more often lately \u2014 gaining momentum',
+    'Sleeper\u2191': 'Hasn\u2019t appeared in a while \u2014 overdue and worth preparing'
   };
 
   function buildRationale(reasonCodes) {

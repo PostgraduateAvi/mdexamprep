@@ -13,16 +13,7 @@
   max-width: 540px;
 }
 
-/* Stats row -- reuses practicals pattern */
-.stats-row {
-  display: flex;
-  gap: var(--space-xl);
-  padding: var(--space-lg) 0;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  margin-bottom: var(--space-xl);
-  flex-wrap: wrap;
-}
+/* Stats panel -- uses .stats-glass from core.css */
 
 /* Controls area */
 .theory-controls {
@@ -46,7 +37,7 @@
   color: var(--text-secondary);
   cursor: pointer;
   transition: all var(--duration-fast) var(--ease-out);
-  min-height: 40px;
+  min-height: 44px;
 }
 .mode-btn:hover {
   border-color: var(--border-accent);
@@ -155,8 +146,8 @@
 /* Individual flashcard */
 .flashcard {
   background: var(--glass);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-md);
   padding: var(--space-lg);
@@ -244,8 +235,8 @@
 }
 .quiz-card {
   background: var(--glass);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-md);
   padding: var(--space-xl);
@@ -278,19 +269,20 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-sm);
-  padding: 10px 20px;
+  padding: 12px 24px;
   border-radius: var(--radius-sm);
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   font-weight: 500;
-  border: 1px solid var(--accent);
-  background: transparent;
-  color: var(--accent);
+  min-height: 44px;
+  border: none;
+  background: var(--accent);
+  color: var(--bg-deep);
   cursor: pointer;
   transition: all var(--duration-fast) var(--ease-out);
 }
 .quiz-reveal:hover {
-  background: var(--accent-dim);
+  background: var(--accent-warm);
 }
 .quiz-nav {
   display: flex;
@@ -301,14 +293,15 @@
   border-top: 1px solid var(--border);
 }
 .quiz-nav-btn {
-  padding: 8px 16px;
+  padding: 6px 14px;
   border-radius: var(--radius-sm);
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 0.8125rem;
   font-weight: 500;
+  min-height: 36px;
   border: 1px solid var(--border);
-  background: transparent;
-  color: var(--text-secondary);
+  background: var(--bg-elevated);
+  color: var(--text-primary);
   cursor: pointer;
   transition: all var(--duration-fast) var(--ease-out);
 }

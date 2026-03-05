@@ -40,8 +40,8 @@
   padding: var(--space-2xl) var(--space-xl);
   cursor: pointer;
   background: var(--glass);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   transition: border-color 200ms ease, background 200ms ease, box-shadow 200ms ease;
   display: flex;
   flex-direction: column;
@@ -200,9 +200,21 @@
 }
 
 .view-btn {
-  background: var(--bg-surface);
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  min-height: 36px;
   border: 1px solid var(--border);
+  background: var(--bg-surface);
   color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+.view-btn:hover {
+  border-color: var(--border-accent);
+  color: var(--text-primary);
 }
 
 .view-btn.active {
@@ -252,8 +264,8 @@
 .topic-card {
   padding: var(--space-lg);
   background: var(--glass);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--glass-border);
   border-radius: 10px;
   transition: border-color var(--duration-normal) var(--ease-out);
@@ -366,8 +378,8 @@
 .slot-card {
   padding: var(--space-lg);
   background: var(--glass);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--glass-border);
   border-radius: 10px;
 }
