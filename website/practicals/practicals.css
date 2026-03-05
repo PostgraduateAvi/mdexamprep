@@ -489,21 +489,6 @@
   font-size: 0.72rem;
 }
 
-/* === STRESS MODE TIMER === */
-.stress-timer {
-  text-align: center; padding: 1rem 0;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 2rem; font-weight: 700;
-  color: var(--text-primary);
-  transition: color 300ms;
-}
-.stress-timer.warning { color: var(--accent); }
-.stress-timer.danger { color: var(--red); animation: pulse 1s ease infinite; }
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
-}
-
 /* === EMPTY / INTRO STATES === */
 .empty-state {
   text-align: center; padding: 10vh 2rem 4rem;
