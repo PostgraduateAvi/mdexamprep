@@ -107,7 +107,7 @@ var PredictorUI = (function () {
       currentResults = PredictorEngine.rank(data.rankedList, data.kgTriples, data.quotas, null);
       updateParsing('Done', '', 100);
       setTimeout(function () {
-        showResults('Demo dataset \u2014 ' + data.rankedList.length + ' predicted topics');
+        showResults('Demo dataset \u2014 ' + data.rankedList.length + ' ranked topics');
       }, 400);
     }).catch(handleError);
   }
@@ -347,7 +347,7 @@ var PredictorUI = (function () {
       setTimeout(function () {
         loader.classList.remove('page-loader--active');
         loader.classList.add('page-loader--done');
-        showResults('Demo dataset — ' + data.rankedList.length + ' predicted topics');
+        showResults('Demo dataset — ' + data.rankedList.length + ' ranked topics');
         animateTopicCards();
       }, 300);
     }).catch(handleError);
