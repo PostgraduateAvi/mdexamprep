@@ -257,7 +257,7 @@
     };
 
     function init() {
-      fetch("../data/catalog.json")
+      fetch("/theory/data/catalog.json")
         .then(function (r) { return r.json(); })
         .then(function (data) {
           CATALOG = data;
