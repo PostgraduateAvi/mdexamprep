@@ -213,6 +213,7 @@ Parser uses `topic-dictionary.json` for matching. Supporting data: `medical-syno
 | 11 | Mar 5 | Codex Futurism design polish: glassmorphic landing, SVG illustrations, restyled sub-pages |
 | 12 | Mar 5 | Design rewrite: gradient tool cards, glassmorphic sub-page headers, PNG illustrations |
 | 13 | Mar 5 | Full audit: stale file cleanup, security headers (CSP), SEO (sitemap/robots/favicon/OG), accessibility, error handling |
+| 14 | Mar 6 | Verified deployment: pulled latest, pushed b9bbda7 to origin main -- Vercel live and current |
 
 ---
 
