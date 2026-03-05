@@ -96,14 +96,14 @@ var PredictorUI = (function () {
 
   function startDemo() {
     setState(STATE.PARSING);
-    updateParsing('Loading demo data...', 'Yenepoya University \u2014 987 questions', 30);
+    updateParsing('Loading demo data...', 'Demo dataset \u2014 987 questions', 30);
     dataSource = 'demo';
     loadDemoData().then(function () {
       updateParsing('Computing rankings...', '', 80);
       currentResults = PredictorEngine.rank(data.rankedList, data.kgTriples, data.quotas, null);
       updateParsing('Done', '', 100);
       setTimeout(function () {
-        showResults('Yenepoya University \u2014 ' + data.rankedList.length + ' predicted topics');
+        showResults('Demo dataset \u2014 ' + data.rankedList.length + ' predicted topics');
       }, 400);
     }).catch(handleError);
   }
@@ -343,7 +343,7 @@ var PredictorUI = (function () {
       setTimeout(function () {
         loader.classList.remove('page-loader--active');
         loader.classList.add('page-loader--done');
-        showResults('Yenepoya University — ' + data.rankedList.length + ' predicted topics');
+        showResults('Demo dataset — ' + data.rankedList.length + ' predicted topics');
         animateTopicCards();
       }, 300);
     }).catch(handleError);
