@@ -13,7 +13,7 @@ desktop.ini
 .claude/
 
 # Source data (raw inputs, not deployed)
-# Leading slash anchors to repo root — won't match website/ subdirs
+# Leading slash anchors to repo root ï¿½ won't match website/ subdirs
 /predictor/
 /practicals/
 /theory/
@@ -29,3 +29,5 @@ desktop.ini
 
 # Python workaround scripts
 *.py
+
+.vercel
