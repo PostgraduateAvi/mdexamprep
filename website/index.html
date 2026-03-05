@@ -210,70 +210,6 @@
       box-shadow: 0 0 6px rgba(74,222,128,0.4);
     }
 
-    /* — Ranked Section (below hero, full explanation) — */
-    .cx-ranked {
-      padding: 80px 0; position: relative;
-    }
-    .cx-ranked .container {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
-    }
-    .cx-ranked-text h2 {
-      font-size: 1.625rem; font-weight: 700; margin-bottom: 12px;
-    }
-    .cx-ranked-text p {
-      color: var(--text-secondary); font-size: 0.9375rem;
-      line-height: 1.65; margin-bottom: 20px;
-    }
-    .cx-ranked-panel {
-      padding: 0; overflow: hidden;
-    }
-    .cx-ranked-header {
-      padding: 16px 20px;
-      border-bottom: 1px solid var(--glass-border);
-      display: flex; justify-content: space-between; align-items: center;
-    }
-    .cx-ranked-header span {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.6875rem; letter-spacing: 0.06em;
-      color: var(--accent); text-transform: uppercase;
-    }
-    .cx-ranked-header .cx-callout {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.5625rem; color: var(--sepia-light);
-      opacity: 0.7;
-    }
-    .cx-rank-row {
-      display: flex; align-items: center; gap: 12px;
-      padding: 12px 20px;
-      border-bottom: 1px solid rgba(255,255,255,0.03);
-      transition: background 150ms;
-    }
-    .cx-rank-row:hover { background: rgba(0,212,255,0.03); }
-    .cx-rank-num {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.6875rem; color: var(--text-muted);
-      width: 20px; text-align: right;
-    }
-    .cx-rank-bar {
-      flex: 1; height: 6px; border-radius: 3px;
-      background: var(--bg-elevated); overflow: hidden;
-    }
-    .cx-rank-fill {
-      height: 100%; border-radius: 3px;
-      background: linear-gradient(90deg, var(--accent), var(--accent-warm));
-      box-shadow: 0 0 6px rgba(0,212,255,0.15);
-      transition: width 600ms var(--ease-out);
-    }
-    .cx-rank-label {
-      font-size: 0.8125rem; color: var(--text-primary);
-      min-width: 120px;
-    }
-    .cx-rank-score {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.75rem; color: var(--accent);
-      min-width: 52px; text-align: right;
-    }
-
     /* — Vertical Timeline — */
     .cx-timeline {
       padding: 100px 0; position: relative;
@@ -415,7 +351,6 @@
       .cx-nav-link { display: none; }
       .cx-hero-layout { grid-template-columns: 1fr; gap: 40px; }
       .cx-algo-card { max-width: 380px; margin: 0 auto; }
-      .cx-ranked .container { grid-template-columns: 1fr; gap: 40px; }
       .cx-tools-grid { grid-template-columns: 1fr; }
       .cx-timeline-track { padding-left: 40px; }
       .cx-tl-node { left: -40px; width: 40px; height: 40px; }
@@ -425,7 +360,6 @@
     @media (prefers-reduced-motion: reduce) {
       .cx-hero-glow, .cx-hero-glow-2 { animation: none; opacity: 0.5; }
       .cx-algo-card { animation: none; }
-      .cx-rank-fill { transition: none; }
       .gradient-card-arrow { transition: none; }
       .gradient-card:hover .gradient-card-arrow { transform: none; }
       .gradient-card { transition: none; }
@@ -441,10 +375,10 @@
   <header class="cx-header" role="banner">
     <span class="cx-logo">MD Exam Prep</span>
     <nav class="cx-nav" aria-label="Main navigation">
-      <a href="/predictor?demo=1" class="cx-nav-link">Predictor</a>
-      <a href="/practicals" class="cx-nav-link">Practicals</a>
-      <a href="/theory" class="cx-nav-link">Theory</a>
-      <a href="/predictor?demo=1" class="cx-cta-pill">
+      <a href="/predictor/?demo=1" class="cx-nav-link">Predictor</a>
+      <a href="/practicals/" class="cx-nav-link">Practicals</a>
+      <a href="/theory/" class="cx-nav-link">Theory</a>
+      <a href="/predictor/?demo=1" class="cx-cta-pill">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
           <circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/>
           <line x1="12" y1="3" x2="12" y2="1"/><line x1="12" y1="23" x2="12" y2="21"/>
@@ -465,9 +399,9 @@
       <div class="cx-hero-layout">
         <!-- Left: Rhetoric -->
         <div class="cx-hero-content">
-          <h1>Every year, students prepare everything.<br>The exam tests ten topics.</h1>
-          <p class="cx-hero-sub">We studied every MD Internal Medicine question asked over the last 20 years and found the patterns examiners come back to, year after year. The result is a preparation strategy built on evidence, not guesswork.</p>
-          <a href="/predictor?demo=1" class="cx-hero-cta">
+          <h1>Know what the exam will ask<br>before you open a book.</h1>
+          <p class="cx-hero-sub">We analyzed 20 years of MD Internal Medicine papers and ranked every topic by how likely it is to appear. Upload your college&rsquo;s papers and get a study list built on evidence.</p>
+          <a href="/predictor/?demo=1" class="cx-hero-cta">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
               <circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/>
               <line x1="12" y1="3" x2="12" y2="1"/><line x1="12" y1="23" x2="12" y2="21"/>
@@ -478,131 +412,66 @@
           <p class="cx-hero-evidence">987 questions &middot; 20 years &middot; 44 topics ranked</p>
         </div>
 
-        <!-- Right: Floating Algorithm Card -->
+        <!-- Right: Floating Algorithm Card (actual topics from predictor) -->
         <div class="cx-algo-card" aria-label="Algorithm output preview">
           <div class="cx-algo-header">
-            <span class="cx-algo-header-title">Top Study Topics</span>
-            <span class="cx-algo-header-meta">live preview</span>
+            <span class="cx-algo-header-title">Predicted Topics</span>
+            <span class="cx-algo-header-meta">sample output</span>
           </div>
           <div class="cx-algo-rows">
             <div class="cx-algo-row">
               <span class="cx-algo-num">01</span>
               <div class="cx-algo-topic">
-                <span class="cx-algo-name">Cardiology</span>
-                <div class="cx-algo-bar"><div class="cx-algo-fill" style="width:93.5%"></div></div>
+                <span class="cx-algo-name">Acute Kidney Injury</span>
+                <div class="cx-algo-bar"><div class="cx-algo-fill" style="width:96%"></div></div>
               </div>
-              <span class="cx-algo-score">93.52</span>
+              <span class="cx-algo-score">Renal</span>
             </div>
             <div class="cx-algo-row">
               <span class="cx-algo-num">02</span>
               <div class="cx-algo-topic">
-                <span class="cx-algo-name">Pulmonology</span>
-                <div class="cx-algo-bar"><div class="cx-algo-fill" style="width:88.2%"></div></div>
+                <span class="cx-algo-name">Hypercalcaemia</span>
+                <div class="cx-algo-bar"><div class="cx-algo-fill" style="width:91%"></div></div>
               </div>
-              <span class="cx-algo-score">88.21</span>
+              <span class="cx-algo-score">Endo</span>
             </div>
             <div class="cx-algo-row">
               <span class="cx-algo-num">03</span>
               <div class="cx-algo-topic">
-                <span class="cx-algo-name">Neurology</span>
-                <div class="cx-algo-bar"><div class="cx-algo-fill" style="width:85.7%"></div></div>
+                <span class="cx-algo-name">Rheumatic Heart Disease</span>
+                <div class="cx-algo-bar"><div class="cx-algo-fill" style="width:86%"></div></div>
               </div>
-              <span class="cx-algo-score">85.74</span>
+              <span class="cx-algo-score">CVS</span>
             </div>
             <div class="cx-algo-row">
               <span class="cx-algo-num">04</span>
               <div class="cx-algo-topic">
-                <span class="cx-algo-name">Endocrinology</span>
-                <div class="cx-algo-bar"><div class="cx-algo-fill" style="width:79.1%"></div></div>
+                <span class="cx-algo-name">Diabetic Ketoacidosis</span>
+                <div class="cx-algo-bar"><div class="cx-algo-fill" style="width:81%"></div></div>
               </div>
-              <span class="cx-algo-score">79.13</span>
+              <span class="cx-algo-score">Endo</span>
             </div>
             <div class="cx-algo-row">
               <span class="cx-algo-num">05</span>
               <div class="cx-algo-topic">
-                <span class="cx-algo-name">Nephrology</span>
-                <div class="cx-algo-bar"><div class="cx-algo-fill" style="width:74.8%"></div></div>
+                <span class="cx-algo-name">Pleural Effusion</span>
+                <div class="cx-algo-bar"><div class="cx-algo-fill" style="width:76%"></div></div>
               </div>
-              <span class="cx-algo-score">74.82</span>
+              <span class="cx-algo-score">Resp</span>
             </div>
             <div class="cx-algo-row">
               <span class="cx-algo-num">06</span>
               <div class="cx-algo-topic">
-                <span class="cx-algo-name">Gastroenterology</span>
-                <div class="cx-algo-bar"><div class="cx-algo-fill" style="width:71.3%"></div></div>
+                <span class="cx-algo-name">Hepatic Encephalopathy</span>
+                <div class="cx-algo-bar"><div class="cx-algo-fill" style="width:71%"></div></div>
               </div>
-              <span class="cx-algo-score">71.36</span>
+              <span class="cx-algo-score">GI</span>
             </div>
           </div>
           <div class="cx-algo-footer">
             <span class="cx-algo-status"><span class="cx-algo-dot"></span> LIVE</span>
-            <span>38 of 44 topics worth preparing for</span>
+            <span>38 of 44 topics ranked</span>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Expanded Ranked Explanation -->
-  <section class="cx-ranked">
-    <div class="container">
-      <div class="cx-ranked-text">
-        <h2>Ranked by evidence, not opinion.</h2>
-        <p>Each topic earns its place through how often it appears, how recently it was tested, and whether it shows up across different papers. The topics that keep coming back rise to the top.</p>
-        <span class="cx-evidence">987 questions studied &middot; 20 years of exam data</span>
-      </div>
-      <div class="cx-ranked-panel glass-panel">
-        <div class="cx-ranked-header">
-          <span>Study Focus &mdash; Top 8</span>
-          <span class="cx-callout">987 questions studied</span>
-        </div>
-        <div class="cx-rank-row">
-          <span class="cx-rank-num">01</span>
-          <span class="cx-rank-label">Cardiology</span>
-          <div class="cx-rank-bar"><div class="cx-rank-fill" style="width:93.5%"></div></div>
-          <span class="cx-rank-score">93.52%</span>
-        </div>
-        <div class="cx-rank-row">
-          <span class="cx-rank-num">02</span>
-          <span class="cx-rank-label">Pulmonology</span>
-          <div class="cx-rank-bar"><div class="cx-rank-fill" style="width:88.2%"></div></div>
-          <span class="cx-rank-score">88.21%</span>
-        </div>
-        <div class="cx-rank-row">
-          <span class="cx-rank-num">03</span>
-          <span class="cx-rank-label">Neurology</span>
-          <div class="cx-rank-bar"><div class="cx-rank-fill" style="width:85.7%"></div></div>
-          <span class="cx-rank-score">85.74%</span>
-        </div>
-        <div class="cx-rank-row">
-          <span class="cx-rank-num">04</span>
-          <span class="cx-rank-label">Endocrinology</span>
-          <div class="cx-rank-bar"><div class="cx-rank-fill" style="width:79.1%"></div></div>
-          <span class="cx-rank-score">79.13%</span>
-        </div>
-        <div class="cx-rank-row">
-          <span class="cx-rank-num">05</span>
-          <span class="cx-rank-label">Nephrology</span>
-          <div class="cx-rank-bar"><div class="cx-rank-fill" style="width:74.8%"></div></div>
-          <span class="cx-rank-score">74.82%</span>
-        </div>
-        <div class="cx-rank-row">
-          <span class="cx-rank-num">06</span>
-          <span class="cx-rank-label">Gastroenterology</span>
-          <div class="cx-rank-bar"><div class="cx-rank-fill" style="width:71.3%"></div></div>
-          <span class="cx-rank-score">71.36%</span>
-        </div>
-        <div class="cx-rank-row">
-          <span class="cx-rank-num">07</span>
-          <span class="cx-rank-label">Infectious Disease</span>
-          <div class="cx-rank-bar"><div class="cx-rank-fill" style="width:68.9%"></div></div>
-          <span class="cx-rank-score">68.91%</span>
-        </div>
-        <div class="cx-rank-row">
-          <span class="cx-rank-num">08</span>
-          <span class="cx-rank-label">Hematology</span>
-          <div class="cx-rank-bar"><div class="cx-rank-fill" style="width:64.4%"></div></div>
-          <span class="cx-rank-score">64.47%</span>
         </div>
       </div>
     </div>
@@ -620,36 +489,33 @@
     </div>
     <div class="container">
       <div class="cx-timeline-header">
-        <h2>From past papers to clear priorities.</h2>
-        <p>Three steps. Each one grounded in what examiners actually ask.</p>
+        <h2>How it works</h2>
+        <p>Three steps from past papers to a focused study plan.</p>
       </div>
       <div class="cx-timeline-track">
         <div class="cx-tl-step">
           <div class="cx-tl-node">
             <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/><line x1="12" y1="3" x2="12" y2="1"/><line x1="12" y1="23" x2="12" y2="21"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
           </div>
-          <div class="cx-tl-label">01 Reading</div>
-          <h3 class="cx-tl-title">Reading the Papers</h3>
-          <p class="cx-tl-desc">Every question from the last 20 years is matched to the topic it belongs to &mdash; building a clear map of what examiners choose to test.</p>
-          <p class="cx-tl-evidence">1,718 topic entries &middot; 77.4% match rate</p>
+          <div class="cx-tl-label">01 Match</div>
+          <h3 class="cx-tl-title">Map questions to topics</h3>
+          <p class="cx-tl-desc">Every question is matched to a topic using a dictionary of 1,718 entries. Works with any college&rsquo;s papers.</p>
         </div>
         <div class="cx-tl-step">
           <div class="cx-tl-node">
             <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg>
           </div>
-          <div class="cx-tl-label">02 Weighing</div>
-          <h3 class="cx-tl-title">Weighing What Matters</h3>
-          <p class="cx-tl-desc">Topics are weighed by how often they appear, how recently they were asked, and whether they recur across different papers. The ones that keep coming back score highest.</p>
-          <p class="cx-tl-evidence">14 scoring factors &middot; recency and frequency weighted</p>
+          <div class="cx-tl-label">02 Weigh</div>
+          <h3 class="cx-tl-title">Score by frequency and recency</h3>
+          <p class="cx-tl-desc">Topics are ranked by how often they appear, how recently they were tested, and whether they recur across papers.</p>
         </div>
         <div class="cx-tl-step">
           <div class="cx-tl-node">
             <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="4" rx="1"/><rect x="4" y="10" width="12" height="4" rx="1"/><rect x="4" y="17" width="8" height="4" rx="1"/></svg>
           </div>
-          <div class="cx-tl-label">03 Ranking</div>
-          <h3 class="cx-tl-title">Your Study List</h3>
-          <p class="cx-tl-desc">You get a ranked list of topics with clear reasoning for each. No black box &mdash; every recommendation explains why it matters.</p>
-          <p class="cx-tl-evidence">38 of 44 topics make the cut</p>
+          <div class="cx-tl-label">03 Rank</div>
+          <h3 class="cx-tl-title">Get your study list</h3>
+          <p class="cx-tl-desc">A ranked list of topics with clear reasoning. No black box &mdash; every recommendation explains why.</p>
         </div>
       </div>
     </div>
@@ -665,7 +531,7 @@
       <div class="cx-tools-grid">
 
         <!-- Prediction Engine — Teal -->
-        <a href="/predictor?demo=1" class="gradient-card gradient-card--teal">
+        <a href="/predictor/?demo=1" class="gradient-card gradient-card--teal">
           <div class="gradient-card-illust">
             <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:100%;height:100%;"><circle cx="100" cy="70" r="55" fill="none" stroke="rgba(0,212,255,0.08)" stroke-width="0.5"/><circle cx="100" cy="70" r="42" fill="none" stroke="rgba(0,212,255,0.12)" stroke-width="0.8"/><circle cx="100" cy="70" r="28" fill="none" stroke="rgba(0,212,255,0.2)" stroke-width="1"/><circle cx="100" cy="70" r="14" fill="none" stroke="rgba(0,212,255,0.3)" stroke-width="1.5"/><circle cx="100" cy="70" r="4" fill="rgba(0,212,255,0.5)"/><line x1="100" y1="8" x2="100" y2="132" stroke="rgba(0,212,255,0.06)" stroke-width="0.5"/><line x1="38" y1="70" x2="162" y2="70" stroke="rgba(0,212,255,0.06)" stroke-width="0.5"/><line x1="55" y1="25" x2="145" y2="115" stroke="rgba(0,212,255,0.04)" stroke-width="0.5"/><line x1="145" y1="25" x2="55" y2="115" stroke="rgba(0,212,255,0.04)" stroke-width="0.5"/></svg>
             <span class="data-node">20 years of exam data</span>
@@ -683,7 +549,7 @@
         </a>
 
         <!-- Practical Exam Tools — Blue -->
-        <a href="/practicals" class="gradient-card gradient-card--blue">
+        <a href="/practicals/" class="gradient-card gradient-card--blue">
           <div class="gradient-card-illust">
             <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:100%;height:100%;"><path d="M10 70 L40 70 L50 70 L58 35 L66 105 L74 45 L82 95 L90 55 L98 70 L160 70 L190 70" fill="none" stroke="rgba(59,130,246,0.25)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 70 L40 70" stroke="rgba(59,130,246,0.1)" stroke-width="1"/><path d="M98 70 L190 70" stroke="rgba(59,130,246,0.1)" stroke-width="1"/><circle cx="58" cy="35" r="2.5" fill="rgba(59,130,246,0.4)"/><circle cx="66" cy="105" r="2.5" fill="rgba(59,130,246,0.4)"/><circle cx="74" cy="45" r="2.5" fill="rgba(59,130,246,0.3)"/><circle cx="82" cy="95" r="2.5" fill="rgba(59,130,246,0.3)"/><circle cx="90" cy="55" r="2.5" fill="rgba(59,130,246,0.25)"/><line x1="10" y1="90" x2="190" y2="90" stroke="rgba(59,130,246,0.05)" stroke-width="0.5"/><line x1="10" y1="50" x2="190" y2="50" stroke="rgba(59,130,246,0.05)" stroke-width="0.5"/></svg>
             <span class="data-node">21 clinical cases</span>
@@ -702,7 +568,7 @@
         </a>
 
         <!-- Theory Study Tools — Amber -->
-        <a href="/theory" class="gradient-card gradient-card--amber">
+        <a href="/theory/" class="gradient-card gradient-card--amber">
           <div class="gradient-card-illust">
             <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:100%;height:100%;"><line x1="50" y1="30" x2="100" y2="50" stroke="rgba(245,158,11,0.12)" stroke-width="0.8"/><line x1="50" y1="70" x2="100" y2="50" stroke="rgba(245,158,11,0.12)" stroke-width="0.8"/><line x1="50" y1="110" x2="100" y2="90" stroke="rgba(245,158,11,0.12)" stroke-width="0.8"/><line x1="50" y1="70" x2="100" y2="90" stroke="rgba(245,158,11,0.12)" stroke-width="0.8"/><line x1="100" y1="50" x2="150" y2="30" stroke="rgba(245,158,11,0.12)" stroke-width="0.8"/><line x1="100" y1="50" x2="150" y2="70" stroke="rgba(245,158,11,0.12)" stroke-width="0.8"/><line x1="100" y1="90" x2="150" y2="70" stroke="rgba(245,158,11,0.12)" stroke-width="0.8"/><line x1="100" y1="90" x2="150" y2="110" stroke="rgba(245,158,11,0.12)" stroke-width="0.8"/><line x1="100" y1="50" x2="150" y2="110" stroke="rgba(245,158,11,0.06)" stroke-width="0.5"/><line x1="100" y1="90" x2="150" y2="30" stroke="rgba(245,158,11,0.06)" stroke-width="0.5"/><circle cx="50" cy="30" r="6" fill="rgba(245,158,11,0.15)" stroke="rgba(245,158,11,0.3)" stroke-width="1"/><circle cx="50" cy="70" r="6" fill="rgba(245,158,11,0.15)" stroke="rgba(245,158,11,0.3)" stroke-width="1"/><circle cx="50" cy="110" r="6" fill="rgba(245,158,11,0.15)" stroke="rgba(245,158,11,0.3)" stroke-width="1"/><circle cx="100" cy="50" r="8" fill="rgba(245,158,11,0.2)" stroke="rgba(245,158,11,0.35)" stroke-width="1"/><circle cx="100" cy="90" r="8" fill="rgba(245,158,11,0.2)" stroke="rgba(245,158,11,0.35)" stroke-width="1"/><circle cx="150" cy="30" r="6" fill="rgba(245,158,11,0.15)" stroke="rgba(245,158,11,0.3)" stroke-width="1"/><circle cx="150" cy="70" r="6" fill="rgba(245,158,11,0.15)" stroke="rgba(245,158,11,0.3)" stroke-width="1"/><circle cx="150" cy="110" r="6" fill="rgba(245,158,11,0.15)" stroke="rgba(245,158,11,0.3)" stroke-width="1"/></svg>
             <span class="data-node">198 flashcards</span>
@@ -726,8 +592,7 @@
   <!-- Footer -->
   <footer class="cx-footer">
     <div class="container">
-      <p class="cx-footer-text">Built by Avinash Jothish. Validated on real exam data. Free forever.</p>
-      <p class="cx-footer-meta">987 questions &middot; 20 years of data &middot; evidence over guesswork</p>
+      <p class="cx-footer-text">Built by Avinash Jothish. Free forever.</p>
     </div>
   </footer>
 
