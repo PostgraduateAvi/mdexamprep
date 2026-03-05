@@ -5,13 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Upload Papers - MD Exam Prep</title>
   <meta name="description" content="Upload past papers. Get ranked preparation priorities.">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="canonical" href="https://mdexamprep.vercel.app/predictor">
+  <meta property="og:title" content="Upload Papers - MD Exam Prep">
+  <meta property="og:description" content="Upload past papers and get ranked preparation priorities for MD Internal Medicine.">
+  <meta property="og:url" content="https://mdexamprep.vercel.app/predictor">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Upload Papers - MD Exam Prep">
+  <meta name="twitter:description" content="Upload past papers and get ranked preparation priorities for MD Internal Medicine.">
   <link rel="stylesheet" href="../assets/css/core.css">
   <link rel="stylesheet" href="predictor.css">
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div id="page-loader" class="page-loader">
+  <div id="page-loader" class="page-loader" role="status" aria-live="polite">
     <div class="page-loader-bar"></div>
   </div>
   <div id="site-nav"></div>
@@ -39,7 +48,7 @@
         <p class="choose-demo">Or <a href="#" id="demo-link">try with demo data</a><span class="choose-demo-meta">987 questions &middot; 20 years &middot; 44 ranked topics</span></p>
       </div>
     </section>
-    <section id="state-parsing" class="predictor-parsing" style="display:none;">
+    <section id="state-parsing" class="predictor-parsing" style="display:none;" aria-live="polite">
       <div class="parsing-content">
         <div class="loading-spinner"></div>
         <p id="parsing-status" class="parsing-status">Reading files...</p>

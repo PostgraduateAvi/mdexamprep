@@ -1,6 +1,6 @@
 # MD Exam Prep Website -- Project Root
 
-## Status: LIVE (Mar 5, 2026 -- Sessions 1-10 complete, deployed to Vercel)
+## Status: LIVE (Mar 5, 2026 -- Sessions 1-13 complete, deployed to Vercel)
 
 **Built by Avinash Jothish.** Free. Static HTML/JS. No framework. Client-side only.
 
@@ -80,25 +80,32 @@ These files are complete and must not be modified without explicit user instruct
 .gitignore              31 lines  -- git exclusions (root-anchored paths)
 .gitattributes           1 line   -- LF line endings (text=auto eol=lf)
 README.md              149 lines  -- GitHub search-optimized project description
-vercel.json             31 lines  -- Vercel deployment config + cache headers
+vercel.json             64 lines  -- Vercel deployment config + cache/security headers
+```
+
+### SEO
+```
+website/sitemap.xml              33 lines  -- XML sitemap for search engines
+website/robots.txt                4 lines  -- crawl guidance + sitemap directive
+website/favicon.svg              10 lines  -- teal crosshair on navy circle
 ```
 
 ### Landing
 ```
-website/index.html              142 lines  -- redesigned landing (Clinical Tech theme, bento cards)
-website/assets/css/core.css     497 lines  -- shared styles (navy/teal palette, Plus Jakarta Sans)
+website/index.html              577 lines  -- Codex Futurism landing (glassmorphic header, SVG cards, OG meta, skip-nav)
+website/assets/css/core.css     520 lines  -- shared styles (navy/teal palette, Plus Jakarta Sans, focus-visible)
 website/assets/js/template.js    29 lines  -- sub-page back-link + footer
 ```
 
 ### Predictor
 ```
-website/predictor/index.html      84 lines  -- page loader, upload invite, tab UI, 3 states
-website/predictor/predictor-ui.js 452 lines -- demo loader, card animation, tab wiring, text paste, URL param
+website/predictor/index.html      95 lines  -- page loader, upload invite, tab UI, OG meta, aria-live
+website/predictor/predictor-ui.js 456 lines -- demo loader, card animation, tab wiring, error handling, URL param
 website/predictor/predictor.css   532 lines -- page loader, upload invite, tab + textarea styles, reduced motion
 website/predictor/upload-parser.js 306 lines -- PDF.js + SheetJS client-side parser
 ```
 
-### Predictor Data (7 JSON files in website/predictor/data/)
+### Predictor Data (5 JSON files in website/predictor/data/)
 ```
 ranked-list.json        16 KB  -- 44 topics, reason codes, scores
 kg-triples.json          2 KB  -- knowledge-graph triples for boost
@@ -108,12 +115,12 @@ topic-dictionary.json  142 KB  -- 1,718 entries for upload matching (PRIMARY)
 medical-synonyms.json    1 KB  -- 32 synonym pairs
 system-keywords.json     2 KB  -- fallback system classifier
 ```
-Note: `taxonomy-lite.json` and `test-fixture.json` removed in Session 7 cleanup (deprecated/unused).
+Note: `taxonomy-lite.json` and `test-fixture.json` deleted in Session 13 audit.
 Note: `flashcards_clean.json` deleted in Session 9 (stale intermediate file).
 
 ### Theory
 ```
-website/theory/index.html          68 lines  -- flashcards page + tools link card
+website/theory/index.html         110 lines  -- flashcards page + tools link card (OG meta, canonical)
 website/theory/theory.css         369 lines  -- flashcard/quiz styles
 website/theory/theory.js          398 lines  -- browse/quiz logic, Fisher-Yates shuffle
 website/theory/tools/index.html   345 lines  -- interactive study tools hub (23 tools)
@@ -171,7 +178,7 @@ viva_forge_data.json 291 KB -- unified viva from 7 transcripts
 - Python scripts assemble HTML when needed
 - `__DATA__` placeholder pattern for builds
 - All case JSON must conform to `practicals/data/schema.json`
-- Use `topic-dictionary.json` (1,718 entries, 77.4%) NOT `taxonomy-lite.json` (43%)
+- Use `topic-dictionary.json` (1,718 entries, 77.4%) as the primary topic matcher
 
 ---
 
@@ -203,6 +210,9 @@ Parser uses `topic-dictionary.json` for matching. Supporting data: `medical-syno
 | 8 | Mar 5 | Deployment: git init, GitHub repo (PostgraduateAvi/mdexamprep), Vercel production, cache headers |
 | 9 | Mar 5 | Privacy cleanup: removed all institution references, deleted stale flashcards_clean.json |
 | 10 | Mar 5 | Landing redesign (navy/teal), practicals cleanup, theory tools wiring, font unification, README + GitHub SEO |
+| 11 | Mar 5 | Codex Futurism design polish: glassmorphic landing, SVG illustrations, restyled sub-pages |
+| 12 | Mar 5 | Design rewrite: gradient tool cards, glassmorphic sub-page headers, PNG illustrations |
+| 13 | Mar 5 | Full audit: stale file cleanup, security headers (CSP), SEO (sitemap/robots/favicon/OG), accessibility, error handling |
 
 ---
 
@@ -242,6 +252,15 @@ Parser uses `topic-dictionary.json` for matching. Supporting data: `medical-syno
 - README.md: GitHub search-optimized (149 lines, keyword-rich for MD Internal Medicine domain)
 - GitHub repo: description + 10 topic tags set for search discoverability
 
+### Completed (Session 13 -- Audit)
+- Stale files deleted: taxonomy-lite.json, test-fixture.json, DEPLOY_HANDOFF.md, SESSION_10_HANDOFF.md, docs/ directory, website/toolbox/, PLAN.md
+- Security: CSP header, X-Content-Type-Options, X-Frame-Options, Referrer-Policy in vercel.json
+- SEO: sitemap.xml, robots.txt, favicon.svg, OG/Twitter meta tags, canonical URLs on all 4 main pages
+- Accessibility: skip-nav link, aria-hidden on decorative SVGs, aria-live on status regions, focus-visible styles, contrast fixes on sepia text
+- Error handling: .catch() on both Promise.all chains in predictor-ui.js
+- Cache: theory data bumped 1h to 1d (flashcards finalized)
+- CDN scripts: crossorigin="anonymous" on PDF.js and SheetJS
+
 ### Deferred work
 - Additional practical tools (examination-guide, OSCE-suite, ECG-mastery, xray, neuro-trainer, specialty-reference)
 - Theory enhancements: taxonomy browser, Harrison chapter mapping
@@ -277,7 +296,8 @@ Typography: Plus Jakarta Sans (body+headings) + JetBrains Mono (stats/code)
 - **Live URL**: https://mdexamprep.vercel.app/
 - **GitHub**: https://github.com/PostgraduateAvi/mdexamprep (public, `main` branch)
 - **Vercel config**: `vercel.json` at root, `outputDirectory: "website"` serves only `website/`
-- **Cache tiers**: Assets `max-age=2592000,immutable` (30d), predictor/practicals data `max-age=86400,SWR=604800` (1d), theory data `max-age=3600,SWR=86400` (1h)
+- **Cache tiers**: Assets `max-age=2592000,immutable` (30d), predictor/practicals data `max-age=86400,SWR=604800` (1d), theory data `max-age=86400,SWR=604800` (1d)
+- **Security headers**: CSP (script-src self + cdnjs), X-Frame-Options DENY, nosniff, strict-origin referrer
 - **Update workflow**: edit `website/` -> `git commit` -> `git push` -> live in ~30s
 - **Rollback**: `git revert` -> push
 - **Tools**: `gh` CLI (authenticated as PostgraduateAvi), Vercel CLI v50.27.1 (authenticated as postgraduateavi)
@@ -294,7 +314,7 @@ vercel.json    31 lines  -- outputDirectory: website, cleanUrls, 3-tier cache he
 - **EEXIST errors**: Write/Edit tools fail on the project directory. Root cause unclear (possibly filesystem watcher or Cowork). Workaround: write a `.py` script to `C:\Users\AVINASH\` (home dir, not affected), run it with Python to do file I/O into the project dir, then delete the script.
 - **`/tmp` is virtual**: The Write tool's `/tmp` path does NOT map to the real Windows temp dir. Files written there are invisible to Python. Always use `C:\Users\AVINASH\` as the staging location for workaround scripts.
 - **Heredoc + apostrophes**: Bash heredoc (even with quoted delimiter) breaks on content containing apostrophes or nested quotes. Always use the .py file workaround instead.
-- **Reason codes in data differ from spec**: Actual data uses `Algorithm+`, `Bridge+`, `Sleeper+` etc. (14 codes). Spec assumed `high_frequency`, `rising_trend`. Always inspect real data first.
+- **Reason codes**: 14 codes used: Algorithm, Balance, Bridge, ConfusablePair, CoreFloor, Dose, Foil, FormatPattern, Foundation, ILD-Link, Manual, ProgramUpdate, Recency, Sleeper (all with up-arrow suffix).
 - **CSS class collisions**: Use prefixed names (e.g., `.landing-stats` not `.stats-bar`)
 - **Flash of wrong state**: Hide all states explicitly at start of demo flow
 - **Page-loader leak**: Clean up loader classes in error handler

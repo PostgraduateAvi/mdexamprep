@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MD Exam Prep &mdash; Prediction Engine for MD Internal Medicine</title>
   <meta name="description" content="Free prediction engine and study tools for MD Internal Medicine exam preparation. 987 questions analyzed across 20 years to rank what matters most.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="canonical" href="https://mdexamprep.vercel.app/">
+  <meta property="og:title" content="MD Exam Prep � Prediction Engine for MD Internal Medicine">
+  <meta property="og:description" content="Free prediction engine and study tools for MD Internal Medicine exam preparation. 987 questions analyzed across 20 years.">
+  <meta property="og:url" content="https://mdexamprep.vercel.app/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="MD Exam Prep � Prediction Engine for MD Internal Medicine">
+  <meta name="twitter:description" content="Free prediction engine and study tools for MD Internal Medicine exam preparation. 987 questions analyzed across 20 years.">
   <link rel="stylesheet" href="assets/css/core.css">
   <style>
     /* ====== CODEX FUTURISM — Landing Only ====== */
@@ -245,7 +254,7 @@
     .cx-evidence {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.5625rem; color: var(--sepia-light);
-      opacity: 0.5; letter-spacing: 0.02em;
+      opacity: 0.8; letter-spacing: 0.02em;
     }
 
     /* — Codex background decoration — */
@@ -269,7 +278,7 @@
     .cx-footer-meta {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.625rem; color: var(--sepia-light);
-      opacity: 0.4; margin-top: 8px; letter-spacing: 0.03em;
+      opacity: 0.7; margin-top: 8px; letter-spacing: 0.03em;
     }
 
     /* — Responsive — */
@@ -296,6 +305,8 @@
   </style>
 </head>
 <body>
+  <a href="#cx-main" class="skip-nav" style="position:absolute;top:-40px;left:0;background:var(--accent);color:var(--bg-deep);padding:8px 16px;z-index:200;font-size:0.875rem;transition:top 150ms;">Skip to content</a>
+  <style>.skip-nav:focus{top:0;}</style>
 
   <!-- Header -->
   <header class="cx-header">
@@ -318,11 +329,11 @@
   </header>
 
   <!-- Hero -->
-  <section class="cx-hero">
+  <section class="cx-hero" id="cx-main">
     <div class="cx-hero-bg">
       <div class="cx-hero-glow"></div>
       <!-- Da Vinci Heart — anatomical cross-section, sepia line art -->
-      <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <defs>
           <pattern id="hatch" patternUnits="userSpaceOnUse" width="4" height="4" patternTransform="rotate(45)">
             <line x1="0" y1="0" x2="0" y2="4" stroke="#8B7355" stroke-width="0.3" opacity="0.4"/>
@@ -440,7 +451,7 @@
   <section class="cx-timeline">
     <!-- Background codex: brain sketch -->
     <div class="cx-codex-bg" style="top:0;right:0;width:300px;height:400px;">
-      <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M150 50 C80 50 40 100 40 160 C40 200 60 230 80 250 C60 260 50 290 60 320 C70 350 110 370 150 370 C190 370 230 350 240 320 C250 290 240 260 220 250 C240 230 260 200 260 160 C260 100 220 50 150 50Z" stroke-width="0.8"/>
         <path d="M150 50 C150 50 140 80 120 100 C100 120 80 130 80 160" stroke-width="0.4" opacity="0.5"/>
         <path d="M150 50 C150 50 160 80 180 100 C200 120 220 130 220 160" stroke-width="0.4" opacity="0.5"/>

@@ -74,6 +74,8 @@ var PredictorUI = (function () {
       loadJSON(base + 'slot-template.json')
     ]).then(function (r) {
       data.rankedList = r[0]; data.kgTriples = r[1]; data.quotas = r[2]; data.slotTemplate = r[3];
+    }).catch(function (err) {
+      throw new Error('Failed to load demo data. Check your connection and try again.');
     });
   }
 
@@ -89,6 +91,8 @@ var PredictorUI = (function () {
     ]).then(function (r) {
       data.kgTriples = r[3]; data.quotas = r[4]; data.slotTemplate = r[5];
       return { topicDict: r[0], synonyms: r[1], systemKeywords: r[2] };
+    }).catch(function (err) {
+      throw new Error('Failed to load support data. Check your connection and try again.');
     });
   }
 
