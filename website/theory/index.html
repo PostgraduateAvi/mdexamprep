@@ -7,6 +7,46 @@
   <meta name="description" content="198 flashcards across 11 body systems. Browse by system, filter by difficulty, or quiz yourself with shuffle mode.">
   <link rel="stylesheet" href="../assets/css/core.css">
   <link rel="stylesheet" href="theory.css">
+  <style>
+    :root {
+      --sepia-light: #A89878;
+      --glass: rgba(10, 37, 64, 0.65);
+      --glass-border: rgba(0, 212, 255, 0.12);
+    }
+    .stats-row .stat-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 500; color: var(--accent);
+    }
+    .tools-link-card {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: var(--space-lg); gap: var(--space-md);
+      background: var(--glass);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      text-decoration: none; color: inherit;
+      transition: border-color 250ms, transform 200ms, box-shadow 250ms;
+    }
+    .tools-link-card:hover {
+      color: inherit;
+      border-color: rgba(0,212,255,0.25);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    }
+    .tools-link-card h3 { margin: 0 0 4px; transition: color 150ms; }
+    .tools-link-card:hover h3 { color: var(--accent-warm); }
+    .tools-link-card p {
+      color: var(--text-secondary); font-size: 0.875rem; margin: 0;
+    }
+    .tools-link-arrow {
+      color: var(--text-muted); font-size: 1.25rem; flex-shrink: 0;
+      transition: color 150ms, transform 150ms;
+    }
+    .tools-link-card:hover .tools-link-arrow {
+      color: var(--accent); transform: translateX(3px);
+    }
+  </style>
 </head>
 <body>
 
@@ -35,12 +75,12 @@
   </div>
 
   <div class="container" style="padding-bottom: var(--space-lg);">
-    <a href="tools/index.html" class="card" style="display:flex;align-items:center;justify-content:space-between;padding:var(--space-lg);text-decoration:none;color:inherit;gap:var(--space-md);">
+    <a href="tools/index.html" class="tools-link-card">
       <div>
-        <h3 style="margin:0 0 4px;">Interactive Study Tools</h3>
-        <p style="color:var(--text-secondary);font-size:0.875rem;margin:0;">23 drawable diagrams, drills, and visual imprints across 6 categories</p>
+        <h3>Interactive Study Tools</h3>
+        <p>23 drawable diagrams, drills, and visual imprints across 6 categories</p>
       </div>
-      <span style="color:var(--text-muted);font-size:1.25rem;flex-shrink:0;">&rarr;</span>
+      <span class="tools-link-arrow">&rarr;</span>
     </a>
   </div>
 

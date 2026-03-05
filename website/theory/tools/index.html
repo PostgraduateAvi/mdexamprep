@@ -32,14 +32,21 @@
     }
     .stat { display: flex; flex-direction: column; gap: 2px; }
     .stat-value {
-      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-family: 'JetBrains Mono', monospace;
       font-size: 1.5rem;
-      font-weight: 600;
-      color: var(--accent-warm);
+      font-weight: 500;
+      color: var(--accent);
     }
     .stat-label {
       font-size: 0.75rem;
       color: var(--text-secondary);
+    }
+
+    /* Glass + Codex tokens */
+    :root {
+      --glass: rgba(10, 37, 64, 0.65);
+      --glass-border: rgba(0, 212, 255, 0.12);
+      --sepia-light: #A89878;
     }
 
     /* Filter chips */
@@ -93,8 +100,19 @@
       text-decoration: none;
       color: inherit;
       position: relative;
+      background: var(--glass);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      transition: transform 200ms, border-color 250ms, box-shadow 250ms;
     }
-    .tool-card:hover { color: inherit; }
+    .tool-card:hover {
+      color: inherit;
+      transform: translateY(-3px);
+      border-color: rgba(0,212,255,0.25);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    }
     .tool-card-header {
       display: flex;
       align-items: baseline;
@@ -315,7 +333,7 @@
       filtered.forEach(function (tool) {
         var a = document.createElement("a");
         a.href = tool.filename;
-        a.className = "card tool-card";
+        a.className = "tool-card";
 
         var typeClass = TYPE_CLASSES[tool.type] || "tag-gold";
         var catLabel = CATEGORY_LABELS[tool.category] || tool.category;

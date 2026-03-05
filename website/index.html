@@ -3,138 +3,691 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MD Exam Prep &mdash; Preparation Optimization for MD Internal Medicine</title>
+  <title>MD Exam Prep &mdash; Prediction Engine for MD Internal Medicine</title>
   <meta name="description" content="Free prediction engine and study tools for MD Internal Medicine exam preparation. 987 questions analyzed across 20 years to rank what matters most.">
   <link rel="stylesheet" href="assets/css/core.css">
+  <style>
+    /* ====== CODEX FUTURISM — Landing Only ====== */
+    :root {
+      --sepia-dark: #5C4A32;
+      --sepia-mid: #8B7355;
+      --sepia-light: #A89878;
+      --sepia-paper: #C8B898;
+      --sepia-dim: rgba(168, 152, 120, 0.08);
+      --glass: rgba(10, 37, 64, 0.65);
+      --glass-border: rgba(0, 212, 255, 0.12);
+      --glass-glow: rgba(0, 212, 255, 0.06);
+      --teal: #00D4FF;
+      --blue-tool: #6AB0E8;
+      --orange-tool: #E8A04A;
+    }
+
+    /* — Global overrides for landing — */
+    body { overflow-x: hidden; }
+
+    /* — Header — */
+    .cx-header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 16px 0;
+      background: rgba(10, 37, 64, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--glass-border);
+    }
+    .cx-header .container {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .cx-logo {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9375rem; font-weight: 500;
+      color: var(--teal); letter-spacing: 0.04em;
+      text-shadow: 0 0 20px rgba(0,212,255,0.3);
+    }
+    .cx-nav { display: flex; align-items: center; gap: 28px; }
+    .cx-nav-link {
+      font-size: 0.8125rem; font-weight: 500;
+      color: var(--text-secondary); letter-spacing: 0.02em;
+      transition: color 150ms;
+    }
+    .cx-nav-link:hover { color: var(--text-primary); }
+    .cx-cta-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 22px; border-radius: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem; font-weight: 500; letter-spacing: 0.05em;
+      background: var(--teal); color: var(--bg-deep);
+      text-transform: uppercase; text-decoration: none;
+      transition: all 150ms; box-shadow: 0 0 20px rgba(0,212,255,0.15);
+    }
+    .cx-cta-btn:hover {
+      background: var(--accent-warm); color: var(--bg-deep);
+      transform: translateY(-1px); box-shadow: 0 4px 24px rgba(0,212,255,0.3);
+    }
+    .cx-cta-btn svg { width: 14px; height: 14px; }
+
+    /* — Hero — */
+    .cx-hero {
+      min-height: 100dvh; display: flex; align-items: center;
+      padding: 120px 0 80px; position: relative; overflow: hidden;
+    }
+    .cx-hero-bg {
+      position: absolute; inset: 0; pointer-events: none; overflow: hidden;
+    }
+    .cx-hero-bg svg {
+      position: absolute; top: 50%; right: -5%;
+      transform: translateY(-50%); width: 55%; max-width: 620px;
+      opacity: 0.12;
+    }
+    .cx-hero-glow {
+      position: absolute; top: 35%; right: 15%;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(0,212,255,0.06) 0%, transparent 70%);
+      animation: cx-pulse 8s ease-in-out infinite;
+    }
+    @keyframes cx-pulse {
+      0%, 100% { opacity: 0.4; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.12); }
+    }
+    .cx-hero-content { position: relative; z-index: 2; max-width: 580px; }
+    .cx-hero-content h1 {
+      font-size: 2.75rem; font-weight: 700;
+      letter-spacing: -0.025em; line-height: 1.15;
+      margin-bottom: 24px;
+    }
+    .cx-hero-sub {
+      font-size: 1.0625rem; color: var(--text-secondary);
+      line-height: 1.7; margin-bottom: 40px; max-width: 480px;
+    }
+
+    /* — Glass Panel (shared) — */
+    .glass-panel {
+      background: var(--glass);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      position: relative;
+    }
+    .glass-panel::before {
+      content: '';
+      position: absolute; inset: -1px;
+      border-radius: 13px;
+      background: linear-gradient(135deg, rgba(0,212,255,0.08), transparent 60%);
+      pointer-events: none;
+    }
+
+    /* — Ranked List Panel — */
+    .cx-ranked {
+      padding: 80px 0;
+      position: relative;
+    }
+    .cx-ranked .container {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+    }
+    .cx-ranked-text h2 {
+      font-size: 1.625rem; font-weight: 700; margin-bottom: 12px;
+    }
+    .cx-ranked-text p {
+      color: var(--text-secondary); font-size: 0.9375rem;
+      line-height: 1.65; margin-bottom: 24px;
+    }
+    .cx-ranked-panel {
+      padding: 0; overflow: hidden;
+    }
+    .cx-ranked-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--glass-border);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .cx-ranked-header span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6875rem; letter-spacing: 0.06em;
+      color: var(--teal); text-transform: uppercase;
+    }
+    .cx-ranked-header .cx-callout {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5625rem; color: var(--sepia-light);
+      opacity: 0.7;
+    }
+    .cx-rank-row {
+      display: flex; align-items: center; gap: 12px;
+      padding: 12px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+      transition: background 150ms;
+    }
+    .cx-rank-row:hover { background: rgba(0,212,255,0.03); }
+    .cx-rank-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6875rem; color: var(--text-muted);
+      width: 20px; text-align: right;
+    }
+    .cx-rank-bar {
+      flex: 1; height: 6px; border-radius: 3px;
+      background: var(--bg-elevated); overflow: hidden;
+    }
+    .cx-rank-fill {
+      height: 100%; border-radius: 3px;
+      background: linear-gradient(90deg, var(--teal), var(--accent-warm));
+      transition: width 600ms var(--ease-out);
+    }
+    .cx-rank-label {
+      font-size: 0.8125rem; color: var(--text-primary);
+      min-width: 120px;
+    }
+    .cx-rank-score {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem; color: var(--teal);
+      min-width: 52px; text-align: right;
+    }
+
+    /* — Process Flow — */
+    .cx-process {
+      padding: 100px 0; position: relative;
+    }
+    .cx-process-header {
+      text-align: center; margin-bottom: 64px;
+    }
+    .cx-process-header h2 {
+      font-size: 1.625rem; font-weight: 700; margin-bottom: 8px;
+    }
+    .cx-process-header p {
+      color: var(--text-secondary); font-size: 0.9375rem;
+    }
+    .cx-steps {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 0; position: relative;
+    }
+    .cx-steps::before {
+      content: '';
+      position: absolute; top: 28px; left: 16.67%; right: 16.67%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--teal), transparent);
+      opacity: 0.3;
+    }
+    .cx-step {
+      text-align: center; position: relative; padding: 0 20px;
+    }
+    .cx-step-node {
+      width: 56px; height: 56px; margin: 0 auto 24px;
+      border-radius: 50%;
+      background: var(--glass);
+      backdrop-filter: blur(8px);
+      border: 2px solid rgba(0,212,255,0.25);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; z-index: 2;
+      box-shadow: 0 0 24px var(--glass-glow);
+      transition: border-color 250ms, box-shadow 250ms;
+    }
+    .cx-step:hover .cx-step-node {
+      border-color: var(--teal);
+      box-shadow: 0 0 32px rgba(0,212,255,0.15);
+    }
+    .cx-step-node svg {
+      width: 22px; height: 22px;
+      stroke: var(--teal); fill: none; stroke-width: 1.5;
+    }
+    .cx-step-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6875rem; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--teal); margin-bottom: 8px;
+    }
+    .cx-step-title {
+      font-size: 1.0625rem; font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .cx-step-desc {
+      font-size: 0.8125rem; color: var(--text-secondary);
+      line-height: 1.6; max-width: 260px; margin: 0 auto;
+    }
+
+    /* — Codex Illustration Container — */
+    .cx-codex-bg {
+      position: absolute; pointer-events: none; z-index: 0;
+    }
+    .cx-codex-bg svg {
+      stroke: var(--sepia-mid); fill: none;
+      stroke-width: 0.5; opacity: 0.08;
+    }
+
+    /* — Tool Cards — */
+    .cx-tools { padding: 80px 0 100px; }
+    .cx-tools-header {
+      text-align: center; margin-bottom: 48px;
+    }
+    .cx-tools-header h2 {
+      font-size: 1.625rem; font-weight: 700; margin-bottom: 8px;
+    }
+    .cx-tools-header p {
+      color: var(--text-secondary); font-size: 0.9375rem;
+    }
+    .cx-tools-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .cx-tool-card {
+      padding: 0; overflow: hidden; text-decoration: none; color: inherit;
+      display: flex; flex-direction: column;
+      transition: transform 200ms, border-color 250ms, box-shadow 250ms;
+    }
+    .cx-tool-card:hover {
+      color: inherit;
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    }
+    .cx-tool-illust {
+      height: 160px; position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .cx-tool-illust svg {
+      width: 80%; height: 80%;
+      stroke: var(--sepia-mid); fill: none; stroke-linecap: round;
+    }
+    .cx-tool-illust .cx-callout {
+      position: absolute; bottom: 8px; right: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem; color: var(--sepia-light);
+      opacity: 0.5; letter-spacing: 0.03em;
+    }
+    .cx-tool-card--teal .cx-tool-illust { background: rgba(0,212,255,0.03); }
+    .cx-tool-card--teal:hover { border-color: rgba(0,212,255,0.3); }
+    .cx-tool-card--blue .cx-tool-illust { background: rgba(106,176,232,0.03); }
+    .cx-tool-card--blue:hover { border-color: rgba(106,176,232,0.3); }
+    .cx-tool-card--orange .cx-tool-illust { background: rgba(232,160,74,0.03); }
+    .cx-tool-card--orange:hover { border-color: rgba(232,160,74,0.3); }
+
+    .cx-tool-body {
+      padding: 24px; flex: 1; display: flex; flex-direction: column; gap: 10px;
+    }
+    .cx-tool-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.05em;
+    }
+    .cx-tool-card--teal .cx-tool-num { color: var(--teal); }
+    .cx-tool-card--blue .cx-tool-num { color: var(--blue-tool); }
+    .cx-tool-card--orange .cx-tool-num { color: var(--orange-tool); }
+    .cx-tool-body h3 {
+      font-size: 1.125rem; font-weight: 600;
+      transition: color 150ms;
+    }
+    .cx-tool-card:hover h3 { color: var(--accent-warm); }
+    .cx-tool-body p {
+      font-size: 0.875rem; color: var(--text-secondary);
+      line-height: 1.55; margin: 0;
+    }
+    .cx-tool-meta {
+      display: flex; align-items: center; gap: 8px;
+      margin-top: auto; padding-top: 8px;
+    }
+    .cx-tool-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.625rem; font-weight: 500;
+      padding: 3px 10px; border-radius: 100px;
+      letter-spacing: 0.03em;
+    }
+    .cx-tool-card--teal .cx-tool-tag { background: rgba(0,212,255,0.1); color: var(--teal); }
+    .cx-tool-card--blue .cx-tool-tag { background: rgba(106,176,232,0.1); color: var(--blue-tool); }
+    .cx-tool-card--orange .cx-tool-tag { background: rgba(232,160,74,0.1); color: var(--orange-tool); }
+    .cx-tool-arrow {
+      margin-left: auto;
+      font-size: 0.875rem; color: var(--text-muted);
+      transition: color 150ms, transform 150ms;
+    }
+    .cx-tool-card:hover .cx-tool-arrow {
+      color: var(--accent); transform: translateX(3px);
+    }
+
+    /* — Woven evidence callouts — */
+    .cx-evidence {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5625rem; color: var(--sepia-light);
+      opacity: 0.5; letter-spacing: 0.02em;
+    }
+
+    /* — Trust/Footer — */
+    .cx-footer {
+      padding: 40px 0 24px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    .cx-footer-text {
+      font-size: 0.8125rem; color: var(--text-muted);
+    }
+    .cx-footer-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.625rem; color: var(--sepia-light);
+      opacity: 0.4; margin-top: 8px; letter-spacing: 0.03em;
+    }
+
+    /* — Responsive — */
+    @media (min-width: 640px) {
+      .cx-hero-content h1 { font-size: 3.25rem; }
+    }
+    @media (min-width: 960px) {
+      .cx-hero-content h1 { font-size: 3.75rem; }
+    }
+    @media (max-width: 768px) {
+      .cx-nav-link { display: none; }
+      .cx-ranked .container { grid-template-columns: 1fr; gap: 40px; }
+      .cx-steps { grid-template-columns: 1fr; gap: 48px; }
+      .cx-steps::before { display: none; }
+      .cx-tools-grid { grid-template-columns: 1fr; }
+      .cx-hero-bg svg { width: 90%; opacity: 0.06; right: -20%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .cx-hero-glow { animation: none; opacity: 0.5; }
+      .cx-rank-fill { transition: none; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <header class="navbar">
+  <!-- Header -->
+  <header class="cx-header">
     <div class="container">
-      <a href="index.html" class="site-logo">MD Exam Prep</a>
-      <span class="nav-badge">Free &middot; Evidence-Based</span>
+      <span class="cx-logo">MD Exam Prep</span>
+      <nav class="cx-nav">
+        <a href="predictor/index.html?demo=1" class="cx-nav-link">Predictor</a>
+        <a href="practicals/index.html" class="cx-nav-link">Practicals</a>
+        <a href="theory/index.html" class="cx-nav-link">Theory</a>
+        <a href="predictor/index.html?demo=1" class="cx-cta-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/>
+            <line x1="12" y1="3" x2="12" y2="1"/><line x1="12" y1="23" x2="12" y2="21"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+          </svg>
+          Try the Predictor
+        </a>
+      </nav>
     </div>
   </header>
 
   <!-- Hero -->
-  <section class="hero">
-    <div class="container hero-content">
-      <span class="hero-badge">Built on 987 real exam questions</span>
-      <h1>Stop guessing.<br>Start predicting your MD exams.</h1>
-      <p class="hero-sub">Built on 987 real exam questions over 20 years. We catalogued every structural pattern examiners follow to give you an evidence-based preparation strategy.</p>
-      <a href="predictor/index.html?demo=1" class="hero-cta">
-        Try the Predictor &mdash; Free Forever
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
-      </a>
+  <section class="cx-hero">
+    <div class="cx-hero-bg">
+      <div class="cx-hero-glow"></div>
+      <!-- Da Vinci Heart — anatomical cross-section, sepia line art -->
+      <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="hatch" patternUnits="userSpaceOnUse" width="4" height="4" patternTransform="rotate(45)">
+            <line x1="0" y1="0" x2="0" y2="4" stroke="#8B7355" stroke-width="0.3" opacity="0.4"/>
+          </pattern>
+        </defs>
+        <!-- Heart outline -->
+        <path d="M200 420 C200 420 80 340 60 240 C40 140 100 80 160 80 C190 80 200 110 200 110 C200 110 210 80 240 80 C300 80 360 140 340 240 C320 340 200 420 200 420Z" stroke="#8B7355" stroke-width="1.2" fill="none"/>
+        <!-- Aorta -->
+        <path d="M200 110 C200 110 180 60 180 40 C180 20 200 10 220 20 C240 30 260 50 260 80 C260 100 240 120 240 120" stroke="#8B7355" stroke-width="0.8" fill="none"/>
+        <!-- Pulmonary -->
+        <path d="M170 100 C170 100 150 70 130 60 C110 50 100 70 110 90" stroke="#8B7355" stroke-width="0.6" fill="none"/>
+        <!-- Chambers -->
+        <path d="M200 200 L140 200 C140 200 120 200 120 250 C120 300 140 340 200 380" stroke="#8B7355" stroke-width="0.5" fill="none" opacity="0.6"/>
+        <path d="M200 200 L260 200 C260 200 280 200 280 250 C280 300 260 340 200 380" stroke="#8B7355" stroke-width="0.5" fill="none" opacity="0.6"/>
+        <line x1="200" y1="120" x2="200" y2="380" stroke="#8B7355" stroke-width="0.4" opacity="0.3"/>
+        <!-- Hatching fills -->
+        <path d="M200 420 C200 420 80 340 60 240 C40 140 100 80 160 80 C190 80 200 110 200 110 L200 200 L140 200 C140 200 120 200 120 250 C120 300 140 340 200 380Z" fill="url(#hatch)" opacity="0.15"/>
+        <!-- Coronary vessels -->
+        <path d="M160 130 C150 160 130 200 130 240 C130 260 140 290 160 320" stroke="#8B7355" stroke-width="0.4" fill="none" opacity="0.5"/>
+        <path d="M240 130 C250 160 270 200 270 240 C270 260 260 290 240 320" stroke="#8B7355" stroke-width="0.4" fill="none" opacity="0.5"/>
+        <!-- Mathematical notation -->
+        <text x="310" y="160" font-family="serif" font-size="8" fill="#8B7355" opacity="0.3" font-style="italic">&#x2211; f(t) = 987</text>
+        <text x="310" y="175" font-family="serif" font-size="7" fill="#8B7355" opacity="0.25">[987 questions catalogued]</text>
+        <text x="60" y="400" font-family="serif" font-size="7" fill="#8B7355" opacity="0.25">[20 years of pattern data]</text>
+        <text x="300" y="260" font-family="serif" font-size="7" fill="#8B7355" opacity="0.2" font-style="italic">&#x0394;t = 20y</text>
+        <text x="80" y="180" font-family="serif" font-size="6" fill="#8B7355" opacity="0.2" font-style="italic">&#x222B; P(x|D) dx</text>
+        <!-- Dimension lines -->
+        <line x1="50" y1="80" x2="50" y2="420" stroke="#8B7355" stroke-width="0.2" opacity="0.15"/>
+        <line x1="48" y1="80" x2="52" y2="80" stroke="#8B7355" stroke-width="0.3" opacity="0.2"/>
+        <line x1="48" y1="420" x2="52" y2="420" stroke="#8B7355" stroke-width="0.3" opacity="0.2"/>
+      </svg>
+    </div>
+    <div class="container">
+      <div class="cx-hero-content">
+        <h1>Every year, students prepare everything.<br>The exam tests ten topics.</h1>
+        <p class="cx-hero-sub">We catalogued every MD Internal Medicine question asked over 20 years and discovered the structural patterns examiners follow. The result is a preparation strategy built on evidence, not guesswork.</p>
+        <a href="predictor/index.html?demo=1" class="cx-cta-btn" style="font-size:0.8125rem; padding: 14px 28px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/>
+            <line x1="12" y1="3" x2="12" y2="1"/><line x1="12" y1="23" x2="12" y2="21"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+          </svg>
+          Try the Predictor &mdash; Free Forever
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- Proof Strip -->
-  <section id="proof" class="proof-strip">
+  <!-- Holographic Ranked List -->
+  <section class="cx-ranked">
     <div class="container">
-      <div class="proof-grid">
-        <div class="proof-block">
-          <div class="proof-number">987</div>
-          <p class="proof-text">Every question. Every paper. 2006 to 2025. Not a sample &mdash; the complete record of what examiners actually ask.</p>
+      <div class="cx-ranked-text">
+        <h2>Ranked by convergence, not opinion.</h2>
+        <p>Each topic earns its rank through frequency analysis, recency weighting, cross-paper signals, and clinical relevance scoring. The algorithm surfaces what matters most.</p>
+        <span class="cx-evidence">[converging data signals] [historical patterns identified]</span>
+      </div>
+      <div class="cx-ranked-panel glass-panel">
+        <div class="cx-ranked-header">
+          <span>Predicted Priority &mdash; Top 8</span>
+          <span class="cx-callout">[987 questions catalogued]</span>
         </div>
-        <div class="proof-block">
-          <div class="proof-number">20</div>
-          <p class="proof-text">Years of pattern data reveals what no single textbook chapter can: the structural slots that repeat, the topic families that cycle, and the convergence signals that predict what comes next.</p>
+        <div class="cx-rank-row">
+          <span class="cx-rank-num">01</span>
+          <span class="cx-rank-label">Cardiology</span>
+          <div class="cx-rank-bar"><div class="cx-rank-fill" style="width:93.5%"></div></div>
+          <span class="cx-rank-score">93.52%</span>
         </div>
-        <div class="proof-block">
-          <div class="proof-number">44</div>
-          <p class="proof-text">Ranked preparation priorities &mdash; not opinions, but data-driven convergence scores. Each topic earned its rank through frequency, recency, cross-paper signals, and clinical relevance.</p>
+        <div class="cx-rank-row">
+          <span class="cx-rank-num">02</span>
+          <span class="cx-rank-label">Pulmonology</span>
+          <div class="cx-rank-bar"><div class="cx-rank-fill" style="width:88.2%"></div></div>
+          <span class="cx-rank-score">88.21%</span>
+        </div>
+        <div class="cx-rank-row">
+          <span class="cx-rank-num">03</span>
+          <span class="cx-rank-label">Neurology</span>
+          <div class="cx-rank-bar"><div class="cx-rank-fill" style="width:85.7%"></div></div>
+          <span class="cx-rank-score">85.74%</span>
+        </div>
+        <div class="cx-rank-row">
+          <span class="cx-rank-num">04</span>
+          <span class="cx-rank-label">Endocrinology</span>
+          <div class="cx-rank-bar"><div class="cx-rank-fill" style="width:79.1%"></div></div>
+          <span class="cx-rank-score">79.13%</span>
+        </div>
+        <div class="cx-rank-row">
+          <span class="cx-rank-num">05</span>
+          <span class="cx-rank-label">Nephrology</span>
+          <div class="cx-rank-bar"><div class="cx-rank-fill" style="width:74.8%"></div></div>
+          <span class="cx-rank-score">74.82%</span>
+        </div>
+        <div class="cx-rank-row">
+          <span class="cx-rank-num">06</span>
+          <span class="cx-rank-label">Gastroenterology</span>
+          <div class="cx-rank-bar"><div class="cx-rank-fill" style="width:71.3%"></div></div>
+          <span class="cx-rank-score">71.36%</span>
+        </div>
+        <div class="cx-rank-row">
+          <span class="cx-rank-num">07</span>
+          <span class="cx-rank-label">Infectious Disease</span>
+          <div class="cx-rank-bar"><div class="cx-rank-fill" style="width:68.9%"></div></div>
+          <span class="cx-rank-score">68.91%</span>
+        </div>
+        <div class="cx-rank-row">
+          <span class="cx-rank-num">08</span>
+          <span class="cx-rank-label">Hematology</span>
+          <div class="cx-rank-bar"><div class="cx-rank-fill" style="width:64.4%"></div></div>
+          <span class="cx-rank-score">64.47%</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Method -->
-  <section class="method">
+  <!-- Process Flow -->
+  <section class="cx-process">
+    <!-- Background codex: brain sketch -->
+    <div class="cx-codex-bg" style="top:0;right:0;width:300px;height:400px;">
+      <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
+        <path d="M150 50 C80 50 40 100 40 160 C40 200 60 230 80 250 C60 260 50 290 60 320 C70 350 110 370 150 370 C190 370 230 350 240 320 C250 290 240 260 220 250 C240 230 260 200 260 160 C260 100 220 50 150 50Z" stroke-width="0.8"/>
+        <path d="M150 50 C150 50 140 80 120 100 C100 120 80 130 80 160" stroke-width="0.4" opacity="0.5"/>
+        <path d="M150 50 C150 50 160 80 180 100 C200 120 220 130 220 160" stroke-width="0.4" opacity="0.5"/>
+        <path d="M90 200 C110 190 130 180 150 180 C170 180 190 190 210 200" stroke-width="0.3" opacity="0.4"/>
+        <text x="40" y="390" font-family="serif" font-size="6" opacity="0.5" font-style="italic">[converging data signals]</text>
+      </svg>
+    </div>
     <div class="container">
-      <h2>From raw papers to ranked priorities.</h2>
-      <p>The engine doesn&rsquo;t guess. It counts, compares, and scores.</p>
-      <div class="method-steps">
-        <div class="method-step">
-          <div class="step-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/><line x1="12" y1="3" x2="12" y2="1"/><line x1="12" y1="23" x2="12" y2="21"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+      <div class="cx-process-header">
+        <h2>From raw papers to ranked priorities.</h2>
+        <p>The engine doesn&rsquo;t guess. It counts, compares, and scores.</p>
+      </div>
+      <div class="cx-steps">
+        <div class="cx-step">
+          <div class="cx-step-node">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/><line x1="12" y1="3" x2="12" y2="1"/><line x1="12" y1="23" x2="12" y2="21"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
           </div>
-          <div class="step-label">01 &mdash; Structural Detection</div>
-          <p class="step-text">The engine reads past papers and maps each question to the exam&rsquo;s underlying slot structure &mdash; the hidden framework that examiners build every paper around.</p>
+          <div class="cx-step-label">01 Detecting</div>
+          <h3 class="cx-step-title">Structural Detection</h3>
+          <p class="cx-step-desc">Maps each question to the exam&rsquo;s hidden slot structure &mdash; the framework examiners build every paper around.</p>
         </div>
-        <div class="method-step">
-          <div class="step-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg>
+        <div class="cx-step">
+          <div class="cx-step-node">
+            <svg viewBox="0 0 24 24"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg>
           </div>
-          <div class="step-label">02 &mdash; Convergence Scoring</div>
-          <p class="step-text">Each topic is scored across multiple independent signals: historical frequency, recency patterns, cross-paper presence, and clinical environment relevance. More signals pointing to the same topic = higher confidence.</p>
+          <div class="cx-step-label">02 Scoring</div>
+          <h3 class="cx-step-title">Convergence Scoring</h3>
+          <p class="cx-step-desc">Scored across frequency, recency, cross-paper presence, and clinical relevance. More signals = higher confidence.</p>
         </div>
-        <div class="method-step">
-          <div class="step-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="4" rx="1"/><rect x="4" y="10" width="12" height="4" rx="1"/><rect x="4" y="17" width="8" height="4" rx="1"/></svg>
+        <div class="cx-step">
+          <div class="cx-step-node">
+            <svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="4" rx="1"/><rect x="4" y="10" width="12" height="4" rx="1"/><rect x="4" y="17" width="8" height="4" rx="1"/></svg>
           </div>
-          <div class="step-label">03 &mdash; Ranked Output</div>
-          <p class="step-text">You get a ranked preparation list &mdash; the topics most likely to appear, ordered by evidence strength. Each rank includes a rationale so you understand exactly why it matters.</p>
+          <div class="cx-step-label">03 Output</div>
+          <h3 class="cx-step-title">Ranked Priorities</h3>
+          <p class="cx-step-desc">Topics ranked by evidence strength. Each includes a rationale so you understand exactly why it matters.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Trust Line -->
-  <section class="trust-line">
+  <!-- Tool Cards -->
+  <section class="cx-tools">
     <div class="container">
-      <blockquote>Built by Avinash Jothish. Validated on real exam data. Free forever.</blockquote>
-      <p class="trust-meta">987 questions catalogued &middot; Slot-level structural analysis &middot; Family-level pattern tracking</p>
-    </div>
-  </section>
-
-  <!-- Features -->
-  <section id="features" class="features">
-    <div class="container">
-      <div class="features-header">
+      <div class="cx-tools-header">
         <h2>Three tools. No guesswork.</h2>
         <p>Each tool is standalone. Pick what you need right now.</p>
       </div>
-      <div class="features-grid">
-        <a href="predictor/index.html?demo=1" class="feature-card">
-          <span class="feature-num">01</span>
-          <h3>Prediction Engine</h3>
-          <p>Upload past papers and get a ranked list of what matters most &mdash; built on convergence patterns validated across 20 years of real exams.</p>
-          <div class="feature-meta">
-            <span class="tag tag-gold">Live</span>
-            <span class="tag tag-muted">44 topics ranked</span>
-            <span class="feature-arrow">&rarr;</span>
+      <div class="cx-tools-grid">
+
+        <!-- Prediction Engine — Teal + Heart -->
+        <a href="predictor/index.html?demo=1" class="glass-panel cx-tool-card cx-tool-card--teal">
+          <div class="cx-tool-illust">
+            <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg" stroke-width="0.8">
+              <path d="M100 140 C100 140 40 100 30 65 C20 30 50 10 80 10 C95 10 100 30 100 30 C100 30 105 10 120 10 C150 10 180 30 170 65 C160 100 100 140 100 140Z"/>
+              <path d="M100 30 C100 30 90 15 90 8 C90 2 100 0 108 4 C116 8 120 18 120 30" stroke-width="0.5"/>
+              <path d="M70 50 C65 70 60 90 70 110" stroke-width="0.3" opacity="0.5"/>
+              <path d="M130 50 C135 70 140 90 130 110" stroke-width="0.3" opacity="0.5"/>
+              <text x="140" y="30" font-family="serif" font-size="5" opacity="0.4" font-style="italic">&#x2211; = 987</text>
+            </svg>
+            <span class="cx-callout">[20 years of pattern data]</span>
+          </div>
+          <div class="cx-tool-body">
+            <span class="cx-tool-num">01</span>
+            <h3>Prediction Engine</h3>
+            <p>Upload past papers and get a ranked list of what matters most &mdash; built on convergence patterns validated across 20 years.</p>
+            <div class="cx-tool-meta">
+              <span class="cx-tool-tag">Live</span>
+              <span class="cx-tool-tag">44 topics</span>
+              <span class="cx-tool-arrow">&rarr;</span>
+            </div>
           </div>
         </a>
-        <a href="practicals/index.html" class="feature-card">
-          <span class="feature-num">02</span>
-          <h3>Practical Exam Tools</h3>
-          <p>Clinical cases, viva questions, stress-mode timers. Everything for bedside examination &mdash; organized by system, built for your phone.</p>
-          <div class="feature-meta">
-            <span class="tag tag-gold">Live</span>
-            <span class="tag tag-muted">21 cases &middot; 110 vivas</span>
-            <span class="feature-arrow">&rarr;</span>
+
+        <!-- Practical Exam Tools — Blue + Lungs -->
+        <a href="practicals/index.html" class="glass-panel cx-tool-card cx-tool-card--blue">
+          <div class="cx-tool-illust">
+            <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg" stroke-width="0.8">
+              <!-- Trachea -->
+              <path d="M100 10 L100 50"/>
+              <path d="M95 10 L95 48" stroke-width="0.3" opacity="0.5"/>
+              <path d="M105 10 L105 48" stroke-width="0.3" opacity="0.5"/>
+              <!-- Bronchi -->
+              <path d="M100 50 C90 60 60 70 40 80"/>
+              <path d="M100 50 C110 60 140 70 160 80"/>
+              <!-- Left lung outline -->
+              <path d="M40 80 C25 85 15 100 15 120 C15 140 30 150 50 150 C70 150 85 140 90 120 C95 100 90 85 85 75" stroke-width="0.6"/>
+              <!-- Right lung outline -->
+              <path d="M160 80 C175 85 185 100 185 120 C185 140 170 150 150 150 C130 150 115 140 110 120 C105 100 110 85 115 75" stroke-width="0.6"/>
+              <!-- Bronchioles -->
+              <path d="M40 80 C45 95 35 110 30 120" stroke-width="0.3" opacity="0.4"/>
+              <path d="M40 80 C50 95 55 110 60 125" stroke-width="0.3" opacity="0.4"/>
+              <path d="M160 80 C155 95 165 110 170 120" stroke-width="0.3" opacity="0.4"/>
+              <path d="M160 80 C150 95 145 110 140 125" stroke-width="0.3" opacity="0.4"/>
+              <!-- Hatching -->
+              <line x1="25" y1="100" x2="30" y2="98" stroke-width="0.2" opacity="0.3"/>
+              <line x1="28" y1="108" x2="33" y2="106" stroke-width="0.2" opacity="0.3"/>
+              <line x1="32" y1="116" x2="37" y2="114" stroke-width="0.2" opacity="0.3"/>
+              <line x1="170" y1="100" x2="165" y2="98" stroke-width="0.2" opacity="0.3"/>
+              <line x1="172" y1="108" x2="167" y2="106" stroke-width="0.2" opacity="0.3"/>
+              <text x="130" y="155" font-family="serif" font-size="5" opacity="0.4" font-style="italic">n=21</text>
+            </svg>
+            <span class="cx-callout">[21 clinical cases]</span>
+          </div>
+          <div class="cx-tool-body">
+            <span class="cx-tool-num">02</span>
+            <h3>Practical Exam Tools</h3>
+            <p>Clinical cases, viva questions, stress-mode timers. Everything for bedside examination &mdash; organized by system.</p>
+            <div class="cx-tool-meta">
+              <span class="cx-tool-tag">Live</span>
+              <span class="cx-tool-tag">21 cases</span>
+              <span class="cx-tool-tag">110 vivas</span>
+              <span class="cx-tool-arrow">&rarr;</span>
+            </div>
           </div>
         </a>
-        <a href="theory/index.html" class="feature-card">
-          <span class="feature-num">03</span>
-          <h3>Theory Study Tools</h3>
-          <p>198 flashcards across 11 body systems. Browse by topic, filter by difficulty, or quiz yourself with shuffle mode.</p>
-          <div class="feature-meta">
-            <span class="tag tag-gold">Live</span>
-            <span class="tag tag-muted">198 flashcards</span>
-            <span class="feature-arrow">&rarr;</span>
+
+        <!-- Theory Study Tools — Orange + Brain -->
+        <a href="theory/index.html" class="glass-panel cx-tool-card cx-tool-card--orange">
+          <div class="cx-tool-illust">
+            <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg" stroke-width="0.8">
+              <!-- Brain lateral view -->
+              <path d="M100 20 C60 20 25 45 25 80 C25 105 40 125 60 135 C45 138 40 148 48 152 C56 156 75 152 85 145 C95 152 110 155 120 150 C130 155 145 155 152 148 C160 140 158 130 150 125 C170 115 180 95 175 75 C170 50 140 20 100 20Z" stroke-width="0.7"/>
+              <!-- Sulci -->
+              <path d="M70 40 C80 55 75 75 65 90" stroke-width="0.4" opacity="0.5"/>
+              <path d="M110 30 C105 50 110 70 120 85" stroke-width="0.4" opacity="0.5"/>
+              <path d="M145 45 C140 60 145 80 155 95" stroke-width="0.4" opacity="0.5"/>
+              <path d="M85 55 C95 65 90 80 80 95" stroke-width="0.3" opacity="0.35"/>
+              <path d="M130 40 C125 55 130 75 140 90" stroke-width="0.3" opacity="0.35"/>
+              <!-- Cerebellum -->
+              <path d="M140 120 C150 115 160 118 158 128 C156 135 148 138 140 135" stroke-width="0.4" opacity="0.5"/>
+              <line x1="142" y1="122" x2="156" y2="122" stroke-width="0.2" opacity="0.3"/>
+              <line x1="143" y1="126" x2="155" y2="126" stroke-width="0.2" opacity="0.3"/>
+              <line x1="144" y1="130" x2="154" y2="130" stroke-width="0.2" opacity="0.3"/>
+              <!-- Brainstem -->
+              <path d="M120 135 L118 155" stroke-width="0.5" opacity="0.5"/>
+              <text x="20" y="155" font-family="serif" font-size="5" opacity="0.4" font-style="italic">198 cards</text>
+              <text x="140" y="20" font-family="serif" font-size="4.5" opacity="0.3">[historical patterns]</text>
+            </svg>
+            <span class="cx-callout">[198 flashcards]</span>
+          </div>
+          <div class="cx-tool-body">
+            <span class="cx-tool-num">03</span>
+            <h3>Theory Study Tools</h3>
+            <p>198 flashcards across 11 body systems. Browse by topic, filter by difficulty, or quiz yourself with shuffle mode.</p>
+            <div class="cx-tool-meta">
+              <span class="cx-tool-tag">Live</span>
+              <span class="cx-tool-tag">198 flashcards</span>
+              <span class="cx-tool-arrow">&rarr;</span>
+            </div>
           </div>
         </a>
+
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="site-footer">
+  <footer class="cx-footer">
     <div class="container">
-      <p class="footer-text">Built by Avinash Jothish. Validated on real exam data. Free forever.</p>
+      <p class="cx-footer-text">Built by Avinash Jothish. Validated on real exam data. Free forever.</p>
+      <p class="cx-footer-meta">987 questions catalogued &middot; 20 years of structural analysis &middot; Evidence-based preparation</p>
     </div>
   </footer>
 
