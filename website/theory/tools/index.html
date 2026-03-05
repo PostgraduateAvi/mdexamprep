@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="../../assets/css/core.css">
   <style>
     .tools-hub-hero {
-      padding: var(--space-2xl) 0 var(--space-lg);
+      padding: calc(var(--space-2xl) + 16px) 0 var(--space-lg);
     }
     .tools-hub-hero h1 {
       font-size: 2rem;
@@ -42,12 +42,7 @@
       color: var(--text-secondary);
     }
 
-    /* Glass + Codex tokens */
-    :root {
-      --glass: rgba(10, 37, 64, 0.65);
-      --glass-border: rgba(0, 212, 255, 0.12);
-      --sepia-light: #A89878;
-    }
+    /* Uses glass tokens from core.css */
 
     /* Filter chips */
     .filter-bar {
@@ -204,9 +199,7 @@
 </head>
 <body>
 
-  <div class="container">
-    <a href="../../index.html" class="tools-back">&larr; Back to Home</a>
-  </div>
+  <div id="site-nav"></div>
 
   <section class="tools-hub-hero container">
     <h1>Interactive Study Tools</h1>
@@ -214,7 +207,7 @@
   </section>
 
   <div class="container">
-    <div class="stats-row" id="stats-row">
+    <div class="stats-glass" id="stats-row">
       <div class="stat">
         <span class="stat-value" id="stat-total">23</span>
         <span class="stat-label">Tools</span>
@@ -237,12 +230,9 @@
   <section class="tools-grid container" id="tools-grid"></section>
   <div class="tools-empty container" id="tools-empty">No tools match this filter.</div>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p class="footer-text">Built by Avinash Jothish</p>
-    </div>
-  </footer>
+  <div id="site-footer"></div>
 
+  <script src="../../assets/js/template.js"></script>
   <script>
   (function () {
     "use strict";

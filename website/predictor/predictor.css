@@ -35,10 +35,13 @@
 }
 
 .upload-zone {
-  border: 2px dashed var(--border-accent, var(--border));
+  border: 2px dashed var(--glass-border);
   border-radius: var(--radius-lg, 12px);
   padding: var(--space-2xl) var(--space-xl);
   cursor: pointer;
+  background: var(--glass);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   transition: border-color 200ms ease, background 200ms ease, box-shadow 200ms ease;
   display: flex;
   flex-direction: column;
@@ -48,14 +51,14 @@
 
 .upload-zone:hover {
   border-color: var(--accent);
-  background: rgba(196, 155, 106, 0.04);
+  background: rgba(0, 212, 255, 0.04);
 }
 
 .upload-zone--active {
   border-style: solid;
   border-color: var(--accent);
-  background: rgba(196, 155, 106, 0.06);
-  box-shadow: 0 0 0 4px rgba(196, 155, 106, 0.08);
+  background: rgba(0, 212, 255, 0.06);
+  box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.08);
 }
 
 .upload-icon {
@@ -159,10 +162,12 @@
 /* ========== RESULTS STATE ========== */
 .results-topbar {
   position: sticky;
-  top: 0;
-  z-index: 10;
-  background: var(--bg-deep);
-  border-bottom: 1px solid var(--border);
+  top: 54px; /* below glass-header */
+  z-index: 9;
+  background: rgba(10, 37, 64, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--glass-border);
   padding: var(--space-md) 0;
   margin-bottom: var(--space-lg);
 }
@@ -246,7 +251,14 @@
 /* Topic card */
 .topic-card {
   padding: var(--space-lg);
+  background: var(--glass);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  transition: border-color var(--duration-normal) var(--ease-out);
 }
+.topic-card:hover { border-color: rgba(0,212,255,0.25); }
 
 .topic-card.excluded {
   opacity: 0.4;
@@ -353,6 +365,11 @@
 /* Slot view cards */
 .slot-card {
   padding: var(--space-lg);
+  background: var(--glass);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
 }
 
 .slot-header {
@@ -508,8 +525,8 @@
 .paste-area {
   width: 100%;
   min-height: 180px;
-  background: var(--bg-surface, var(--bg-card));
-  border: 1px solid var(--border);
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius-lg, 12px);
   padding: var(--space-md);
   color: var(--text-primary);
@@ -523,7 +540,7 @@
 .paste-area:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(196, 155, 106, 0.08);
+  box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.08);
 }
 .paste-submit {
   margin-top: var(--space-md);

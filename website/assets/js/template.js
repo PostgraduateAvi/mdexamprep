@@ -1,26 +1,67 @@
-/* MD Exam Prep -- Shared template (sub-page back-link + footer) */
+/* MD Exam Prep -- Shared template (glassmorphic header + footer for sub-pages) */
 (function () {
   "use strict";
 
   function getBasePath() {
     var path = window.location.pathname.replace(/\/index\.html$/, "/");
-    var subs = ["predictor", "theory", "practicals"];
-    var inSub = subs.some(function (s) { return path.indexOf("/" + s) !== -1; });
-    return inSub ? "../" : "";
+    // Depth 1: predictor/, theory/, practicals/
+    if (/\/(predictor|theory|practicals)\//.test(path)) {
+      // Depth 2: theory/tools/
+      if (/\/theory\/tools\//.test(path)) return "../../";
+      return "../";
+    }
+    return "";
+  }
+
+  function currentSection() {
+    var path = window.location.pathname;
+    if (path.indexOf("/predictor") !== -1) return "predictor";
+    if (path.indexOf("/practicals") !== -1) return "practicals";
+    if (path.indexOf("/theory") !== -1) return "theory";
+    return "";
   }
 
   function inject() {
     var base = getBasePath();
     if (!base) return;
 
+    var section = currentSection();
+
+    /* — Glassmorphic header — */
     var nav = document.getElementById("site-nav");
     if (nav) {
-      nav.innerHTML = "<div class=\"container\"><a href=\"" + base + "index.html\" class=\"back-home\">← Back to Home</a></div>";
+      var links = [
+        { href: base + "predictor/index.html?demo=1", label: "Predictor", key: "predictor" },
+        { href: base + "practicals/index.html", label: "Practicals", key: "practicals" },
+        { href: base + "theory/index.html", label: "Theory", key: "theory" }
+      ];
+
+      var navLinksHtml = links.map(function (l) {
+        var cls = "glass-header-nav-link" + (l.key === section ? " active" : "");
+        return '<a href="' + l.href + '" class="' + cls + '">' + l.label + '</a>';
+      }).join("");
+
+      nav.innerHTML =
+        '<header class="glass-header">' +
+          '<div class="container">' +
+            '<a href="' + base + 'index.html" class="glass-header-logo">MD Exam Prep</a>' +
+            '<nav class="glass-header-nav">' +
+              navLinksHtml +
+            '</nav>' +
+          '</div>' +
+        '</header>' +
+        '<div class="glass-header-spacer"></div>';
     }
 
+    /* — Footer — */
     var foot = document.getElementById("site-footer");
     if (foot) {
-      foot.innerHTML = "<footer class=\"site-footer\"><div class=\"container\"><p class=\"footer-text\">Built by Avinash Jothish</p></div></footer>";
+      foot.innerHTML =
+        '<footer class="site-footer">' +
+          '<div class="container">' +
+            '<p class="footer-text">Built by Avinash Jothish. Free forever.</p>' +
+          '</div>' +
+        '</footer>';
     }
   }
 

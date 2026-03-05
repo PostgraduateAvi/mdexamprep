@@ -6,32 +6,57 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
+  /* — Navy palette — */
   --bg-deep: #0A2540;
   --bg-surface: #0D2E4D;
   --bg-card: #122F4D;
   --bg-elevated: #163554;
+  /* — Accent system — */
   --accent: #00D4FF;
   --accent-warm: #33DFFF;
   --accent-dim: rgba(0, 212, 255, 0.12);
   --accent-glow: rgba(0, 212, 255, 0.06);
+  /* — Tool-specific accents — */
+  --accent-teal: #00D4FF;
+  --accent-blue: #3B82F6;
+  --accent-amber: #F59E0B;
+  --accent-teal-dim: rgba(0, 212, 255, 0.12);
+  --accent-blue-dim: rgba(59, 130, 246, 0.12);
+  --accent-amber-dim: rgba(245, 158, 11, 0.12);
+  /* — Text — */
   --text-primary: #FFFFFF;
   --text-secondary: #8BA3BE;
   --text-muted: #4A6B8A;
+  /* — Semantic — */
   --color-key: #00D4FF;
   --color-mechanism: #6AB0E8;
   --color-warning: #FF6B6B;
   --color-positive: #4ADE80;
+  /* — Borders — */
   --border: rgba(255, 255, 255, 0.08);
   --border-accent: rgba(0, 212, 255, 0.25);
+  /* — Glass system (Codex Futurism) — */
+  --glass: rgba(10, 37, 64, 0.65);
+  --glass-border: rgba(0, 212, 255, 0.12);
+  --glass-glow: rgba(0, 212, 255, 0.06);
+  /* — Sepia (Da Vinci Codex palette) — */
+  --sepia-dark: #5C4A32;
+  --sepia-mid: #8B7355;
+  --sepia-light: #A89878;
+  --sepia-paper: #C8B898;
+  --sepia-dim: rgba(168, 152, 120, 0.08);
+  /* — Spacing — */
   --space-xs: 4px;
   --space-sm: 8px;
   --space-md: 16px;
   --space-lg: 24px;
   --space-xl: 32px;
   --space-2xl: 48px;
+  /* — Radii — */
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 16px;
+  /* — Motion — */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --duration-fast: 150ms;
   --duration-normal: 250ms;
@@ -494,4 +519,189 @@ a:hover { color: var(--accent-warm); }
   font-size: 0.75rem;
   color: var(--text-muted);
   letter-spacing: 0.05em;
+}
+
+/* ========== GLASS UTILITIES (Codex Futurism) ========== */
+.glass-panel {
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  position: relative;
+}
+.glass-panel::before {
+  content: '';
+  position: absolute; inset: -1px;
+  border-radius: 13px;
+  background: linear-gradient(135deg, rgba(0,212,255,0.08), transparent 60%);
+  pointer-events: none;
+}
+
+.glass-card {
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 200ms, border-color 250ms, box-shadow 250ms;
+}
+.glass-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0,212,255,0.25);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+}
+
+/* ========== GLASSMORPHIC SUB-PAGE HEADER ========== */
+.glass-header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 14px 0;
+  background: rgba(10, 37, 64, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--glass-border);
+}
+.glass-header .container {
+  display: flex; align-items: center; justify-content: space-between;
+}
+.glass-header-logo {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem; font-weight: 500;
+  color: var(--accent); letter-spacing: 0.04em;
+  text-decoration: none;
+  text-shadow: 0 0 20px rgba(0,212,255,0.3);
+}
+.glass-header-logo:hover { color: var(--accent-warm); }
+.glass-header-back {
+  font-size: 0.8125rem; font-weight: 500;
+  color: var(--text-secondary); text-decoration: none;
+  display: flex; align-items: center; gap: 6px;
+  transition: color 150ms;
+}
+.glass-header-back:hover { color: var(--text-primary); }
+.glass-header-nav { display: flex; align-items: center; gap: 24px; }
+.glass-header-nav-link {
+  font-size: 0.8125rem; font-weight: 500;
+  color: var(--text-secondary); letter-spacing: 0.02em;
+  text-decoration: none; transition: color 150ms;
+}
+.glass-header-nav-link:hover { color: var(--text-primary); }
+.glass-header-nav-link.active { color: var(--accent); }
+@media (max-width: 480px) {
+  .glass-header-nav-link { font-size: 0.75rem; }
+  .glass-header-nav { gap: 16px; }
+}
+.glass-header-spacer { height: 54px; } /* push content below fixed header */
+
+/* ========== GRADIENT TOOL CARDS ========== */
+.gradient-card {
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none; color: inherit;
+  display: flex; flex-direction: column;
+  transition: transform 200ms, box-shadow 250ms;
+  position: relative;
+}
+.gradient-card:hover {
+  color: inherit;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+}
+.gradient-card--teal {
+  background: linear-gradient(165deg, rgba(0,212,255,0.15) 0%, var(--bg-card) 40%, rgba(200,184,152,0.08) 100%);
+  border: 1px solid rgba(0,212,255,0.15);
+}
+.gradient-card--teal:hover { border-color: rgba(0,212,255,0.4); box-shadow: 0 12px 40px rgba(0,212,255,0.1); }
+.gradient-card--blue {
+  background: linear-gradient(165deg, rgba(59,130,246,0.15) 0%, var(--bg-card) 40%, rgba(200,184,152,0.08) 100%);
+  border: 1px solid rgba(59,130,246,0.15);
+}
+.gradient-card--blue:hover { border-color: rgba(59,130,246,0.4); box-shadow: 0 12px 40px rgba(59,130,246,0.1); }
+.gradient-card--amber {
+  background: linear-gradient(165deg, rgba(245,158,11,0.15) 0%, var(--bg-card) 40%, rgba(200,184,152,0.08) 100%);
+  border: 1px solid rgba(245,158,11,0.15);
+}
+.gradient-card--amber:hover { border-color: rgba(245,158,11,0.4); box-shadow: 0 12px 40px rgba(245,158,11,0.1); }
+
+/* Card illustration area */
+.gradient-card-illust {
+  height: 200px; position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+.gradient-card-illust img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: sepia(0.3) contrast(1.1);
+  opacity: 0.7;
+  transition: opacity 300ms, filter 300ms;
+}
+.gradient-card:hover .gradient-card-illust img {
+  opacity: 0.85;
+  filter: sepia(0.2) contrast(1.15);
+}
+.gradient-card-illust .data-node {
+  position: absolute; bottom: 8px; right: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.5rem; color: var(--sepia-light);
+  opacity: 0.6; letter-spacing: 0.03em;
+}
+/* Card body */
+.gradient-card-body {
+  padding: 24px; flex: 1; display: flex; flex-direction: column; gap: 10px;
+}
+.gradient-card-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.05em;
+}
+.gradient-card--teal .gradient-card-num { color: var(--accent-teal); }
+.gradient-card--blue .gradient-card-num { color: var(--accent-blue); }
+.gradient-card--amber .gradient-card-num { color: var(--accent-amber); }
+.gradient-card-body h3 {
+  font-size: 1.125rem; font-weight: 600;
+  transition: color 150ms;
+}
+.gradient-card:hover h3 { color: var(--accent-warm); }
+.gradient-card-body p {
+  font-size: 0.875rem; color: var(--text-secondary);
+  line-height: 1.55; margin: 0;
+}
+.gradient-card-meta {
+  display: flex; align-items: center; gap: 8px;
+  margin-top: auto; padding-top: 8px;
+}
+.gradient-card-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.625rem; font-weight: 500;
+  padding: 3px 10px; border-radius: 100px;
+  letter-spacing: 0.03em;
+}
+.gradient-card--teal .gradient-card-tag { background: var(--accent-teal-dim); color: var(--accent-teal); }
+.gradient-card--blue .gradient-card-tag { background: var(--accent-blue-dim); color: var(--accent-blue); }
+.gradient-card--amber .gradient-card-tag { background: var(--accent-amber-dim); color: var(--accent-amber); }
+.gradient-card-arrow {
+  margin-left: auto;
+  font-size: 0.875rem; color: var(--text-muted);
+  transition: color 150ms, transform 150ms;
+}
+.gradient-card:hover .gradient-card-arrow {
+  color: var(--accent); transform: translateX(3px);
+}
+
+/* ========== GLASS STATS ROW ========== */
+.stats-glass {
+  display: flex; gap: var(--space-xl); flex-wrap: wrap;
+  padding: var(--space-lg) var(--space-xl);
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  margin-bottom: var(--space-xl);
+}
+.stats-glass .stat-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.5rem; font-weight: 500; color: var(--accent);
+}
+.stats-glass .stat-label {
+  font-size: 0.75rem; color: var(--text-secondary);
 }

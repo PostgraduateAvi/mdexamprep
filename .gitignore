@@ -25,6 +25,7 @@ desktop.ini
 
 # Large generated images
 *.png
+!website/assets/images/tool-*.png
 *.psd
 
 # Python workaround scripts

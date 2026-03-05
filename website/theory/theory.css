@@ -154,14 +154,16 @@
 
 /* Individual flashcard */
 .flashcard {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
+  background: var(--glass);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius-md);
   padding: var(--space-lg);
   transition: border-color var(--duration-normal) var(--ease-out);
 }
 .flashcard:hover {
-  border-color: var(--border-accent);
+  border-color: rgba(0,212,255,0.25);
 }
 .flashcard-head {
   display: flex;
@@ -241,8 +243,10 @@
   max-width: 680px;
 }
 .quiz-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
+  background: var(--glass);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius-md);
   padding: var(--space-xl);
   min-height: 200px;
