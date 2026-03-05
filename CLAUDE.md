@@ -1,6 +1,6 @@
 # MD Exam Prep Website -- Project Root
 
-## Status: LIVE (Mar 5, 2026 -- Sessions 1-8 complete, deployed to Vercel)
+## Status: LIVE (Mar 5, 2026 -- Sessions 1-10 complete, deployed to Vercel)
 
 **Built by Avinash Jothish.** Free. Static HTML/JS. No framework. Client-side only.
 
@@ -18,14 +18,15 @@
 - Engine: reason-code weighting + KG boost + portfolio quota enforcement. 38 of 44 topics pass.
 - Three views: Ranked / By Slot / By System. Already-studied toggle per topic.
 
-**Practicals** (`practicals/`) -- 2 of 8 tools live:
+**Practicals** (`practicals/`) -- 2 tools live:
 - Clinical Atlas: 21 cases, 4 modes (Atlas/Cross-Ref/Viva Drill/Quick Audit)
 - Viva Forge: 16 cases, 110 questions, 3 modes (Practice/Stress/Dialogue)
-- 6 tools deferred (examination-guide, OSCE-suite, ECG-mastery, xray, neuro-trainer, specialty-reference)
+- Placeholder cards stripped in Session 10
 
-**Theory** (`theory/index.html`) -- 310 flashcards across 11 systems. Browse mode (grouped by system, accordion) + Quiz mode (single card, shuffle). Filter by system + difficulty. Data: `theory/data/flashcards.json`. Built in Session 7.
+**Theory** (`theory/index.html`) -- 198 flashcards across 11 systems. Browse mode (grouped by system, accordion) + Quiz mode (single card, shuffle). Filter by system + difficulty. Data: `theory/data/flashcards.json`. Built in Session 7.
+- Interactive Study Tools link card on theory page -> `theory/tools/index.html` (23 tools, `catalog.json`)
 
-**Universal platform** -- engine works for ANY medicine college papers, not locked to Yenepoya. Yenepoya data (987 questions) = demo proof-of-concept.
+**Universal platform** -- engine works for ANY medicine college papers. Demo dataset (987 questions) = proof-of-concept.
 
 ---
 
@@ -46,7 +47,7 @@ Landing page CTA -> `predictor/index.html?demo=1` -> predictor detects `?demo=1`
 Landing hero -> "Try the Predictor" button
   -> Predictor loads -> slim 2px gold bar fills (400ms)
   -> Results appear -> first 8 cards stagger in (200ms ease, 50ms apart)
-  -> Sticky topbar: "Yenepoya University -- 38 predicted topics"
+  -> Sticky topbar: "Demo dataset -- 38 predicted topics"
   -> Visitor scrolls, clicks "Already studied" on topics
   -> Below results: upload zone (invitation, not gate)
   -> Drag files -> PARSING -> results replace demo data
@@ -77,13 +78,14 @@ These files are complete and must not be modified without explicit user instruct
 ### Root Config
 ```
 .gitignore              31 lines  -- git exclusions (root-anchored paths)
+.gitattributes           1 line   -- LF line endings (text=auto eol=lf)
 vercel.json             31 lines  -- Vercel deployment config + cache headers
 ```
 
 ### Landing
 ```
-website/index.html              130 lines  -- narrative landing page (trust line fix, theory card live)
-website/assets/css/core.css     468 lines  -- shared styles
+website/index.html              142 lines  -- redesigned landing (Clinical Tech theme, bento cards)
+website/assets/css/core.css     497 lines  -- shared styles (navy/teal palette, Plus Jakarta Sans)
 website/assets/js/template.js    29 lines  -- sub-page back-link + footer
 ```
 
@@ -106,10 +108,11 @@ medical-synonyms.json    1 KB  -- 32 synonym pairs
 system-keywords.json     2 KB  -- fallback system classifier
 ```
 Note: `taxonomy-lite.json` and `test-fixture.json` removed in Session 7 cleanup (deprecated/unused).
+Note: `flashcards_clean.json` deleted in Session 9 (stale intermediate file).
 
 ### Practicals
 ```
-website/practicals/index.html         222 lines -- hub with 8 tool cards
+website/practicals/index.html         168 lines -- hub with 2 live tool cards
 website/practicals/practicals.css     562 lines -- shared sidebar/topbar/loading
 website/practicals/clinical-atlas.html  61 lines -- shell
 website/practicals/clinical-atlas.js   710 lines [LOCKED]
@@ -182,6 +185,8 @@ Parser uses `topic-dictionary.json` for matching. Supporting data: `medical-syno
 | 7 | Mar 5 | Theory section built (310 flashcards, browse/quiz). Trust line fix. Landing theory card live. |
 | 7 | Mar 5 | Theory section (310 flashcards), directory cleanup (CLEANUP_SPEC), trust attribution, pilot deploy prep |
 | 8 | Mar 5 | Deployment: git init, GitHub repo (PostgraduateAvi/mdexamprep), Vercel production, cache headers |
+| 9 | Mar 5 | Privacy cleanup: removed all institution references, deleted stale flashcards_clean.json |
+| 10 | Mar 5 | Landing redesign (navy/teal), practicals cleanup, theory tools wiring, .gitattributes, font unification |
 
 ---
 
@@ -189,8 +194,8 @@ Parser uses `topic-dictionary.json` for matching. Supporting data: `medical-syno
 
 ### Data quality
 - Theory taxonomy: 62.5% (2,558 of 4,094) still classified as "General/Other" -- reclassification moved 1,536 topics but 2,558 remain
-- Flashcards: DONE -- 310 unified cards from 5 sources (92 duplicates removed)
-- Only 2 of 8 practical tools built
+- Flashcards: DONE -- 198 cards (cleaned from 310, duplicates + low-quality removed)
+- Only 2 practical tools built (placeholder cards removed Session 10)
 
 ### Completed (Session 7)
 - Theory section: BUILT -- 310 flashcards, browse/quiz modes, 11 systems, 3 difficulty levels
@@ -203,22 +208,39 @@ Parser uses `topic-dictionary.json` for matching. Supporting data: `medical-syno
 - Auto-deploy: `git push origin main` -> Vercel builds ~30s -> live
 - Cache headers: 3-tier (assets 30d, data 1d, theory 1h)
 
+### Completed (Session 9)
+- Privacy: all institution-specific references removed from 3 files (6 edits)
+- Cleanup: flashcards_clean.json deleted (stale intermediate file)
+- Theory data: 198 flashcards (down from 310, cleanup committed prior to Session 9)
+- Cache bump: theory data can now go 1h -> 1d (flashcards finalized)
+
+### Completed (Session 10)
+- Landing page redesign: Dark warm gold -> Clinical Tech navy/teal (#0A2540 + #00D4FF)
+- Typography: DM Sans + Source Serif 4 -> Plus Jakarta Sans (all pages, shared CSS)
+- Practicals: 6 placeholder tool cards stripped from hub page
+- Theory tools: manifest renamed to catalog.json, fetch path fixed in tools/index.html
+- Theory: Interactive Study Tools link card on theory/index.html
+- .gitattributes: LF line endings enforced
+- Feature cards: bento-box hover (translateY -4px, teal glow, top-accent border)
+- Micro-badges added to feature cards (44 topics, 21 cases, 198 flashcards)
+
 ### Deferred work
-- 6 practical tools: examination-guide, OSCE-suite, ECG-mastery, xray, neuro-trainer, specialty-reference
+- Additional practical tools (examination-guide, OSCE-suite, ECG-mastery, xray, neuro-trainer, specialty-reference)
 - Theory enhancements: taxonomy browser, Harrison chapter mapping
 - Mobile optimization pass
-- Cleanup: taxonomy-lite.json + test-fixture.json still in website/predictor/data/ (CLAUDE.md said removed but weren't)
-- Data: evaluate flashcards_clean.json vs flashcards.json (Cowork cleanup)
-- Cache bump: theory data 1h -> 1d once flashcards finalized
+- Cache bump: theory data 1h -> 1d (flashcards now finalized -- ready to apply)
 
 ---
 
 ## Technical Notes
 
-### CSS Variables (dark warm theme)
+### CSS Variables (Clinical Tech theme)
 ```
---surface-primary, --surface-elevated, --text-primary, --text-secondary, --accent, --border
---accent-warm (gold spectrum for signature contexts)
+--bg-deep: #0A2540 (Deep Navy)    --accent: #00D4FF (Clinical Teal)
+--bg-surface: #0D2E4D             --accent-warm: #33DFFF
+--bg-card: #122F4D                 --text-primary: #FFFFFF
+--bg-elevated: #163554             --text-secondary: #8BA3BE
+Typography: Plus Jakarta Sans (body+headings) + JetBrains Mono (stats/code)
 ```
 
 ### Key Patterns

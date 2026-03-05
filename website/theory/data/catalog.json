@@ -1,0 +1,232 @@
+[
+  {
+    "id": "autonomic-ns",
+    "title": "Autonomic Nervous System",
+    "subtitle": "Drawable Diagram",
+    "category": "anatomy",
+    "filename": "anatomy/autonomic_ns_diagram.html",
+    "type": "diagram",
+    "description": "Draw-to-learn autonomic nervous system diagram with sympathetic and parasympathetic pathways",
+    "sizeKB": 13
+  },
+  {
+    "id": "brainstem-cortical",
+    "title": "Brainstem Stack + Cortical Map",
+    "subtitle": "Draw & Pivot",
+    "category": "anatomy",
+    "filename": "anatomy/brainstem_cortical_map.html",
+    "type": "interactive",
+    "description": "Layered brainstem cross-sections with cortical mapping and pivot-based learning",
+    "sizeKB": 22
+  },
+  {
+    "id": "bronchopulmonary-segments",
+    "title": "Bronchopulmonary Segments",
+    "subtitle": "Drawable Diagram",
+    "category": "anatomy",
+    "filename": "anatomy/bronchopulmonary_segments_diagram.html",
+    "type": "diagram",
+    "description": "Draw-to-learn bronchopulmonary segment anatomy for respiratory examination",
+    "sizeKB": 17
+  },
+  {
+    "id": "cranial-nerves",
+    "title": "Cranial Nerves",
+    "subtitle": "Exam-Weight Visual Imprint",
+    "category": "anatomy",
+    "filename": "anatomy/cranial_nerves_imprint.html",
+    "type": "interactive",
+    "description": "Visual imprint tool for all 12 cranial nerves weighted by exam frequency",
+    "sizeKB": 21
+  },
+  {
+    "id": "mediastinum-crosssection",
+    "title": "Mediastinum Cross-Section",
+    "subtitle": "Lateral View",
+    "category": "anatomy",
+    "filename": "anatomy/mediastinum_crosssection.html",
+    "type": "diagram",
+    "description": "Interactive lateral cross-section of mediastinal compartments and contents",
+    "sizeKB": 20
+  },
+  {
+    "id": "mediastinum-diagram",
+    "title": "Mediastinum",
+    "subtitle": "Drawable Diagram",
+    "category": "anatomy",
+    "filename": "anatomy/mediastinum_diagram.html",
+    "type": "diagram",
+    "description": "Draw-to-learn mediastinum diagram with anterior, middle, and posterior compartments",
+    "sizeKB": 17
+  },
+  {
+    "id": "medulla-crosssection",
+    "title": "Medulla Cross-Section",
+    "subtitle": "Draw in 30 Seconds",
+    "category": "anatomy",
+    "filename": "anatomy/medulla_crosssection.html",
+    "type": "diagram",
+    "description": "Speed-draw medulla cross-section with nucleus and tract identification",
+    "sizeKB": 15
+  },
+  {
+    "id": "nephron-diagram",
+    "title": "Nephron Diagram",
+    "subtitle": "Drawable Exam Diagram",
+    "category": "anatomy",
+    "filename": "anatomy/nephron_diagram.html",
+    "type": "diagram",
+    "description": "Draw-to-learn nephron structure with glomerulus, tubules, and collecting duct",
+    "sizeKB": 13
+  },
+  {
+    "id": "nephron-sequential",
+    "title": "Nephron Sequential Walkthrough",
+    "subtitle": "Step-by-Step",
+    "category": "anatomy",
+    "filename": "anatomy/nephron_sequential.html",
+    "type": "interactive",
+    "description": "Sequential walkthrough of nephron physiology — filtration, reabsorption, secretion at each segment",
+    "sizeKB": 28
+  },
+  {
+    "id": "spinal-cord-tracts",
+    "title": "Spinal Cord Tracts",
+    "subtitle": "SACD Tracts",
+    "category": "anatomy",
+    "filename": "anatomy/spinal_cord_tracts.html",
+    "type": "diagram",
+    "description": "Spinal cord tract identification — spinothalamic, corticospinal, dorsal columns, and SACD",
+    "sizeKB": 8
+  },
+  {
+    "id": "parasite-lifecycle",
+    "title": "Parasite Lifecycle Algorithms",
+    "subtitle": "v1",
+    "category": "microbiology",
+    "filename": "microbiology/parasite_lifecycle_algorithms.html",
+    "type": "interactive",
+    "description": "Algorithmic approach to parasite lifecycles — malaria, filaria, intestinal helminths",
+    "sizeKB": 45
+  },
+  {
+    "id": "parasite-lifecycle-v2",
+    "title": "Parasite Lifecycle Algorithms",
+    "subtitle": "v2 (Enhanced)",
+    "category": "microbiology",
+    "filename": "microbiology/parasite_lifecycle_algorithms_v2.html",
+    "type": "interactive",
+    "description": "Enhanced parasite lifecycle tool with additional species and exam-focused drill mode",
+    "sizeKB": 46
+  },
+  {
+    "id": "pi-final-weapon",
+    "title": "PI Final Weapon",
+    "subtitle": "Error Patterns + Polarity Fix",
+    "category": "paper-1",
+    "filename": "paper-1/PI_FINAL_WEAPON.html",
+    "type": "drill",
+    "description": "Paper I error pattern analysis with polarity fixes and gap identification",
+    "sizeKB": 21
+  },
+  {
+    "id": "crispr-cas9",
+    "title": "CRISPR-Cas9 & Gene Editing",
+    "subtitle": "Exam Stat Sheet",
+    "category": "paper-1",
+    "filename": "paper-1/crispr_cas9_exam_stats.html",
+    "type": "reference",
+    "description": "CRISPR-Cas9 mechanism, applications, and exam statistics for gene editing topics",
+    "sizeKB": 28
+  },
+  {
+    "id": "pi-final-review",
+    "title": "PI Final Review",
+    "subtitle": "Comprehensive",
+    "category": "paper-1",
+    "filename": "paper-1/pi_final_review.html",
+    "type": "drill",
+    "description": "Comprehensive Paper I final review covering all high-yield topics",
+    "sizeKB": 52
+  },
+  {
+    "id": "pi-slot-dashboard",
+    "title": "PI Slot Architecture Dashboard",
+    "subtitle": "Exam Blueprint",
+    "category": "paper-1",
+    "filename": "paper-1/pi_slot_dashboard.html",
+    "type": "reference",
+    "description": "Paper I exam slot architecture — topic distribution, weightings, and coverage map",
+    "sizeKB": 48
+  },
+  {
+    "id": "pi-spider-web",
+    "title": "PI Spider Web",
+    "subtitle": "Full Topic Map",
+    "category": "paper-1",
+    "filename": "paper-1/pi_spider_web_full_map.html",
+    "type": "interactive",
+    "description": "Spider web visualization mapping all Paper I topics and their interconnections",
+    "sizeKB": 35
+  },
+  {
+    "id": "slot1-nutrition",
+    "title": "Slot 1 — Nutrition Network",
+    "subtitle": "Network Map",
+    "category": "paper-1",
+    "filename": "paper-1/slot1_nutrition_network.html",
+    "type": "interactive",
+    "description": "Nutrition topic network for Paper I Slot 1 — vitamins, minerals, deficiency syndromes",
+    "sizeKB": 27
+  },
+  {
+    "id": "piii-recall-tester",
+    "title": "PIII Recall Tester",
+    "subtitle": "100+ Topics",
+    "category": "paper-3",
+    "filename": "paper-3/PIII_Recall_Tester.html",
+    "type": "drill",
+    "description": "Paper III recall tester with 100+ topics for active recall practice",
+    "sizeKB": 98
+  },
+  {
+    "id": "b-vitamin-cluster",
+    "title": "B-Vitamin Cluster",
+    "subtitle": "Pharmacology Drill",
+    "category": "pharmacology",
+    "filename": "pharmacology/b_vitamin_cluster.html",
+    "type": "drill",
+    "description": "B-vitamin pharmacology — B1 through B12, deficiency syndromes, clinical correlations",
+    "sizeKB": 28
+  },
+  {
+    "id": "raas-arni-recall",
+    "title": "CD + RAAS + ARNi",
+    "subtitle": "Talk-Through Recall",
+    "category": "pharmacology",
+    "filename": "pharmacology/cd_raas_arni_recall.html",
+    "type": "drill",
+    "description": "RAAS pathway, calcium channel blockers, and ARNi mechanism — talk-through recall format",
+    "sizeKB": 23
+  },
+  {
+    "id": "dm-pathophysiology",
+    "title": "DM Pathophysiology",
+    "subtitle": "Blueprint + Drill",
+    "category": "pharmacology",
+    "filename": "pharmacology/dm_pathophysiology_drill.html",
+    "type": "drill",
+    "description": "Diabetes mellitus pathophysiology blueprint with OHA classification and insulin pharmacology",
+    "sizeKB": 28
+  },
+  {
+    "id": "pft-algorithms",
+    "title": "PFT Decision Algorithms",
+    "subtitle": "Interpretation Guide",
+    "category": "pulmonology",
+    "filename": "pulmonology/pft_algorithms.html",
+    "type": "interactive",
+    "description": "Pulmonary function test interpretation — obstructive vs restrictive, flow-volume loops, algorithmic approach",
+    "sizeKB": 65
+  }
+]

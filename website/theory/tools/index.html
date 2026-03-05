@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Study Tools &mdash; MD Exam Prep</title>
+  <meta name="description" content="23 interactive study tools — drawable diagrams, drill modes, and visual imprints across anatomy, pharmacology, microbiology, and exam papers.">
+  <link rel="stylesheet" href="../../assets/css/core.css">
+  <style>
+    .tools-hub-hero {
+      padding: var(--space-2xl) 0 var(--space-lg);
+    }
+    .tools-hub-hero h1 {
+      font-size: 2rem;
+      margin-bottom: var(--space-sm);
+    }
+    .tools-hub-hero p {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      max-width: 560px;
+    }
+
+    /* Stats row */
+    .stats-row {
+      display: flex;
+      gap: var(--space-xl);
+      padding: var(--space-lg) 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: var(--space-lg);
+      flex-wrap: wrap;
+    }
+    .stat { display: flex; flex-direction: column; gap: 2px; }
+    .stat-value {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--accent-warm);
+    }
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+    }
+
+    /* Filter chips */
+    .filter-bar {
+      display: flex;
+      gap: var(--space-sm);
+      flex-wrap: wrap;
+      padding-bottom: var(--space-lg);
+    }
+    .filter-chip {
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6875rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      background: var(--bg-elevated);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: all var(--duration-fast) var(--ease-out);
+      white-space: nowrap;
+    }
+    .filter-chip:hover {
+      border-color: var(--border-accent);
+      color: var(--text-primary);
+    }
+    .filter-chip.active {
+      background: var(--accent-dim);
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+    .filter-count {
+      display: inline-block;
+      margin-left: 4px;
+      opacity: 0.6;
+    }
+
+    /* Tools grid */
+    .tools-grid {
+      display: grid;
+      gap: var(--space-lg);
+      padding-bottom: var(--space-2xl);
+    }
+
+    .tool-card {
+      padding: var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+    }
+    .tool-card:hover { color: inherit; }
+    .tool-card-header {
+      display: flex;
+      align-items: baseline;
+      gap: var(--space-sm);
+    }
+    .tool-card h3 {
+      margin: 0;
+      font-size: 1.0625rem;
+      transition: color var(--duration-fast) var(--ease-out);
+    }
+    .tool-card:hover h3 { color: var(--accent-warm); }
+    .tool-card-subtitle {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6875rem;
+      color: var(--text-muted);
+    }
+    .tool-card p {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      margin: 0;
+      line-height: 1.55;
+    }
+    .tool-card-meta {
+      display: flex;
+      gap: var(--space-sm);
+      flex-wrap: wrap;
+      margin-top: auto;
+      padding-top: var(--space-sm);
+      align-items: center;
+    }
+    .tool-card .tag { font-size: 0.625rem; }
+    .tool-card-size {
+      margin-left: auto;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.625rem;
+      color: var(--text-muted);
+    }
+    .tool-card-arrow {
+      color: var(--text-muted);
+      font-size: 1.125rem;
+      transition: color var(--duration-fast), transform var(--duration-fast);
+    }
+    .tool-card:hover .tool-card-arrow {
+      color: var(--accent);
+      transform: translateX(3px);
+    }
+
+    /* Type-specific tag colors */
+    .tag-diagram { background: rgba(106, 196, 122, 0.12); color: var(--color-positive); }
+    .tag-interactive { background: rgba(106, 158, 196, 0.15); color: var(--color-mechanism); }
+    .tag-drill { background: rgba(196, 106, 106, 0.12); color: var(--color-warning); }
+    .tag-reference { background: var(--accent-dim); color: var(--accent); }
+
+    /* Category label */
+    .tag-category {
+      background: var(--bg-elevated);
+      color: var(--text-muted);
+      text-transform: capitalize;
+    }
+
+    /* Empty state */
+    .tools-empty {
+      text-align: center;
+      padding: var(--space-2xl) 0;
+      color: var(--text-muted);
+      display: none;
+    }
+    .tools-empty.visible { display: block; }
+
+    /* Back link override for nested path */
+    .tools-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 16px 0;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+    .tools-back:hover { color: var(--accent); }
+
+    @media (min-width: 640px) {
+      .tools-hub-hero h1 { font-size: 2.5rem; }
+      .tools-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 960px) {
+      .tools-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <a href="../../index.html" class="tools-back">&larr; Back to Home</a>
+  </div>
+
+  <section class="tools-hub-hero container">
+    <h1>Interactive Study Tools</h1>
+    <p>Drawable diagrams, active-recall drills, visual imprints, and reference dashboards &mdash; built for exam-day retention.</p>
+  </section>
+
+  <div class="container">
+    <div class="stats-row" id="stats-row">
+      <div class="stat">
+        <span class="stat-value" id="stat-total">23</span>
+        <span class="stat-label">Tools</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="stat-categories">6</span>
+        <span class="stat-label">Categories</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="stat-types">4</span>
+        <span class="stat-label">Tool types</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="filter-bar" id="filter-bar"></div>
+  </div>
+
+  <section class="tools-grid container" id="tools-grid"></section>
+  <div class="tools-empty container" id="tools-empty">No tools match this filter.</div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-text">Built by Avinash Jothish</p>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    "use strict";
+
+    var CATALOG = [];
+    var activeFilter = "all";
+
+    var CATEGORY_LABELS = {
+      "anatomy": "Anatomy",
+      "microbiology": "Microbiology",
+      "paper-1": "Paper I",
+      "paper-3": "Paper III",
+      "pharmacology": "Pharmacology",
+      "pulmonology": "Pulmonology"
+    };
+
+    var TYPE_CLASSES = {
+      "diagram": "tag-diagram",
+      "interactive": "tag-interactive",
+      "drill": "tag-drill",
+      "reference": "tag-reference"
+    };
+
+    function init() {
+      fetch("../data/catalog.json")
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          CATALOG = data;
+          buildFilters();
+          renderCards();
+        })
+        .catch(function () {
+          document.getElementById("tools-empty").classList.add("visible");
+          document.getElementById("tools-empty").textContent = "Failed to load tools catalog.";
+        });
+    }
+
+    function buildFilters() {
+      var bar = document.getElementById("filter-bar");
+      var cats = {};
+      CATALOG.forEach(function (t) {
+        cats[t.category] = (cats[t.category] || 0) + 1;
+      });
+
+      // "All" chip
+      var allChip = makeChip("All", CATALOG.length, "all");
+      allChip.classList.add("active");
+      bar.appendChild(allChip);
+
+      // Category chips in defined order
+      var order = ["anatomy", "pharmacology", "microbiology", "pulmonology", "paper-1", "paper-3"];
+      order.forEach(function (cat) {
+        if (cats[cat]) {
+          bar.appendChild(makeChip(CATEGORY_LABELS[cat] || cat, cats[cat], cat));
+        }
+      });
+    }
+
+    function makeChip(label, count, value) {
+      var btn = document.createElement("button");
+      btn.className = "filter-chip";
+      btn.setAttribute("data-filter", value);
+      btn.innerHTML = label + " <span class=\"filter-count\">" + count + "</span>";
+      btn.addEventListener("click", function () {
+        activeFilter = value;
+        document.querySelectorAll(".filter-chip").forEach(function (c) { c.classList.remove("active"); });
+        btn.classList.add("active");
+        renderCards();
+      });
+      return btn;
+    }
+
+    function renderCards() {
+      var grid = document.getElementById("tools-grid");
+      var empty = document.getElementById("tools-empty");
+      grid.innerHTML = "";
+
+      var filtered = activeFilter === "all"
+        ? CATALOG
+        : CATALOG.filter(function (t) { return t.category === activeFilter; });
+
+      if (filtered.length === 0) {
+        empty.classList.add("visible");
+        return;
+      }
+      empty.classList.remove("visible");
+
+      filtered.forEach(function (tool) {
+        var a = document.createElement("a");
+        a.href = tool.filename;
+        a.className = "card tool-card";
+
+        var typeClass = TYPE_CLASSES[tool.type] || "tag-gold";
+        var catLabel = CATEGORY_LABELS[tool.category] || tool.category;
+
+        a.innerHTML =
+          "<div class=\"tool-card-header\">" +
+            "<h3>" + tool.title + "</h3>" +
+            "<span class=\"tool-card-subtitle\">" + tool.subtitle + "</span>" +
+          "</div>" +
+          "<p>" + tool.description + "</p>" +
+          "<div class=\"tool-card-meta\">" +
+            "<span class=\"tag " + typeClass + "\">" + tool.type + "</span>" +
+            "<span class=\"tag tag-category\">" + catLabel + "</span>" +
+            "<span class=\"tool-card-size\">" + tool.sizeKB + " KB</span>" +
+            "<span class=\"tool-card-arrow\">&rarr;</span>" +
+          "</div>";
+
+        grid.appendChild(a);
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", init);
+  })();
+  </script>
+
+</body>
+</html>
