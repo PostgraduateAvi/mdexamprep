@@ -30,9 +30,9 @@
     var nav = document.getElementById("site-nav");
     if (nav) {
       var links = [
-        { href: "/predictor?demo=1", label: "Predictor", key: "predictor" },
-        { href: "/practicals", label: "Practicals", key: "practicals" },
-        { href: "/theory", label: "Theory", key: "theory" }
+        { href: "/predictor/?demo=1", label: "Predictor", key: "predictor" },
+        { href: "/practicals/", label: "Practicals", key: "practicals" },
+        { href: "/theory/", label: "Theory", key: "theory" }
       ];
 
       var navLinksHtml = links.map(function (l) {
