@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'v5';
+const CACHE_VERSION = 'v6';
 const PRECACHE = 'precache-' + CACHE_VERSION;
 const RUNTIME = 'runtime-' + CACHE_VERSION;
 
@@ -8,7 +8,7 @@ const PRECACHE_URLS = [
   '/practicals/',
   '/theory/',
   '/style.css',
-  '/assets/js/template.js',
+  '/assets/js/template.js?v=5',
   '/favicon.svg',
   '/manifest.json',
   '/assets/fonts/DMSans-Variable.woff2',
