@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'v3';
+const CACHE_VERSION = 'v4';
 const PRECACHE = 'precache-' + CACHE_VERSION;
 const RUNTIME = 'runtime-' + CACHE_VERSION;
 
@@ -43,8 +43,8 @@ self.addEventListener('fetch', event => {
   // Only handle same-origin requests
   if (url.origin !== location.origin) return;
 
-  // Fonts & JS assets: cache-first (immutable)
-  if (url.pathname.startsWith('/assets/fonts/') || url.pathname.startsWith('/assets/js/')) {
+  // Fonts: cache-first (immutable binary, never changes)
+  if (url.pathname.startsWith('/assets/fonts/')) {
     event.respondWith(
       caches.match(event.request).then(cached =>
         cached || fetch(event.request).then(response => {
@@ -53,6 +53,21 @@ self.addEventListener('fetch', event => {
           return response;
         })
       )
+    );
+    return;
+  }
+
+  // JS assets: stale-while-revalidate (template.js has mutable brand text)
+  if (url.pathname.startsWith('/assets/js/')) {
+    event.respondWith(
+      caches.match(event.request).then(cached => {
+        const fetchPromise = fetch(event.request).then(response => {
+          const clone = response.clone();
+          caches.open(RUNTIME).then(cache => cache.put(event.request, clone));
+          return response;
+        });
+        return cached || fetchPromise;
+      })
     );
     return;
   }
