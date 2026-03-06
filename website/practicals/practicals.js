@@ -1,4 +1,4 @@
-/* MD Exam Prep -- Practicals: browse clinical cases by system */
+/* MBBEasy -- Practicals: browse clinical cases by system */
 (function () {
   'use strict';
 

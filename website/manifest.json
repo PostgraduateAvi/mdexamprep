@@ -1,7 +1,7 @@
 {
-  "name": "MD Exam Prep",
-  "short_name": "MDExamPrep",
-  "description": "Free study tools for MD Internal Medicine exam preparation",
+  "name": "MBBEasy",
+  "short_name": "MBBEasy",
+  "description": "Free study tools for MBBS, MD, and PG medical exam preparation",
   "start_url": "/",
   "display": "standalone",
   "theme_color": "#111827",

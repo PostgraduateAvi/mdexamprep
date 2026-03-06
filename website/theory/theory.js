@@ -1,4 +1,4 @@
-/* MD Exam Prep -- Theory: flashcards (browse) + MCQs + tools catalog */
+/* MBBEasy -- Theory: flashcards (browse) + MCQs + tools catalog */
 var TheoryUI = (function () {
   'use strict';
 

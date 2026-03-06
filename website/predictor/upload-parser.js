@@ -1,4 +1,4 @@
-/* MD Exam Prep — Upload Parser
+/* MBBEasy — Upload Parser
    Client-side PDF/Excel parsing + topic matching.
    Depends on: pdf.js (CDN), SheetJS (CDN) */
 

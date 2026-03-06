@@ -1,4 +1,4 @@
-/* MD Exam Prep -- Predictor UI Controller
+/* MBBEasy -- Predictor UI Controller
    State machine: CHOOSE -> PARSING -> RESULTS
    Depends on: template.js, predictor-engine.js, upload-parser.js */
 

@@ -1,4 +1,4 @@
-/* MD Exam Prep -- Nav + Footer injection for sub-pages */
+/* MBBEasy -- Nav + Footer injection for sub-pages */
 (function () {
   "use strict";
 
@@ -27,7 +27,7 @@
 
       nav.innerHTML =
         '<nav class="nav"><div class="container">' +
-          '<a href="/" class="nav-logo">MD Exam Prep</a>' +
+          '<a href="/" class="nav-logo">MBBEasy</a>' +
           '<div class="nav-links">' + linksHtml + '</div>' +
         '</div></nav>';
     }

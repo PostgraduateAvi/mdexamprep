@@ -1,7 +1,8 @@
-# MD Exam Prep Website -- Project Root
+# MBBEasy (formerly MD Exam Prep) -- Project Root
 
-## Status: LIVE (Mar 6, 2026 -- Simplified, deployed to Vercel)
+## Status: LIVE (Mar 6, 2026 -- Rebranded to MBBEasy)
 
+**Brand**: MBBEasy — "Clinical medicine, decoded."
 **Built by Avinash Jothish.** Free. Static HTML/JS. No framework. Client-side only.
 
 ---
@@ -95,6 +96,7 @@ MDExamPrep/
 | 16 | Mar 6 | Directory reorganization: _source/ consolidation, orphan cleanup, ~14.5 MB reclaimed |
 | 17 | Mar 6 | "Warm Authority" design upgrade: self-hosted fonts, glass nav, amber pearls, card animations |
 | 18 | Mar 6 | PWA (service worker + manifest + icons), OG meta tags, granular Vercel cache headers |
+| 20 | Mar 6 | Rebrand: MD Exam Prep → MBBEasy (all copy, meta, manifest, OG image, SW cache bump) |
 
 ---
 
