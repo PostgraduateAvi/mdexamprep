@@ -1,5 +1,5 @@
-/* MD Exam Prep — Predictor UI Controller
-   State machine: CHOOSE → PARSING → RESULTS
+/* MD Exam Prep -- Predictor UI Controller
+   State machine: CHOOSE -> PARSING -> RESULTS
    Depends on: template.js, predictor-engine.js, upload-parser.js */
 
 var PredictorUI = (function () {
@@ -13,7 +13,6 @@ var PredictorUI = (function () {
   var activeView = 'ranked';
   var dataSource = null;
 
-  // --- Reason code narratives ---
   var REASON_NARRATIVES = {
     'Algorithm\u2191': 'Structured topic \u2014 key for organized exam answers',
     'Balance\u2191': 'Rounds out your coverage \u2014 this system needs attention',
@@ -41,8 +40,6 @@ var PredictorUI = (function () {
     return phrases.join(' \u00b7 ');
   }
 
-  // --- State transitions ---
-
   function setState(s) {
     currentState = s;
     document.getElementById('state-choose').style.display = s === STATE.CHOOSE ? 'flex' : 'none';
@@ -55,8 +52,6 @@ var PredictorUI = (function () {
     document.getElementById('parsing-detail').textContent = detail || '';
     if (typeof pct === 'number') document.getElementById('parsing-bar').style.width = pct + '%';
   }
-
-  // --- Data loading ---
 
   function loadJSON(url) {
     return fetch(url).then(function (r) {
@@ -74,7 +69,7 @@ var PredictorUI = (function () {
       loadJSON(base + 'slot-template.json')
     ]).then(function (r) {
       data.rankedList = r[0]; data.kgTriples = r[1]; data.quotas = r[2]; data.slotTemplate = r[3];
-    }).catch(function (err) {
+    }).catch(function () {
       throw new Error('Failed to load demo data. Check your connection and try again.');
     });
   }
@@ -91,12 +86,10 @@ var PredictorUI = (function () {
     ]).then(function (r) {
       data.kgTriples = r[3]; data.quotas = r[4]; data.slotTemplate = r[5];
       return { topicDict: r[0], synonyms: r[1], systemKeywords: r[2] };
-    }).catch(function (err) {
+    }).catch(function () {
       throw new Error('Failed to load support data. Check your connection and try again.');
     });
   }
-
-  // --- Demo flow ---
 
   function startDemo() {
     setState(STATE.PARSING);
@@ -107,12 +100,10 @@ var PredictorUI = (function () {
       currentResults = PredictorEngine.rank(data.rankedList, data.kgTriples, data.quotas, null);
       updateParsing('Done', '', 100);
       setTimeout(function () {
-        showResults('Demo dataset \u2014 ' + data.rankedList.length + ' ranked topics');
+        showResults('Demo dataset \u2014 ' + data.rankedList.length + ' predicted topics');
       }, 400);
     }).catch(handleError);
   }
-
-  // --- Upload flow ---
 
   function startUpload(files) {
     if (files.length === 0) return;
@@ -139,9 +130,6 @@ var PredictorUI = (function () {
     }).catch(handleError);
   }
 
-
-  // --- Text paste flow ---
-
   function startTextParse(text) {
     if (!text.trim()) return;
     setState(STATE.PARSING);
@@ -166,18 +154,13 @@ var PredictorUI = (function () {
     }).catch(handleError);
   }
 
-  // --- Results ---
-
   function showResults(label) {
     var el = document.getElementById('results-source');
     if (el) el.textContent = label;
-    var resultsSection = document.getElementById('state-results');
     var startOverBtn = document.getElementById('start-over');
     if (dataSource === 'demo') {
-      resultsSection.classList.add('results--demo-mode');
       if (startOverBtn) startOverBtn.textContent = 'Try your own papers';
     } else {
-      resultsSection.classList.remove('results--demo-mode');
       if (startOverBtn) startOverBtn.textContent = 'Upload new papers';
     }
     setState(STATE.RESULTS);
@@ -186,14 +169,9 @@ var PredictorUI = (function () {
 
   function handleError(err) {
     console.error('Predictor error:', err);
-    // Clean up page-loader if it was active
-    var loader = document.getElementById('page-loader');
-    if (loader) {
-      loader.classList.remove('page-loader--active');
-      loader.classList.add('page-loader--done');
-    }
     setState(STATE.CHOOSE);
     var zone = document.getElementById('upload-zone');
+    if (!zone) return;
     var msg = document.createElement('p');
     msg.className = 'upload-error';
     msg.textContent = err.message || 'Something went wrong.';
@@ -210,12 +188,8 @@ var PredictorUI = (function () {
     setState(STATE.CHOOSE);
   }
 
-  // --- HTML helpers ---
-
   function esc(str) { var d = document.createElement('div'); d.textContent = str; return d.innerHTML; }
   function scorePercent(score) { return Math.min(100, Math.max(2, (score * 100))).toFixed(0); }
-
-  // --- Render: Ranked view ---
 
   function renderRankedView(container, results) {
     var html = '';
@@ -227,13 +201,13 @@ var PredictorUI = (function () {
         tags += '<span class="tag tag-gold">' + esc(t.reason_codes[j]) + '</span>';
       }
       html +=
-        '<div class="card topic-card' + (isExcluded ? ' excluded' : '') + '">' +
+        '<div class="topic-card' + (isExcluded ? ' excluded' : '') + '">' +
         '<div class="topic-header">' +
-        '<span class="topic-rank mono">#' + (i + 1) + '</span>' +
+        '<span class="topic-rank">#' + (i + 1) + '</span>' +
         '<h3 class="topic-name">' + esc(t.canonical_topic) + '</h3>' +
         '<span class="tag tag-blue topic-system">' + esc(t.system) + '</span></div>' +
         '<div class="topic-reasons">' + tags + '</div>' +
-        '<div class="topic-rationale mono">' + esc(buildRationale(t.reason_codes)) + '</div>' +
+        '<div class="topic-rationale">' + esc(buildRationale(t.reason_codes)) + '</div>' +
         '<div class="topic-score-bar"><div class="score-fill" style="width:' + scorePercent(t._score) + '%"></div></div>' +
         '<details class="topic-detail"><summary>What to memorize</summary>' +
         '<p class="text-secondary">' + esc(t.what_to_memorize) + '</p></details>' +
@@ -243,8 +217,6 @@ var PredictorUI = (function () {
     }
     container.innerHTML = html;
   }
-
-  // --- Render: Slot view ---
 
   function renderSlotView(container, results) {
     if (!data.slotTemplate) { container.innerHTML = '<p class="text-muted">Slot analysis requires demo data.</p>'; return; }
@@ -256,20 +228,18 @@ var PredictorUI = (function () {
       if (s.matchedTopics.length > 0) {
         for (var j = 0; j < s.matchedTopics.length; j++) {
           var t = s.matchedTopics[j];
-          th += '<div class="slot-topic-item"><span class="topic-rank mono">#' + t.rank + '</span><span>' + esc(t.canonical_topic) + '</span></div>';
+          th += '<div class="slot-topic-item"><span class="topic-rank">#' + t.rank + '</span><span>' + esc(t.canonical_topic) + '</span></div>';
         }
       } else { th = '<p class="empty-slot">No matching topics</p>'; }
-      html += '<div class="card slot-card"><div class="slot-header">' +
-        '<span class="slot-number mono">Slot ' + s.slot + '</span>' +
+      html += '<div class="slot-card"><div class="slot-header">' +
+        '<span class="slot-number">Slot ' + s.slot + '</span>' +
         '<h3>' + esc(s.label) + '</h3>' +
         '<span class="tag ' + cc + '">' + esc(s.classification) + '</span>' +
-        '<span class="slot-confidence mono text-muted">' + (s.confidence * 100).toFixed(0) + '%</span></div>' +
+        '<span class="slot-confidence text-muted">' + (s.confidence * 100).toFixed(0) + '%</span></div>' +
         '<div class="slot-topics">' + th + '</div></div>';
     }
     container.innerHTML = html;
   }
-
-  // --- Render: System view ---
 
   function renderSystemView(container, results) {
     var groups = PredictorEngine.groupBySystems(results.topics);
@@ -278,24 +248,22 @@ var PredictorUI = (function () {
     for (var i = 0; i < groups.length; i++) {
       var g = groups[i], th = '';
       for (var j = 0; j < g.topics.length; j++) {
-        th += '<div class="system-topic"><span class="topic-rank mono">#' + g.topics[j].rank + '</span> ' + esc(g.topics[j].canonical_topic) + '</div>';
+        th += '<div class="system-topic"><span class="topic-rank">#' + g.topics[j].rank + '</span> ' + esc(g.topics[j].canonical_topic) + '</div>';
       }
-      html += '<div class="card slot-card"><div class="system-header">' +
-        '<h3>' + esc(g.system) + '</h3><span class="system-count mono text-accent">' + g.topics.length + ' / ' + max + '</span></div>' + th + '</div>';
+      html += '<div class="slot-card"><div class="system-header">' +
+        '<h3>' + esc(g.system) + '</h3><span class="system-count text-accent">' + g.topics.length + ' / ' + max + '</span></div>' + th + '</div>';
     }
     container.innerHTML = html;
   }
-
-  // --- Stats + dispatch ---
 
   function renderStats(results) {
     var el = document.getElementById('predictor-stats');
     if (!el) return;
     var cc = results.categoryCounts, sc = Object.keys(results.systemCounts).length;
-    el.innerHTML = '<div class="stat"><span class="mono text-accent">' + results.topics.length + '</span> topics</div>' +
-      '<div class="stat"><span class="mono text-accent">' + sc + '</span> systems</div>' +
-      '<div class="stat"><span class="mono text-accent">' + cc.algorithmic + '</span> algorithmic</div>' +
-      '<div class="stat"><span class="mono text-accent">' + cc.confusable + '</span> confusable</div>';
+    el.innerHTML = '<span class="text-accent">' + results.topics.length + '</span> topics &middot; ' +
+      '<span class="text-accent">' + sc + '</span> systems &middot; ' +
+      '<span class="text-accent">' + cc.algorithmic + '</span> algorithmic &middot; ' +
+      '<span class="text-accent">' + cc.confusable + '</span> confusable';
   }
 
   function renderResults(results) {
@@ -328,49 +296,6 @@ var PredictorUI = (function () {
     renderResults(currentResults);
   }
 
-  // --- Demo with page loader (auto-demo via URL param) ---
-
-  function startDemoWithPageLoader() {
-    dataSource = 'demo';
-    // Hide all states immediately to prevent flash of CHOOSE
-    document.getElementById('state-choose').style.display = 'none';
-    document.getElementById('state-parsing').style.display = 'none';
-    var loader = document.getElementById('page-loader');
-    loader.classList.add('page-loader--active');
-    var bar = loader.querySelector('.page-loader-bar');
-    bar.style.width = '40%';
-
-    loadDemoData().then(function () {
-      bar.style.width = '90%';
-      currentResults = PredictorEngine.rank(data.rankedList, data.kgTriples, data.quotas, null);
-      bar.style.width = '100%';
-      setTimeout(function () {
-        loader.classList.remove('page-loader--active');
-        loader.classList.add('page-loader--done');
-        showResults('Demo dataset — ' + data.rankedList.length + ' ranked topics');
-        animateTopicCards();
-      }, 300);
-    }).catch(handleError);
-  }
-
-  function animateTopicCards() {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    var cards = document.querySelectorAll('.topic-card');
-    var count = Math.min(cards.length, 8);
-    for (var i = 0; i < count; i++) {
-      cards[i].style.opacity = '0';
-      cards[i].style.transform = 'translateY(12px)';
-      cards[i].style.transition = 'opacity 200ms ease, transform 200ms ease';
-    }
-    for (var j = 0; j < count; j++) {
-      (function(el, delay) {
-        setTimeout(function () { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; }, delay);
-      })(cards[j], 50 * j);
-    }
-  }
-
-  // --- Init ---
-
   function init() {
     var zone = document.getElementById('upload-zone');
     var fileInput = document.getElementById('file-input');
@@ -389,23 +314,6 @@ var PredictorUI = (function () {
       if (e.dataTransfer.files.length > 0) startUpload(e.dataTransfer.files);
     });
 
-    // Secondary upload zone (below results in demo mode)
-    var zone2 = document.getElementById('upload-zone-secondary');
-    var fileInput2 = document.getElementById('file-input-secondary');
-    if (zone2 && fileInput2) {
-      zone2.addEventListener('click', function () { fileInput2.click(); });
-      zone2.addEventListener('keydown', function (e) { if (e.key === 'Enter') fileInput2.click(); });
-      fileInput2.addEventListener('change', function () { if (fileInput2.files.length > 0) startUpload(fileInput2.files); });
-      zone2.addEventListener('dragover', function (e) { e.preventDefault(); zone2.classList.add('upload-zone--active'); });
-      zone2.addEventListener('dragleave', function () { zone2.classList.remove('upload-zone--active'); });
-      zone2.addEventListener('drop', function (e) {
-        e.preventDefault(); zone2.classList.remove('upload-zone--active');
-        if (e.dataTransfer.files.length > 0) startUpload(e.dataTransfer.files);
-      });
-    }
-
-
-    // Tab switching
     var tabPaste = document.getElementById('tab-paste');
     var tabUpload = document.getElementById('tab-upload');
     var panePaste = document.getElementById('pane-paste');
@@ -420,7 +328,7 @@ var PredictorUI = (function () {
         paneUpload.style.display = 'block'; panePaste.style.display = 'none';
       });
     }
-    // Paste submit
+
     var pasteArea = document.getElementById('paste-area');
     var pasteSubmit = document.getElementById('paste-submit');
     if (pasteArea && pasteSubmit) {
@@ -428,26 +336,13 @@ var PredictorUI = (function () {
     }
 
     demoLink.addEventListener('click', function (e) { e.preventDefault(); startDemo(); });
-    startOverBtn.addEventListener('click', function () {
-      if (dataSource === 'demo') {
-        var invite = document.getElementById('upload-invite');
-        if (invite) invite.scrollIntoView({ behavior: 'smooth' });
-      } else {
-        startOver();
-      }
-    });
+    startOverBtn.addEventListener('click', function () { startOver(); });
     toggles.addEventListener('click', function (e) {
       var btn = e.target.closest('.view-btn');
       if (btn && btn.dataset.view) setView(btn.dataset.view);
     });
 
-    // URL param detection: ?demo=1 skips CHOOSE state
-    var params = new URLSearchParams(window.location.search);
-    if (params.get('demo') === '1') {
-      startDemoWithPageLoader();
-    } else {
-      setState(STATE.CHOOSE);
-    }
+    setState(STATE.CHOOSE);
   }
 
   document.addEventListener('DOMContentLoaded', init);

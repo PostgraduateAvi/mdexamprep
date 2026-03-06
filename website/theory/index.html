@@ -3,138 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Theory Study Tools &mdash; MD Exam Prep</title>
-  <meta name="description" content="198 flashcards across 11 body systems. Browse by system, filter by difficulty, or quiz yourself with shuffle mode.">
+  <title>Theory &mdash; MD Exam Prep</title>
+  <meta name="description" content="198 flashcards across 11 body systems plus 23 interactive study tools for MD Internal Medicine.">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-  <link rel="canonical" href="https://mdexamprep.vercel.app/theory/">
-  <meta property="og:title" content="Theory Study Tools — MD Exam Prep">
-  <meta property="og:description" content="198 flashcards across 11 body systems for MD Internal Medicine exam preparation.">
-  <meta property="og:url" content="https://mdexamprep.vercel.app/theory/">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Theory Study Tools — MD Exam Prep">
-  <meta name="twitter:description" content="198 flashcards across 11 body systems for MD Internal Medicine exam preparation.">
-  <meta name="theme-color" content="#0F172A">
-  <link rel="stylesheet" href="../assets/css/core.css">
-  <link rel="stylesheet" href="theory.css">
-  <style>
-    /* — Floating pill header override (match landing) — */
-    .glass-header {
-      top: 12px; left: 50%; transform: translateX(-50%);
-      width: calc(100% - 32px); max-width: 960px;
-      padding: 10px 24px;
-      background: rgba(15, 23, 42, 0.70);
-      border-radius: 100px;
-      border: 1px solid var(--glass-border);
-    }
-    .glass-header-spacer { height: 70px; }
-    @media (max-width: 768px) {
-      .glass-header { width: calc(100% - 24px); padding: 8px 16px; }
-    }
-
-    /* — Tools link card (glassmorphic) — */
-    .tools-link-card {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: var(--space-lg); gap: var(--space-md);
-      background: var(--glass);
-      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-      border: 1px solid var(--glass-border);
-      border-radius: 12px;
-      text-decoration: none; color: inherit;
-      transition: border-color 250ms, transform 200ms, box-shadow 250ms;
-    }
-    .tools-link-card:hover {
-      color: inherit;
-      border-color: rgba(0,212,255,0.25);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-    }
-    .tools-link-card h3 { margin: 0 0 4px; transition: color 150ms; }
-    .tools-link-card:hover h3 { color: var(--accent-warm); }
-    .tools-link-card p {
-      color: var(--text-secondary); font-size: 0.875rem; margin: 0;
-    }
-    .tools-link-arrow {
-      color: var(--text-muted); font-size: 1.25rem; flex-shrink: 0;
-      transition: color 150ms, transform 150ms;
-    }
-    .tools-link-card:hover .tools-link-arrow {
-      color: var(--accent); transform: translateX(3px);
-    }
-
-    /* — Woven evidence — */
-    .cx-evidence {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.5625rem; color: var(--text-muted);
-      opacity: 0.6; letter-spacing: 0.02em;
-    }
-
-    /* — Footer enhancement — */
-    .site-footer {
-      border-top: 1px solid var(--border);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .tools-link-card { transition: none; }
-      .tools-link-card:hover { transform: none; }
-    }
-  </style>
+  <link rel="canonical" href="https://mdexamprep.vercel.app/theory">
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-
   <div id="site-nav"></div>
+  <main class="container" style="padding-top: 24px; padding-bottom: 40px;">
+    <h1>Theory</h1>
+    <p style="color: var(--text-secondary); margin-top: 8px;">Flashcards by body system. Click to reveal answers.</p>
 
-  <section class="theory-hero container">
-    <h1>Theory Study Tools</h1>
-    <p>Flashcards organized by body system and difficulty. Browse to review or switch to quiz mode for active recall.</p>
-    <span class="cx-evidence">198 flashcards &middot; 11 body systems &middot; randomized quiz mode</span>
-  </section>
-
-  <div class="container">
-    <div class="stats-glass">
-      <div class="stat">
-        <span class="stat-value">198</span>
-        <span class="stat-label">Flashcards</span>
-      </div>
-      <div class="stat">
-        <span class="stat-value">11</span>
-        <span class="stat-label">Body systems</span>
-      </div>
-      <div class="stat">
-        <span class="stat-value">3</span>
-        <span class="stat-label">Difficulty levels</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="container" style="padding-bottom: var(--space-lg);">
-    <a href="/theory/tools" class="tools-link-card">
-      <div>
-        <h3>Interactive Study Tools</h3>
-        <p>23 drawable diagrams, drills, and visual imprints across 6 categories</p>
-      </div>
-      <span class="tools-link-arrow">&rarr;</span>
-    </a>
-  </div>
-
-  <div class="container theory-controls">
-    <div class="mode-toggles">
-      <button class="mode-btn active" data-mode="browse">Browse</button>
-      <button class="mode-btn" data-mode="quiz">Quiz</button>
-    </div>
-    <div class="filter-bar">
-      <div class="filter-group" id="system-filters"></div>
-      <div class="filter-group" id="difficulty-filters"></div>
-    </div>
-    <div class="filter-status" id="filter-status">Showing 198 of 198</div>
-  </div>
-
-  <div class="container">
+    <div class="system-btns" id="system-filters"></div>
+    <div class="filter-status" id="filter-status"></div>
     <div id="flashcard-deck"></div>
-  </div>
 
+    <hr class="section-divider">
+
+    <h2>Study Tools</h2>
+    <p style="color: var(--text-secondary); margin: 8px 0 16px;">23 interactive diagrams, drills, and visual imprints.</p>
+    <div id="tools-catalog"></div>
+  </main>
   <div id="site-footer"></div>
-
   <script src="../assets/js/template.js"></script>
   <script src="theory.js"></script>
 </body>

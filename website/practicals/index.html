@@ -3,151 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Practical Exam Tools &mdash; MD Exam Prep</title>
-  <meta name="description" content="Clinical exam preparation tools: case atlas, viva practice, examination guides for MD Internal Medicine.">
+  <title>Practicals &mdash; MD Exam Prep</title>
+  <meta name="description" content="Clinical cases across 5 body systems for MD Internal Medicine practical exam preparation.">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-  <link rel="canonical" href="https://mdexamprep.vercel.app/practicals/">
-  <meta property="og:title" content="Practical Exam Tools — MD Exam Prep">
-  <meta property="og:description" content="Clinical cases, viva questions, examination guides for MD Internal Medicine practical exams.">
-  <meta property="og:url" content="https://mdexamprep.vercel.app/practicals/">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Practical Exam Tools — MD Exam Prep">
-  <meta name="twitter:description" content="Clinical cases, viva questions, examination guides for MD Internal Medicine practical exams.">
-  <meta name="theme-color" content="#0F172A">
-  <link rel="stylesheet" href="../assets/css/core.css">
-  <style>
-    /* — Floating pill header override (match landing) — */
-    .glass-header {
-      top: 12px; left: 50%; transform: translateX(-50%);
-      width: calc(100% - 32px); max-width: 960px;
-      padding: 10px 24px;
-      background: rgba(15, 23, 42, 0.70);
-      border-radius: 100px;
-      border: 1px solid var(--glass-border);
-    }
-    .glass-header-spacer { height: 70px; }
-    @media (max-width: 768px) {
-      .glass-header { width: calc(100% - 24px); padding: 8px 16px; }
-    }
-
-    /* — Page styles — */
-    .px-hero {
-      padding: calc(var(--space-2xl) + 16px) 0 var(--space-lg);
-      position: relative;
-    }
-    .px-hero h1 { font-size: 2rem; margin-bottom: var(--space-sm); }
-    .px-hero p {
-      color: var(--text-secondary); font-size: 1rem; max-width: 540px;
-    }
-
-    .tools-grid {
-      display: grid; gap: var(--space-lg); padding-bottom: var(--space-2xl);
-    }
-
-    /* — Woven evidence — */
-    .cx-evidence {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.5625rem; color: var(--text-muted);
-      opacity: 0.6; letter-spacing: 0.02em;
-    }
-    .px-hero .cx-evidence {
-      display: block; margin-top: var(--space-md);
-    }
-
-    /* — Footer enhancement — */
-    .site-footer {
-      border-top: 1px solid var(--border);
-    }
-
-    /* — Card glow reinforcement — */
-    .tools-grid .gradient-card--blue:hover {
-      box-shadow: 0 12px 40px rgba(59,130,246,0.12), 0 0 0 1px rgba(59,130,246,0.3);
-    }
-    .tools-grid .gradient-card--teal:hover {
-      box-shadow: 0 12px 40px rgba(0,212,255,0.12), 0 0 0 1px rgba(0,212,255,0.3);
-    }
-
-    @media (min-width: 640px) {
-      .px-hero h1 { font-size: 2.5rem; }
-      .tools-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .gradient-card { transition: none; }
-      .gradient-card:hover { transform: none; }
-    }
-  </style>
+  <link rel="canonical" href="https://mdexamprep.vercel.app/practicals">
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-
   <div id="site-nav"></div>
-
-  <section class="px-hero container">
-    <h1>Practical Exam Tools</h1>
-    <p>Clinical cases, viva practice, examination techniques, and bedside skills &mdash; everything you need for the practical component of your MD exam.</p>
-    <span class="cx-evidence">21 clinical cases &middot; 110 viva questions &middot; 5 body systems &middot; 4 study modes</span>
-  </section>
-
-  <div class="container">
-    <div class="stats-glass">
-      <div class="stat">
-        <span class="stat-value">21</span>
-        <span class="stat-label">Clinical cases</span>
-      </div>
-      <div class="stat">
-        <span class="stat-value">110</span>
-        <span class="stat-label">Viva questions</span>
-      </div>
-      <div class="stat">
-        <span class="stat-value">5</span>
-        <span class="stat-label">Body systems</span>
-      </div>
-      <div class="stat">
-        <span class="stat-value">4</span>
-        <span class="stat-label">Study modes</span>
-      </div>
-    </div>
-  </div>
-
-  <section class="tools-grid container">
-    <a href="/practicals/clinical-atlas" class="gradient-card gradient-card--blue">
-      <div class="gradient-card-illust">
-        <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:100%;height:100%;"><path d="M10 70 L40 70 L50 70 L58 35 L66 105 L74 45 L82 95 L90 55 L98 70 L160 70 L190 70" fill="none" stroke="rgba(59,130,246,0.25)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="58" cy="35" r="2.5" fill="rgba(59,130,246,0.4)"/><circle cx="66" cy="105" r="2.5" fill="rgba(59,130,246,0.4)"/><circle cx="74" cy="45" r="2.5" fill="rgba(59,130,246,0.3)"/><circle cx="82" cy="95" r="2.5" fill="rgba(59,130,246,0.3)"/><circle cx="90" cy="55" r="2.5" fill="rgba(59,130,246,0.25)"/><line x1="10" y1="90" x2="190" y2="90" stroke="rgba(59,130,246,0.05)" stroke-width="0.5"/><line x1="10" y1="50" x2="190" y2="50" stroke="rgba(59,130,246,0.05)" stroke-width="0.5"/></svg>
-        <span class="data-node">21 clinical cases</span>
-      </div>
-      <div class="gradient-card-body">
-        <span class="gradient-card-num">01</span>
-        <h3>Clinical Atlas</h3>
-        <p>21 clinical cases across 5 body systems. Browse case presentations, examination techniques, findings with mechanisms, and differential diagnosis.</p>
-        <div class="gradient-card-meta">
-          <span class="gradient-card-tag">21 cases</span>
-          <span class="gradient-card-tag">4 modes</span>
-          <span class="gradient-card-arrow">&rarr;</span>
-        </div>
-      </div>
-    </a>
-
-    <a href="/practicals/viva-forge" class="gradient-card gradient-card--teal">
-      <div class="gradient-card-illust">
-        <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:100%;height:100%;"><circle cx="100" cy="70" r="55" fill="none" stroke="rgba(0,212,255,0.08)" stroke-width="0.5"/><circle cx="100" cy="70" r="42" fill="none" stroke="rgba(0,212,255,0.12)" stroke-width="0.8"/><circle cx="100" cy="70" r="28" fill="none" stroke="rgba(0,212,255,0.2)" stroke-width="1"/><circle cx="100" cy="70" r="14" fill="none" stroke="rgba(0,212,255,0.3)" stroke-width="1.5"/><circle cx="100" cy="70" r="4" fill="rgba(0,212,255,0.5)"/><line x1="100" y1="8" x2="100" y2="132" stroke="rgba(0,212,255,0.06)" stroke-width="0.5"/><line x1="38" y1="70" x2="162" y2="70" stroke="rgba(0,212,255,0.06)" stroke-width="0.5"/></svg>
-        <span class="data-node">110 viva questions</span>
-      </div>
-      <div class="gradient-card-body">
-        <span class="gradient-card-num">02</span>
-        <h3>Viva Forge</h3>
-        <p>Practice viva questions with reveal-to-answer cards. Work through 109 questions across 16 cases at your own pace.</p>
-        <div class="gradient-card-meta">
-          <span class="gradient-card-tag">109 questions</span>
-          <span class="gradient-card-tag">16 cases</span>
-          <span class="gradient-card-arrow">&rarr;</span>
-        </div>
-      </div>
-    </a>
-  </section>
-
+  <main class="container" style="padding-top: 24px; padding-bottom: 40px;">
+    <h1>Practicals</h1>
+    <p style="color: var(--text-secondary); margin-top: 8px;">Clinical cases organized by body system.</p>
+    <div class="system-btns" id="system-btns"></div>
+    <div id="case-list"></div>
+  </main>
   <div id="site-footer"></div>
-
   <script src="../assets/js/template.js"></script>
+  <script src="practicals.js"></script>
 </body>
 </html>

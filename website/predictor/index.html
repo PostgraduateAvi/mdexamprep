@@ -4,65 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Topic Predictor &mdash; MD Exam Prep</title>
-  <meta name="description" content="Upload your past papers or paste questions. Topics are matched and ranked by frequency, recency, and exam patterns.">
+  <meta name="description" content="Upload your past papers or paste questions. Topics are matched and ranked by how likely they are to appear next.">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-  <link rel="canonical" href="https://mdexamprep.vercel.app/predictor/">
-  <meta property="og:title" content="Topic Predictor — MD Exam Prep">
-  <meta property="og:description" content="Upload your past papers or paste questions. Topics are matched and ranked by frequency, recency, and exam patterns.">
-  <meta property="og:url" content="https://mdexamprep.vercel.app/predictor/">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Topic Predictor — MD Exam Prep">
-  <meta name="twitter:description" content="Upload your past papers or paste questions. Topics are matched and ranked by frequency, recency, and exam patterns.">
-  <meta name="theme-color" content="#0F172A">
-  <link rel="stylesheet" href="../assets/css/core.css">
-  <link rel="stylesheet" href="predictor.css">
-  <style>
-    /* — Floating pill header override (match landing) — */
-    .glass-header {
-      top: 12px; left: 50%; transform: translateX(-50%);
-      width: calc(100% - 32px); max-width: 960px;
-      padding: 10px 24px;
-      background: rgba(15, 23, 42, 0.70);
-      border-radius: 100px;
-      border: 1px solid var(--glass-border);
-    }
-    .glass-header-spacer { height: 70px; }
-    @media (max-width: 768px) {
-      .glass-header { width: calc(100% - 24px); padding: 8px 16px; }
-    }
-
-    /* — Woven evidence — */
-    .cx-evidence {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.5625rem; color: var(--text-muted);
-      opacity: 0.6; letter-spacing: 0.02em;
-    }
-
-    /* — Footer enhancement — */
-    .site-footer {
-      border-top: 1px solid var(--border);
-    }
-    .footer-evidence {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.5625rem; color: var(--text-muted);
-      opacity: 0.5; margin-top: 6px; letter-spacing: 0.03em;
-    }
-  </style>
+  <link rel="canonical" href="https://mdexamprep.vercel.app/predictor">
+  <link rel="stylesheet" href="../style.css">
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" crossorigin="anonymous"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div id="page-loader" class="page-loader" role="status" aria-live="polite">
-    <div class="page-loader-bar"></div>
-  </div>
   <div id="site-nav"></div>
   <main class="container">
     <section id="state-choose" class="predictor-choose">
       <div class="choose-content">
         <h1>Upload your exam papers.</h1>
-        <p class="choose-sub">Paste your questions or upload files. Topics are matched and ranked by frequency, recency, and exam patterns.</p>
-        <span class="cx-evidence">1,718 topic entries &middot; 77.4% match rate &middot; 4 file formats supported</span>
+        <p class="choose-sub">Paste your questions or upload files. Topics are matched and ranked by how likely they are to appear.</p>
         <div class="input-tabs">
           <button id="tab-paste" class="input-tab active">Paste Text</button>
           <button id="tab-upload" class="input-tab">Upload File</button>
@@ -75,11 +30,11 @@
           <div id="upload-zone" class="upload-zone" role="button" tabindex="0" aria-label="Upload exam papers">
             <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" /></svg>
             <p class="upload-label">Drag files here or click to browse</p>
-            <p class="upload-formats mono">.pdf .xlsx .xls</p>
+            <p class="upload-formats">.pdf .xlsx .xls</p>
             <input type="file" id="file-input" multiple accept=".pdf,.xlsx,.xls" hidden>
           </div>
         </div>
-        <p class="choose-demo">Or <a href="#" id="demo-link">try with demo data</a><span class="choose-demo-meta">987 questions &middot; 20 years &middot; 44 ranked topics</span></p>
+        <p class="choose-demo">Or <a href="#" id="demo-link">try with demo data</a></p>
       </div>
     </section>
     <section id="state-parsing" class="predictor-parsing" style="display:none;" aria-live="polite">
@@ -87,13 +42,13 @@
         <div class="loading-spinner"></div>
         <p id="parsing-status" class="parsing-status">Reading files...</p>
         <div class="parsing-progress"><div id="parsing-bar" class="parsing-bar-fill"></div></div>
-        <p id="parsing-detail" class="parsing-detail mono"></p>
+        <p id="parsing-detail" class="parsing-detail"></p>
       </div>
     </section>
     <section id="state-results" style="display:none;">
       <div class="results-topbar">
         <div class="results-meta">
-          <p id="results-source" class="results-source mono"></p>
+          <p id="results-source" class="results-source"></p>
           <button id="start-over" class="btn btn-secondary btn-sm">Upload new papers</button>
         </div>
         <div class="results-controls">
@@ -106,17 +61,6 @@
         </div>
       </div>
       <div id="predictor-results" class="results-grid"></div>
-      <section id="upload-invite" class="upload-invite">
-        <hr class="upload-invite-divider">
-        <h2 class="upload-invite-heading">It works with any college&rsquo;s papers.</h2>
-        <p class="upload-invite-sub">Drop PDF or Excel files of your past papers. Questions are matched to topics and ranked the same way.</p>
-        <div id="upload-zone-secondary" class="upload-zone upload-zone--compact" role="button" tabindex="0" aria-label="Upload exam papers">
-          <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" /></svg>
-          <p class="upload-label">Drag files here or click to browse</p>
-          <p class="upload-formats mono">.pdf .xlsx .xls</p>
-          <input type="file" id="file-input-secondary" multiple accept=".pdf,.xlsx,.xls" hidden>
-        </div>
-      </section>
     </section>
   </main>
   <div id="site-footer"></div>
