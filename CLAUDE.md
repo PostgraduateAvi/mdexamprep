@@ -6,11 +6,11 @@
 
 ---
 
-## Architecture (post-simplification, Session 15)
+## Architecture (post-design-upgrade, Session 17)
 
-Single CSS file (`style.css`, 290 lines). System-ui font. No glassmorphism, no animations, no Google Fonts.
+Single CSS file (`style.css`, ~510 lines). "Warm Authority" design system. Self-hosted fonts (DM Sans body + Source Serif 4 headings, ~185KB WOFF2 in `/assets/fonts/`). Sticky glass nav, amber clinical pearls, stagger card animations.
 
-**Landing** (`index.html`, 47 lines) -- 3 feature cards linking to Predictor, Practicals, Theory.
+**Landing** (`index.html`, ~54 lines) -- Hero with eyebrow + 3 numbered tool cards with stagger animation.
 
 **Predictor** (`predictor/index.html`) -- CHOOSE / PARSING / RESULTS states.
 - Input: paste text or upload files (PDF.js + SheetJS).
@@ -40,6 +40,7 @@ MDExamPrep/
 +-- website/                  (THE DEPLOYED SITE -- git-tracked)
 |   +-- index.html, style.css, favicon.svg, robots.txt, sitemap.xml
 |   +-- assets/js/            (template.js, predictor-engine.js)
+|   +-- assets/fonts/         (DMSans-Variable.woff2, SourceSerif4-Variable.woff2)
 |   +-- practicals/           (index.html, practicals.js, data/*.json)
 |   +-- predictor/            (index.html, predictor-ui.js, upload-parser.js, data/*.json)
 |   +-- theory/               (index.html, theory.js, data/*.json, tools/**)
@@ -65,7 +66,7 @@ MDExamPrep/
 2. **Client-side only** -- all processing in browser
 3. **Free forever** -- no paywall, no login
 4. **Single CSS** -- all styles in `style.css`, no per-page CSS files
-5. **`system-ui` font** -- no Google Fonts, no font loading
+5. **Self-hosted fonts** -- DM Sans (body) + Source Serif 4 (headings) in `/assets/fonts/`, no CDN
 6. **Data loading**: `fetch()` parallel, JSON files in `/data/` directories
 7. **Template injection**: `template.js` adds nav + footer to sub-pages
 
@@ -76,8 +77,8 @@ MDExamPrep/
 - **Live URL**: https://mdexamprep.vercel.app/
 - **GitHub**: https://github.com/PostgraduateAvi/mdexamprep (public, `main` branch)
 - **Auto-deploy**: `git push origin main` -> Vercel builds ~30s -> live
-- **Security headers**: CSP (script-src self + cdnjs), X-Frame-Options DENY, nosniff
-- **Cache**: Assets 30d immutable, data JSON 1d with SWR
+- **Security headers**: CSP (script-src self + cdnjs, font-src self), X-Frame-Options DENY, nosniff
+- **Cache**: Fonts 30d immutable, data JSON 1d with SWR
 
 ---
 
@@ -89,6 +90,7 @@ MDExamPrep/
 | 14 | Mar 6 | Deployment sync |
 | 15 | Mar 6 | Complete simplification: 4 clean pages, single CSS, ~7,900 lines deleted |
 | 16 | Mar 6 | Directory reorganization: _source/ consolidation, orphan cleanup, ~14.5 MB reclaimed |
+| 17 | Mar 6 | "Warm Authority" design upgrade: self-hosted fonts, glass nav, amber pearls, card animations |
 
 ---
 
