@@ -461,6 +461,51 @@ details.case .case-body ul { padding-left: 20px; }
 .system-count { font-size: 0.875rem; }
 .system-topic { font-size: 0.875rem; color: var(--text-secondary); padding: 2px 0; }
 
+/* === MCQ cards (theory) === */
+.mcq-card {
+  padding: 16px; border-radius: var(--radius-sm);
+  background: var(--surface-primary); border: 1px solid var(--border);
+  margin-bottom: 10px; box-shadow: var(--shadow-sm);
+}
+.mcq-head { display: flex; gap: 8px; margin-bottom: 12px; }
+.mcq-number { color: var(--accent); font-weight: 600; font-size: 0.875rem; flex-shrink: 0; min-width: 28px; }
+.mcq-question { font-weight: 500; line-height: 1.5; }
+.mcq-options { display: flex; flex-direction: column; gap: 6px; }
+.mcq-option {
+  display: flex; align-items: flex-start; gap: 10px;
+  width: 100%; text-align: left; padding: 10px 12px;
+  background: var(--surface-elevated); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); cursor: pointer;
+  font: inherit; font-size: 0.875rem; color: var(--text-secondary);
+  transition: all var(--transition);
+}
+.mcq-option:hover:not(:disabled) { border-color: var(--border-accent); color: var(--text); }
+.mcq-option:disabled { cursor: default; }
+.mcq-option-label {
+  font-weight: 600; color: var(--accent); flex-shrink: 0; min-width: 16px;
+}
+.mcq-option-text { flex: 1; line-height: 1.5; }
+.mcq-option.correct {
+  border-color: #22C55E; background: rgba(34,197,94,0.08);
+}
+.mcq-option.correct .mcq-option-label { color: #22C55E; }
+.mcq-option.incorrect {
+  border-color: #EF4444; background: rgba(239,68,68,0.08);
+}
+.mcq-option.incorrect .mcq-option-label { color: #EF4444; }
+.mcq-explanation {
+  display: none; margin-top: 12px; padding: 10px;
+  background: var(--accent-warm-dim);
+  border-left: 3px solid var(--accent-warm);
+  border-radius: 0 4px 4px 0;
+  font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;
+}
+.mcq-explanation.visible { display: block; }
+@media (prefers-reduced-motion: no-preference) {
+  .mcq-explanation.visible { animation: fade-in 0.2s ease; }
+}
+.mcq-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+
 /* === Tools catalog (theory) === */
 .tools-group { margin-bottom: 24px; }
 .tools-group h3 { margin-bottom: 8px; text-transform: capitalize; }
