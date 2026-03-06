@@ -12,20 +12,11 @@ desktop.ini
 # Claude Code project data
 .claude/
 
-# Source data (raw inputs, not deployed)
-# Leading slash anchors to repo root ï¿½ won't match website/ subdirs
-/predictor/
-/practicals/
-/theory/
-
-# Docs and specs (project-internal, not deployed)
-/docs/
-/_deploy/
-/_audit/
+# Source data (raw inputs, build scripts, audit — not deployed)
+/_source/
 
 # Large generated images
 *.png
-!website/assets/images/tool-*.png
 *.psd
 
 # Python workaround scripts

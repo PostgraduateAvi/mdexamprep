@@ -28,6 +28,26 @@ Single CSS file (`style.css`, 290 lines). System-ui font. No glassmorphism, no a
 
 ---
 
+## Directory Structure
+
+```
+MDExamPrep/
++-- _source/                  (gitignored -- raw inputs, build scripts, audit)
+|   +-- predictor/            (excel papers, intermediate data, methodology, scripts)
+|   +-- practicals/           (ECG images, viva audio, build scripts, templates)
+|   +-- theory/               (flashcard sources, Harrison's ref, taxonomy)
+|   +-- audit/                (screenshots, reports)
++-- website/                  (THE DEPLOYED SITE -- git-tracked)
+|   +-- index.html, style.css, favicon.svg, robots.txt, sitemap.xml
+|   +-- assets/js/            (template.js, predictor-engine.js)
+|   +-- practicals/           (index.html, practicals.js, data/*.json)
+|   +-- predictor/            (index.html, predictor-ui.js, upload-parser.js, data/*.json)
+|   +-- theory/               (index.html, theory.js, data/*.json, tools/**)
++-- CLAUDE.md, README.md, vercel.json, .gitignore, .gitattributes
+```
+
+---
+
 ## LOCKED FILES
 
 | File | Lines | Purpose |
@@ -36,21 +56,6 @@ Single CSS file (`style.css`, 290 lines). System-ui font. No glassmorphism, no a
 | All JSON in `website/predictor/data/` | -- | Predictor data pipeline |
 | All JSON in `website/practicals/data/` | 812 KB | Practicals case data |
 | All 23 HTML files in `website/theory/tools/` | -- | Standalone study tools |
-
----
-
-## File Inventory (verified Mar 6, 2026)
-
-
-
-### Data (unchanged)
-
-
-### Config
-
-
-### SEO
-
 
 ---
 
@@ -83,6 +88,7 @@ Single CSS file (`style.css`, 290 lines). System-ui font. No glassmorphism, no a
 | 1-13 | Mar 4-5 | Full build: data pipeline, predictor, practicals, theory, landing, deploy, audit |
 | 14 | Mar 6 | Deployment sync |
 | 15 | Mar 6 | Complete simplification: 4 clean pages, single CSS, ~7,900 lines deleted |
+| 16 | Mar 6 | Directory reorganization: _source/ consolidation, orphan cleanup, ~14.5 MB reclaimed |
 
 ---
 
