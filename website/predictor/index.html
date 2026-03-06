@@ -7,6 +7,14 @@
   <meta name="description" content="Upload your past papers or paste questions. Topics are matched and ranked by how likely they are to appear next.">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="canonical" href="https://mdexamprep.vercel.app/predictor">
+  <meta name="theme-color" content="#111827">
+  <link rel="manifest" href="/manifest.json">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mdexamprep.vercel.app/predictor/">
+  <meta property="og:title" content="Topic Predictor — MD Exam Prep">
+  <meta property="og:description" content="Upload your past papers or paste questions. Topics are matched and ranked by how likely they are to appear next.">
+  <meta property="og:image" content="https://mdexamprep.vercel.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="../style.css">
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" crossorigin="anonymous"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js" crossorigin="anonymous"></script>
@@ -64,6 +72,7 @@
     </section>
   </main>
   <div id="site-footer"></div>
+  <script>if('serviceWorker' in navigator)navigator.serviceWorker.register('/sw.js');</script>
   <script src="../assets/js/template.js"></script>
   <script src="../assets/js/predictor-engine.js"></script>
   <script src="upload-parser.js"></script>

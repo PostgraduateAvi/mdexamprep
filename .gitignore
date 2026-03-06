@@ -12,12 +12,15 @@ desktop.ini
 # Claude Code project data
 .claude/
 
-# Source data (raw inputs, build scripts, audit — not deployed)
+# Source data (raw inputs, build scripts, audit ï¿½ not deployed)
 /_source/
 
 # Large generated images
 *.png
 *.psd
+# Except deployed PWA icons and OG image
+!/website/og-image.png
+!/website/assets/icons/*.png
 
 # Python workaround scripts
 *.py
