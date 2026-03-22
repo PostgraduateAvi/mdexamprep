@@ -91,7 +91,15 @@
   <footer class="site-footer">
     <div class="container">Built by Avinash Jothish. Free forever.</div>
   </footer>
-<script>if('serviceWorker' in navigator)navigator.serviceWorker.register('/sw.js');</script>
+<script>
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('/sw.js');
+  var _r=false;
+  navigator.serviceWorker.addEventListener('controllerchange',function(){
+    if(_r)return;_r=true;window.location.reload();
+  });
+}
+</script>
 <script src="assets/js/dashboard.js"></script>
 </body>
 </html>

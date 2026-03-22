@@ -46,7 +46,15 @@
     </div>
     <div id="sr-card-container"></div>
   </div>
-  <script>if('serviceWorker' in navigator)navigator.serviceWorker.register('/sw.js');</script>
+  <script>
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('/sw.js');
+  var _r=false;
+  navigator.serviceWorker.addEventListener('controllerchange',function(){
+    if(_r)return;_r=true;window.location.reload();
+  });
+}
+</script>
   <script src="../assets/js/template.js?v=6"></script>
   <script src="learn.js"></script>
 </body>
