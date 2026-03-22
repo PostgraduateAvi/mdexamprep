@@ -1,9 +1,11 @@
-/* MBBEasy -- Learn: topics + inline flashcards + tools catalog + spaced repetition + knowledge graph */
+/* MBBEasy -- Learn: topics + inline flashcards + tools catalog + spaced repetition + knowledge graph + study path */
 var LearnUI = (function () {
   'use strict';
 
   var SYSTEMS_ORDER = ['CVS','Neuro','Renal','Endocrine','RS','GI','Heme','ID','Rheum','Derm','Pharmacology','General'];
   var SR_KEY = 'mbbeasy-flashcard-sr';
+  var SR_INTERVALS = [0, 1, 3, 7, 14]; /* Bucket intervals in days: New, Learning, Familiar, Confident, Mastered */
+  var SR_LABELS = ['New', 'Learning', 'Familiar', 'Confident', 'Mastered'];
 
   var CAT_LABELS = {
     'anatomy': 'Anatomy',
@@ -16,12 +18,17 @@ var LearnUI = (function () {
 
   var allTopics = [];
   var allFlashcards = [];
+  var allMcqs = [];
   var allTools = [];
   var filteredTopics = [];
-  var filters = { system: null, search: '' };
+  var filters = { system: null, search: '', yieldOnly: false };
+  var viewMode = 'browse'; /* 'browse' | 'path' */
 
   /* Flashcards indexed by normalized topic name */
   var fcByTopic = {};
+
+  /* MCQs indexed by topic_id */
+  var mcqByTopic = {};
 
   /* Tools indexed by id */
   var toolsById = {};
@@ -31,6 +38,11 @@ var LearnUI = (function () {
 
   /* Spaced repetition state */
   var srState = { cards: {} };
+
+  /* Review session state */
+  var reviewCards = [];
+  var reviewIdx = 0;
+  var reviewCorrect = 0;
 
   function escapeHtml(str) {
     var div = document.createElement('div');
@@ -42,13 +54,22 @@ var LearnUI = (function () {
 
   function todayStr() { return new Date().toISOString().slice(0, 10); }
 
-  /* === Spaced Repetition === */
+  /* === Spaced Repetition (5-bucket Leitner) === */
 
   function loadSR() {
     try {
       var saved = localStorage.getItem(SR_KEY);
       if (saved) srState = JSON.parse(saved);
       if (!srState.cards) srState.cards = {};
+      /* Migrate old 3-bucket to 5-bucket: 0→0, 1→2, 2→4 */
+      for (var id in srState.cards) {
+        var entry = srState.cards[id];
+        if (entry.bucket === 2 && !entry._migrated) {
+          entry.bucket = 4; entry._migrated = true;
+        } else if (entry.bucket === 1 && !entry._migrated) {
+          entry.bucket = 2; entry._migrated = true;
+        }
+      }
     } catch (e) { srState = { cards: {} }; }
   }
 
@@ -59,9 +80,9 @@ var LearnUI = (function () {
   function markCard(fcId, hard) {
     var entry = srState.cards[fcId] || { bucket: 0, lastSeen: null };
     if (hard) {
-      entry.bucket = 0;
+      entry.bucket = Math.max(0, entry.bucket - 1);
     } else {
-      entry.bucket = Math.min(entry.bucket + 1, 2);
+      entry.bucket = Math.min(entry.bucket + 1, 4);
     }
     entry.lastSeen = todayStr();
     srState.cards[fcId] = entry;
@@ -70,11 +91,10 @@ var LearnUI = (function () {
 
   function isDue(fcId) {
     var entry = srState.cards[fcId];
-    if (!entry || !entry.lastSeen) return true; /* Never seen = due */
+    if (!entry || !entry.lastSeen) return true;
     var daysSince = Math.floor((new Date(todayStr()) - new Date(entry.lastSeen)) / 86400000);
-    if (entry.bucket === 0) return true;           /* Hard: always due */
-    if (entry.bucket === 1) return daysSince >= 3;  /* Learning: 3 days */
-    return daysSince >= 7;                          /* Known: 7 days */
+    if (entry.bucket === 0) return true;
+    return daysSince >= SR_INTERVALS[entry.bucket];
   }
 
   function getDueCards() {
@@ -84,7 +104,7 @@ var LearnUI = (function () {
   function getBucketLabel(fcId) {
     var entry = srState.cards[fcId];
     if (!entry) return null;
-    return ['Hard', 'Learning', 'Known'][entry.bucket];
+    return SR_LABELS[entry.bucket] || SR_LABELS[0];
   }
 
   function updateReviewBanner() {
@@ -92,7 +112,8 @@ var LearnUI = (function () {
     if (!banner) return;
     var due = getDueCards();
     if (due.length > 0) {
-      banner.innerHTML = '<span class="sr-banner-text">' + due.length + ' flashcard' + (due.length > 1 ? 's' : '') + ' due for review</span>' +
+      var est = Math.max(1, Math.round(due.length * 0.5));
+      banner.innerHTML = '<span class="sr-banner-text">' + due.length + ' flashcard' + (due.length > 1 ? 's' : '') + ' due for review (~' + est + ' min)</span>' +
         '<button class="sr-banner-btn" id="sr-start-review">Review now &rarr;</button>';
       banner.style.display = 'flex';
     } else {
@@ -100,15 +121,13 @@ var LearnUI = (function () {
     }
   }
 
-  /* === Review overlay === */
-
-  var reviewCards = [];
-  var reviewIdx = 0;
+  /* === Review overlay (upgraded) === */
 
   function openReview() {
     reviewCards = getDueCards();
     if (reviewCards.length === 0) return;
     reviewIdx = 0;
+    reviewCorrect = 0;
     renderReviewCard();
     document.getElementById('sr-overlay').classList.add('visible');
     document.body.style.overflow = 'hidden';
@@ -125,11 +144,27 @@ var LearnUI = (function () {
     var container = document.getElementById('sr-card-container');
     if (!container || reviewCards.length === 0) return;
 
+    /* Check if session complete */
+    if (reviewIdx >= reviewCards.length) {
+      var pct = reviewCards.length > 0 ? Math.round(reviewCorrect * 100 / reviewCards.length) : 0;
+      container.innerHTML =
+        '<div class="sr-session-summary">' +
+          '<h3>Session Complete</h3>' +
+          '<div class="sr-session-stat"><strong>' + reviewCorrect + '/' + reviewCards.length + '</strong> correct (' + pct + '%)</div>' +
+          '<div class="sr-session-stat">' + (reviewCards.length - reviewCorrect) + ' card' + (reviewCards.length - reviewCorrect !== 1 ? 's' : '') + ' need review</div>' +
+          '<button class="btn-primary" style="margin-top:24px;" id="sr-done">Done</button>' +
+        '</div>';
+      return;
+    }
+
     var card = reviewCards[reviewIdx];
     var bucket = getBucketLabel(card.id);
-    var bucketTag = bucket ? '<span class="sr-bucket-tag sr-bucket-' + (srState.cards[card.id] ? srState.cards[card.id].bucket : 0) + '">' + bucket + '</span>' : '';
+    var bucketClass = srState.cards[card.id] ? srState.cards[card.id].bucket : 0;
+    var bucketTag = bucket ? '<span class="sr-bucket-tag sr-bucket-' + bucketClass + '">' + bucket + '</span>' : '';
+    var progressPct = Math.round((reviewIdx / reviewCards.length) * 100);
 
     container.innerHTML =
+      '<div class="sr-progress-bar"><div class="sr-progress-fill" style="width:' + progressPct + '%"></div></div>' +
       '<div class="sr-progress">' + (reviewIdx + 1) + ' / ' + reviewCards.length + ' ' + bucketTag + '</div>' +
       '<div class="sr-card">' +
         '<div class="sr-question">' + escapeHtml(card.question) + '</div>' +
@@ -145,12 +180,29 @@ var LearnUI = (function () {
   /* === Knowledge Graph === */
 
   function getRelatedTopics(topicId) {
-    if (!graphData || !graphData.related_topics) return [];
-    var related = graphData.related_topics[topicId] || [];
+    if (!graphData) return [];
+    /* Merge both old related_topics and new topic_topics */
+    var related = [];
+    if (graphData.related_topics && graphData.related_topics[topicId]) {
+      related = related.concat(graphData.related_topics[topicId]);
+    }
+    if (graphData.topic_topics && graphData.topic_topics[topicId]) {
+      graphData.topic_topics[topicId].forEach(function (rid) {
+        if (related.indexOf(rid) === -1) related.push(rid);
+      });
+    }
     return related
       .map(function (rid) { return allTopics.find(function (t) { return t.id === rid; }); })
       .filter(Boolean)
-      .slice(0, 5);
+      .slice(0, 6);
+  }
+
+  function getPrerequisites(topicId) {
+    if (!graphData || !graphData.prerequisites) return [];
+    var prereqs = graphData.prerequisites[topicId] || [];
+    return prereqs
+      .map(function (pid) { return allTopics.find(function (t) { return t.id === pid; }); })
+      .filter(Boolean);
   }
 
   function getToolsForSystem(system) {
@@ -159,7 +211,6 @@ var LearnUI = (function () {
     var systemTopicIds = allTopics
       .filter(function (t) { return t.system === system; })
       .map(function (t) { return t.id; });
-
     for (var toolId in graphData.tool_topics) {
       var topicIds = graphData.tool_topics[toolId];
       for (var i = 0; i < topicIds.length; i++) {
@@ -172,6 +223,48 @@ var LearnUI = (function () {
     return toolIds.map(function (tid) { return toolsById[tid]; }).filter(Boolean);
   }
 
+  /* === MCQ counts per topic === */
+
+  function getMcqCount(topicId) {
+    return (mcqByTopic[topicId] || []).length;
+  }
+
+  /* === Topic mastery (for study path) === */
+
+  function getTopicMastery(topic) {
+    var cards = getFlashcardsForTopic(topic);
+    var mcqCount = getMcqCount(topic.id);
+    var mcqs = mcqByTopic[topic.id] || [];
+
+    /* Check flashcard progress */
+    var fcDone = 0;
+    cards.forEach(function (c) {
+      var entry = srState.cards[c.id];
+      if (entry && entry.bucket >= 3) fcDone++;
+    });
+
+    /* Check MCQ progress from localStorage */
+    var mcqProgress = null;
+    try {
+      var saved = localStorage.getItem('mbbeasy-mcq-progress');
+      if (saved) mcqProgress = JSON.parse(saved);
+    } catch (e) {}
+
+    var mcqCorrect = 0;
+    if (mcqProgress && mcqProgress.correct) {
+      mcqs.forEach(function (m) {
+        if (mcqProgress.correct[m.id]) mcqCorrect++;
+      });
+    }
+
+    var fcPct = cards.length > 0 ? Math.round(fcDone * 100 / cards.length) : 100;
+    var mcqPct = mcqCount > 0 ? Math.round(mcqCorrect * 100 / mcqCount) : 100;
+
+    if (fcPct >= 80 && mcqPct >= 70) return 'mastered';
+    if (fcDone > 0 || mcqCorrect > 0) return 'in-progress';
+    return 'not-started';
+  }
+
   /* === Data loading === */
 
   function loadAll() {
@@ -179,12 +272,14 @@ var LearnUI = (function () {
       fetch('/learn/data/topics.json').then(function (r) { return r.json(); }),
       fetch('/learn/data/flashcards.json').then(function (r) { return r.json(); }),
       fetch('/learn/data/catalog.json').then(function (r) { return r.json(); }),
-      fetch('/learn/data/graph.json').then(function (r) { return r.json(); })
+      fetch('/learn/data/graph.json').then(function (r) { return r.json(); }),
+      fetch('/mcqs/data/mcqs.json').then(function (r) { return r.json(); })
     ]).then(function (results) {
       allTopics = results[0];
       allFlashcards = results[1];
       allTools = results[2];
       graphData = results[3];
+      allMcqs = results[4];
       buildIndices();
       loadSR();
       restoreFilter();
@@ -197,15 +292,20 @@ var LearnUI = (function () {
   }
 
   function buildIndices() {
-    /* Build flashcard lookup: normalized topic name -> [cards] */
     allFlashcards.forEach(function (fc) {
       var key = normalize(fc.topic);
       if (!fcByTopic[key]) fcByTopic[key] = [];
       fcByTopic[key].push(fc);
     });
-
-    /* Build tool lookup */
     allTools.forEach(function (t) { toolsById[t.id] = t; });
+    /* Build MCQ-by-topic index */
+    allMcqs.forEach(function (m) {
+      var tid = m.topic_id;
+      if (tid) {
+        if (!mcqByTopic[tid]) mcqByTopic[tid] = [];
+        mcqByTopic[tid].push(m);
+      }
+    });
   }
 
   /* === Filters === */
@@ -216,12 +316,14 @@ var LearnUI = (function () {
       if (saved) {
         var parsed = JSON.parse(saved);
         if (parsed.system !== undefined) filters.system = parsed.system;
+        if (parsed.yieldOnly !== undefined) filters.yieldOnly = parsed.yieldOnly;
+        if (parsed.viewMode !== undefined) viewMode = parsed.viewMode;
       }
     } catch (e) {}
   }
 
   function saveFilter() {
-    try { localStorage.setItem('learn-filters', JSON.stringify({ system: filters.system })); } catch (e) {}
+    try { localStorage.setItem('learn-filters', JSON.stringify({ system: filters.system, yieldOnly: filters.yieldOnly, viewMode: viewMode })); } catch (e) {}
   }
 
   function applyFilter() {
@@ -230,16 +332,23 @@ var LearnUI = (function () {
       if (filters.system && t.system !== filters.system) return false;
       if (searchLow && t.topic.toLowerCase().indexOf(searchLow) === -1 &&
           (t.subtitle || '').toLowerCase().indexOf(searchLow) === -1) return false;
+      if (filters.yieldOnly && t.yield !== 'high') return false;
       return true;
     });
     updateStatus();
     saveFilter();
-    renderTopics();
+    if (viewMode === 'path') {
+      renderStudyPath();
+    } else {
+      renderTopics();
+    }
   }
 
   function updateStatus() {
     var el = document.getElementById('filter-status');
-    if (el) el.textContent = 'Showing ' + filteredTopics.length + ' of ' + allTopics.length + ' topics';
+    if (!el) return;
+    var yieldNote = filters.yieldOnly ? ' (high-yield only)' : '';
+    el.textContent = 'Showing ' + filteredTopics.length + ' of ' + allTopics.length + ' topics' + yieldNote;
   }
 
   function buildFilterButtons() {
@@ -268,7 +377,7 @@ var LearnUI = (function () {
     });
   }
 
-  /* === Topic rendering === */
+  /* === Topic rendering (Browse mode) === */
 
   function getFlashcardsForTopic(topic) {
     var cards = [];
@@ -304,6 +413,13 @@ var LearnUI = (function () {
     return html;
   }
 
+  function renderYieldTag(y) {
+    if (!y) return '';
+    var label = y === 'high' ? 'High yield' : y === 'medium' ? 'Medium yield' : '';
+    if (!label) return '';
+    return '<span class="tag tag-yield-' + y + '">' + label + '</span>';
+  }
+
   function renderTopics() {
     var deck = document.getElementById('topic-deck');
     if (!deck) return;
@@ -312,7 +428,6 @@ var LearnUI = (function () {
       return;
     }
 
-    /* Group by system */
     var groups = {};
     var order = [];
     filteredTopics.forEach(function (t) {
@@ -331,6 +446,8 @@ var LearnUI = (function () {
         var cards = getFlashcardsForTopic(t);
         var tools = getToolsForTopic(t);
         var related = getRelatedTopics(t.id);
+        var prereqs = getPrerequisites(t.id);
+        var mcqCount = getMcqCount(t.id);
 
         html += '<div class="topic-list-card" data-topic-id="' + escapeHtml(t.id) + '">';
         html += '<div class="topic-list-header">';
@@ -340,14 +457,25 @@ var LearnUI = (function () {
         if (t.subtitle) html += '<div class="topic-list-subtitle">' + escapeHtml(t.subtitle) + '</div>';
         html += '</div>';
         html += '<div class="topic-list-meta">';
+        html += renderYieldTag(t.yield);
+        if (mcqCount) html += '<span class="tag tag-muted">' + mcqCount + ' MCQ' + (mcqCount > 1 ? 's' : '') + '</span>';
         if (cards.length) html += '<span class="tag tag-blue">' + cards.length + ' card' + (cards.length > 1 ? 's' : '') + '</span>';
         if (tools.length) html += '<span class="tag tag-gold">' + tools.length + ' tool' + (tools.length > 1 ? 's' : '') + '</span>';
         if (related.length) html += '<span class="tag tag-related">' + related.length + ' related</span>';
         html += '</div>';
-        html += '</div>'; /* /header */
+        html += '</div>';
 
-        /* Body (hidden by default, rendered for all topics) */
+        /* Body */
         html += '<div class="topic-list-body">';
+
+        /* Prerequisites */
+        if (prereqs.length) {
+          html += '<div class="prereq-box"><div class="prereq-label">Prerequisites</div><div class="prereq-pills">';
+          prereqs.forEach(function (p) {
+            html += '<a class="prereq-pill" data-related-id="' + escapeHtml(p.id) + '">' + escapeHtml(p.topic) + '</a>';
+          });
+          html += '</div></div>';
+        }
 
         if (t.what_to_memorize) {
           html += '<div class="topic-study-hint"><div class="clinical-pearl-label">What to memorize</div>' + escapeHtml(t.what_to_memorize) + '</div>';
@@ -357,7 +485,8 @@ var LearnUI = (function () {
           html += '<div class="topic-inline-flashcards">';
           cards.forEach(function (card) {
             var bucketLabel = getBucketLabel(card.id);
-            var bucketHtml = bucketLabel ? ' <span class="fc-bucket fc-bucket-' + (srState.cards[card.id] ? srState.cards[card.id].bucket : 0) + '">' + bucketLabel + '</span>' : '';
+            var bucketNum = srState.cards[card.id] ? srState.cards[card.id].bucket : 0;
+            var bucketHtml = bucketLabel ? ' <span class="fc-bucket fc-bucket-' + bucketNum + '">' + bucketLabel + '</span>' : '';
             html += '<div class="flashcard">' +
               '<div class="flashcard-head">' +
                 '<div class="flashcard-question">' + escapeHtml(card.question) + bucketHtml + '</div>' +
@@ -384,7 +513,6 @@ var LearnUI = (function () {
           html += '</div>';
         }
 
-        /* Related topics */
         if (related.length) {
           html += '<div class="related-topics">';
           html += '<div class="related-topics-label">Related topics</div>';
@@ -394,19 +522,144 @@ var LearnUI = (function () {
           html += '</div>';
         }
 
-        /* Cross-link to MCQs page */
-        html += '<a class="topic-cross-link" href="/mcqs/?system=' + encodeURIComponent(t.system) + '">Practice ' + escapeHtml(t.system) + ' MCQs &rarr;</a>';
+        /* Practice MCQs link (topic-specific) */
+        if (mcqCount > 0) {
+          html += '<a class="topic-practice-btn" href="/mcqs/?topic_id=' + encodeURIComponent(t.id) + '">Practice ' + mcqCount + ' MCQ' + (mcqCount > 1 ? 's' : '') + ' &rarr;</a>';
+        } else {
+          html += '<a class="topic-cross-link" href="/mcqs/?system=' + encodeURIComponent(t.system) + '">Practice ' + escapeHtml(t.system) + ' MCQs &rarr;</a>';
+        }
 
-        if (!cards.length && !tools.length && !t.what_to_memorize && !related.length) {
+        if (!cards.length && !tools.length && !t.what_to_memorize && !related.length && !prereqs.length) {
           html += '<div class="topic-empty-body">No flashcards or tools linked yet.</div>';
         }
 
-        html += '</div>'; /* /body */
-        html += '</div>'; /* /card */
+        html += '</div>';
+        html += '</div>';
       });
 
-      html += '</div>'; /* /system-group */
+      html += '</div>';
     });
+
+    deck.innerHTML = html;
+  }
+
+  /* === Study Path rendering === */
+
+  function topologicalSort(topics, prereqMap) {
+    /* Sort topics: prerequisites first, then by yield (high > medium > low), then alphabetical */
+    var yieldOrder = { 'high': 0, 'medium': 1, 'low': 2 };
+    var idSet = {};
+    topics.forEach(function (t) { idSet[t.id] = true; });
+
+    /* Build in-degree map */
+    var inDegree = {};
+    var adj = {};
+    topics.forEach(function (t) {
+      inDegree[t.id] = 0;
+      adj[t.id] = [];
+    });
+    topics.forEach(function (t) {
+      var prereqs = prereqMap[t.id] || [];
+      prereqs.forEach(function (pid) {
+        if (idSet[pid]) {
+          inDegree[t.id]++;
+          if (!adj[pid]) adj[pid] = [];
+          adj[pid].push(t.id);
+        }
+      });
+    });
+
+    /* Kahn's algorithm with yield-based priority */
+    var topicById = {};
+    topics.forEach(function (t) { topicById[t.id] = t; });
+
+    var queue = [];
+    topics.forEach(function (t) {
+      if (inDegree[t.id] === 0) queue.push(t.id);
+    });
+    queue.sort(function (a, b) {
+      var ya = yieldOrder[topicById[a].yield || 'low'] || 2;
+      var yb = yieldOrder[topicById[b].yield || 'low'] || 2;
+      if (ya !== yb) return ya - yb;
+      return topicById[a].topic.localeCompare(topicById[b].topic);
+    });
+
+    var result = [];
+    while (queue.length > 0) {
+      var id = queue.shift();
+      result.push(id);
+      (adj[id] || []).forEach(function (nid) {
+        inDegree[nid]--;
+        if (inDegree[nid] === 0) {
+          queue.push(nid);
+          queue.sort(function (a, b) {
+            var ya = yieldOrder[topicById[a].yield || 'low'] || 2;
+            var yb = yieldOrder[topicById[b].yield || 'low'] || 2;
+            if (ya !== yb) return ya - yb;
+            return topicById[a].topic.localeCompare(topicById[b].topic);
+          });
+        }
+      });
+    }
+
+    /* Any remaining (cycles) just append */
+    topics.forEach(function (t) {
+      if (result.indexOf(t.id) === -1) result.push(t.id);
+    });
+
+    return result.map(function (id) { return topicById[id]; });
+  }
+
+  function renderStudyPath() {
+    var deck = document.getElementById('topic-deck');
+    if (!deck) return;
+    if (filteredTopics.length === 0) {
+      deck.innerHTML = '<div class="empty-state">No topics match the current filter.</div>';
+      return;
+    }
+
+    var prereqMap = graphData && graphData.prerequisites ? graphData.prerequisites : {};
+
+    /* Group by system */
+    var groups = {};
+    var order = [];
+    filteredTopics.forEach(function (t) {
+      if (!groups[t.system]) { groups[t.system] = []; order.push(t.system); }
+      groups[t.system].push(t);
+    });
+    order.sort(function (a, b) { return SYSTEMS_ORDER.indexOf(a) - SYSTEMS_ORDER.indexOf(b); });
+
+    var html = '<div class="study-path">';
+    order.forEach(function (sys) {
+      var sorted = topologicalSort(groups[sys], prereqMap);
+      html += '<div class="study-path-system">';
+      html += '<div class="study-path-system-title">' + escapeHtml(sys) + ' (' + sorted.length + ' topics)</div>';
+
+      sorted.forEach(function (t, idx) {
+        var mastery = getTopicMastery(t);
+        var mcqCount = getMcqCount(t.id);
+        var cardCount = getFlashcardsForTopic(t).length;
+        var prereqs = getPrerequisites(t.id);
+
+        html += '<div class="study-path-item ' + mastery + '" data-topic-id="' + escapeHtml(t.id) + '">';
+        html += '<div class="study-path-step">' + (mastery === 'mastered' ? '&#10003;' : (idx + 1)) + '</div>';
+        html += '<div class="study-path-info">';
+        html += '<div class="study-path-name">' + escapeHtml(t.topic) + '</div>';
+        html += '<div class="study-path-tags">';
+        html += renderYieldTag(t.yield);
+        if (mcqCount) html += '<span class="tag tag-muted">' + mcqCount + ' MCQs</span>';
+        if (cardCount) html += '<span class="tag tag-blue">' + cardCount + ' cards</span>';
+        html += '</div>';
+        if (prereqs.length) {
+          html += '<div class="study-path-prereqs">Prereqs: ' + prereqs.map(function (p) { return escapeHtml(p.topic); }).join(', ') + '</div>';
+        }
+        html += '</div>';
+        html += '</div>';
+      });
+
+      html += '</div>';
+    });
+    html += '</div>';
 
     deck.innerHTML = html;
   }
@@ -418,12 +671,9 @@ var LearnUI = (function () {
     if (!container) return;
 
     var toolsToShow = allTools;
-
-    /* If a system filter is active, show only tools relevant to that system */
     if (filters.system) {
       var systemTools = getToolsForSystem(filters.system);
       var systemToolIds = systemTools.map(function (t) { return t.id; });
-      /* Also include study-skills tools (they're universal) */
       toolsToShow = allTools.filter(function (t) {
         return systemToolIds.indexOf(t.id) !== -1 || t.category === 'study-skills';
       });
@@ -456,24 +706,39 @@ var LearnUI = (function () {
     if (!deck) return;
 
     deck.addEventListener('click', function (e) {
-      /* Related topic pill click */
-      var pill = e.target.closest('.related-pill');
+      /* Study path item click → expand in browse mode */
+      var pathItem = e.target.closest('.study-path-item');
+      if (pathItem && viewMode === 'path') {
+        var topicId = pathItem.dataset.topicId;
+        if (topicId) {
+          viewMode = 'browse';
+          updateViewToggle();
+          applyFilter();
+          setTimeout(function () {
+            var card = document.querySelector('[data-topic-id="' + topicId + '"]');
+            if (card) {
+              card.classList.add('expanded');
+              card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+          }, 100);
+        }
+        return;
+      }
+
+      /* Related topic / prereq pill click */
+      var pill = e.target.closest('.related-pill, .prereq-pill');
       if (pill) {
         e.preventDefault();
         var relatedId = pill.dataset.relatedId;
         if (!relatedId) return;
-
-        /* Find topic's system */
         var topic = allTopics.find(function (t) { return t.id === relatedId; });
         if (topic) {
-          /* Switch system filter if needed */
           if (filters.system && topic.system !== filters.system) {
             filters.system = topic.system;
             applyFilter();
             buildFilterButtons();
             renderCatalog();
           }
-          /* Scroll to and expand the related topic */
           setTimeout(function () {
             var card = document.querySelector('[data-topic-id="' + relatedId + '"]');
             if (card) {
@@ -511,7 +776,6 @@ var LearnUI = (function () {
       if (srBtn) {
         var fcId = srBtn.closest('.fc-sr-buttons').dataset.fcId;
         markCard(fcId, srBtn.dataset.action === 'hard');
-        /* Update bucket label */
         var flashcardEl = srBtn.closest('.flashcard');
         if (flashcardEl) {
           var oldBucket = flashcardEl.querySelector('.fc-bucket');
@@ -530,6 +794,29 @@ var LearnUI = (function () {
       }
     });
 
+    /* View toggle */
+    document.addEventListener('click', function (e) {
+      var toggleBtn = e.target.closest('.view-toggle-btn');
+      if (toggleBtn) {
+        var mode = toggleBtn.dataset.mode;
+        if (mode && mode !== viewMode) {
+          viewMode = mode;
+          updateViewToggle();
+          applyFilter();
+        }
+        return;
+      }
+
+      /* Yield filter toggle */
+      var yieldBtn = e.target.closest('.yield-toggle');
+      if (yieldBtn) {
+        filters.yieldOnly = !filters.yieldOnly;
+        yieldBtn.classList.toggle('active', filters.yieldOnly);
+        applyFilter();
+        return;
+      }
+    });
+
     /* Search input */
     var searchEl = document.getElementById('topic-search');
     if (searchEl) {
@@ -543,17 +830,10 @@ var LearnUI = (function () {
       });
     }
 
-    /* SR review banner click */
+    /* SR review banner + overlay clicks */
     document.addEventListener('click', function (e) {
-      if (e.target.closest('#sr-start-review')) {
-        openReview();
-        return;
-      }
-      if (e.target.closest('#sr-close')) {
-        closeReview();
-        return;
-      }
-      /* Review overlay: reveal */
+      if (e.target.closest('#sr-start-review')) { openReview(); return; }
+      if (e.target.closest('#sr-close') || e.target.closest('#sr-done')) { closeReview(); return; }
       if (e.target.closest('#sr-reveal')) {
         var ansEl = document.getElementById('sr-answer');
         var actEl = document.getElementById('sr-actions');
@@ -562,20 +842,24 @@ var LearnUI = (function () {
         e.target.style.display = 'none';
         return;
       }
-      /* Review overlay: Hard / Got it */
       var srAction = e.target.closest('.sr-btn');
       if (srAction && reviewCards.length > 0) {
+        var isGotIt = srAction.dataset.action === 'gotit';
         var card = reviewCards[reviewIdx];
-        markCard(card.id, srAction.dataset.action === 'hard');
+        markCard(card.id, !isGotIt);
+        if (isGotIt) reviewCorrect++;
         reviewIdx++;
-        if (reviewIdx >= reviewCards.length) {
-          closeReview();
-        } else {
-          renderReviewCard();
-        }
+        renderReviewCard();
         return;
       }
     });
+  }
+
+  function updateViewToggle() {
+    document.querySelectorAll('.view-toggle-btn').forEach(function (btn) {
+      btn.classList.toggle('active', btn.dataset.mode === viewMode);
+    });
+    saveFilter();
   }
 
   /* === URL params === */
@@ -591,9 +875,10 @@ var LearnUI = (function () {
     }
     var highlight = params.get('highlight');
     if (highlight) {
-      /* Find topic's system, set filter, then scroll to it */
       var topic = allTopics.find(function (t) { return t.id === highlight; });
       if (topic) {
+        viewMode = 'browse';
+        updateViewToggle();
         filters.system = topic.system;
         applyFilter();
         buildFilterButtons();
@@ -607,7 +892,6 @@ var LearnUI = (function () {
         }, 100);
       }
     }
-    /* Auto-open review if requested */
     if (params.get('review') === 'true') {
       setTimeout(openReview, 200);
     }

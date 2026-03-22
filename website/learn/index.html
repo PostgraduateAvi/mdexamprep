@@ -27,7 +27,14 @@
 
     <div class="sr-banner" id="sr-banner" style="display:none;"></div>
 
-    <input type="search" class="topic-search" id="topic-search" placeholder="Filter topics&hellip;" autocomplete="off">
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px;">
+      <div class="view-toggle">
+        <button class="view-toggle-btn active" data-mode="browse">Browse</button>
+        <button class="view-toggle-btn" data-mode="path">Study Path</button>
+      </div>
+      <input type="search" class="topic-search" id="topic-search" placeholder="Filter topics&hellip;" autocomplete="off" style="flex:1;min-width:180px;margin:0;">
+      <button class="yield-toggle" id="yield-toggle">High-yield only</button>
+    </div>
     <div class="system-btns" id="system-filters"></div>
     <div class="filter-status" id="filter-status"></div>
     <div id="topic-deck"></div>

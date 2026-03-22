@@ -8,7 +8,7 @@ var McqsUI = (function () {
 
   var allMcqs = [];
   var filteredMcqs = [];
-  var mcqFilters = { system: null };
+  var mcqFilters = { system: null, difficulty: null, topicId: null };
   var MCQ_PAGE_SIZE = 20;
   var mcqPage = 0;
 
@@ -31,12 +31,16 @@ var McqsUI = (function () {
   }
 
   function findTopicLink(mcq) {
-    /* Try matching MCQ subject against topic names */
+    /* Use topic_id if available (from data pipeline) */
+    if (mcq.topic_id) {
+      var t = topicLookupById[mcq.topic_id];
+      if (t) return { href: '/learn/?highlight=' + mcq.topic_id, label: t.topic };
+    }
+    /* Fallback: subject name match */
     var subjectKey = (mcq.subject || '').toLowerCase().trim();
     if (topicLookup[subjectKey]) {
       return { href: '/learn/?highlight=' + topicLookup[subjectKey].id, label: mcq.subject };
     }
-    /* Fallback: link to system */
     if (mcq.system) {
       return { href: '/learn/?system=' + encodeURIComponent(mcq.system), label: mcq.system + ' topics' };
     }
@@ -115,8 +119,9 @@ var McqsUI = (function () {
 
   /* === Data === */
 
-  /* Topic lookup for cross-links */
-  var topicLookup = {}; /* normalized topic name -> { id, system } */
+  /* Topic lookups for cross-links */
+  var topicLookup = {}; /* normalized topic name -> { id, system, topic } */
+  var topicLookupById = {}; /* topic id -> { id, system, topic } */
 
   function loadMcqs() {
     return Promise.all([
@@ -124,14 +129,16 @@ var McqsUI = (function () {
       fetch('/learn/data/topics.json').then(function (r) { return r.json(); }).catch(function () { return []; })
     ]).then(function (results) {
         allMcqs = results[0];
-        /* Build topic cross-link lookup */
+        /* Build topic cross-link lookups */
         (results[1] || []).forEach(function (t) {
-          topicLookup[t.topic.toLowerCase().trim()] = { id: t.id, system: t.system };
+          topicLookup[t.topic.toLowerCase().trim()] = { id: t.id, system: t.system, topic: t.topic };
+          topicLookupById[t.id] = { id: t.id, system: t.system, topic: t.topic };
         });
         loadProgress();
         restoreFilter();
         applyFilter();
         buildFilterButtons();
+        buildDifficultyButtons();
         buildModeButtons();
         bindEvents();
         updateScore();
@@ -143,11 +150,26 @@ var McqsUI = (function () {
 
   function handleUrlParams() {
     var params = new URLSearchParams(window.location.search);
+    var changed = false;
     var sys = params.get('system');
     if (sys && SYSTEMS_ORDER.indexOf(sys) !== -1) {
       mcqFilters.system = sys;
+      changed = true;
+    }
+    var tid = params.get('topic_id');
+    if (tid) {
+      mcqFilters.topicId = tid;
+      changed = true;
+    }
+    var diff = params.get('difficulty');
+    if (diff && ['easy', 'medium', 'hard'].indexOf(diff) !== -1) {
+      mcqFilters.difficulty = diff;
+      changed = true;
+    }
+    if (changed) {
       applyFilter();
       buildFilterButtons();
+      buildDifficultyButtons();
     }
   }
 
@@ -170,6 +192,8 @@ var McqsUI = (function () {
   function applyFilter() {
     var base = allMcqs.filter(function (m) {
       if (mcqFilters.system && m.system !== mcqFilters.system) return false;
+      if (mcqFilters.difficulty && m.difficulty !== mcqFilters.difficulty) return false;
+      if (mcqFilters.topicId && m.topic_id !== mcqFilters.topicId) return false;
       return true;
     });
 
@@ -206,12 +230,16 @@ var McqsUI = (function () {
   function updateStatus() {
     var el = document.getElementById('mcq-filter-status');
     if (!el) return;
+    var extra = '';
+    if (mcqFilters.topicId && topicLookupById[mcqFilters.topicId]) {
+      extra = ' for "' + topicLookupById[mcqFilters.topicId].topic + '"';
+    }
     if (quizMode === 'practice') {
-      el.textContent = 'Showing ' + filteredMcqs.length + ' of ' + allMcqs.length;
+      el.textContent = 'Showing ' + filteredMcqs.length + ' of ' + allMcqs.length + extra;
     } else if (quizMode === 'quick20') {
-      el.textContent = 'Quick 20 — ' + filteredMcqs.length + ' questions';
+      el.textContent = 'Quick 20 — ' + filteredMcqs.length + ' questions' + extra;
     } else if (quizMode === 'timed') {
-      el.textContent = 'Timed Exam — ' + filteredMcqs.length + ' questions';
+      el.textContent = 'Timed Exam — ' + filteredMcqs.length + ' questions' + extra;
     }
   }
 
@@ -244,6 +272,33 @@ var McqsUI = (function () {
       if (!btn) return;
       var sys = btn.dataset.system;
       mcqFilters.system = sys === 'all' ? null : sys;
+      el.querySelectorAll('.system-btn').forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      clearTimer();
+      applyFilter();
+    });
+  }
+
+  /* === Difficulty filter buttons === */
+
+  function buildDifficultyButtons() {
+    var el = document.getElementById('difficulty-filters');
+    if (!el) return;
+    var counts = { easy: 0, medium: 0, hard: 0 };
+    allMcqs.forEach(function (m) {
+      if (m.difficulty && counts[m.difficulty] !== undefined) counts[m.difficulty]++;
+    });
+    var html = '<button class="system-btn' + (!mcqFilters.difficulty ? ' active' : '') + '" data-diff="all">All</button>';
+    ['easy', 'medium', 'hard'].forEach(function (d) {
+      html += '<button class="system-btn tag-difficulty-' + d + (mcqFilters.difficulty === d ? ' active' : '') + '" data-diff="' + d + '">' +
+        d.charAt(0).toUpperCase() + d.slice(1) + ' (' + counts[d] + ')</button>';
+    });
+    el.innerHTML = html;
+    el.addEventListener('click', function (e) {
+      var btn = e.target.closest('[data-diff]');
+      if (!btn) return;
+      var d = btn.dataset.diff;
+      mcqFilters.difficulty = d === 'all' ? null : d;
       el.querySelectorAll('.system-btn').forEach(function (b) { b.classList.remove('active'); });
       btn.classList.add('active');
       clearTimer();
@@ -405,6 +460,11 @@ var McqsUI = (function () {
       html += '<div class="mcq-head">';
       html += '<span class="mcq-number">' + (idx + 1) + '.</span>';
       html += '<div class="mcq-question">' + escapeHtml(mcq.question) + '</div>';
+      html += '</div>';
+      /* Difficulty + Bloom tags */
+      html += '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;">';
+      if (mcq.difficulty) html += '<span class="tag tag-difficulty-' + mcq.difficulty + '">' + mcq.difficulty.charAt(0).toUpperCase() + mcq.difficulty.slice(1) + '</span>';
+      if (mcq.bloom) html += '<span class="tag tag-bloom">' + mcq.bloom.charAt(0).toUpperCase() + mcq.bloom.slice(1) + '</span>';
       html += '</div>';
       html += '<div class="mcq-options' + (isAnswered ? ' answered' : '') + '" data-id="' + mcq.id + '" data-answer="' + mcq.answer + '">';
       mcq.options.forEach(function (opt, i) {

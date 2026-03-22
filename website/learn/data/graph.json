@@ -880,5 +880,908 @@
       "monoclonal-antibodies",
       "biological-therapy"
     ]
+  },
+  "topic_topics": {
+    "acute-myocardial-infarction": [
+      "aortic-stenosis",
+      "cardiac-tamponade",
+      "chest-pain-angina"
+    ],
+    "aortic-stenosis": [
+      "acute-myocardial-infarction",
+      "coronary-artery-disease",
+      "dilated-cardiomyopathy",
+      "heart-failure",
+      "jugular-venous-pressure-jvp",
+      "syncope"
+    ],
+    "cardiac-tamponade": [
+      "acute-myocardial-infarction"
+    ],
+    "chest-pain-angina": [
+      "acute-myocardial-infarction",
+      "aortic-dissection",
+      "coronary-artery-disease",
+      "diastolic-heart-failure",
+      "pleuritic-chest-pain",
+      "systolic-heart-failure"
+    ],
+    "aortic-regurgitation": [
+      "dilated-cardiomyopathy",
+      "infective-endocarditis"
+    ],
+    "dilated-cardiomyopathy": [
+      "aortic-regurgitation",
+      "aortic-stenosis",
+      "restrictive-cardiomyopathy"
+    ],
+    "infective-endocarditis": [
+      "aortic-regurgitation"
+    ],
+    "coronary-artery-disease": [
+      "aortic-stenosis",
+      "chest-pain-angina"
+    ],
+    "heart-failure": [
+      "aortic-stenosis",
+      "diastolic-heart-failure",
+      "systolic-heart-failure"
+    ],
+    "jugular-venous-pressure-jvp": [
+      "aortic-stenosis"
+    ],
+    "syncope": [
+      "aortic-stenosis"
+    ],
+    "diastolic-heart-failure": [
+      "chest-pain-angina",
+      "heart-failure",
+      "systolic-heart-failure"
+    ],
+    "systolic-heart-failure": [
+      "chest-pain-angina",
+      "diastolic-heart-failure",
+      "heart-failure"
+    ],
+    "restrictive-cardiomyopathy": [
+      "dilated-cardiomyopathy"
+    ],
+    "amyotrophic-lateral-sclerosis": [
+      "myasthenia-gravis"
+    ],
+    "myasthenia-gravis": [
+      "amyotrophic-lateral-sclerosis",
+      "dementia",
+      "spinal-cord-lesions"
+    ],
+    "brainstem": [
+      "anatomic-brainstem-syndromes",
+      "brainstem-syndromes",
+      "classical-brainstem-syndromes",
+      "migraine"
+    ],
+    "migraine": [
+      "brainstem"
+    ],
+    "dementia": [
+      "frontotemporal-dementia",
+      "multiple-sclerosis",
+      "myasthenia-gravis"
+    ],
+    "multiple-sclerosis": [
+      "dementia",
+      "epilepsy",
+      "headache"
+    ],
+    "epilepsy": [
+      "multiple-sclerosis",
+      "status-epilepticus"
+    ],
+    "status-epilepticus": [
+      "epilepsy"
+    ],
+    "facial-nerve": [
+      "spinal-cord-lesions"
+    ],
+    "spinal-cord-lesions": [
+      "facial-nerve",
+      "myasthenia-gravis"
+    ],
+    "headache": [
+      "cluster-headache",
+      "multiple-sclerosis",
+      "tension-headache"
+    ],
+    "acute-kidney-injury": [
+      "prerenal-vs-intrinsic-renal-dysfunction"
+    ],
+    "prerenal-vs-intrinsic-renal-dysfunction": [
+      "acute-kidney-injury",
+      "hyperkalemia",
+      "nephrotic-syndrome",
+      "polycystic-kidney-disease"
+    ],
+    "dialysis": [
+      "hyperkalemia"
+    ],
+    "hyperkalemia": [
+      "dialysis",
+      "prerenal-vs-intrinsic-renal-dysfunction"
+    ],
+    "glomerular-filtration": [
+      "renal-blood-flow"
+    ],
+    "renal-blood-flow": [
+      "glomerular-filtration"
+    ],
+    "hematuria": [
+      "polycystic-kidney-disease"
+    ],
+    "polycystic-kidney-disease": [
+      "chronic-kidney-disease",
+      "hematuria",
+      "nephritic-syndrome",
+      "nephrotic-syndrome",
+      "prerenal-vs-intrinsic-renal-dysfunction",
+      "proteinuria"
+    ],
+    "nephritic-syndrome": [
+      "nephrotic-syndrome",
+      "polycystic-kidney-disease"
+    ],
+    "nephrotic-syndrome": [
+      "nephritic-syndrome",
+      "polycystic-kidney-disease",
+      "prerenal-vs-intrinsic-renal-dysfunction"
+    ],
+    "proteinuria": [
+      "polycystic-kidney-disease"
+    ],
+    "cushing": [
+      "diabetes-mellitus",
+      "hyperparathyroidism",
+      "hypoglycemia",
+      "hypothyroidism",
+      "metabolic-syndrome",
+      "thyroid-eye-disease"
+    ],
+    "diabetes-mellitus": [
+      "cushing",
+      "gestational-diabetes",
+      "hypothyroidism"
+    ],
+    "hyperparathyroidism": [
+      "cushing",
+      "hypothyroidism"
+    ],
+    "hypoglycemia": [
+      "cushing",
+      "hypothyroidism"
+    ],
+    "hypothyroidism": [
+      "cushing",
+      "diabetes-mellitus",
+      "hyperparathyroidism",
+      "hypoglycemia",
+      "pheochromocytoma",
+      "thyroid-eye-disease"
+    ],
+    "metabolic-syndrome": [
+      "cushing"
+    ],
+    "thyroid-eye-disease": [
+      "cushing",
+      "hypothyroidism"
+    ],
+    "gestational-diabetes": [
+      "diabetes-mellitus"
+    ],
+    "pheochromocytoma": [
+      "hypothyroidism"
+    ],
+    "thyroid-function": [
+      "hypothyroidism"
+    ],
+    "thyroid-swellingsymptoms": [
+      "hypothyroidism"
+    ],
+    "vitamin-d": [
+      "hypothyroidism"
+    ],
+    "breathlessness": [
+      "respiratory-failure"
+    ],
+    "respiratory-failure": [
+      "breathlessness",
+      "bronchial-asthma",
+      "bronchiectasis",
+      "chest-x-ray",
+      "interstitial-lung-disease",
+      "lung-cancer"
+    ],
+    "bronchial-asthma": [
+      "asthma-management-pulmonary-rehabilitation",
+      "respiratory-failure"
+    ],
+    "bronchiectasis": [
+      "respiratory-failure"
+    ],
+    "chest-x-ray": [
+      "respiratory-failure"
+    ],
+    "interstitial-lung-disease": [
+      "respiratory-failure"
+    ],
+    "lung-cancer": [
+      "respiratory-failure"
+    ],
+    "mediastinum": [
+      "pleural-effusion",
+      "respiratory-failure"
+    ],
+    "pleural-effusion": [
+      "mediastinum"
+    ],
+    "pneumonia": [
+      "respiratory-failure"
+    ],
+    "respiration": [
+      "respiratory-failure"
+    ],
+    "abdominal-pain": [
+      "hepatitis",
+      "pancreatitis",
+      "ulcerative-colitis"
+    ],
+    "hepatitis": [
+      "abdominal-pain",
+      "chronic-pancreatitis",
+      "cirrhosis",
+      "hepatomegaly",
+      "pancreatitis",
+      "ulcerative-colitis"
+    ],
+    "pancreatitis": [
+      "abdominal-pain",
+      "hepatitis",
+      "liver-disease"
+    ],
+    "ulcerative-colitis": [
+      "abdominal-pain",
+      "hepatitis",
+      "liver-disease"
+    ],
+    "bilirubin-metabolism": [
+      "liver-disease"
+    ],
+    "liver-disease": [
+      "bilirubin-metabolism",
+      "chronic-pancreatitis",
+      "cirrhosis",
+      "jaundice",
+      "pancreatitis",
+      "stigmata-in-chronic-liver-disease"
+    ],
+    "chronic-pancreatitis": [
+      "hepatitis",
+      "liver-disease"
+    ],
+    "cirrhosis": [
+      "hepatitis",
+      "jaundice",
+      "liver-disease"
+    ],
+    "jaundice": [
+      "cirrhosis",
+      "liver-disease"
+    ],
+    "hepatomegaly": [
+      "hepatitis"
+    ],
+    "aplastic-anemia": [
+      "iron-deficiency-anemia",
+      "leukemia",
+      "multiple-myeloma",
+      "pancytopenia",
+      "thrombocytopenia"
+    ],
+    "iron-deficiency-anemia": [
+      "aplastic-anemia",
+      "multiple-myeloma",
+      "pancytopenia",
+      "sickle-cell",
+      "thrombocytopenia"
+    ],
+    "leukemia": [
+      "aplastic-anemia",
+      "lymphadenopathy",
+      "lymphoma",
+      "multiple-myeloma",
+      "myelodysplastic-syndromes",
+      "pancytopenia"
+    ],
+    "multiple-myeloma": [
+      "aplastic-anemia",
+      "iron-deficiency-anemia",
+      "leukemia"
+    ],
+    "pancytopenia": [
+      "aplastic-anemia",
+      "iron-deficiency-anemia",
+      "leukemia"
+    ],
+    "thrombocytopenia": [
+      "aplastic-anemia",
+      "iron-deficiency-anemia"
+    ],
+    "blood-coagulation": [
+      "hemophilia"
+    ],
+    "hemophilia": [
+      "blood-coagulation"
+    ],
+    "sickle-cell": [
+      "iron-deficiency-anemia",
+      "pernicious-anemia"
+    ],
+    "lymphadenopathy": [
+      "leukemia"
+    ],
+    "lymphoma": [
+      "leukemia"
+    ],
+    "myelodysplastic-syndromes": [
+      "leukemia"
+    ],
+    "pernicious-anemia": [
+      "sickle-cell"
+    ],
+    "acute-febrile-illness": [
+      "nosocomial"
+    ],
+    "nosocomial": [
+      "acute-febrile-illness",
+      "gram-negative",
+      "hospital-acquired-infection",
+      "malaria"
+    ],
+    "gram-negative": [
+      "nosocomial"
+    ],
+    "hospital-acquired-infection": [
+      "nosocomial"
+    ],
+    "malaria": [
+      "nosocomial"
+    ],
+    "ankylosing-spondylitis": [
+      "autoimmune-disorders",
+      "gout",
+      "osteoarthritis",
+      "psoriatic-arthritis",
+      "rheumatoid-arthritis",
+      "scleroderma"
+    ],
+    "autoimmune-disorders": [
+      "ankylosing-spondylitis",
+      "rheumatoid-arthritis"
+    ],
+    "gout": [
+      "ankylosing-spondylitis",
+      "rheumatoid-arthritis"
+    ],
+    "osteoarthritis": [
+      "ankylosing-spondylitis",
+      "rheumatoid-arthritis"
+    ],
+    "psoriatic-arthritis": [
+      "ankylosing-spondylitis",
+      "rheumatoid-arthritis"
+    ],
+    "rheumatoid-arthritis": [
+      "ankylosing-spondylitis",
+      "autoimmune-disorders",
+      "gout",
+      "osteoarthritis",
+      "psoriatic-arthritis"
+    ],
+    "scleroderma": [
+      "ankylosing-spondylitis"
+    ],
+    "systemic-lupus-erythematosus": [
+      "ankylosing-spondylitis"
+    ],
+    "uric-acid": [
+      "ankylosing-spondylitis"
+    ],
+    "vasculitis": [
+      "ankylosing-spondylitis"
+    ],
+    "bioavailability": [
+      "diuretics"
+    ],
+    "diuretics": [
+      "bioavailability",
+      "clinical-pharmacology"
+    ],
+    "clinical-pharmacology": [
+      "diuretics"
+    ],
+    "pleuritic-chest-pain": [
+      "aortic-dissection",
+      "chest-pain-angina"
+    ],
+    "amnesic-aphasia": [
+      "amnestic-aphasia",
+      "anomic-aphasia",
+      "aphasia",
+      "associative-aphasia",
+      "brocas-aphasia",
+      "central-aphasia"
+    ],
+    "amnestic-aphasia": [
+      "amnesic-aphasia",
+      "anomic-aphasia",
+      "aphasia",
+      "associative-aphasia",
+      "brocas-aphasia",
+      "central-aphasia"
+    ],
+    "anomic-aphasia": [
+      "amnesic-aphasia",
+      "amnestic-aphasia",
+      "aphasia",
+      "associative-aphasia",
+      "brocas-aphasia",
+      "central-aphasia"
+    ],
+    "aphasia": [
+      "amnesic-aphasia",
+      "amnestic-aphasia",
+      "anomic-aphasia",
+      "associative-aphasia",
+      "brocas-aphasia",
+      "central-aphasia"
+    ],
+    "associative-aphasia": [
+      "amnesic-aphasia",
+      "amnestic-aphasia",
+      "anomic-aphasia",
+      "aphasia",
+      "brocas-aphasia",
+      "central-aphasia"
+    ],
+    "brocas-aphasia": [
+      "amnesic-aphasia",
+      "amnestic-aphasia",
+      "anomic-aphasia",
+      "aphasia",
+      "associative-aphasia",
+      "central-aphasia"
+    ],
+    "central-aphasia": [
+      "amnesic-aphasia",
+      "amnestic-aphasia",
+      "anomic-aphasia",
+      "aphasia",
+      "associative-aphasia",
+      "brocas-aphasia"
+    ],
+    "commissural-aphasia": [
+      "amnesic-aphasia",
+      "amnestic-aphasia",
+      "anomic-aphasia",
+      "aphasia",
+      "associative-aphasia",
+      "brocas-aphasia"
+    ],
+    "complete-aphasia": [
+      "amnesic-aphasia",
+      "amnestic-aphasia",
+      "anomic-aphasia",
+      "aphasia",
+      "associative-aphasia",
+      "brocas-aphasia"
+    ],
+    "deep-aphasia": [
+      "amnesic-aphasia",
+      "amnestic-aphasia",
+      "anomic-aphasia",
+      "aphasia",
+      "associative-aphasia",
+      "brocas-aphasia"
+    ],
+    "fluent-aphasia": [
+      "amnesic-aphasia",
+      "amnestic-aphasia",
+      "anomic-aphasia",
+      "aphasia",
+      "associative-aphasia",
+      "brocas-aphasia"
+    ],
+    "global-aphasia": [
+      "amnesic-aphasia",
+      "amnestic-aphasia",
+      "anomic-aphasia",
+      "aphasia",
+      "associative-aphasia",
+      "brocas-aphasia"
+    ],
+    "motor-aphasia": [
+      "amnesic-aphasia",
+      "amnestic-aphasia",
+      "anomic-aphasia",
+      "aphasia",
+      "associative-aphasia",
+      "brocas-aphasia"
+    ],
+    "nominal-aphasia": [
+      "amnesic-aphasia",
+      "amnestic-aphasia",
+      "anomic-aphasia",
+      "aphasia",
+      "associative-aphasia",
+      "brocas-aphasia"
+    ],
+    "nonfluent-aphasia": [
+      "amnesic-aphasia",
+      "amnestic-aphasia",
+      "anomic-aphasia",
+      "aphasia",
+      "associative-aphasia",
+      "brocas-aphasia"
+    ],
+    "optic-aphasia": [
+      "amnesic-aphasia",
+      "amnestic-aphasia",
+      "anomic-aphasia",
+      "aphasia",
+      "associative-aphasia",
+      "brocas-aphasia"
+    ],
+    "paraphasia": [
+      "amnesic-aphasia",
+      "amnestic-aphasia",
+      "anomic-aphasia",
+      "aphasia",
+      "associative-aphasia",
+      "brocas-aphasia"
+    ],
+    "postrolandic-aphasia": [
+      "amnesic-aphasia",
+      "amnestic-aphasia",
+      "anomic-aphasia",
+      "aphasia",
+      "associative-aphasia",
+      "brocas-aphasia"
+    ],
+    "prerolandic-aphasia": [
+      "amnesic-aphasia",
+      "amnestic-aphasia",
+      "anomic-aphasia",
+      "aphasia",
+      "associative-aphasia",
+      "brocas-aphasia"
+    ],
+    "primary-progressive-aphasia": [
+      "amnesic-aphasia",
+      "amnestic-aphasia",
+      "anomic-aphasia",
+      "aphasia",
+      "associative-aphasia",
+      "brocas-aphasia"
+    ],
+    "receptive-aphasia": [
+      "amnesic-aphasia",
+      "amnestic-aphasia",
+      "anomic-aphasia",
+      "aphasia",
+      "associative-aphasia",
+      "brocas-aphasia"
+    ],
+    "sensory-aphasia": [
+      "amnesic-aphasia",
+      "amnestic-aphasia",
+      "anomic-aphasia",
+      "aphasia",
+      "associative-aphasia",
+      "brocas-aphasia"
+    ],
+    "subcortical-aphasia": [
+      "amnesic-aphasia",
+      "amnestic-aphasia",
+      "anomic-aphasia",
+      "aphasia",
+      "associative-aphasia",
+      "brocas-aphasia"
+    ],
+    "total-aphasia": [
+      "amnesic-aphasia",
+      "amnestic-aphasia",
+      "anomic-aphasia",
+      "aphasia",
+      "associative-aphasia",
+      "brocas-aphasia"
+    ],
+    "transcortical-aphasia": [
+      "amnesic-aphasia",
+      "amnestic-aphasia",
+      "anomic-aphasia",
+      "aphasia",
+      "associative-aphasia",
+      "brocas-aphasia"
+    ],
+    "wernickes-aphasia": [
+      "amnesic-aphasia",
+      "amnestic-aphasia",
+      "anomic-aphasia",
+      "aphasia",
+      "associative-aphasia",
+      "brocas-aphasia"
+    ],
+    "anatomic-brainstem-syndromes": [
+      "brainstem",
+      "brainstem-syndromes",
+      "classical-brainstem-syndromes"
+    ],
+    "brainstem-syndromes": [
+      "anatomic-brainstem-syndromes",
+      "brainstem",
+      "classical-brainstem-syndromes"
+    ],
+    "classical-brainstem-syndromes": [
+      "anatomic-brainstem-syndromes",
+      "brainstem",
+      "brainstem-syndromes"
+    ],
+    "bacterial-meningitis": [
+      "meningitis",
+      "neoplastic-meningitis"
+    ],
+    "meningitis": [
+      "bacterial-meningitis",
+      "neoplastic-meningitis"
+    ],
+    "neoplastic-meningitis": [
+      "bacterial-meningitis",
+      "meningitis"
+    ],
+    "benign-paroxysmal-positional-vertigo": [
+      "migraine-associated-vertigo",
+      "vertigo"
+    ],
+    "migraine-associated-vertigo": [
+      "benign-paroxysmal-positional-vertigo",
+      "vertigo"
+    ],
+    "vertigo": [
+      "benign-paroxysmal-positional-vertigo",
+      "migraine-associated-vertigo"
+    ],
+    "brainstem-stroke": [
+      "ischemic-stroketia",
+      "pure-motor-stroke",
+      "tiastroke-secondary-prevention"
+    ],
+    "ischemic-stroketia": [
+      "brainstem-stroke",
+      "pure-motor-stroke",
+      "tiastroke-secondary-prevention"
+    ],
+    "pure-motor-stroke": [
+      "brainstem-stroke",
+      "ischemic-stroketia",
+      "tiastroke-secondary-prevention"
+    ],
+    "tiastroke-secondary-prevention": [
+      "brainstem-stroke",
+      "ischemic-stroketia",
+      "pure-motor-stroke"
+    ],
+    "cluster-headache": [
+      "headache",
+      "tension-headache"
+    ],
+    "tension-headache": [
+      "cluster-headache",
+      "headache"
+    ],
+    "frontotemporal-dementia": [
+      "dementia"
+    ],
+    "asthma-management-pulmonary-rehabilitation": [
+      "bronchial-asthma"
+    ],
+    "enteral-nutrition": [
+      "parenteral-nutrition"
+    ],
+    "parenteral-nutrition": [
+      "enteral-nutrition"
+    ],
+    "aortic-dissection": [
+      "chest-pain-angina",
+      "pleuritic-chest-pain"
+    ],
+    "two-classes-of-primary-afferent": [
+      "two-neuropeptides-released-by-primary"
+    ],
+    "two-neuropeptides-released-by-primary": [
+      "two-classes-of-primary-afferent"
+    ],
+    "chronic-kidney-disease": [
+      "polycystic-kidney-disease"
+    ],
+    "diabetic-ketoacidosis": [
+      "osteoporosis"
+    ],
+    "osteoporosis": [
+      "diabetic-ketoacidosis"
+    ],
+    "thyroid-emergencies": [
+      "thyroid-storm"
+    ],
+    "thyroid-storm": [
+      "thyroid-emergencies"
+    ],
+    "cheynestokes": [
+      "cheynestokes-respirations"
+    ],
+    "cheynestokes-respirations": [
+      "cheynestokes"
+    ],
+    "stigmata-in-chronic-liver-disease": [
+      "liver-disease"
+    ],
+    "bullous-diseases-of-skin": [
+      "bullous-skin-diseases"
+    ],
+    "bullous-skin-diseases": [
+      "bullous-diseases-of-skin"
+    ],
+    "clinical-trial": [
+      "phase-iii-clinical-trial"
+    ],
+    "phase-iii-clinical-trial": [
+      "clinical-trial"
+    ]
+  },
+  "prerequisites": {
+    "heart-failure": [
+      "action-potential",
+      "cardiac-cycle"
+    ],
+    "cardiomyopathy": [
+      "action-potential",
+      "cardiac-cycle"
+    ],
+    "atrial-fibrillation": [
+      "action-potential"
+    ],
+    "acute-myocardial-infarction": [
+      "cardiac-cycle",
+      "coronary-artery-disease",
+      "peripheral-arterial-disease",
+      "pleuritic-chest-pain"
+    ],
+    "brainstem-syndromes": [
+      "brainstem"
+    ],
+    "brainstem-stroke": [
+      "brainstem"
+    ],
+    "bulbar-palsy": [
+      "brainstem"
+    ],
+    "pseudobulbar-palsy": [
+      "brainstem"
+    ],
+    "status-epilepticus": [
+      "epilepsy"
+    ],
+    "acute-kidney-injury": [
+      "ckd-complications",
+      "glomerular-filtration",
+      "nephron-physiology"
+    ],
+    "chronic-kidney-disease": [
+      "ckd-complications",
+      "glomerular-filtration",
+      "nephron-physiology"
+    ],
+    "nephrotic-syndrome": [
+      "glomerulonephritis"
+    ],
+    "nephritic-syndrome": [
+      "glomerulonephritis"
+    ],
+    "diabetic-ketoacidosis": [
+      "diabetes-mellitus",
+      "thyroid-function"
+    ],
+    "jaundice": [
+      "bilirubin-metabolism"
+    ],
+    "hepatitis": [
+      "bilirubin-metabolism"
+    ],
+    "liver-disease": [
+      "bilirubin-metabolism"
+    ],
+    "cirrhosis": [
+      "bilirubin-metabolism"
+    ],
+    "ascites": [
+      "cirrhosis"
+    ],
+    "thrombocytopenia": [
+      "hemostasis"
+    ],
+    "pulmonary-embolism": [
+      "cardiac-cycle",
+      "peripheral-arterial-disease",
+      "pleuritic-chest-pain"
+    ],
+    "acute-disseminated-encephalomyelitis": [
+      "dural-venous-sinuses-classification",
+      "normal-pressure-hydrocephalus"
+    ],
+    "acute-meningoencephalitis": [
+      "dural-venous-sinuses-classification",
+      "normal-pressure-hydrocephalus"
+    ],
+    "delirium": [
+      "dural-venous-sinuses-classification",
+      "normal-pressure-hydrocephalus"
+    ],
+    "ischemic-stroketia": [
+      "dural-venous-sinuses-classification",
+      "normal-pressure-hydrocephalus"
+    ],
+    "drug-induced-dyselectrolytemia": [
+      "ckd-complications",
+      "nephron-physiology"
+    ],
+    "hyperkalemia": [
+      "ckd-complications",
+      "nephron-physiology"
+    ],
+    "lupus-nephritis": [
+      "ckd-complications",
+      "nephron-physiology"
+    ],
+    "insulin-therapy": [
+      "thyroid-function"
+    ],
+    "osteoporosis": [
+      "thyroid-function"
+    ],
+    "asthma-management-pulmonary-rehabilitation": [
+      "community-acquired-pneumonia-cap",
+      "sarcoidosis"
+    ],
+    "bronchiectasis": [
+      "community-acquired-pneumonia-cap",
+      "sarcoidosis"
+    ],
+    "chronic-cough": [
+      "community-acquired-pneumonia-cap",
+      "sarcoidosis"
+    ],
+    "copd-exacerbation": [
+      "community-acquired-pneumonia-cap",
+      "sarcoidosis"
+    ],
+    "ankylosing-spondylitis": [
+      "bony-anatomy",
+      "sleep-cycle-disturbances"
+    ],
+    "chronic-intranasal-cocaine": [
+      "bony-anatomy",
+      "sleep-cycle-disturbances"
+    ],
+    "gout": [
+      "bony-anatomy",
+      "sleep-cycle-disturbances"
+    ]
   }
 }
