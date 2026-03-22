@@ -23,6 +23,8 @@
     <h1>Learn</h1>
     <p style="color: var(--text-secondary); margin-top: 12px; font-size: 1.125rem;">Browse topics by system. Expand any topic to study flashcards and hints inline.</p>
 
+    <div class="sr-banner" id="sr-banner" style="display:none;"></div>
+
     <input type="search" class="topic-search" id="topic-search" placeholder="Filter topics&hellip;" autocomplete="off">
     <div class="system-btns" id="system-filters"></div>
     <div class="filter-status" id="filter-status"></div>
@@ -35,6 +37,13 @@
     <div id="tools-catalog"></div>
   </main>
   <div id="site-footer"></div>
+  <div class="sr-overlay" id="sr-overlay">
+    <div class="sr-overlay-header">
+      <h3>Flashcard Review</h3>
+      <button class="sr-close-btn" id="sr-close">&times;</button>
+    </div>
+    <div id="sr-card-container"></div>
+  </div>
   <script>if('serviceWorker' in navigator)navigator.serviceWorker.register('/sw.js');</script>
   <script src="../assets/js/template.js?v=6"></script>
   <script src="learn.js"></script>

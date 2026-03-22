@@ -1,8 +1,9 @@
-/* MBBEasy -- Learn: topics + inline flashcards + tools catalog */
+/* MBBEasy -- Learn: topics + inline flashcards + tools catalog + spaced repetition */
 var LearnUI = (function () {
   'use strict';
 
   var SYSTEMS_ORDER = ['CVS','Neuro','Renal','Endocrine','RS','GI','Heme','ID','Rheum','Derm','Pharmacology','General'];
+  var SR_KEY = 'mbbeasy-flashcard-sr';
 
   var allTopics = [];
   var allFlashcards = [];
@@ -16,6 +17,9 @@ var LearnUI = (function () {
   /* Tools indexed by id */
   var toolsById = {};
 
+  /* Spaced repetition state */
+  var srState = { cards: {} };
+
   function escapeHtml(str) {
     var div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
@@ -23,6 +27,108 @@ var LearnUI = (function () {
   }
 
   function normalize(s) { return s.toLowerCase().trim(); }
+
+  function todayStr() { return new Date().toISOString().slice(0, 10); }
+
+  /* === Spaced Repetition === */
+
+  function loadSR() {
+    try {
+      var saved = localStorage.getItem(SR_KEY);
+      if (saved) srState = JSON.parse(saved);
+      if (!srState.cards) srState.cards = {};
+    } catch (e) { srState = { cards: {} }; }
+  }
+
+  function saveSR() {
+    try { localStorage.setItem(SR_KEY, JSON.stringify(srState)); } catch (e) {}
+  }
+
+  function markCard(fcId, hard) {
+    var entry = srState.cards[fcId] || { bucket: 0, lastSeen: null };
+    if (hard) {
+      entry.bucket = 0;
+    } else {
+      entry.bucket = Math.min(entry.bucket + 1, 2);
+    }
+    entry.lastSeen = todayStr();
+    srState.cards[fcId] = entry;
+    saveSR();
+  }
+
+  function isDue(fcId) {
+    var entry = srState.cards[fcId];
+    if (!entry || !entry.lastSeen) return true; /* Never seen = due */
+    var daysSince = Math.floor((new Date(todayStr()) - new Date(entry.lastSeen)) / 86400000);
+    if (entry.bucket === 0) return true;           /* Hard: always due */
+    if (entry.bucket === 1) return daysSince >= 3;  /* Learning: 3 days */
+    return daysSince >= 7;                          /* Known: 7 days */
+  }
+
+  function getDueCards() {
+    return allFlashcards.filter(function (fc) { return isDue(fc.id); });
+  }
+
+  function getBucketLabel(fcId) {
+    var entry = srState.cards[fcId];
+    if (!entry) return null;
+    return ['Hard', 'Learning', 'Known'][entry.bucket];
+  }
+
+  function updateReviewBanner() {
+    var banner = document.getElementById('sr-banner');
+    if (!banner) return;
+    var due = getDueCards();
+    if (due.length > 0) {
+      banner.innerHTML = '<span class="sr-banner-text">' + due.length + ' flashcard' + (due.length > 1 ? 's' : '') + ' due for review</span>' +
+        '<button class="sr-banner-btn" id="sr-start-review">Review now &rarr;</button>';
+      banner.style.display = 'flex';
+    } else {
+      banner.style.display = 'none';
+    }
+  }
+
+  /* === Review overlay === */
+
+  var reviewCards = [];
+  var reviewIdx = 0;
+
+  function openReview() {
+    reviewCards = getDueCards();
+    if (reviewCards.length === 0) return;
+    reviewIdx = 0;
+    renderReviewCard();
+    document.getElementById('sr-overlay').classList.add('visible');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeReview() {
+    var overlay = document.getElementById('sr-overlay');
+    if (overlay) overlay.classList.remove('visible');
+    document.body.style.overflow = '';
+    updateReviewBanner();
+  }
+
+  function renderReviewCard() {
+    var container = document.getElementById('sr-card-container');
+    if (!container || reviewCards.length === 0) return;
+
+    var card = reviewCards[reviewIdx];
+    var bucket = getBucketLabel(card.id);
+    var bucketTag = bucket ? '<span class="sr-bucket-tag sr-bucket-' + (srState.cards[card.id] ? srState.cards[card.id].bucket : 0) + '">' + bucket + '</span>' : '';
+
+    container.innerHTML =
+      '<div class="sr-progress">' + (reviewIdx + 1) + ' / ' + reviewCards.length + ' ' + bucketTag + '</div>' +
+      '<div class="sr-card">' +
+        '<div class="sr-question">' + escapeHtml(card.question) + '</div>' +
+        '<div class="sr-answer" id="sr-answer">' + renderAnswer(card.answer) + '</div>' +
+        '<button class="sr-reveal-btn" id="sr-reveal">Show Answer</button>' +
+        '<div class="sr-actions" id="sr-actions" style="display:none;">' +
+          '<button class="sr-btn sr-btn-hard" data-action="hard">Hard</button>' +
+          '<button class="sr-btn sr-btn-got-it" data-action="gotit">Got it</button>' +
+        '</div>' +
+      '</div>';
+  }
 
   /* === Data loading === */
 
@@ -36,11 +142,13 @@ var LearnUI = (function () {
       allFlashcards = results[1];
       allTools = results[2];
       buildIndices();
+      loadSR();
       restoreFilter();
       applyFilter();
       buildFilterButtons();
       bindEvents();
       renderCatalog();
+      updateReviewBanner();
     });
   }
 
@@ -201,12 +309,19 @@ var LearnUI = (function () {
         if (cards.length) {
           html += '<div class="topic-inline-flashcards">';
           cards.forEach(function (card) {
+            var bucketLabel = getBucketLabel(card.id);
+            var bucketHtml = bucketLabel ? ' <span class="fc-bucket fc-bucket-' + (srState.cards[card.id] ? srState.cards[card.id].bucket : 0) + '">' + bucketLabel + '</span>' : '';
             html += '<div class="flashcard">' +
               '<div class="flashcard-head">' +
-                '<div class="flashcard-question">' + escapeHtml(card.question) + '</div>' +
+                '<div class="flashcard-question">' + escapeHtml(card.question) + bucketHtml + '</div>' +
                 '<div class="flashcard-meta"><button class="flashcard-toggle" data-id="' + card.id + '">Show</button></div>' +
               '</div>' +
-              '<div class="flashcard-answer" data-id="' + card.id + '">' + renderAnswer(card.answer) + '</div></div>';
+              '<div class="flashcard-answer" data-id="' + card.id + '">' + renderAnswer(card.answer) +
+                '<div class="fc-sr-buttons" data-fc-id="' + card.id + '">' +
+                  '<button class="fc-sr-btn fc-sr-hard" data-action="hard">Hard</button>' +
+                  '<button class="fc-sr-btn fc-sr-gotit" data-action="gotit">Got it</button>' +
+                '</div>' +
+              '</div></div>';
           });
           html += '</div>';
         }
@@ -221,6 +336,9 @@ var LearnUI = (function () {
           });
           html += '</div>';
         }
+
+        /* Cross-link to MCQs page */
+        html += '<a class="topic-cross-link" href="/mcqs/?system=' + encodeURIComponent(t.system) + '">Practice ' + escapeHtml(t.system) + ' MCQs &rarr;</a>';
 
         if (!cards.length && !tools.length && !t.what_to_memorize) {
           html += '<div class="topic-empty-body">No flashcards or tools linked yet.</div>';
@@ -285,6 +403,30 @@ var LearnUI = (function () {
           answerEl.classList.toggle('visible');
           toggleBtn.textContent = isVisible ? 'Show' : 'Hide';
         }
+        return;
+      }
+
+      /* SR buttons on inline flashcards */
+      var srBtn = e.target.closest('.fc-sr-btn');
+      if (srBtn) {
+        var fcId = srBtn.closest('.fc-sr-buttons').dataset.fcId;
+        markCard(fcId, srBtn.dataset.action === 'hard');
+        /* Update bucket label */
+        var flashcardEl = srBtn.closest('.flashcard');
+        if (flashcardEl) {
+          var oldBucket = flashcardEl.querySelector('.fc-bucket');
+          var newLabel = getBucketLabel(fcId);
+          var newBucket = srState.cards[fcId] ? srState.cards[fcId].bucket : 0;
+          if (oldBucket) {
+            oldBucket.textContent = newLabel;
+            oldBucket.className = 'fc-bucket fc-bucket-' + newBucket;
+          } else {
+            var qEl = flashcardEl.querySelector('.flashcard-question');
+            if (qEl) qEl.insertAdjacentHTML('beforeend', ' <span class="fc-bucket fc-bucket-' + newBucket + '">' + newLabel + '</span>');
+          }
+        }
+        updateReviewBanner();
+        return;
       }
     });
 
@@ -300,12 +442,81 @@ var LearnUI = (function () {
         }, 200);
       });
     }
+
+    /* SR review banner click */
+    document.addEventListener('click', function (e) {
+      if (e.target.closest('#sr-start-review')) {
+        openReview();
+        return;
+      }
+      if (e.target.closest('#sr-close')) {
+        closeReview();
+        return;
+      }
+      /* Review overlay: reveal */
+      if (e.target.closest('#sr-reveal')) {
+        var ansEl = document.getElementById('sr-answer');
+        var actEl = document.getElementById('sr-actions');
+        if (ansEl) ansEl.classList.add('visible');
+        if (actEl) actEl.style.display = 'flex';
+        e.target.style.display = 'none';
+        return;
+      }
+      /* Review overlay: Hard / Got it */
+      var srAction = e.target.closest('.sr-btn');
+      if (srAction && reviewCards.length > 0) {
+        var card = reviewCards[reviewIdx];
+        markCard(card.id, srAction.dataset.action === 'hard');
+        reviewIdx++;
+        if (reviewIdx >= reviewCards.length) {
+          closeReview();
+        } else {
+          renderReviewCard();
+        }
+        return;
+      }
+    });
+  }
+
+  /* === URL params === */
+
+  function handleUrlParams() {
+    var params = new URLSearchParams(window.location.search);
+    var sys = params.get('system');
+    if (sys && SYSTEMS_ORDER.indexOf(sys) !== -1) {
+      filters.system = sys;
+      applyFilter();
+      buildFilterButtons();
+    }
+    var highlight = params.get('highlight');
+    if (highlight) {
+      /* Find topic's system, set filter, then scroll to it */
+      var topic = allTopics.find(function (t) { return t.id === highlight; });
+      if (topic) {
+        filters.system = topic.system;
+        applyFilter();
+        buildFilterButtons();
+        setTimeout(function () {
+          var card = document.querySelector('[data-topic-id="' + highlight + '"]');
+          if (card) {
+            card.classList.add('expanded');
+            card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }, 100);
+      }
+    }
+    /* Auto-open review if requested */
+    if (params.get('review') === 'true') {
+      setTimeout(openReview, 200);
+    }
   }
 
   /* === Init === */
 
   function init() {
-    loadAll().catch(function (err) {
+    loadAll().then(function () {
+      handleUrlParams();
+    }).catch(function (err) {
       console.error('Learn load error:', err);
       var deck = document.getElementById('topic-deck');
       if (deck) deck.innerHTML = '<div class="empty-state">Failed to load data.</div>';

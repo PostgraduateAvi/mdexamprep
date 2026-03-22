@@ -1,8 +1,10 @@
-/* MBBEasy -- MCQs: standalone practice page with score tracking */
+/* MBBEasy -- MCQs: practice page with persistent scoring + quiz modes */
 var McqsUI = (function () {
   'use strict';
 
   var SYSTEMS_ORDER = ['Neuro','Endocrine','Renal','General','CVS','ID','Rheum','Heme','GI','RS','Derm'];
+  var STORAGE_KEY = 'mbbeasy-mcq-progress';
+  var TIMER_KEY = 'mbbeasy-mcq-timer';
 
   var allMcqs = [];
   var filteredMcqs = [];
@@ -10,9 +12,13 @@ var McqsUI = (function () {
   var MCQ_PAGE_SIZE = 20;
   var mcqPage = 0;
 
-  /* Session score (resets on page load) */
-  var scoreCorrect = 0;
-  var scoreTotal = 0;
+  /* Quiz mode: 'practice' | 'quick20' | 'timed' */
+  var quizMode = 'practice';
+  var timerInterval = null;
+  var timerEndTime = null;
+
+  /* Persistent progress */
+  var progress = { answered: {}, correct: {}, streak: 0, bestStreak: 0, lastDate: null };
 
   function escapeHtml(str) {
     var div = document.createElement('div');
@@ -20,18 +26,129 @@ var McqsUI = (function () {
     return div.innerHTML;
   }
 
+  function todayStr() {
+    return new Date().toISOString().slice(0, 10);
+  }
+
+  function findTopicLink(mcq) {
+    /* Try matching MCQ subject against topic names */
+    var subjectKey = (mcq.subject || '').toLowerCase().trim();
+    if (topicLookup[subjectKey]) {
+      return { href: '/learn/?highlight=' + topicLookup[subjectKey].id, label: mcq.subject };
+    }
+    /* Fallback: link to system */
+    if (mcq.system) {
+      return { href: '/learn/?system=' + encodeURIComponent(mcq.system), label: mcq.system + ' topics' };
+    }
+    return null;
+  }
+
+  /* === Persistence === */
+
+  function loadProgress() {
+    try {
+      var saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        var p = JSON.parse(saved);
+        if (p.answered) progress.answered = p.answered;
+        if (p.correct) progress.correct = p.correct;
+        if (typeof p.streak === 'number') progress.streak = p.streak;
+        if (typeof p.bestStreak === 'number') progress.bestStreak = p.bestStreak;
+        if (p.lastDate) progress.lastDate = p.lastDate;
+      }
+    } catch (e) {}
+    /* Reset streak if not today or yesterday */
+    if (progress.lastDate) {
+      var diff = Math.floor((new Date(todayStr()) - new Date(progress.lastDate)) / 86400000);
+      if (diff > 1) progress.streak = 0;
+    }
+  }
+
+  function saveProgress() {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(progress)); } catch (e) {}
+  }
+
+  function recordAnswer(mcqId, chosen, isCorrect) {
+    progress.answered[mcqId] = chosen;
+    progress.correct[mcqId] = isCorrect;
+    var today = todayStr();
+    if (isCorrect) {
+      progress.streak++;
+      if (progress.streak > progress.bestStreak) progress.bestStreak = progress.streak;
+    } else {
+      progress.streak = 0;
+    }
+    progress.lastDate = today;
+    saveProgress();
+  }
+
+  function getScoreFromProgress() {
+    var total = 0, correct = 0;
+    for (var id in progress.answered) {
+      total++;
+      if (progress.correct[id]) correct++;
+    }
+    return { total: total, correct: correct };
+  }
+
+  function resetProgress() {
+    if (!window.confirm('Reset all MCQ progress? This cannot be undone.')) return;
+    progress = { answered: {}, correct: {}, streak: 0, bestStreak: 0, lastDate: null };
+    saveProgress();
+    clearTimer();
+    quizMode = 'practice';
+    applyFilter();
+    updateScore();
+    updateModeButtons();
+  }
+
+  /* === Shuffle === */
+
+  function shuffleArray(arr) {
+    var a = arr.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+    }
+    return a;
+  }
+
   /* === Data === */
 
+  /* Topic lookup for cross-links */
+  var topicLookup = {}; /* normalized topic name -> { id, system } */
+
   function loadMcqs() {
-    return fetch('/mcqs/data/mcqs.json')
-      .then(function (r) { if (!r.ok) throw new Error('Failed'); return r.json(); })
-      .then(function (mcqs) {
-        allMcqs = mcqs;
+    return Promise.all([
+      fetch('/mcqs/data/mcqs.json').then(function (r) { return r.json(); }),
+      fetch('/learn/data/topics.json').then(function (r) { return r.json(); }).catch(function () { return []; })
+    ]).then(function (results) {
+        allMcqs = results[0];
+        /* Build topic cross-link lookup */
+        (results[1] || []).forEach(function (t) {
+          topicLookup[t.topic.toLowerCase().trim()] = { id: t.id, system: t.system };
+        });
+        loadProgress();
         restoreFilter();
         applyFilter();
         buildFilterButtons();
+        buildModeButtons();
         bindEvents();
+        updateScore();
+        handleUrlParams();
       });
+  }
+
+  /* === URL params === */
+
+  function handleUrlParams() {
+    var params = new URLSearchParams(window.location.search);
+    var sys = params.get('system');
+    if (sys && SYSTEMS_ORDER.indexOf(sys) !== -1) {
+      mcqFilters.system = sys;
+      applyFilter();
+      buildFilterButtons();
+    }
   }
 
   /* === Filters === */
@@ -51,26 +168,61 @@ var McqsUI = (function () {
   }
 
   function applyFilter() {
-    filteredMcqs = allMcqs.filter(function (m) {
+    var base = allMcqs.filter(function (m) {
       if (mcqFilters.system && m.system !== mcqFilters.system) return false;
       return true;
     });
+
+    /* Apply quiz mode filtering */
+    if (quizMode === 'quick20') {
+      /* Filter options: unanswered, wrong, or all */
+      var modeFilter = getModeFilter();
+      if (modeFilter === 'unanswered') {
+        base = base.filter(function (m) { return !progress.answered[m.id]; });
+      } else if (modeFilter === 'wrong') {
+        base = base.filter(function (m) { return progress.correct[m.id] === false; });
+      }
+      base = shuffleArray(base).slice(0, 20);
+    } else if (quizMode === 'timed') {
+      var modeFilter2 = getModeFilter();
+      if (modeFilter2 === 'unanswered') {
+        base = base.filter(function (m) { return !progress.answered[m.id]; });
+      }
+      base = shuffleArray(base).slice(0, 50);
+    }
+
+    filteredMcqs = base;
     mcqPage = 0;
     updateStatus();
     saveFilter();
     renderMcqs();
   }
 
+  function getModeFilter() {
+    var el = document.querySelector('.mode-subfilter.active');
+    return el ? el.dataset.filter : 'all';
+  }
+
   function updateStatus() {
     var el = document.getElementById('mcq-filter-status');
-    if (el) el.textContent = 'Showing ' + filteredMcqs.length + ' of ' + allMcqs.length;
+    if (!el) return;
+    if (quizMode === 'practice') {
+      el.textContent = 'Showing ' + filteredMcqs.length + ' of ' + allMcqs.length;
+    } else if (quizMode === 'quick20') {
+      el.textContent = 'Quick 20 — ' + filteredMcqs.length + ' questions';
+    } else if (quizMode === 'timed') {
+      el.textContent = 'Timed Exam — ' + filteredMcqs.length + ' questions';
+    }
   }
 
   function updateScore() {
+    var s = getScoreFromProgress();
     var correctEl = document.getElementById('score-correct');
     var totalEl = document.getElementById('score-total');
-    if (correctEl) correctEl.textContent = scoreCorrect;
-    if (totalEl) totalEl.textContent = scoreTotal;
+    var streakEl = document.getElementById('score-streak');
+    if (correctEl) correctEl.textContent = s.correct;
+    if (totalEl) totalEl.textContent = s.total;
+    if (streakEl) streakEl.textContent = progress.streak;
   }
 
   function buildFilterButtons() {
@@ -94,8 +246,139 @@ var McqsUI = (function () {
       mcqFilters.system = sys === 'all' ? null : sys;
       el.querySelectorAll('.system-btn').forEach(function (b) { b.classList.remove('active'); });
       btn.classList.add('active');
+      clearTimer();
       applyFilter();
     });
+  }
+
+  /* === Quiz mode buttons === */
+
+  function buildModeButtons() {
+    var el = document.getElementById('quiz-mode-bar');
+    if (!el) return;
+
+    el.innerHTML =
+      '<div class="quiz-modes">' +
+        '<button class="mode-btn active" data-mode="practice">Practice</button>' +
+        '<button class="mode-btn" data-mode="quick20">Quick 20</button>' +
+        '<button class="mode-btn" data-mode="timed">Timed Exam</button>' +
+      '</div>' +
+      '<div class="mode-subfilters" id="mode-subfilters" style="display:none;">' +
+        '<button class="mode-subfilter active" data-filter="all">All</button>' +
+        '<button class="mode-subfilter" data-filter="unanswered">Unanswered</button>' +
+        '<button class="mode-subfilter" data-filter="wrong">Wrong only</button>' +
+      '</div>';
+
+    el.addEventListener('click', function (e) {
+      var modeBtn = e.target.closest('.mode-btn');
+      if (modeBtn) {
+        var mode = modeBtn.dataset.mode;
+        setQuizMode(mode);
+        return;
+      }
+      var subBtn = e.target.closest('.mode-subfilter');
+      if (subBtn) {
+        el.querySelectorAll('.mode-subfilter').forEach(function (b) { b.classList.remove('active'); });
+        subBtn.classList.add('active');
+        clearTimer();
+        applyFilter();
+        if (quizMode === 'timed') startTimer();
+      }
+    });
+  }
+
+  function setQuizMode(mode) {
+    clearTimer();
+    quizMode = mode;
+    updateModeButtons();
+
+    var subEl = document.getElementById('mode-subfilters');
+    if (subEl) subEl.style.display = (mode === 'practice') ? 'none' : 'flex';
+
+    applyFilter();
+    if (mode === 'timed') startTimer();
+  }
+
+  function updateModeButtons() {
+    var btns = document.querySelectorAll('.mode-btn');
+    btns.forEach(function (b) {
+      b.classList.toggle('active', b.dataset.mode === quizMode);
+    });
+  }
+
+  /* === Timer (Timed Exam) === */
+
+  function startTimer() {
+    var timerEl = document.getElementById('exam-timer');
+    if (!timerEl) return;
+    timerEl.style.display = 'flex';
+    timerEndTime = Date.now() + 60 * 60 * 1000; /* 60 minutes */
+    try { localStorage.setItem(TIMER_KEY, String(timerEndTime)); } catch (e) {}
+    updateTimerDisplay();
+    timerInterval = setInterval(updateTimerDisplay, 1000);
+  }
+
+  function clearTimer() {
+    if (timerInterval) { clearInterval(timerInterval); timerInterval = null; }
+    timerEndTime = null;
+    try { localStorage.removeItem(TIMER_KEY); } catch (e) {}
+    var timerEl = document.getElementById('exam-timer');
+    if (timerEl) { timerEl.style.display = 'none'; timerEl.classList.remove('timer-warning'); }
+  }
+
+  function updateTimerDisplay() {
+    var timerEl = document.getElementById('exam-timer');
+    if (!timerEl || !timerEndTime) return;
+    var remaining = Math.max(0, timerEndTime - Date.now());
+    var mins = Math.floor(remaining / 60000);
+    var secs = Math.floor((remaining % 60000) / 1000);
+    timerEl.querySelector('.timer-text').textContent =
+      String(mins).padStart(2, '0') + ':' + String(secs).padStart(2, '0');
+    timerEl.classList.toggle('timer-warning', mins < 5);
+    if (remaining <= 0) {
+      clearTimer();
+      autoSubmitUnanswered();
+      showQuizSummary();
+    }
+  }
+
+  function autoSubmitUnanswered() {
+    document.querySelectorAll('.mcq-options:not(.answered)').forEach(function (optionsEl) {
+      optionsEl.classList.add('answered');
+      var correctAnswer = optionsEl.dataset.answer;
+      optionsEl.querySelectorAll('.mcq-option').forEach(function (btn) {
+        if (btn.dataset.choice === correctAnswer) btn.classList.add('correct');
+        btn.disabled = true;
+      });
+      var mcqId = optionsEl.dataset.id;
+      if (!progress.answered[mcqId]) {
+        recordAnswer(mcqId, null, false);
+      }
+    });
+    updateScore();
+  }
+
+  function showQuizSummary() {
+    var deck = document.getElementById('mcq-deck');
+    if (!deck) return;
+    var answered = 0, correct = 0;
+    filteredMcqs.forEach(function (m) {
+      if (progress.answered[m.id] !== undefined) {
+        answered++;
+        if (progress.correct[m.id]) correct++;
+      }
+    });
+    var pct = answered > 0 ? Math.round((correct / answered) * 100) : 0;
+    var summary = '<div class="quiz-summary">' +
+      '<h3>Quiz Complete</h3>' +
+      '<div class="quiz-summary-stats">' +
+        '<div class="quiz-stat"><span class="quiz-stat-value">' + correct + '/' + answered + '</span><span class="quiz-stat-label">Correct</span></div>' +
+        '<div class="quiz-stat"><span class="quiz-stat-value">' + pct + '%</span><span class="quiz-stat-label">Accuracy</span></div>' +
+        '<div class="quiz-stat"><span class="quiz-stat-value">' + progress.streak + '</span><span class="quiz-stat-label">Streak</span></div>' +
+      '</div>' +
+      '<button class="btn btn-secondary quiz-back-btn" onclick="location.reload()">Back to Practice</button>' +
+    '</div>';
+    deck.insertAdjacentHTML('afterbegin', summary);
   }
 
   /* === Rendering === */
@@ -109,26 +392,42 @@ var McqsUI = (function () {
     }
 
     var LABELS = ['A', 'B', 'C', 'D'];
-    var pageItems = filteredMcqs.slice(0, (mcqPage + 1) * MCQ_PAGE_SIZE);
+    var showAll = (quizMode === 'quick20' || quizMode === 'timed');
+    var pageItems = showAll ? filteredMcqs : filteredMcqs.slice(0, (mcqPage + 1) * MCQ_PAGE_SIZE);
     var html = '';
 
     pageItems.forEach(function (mcq, idx) {
+      var prev = progress.answered[mcq.id];
+      var isAnswered = prev !== undefined && prev !== null;
+      var prevCorrect = progress.correct[mcq.id];
+
       html += '<div class="mcq-card">';
       html += '<div class="mcq-head">';
       html += '<span class="mcq-number">' + (idx + 1) + '.</span>';
       html += '<div class="mcq-question">' + escapeHtml(mcq.question) + '</div>';
       html += '</div>';
-      html += '<div class="mcq-options" data-id="' + mcq.id + '" data-answer="' + mcq.answer + '">';
+      html += '<div class="mcq-options' + (isAnswered ? ' answered' : '') + '" data-id="' + mcq.id + '" data-answer="' + mcq.answer + '">';
       mcq.options.forEach(function (opt, i) {
-        html += '<button class="mcq-option" data-choice="' + LABELS[i] + '">' +
-          '<span class="mcq-option-label">' + LABELS[i] + '</span>' +
+        var label = LABELS[i];
+        var cls = 'mcq-option';
+        if (isAnswered) {
+          if (label === mcq.answer) cls += ' correct';
+          else if (label === prev && !prevCorrect) cls += ' incorrect';
+        }
+        html += '<button class="' + cls + '" data-choice="' + label + '"' + (isAnswered ? ' disabled' : '') + '>' +
+          '<span class="mcq-option-label">' + label + '</span>' +
           '<span class="mcq-option-text">' + escapeHtml(opt) + '</span></button>';
       });
       html += '</div>';
       if (mcq.explanation) {
-        html += '<div class="mcq-explanation" data-id="' + mcq.id + '">' +
+        html += '<div class="mcq-explanation' + (isAnswered ? ' visible' : '') + '" data-id="' + mcq.id + '">' +
           '<div class="clinical-pearl-label">Explanation</div>' +
           escapeHtml(mcq.explanation).replace(/\n/g, '<br>') + '</div>';
+      }
+      /* Cross-link to Learn page */
+      var crossLink = findTopicLink(mcq);
+      if (crossLink) {
+        html += '<a class="mcq-cross-link" href="' + crossLink.href + '">Study ' + escapeHtml(crossLink.label) + ' &rarr;</a>';
       }
       html += '<div class="mcq-meta">';
       html += '<span class="tag tag-muted">' + escapeHtml(mcq.system) + '</span>';
@@ -138,7 +437,7 @@ var McqsUI = (function () {
       html += '</div>';
     });
 
-    if (pageItems.length < filteredMcqs.length) {
+    if (!showAll && pageItems.length < filteredMcqs.length) {
       html += '<button class="btn btn-secondary mcq-load-more" style="width:100%;margin-top:12px;">Load more (' + (filteredMcqs.length - pageItems.length) + ' remaining)</button>';
     }
 
@@ -157,24 +456,34 @@ var McqsUI = (function () {
         if (optionsEl.classList.contains('answered')) return;
         var correctAnswer = optionsEl.dataset.answer;
         var chosen = optBtn.dataset.choice;
+        var mcqId = optionsEl.dataset.id;
+        var isCorrect = chosen === correctAnswer;
         optionsEl.classList.add('answered');
 
-        /* Update score */
-        scoreTotal++;
-        if (chosen === correctAnswer) scoreCorrect++;
+        /* Record persistent progress */
+        recordAnswer(mcqId, chosen, isCorrect);
         updateScore();
 
         optionsEl.querySelectorAll('.mcq-option').forEach(function (btn) {
           if (btn.dataset.choice === correctAnswer) {
             btn.classList.add('correct');
-          } else if (btn === optBtn && chosen !== correctAnswer) {
+          } else if (btn === optBtn && !isCorrect) {
             btn.classList.add('incorrect');
           }
           btn.disabled = true;
         });
 
-        var expEl = optionsEl.parentElement.querySelector('.mcq-explanation[data-id="' + optionsEl.dataset.id + '"]');
+        var expEl = optionsEl.parentElement.querySelector('.mcq-explanation[data-id="' + mcqId + '"]');
         if (expEl) expEl.classList.add('visible');
+
+        /* Check if quiz complete (Quick 20 / Timed) */
+        if (quizMode !== 'practice') {
+          var allDone = filteredMcqs.every(function (m) { return progress.answered[m.id] !== undefined; });
+          if (allDone) {
+            clearTimer();
+            showQuizSummary();
+          }
+        }
         return;
       }
 
@@ -184,6 +493,12 @@ var McqsUI = (function () {
         renderMcqs();
       }
     });
+
+    /* Reset button */
+    var resetBtn = document.getElementById('mcq-reset');
+    if (resetBtn) {
+      resetBtn.addEventListener('click', resetProgress);
+    }
   }
 
   /* === Init === */

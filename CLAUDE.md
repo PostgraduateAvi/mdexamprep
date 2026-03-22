@@ -1,6 +1,6 @@
 # MBBEasy (formerly MD Exam Prep) -- Project Root
 
-## Status: LIVE (Mar 22, 2026 -- Restructured: Predictor removed, Learn + MCQs split)
+## Status: LIVE (Mar 22, 2026 -- Session 22: Persistent scoring, quiz modes, SR, dashboard, MCQ expansion)
 
 **Brand**: MBBEasy — "Clinical medicine, decoded."
 **Built by Avinash Jothish.** Free. Static HTML/JS. No framework. Client-side only.
@@ -9,21 +9,36 @@
 
 ## Architecture (post-restructure, Session 21)
 
-Single CSS file (`style.css`). "Dark Luxury" design system. Self-hosted fonts (DM Sans body + Source Serif 4 headings, ~185KB WOFF2 in `/assets/fonts/`). Sticky glass nav, amber clinical pearls, stagger card animations. PWA with offline support (service worker v8 + manifest). OG meta tags for social sharing.
+Single CSS file (`style.css`). "Dark Luxury" design system. Self-hosted fonts (DM Sans body + Source Serif 4 headings, ~185KB WOFF2 in `/assets/fonts/`). Sticky glass nav, amber clinical pearls, stagger card animations. PWA with offline support (service worker v9 + manifest). OG meta tags for social sharing.
 
-**Landing** (`index.html`) -- Hero with eyebrow + 3 numbered tool cards: Learn, MCQs, Practicals.
+**Landing** (`index.html`) -- Hero with eyebrow + 3 numbered tool cards + returning-user dashboard.
+- Dashboard: MCQ progress ring, streak counter, flashcards due, suggested next system.
+- Only renders for returning users (localStorage keys present).
 
-**Learn** (`learn/index.html`) -- Topic browser with inline flashcards.
+**Learn** (`learn/index.html`) -- Topic browser with inline flashcards + spaced repetition.
 - 397 curated topics across 12 systems (deduped from 1,718 dictionary entries).
 - Topics grouped by system, expandable cards.
-- Expanded: study hints (amber), inline flashcards (539 cards), linked study tools.
+- Expanded: study hints (amber), inline flashcards (539 cards), linked study tools, MCQ cross-links.
+- Spaced repetition: Hard/Got it buttons on each flashcard, 3-bucket Leitner-lite system.
+- Review overlay for due flashcards (bucket 0 = daily, 1 = 3 days, 2 = 7 days).
+- SR banner shows count of due flashcards.
 - Search filter + system filter buttons + localStorage persistence.
+- URL params: `?system=X` (filter), `?highlight=topic-id` (scroll + expand), `?review=true` (open SR overlay).
 - Study Tools catalog at bottom (23 interactive tools, served from `/theory/tools/`).
 
-**MCQs** (`mcqs/index.html`) -- Standalone practice page.
-- 500 AIIMS/NEET PG MCQs, paginated 20/page.
-- System filter buttons + session score tracker.
-- Click to answer, correct/incorrect highlighting, explanations.
+**MCQs** (`mcqs/index.html`) -- Practice page with persistent scoring + quiz modes.
+- 1,000 AIIMS/NEET PG MCQs (500 original + 500 from HuggingFace medmcqa dataset).
+- Persistent localStorage progress: answered state, correct/incorrect, streak, best streak.
+- Quiz modes: Practice (default), Quick 20 (random subset), Timed Exam (50 MCQs, 60-min timer).
+- Subfilters: All / Unanswered only / Wrong answers only.
+- Cross-links to Learn page topics after each explanation.
+- URL params: `?system=X` (pre-select filter).
+- System filter buttons + paginated 20/page (Practice mode) or all-at-once (quiz modes).
+
+**localStorage keys**:
+- `mbbeasy-mcq-progress`: MCQ answers, scores, streak.
+- `mbbeasy-flashcard-sr`: Spaced repetition bucket state per flashcard.
+- `learn-filters`, `mcq-filters`: Filter selections.
 
 **Practicals** (`practicals/index.html`) -- single-page case browser.
 - 5 system buttons (Cardiac, Respiratory, Neuro, GI, General), 21 cases total.
@@ -83,7 +98,7 @@ MDExamPrep/
 - **Redirects**: /predictor → /learn/, /theory → /learn/ (301 permanent)
 - **Security headers**: CSP (script-src self + cdnjs, font-src self), X-Frame-Options DENY, nosniff
 - **Cache**: Fonts 30d immutable, data JSON 1d+SWR, JS 1h+SWR, sw.js no-cache, manifest 1d
-- **PWA**: Service worker v8 (precache shell, SWR data, network-first HTML), installable manifest
+- **PWA**: Service worker v9 (precache shell, SWR data, network-first HTML), installable manifest
 - **OG tags**: All pages have og:title/description/image + twitter:card for social previews
 
 ---
@@ -100,6 +115,7 @@ MDExamPrep/
 | 18 | Mar 6 | PWA (service worker + manifest + icons), OG meta tags, granular Vercel cache headers |
 | 20 | Mar 6 | Rebrand: MD Exam Prep → MBBEasy (all copy, meta, manifest, OG image, SW cache bump) |
 | 21 | Mar 22 | Major restructure: removed Predictor, added Learn (397 topics + inline flashcards), separated MCQs, 301 redirects |
+| 22 | Mar 22 | Feature burst: persistent MCQ scoring, 3 quiz modes, cross-page navigation, spaced repetition (3-bucket Leitner), study dashboard, MCQ bank expanded 500→1000 from HuggingFace medmcqa |
 
 ---
 
