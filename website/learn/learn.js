@@ -1,9 +1,18 @@
-/* MBBEasy -- Learn: topics + inline flashcards + tools catalog + spaced repetition */
+/* MBBEasy -- Learn: topics + inline flashcards + tools catalog + spaced repetition + knowledge graph */
 var LearnUI = (function () {
   'use strict';
 
   var SYSTEMS_ORDER = ['CVS','Neuro','Renal','Endocrine','RS','GI','Heme','ID','Rheum','Derm','Pharmacology','General'];
   var SR_KEY = 'mbbeasy-flashcard-sr';
+
+  var CAT_LABELS = {
+    'anatomy': 'Anatomy',
+    'microbiology': 'Microbiology',
+    'pharmacology': 'Pharmacology',
+    'pulmonology': 'Pulmonology',
+    'genetics': 'Genetics',
+    'study-skills': 'Study Skills'
+  };
 
   var allTopics = [];
   var allFlashcards = [];
@@ -16,6 +25,9 @@ var LearnUI = (function () {
 
   /* Tools indexed by id */
   var toolsById = {};
+
+  /* Knowledge graph data */
+  var graphData = null;
 
   /* Spaced repetition state */
   var srState = { cards: {} };
@@ -130,17 +142,49 @@ var LearnUI = (function () {
       '</div>';
   }
 
+  /* === Knowledge Graph === */
+
+  function getRelatedTopics(topicId) {
+    if (!graphData || !graphData.related_topics) return [];
+    var related = graphData.related_topics[topicId] || [];
+    return related
+      .map(function (rid) { return allTopics.find(function (t) { return t.id === rid; }); })
+      .filter(Boolean)
+      .slice(0, 5);
+  }
+
+  function getToolsForSystem(system) {
+    if (!graphData || !graphData.tool_topics) return [];
+    var toolIds = [];
+    var systemTopicIds = allTopics
+      .filter(function (t) { return t.system === system; })
+      .map(function (t) { return t.id; });
+
+    for (var toolId in graphData.tool_topics) {
+      var topicIds = graphData.tool_topics[toolId];
+      for (var i = 0; i < topicIds.length; i++) {
+        if (systemTopicIds.indexOf(topicIds[i]) !== -1) {
+          if (toolIds.indexOf(toolId) === -1) toolIds.push(toolId);
+          break;
+        }
+      }
+    }
+    return toolIds.map(function (tid) { return toolsById[tid]; }).filter(Boolean);
+  }
+
   /* === Data loading === */
 
   function loadAll() {
     return Promise.all([
       fetch('/learn/data/topics.json').then(function (r) { return r.json(); }),
       fetch('/learn/data/flashcards.json').then(function (r) { return r.json(); }),
-      fetch('/learn/data/catalog.json').then(function (r) { return r.json(); })
+      fetch('/learn/data/catalog.json').then(function (r) { return r.json(); }),
+      fetch('/learn/data/graph.json').then(function (r) { return r.json(); })
     ]).then(function (results) {
       allTopics = results[0];
       allFlashcards = results[1];
       allTools = results[2];
+      graphData = results[3];
       buildIndices();
       loadSR();
       restoreFilter();
@@ -220,6 +264,7 @@ var LearnUI = (function () {
       el.querySelectorAll('.system-btn').forEach(function (b) { b.classList.remove('active'); });
       btn.classList.add('active');
       applyFilter();
+      renderCatalog();
     });
   }
 
@@ -285,6 +330,7 @@ var LearnUI = (function () {
       topics.forEach(function (t) {
         var cards = getFlashcardsForTopic(t);
         var tools = getToolsForTopic(t);
+        var related = getRelatedTopics(t.id);
 
         html += '<div class="topic-list-card" data-topic-id="' + escapeHtml(t.id) + '">';
         html += '<div class="topic-list-header">';
@@ -296,6 +342,7 @@ var LearnUI = (function () {
         html += '<div class="topic-list-meta">';
         if (cards.length) html += '<span class="tag tag-blue">' + cards.length + ' card' + (cards.length > 1 ? 's' : '') + '</span>';
         if (tools.length) html += '<span class="tag tag-gold">' + tools.length + ' tool' + (tools.length > 1 ? 's' : '') + '</span>';
+        if (related.length) html += '<span class="tag tag-related">' + related.length + ' related</span>';
         html += '</div>';
         html += '</div>'; /* /header */
 
@@ -337,10 +384,20 @@ var LearnUI = (function () {
           html += '</div>';
         }
 
+        /* Related topics */
+        if (related.length) {
+          html += '<div class="related-topics">';
+          html += '<div class="related-topics-label">Related topics</div>';
+          related.forEach(function (r) {
+            html += '<a class="related-pill" data-related-id="' + escapeHtml(r.id) + '">' + escapeHtml(r.topic) + '</a>';
+          });
+          html += '</div>';
+        }
+
         /* Cross-link to MCQs page */
         html += '<a class="topic-cross-link" href="/mcqs/?system=' + encodeURIComponent(t.system) + '">Practice ' + escapeHtml(t.system) + ' MCQs &rarr;</a>';
 
-        if (!cards.length && !tools.length && !t.what_to_memorize) {
+        if (!cards.length && !tools.length && !t.what_to_memorize && !related.length) {
           html += '<div class="topic-empty-body">No flashcards or tools linked yet.</div>';
         }
 
@@ -359,15 +416,29 @@ var LearnUI = (function () {
   function renderCatalog() {
     var container = document.getElementById('tools-catalog');
     if (!container) return;
+
+    var toolsToShow = allTools;
+
+    /* If a system filter is active, show only tools relevant to that system */
+    if (filters.system) {
+      var systemTools = getToolsForSystem(filters.system);
+      var systemToolIds = systemTools.map(function (t) { return t.id; });
+      /* Also include study-skills tools (they're universal) */
+      toolsToShow = allTools.filter(function (t) {
+        return systemToolIds.indexOf(t.id) !== -1 || t.category === 'study-skills';
+      });
+    }
+
     var groups = {};
     var order = [];
-    allTools.forEach(function (t) {
+    toolsToShow.forEach(function (t) {
       if (!groups[t.category]) { groups[t.category] = []; order.push(t.category); }
       groups[t.category].push(t);
     });
     var html = '';
     order.forEach(function (cat) {
-      html += '<div class="tools-group"><h3>' + escapeHtml(cat) + '</h3>';
+      var label = CAT_LABELS[cat] || cat;
+      html += '<div class="tools-group"><h3>' + escapeHtml(label) + '</h3>';
       groups[cat].forEach(function (t) {
         html += '<a class="tool-link" href="/theory/tools/' + escapeHtml(t.filename) + '">' +
           '<div class="tool-link-title">' + escapeHtml(t.title) + '</div>' +
@@ -385,6 +456,35 @@ var LearnUI = (function () {
     if (!deck) return;
 
     deck.addEventListener('click', function (e) {
+      /* Related topic pill click */
+      var pill = e.target.closest('.related-pill');
+      if (pill) {
+        e.preventDefault();
+        var relatedId = pill.dataset.relatedId;
+        if (!relatedId) return;
+
+        /* Find topic's system */
+        var topic = allTopics.find(function (t) { return t.id === relatedId; });
+        if (topic) {
+          /* Switch system filter if needed */
+          if (filters.system && topic.system !== filters.system) {
+            filters.system = topic.system;
+            applyFilter();
+            buildFilterButtons();
+            renderCatalog();
+          }
+          /* Scroll to and expand the related topic */
+          setTimeout(function () {
+            var card = document.querySelector('[data-topic-id="' + relatedId + '"]');
+            if (card) {
+              card.classList.add('expanded');
+              card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+          }, 100);
+        }
+        return;
+      }
+
       /* Toggle topic expand/collapse */
       var header = e.target.closest('.topic-list-header');
       if (header) {
@@ -487,6 +587,7 @@ var LearnUI = (function () {
       filters.system = sys;
       applyFilter();
       buildFilterButtons();
+      renderCatalog();
     }
     var highlight = params.get('highlight');
     if (highlight) {
@@ -496,6 +597,7 @@ var LearnUI = (function () {
         filters.system = topic.system;
         applyFilter();
         buildFilterButtons();
+        renderCatalog();
         setTimeout(function () {
           var card = document.querySelector('[data-topic-id="' + highlight + '"]');
           if (card) {

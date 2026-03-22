@@ -1,15 +1,15 @@
 # MBBEasy (formerly MD Exam Prep) -- Project Root
 
-## Status: LIVE (Mar 22, 2026 -- Session 22: Persistent scoring, quiz modes, SR, dashboard, MCQ expansion)
+## Status: LIVE (Mar 22, 2026 -- Session 23: Knowledge graph, topic enrichment, catalog restructure)
 
 **Brand**: MBBEasy — "Clinical medicine, decoded."
 **Built by Avinash Jothish.** Free. Static HTML/JS. No framework. Client-side only.
 
 ---
 
-## Architecture (post-restructure, Session 21)
+## Architecture (post-restructure, Session 23)
 
-Single CSS file (`style.css`). "Dark Luxury" design system. Self-hosted fonts (DM Sans body + Source Serif 4 headings, ~185KB WOFF2 in `/assets/fonts/`). Sticky glass nav, amber clinical pearls, stagger card animations. PWA with offline support (service worker v9 + manifest). OG meta tags for social sharing.
+Single CSS file (`style.css`). "Dark Luxury" design system. Self-hosted fonts (DM Sans body + Source Serif 4 headings, ~185KB WOFF2 in `/assets/fonts/`). Sticky glass nav, amber clinical pearls, stagger card animations. PWA with offline support (service worker v10 + manifest). OG meta tags for social sharing. Knowledge graph layer (`graph.json`) connecting topics ↔ tools ↔ related topics.
 
 **Landing** (`index.html`) -- Hero with eyebrow + 3 numbered tool cards + returning-user dashboard.
 - Dashboard: MCQ progress ring, streak counter, flashcards due, suggested next system.
@@ -18,13 +18,14 @@ Single CSS file (`style.css`). "Dark Luxury" design system. Self-hosted fonts (D
 **Learn** (`learn/index.html`) -- Topic browser with inline flashcards + spaced repetition.
 - 397 curated topics across 12 systems (deduped from 1,718 dictionary entries).
 - Topics grouped by system, expandable cards.
-- Expanded: study hints (amber), inline flashcards (539 cards), linked study tools, MCQ cross-links.
+- Expanded: study hints (amber), inline flashcards (539 cards), linked study tools, related topics (clickable pills), MCQ cross-links.
 - Spaced repetition: Hard/Got it buttons on each flashcard, 3-bucket Leitner-lite system.
 - Review overlay for due flashcards (bucket 0 = daily, 1 = 3 days, 2 = 7 days).
 - SR banner shows count of due flashcards.
 - Search filter + system filter buttons + localStorage persistence.
 - URL params: `?system=X` (filter), `?highlight=topic-id` (scroll + expand), `?review=true` (open SR overlay).
-- Study Tools catalog at bottom (23 interactive tools, served from `/theory/tools/`).
+- Study Tools catalog at bottom (23 tools in 6 categories: Anatomy, Microbiology, Pharmacology, Pulmonology, Genetics, Study Skills). Filters contextually when system filter is active.
+- Knowledge graph: `graph.json` maps 95 topics → tools + 129 cross-topic relationships. Related topics render as pills.
 
 **MCQs** (`mcqs/index.html`) -- Practice page with persistent scoring + quiz modes.
 - 1,000 AIIMS/NEET PG MCQs (500 original + 500 from HuggingFace medmcqa dataset).
@@ -59,10 +60,10 @@ MDExamPrep/
 |   +-- assets/js/            (template.js)
 |   +-- assets/fonts/         (DMSans-Variable.woff2, SourceSerif4-Variable.woff2)
 |   +-- assets/icons/         (icon-192.png, icon-512.png)
-|   +-- learn/                (index.html, learn.js, data/topics.json + flashcards.json + catalog.json)
+|   +-- learn/                (index.html, learn.js, data/topics.json + flashcards.json + catalog.json + graph.json)
 |   +-- mcqs/                 (index.html, mcqs.js, data/mcqs.json)
 |   +-- practicals/           (index.html, practicals.js, data/*.json)
-|   +-- theory/tools/         (23 standalone HTML study tools -- anatomy, pharma, etc.)
+|   +-- theory/tools/         (23 HTML study tools -- anatomy, pharma, micro, pulm, genetics, study-skills)
 +-- CLAUDE.md, README.md, vercel.json, .gitignore, .gitattributes
 ```
 
@@ -73,7 +74,7 @@ MDExamPrep/
 | File | Purpose |
 |------|---------|
 | All JSON in `website/practicals/data/` | Practicals case data (812 KB) |
-| All 23 HTML files in `website/theory/tools/` | Standalone study tools |
+| All 23 HTML files in `website/theory/tools/` | Study tools (being consolidated into 6 hub pages in future sessions) |
 
 ---
 
@@ -116,6 +117,7 @@ MDExamPrep/
 | 20 | Mar 6 | Rebrand: MD Exam Prep → MBBEasy (all copy, meta, manifest, OG image, SW cache bump) |
 | 21 | Mar 22 | Major restructure: removed Predictor, added Learn (397 topics + inline flashcards), separated MCQs, 301 redirects |
 | 22 | Mar 22 | Feature burst: persistent MCQ scoring, 3 quiz modes, cross-page navigation, spaced repetition (3-bucket Leitner), study dashboard, MCQ bank expanded 500→1000 from HuggingFace medmcqa |
+| 23 | Mar 22 | Knowledge graph layer: graph.json (tool↔topic + topic↔topic connections), 95 topics enriched with tool_ids (up from 8), catalog restructured (paper-1/paper-3 → study-skills/genetics), related-topics pills, contextual tool filtering, SW v10 |
 
 ---
 
