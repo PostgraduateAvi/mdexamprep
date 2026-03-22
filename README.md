@@ -1,4 +1,4 @@
-# MD Exam Prep
+# MBBEasy
 
 **Free, open-source exam preparation tools for MD Internal Medicine (General Medicine).**
 
@@ -10,7 +10,7 @@ Built on 987 real exam questions spanning 20 years of university papers. No logi
 
 ## What This Is
 
-MD Exam Prep is a static website that helps postgraduate medical students prepare for their MD Internal Medicine (General Medicine) theory and practical examinations. It uses structural pattern analysis on past exam papers to predict which topics are most likely to appear next.
+MBBEasy is a static website that helps postgraduate medical students prepare for their MD Internal Medicine (General Medicine) theory and practical examinations. It uses structural pattern analysis on past exam papers to predict which topics are most likely to appear next.
 
 This is not a question bank. It is a **preparation strategy tool** -- it tells you *what to study* based on evidence, not guesswork.
 

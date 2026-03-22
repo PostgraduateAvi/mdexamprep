@@ -1,4 +1,4 @@
-/* MD Exam Prep — Predictor Engine
+/* MBBEasy — Predictor Engine
    Pure data logic. No DOM access. Takes ranked list + KG + quotas,
    returns scored + filtered topic list.
 
