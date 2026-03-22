@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn &mdash; MBBEasy</title>
+  <meta name="description" content="Browse 390+ medical topics by system. Each topic expands to reveal flashcards, study hints, and interactive tools inline.">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="canonical" href="https://mdexamprep.vercel.app/learn">
+  <meta name="theme-color" content="#09090b">
+  <link rel="manifest" href="/manifest.json">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mdexamprep.vercel.app/learn/">
+  <meta property="og:title" content="Learn — MBBEasy">
+  <meta property="og:description" content="Browse 390+ medical topics by system. Flashcards, study hints, and interactive tools inline.">
+  <meta property="og:image" content="https://mdexamprep.vercel.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div id="site-nav"></div>
+  <main class="container" style="padding-top: 120px; padding-bottom: 64px;">
+    <h1>Learn</h1>
+    <p style="color: var(--text-secondary); margin-top: 12px; font-size: 1.125rem;">Browse topics by system. Expand any topic to study flashcards and hints inline.</p>
+
+    <input type="search" class="topic-search" id="topic-search" placeholder="Filter topics&hellip;" autocomplete="off">
+    <div class="system-btns" id="system-filters"></div>
+    <div class="filter-status" id="filter-status"></div>
+    <div id="topic-deck"></div>
+
+    <hr class="section-divider">
+
+    <h2>Study Tools</h2>
+    <p style="color: var(--text-secondary); margin: 12px 0 24px; font-size: 1.125rem;">23 interactive diagrams, drills, and visual imprints.</p>
+    <div id="tools-catalog"></div>
+  </main>
+  <div id="site-footer"></div>
+  <script>if('serviceWorker' in navigator)navigator.serviceWorker.register('/sw.js');</script>
+  <script src="../assets/js/template.js?v=6"></script>
+  <script src="learn.js"></script>
+</body>
+</html>

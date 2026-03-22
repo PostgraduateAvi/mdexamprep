@@ -1,0 +1,3823 @@
+[
+  {
+    "id": "action-potential",
+    "topic": "Action Potential",
+    "subtitle": "",
+    "system": "CVS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "acute-myocardial-infarction",
+    "topic": "Acute Myocardial Infarction",
+    "subtitle": "dx/tx/complications",
+    "system": "CVS",
+    "what_to_memorize": "STEMI/NSTEMI pathways; antiplatelet/antithrombotic doses; post-MI complications.",
+    "flashcard_topics": [
+      "Acute Myocardial Infarction"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "aortic-dissection",
+    "topic": "Aortic dissection",
+    "subtitle": "chest pain differential",
+    "system": "CVS",
+    "what_to_memorize": "Stanford A/B, imaging ladder, BP/HR control sequence.",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "aortic-regurgitation",
+    "topic": "Aortic Regurgitation",
+    "subtitle": "",
+    "system": "CVS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "aortic-stenosis",
+    "topic": "Aortic Stenosis",
+    "subtitle": "",
+    "system": "CVS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "arni-sacubitrilvalsartan",
+    "topic": "ARNI (Sacubitril/Valsartan)",
+    "subtitle": "",
+    "system": "CVS",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "ARNI (Sacubitril/Valsartan)"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "atrial-fibrillation",
+    "topic": "Atrial Fibrillation",
+    "subtitle": "",
+    "system": "CVS",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Atrial Fibrillation"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "cardiac-cycle",
+    "topic": "Cardiac Cycle",
+    "subtitle": "",
+    "system": "CVS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "cardiac-tamponade",
+    "topic": "Cardiac Tamponade",
+    "subtitle": "",
+    "system": "CVS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "cardiomyopathy",
+    "topic": "Cardiomyopathy",
+    "subtitle": "",
+    "system": "CVS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "chest-pain-angina",
+    "topic": "Chest Pain (Angina)",
+    "subtitle": "",
+    "system": "CVS",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Chest Pain"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "coronary-artery-disease",
+    "topic": "Coronary Artery Disease",
+    "subtitle": "",
+    "system": "CVS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "diastolic-heart-failure",
+    "topic": "Diastolic Heart Failure",
+    "subtitle": "",
+    "system": "CVS",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Heart Failure"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "dilated-cardiomyopathy",
+    "topic": "Dilated Cardiomyopathy",
+    "subtitle": "",
+    "system": "CVS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "edema",
+    "topic": "Edema",
+    "subtitle": "",
+    "system": "CVS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "electrocardiogram-ecg",
+    "topic": "Electrocardiogram (ECG)",
+    "subtitle": "",
+    "system": "CVS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "heart-auscultation",
+    "topic": "Heart Auscultation",
+    "subtitle": "",
+    "system": "CVS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "heart-failure",
+    "topic": "Heart Failure",
+    "subtitle": "",
+    "system": "CVS",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Heart Failure"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "hypertensive-emergencies",
+    "topic": "Hypertensive emergencies",
+    "subtitle": "IV drugs table",
+    "system": "CVS",
+    "what_to_memorize": "Drug→dose→onset tables; aortic dissection, preeclampsia, ACS targets.",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "hypertrophic-cardiomyopathy",
+    "topic": "Hypertrophic Cardiomyopathy",
+    "subtitle": "",
+    "system": "CVS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "hypokalemia",
+    "topic": "Hypokalemia",
+    "subtitle": "",
+    "system": "CVS",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Hypokalemia"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "infective-endocarditis",
+    "topic": "Infective Endocarditis",
+    "subtitle": "",
+    "system": "CVS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "ischemic-disease",
+    "topic": "Ischemic disease",
+    "subtitle": "",
+    "system": "CVS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "ischemic-stroke",
+    "topic": "Ischemic stroke",
+    "subtitle": "",
+    "system": "CVS",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Stroke"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "ischemic-third-nerve-palsies",
+    "topic": "Ischemic third nerve palsies",
+    "subtitle": "",
+    "system": "CVS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "jugular-venous-pressure-jvp",
+    "topic": "Jugular Venous Pressure (JVP)",
+    "subtitle": "",
+    "system": "CVS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "lacunar-infarction",
+    "topic": "Lacunar infarction",
+    "subtitle": "",
+    "system": "CVS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "mitral-regurgitation",
+    "topic": "Mitral Regurgitation",
+    "subtitle": "",
+    "system": "CVS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "mitral-stenosis",
+    "topic": "Mitral Stenosis",
+    "subtitle": "",
+    "system": "CVS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "pericardial-effusion",
+    "topic": "Pericardial Effusion",
+    "subtitle": "",
+    "system": "CVS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "pericarditis",
+    "topic": "Pericarditis",
+    "subtitle": "",
+    "system": "CVS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "peripheral-arterial-disease",
+    "topic": "Peripheral arterial disease",
+    "subtitle": "evaluation & basics of management",
+    "system": "CVS",
+    "what_to_memorize": "ABI thresholds; exercise therapy; statin/antiplatelet; revascularization cues.",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "pleuritic-chest-pain",
+    "topic": "Pleuritic chest pain",
+    "subtitle": "pericarditis basics",
+    "system": "CVS",
+    "what_to_memorize": "ECG triad; NSAID/colchicine; red flags for tamponade.",
+    "flashcard_topics": [
+      "Chest Pain"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "pulmonary-embolism",
+    "topic": "Pulmonary embolism",
+    "subtitle": "diagnostic pathway & initial therapy",
+    "system": "CVS",
+    "what_to_memorize": "Wells/Geneva→D-dimer/CTPA; anticoag ladder; RV strain/lysis indications.",
+    "flashcard_topics": [
+      "Pulmonary Embolism"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "pulmonary-hypertension",
+    "topic": "Pulmonary Hypertension",
+    "subtitle": "",
+    "system": "CVS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "restrictive-cardiomyopathy",
+    "topic": "Restrictive Cardiomyopathy",
+    "subtitle": "",
+    "system": "CVS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "sa-node",
+    "topic": "Sa Node",
+    "subtitle": "",
+    "system": "CVS",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "SA Node Physiology"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "syncope",
+    "topic": "Syncope",
+    "subtitle": "",
+    "system": "CVS",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Syncope"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "systemic-vasculitis",
+    "topic": "Systemic vasculitis",
+    "subtitle": "",
+    "system": "CVS",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Vasculitis"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "systolic-heart-failure",
+    "topic": "Systolic Heart Failure",
+    "subtitle": "",
+    "system": "CVS",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Heart Failure"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "vertebrobasilar-transient-ischemic-attack",
+    "topic": "Vertebrobasilar transient ischemic attack",
+    "subtitle": "",
+    "system": "CVS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "with-which-diseases-are-fusiform-aneurysms-associated",
+    "topic": "With which diseases are fusiform aneurysms associated",
+    "subtitle": "",
+    "system": "CVS",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "With which diseases are fusiform aneurysms associated"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "acute-disseminated-encephalomyelitis",
+    "topic": "Acute disseminated encephalomyelitis",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "acute-meningoencephalitis",
+    "topic": "Acute Meningoencephalitis",
+    "subtitle": "algorithm",
+    "system": "Neuro",
+    "what_to_memorize": "CT vs LP sequence; empiric antimicrobials; HSV coverage; ICU triggers.",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "amnesic-aphasia",
+    "topic": "Amnesic aphasia",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Aphasia"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "amnestic-aphasia",
+    "topic": "Amnestic aphasia",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Aphasia"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "amyotrophic-lateral-sclerosis",
+    "topic": "Amyotrophic lateral sclerosis",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "anatomic-brainstem-syndromes",
+    "topic": "Anatomic brainstem syndromes",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Brainstem Syndromes"
+    ],
+    "tool_ids": [
+      "brainstem-cortical"
+    ]
+  },
+  {
+    "id": "anomic-aphasia",
+    "topic": "Anomic aphasia",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Aphasia"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "aphasia",
+    "topic": "Aphasia",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Aphasia"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "associative-aphasia",
+    "topic": "Associative aphasia",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Aphasia"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "bacterial-meningitis",
+    "topic": "Bacterial meningitis",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Meningitis"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "benign-paroxysmal-positional-vertigo",
+    "topic": "Benign paroxysmal positional vertigo",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Vertigo"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "brainstem",
+    "topic": "Brainstem",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Brainstem Syndromes"
+    ],
+    "tool_ids": [
+      "brainstem-cortical"
+    ]
+  },
+  {
+    "id": "brainstem-stroke",
+    "topic": "Brainstem stroke",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Stroke"
+    ],
+    "tool_ids": [
+      "brainstem-cortical"
+    ]
+  },
+  {
+    "id": "brainstem-syndromes",
+    "topic": "Brainstem syndromes",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Brainstem Syndromes"
+    ],
+    "tool_ids": [
+      "brainstem-cortical"
+    ]
+  },
+  {
+    "id": "brocas-aphasia",
+    "topic": "Broca’s aphasia",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Aphasia"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "bulbar-palsy",
+    "topic": "Bulbar palsy",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "central-aphasia",
+    "topic": "Central aphasia",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Aphasia"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "cerebellar-disease",
+    "topic": "Cerebellar disease",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "cerebral-palsy",
+    "topic": "Cerebral palsy",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "cerebral-vasculitis",
+    "topic": "Cerebral vasculitis",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Vasculitis"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "cerebral-venous-system",
+    "topic": "Cerebral Venous System",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Cerebral Venous System"
+    ],
+    "tool_ids": [
+      "autonomic-ns"
+    ]
+  },
+  {
+    "id": "chest-pain-pleuritic",
+    "topic": "Chest Pain (Pleuritic)",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Chest Pain"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "class-of-drugs-is-primarily",
+    "topic": "Class Of Drugs Is Primarily",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Class Of Drugs Is Primarily"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "classical-brainstem-syndromes",
+    "topic": "Classical brainstem syndromes",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Brainstem Syndromes"
+    ],
+    "tool_ids": [
+      "brainstem-cortical"
+    ]
+  },
+  {
+    "id": "cluster-headache",
+    "topic": "Cluster headache",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Headache"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "coma-and-brain-death",
+    "topic": "Coma and Brain Death",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Coma and Brain Death"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "commissural-aphasia",
+    "topic": "Commissural aphasia",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Aphasia"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "complete-aphasia",
+    "topic": "Complete aphasia",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Aphasia"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "deep-aphasia",
+    "topic": "Deep aphasia",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Aphasia"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "delirium",
+    "topic": "Delirium",
+    "subtitle": "assessment & management algorithm",
+    "system": "Neuro",
+    "what_to_memorize": "4AT/CAM flow, reversible causes bundle, antipsychotic cautions.",
+    "flashcard_topics": [
+      "Delirium"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "dementia",
+    "topic": "Dementia",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Dementia"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "dural-venous-sinuses-classification",
+    "topic": "Dural Venous Sinuses Classification",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Dural Venous Sinuses Classification"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "encephalitis",
+    "topic": "Encephalitis",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "epilepsy",
+    "topic": "Epilepsy",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "facial-nerve",
+    "topic": "Facial Nerve",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Facial Nerve"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "falls-in-elderly",
+    "topic": "Falls in Elderly",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Falls in Elderly"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "fluent-aphasia",
+    "topic": "Fluent aphasia",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Aphasia"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "frontotemporal-dementia",
+    "topic": "Frontotemporal dementia",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Dementia"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "gait-disorders",
+    "topic": "Gait Disorders",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Gait Disorders"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "global-aphasia",
+    "topic": "Global aphasia",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Aphasia"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "guillain-barre-syndrome",
+    "topic": "Guillain Barre Syndrome",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "headache",
+    "topic": "Headache",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Headache"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "ischemic-stroketia",
+    "topic": "Ischemic stroke/TIA",
+    "subtitle": "acute approach (non-thrombolysis details)",
+    "system": "Neuro",
+    "what_to_memorize": "FAST bedside filters; BP/glucose/temperature; antiplatelet and DVT prophylaxis.",
+    "flashcard_topics": [
+      "Stroke"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "meningitis",
+    "topic": "Meningitis",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Meningitis"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "migraine",
+    "topic": "Migraine",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "migraine-associated-vertigo",
+    "topic": "Migraine-associated vertigo",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Vertigo"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "motor-aphasia",
+    "topic": "Motor aphasia",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Aphasia"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "multiple-sclerosis",
+    "topic": "Multiple Sclerosis",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "myasthenia-gravis",
+    "topic": "Myasthenia Gravis",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Myasthenia Gravis"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "narcolepsy",
+    "topic": "Narcolepsy",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "neoplastic-meningitis",
+    "topic": "Neoplastic meningitis",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Meningitis"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "newer-anticonvulsants-like-gabapentin-and",
+    "topic": "Newer Anticonvulsants Like Gabapentin And",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Newer Anticonvulsants Like Gabapentin And"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "nominal-aphasia",
+    "topic": "Nominal aphasia",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Aphasia"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "nonfluent-aphasia",
+    "topic": "Nonfluent aphasia",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Aphasia"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "normal-pressure-hydrocephalus",
+    "topic": "Normal pressure hydrocephalus",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "optic-aphasia",
+    "topic": "Optic aphasia",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Aphasia"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "pain-referred-from-the-spine",
+    "topic": "Pain Referred From The Spine",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Pain Referred From The Spine"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "paraphasia",
+    "topic": "Paraphasia",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Aphasia"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "postrolandic-aphasia",
+    "topic": "Postrolandic aphasia",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Aphasia"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "prerolandic-aphasia",
+    "topic": "Prerolandic aphasia",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Aphasia"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "primary-progressive-aphasia",
+    "topic": "Primary progressive aphasia",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Aphasia"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "pseudobulbar-palsy",
+    "topic": "Pseudobulbar palsy",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "pure-motor-stroke",
+    "topic": "Pure motor stroke",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Stroke"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "receptive-aphasia",
+    "topic": "Receptive aphasia",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Aphasia"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "recurrent-laryngeal-nerve",
+    "topic": "Recurrent Laryngeal Nerve",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Recurrent Laryngeal Nerve"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "sensory-aphasia",
+    "topic": "Sensory aphasia",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Aphasia"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "spinal-cord-lesions",
+    "topic": "Spinal Cord Lesions",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Spinal Cord Lesions"
+    ],
+    "tool_ids": [
+      "spinal-cord-tracts"
+    ]
+  },
+  {
+    "id": "status-epilepticus",
+    "topic": "Status epilepticus",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "subcortical-aphasia",
+    "topic": "Subcortical aphasia",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Aphasia"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "tension-headache",
+    "topic": "Tension headache",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Headache"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "tia-mimics-differentials",
+    "topic": "TIA mimics & differentials",
+    "subtitle": "rapid bedside distinctions",
+    "system": "Neuro",
+    "what_to_memorize": "Migraine, seizures, hypoglycemia; imaging windows; antiplatelet start.",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "tiastroke-secondary-prevention",
+    "topic": "TIA/Stroke secondary prevention",
+    "subtitle": "essentials",
+    "system": "Neuro",
+    "what_to_memorize": "DAPT window basics; statin intensity; BP/DM targets; carotid/AF logic.",
+    "flashcard_topics": [
+      "Stroke"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "total-aphasia",
+    "topic": "Total aphasia",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Aphasia"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "transcortical-aphasia",
+    "topic": "Transcortical aphasia",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Aphasia"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "trigeminal-sensory-neuropathy",
+    "topic": "Trigeminal sensory neuropathy",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Sensory Neuropathy"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "two-classes-of-primary-afferent",
+    "topic": "Two Classes Of Primary Afferent",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Two Classes Of Primary Afferent"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "two-neuropeptides-released-by-primary",
+    "topic": "Two Neuropeptides Released By Primary",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Two Neuropeptides Released By Primary"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "vertigo",
+    "topic": "Vertigo",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Vertigo"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "wernickes-aphasia",
+    "topic": "Wernicke’s aphasia",
+    "subtitle": "",
+    "system": "Neuro",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Aphasia"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "acid-base-balance",
+    "topic": "Acid Base Balance",
+    "subtitle": "",
+    "system": "Renal",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "acute-kidney-injury",
+    "topic": "Acute Kidney Injury",
+    "subtitle": "criteria/causes/work-up",
+    "system": "Renal",
+    "what_to_memorize": "KDIGO staging, prerenal vs intrinsic algorithm, urgent indications for RRT.",
+    "flashcard_topics": [
+      "Acute Kidney Injury"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "chronic-kidney-disease",
+    "topic": "Chronic Kidney Disease",
+    "subtitle": "",
+    "system": "Renal",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Chronic Kidney Disease"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "ckd-complications",
+    "topic": "CKD complications",
+    "subtitle": "anemia & MBD overview",
+    "system": "Renal",
+    "what_to_memorize": "ESA thresholds; iron strategy; Ca/PO4/PTH goals; binder choices.",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "dialysis",
+    "topic": "Dialysis",
+    "subtitle": "",
+    "system": "Renal",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "drug-induced-dyselectrolytemia",
+    "topic": "Drug-Induced Dyselectrolytemia",
+    "subtitle": "",
+    "system": "Renal",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Drug-Induced Dyselectrolytemia"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "electrolyte-imbalance",
+    "topic": "Electrolyte Imbalance",
+    "subtitle": "",
+    "system": "Renal",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "glomerular-filtration",
+    "topic": "Glomerular Filtration",
+    "subtitle": "",
+    "system": "Renal",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "glomerulonephritis",
+    "topic": "Glomerulonephritis",
+    "subtitle": "",
+    "system": "Renal",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "hematuria",
+    "topic": "Hematuria",
+    "subtitle": "",
+    "system": "Renal",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "history-taking",
+    "topic": "History taking",
+    "subtitle": "",
+    "system": "Renal",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "hyperkalemia",
+    "topic": "Hyperkalemia",
+    "subtitle": "emergency management",
+    "system": "Renal",
+    "what_to_memorize": "Stabilize-shift-remove sequence; exact doses for calcium/insulin/beta-agonists.",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "hyponatremia",
+    "topic": "Hyponatremia",
+    "subtitle": "",
+    "system": "Renal",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "i-apologize-for-my-previous-response-heres-the-rephrased-q",
+    "topic": "I apologize for my previous response. Here's the rephrased q",
+    "subtitle": "",
+    "system": "Renal",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "I apologize for my previous response. Here's the rephrased q"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "light-chain-renal-disorders",
+    "topic": "Light-chain renal disorders",
+    "subtitle": "",
+    "system": "Renal",
+    "what_to_memorize": "Proteinuria + AKI pitfall; SPEP/UPEP/free light chains; supportive care.",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "lupus-nephritis",
+    "topic": "Lupus nephritis",
+    "subtitle": "class-based management",
+    "system": "Renal",
+    "what_to_memorize": "ISN/RPS classes; induction vs maintenance; monitoring schedule.",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "median-forebrain-bundle",
+    "topic": "Median forebrain bundle",
+    "subtitle": "",
+    "system": "Renal",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "metabolic-acidosis",
+    "topic": "Metabolic Acidosis",
+    "subtitle": "",
+    "system": "Renal",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Metabolic Acidosis"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "nephritic-syndrome",
+    "topic": "Nephritic Syndrome",
+    "subtitle": "",
+    "system": "Renal",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "nephron-physiology",
+    "topic": "Nephron Physiology",
+    "subtitle": "",
+    "system": "Renal",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Nephron Physiology"
+    ],
+    "tool_ids": [
+      "nephron-diagram",
+      "nephron-sequential"
+    ]
+  },
+  {
+    "id": "nephrotic-syndrome",
+    "topic": "Nephrotic syndrome",
+    "subtitle": "approach",
+    "system": "Renal",
+    "what_to_memorize": "Selectivity clues; biopsy indications; edema/proteinuria management basics.",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "polycystic-kidney-disease",
+    "topic": "Polycystic Kidney Disease",
+    "subtitle": "",
+    "system": "Renal",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "prerenal-vs-intrinsic-renal-dysfunction",
+    "topic": "Prerenal vs intrinsic renal dysfunction",
+    "subtitle": "distinctions",
+    "system": "Renal",
+    "what_to_memorize": "BUN/Cr, FeNa/FeUrea use; urinalysis patterns; response-to-fluids logic.",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "proteinuria",
+    "topic": "Proteinuria",
+    "subtitle": "",
+    "system": "Renal",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "renal-blood-flow",
+    "topic": "Renal Blood Flow",
+    "subtitle": "",
+    "system": "Renal",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "renal-tubular-acidosis",
+    "topic": "Renal Tubular Acidosis",
+    "subtitle": "",
+    "system": "Renal",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "shoulder-shaking-tes",
+    "topic": "Shoulder-shaking tes",
+    "subtitle": "",
+    "system": "Renal",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "suprarenal-gland",
+    "topic": "Suprarenal gland",
+    "subtitle": "",
+    "system": "Renal",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "acromegaly",
+    "topic": "Acromegaly",
+    "subtitle": "",
+    "system": "Endocrine",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "addison-disease",
+    "topic": "Addison Disease",
+    "subtitle": "",
+    "system": "Endocrine",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "adrenal-or-others",
+    "topic": "Adrenal or Others",
+    "subtitle": "",
+    "system": "Endocrine",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "calcium-homeostasis",
+    "topic": "Calcium Homeostasis",
+    "subtitle": "",
+    "system": "Endocrine",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "cushing",
+    "topic": "Cushing",
+    "subtitle": "",
+    "system": "Endocrine",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "cushing-syndrome",
+    "topic": "Cushing Syndrome",
+    "subtitle": "",
+    "system": "Endocrine",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "cushings-triad",
+    "topic": "Cushing’s triad",
+    "subtitle": "",
+    "system": "Endocrine",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "diabetes-mellitus",
+    "topic": "Diabetes Mellitus",
+    "subtitle": "",
+    "system": "Endocrine",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "diabetic-ketoacidosis",
+    "topic": "Diabetic ketoacidosis",
+    "subtitle": "diagnostic/therapy bundle",
+    "system": "Endocrine",
+    "what_to_memorize": "Anion gap/ketone logic; insulin/fluids/potassium doses; resolution criteria.",
+    "flashcard_topics": [
+      "Diabetic Ketoacidosis"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "dyslipidemia",
+    "topic": "Dyslipidemia",
+    "subtitle": "",
+    "system": "Endocrine",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "gestational-diabetes",
+    "topic": "Gestational Diabetes",
+    "subtitle": "",
+    "system": "Endocrine",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Gestational Diabetes"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "hypercalcaemia",
+    "topic": "Hypercalcaemia",
+    "subtitle": "classify & approach",
+    "system": "Endocrine",
+    "what_to_memorize": "PTH/PTHrP/Vit-D algorithm; fluids, calcitonin, bisphosphonate timings.",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "hyperparathyroidism",
+    "topic": "Hyperparathyroidism",
+    "subtitle": "",
+    "system": "Endocrine",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "hyperthyroidism",
+    "topic": "Hyperthyroidism",
+    "subtitle": "",
+    "system": "Endocrine",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "hypoglycemia",
+    "topic": "Hypoglycemia",
+    "subtitle": "",
+    "system": "Endocrine",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "hyponatremia-siadh",
+    "topic": "Hyponatremia (SIADH)",
+    "subtitle": "approach",
+    "system": "Endocrine",
+    "what_to_memorize": "Serum/urine osm, urine Na; acute vs chronic correction limits; vaptan caveats.",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "hypothyroidism",
+    "topic": "Hypothyroidism",
+    "subtitle": "",
+    "system": "Endocrine",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "insulin-therapy",
+    "topic": "Insulin Therapy",
+    "subtitle": "",
+    "system": "Endocrine",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Insulin Therapy"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "metabolic-syndrome",
+    "topic": "Metabolic Syndrome",
+    "subtitle": "",
+    "system": "Endocrine",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "metformin",
+    "topic": "Metformin",
+    "subtitle": "",
+    "system": "Endocrine",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Metformin"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "obesity",
+    "topic": "Obesity",
+    "subtitle": "",
+    "system": "Endocrine",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Obesity"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "osteoporosis",
+    "topic": "Osteoporosis",
+    "subtitle": "diagnostic triggers & therapy",
+    "system": "Endocrine",
+    "what_to_memorize": "FRAX/BMD thresholds; bisphosphonate sequences; calcium/vitamin D dosing.",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "pheochromocytoma",
+    "topic": "Pheochromocytoma",
+    "subtitle": "",
+    "system": "Endocrine",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "sglt-2-inhibitors",
+    "topic": "Sglt-2 Inhibitors",
+    "subtitle": "",
+    "system": "Endocrine",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "SGLT2 Inhibitors"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "thyroid-cartilage",
+    "topic": "Thyroid cartilage",
+    "subtitle": "",
+    "system": "Endocrine",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "thyroid-emergencies",
+    "topic": "Thyroid emergencies",
+    "subtitle": "thyroid storm vs myxedema coma",
+    "system": "Endocrine",
+    "what_to_memorize": "Burch–Wartofsky idea, multi-drug sequence; myxedema coma supportive bundle.",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "thyroid-eye-disease",
+    "topic": "Thyroid eye disease",
+    "subtitle": "",
+    "system": "Endocrine",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "thyroid-function",
+    "topic": "Thyroid Function",
+    "subtitle": "",
+    "system": "Endocrine",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "thyroid-gland-exam",
+    "topic": "Thyroid Gland Exam",
+    "subtitle": "",
+    "system": "Endocrine",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "thyroid-storm",
+    "topic": "Thyroid Storm",
+    "subtitle": "",
+    "system": "Endocrine",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "thyroid-swellingsymptoms",
+    "topic": "Thyroid Swelling/Symptoms",
+    "subtitle": "",
+    "system": "Endocrine",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "vitamin-d",
+    "topic": "Vitamin D",
+    "subtitle": "",
+    "system": "Endocrine",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "asthma-management-pulmonary-rehabilitation",
+    "topic": "Asthma management / Pulmonary rehabilitation",
+    "subtitle": "",
+    "system": "RS",
+    "what_to_memorize": "Stepwise therapy; rehab goals; ILD vs airway differentiation pearls.",
+    "flashcard_topics": [
+      "Asthma"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "breathlessness",
+    "topic": "Breathlessness",
+    "subtitle": "",
+    "system": "RS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "bronchial-asthma",
+    "topic": "Bronchial Asthma",
+    "subtitle": "",
+    "system": "RS",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Asthma"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "bronchial-tree",
+    "topic": "Bronchial tree",
+    "subtitle": "",
+    "system": "RS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "bronchiectasis",
+    "topic": "Bronchiectasis",
+    "subtitle": "evaluation & management",
+    "system": "RS",
+    "what_to_memorize": "CT signs; airway-clearance; macrolide strategy; exacerbation antibiotics.",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "chest-x-ray",
+    "topic": "Chest X-ray",
+    "subtitle": "",
+    "system": "RS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "cheynestokes",
+    "topic": "Cheyne–Stokes",
+    "subtitle": "",
+    "system": "RS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "cheynestokes-respirations",
+    "topic": "Cheyne–Stokes respirations",
+    "subtitle": "",
+    "system": "RS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "chronic-cough",
+    "topic": "Chronic Cough",
+    "subtitle": "",
+    "system": "RS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "community-acquired-pneumonia-cap",
+    "topic": "Community-acquired pneumonia (CAP)",
+    "subtitle": "adult guidelines basics",
+    "system": "RS",
+    "what_to_memorize": "CURB-65; empiric regimens; severity triage; follow-up imaging.",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "copd-exacerbation",
+    "topic": "COPD exacerbation",
+    "subtitle": "assessment & management",
+    "system": "RS",
+    "what_to_memorize": "AECOPD severity ladders; O2/ventilation targets; steroids/antibiotic criteria.",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "dyspnea",
+    "topic": "Dyspnea",
+    "subtitle": "",
+    "system": "RS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "dyspnea-on-exertion",
+    "topic": "Dyspnea on Exertion",
+    "subtitle": "",
+    "system": "RS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "hemoptysis",
+    "topic": "Hemoptysis",
+    "subtitle": "",
+    "system": "RS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "hyperventilation",
+    "topic": "Hyperventilation",
+    "subtitle": "",
+    "system": "RS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "ild",
+    "topic": "ILD",
+    "subtitle": "classify + investigation algorithm",
+    "system": "RS",
+    "what_to_memorize": "HRCT-first algorithm, ILD vs HP clues, biopsy indications, antifibrotic basics.",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "interstitial-lung-disease",
+    "topic": "Interstitial Lung Disease",
+    "subtitle": "",
+    "system": "RS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "lung-cancer",
+    "topic": "Lung Cancer",
+    "subtitle": "",
+    "system": "RS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "mediastinum",
+    "topic": "Mediastinum",
+    "subtitle": "",
+    "system": "RS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "oxygen-dissociation-curve",
+    "topic": "Oxygen Dissociation Curve",
+    "subtitle": "",
+    "system": "RS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "pleural-effusion",
+    "topic": "Pleural Effusion",
+    "subtitle": "",
+    "system": "RS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "pneumonia",
+    "topic": "Pneumonia",
+    "subtitle": "",
+    "system": "RS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "pneumothorax",
+    "topic": "Pneumothorax",
+    "subtitle": "",
+    "system": "RS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "respiration",
+    "topic": "Respiration",
+    "subtitle": "",
+    "system": "RS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "respiratory-failure",
+    "topic": "Respiratory Failure",
+    "subtitle": "",
+    "system": "RS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "sarcoidosis",
+    "topic": "Sarcoidosis",
+    "subtitle": "staging & treatment overview",
+    "system": "RS",
+    "what_to_memorize": "Stage I–IV schema; indications for steroids; extrapulmonary red flags.",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "sleep-apnea",
+    "topic": "Sleep Apnea",
+    "subtitle": "",
+    "system": "RS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "sputum-analysis",
+    "topic": "Sputum Analysis",
+    "subtitle": "",
+    "system": "RS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "sputum-production",
+    "topic": "Sputum Production",
+    "subtitle": "",
+    "system": "RS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "superior-vena-cava-syndrome",
+    "topic": "Superior Vena Cava Syndrome",
+    "subtitle": "",
+    "system": "RS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "tuberculosis",
+    "topic": "Tuberculosis",
+    "subtitle": "",
+    "system": "RS",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "abdominal-distension",
+    "topic": "Abdominal Distension",
+    "subtitle": "",
+    "system": "GI",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "abdominal-pain",
+    "topic": "Abdominal Pain",
+    "subtitle": "",
+    "system": "GI",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Abdominal Pain"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "ascites",
+    "topic": "Ascites",
+    "subtitle": "",
+    "system": "GI",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "autoimmune-hepatitis",
+    "topic": "Autoimmune hepatitis",
+    "subtitle": "dx & treatment",
+    "system": "GI",
+    "what_to_memorize": "IAIHG scoring gist; steroid/azathioprine plan; transplant triggers.",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "bilirubin-metabolism",
+    "topic": "Bilirubin Metabolism",
+    "subtitle": "",
+    "system": "GI",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "bowel-habit-changes",
+    "topic": "Bowel Habit Changes",
+    "subtitle": "",
+    "system": "GI",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "buddchiari-syndrome",
+    "topic": "Budd–Chiari syndrome",
+    "subtitle": "evaluation & management",
+    "system": "GI",
+    "what_to_memorize": "Doppler/CT venography; anticoag/angioplasty/TIPS; hypercoagulable workup.",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "celiac-disease",
+    "topic": "Celiac Disease",
+    "subtitle": "",
+    "system": "GI",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "chronic-pancreatitis",
+    "topic": "Chronic pancreatitis",
+    "subtitle": "features & management",
+    "system": "GI",
+    "what_to_memorize": "Pain control ladder; EPI management; diabetes in CP; imaging cues.",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "cirrhosis",
+    "topic": "Cirrhosis",
+    "subtitle": "",
+    "system": "GI",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "crohn-disease",
+    "topic": "Crohn Disease",
+    "subtitle": "",
+    "system": "GI",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "dysphagia",
+    "topic": "Dysphagia",
+    "subtitle": "",
+    "system": "GI",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "endoscopy",
+    "topic": "Endoscopy",
+    "subtitle": "",
+    "system": "GI",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "gastrocnemius",
+    "topic": "Gastrocnemius",
+    "subtitle": "",
+    "system": "GI",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "gi-bleeding",
+    "topic": "Gi Bleeding",
+    "subtitle": "",
+    "system": "GI",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "hepatitis",
+    "topic": "Hepatitis",
+    "subtitle": "",
+    "system": "GI",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "hepatocellular-carcinoma",
+    "topic": "Hepatocellular Carcinoma",
+    "subtitle": "",
+    "system": "GI",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "hepatomegaly",
+    "topic": "Hepatomegaly",
+    "subtitle": "",
+    "system": "GI",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "hepatorenal-syndrome",
+    "topic": "Hepatorenal syndrome",
+    "subtitle": "recognition & first-line therapy",
+    "system": "GI",
+    "what_to_memorize": "Albumin + vasoconstrictor choices; diagnostic criteria; transplant signal.",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "inflammatory-bowel-disease",
+    "topic": "Inflammatory Bowel Disease",
+    "subtitle": "features & mgmt",
+    "system": "GI",
+    "what_to_memorize": "UC vs Crohn’s contrasts; step-up meds; biologic indications & monitoring.",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "jaundice",
+    "topic": "Jaundice",
+    "subtitle": "",
+    "system": "GI",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "liver-disease",
+    "topic": "Liver disease",
+    "subtitle": "",
+    "system": "GI",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "pancreatitis",
+    "topic": "Pancreatitis",
+    "subtitle": "",
+    "system": "GI",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Acute Pancreatitis"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "peptic-ulcer",
+    "topic": "Peptic Ulcer",
+    "subtitle": "",
+    "system": "GI",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "stigmata-in-chronic-liver-disease",
+    "topic": "Stigmata in Chronic Liver Disease",
+    "subtitle": "",
+    "system": "GI",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "ulcerative-colitis",
+    "topic": "Ulcerative Colitis",
+    "subtitle": "",
+    "system": "GI",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "upper-gi-bleed",
+    "topic": "Upper GI bleed",
+    "subtitle": "non-variceal initial management",
+    "system": "GI",
+    "what_to_memorize": "Resuscitation targets; PPI dosing; endoscopic timing; Rockall vibe.",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "acute-leukemia",
+    "topic": "Acute Leukemia",
+    "subtitle": "",
+    "system": "Heme",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "addicts",
+    "topic": "Addicts",
+    "subtitle": "",
+    "system": "Heme",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "anemia",
+    "topic": "Anemia",
+    "subtitle": "",
+    "system": "Heme",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Anemia Classified Based On Red"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "anemia-of-chronic-disease-vs-ida",
+    "topic": "Anemia of chronic disease vs IDA",
+    "subtitle": "distinctions",
+    "system": "Heme",
+    "what_to_memorize": "Ferritin/TfS patterns; CRP context; trial of iron vs investigate route.",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "anticoagulant-therapy",
+    "topic": "Anticoagulant Therapy",
+    "subtitle": "",
+    "system": "Heme",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "aplastic-anemia",
+    "topic": "Aplastic Anemia",
+    "subtitle": "",
+    "system": "Heme",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "appendiceal-pain",
+    "topic": "Appendiceal pain",
+    "subtitle": "",
+    "system": "Heme",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "blood-coagulation",
+    "topic": "Blood Coagulation",
+    "subtitle": "",
+    "system": "Heme",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "blood-transfusion",
+    "topic": "Blood Transfusion",
+    "subtitle": "",
+    "system": "Heme",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "dic",
+    "topic": "Dic",
+    "subtitle": "",
+    "system": "Heme",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "folic-acid-metabolism",
+    "topic": "Folic Acid Metabolism",
+    "subtitle": "",
+    "system": "Heme",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Folic Acid Metabolism"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "glomus-tumors",
+    "topic": "Glomus tumors",
+    "subtitle": "",
+    "system": "Heme",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "haemolytic-anaemia-hereditary-spherocytosis-focus",
+    "topic": "Haemolytic anaemia → hereditary spherocytosis focus",
+    "subtitle": "",
+    "system": "Heme",
+    "what_to_memorize": "Classify hemolysis; HS diagnostics (osmotic fragility/EMA); splenectomy cautions.",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "hemophilia",
+    "topic": "Hemophilia",
+    "subtitle": "",
+    "system": "Heme",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "hemostasis",
+    "topic": "Hemostasis",
+    "subtitle": "",
+    "system": "Heme",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "iron-deficiency-anemia",
+    "topic": "Iron Deficiency Anemia",
+    "subtitle": "",
+    "system": "Heme",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "iron-metabolism",
+    "topic": "Iron Metabolism",
+    "subtitle": "",
+    "system": "Heme",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "leukemia",
+    "topic": "Leukemia",
+    "subtitle": "",
+    "system": "Heme",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "lymphadenopathy",
+    "topic": "Lymphadenopathy",
+    "subtitle": "",
+    "system": "Heme",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "lymphoma",
+    "topic": "Lymphoma",
+    "subtitle": "",
+    "system": "Heme",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "medical-research-council-scale",
+    "topic": "Medical Research Council scale",
+    "subtitle": "",
+    "system": "Heme",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "megaloblastic-anemia",
+    "topic": "Megaloblastic Anemia",
+    "subtitle": "",
+    "system": "Heme",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "multiple-myeloma",
+    "topic": "Multiple Myeloma",
+    "subtitle": "",
+    "system": "Heme",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "myelodysplastic-syndromes",
+    "topic": "Myelodysplastic syndromes",
+    "subtitle": "",
+    "system": "Heme",
+    "what_to_memorize": "Cytopenia patterns; IPSS-R gist; transfusion & ESA concepts.",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "nasopharyngeal-carcinoma",
+    "topic": "Nasopharyngeal carcinoma",
+    "subtitle": "",
+    "system": "Heme",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "orbital-pseudotumor",
+    "topic": "Orbital pseudotumor",
+    "subtitle": "",
+    "system": "Heme",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "pancytopenia",
+    "topic": "Pancytopenia",
+    "subtitle": "",
+    "system": "Heme",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "pernicious-anemia",
+    "topic": "Pernicious anemia",
+    "subtitle": "",
+    "system": "Heme",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "promyelocytic-leukemia",
+    "topic": "Promyelocytic Leukemia",
+    "subtitle": "",
+    "system": "Heme",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "pseudoperiodic-lateralized-epileptiform-discharges",
+    "topic": "Pseudoperiodic lateralized epileptiform discharges",
+    "subtitle": "",
+    "system": "Heme",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "saccadic-system",
+    "topic": "Saccadic system",
+    "subtitle": "",
+    "system": "Heme",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "sickle-cell",
+    "topic": "Sickle Cell",
+    "subtitle": "",
+    "system": "Heme",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "spasmodic-dysphonia",
+    "topic": "Spasmodic dysphonia",
+    "subtitle": "",
+    "system": "Heme",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "splenomegaly",
+    "topic": "Splenomegaly",
+    "subtitle": "",
+    "system": "Heme",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "thalassemia",
+    "topic": "Thalassemia",
+    "subtitle": "",
+    "system": "Heme",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "thrombocytopenia",
+    "topic": "Thrombocytopenia",
+    "subtitle": "",
+    "system": "Heme",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "tumor-markers",
+    "topic": "Tumor Markers",
+    "subtitle": "",
+    "system": "Heme",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "acute-febrile-illness",
+    "topic": "Acute Febrile Illness",
+    "subtitle": "",
+    "system": "ID",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "antimicrobial-resistance",
+    "topic": "Antimicrobial Resistance",
+    "subtitle": "",
+    "system": "ID",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "autoimmunity",
+    "topic": "Autoimmunity",
+    "subtitle": "",
+    "system": "ID",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "behavioral-variant-of-ftd",
+    "topic": "Behavioral variant of FTD",
+    "subtitle": "",
+    "system": "ID",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "biofilm",
+    "topic": "Biofilm",
+    "subtitle": "",
+    "system": "ID",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "complement-system",
+    "topic": "Complement System",
+    "subtitle": "",
+    "system": "ID",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "covid",
+    "topic": "Covid",
+    "subtitle": "",
+    "system": "ID",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "cytokines",
+    "topic": "Cytokines",
+    "subtitle": "",
+    "system": "ID",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "delamanid",
+    "topic": "Delamanid",
+    "subtitle": "",
+    "system": "ID",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "dengue",
+    "topic": "Dengue",
+    "subtitle": "",
+    "system": "ID",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "echinococcosis",
+    "topic": "Echinococcosis",
+    "subtitle": "",
+    "system": "ID",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Echinococcosis"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "fever",
+    "topic": "Fever",
+    "subtitle": "",
+    "system": "ID",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Fever and Hyperthermia",
+      "Fever of Unknown Origin"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "foixchavanymarie-syndrome",
+    "topic": "Foix–Chavany–Marie syndrome",
+    "subtitle": "",
+    "system": "ID",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "fungal-infections",
+    "topic": "Fungal Infections",
+    "subtitle": "",
+    "system": "ID",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "gram-negative",
+    "topic": "Gram Negative",
+    "subtitle": "",
+    "system": "ID",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Gram Negative Bacteria"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "gram-positive",
+    "topic": "Gram Positive",
+    "subtitle": "",
+    "system": "ID",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "hiv",
+    "topic": "Hiv",
+    "subtitle": "",
+    "system": "ID",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "hospital-acquired-infection",
+    "topic": "Hospital Acquired Infection",
+    "subtitle": "",
+    "system": "ID",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "hypersensitivity",
+    "topic": "Hypersensitivity",
+    "subtitle": "",
+    "system": "ID",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "imitation-behavior",
+    "topic": "Imitation behavior",
+    "subtitle": "",
+    "system": "ID",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "immunodeficiency",
+    "topic": "Immunodeficiency",
+    "subtitle": "",
+    "system": "ID",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "leptospirosis",
+    "topic": "Leptospirosis",
+    "subtitle": "",
+    "system": "ID",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "malaria",
+    "topic": "Malaria",
+    "subtitle": "",
+    "system": "ID",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "mrsa",
+    "topic": "Mrsa",
+    "subtitle": "",
+    "system": "ID",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "mucormycosis",
+    "topic": "Mucormycosis",
+    "subtitle": "",
+    "system": "ID",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Mucormycosis"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "multidrug-resistant",
+    "topic": "Multidrug Resistant",
+    "subtitle": "",
+    "system": "ID",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "non-tubercular-mycobacteria",
+    "topic": "Non Tubercular Mycobacteria",
+    "subtitle": "",
+    "system": "ID",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "nosocomial",
+    "topic": "Nosocomial",
+    "subtitle": "",
+    "system": "ID",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "ntm",
+    "topic": "Ntm",
+    "subtitle": "",
+    "system": "ID",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "sepsis",
+    "topic": "Sepsis",
+    "subtitle": "",
+    "system": "ID",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "septic-shock",
+    "topic": "Septic Shock",
+    "subtitle": "",
+    "system": "ID",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Septic Shock"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "utilization-behavior",
+    "topic": "Utilization behavior",
+    "subtitle": "",
+    "system": "ID",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "variola-vs-varicella",
+    "topic": "Variola vs Varicella",
+    "subtitle": "",
+    "system": "ID",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Variola vs Varicella"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "adult-onset-stills-disease",
+    "topic": "Adult Onset Stills Disease",
+    "subtitle": "",
+    "system": "Rheum",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "anarthria",
+    "topic": "Anarthria",
+    "subtitle": "",
+    "system": "Rheum",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "anatomists",
+    "topic": "Anatomists",
+    "subtitle": "",
+    "system": "Rheum",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "ankylosing-spondylitis",
+    "topic": "Ankylosing spondylitis",
+    "subtitle": "diagnosis & therapy",
+    "system": "Rheum",
+    "what_to_memorize": "ASAS criteria; NSAIDs/biologics; extra-articular screening (uveitis).",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "autoimmune-disorders",
+    "topic": "Autoimmune disorders",
+    "subtitle": "",
+    "system": "Rheum",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "bony-anatomy",
+    "topic": "Bony anatomy",
+    "subtitle": "",
+    "system": "Rheum",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "canadian-neuro-ophthalmology-group",
+    "topic": "Canadian Neuro-Ophthalmology Group",
+    "subtitle": "",
+    "system": "Rheum",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "central-canal",
+    "topic": "Central canal",
+    "subtitle": "",
+    "system": "Rheum",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "chronic-intranasal-cocaine",
+    "topic": "Chronic intranasal cocaine",
+    "subtitle": "",
+    "system": "Rheum",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "connective-tissue",
+    "topic": "Connective tissue",
+    "subtitle": "",
+    "system": "Rheum",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "dermatomyositis",
+    "topic": "Dermatomyositis",
+    "subtitle": "",
+    "system": "Rheum",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "dorellos-canal",
+    "topic": "Dorello’s canal",
+    "subtitle": "",
+    "system": "Rheum",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "gaenslens-tes",
+    "topic": "Gaenslen’s tes",
+    "subtitle": "",
+    "system": "Rheum",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "gout",
+    "topic": "Gout",
+    "subtitle": "acute & chronic management",
+    "system": "Rheum",
+    "what_to_memorize": "Colchicine/NSAID/steroid choices; urate-lowering starts/stops; target urate.",
+    "flashcard_topics": [
+      "Gout"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "guyons-canal",
+    "topic": "Guyon’s canal",
+    "subtitle": "",
+    "system": "Rheum",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "internal-auditory-canal",
+    "topic": "Internal auditory canal",
+    "subtitle": "",
+    "system": "Rheum",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "jak-inhibitors",
+    "topic": "JAK Inhibitors",
+    "subtitle": "",
+    "system": "Rheum",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "JAK Inhibitors"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "neuroanatomy-through-clinical-ases",
+    "topic": "Neuroanatomy Through Clinical ases",
+    "subtitle": "",
+    "system": "Rheum",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "osteoarthritis",
+    "topic": "Osteoarthritis",
+    "subtitle": "",
+    "system": "Rheum",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "polymyositis",
+    "topic": "Polymyositis",
+    "subtitle": "",
+    "system": "Rheum",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "psoriatic-arthritis",
+    "topic": "Psoriatic Arthritis",
+    "subtitle": "",
+    "system": "Rheum",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "psoriatic-arthropathy",
+    "topic": "Psoriatic Arthropathy",
+    "subtitle": "",
+    "system": "Rheum",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "raynaud-phenomenon-mctd",
+    "topic": "Raynaud phenomenon & MCTD",
+    "subtitle": "",
+    "system": "Rheum",
+    "what_to_memorize": "Primary vs secondary flags; scleroderma overlap; vasodilator ladder.",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "rheumatoid-arthritis",
+    "topic": "Rheumatoid Arthritis",
+    "subtitle": "",
+    "system": "Rheum",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "scleroderma",
+    "topic": "Scleroderma",
+    "subtitle": "",
+    "system": "Rheum",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "sleep-cycle-disturbances",
+    "topic": "Sleep cycle disturbances",
+    "subtitle": "",
+    "system": "Rheum",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "sleep-paralysis",
+    "topic": "Sleep paralysis",
+    "subtitle": "",
+    "system": "Rheum",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "sleep-related-dyskinesias",
+    "topic": "Sleep-related dyskinesias",
+    "subtitle": "",
+    "system": "Rheum",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "systemic-lupus-erythematosus",
+    "topic": "Systemic Lupus Erythematosus",
+    "subtitle": "",
+    "system": "Rheum",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "systemic-sclerosis-ssc",
+    "topic": "Systemic sclerosis (SSc)",
+    "subtitle": "systemic involvement",
+    "system": "Rheum",
+    "what_to_memorize": "Diffuse vs limited; ILD and PAH screening; renal crisis precautions.",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "uric-acid",
+    "topic": "Uric Acid",
+    "subtitle": "",
+    "system": "Rheum",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "vasculitis",
+    "topic": "Vasculitis",
+    "subtitle": "define/classify & mechanisms",
+    "system": "Rheum",
+    "what_to_memorize": "Small/medium/large-vessel schema; ANCA patterns; induction/maintenance outline.",
+    "flashcard_topics": [
+      "Vasculitis"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "vertebral-canal",
+    "topic": "Vertebral canal",
+    "subtitle": "",
+    "system": "Rheum",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "wechsler-adult-intelligence-scale",
+    "topic": "Wechsler Adult Intelligence Scale",
+    "subtitle": "",
+    "system": "Rheum",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "anatomical-snuff-box",
+    "topic": "“Anatomical snuff box,”",
+    "subtitle": "",
+    "system": "Rheum",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "alopecia",
+    "topic": "Alopecia",
+    "subtitle": "",
+    "system": "Derm",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "bullous-diseases-of-skin",
+    "topic": "Bullous diseases of skin",
+    "subtitle": "",
+    "system": "Derm",
+    "what_to_memorize": "Pemphigus vs bullous pemphigoid contrast; biopsy & DIF basics.",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "bullous-skin-diseases",
+    "topic": "Bullous Skin Diseases",
+    "subtitle": "",
+    "system": "Derm",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Bullous Skin Diseases"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "skin-rash",
+    "topic": "Skin Rash",
+    "subtitle": "",
+    "system": "Derm",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Skin Rash"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "adverse-drug-reactions",
+    "topic": "Adverse Drug Reactions",
+    "subtitle": "",
+    "system": "Pharmacology",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "anticoagulants",
+    "topic": "Anticoagulants",
+    "subtitle": "",
+    "system": "Pharmacology",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "antihypertensive",
+    "topic": "Antihypertensive",
+    "subtitle": "",
+    "system": "Pharmacology",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "beta-blockers",
+    "topic": "Beta Blockers",
+    "subtitle": "",
+    "system": "Pharmacology",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "bioavailability",
+    "topic": "Bioavailability",
+    "subtitle": "",
+    "system": "Pharmacology",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "biological-therapy",
+    "topic": "Biological Therapy",
+    "subtitle": "",
+    "system": "Pharmacology",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "biosimilars",
+    "topic": "Biosimilars",
+    "subtitle": "",
+    "system": "Pharmacology",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "calcium-channel-blockers",
+    "topic": "Calcium Channel Blockers",
+    "subtitle": "",
+    "system": "Pharmacology",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "clinical-pharmacology",
+    "topic": "Clinical Pharmacology",
+    "subtitle": "",
+    "system": "Pharmacology",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "clinical-trial",
+    "topic": "Clinical Trial",
+    "subtitle": "",
+    "system": "Pharmacology",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "corticosteroids",
+    "topic": "Corticosteroids",
+    "subtitle": "",
+    "system": "Pharmacology",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "diuretics",
+    "topic": "Diuretics",
+    "subtitle": "",
+    "system": "Pharmacology",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "drug-interactions",
+    "topic": "Drug Interactions",
+    "subtitle": "",
+    "system": "Pharmacology",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "drug-metabolism",
+    "topic": "Drug Metabolism",
+    "subtitle": "",
+    "system": "Pharmacology",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "immunosuppressants",
+    "topic": "Immunosuppressants",
+    "subtitle": "",
+    "system": "Pharmacology",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "monoclonal-antibodies",
+    "topic": "Monoclonal Antibodies",
+    "subtitle": "",
+    "system": "Pharmacology",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Monoclonal Antibodies"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "pharmacokinetics",
+    "topic": "Pharmacokinetics",
+    "subtitle": "",
+    "system": "Pharmacology",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "phase-iii-clinical-trial",
+    "topic": "Phase Iii Clinical Trial",
+    "subtitle": "",
+    "system": "Pharmacology",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "statins",
+    "topic": "Statins",
+    "subtitle": "",
+    "system": "Pharmacology",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "thrombolytics",
+    "topic": "Thrombolytics",
+    "subtitle": "",
+    "system": "Pharmacology",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "amyloidosis",
+    "topic": "Amyloidosis",
+    "subtitle": "",
+    "system": "General",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "apoptosis",
+    "topic": "Apoptosis",
+    "subtitle": "",
+    "system": "General",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "autopsy",
+    "topic": "Autopsy",
+    "subtitle": "",
+    "system": "General",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "burner-phenomenon",
+    "topic": "Burner phenomenon",
+    "subtitle": "",
+    "system": "General",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "clinical-trials",
+    "topic": "Clinical Trials",
+    "subtitle": "",
+    "system": "General",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "consent",
+    "topic": "Consent",
+    "subtitle": "",
+    "system": "General",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "death-certification",
+    "topic": "Death Certification",
+    "subtitle": "",
+    "system": "General",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "enteral-nutrition",
+    "topic": "Enteral Nutrition",
+    "subtitle": "",
+    "system": "General",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Total Parenteral Nutrition"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "gene-therapy",
+    "topic": "Gene Therapy",
+    "subtitle": "",
+    "system": "General",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Gene Therapy"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "granuloma",
+    "topic": "Granuloma",
+    "subtitle": "",
+    "system": "General",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "heavy-metal-poisoning",
+    "topic": "Heavy Metal Poisoning",
+    "subtitle": "",
+    "system": "General",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "hypothermia",
+    "topic": "Hypothermia",
+    "subtitle": "",
+    "system": "General",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "inflammation",
+    "topic": "Inflammation",
+    "subtitle": "",
+    "system": "General",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "insomnia",
+    "topic": "Insomnia",
+    "subtitle": "",
+    "system": "General",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "malnutrition",
+    "topic": "Malnutrition",
+    "subtitle": "",
+    "system": "General",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "medical-ethics",
+    "topic": "Medical Ethics",
+    "subtitle": "",
+    "system": "General",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "medical-negligence",
+    "topic": "Medical Negligence",
+    "subtitle": "",
+    "system": "General",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "motor-weakness",
+    "topic": "Motor Weakness",
+    "subtitle": "",
+    "system": "General",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Motor Weakness"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "neoplasia",
+    "topic": "Neoplasia",
+    "subtitle": "",
+    "system": "General",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "nutritional-deficiency",
+    "topic": "Nutritional Deficiency",
+    "subtitle": "",
+    "system": "General",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "organophosphorus",
+    "topic": "Organophosphorus",
+    "subtitle": "",
+    "system": "General",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "palliative-care",
+    "topic": "Palliative Care",
+    "subtitle": "",
+    "system": "General",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "parenteral-nutrition",
+    "topic": "Parenteral Nutrition",
+    "subtitle": "",
+    "system": "General",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Total Parenteral Nutrition"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "pharmacogenomics",
+    "topic": "Pharmacogenomics",
+    "subtitle": "",
+    "system": "General",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Pharmacogenomics"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "poisoning",
+    "topic": "Poisoning",
+    "subtitle": "",
+    "system": "General",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "snake-bite",
+    "topic": "Snake Bite",
+    "subtitle": "",
+    "system": "General",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "thiamine-deficiency",
+    "topic": "Thiamine Deficiency",
+    "subtitle": "",
+    "system": "General",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "Thiamine Deficiency"
+    ],
+    "tool_ids": []
+  },
+  {
+    "id": "vitamin-deficiency",
+    "topic": "Vitamin Deficiency",
+    "subtitle": "",
+    "system": "General",
+    "what_to_memorize": "",
+    "flashcard_topics": [],
+    "tool_ids": []
+  },
+  {
+    "id": "with-which-demographic-is-entamoeba-histolytica-associated",
+    "topic": "With which demographic is Entamoeba histolytica associated",
+    "subtitle": "",
+    "system": "General",
+    "what_to_memorize": "",
+    "flashcard_topics": [
+      "With which demographic is Entamoeba histolytica associated"
+    ],
+    "tool_ids": []
+  }
+]

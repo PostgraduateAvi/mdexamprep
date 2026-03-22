@@ -1,14 +1,14 @@
-const CACHE_VERSION = 'v7';
+const CACHE_VERSION = 'v8';
 const PRECACHE = 'precache-' + CACHE_VERSION;
 const RUNTIME = 'runtime-' + CACHE_VERSION;
 
 const PRECACHE_URLS = [
   '/',
-  '/predictor/',
+  '/learn/',
+  '/mcqs/',
   '/practicals/',
-  '/theory/',
   '/style.css',
-  '/assets/js/template.js?v=5',
+  '/assets/js/template.js?v=6',
   '/favicon.svg',
   '/manifest.json',
   '/assets/fonts/DMSans-Variable.woff2',

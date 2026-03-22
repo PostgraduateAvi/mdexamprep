@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCQs &mdash; MBBEasy</title>
+  <meta name="description" content="500 AIIMS and NEET PG entrance MCQs across 11 body systems. Filter by system, test yourself, track your score.">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="canonical" href="https://mdexamprep.vercel.app/mcqs">
+  <meta name="theme-color" content="#09090b">
+  <link rel="manifest" href="/manifest.json">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mdexamprep.vercel.app/mcqs/">
+  <meta property="og:title" content="MCQs — MBBEasy">
+  <meta property="og:description" content="500 AIIMS and NEET PG entrance MCQs across 11 body systems.">
+  <meta property="og:image" content="https://mdexamprep.vercel.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div id="site-nav"></div>
+  <main class="container" style="padding-top: 120px; padding-bottom: 64px;">
+    <h1>Practice MCQs</h1>
+    <p style="color: var(--text-secondary); margin-top: 12px; font-size: 1.125rem;">500 MCQs from AIIMS &amp; NEET PG entrance exams. Filter by system, click to reveal answers.</p>
+    <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 24px;">Source: MedMCQA (Apache 2.0) &mdash; openlifescienceai/medmcqa</p>
+
+    <div class="score-tracker" id="score-tracker">
+      <span class="score-correct" id="score-correct">0</span>/<span class="score-total" id="score-total">0</span> correct
+    </div>
+
+    <div class="system-btns" id="mcq-system-filters"></div>
+    <div class="filter-status" id="mcq-filter-status"></div>
+    <div id="mcq-deck"></div>
+  </main>
+  <div id="site-footer"></div>
+  <script>if('serviceWorker' in navigator)navigator.serviceWorker.register('/sw.js');</script>
+  <script src="../assets/js/template.js?v=6"></script>
+  <script src="mcqs.js"></script>
+</body>
+</html>

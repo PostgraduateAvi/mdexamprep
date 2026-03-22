@@ -4,9 +4,10 @@
 
   function currentSection() {
     var path = window.location.pathname;
-    if (path.indexOf("/predictor") !== -1) return "predictor";
+    if (path.indexOf("/learn") !== -1) return "learn";
+    if (path.indexOf("/mcqs") !== -1) return "mcqs";
     if (path.indexOf("/practicals") !== -1) return "practicals";
-    if (path.indexOf("/theory") !== -1) return "theory";
+    if (path.indexOf("/theory") !== -1) return "learn"; /* tools pages still under /theory/ */
     return "";
   }
 
@@ -16,9 +17,9 @@
     var nav = document.getElementById("site-nav");
     if (nav) {
       var links = [
-        { href: "/predictor", label: "Predictor", key: "predictor" },
-        { href: "/practicals", label: "Practicals", key: "practicals" },
-        { href: "/theory", label: "Theory", key: "theory" }
+        { href: "/learn", label: "Learn", key: "learn" },
+        { href: "/mcqs", label: "MCQs", key: "mcqs" },
+        { href: "/practicals", label: "Practicals", key: "practicals" }
       ];
       var linksHtml = links.map(function (l) {
         var cls = l.key === section ? ' class="active"' : '';

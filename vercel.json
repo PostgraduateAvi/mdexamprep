@@ -2,6 +2,12 @@
   "outputDirectory": "website",
   "cleanUrls": true,
   "trailingSlash": true,
+  "redirects": [
+    { "source": "/predictor", "destination": "/learn/", "permanent": true },
+    { "source": "/predictor/", "destination": "/learn/", "permanent": true },
+    { "source": "/theory", "destination": "/learn/", "permanent": true },
+    { "source": "/theory/", "destination": "/learn/", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/sw.js",
@@ -40,7 +46,7 @@
       ]
     },
     {
-      "source": "/(predictor|practicals|theory)/data/(.*)",
+      "source": "/(learn|mcqs|practicals|theory)/data/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
