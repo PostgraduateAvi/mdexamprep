@@ -11,6 +11,7 @@ desktop.ini
 
 # Claude Code project data
 .claude/
+CLAUDE.md
 
 # Source data (raw inputs, build scripts, audit � not deployed)
 /_source/
