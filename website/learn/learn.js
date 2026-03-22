@@ -12,7 +12,7 @@ var LearnUI = (function () {
     'microbiology': 'Microbiology',
     'pharmacology': 'Pharmacology',
     'pulmonology': 'Pulmonology',
-    'genetics': 'Genetics',
+    'genetics': 'Molecular Biology',
     'study-skills': 'Study Skills'
   };
 
@@ -478,7 +478,7 @@ var LearnUI = (function () {
         }
 
         if (t.what_to_memorize) {
-          html += '<div class="topic-study-hint"><div class="clinical-pearl-label">What to memorize</div>' + escapeHtml(t.what_to_memorize) + '</div>';
+          html += '<div class="topic-study-hint"><div class="clinical-pearl-label">Key Points</div>' + escapeHtml(t.what_to_memorize) + '</div>';
         }
 
         if (cards.length) {
@@ -504,7 +504,7 @@ var LearnUI = (function () {
 
         if (tools.length) {
           html += '<div class="topic-inline-tools">';
-          html += '<div class="clinical-pearl-label" style="margin-bottom:8px;">Related tools</div>';
+          html += '<div class="clinical-pearl-label" style="margin-bottom:8px;">Study Tools</div>';
           tools.forEach(function (tool) {
             html += '<a class="tool-link" href="/theory/tools/' + escapeHtml(tool.filename) + '">' +
               '<div class="tool-link-title">' + escapeHtml(tool.title) + '</div>' +
@@ -515,7 +515,7 @@ var LearnUI = (function () {
 
         if (related.length) {
           html += '<div class="related-topics">';
-          html += '<div class="related-topics-label">Related topics</div>';
+          html += '<div class="related-topics-label">See Also</div>';
           related.forEach(function (r) {
             html += '<a class="related-pill" data-related-id="' + escapeHtml(r.id) + '">' + escapeHtml(r.topic) + '</a>';
           });
@@ -651,7 +651,7 @@ var LearnUI = (function () {
         if (cardCount) html += '<span class="tag tag-blue">' + cardCount + ' cards</span>';
         html += '</div>';
         if (prereqs.length) {
-          html += '<div class="study-path-prereqs">Prereqs: ' + prereqs.map(function (p) { return escapeHtml(p.topic); }).join(', ') + '</div>';
+          html += '<div class="study-path-prereqs">Learn first: ' + prereqs.map(function (p) { return escapeHtml(p.topic); }).join(', ') + '</div>';
         }
         html += '</div>';
         html += '</div>';

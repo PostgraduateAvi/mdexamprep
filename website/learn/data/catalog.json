@@ -100,96 +100,6 @@
     "sizeKB": 8
   },
   {
-    "id": "parasite-lifecycle",
-    "title": "Parasite Lifecycle Algorithms",
-    "subtitle": "v1",
-    "category": "microbiology",
-    "filename": "microbiology/parasite_lifecycle_algorithms.html",
-    "type": "interactive",
-    "description": "Algorithmic approach to parasite lifecycles — malaria, filaria, intestinal helminths",
-    "sizeKB": 45
-  },
-  {
-    "id": "parasite-lifecycle-v2",
-    "title": "Parasite Lifecycle Algorithms",
-    "subtitle": "v2 (Enhanced)",
-    "category": "microbiology",
-    "filename": "microbiology/parasite_lifecycle_algorithms_v2.html",
-    "type": "interactive",
-    "description": "Enhanced parasite lifecycle tool with additional species and clinical drill mode",
-    "sizeKB": 46
-  },
-  {
-    "id": "pi-final-weapon",
-    "title": "Error Pattern Lab",
-    "subtitle": "Polarity Fixes + Common Traps",
-    "category": "study-skills",
-    "filename": "paper-1/PI_FINAL_WEAPON.html",
-    "type": "drill",
-    "description": "Error pattern analysis — direction inversions, name swaps, tail drops, and vocabulary traps with mnemonic anchors",
-    "sizeKB": 21
-  },
-  {
-    "id": "crispr-cas9",
-    "title": "CRISPR-Cas9 & Gene Editing",
-    "subtitle": "Reference Sheet",
-    "category": "genetics",
-    "filename": "paper-1/crispr_cas9_exam_stats.html",
-    "type": "reference",
-    "description": "CRISPR-Cas9 mechanism, applications, FDA-approved therapies, and emerging gene editing technologies",
-    "sizeKB": 28
-  },
-  {
-    "id": "pi-final-review",
-    "title": "Comprehensive Review",
-    "subtitle": "Multi-System Drill",
-    "category": "study-skills",
-    "filename": "paper-1/pi_final_review.html",
-    "type": "drill",
-    "description": "Comprehensive review with keyword-scored recall across nutrition, cardiac, renal, and pharmacology topics",
-    "sizeKB": 52
-  },
-  {
-    "id": "pi-slot-dashboard",
-    "title": "Coverage Dashboard",
-    "subtitle": "Study Progress Tracker",
-    "category": "study-skills",
-    "filename": "paper-1/pi_slot_dashboard.html",
-    "type": "reference",
-    "description": "Topic coverage tracking with gap identification, risk stratification, and study progress visualization",
-    "sizeKB": 48
-  },
-  {
-    "id": "pi-spider-web",
-    "title": "Topic Connections Map",
-    "subtitle": "Visual Network",
-    "category": "study-skills",
-    "filename": "paper-1/pi_spider_web_full_map.html",
-    "type": "interactive",
-    "description": "Visual network mapping topic interconnections — see how concepts relate across systems",
-    "sizeKB": 35
-  },
-  {
-    "id": "slot1-nutrition",
-    "title": "Nutrition Network Map",
-    "subtitle": "Vitamin & Mineral Connections",
-    "category": "study-skills",
-    "filename": "paper-1/slot1_nutrition_network.html",
-    "type": "interactive",
-    "description": "Interactive network showing relationships between vitamins, minerals, deficiency syndromes, and metabolic pathways",
-    "sizeKB": 27
-  },
-  {
-    "id": "piii-recall-tester",
-    "title": "Active Recall Tester",
-    "subtitle": "25 Clinical Topics",
-    "category": "study-skills",
-    "filename": "paper-3/PIII_Recall_Tester.html",
-    "type": "drill",
-    "description": "Active recall engine with keyword-matched scoring across 25 clinical topics — tracks session history and improvement",
-    "sizeKB": 98
-  },
-  {
     "id": "b-vitamin-cluster",
     "title": "B-Vitamin Cluster",
     "subtitle": "Pharmacology Drill",
@@ -220,6 +130,36 @@
     "sizeKB": 28
   },
   {
+    "id": "parasite-lifecycle",
+    "title": "Parasite Lifecycle Algorithms",
+    "subtitle": "v1",
+    "category": "microbiology",
+    "filename": "microbiology/parasite_lifecycle_algorithms.html",
+    "type": "interactive",
+    "description": "Algorithmic approach to parasite lifecycles — malaria, filaria, intestinal helminths",
+    "sizeKB": 45
+  },
+  {
+    "id": "parasite-lifecycle-v2",
+    "title": "Parasite Lifecycle Algorithms",
+    "subtitle": "v2 (Enhanced)",
+    "category": "microbiology",
+    "filename": "microbiology/parasite_lifecycle_algorithms_v2.html",
+    "type": "interactive",
+    "description": "Enhanced parasite lifecycle tool with additional species and clinical drill mode",
+    "sizeKB": 46
+  },
+  {
+    "id": "crispr-cas9",
+    "title": "CRISPR-Cas9 & Gene Editing",
+    "subtitle": "Reference Sheet",
+    "category": "genetics",
+    "filename": "paper-1/crispr_cas9_exam_stats.html",
+    "type": "reference",
+    "description": "CRISPR-Cas9 mechanism, applications, FDA-approved therapies, and emerging gene editing technologies",
+    "sizeKB": 28
+  },
+  {
     "id": "pft-algorithms",
     "title": "PFT Decision Algorithms",
     "subtitle": "Interpretation Guide",
@@ -228,5 +168,65 @@
     "type": "interactive",
     "description": "Pulmonary function test interpretation — obstructive vs restrictive, flow-volume loops, algorithmic approach",
     "sizeKB": 65
+  },
+  {
+    "id": "pi-final-weapon",
+    "title": "Common Mistakes Drill",
+    "subtitle": "Polarity Fixes + Common Traps",
+    "category": "study-skills",
+    "filename": "paper-1/PI_FINAL_WEAPON.html",
+    "type": "drill",
+    "description": "Error pattern analysis — direction inversions, name swaps, tail drops, and vocabulary traps with mnemonic anchors",
+    "sizeKB": 21
+  },
+  {
+    "id": "pi-final-review",
+    "title": "Comprehensive Review",
+    "subtitle": "Multi-System Drill",
+    "category": "study-skills",
+    "filename": "paper-1/pi_final_review.html",
+    "type": "drill",
+    "description": "Comprehensive review with keyword-scored recall across nutrition, cardiac, renal, and pharmacology topics",
+    "sizeKB": 52
+  },
+  {
+    "id": "pi-slot-dashboard",
+    "title": "Progress Tracker",
+    "subtitle": "Study Progress Tracker",
+    "category": "study-skills",
+    "filename": "paper-1/pi_slot_dashboard.html",
+    "type": "reference",
+    "description": "Topic coverage tracking with gap identification, risk stratification, and study progress visualization",
+    "sizeKB": 48
+  },
+  {
+    "id": "pi-spider-web",
+    "title": "Topic Map",
+    "subtitle": "Visual Network",
+    "category": "study-skills",
+    "filename": "paper-1/pi_spider_web_full_map.html",
+    "type": "interactive",
+    "description": "Visual network mapping topic interconnections — see how concepts relate across systems",
+    "sizeKB": 35
+  },
+  {
+    "id": "slot1-nutrition",
+    "title": "Nutrition Network Map",
+    "subtitle": "Vitamin & Mineral Connections",
+    "category": "study-skills",
+    "filename": "paper-1/slot1_nutrition_network.html",
+    "type": "interactive",
+    "description": "Interactive network showing relationships between vitamins, minerals, deficiency syndromes, and metabolic pathways",
+    "sizeKB": 27
+  },
+  {
+    "id": "piii-recall-tester",
+    "title": "Active Recall Tester",
+    "subtitle": "25 Clinical Topics",
+    "category": "study-skills",
+    "filename": "paper-3/PIII_Recall_Tester.html",
+    "type": "drill",
+    "description": "Active recall engine with keyword-matched scoring across 25 clinical topics — tracks session history and improvement",
+    "sizeKB": 98
   }
 ]

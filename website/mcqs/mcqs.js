@@ -276,16 +276,20 @@ var McqsUI = (function () {
       btn.classList.add('active');
       clearTimer();
       applyFilter();
+      buildDifficultyButtons();
     });
   }
 
   /* === Difficulty filter buttons === */
 
+  var diffBound = false;
   function buildDifficultyButtons() {
     var el = document.getElementById('difficulty-filters');
     if (!el) return;
     var counts = { easy: 0, medium: 0, hard: 0 };
     allMcqs.forEach(function (m) {
+      if (mcqFilters.system && m.system !== mcqFilters.system) return;
+      if (mcqFilters.topicId && m.topic_id !== mcqFilters.topicId) return;
       if (m.difficulty && counts[m.difficulty] !== undefined) counts[m.difficulty]++;
     });
     var html = '<button class="system-btn' + (!mcqFilters.difficulty ? ' active' : '') + '" data-diff="all">All</button>';
@@ -294,16 +298,19 @@ var McqsUI = (function () {
         d.charAt(0).toUpperCase() + d.slice(1) + ' (' + counts[d] + ')</button>';
     });
     el.innerHTML = html;
-    el.addEventListener('click', function (e) {
-      var btn = e.target.closest('[data-diff]');
-      if (!btn) return;
-      var d = btn.dataset.diff;
-      mcqFilters.difficulty = d === 'all' ? null : d;
-      el.querySelectorAll('.system-btn').forEach(function (b) { b.classList.remove('active'); });
-      btn.classList.add('active');
-      clearTimer();
-      applyFilter();
-    });
+    if (!diffBound) {
+      diffBound = true;
+      el.addEventListener('click', function (e) {
+        var btn = e.target.closest('[data-diff]');
+        if (!btn) return;
+        var d = btn.dataset.diff;
+        mcqFilters.difficulty = d === 'all' ? null : d;
+        el.querySelectorAll('.system-btn').forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        clearTimer();
+        applyFilter();
+      });
+    }
   }
 
   /* === Quiz mode buttons === */

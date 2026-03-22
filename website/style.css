@@ -766,8 +766,8 @@ details.case.system-technique summary, details.case.cross-case summary { color: 
 .prereq-pill:hover { background: rgba(129, 140, 248, 0.2); }
 
 /* === Study Path View === */
-.view-toggle { display: flex; gap: 8px; margin-bottom: 16px; }
-.view-toggle-btn { padding: 8px 16px; border-radius: var(--radius-full); border: 1px solid var(--border); background: transparent; color: var(--text-secondary); font-size: 0.875rem; cursor: pointer; transition: all var(--transition); min-height: 40px; font-family: 'DM Sans', sans-serif; }
+.view-toggle { display: flex; gap: 8px; }
+.view-toggle-btn { padding: 8px 16px; border-radius: var(--radius-full); border: 1px solid var(--border); background: transparent; color: var(--text-secondary); font-size: 0.875rem; cursor: pointer; transition: all var(--transition); min-height: 48px; font-family: 'DM Sans', sans-serif; }
 .view-toggle-btn.active { background: var(--accent); color: #0f1117; border-color: var(--accent); font-weight: 600; }
 .view-toggle-btn:hover:not(.active) { border-color: var(--border-hover); color: var(--text); }
 
@@ -801,8 +801,13 @@ details.case.system-technique summary, details.case.cross-case summary { color: 
 .sr-session-stat { font-size: 1.125rem; margin-bottom: 8px; color: var(--text-secondary); }
 .sr-session-stat strong { color: var(--text); }
 
+/* === Learn Controls Bar === */
+.learn-controls { display: flex; flex-direction: column; gap: 12px; margin-bottom: 16px; }
+.learn-controls .topic-search { flex: 1; margin: 0; }
+.learn-controls-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+
 /* === Yield Filter Toggle === */
-.yield-toggle { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: var(--radius-full); border: 1px solid var(--border); background: transparent; color: var(--text-secondary); font-size: 0.8125rem; cursor: pointer; transition: all var(--transition); margin-left: 8px; font-family: 'DM Sans', sans-serif; min-height: 40px; }
+.yield-toggle { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: var(--radius-full); border: 1px solid var(--border); background: transparent; color: var(--text-secondary); font-size: 0.875rem; cursor: pointer; transition: all var(--transition); font-family: 'DM Sans', sans-serif; min-height: 48px; }
 .yield-toggle.active { background: var(--pearl-dim); color: var(--pearl); border-color: rgba(245, 158, 11, 0.3); }
 
 /* === Responsive === */
