@@ -7,7 +7,7 @@
   <meta name="description" content="Free study tools for MBBS, MD, and PG medical exam preparation. No login required.">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="canonical" href="https://mdexamprep.vercel.app/">
-  <meta name="theme-color" content="#09090b">
+  <meta name="theme-color" content="#0f1117">
   <link rel="manifest" href="/manifest.json">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mdexamprep.vercel.app/">
@@ -29,43 +29,64 @@
     </div>
   </nav>
   <main>
-    <div class="hero">
+    <section class="hero">
       <div class="container hero-content">
         <span class="hero-eyebrow">Maximum marks. Minimum time.</span>
         <h1 class="hero-title">Clinical medicine, decoded.</h1>
-        <p class="hero-sub">Master the topics, test your knowledge, practise the cases.</p>
+        <p class="hero-sub">Master the topics, test your knowledge, practise the cases — all in one place.</p>
+        <div class="hero-actions">
+          <a href="/learn" class="btn btn-primary">Start learning</a>
+          <a href="/mcqs" class="btn btn-secondary">Take a quiz</a>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="container">
-      <div id="dashboard" style="display:none;"></div>
-      <p class="hero-sub" style="text-align:center; max-width:640px; margin:0 auto 48px;">
-        Every tool feeds the next. Browse topics, test with MCQs, then practise at the bedside.
-      </p>
-      <div class="tool-cards">
-        <a href="/learn" class="tool-card">
-          <div class="tool-card-number">01</div>
-          <h3>Learn</h3>
-          <p>Browse 390+ topics across all medical systems. Each topic expands to reveal flashcards, study hints, and interactive tools inline.</p>
-          <span class="tool-card-action">Start learning &rarr;</span>
-        </a>
-        <a href="/mcqs" class="tool-card">
-          <div class="tool-card-number">02</div>
-          <h3>Practice MCQs</h3>
-          <p>1,000 AIIMS &amp; NEET PG entrance MCQs across 11 systems. Test yourself, check explanations, track your score.</p>
-          <span class="tool-card-action">Take a quiz &rarr;</span>
-        </a>
-        <a href="/practicals" class="tool-card">
-          <div class="tool-card-number">03</div>
-          <h3>Practicals</h3>
-          <p>21 clinical cases organised by body system. Presentation scripts, exam technique, findings, and management — ready for the bedside.</p>
-          <span class="tool-card-action">Browse cases &rarr;</span>
-        </a>
+    <section class="landing-section landing-section--surface">
+      <div class="container container--wide">
+        <div class="section-header">
+          <h2>Three tools, one workflow</h2>
+          <p>Browse topics, test with MCQs, then practise at the bedside. Each tool feeds the next.</p>
+        </div>
+        <div class="tool-cards">
+          <a href="/learn" class="tool-card">
+            <div class="tool-card-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <h3>Learn</h3>
+            <p>390+ topics across all systems. Flashcards, study hints, and interactive tools — everything expands inline.</p>
+            <span class="tool-card-action">Start learning &rarr;</span>
+          </a>
+          <a href="/mcqs" class="tool-card">
+            <div class="tool-card-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+            <h3>Practice MCQs</h3>
+            <p>1,000 AIIMS &amp; NEET PG questions. Three quiz modes, persistent scoring, and cross-linked explanations.</p>
+            <span class="tool-card-action">Take a quiz &rarr;</span>
+          </a>
+          <a href="/practicals" class="tool-card">
+            <div class="tool-card-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <h3>Practicals</h3>
+            <p>21 clinical cases by system. Presentation scripts, exam technique, findings, and management — bedside-ready.</p>
+            <span class="tool-card-action">Browse cases &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-section">
+      <div class="container">
+        <div id="dashboard" style="display:none;"></div>
+      </div>
+    </section>
+
+    <div class="footer-cta">
+      <div class="container">
+        No login. No paywall. Just the shortest path to your best score.
       </div>
     </div>
-    <p style="text-align:center; color:var(--text-secondary); padding:48px 0 0; font-size:0.95rem;">
-      No login. No paywall. Just the shortest path to your best score.
-    </p>
   </main>
   <footer class="site-footer">
     <div class="container">Built by Avinash Jothish. Free forever.</div>
