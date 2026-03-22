@@ -2,7 +2,7 @@
 var McqsUI = (function () {
   'use strict';
 
-  var SYSTEMS_ORDER = ['Neuro','Endocrine','Renal','General','CVS','ID','Rheum','Heme','GI','RS','Derm'];
+  var SYSTEMS_ORDER = ['CVS','Neuro','Renal','Endocrine','RS','GI','Heme','ID','Rheum','Derm','Pharmacology','General'];
   var STORAGE_KEY = 'mbbeasy-mcq-progress';
   var TIMER_KEY = 'mbbeasy-mcq-timer';
 
@@ -376,7 +376,7 @@ var McqsUI = (function () {
         '<div class="quiz-stat"><span class="quiz-stat-value">' + pct + '%</span><span class="quiz-stat-label">Accuracy</span></div>' +
         '<div class="quiz-stat"><span class="quiz-stat-value">' + progress.streak + '</span><span class="quiz-stat-label">Streak</span></div>' +
       '</div>' +
-      '<button class="btn btn-secondary quiz-back-btn" onclick="location.reload()">Back to Practice</button>' +
+      '<button class="btn btn-secondary quiz-back-btn">Back to Practice</button>' +
     '</div>';
     deck.insertAdjacentHTML('afterbegin', summary);
   }
@@ -450,6 +450,7 @@ var McqsUI = (function () {
     var deck = document.getElementById('mcq-deck');
     if (!deck) return;
     deck.addEventListener('click', function (e) {
+      if (e.target.closest('.quiz-back-btn')) { location.reload(); return; }
       var optBtn = e.target.closest('.mcq-option');
       if (optBtn) {
         var optionsEl = optBtn.closest('.mcq-options');
