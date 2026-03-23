@@ -12,11 +12,43 @@
     { key: 'endocrinology', label: 'Endocrinology' }
   ];
 
+  /* Theory topic ID → practicals case mapping */
+  var TOPIC_CASE_MAP = {
+    'mitral-stenosis': { system: 'cardiac', case: 'mitral_stenosis', label: 'Mitral Stenosis' },
+    'mitral-regurgitation': { system: 'cardiac', case: 'mitral_regurgitation', label: 'Mitral Regurgitation' },
+    'aortic-stenosis': { system: 'cardiac', case: 'aortic_stenosis', label: 'Aortic Stenosis' },
+    'aortic-regurgitation': { system: 'cardiac', case: 'aortic_regurgitation', label: 'Aortic Regurgitation' },
+    'infective-endocarditis': { system: 'cardiac', case: 'infective_endocarditis', label: 'Infective Endocarditis' },
+    'valvular-heart-disease': { system: 'cardiac', case: 'mitral_stenosis', label: 'Valvular Cases' },
+    'pleural-effusion': { system: 'respiratory', case: 'pleural_effusion', label: 'Pleural Effusion' },
+    'pneumothorax': { system: 'respiratory', case: 'pneumothorax', label: 'Pneumothorax' },
+    'pneumonia': { system: 'respiratory', case: 'consolidation', label: 'Consolidation' },
+    'bronchial-asthma': { system: 'respiratory', case: 'bronchial_asthma', label: 'Bronchial Asthma' },
+    'copd': { system: 'respiratory', case: 'copd_cor_pulmonale', label: 'COPD & Cor Pulmonale' },
+    'guillain-barre-syndrome': { system: 'neuro', case: 'gbs', label: 'GBS' },
+    'ischemic-stroke': { system: 'neuro', case: 'hemiplegia', label: 'Hemiplegia' },
+    'spinal-cord-lesions': { system: 'neuro', case: 'paraplegia', label: 'Paraplegia' },
+    'parkinsons-disease': { system: 'neuro', case: 'parkinsons', label: "Parkinson's Disease" },
+    'cirrhosis': { system: 'gi', case: 'cirrhosis_alcoholic', label: 'Alcoholic Cirrhosis' },
+    'dermatomyositis': { system: 'gi', case: 'dermatomyositis_long_case', label: 'Dermatomyositis' }
+  };
+
   var cache = {};
   var activeSystem = null;
   var hyFilterActive = false;
+  var quickReviewActive = false;
 
   function esc(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
+  /* ---------- Skeleton Loading ---------- */
+
+  function showSkeleton(deck) {
+    deck.innerHTML =
+      '<div class="skeleton-card"></div>' +
+      '<div class="skeleton-card"></div>' +
+      '<div class="skeleton-card"></div>' +
+      '<div class="skeleton-card"></div>';
+  }
 
   /* ---------- System Buttons ---------- */
 
@@ -57,6 +89,7 @@
   function selectSystem(key) {
     activeSystem = key;
     hyFilterActive = false;
+    quickReviewActive = false;
     var btns = document.querySelectorAll('.system-btn');
     btns.forEach(function (b) { b.classList.toggle('active', b.dataset.system === key); });
     loadSystem(key);
@@ -73,7 +106,7 @@
       return;
     }
 
-    deck.innerHTML = '<p class="empty-state">Loading&hellip;</p>';
+    showSkeleton(deck);
     search.style.display = 'none';
     toolbar.style.display = 'none';
 
@@ -94,6 +127,33 @@
           '<p>Content for this system is being prepared from textbooks.</p>' +
           '</div>';
       });
+  }
+
+  /* ---------- Cross-Link Chips ---------- */
+
+  function buildCrossLinks(topicId) {
+    var match = TOPIC_CASE_MAP[topicId];
+    if (!match) return '';
+    return '<div class="cross-links">' +
+      '<span class="cross-links-label">Related case:</span>' +
+      '<a class="cross-link" href="/practicals/?system=' + match.system + '#case-' + match.case + '">' +
+      esc(match.label) +
+      '</a></div>';
+  }
+
+  /* ---------- Study Path Banner ---------- */
+
+  function buildStudyPath(systemKey, topicCount, hyCount) {
+    var dismissKey = 'mbbe-studypath-' + systemKey;
+    try { if (localStorage.getItem(dismissKey)) return ''; } catch (e) { /* ignore */ }
+
+    return '<div class="study-path" id="study-path">' +
+      '<span><strong>Study path:</strong> Start with the first 5 topics (foundations), ' +
+      'then focus on <strong>High Yield</strong> topics' +
+      (hyCount ? ' (' + hyCount + ' marked)' : '') +
+      '. Practise with related clinical cases.</span>' +
+      '<button class="study-path-dismiss" aria-label="Dismiss" data-key="' + esc(dismissKey) + '">&times;</button>' +
+      '</div>';
   }
 
   /* ---------- Render Topics (Grouped by Part) ---------- */
@@ -121,12 +181,15 @@
     // Reading progress
     var readSet = getReadSet(activeSystem);
 
-    // Toolbar: HY filter + progress
+    // Toolbar: HY filter + Quick Review + progress
     var hyCount = data.hyCount || 0;
     toolbar.innerHTML =
+      '<div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">' +
       (hyCount > 0
         ? '<button class="hy-toggle" id="hy-toggle">High Yield &middot; ' + hyCount + '</button>'
-        : '<span></span>') +
+        : '') +
+      '<button class="qr-toggle" id="qr-toggle">Quick Review</button>' +
+      '</div>' +
       '<span class="read-progress" id="read-progress">' + readSet.size + ' / ' + topics.length + ' read</span>';
 
     // HY filter toggle
@@ -134,8 +197,26 @@
     if (hyBtn) {
       hyBtn.addEventListener('click', function () {
         hyFilterActive = !hyFilterActive;
+        if (hyFilterActive) { quickReviewActive = false; document.getElementById('qr-toggle').classList.remove('active'); deck.classList.remove('quick-review'); }
         hyBtn.classList.toggle('active', hyFilterActive);
         deck.classList.toggle('hy-only', hyFilterActive);
+        updatePartHeaderVisibility();
+      });
+    }
+
+    // Quick Review toggle
+    var qrBtn = document.getElementById('qr-toggle');
+    if (qrBtn) {
+      qrBtn.addEventListener('click', function () {
+        quickReviewActive = !quickReviewActive;
+        if (quickReviewActive) { hyFilterActive = false; if (hyBtn) hyBtn.classList.remove('active'); deck.classList.remove('hy-only'); }
+        qrBtn.classList.toggle('active', quickReviewActive);
+        deck.classList.toggle('quick-review', quickReviewActive);
+        // Auto-expand all HY topics in quick review mode
+        if (quickReviewActive) {
+          deck.querySelectorAll('.topic-card[data-hy]').forEach(function (c) { c.open = true; });
+          deck.querySelectorAll('.topic-card:not([data-hy])').forEach(function (c) { c.open = false; });
+        }
         updatePartHeaderVisibility();
       });
     }
@@ -156,16 +237,26 @@
     });
 
     // Build HTML
-    var html = '';
+    var html = buildStudyPath(activeSystem, topics.length, hyCount);
+
     parts.forEach(function (p) {
       var group = partMap[p.key];
       if (!group || group.topics.length === 0) return;
 
-      // Part header
+      // Part header with progress
       if (p.label) {
+        var partRead = 0;
+        var partTotal = group.topics.length;
+        group.topics.forEach(function (t) { if (readSet.has(t.id)) partRead++; });
+        var pct = partTotal > 0 ? Math.round((partRead / partTotal) * 100) : 0;
+        var fillClass = pct === 100 ? ' complete' : '';
+
         html += '<div class="part-header" data-part="' + esc(p.key) + '">' +
           '<span class="part-header-label">' + esc(p.label) + '</span>' +
-          '</div>';
+          '<div class="part-progress">' +
+          '<div class="part-progress-bar"><div class="part-progress-fill' + fillClass + '" style="width:' + pct + '%"></div></div>' +
+          '<span class="part-progress-text">' + partRead + '/' + partTotal + '</span>' +
+          '</div></div>';
       }
 
       // Topic cards
@@ -174,8 +265,10 @@
         var isRead = readSet.has(t.id);
         var tags = isHY ? '<span class="tag-hy">High Yield</span>' : '';
         var source = t.source ? '<div class="topic-source">Source: ' + esc(t.source) + '</div>' : '';
+        var crossLinks = buildCrossLinks(t.id);
 
         html += '<details class="topic-card" data-title="' + esc(t.title.toLowerCase()) + '"' +
+          ' data-content="' + esc((t.content || '').replace(/<[^>]*>/g, '').substring(0, 200).toLowerCase()) + '"' +
           ' data-id="' + esc(t.id) + '"' +
           ' data-part="' + esc(t.part || '') + '"' +
           (isHY ? ' data-hy' : '') +
@@ -189,6 +282,7 @@
           '<div class="topic-body">' +
           '<div class="content-html">' + (t.content || '<p>No content yet.</p>') + '</div>' +
           source +
+          crossLinks +
           '</div>' +
           '</details>';
       });
@@ -196,6 +290,17 @@
 
     deck.innerHTML = html;
     deck.classList.remove('hy-only');
+    deck.classList.remove('quick-review');
+
+    // Study path dismiss handler
+    var dismissBtn = deck.querySelector('.study-path-dismiss');
+    if (dismissBtn) {
+      dismissBtn.addEventListener('click', function () {
+        try { localStorage.setItem(dismissBtn.dataset.key, '1'); } catch (e) { /* ignore */ }
+        var banner = document.getElementById('study-path');
+        if (banner) banner.remove();
+      });
+    }
 
     // Reading progress: listen for toggle events
     deck.addEventListener('toggle', function (e) {
@@ -206,10 +311,11 @@
       markRead(activeSystem, id);
       card.setAttribute('data-read', '');
       updateReadProgress(data.topics.length);
+      updatePartProgress();
     }, true);
   }
 
-  /* ---------- Search ---------- */
+  /* ---------- Search (title + content) ---------- */
 
   function setupSearch() {
     var search = document.getElementById('topic-search');
@@ -219,7 +325,8 @@
       var cards = document.querySelectorAll('.topic-card');
       cards.forEach(function (card) {
         var title = card.dataset.title || '';
-        var match = q === '' || title.indexOf(q) !== -1;
+        var content = card.dataset.content || '';
+        var match = q === '' || title.indexOf(q) !== -1 || content.indexOf(q) !== -1;
         card.style.display = match ? '' : 'none';
       });
       updatePartHeaderVisibility();
@@ -230,16 +337,17 @@
 
   function updatePartHeaderVisibility() {
     var headers = document.querySelectorAll('.part-header');
+    var deck = document.getElementById('topic-deck');
+    var isHYOnly = deck.classList.contains('hy-only');
+    var isQR = deck.classList.contains('quick-review');
+
     headers.forEach(function (header) {
       var partKey = header.dataset.part;
-      // Find all topic cards for this part
       var cards = document.querySelectorAll('.topic-card[data-part="' + partKey + '"]');
       var anyVisible = false;
       cards.forEach(function (c) {
-        if (c.style.display !== 'none' && !c.classList.contains('hy-hidden')) {
-          // Also check if deck has hy-only and card lacks data-hy
-          var deck = document.getElementById('topic-deck');
-          if (deck.classList.contains('hy-only') && !c.hasAttribute('data-hy')) return;
+        if (c.style.display !== 'none') {
+          if ((isHYOnly || isQR) && !c.hasAttribute('data-hy')) return;
           anyVisible = true;
         }
       });
@@ -270,6 +378,25 @@
     if (!el) return;
     var set = getReadSet(activeSystem);
     el.textContent = set.size + ' / ' + total + ' read';
+  }
+
+  function updatePartProgress() {
+    var readSet = getReadSet(activeSystem);
+    document.querySelectorAll('.part-header').forEach(function (header) {
+      var partKey = header.dataset.part;
+      var cards = document.querySelectorAll('.topic-card[data-part="' + partKey + '"]');
+      var total = cards.length;
+      var read = 0;
+      cards.forEach(function (c) { if (readSet.has(c.dataset.id)) read++; });
+      var pct = total > 0 ? Math.round((read / total) * 100) : 0;
+      var fill = header.querySelector('.part-progress-fill');
+      var text = header.querySelector('.part-progress-text');
+      if (fill) {
+        fill.style.width = pct + '%';
+        fill.classList.toggle('complete', pct === 100);
+      }
+      if (text) text.textContent = read + '/' + total;
+    });
   }
 
   /* ---------- Scroll to Top ---------- */

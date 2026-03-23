@@ -44,28 +44,31 @@
     'findings_in_this_case': 'Findings in This Case'
   };
 
+  /* Case ID → theory topic mapping (reverse of theory's TOPIC_CASE_MAP) */
   var CASE_TOPIC_MAP = {
-    'mitral_stenosis': 'mitral-stenosis',
-    'mitral_regurgitation': 'mitral-regurgitation',
-    'aortic_stenosis': 'aortic-stenosis',
-    'aortic_regurgitation': 'aortic-regurgitation',
-    'infective_endocarditis': 'infective-endocarditis',
-    'pleural_effusion': 'pleural-effusion',
-    'pneumothorax': 'pneumothorax',
-    'bronchial_asthma': 'bronchial-asthma',
-    'dermatomyositis_long_case': 'dermatomyositis',
-    'gbs': 'guillain-barre-syndrome',
-    'cirrhosis_alcoholic': 'cirrhosis',
-    'parkinsons': 'parkinsons-disease',
-    'consolidation': 'pneumonia',
-    'hemiplegia': 'ischemic-stroke',
-    'paraplegia': 'spinal-cord-lesions',
-    'copd_mastery': 'copd-exacerbation',
-    'copd_cor_pulmonale': 'copd-exacerbation'
+    'mitral_stenosis': { id: 'mitral-stenosis', label: 'Mitral Stenosis', system: 'cardiology' },
+    'mitral_regurgitation': { id: 'mitral-regurgitation', label: 'Mitral Regurgitation', system: 'cardiology' },
+    'aortic_stenosis': { id: 'aortic-stenosis', label: 'Aortic Stenosis', system: 'cardiology' },
+    'aortic_regurgitation': { id: 'aortic-regurgitation', label: 'Aortic Regurgitation', system: 'cardiology' },
+    'infective_endocarditis': { id: 'infective-endocarditis', label: 'Infective Endocarditis', system: 'cardiology' },
+    'pleural_effusion': { id: 'pleural-effusion', label: 'Pleural Effusion', system: 'respiratory' },
+    'pneumothorax': { id: 'pneumothorax', label: 'Pneumothorax', system: 'respiratory' },
+    'consolidation': { id: 'pneumonia', label: 'Pneumonia / Consolidation', system: 'respiratory' },
+    'bronchial_asthma': { id: 'bronchial-asthma', label: 'Bronchial Asthma', system: 'respiratory' },
+    'copd_cor_pulmonale': { id: 'copd', label: 'COPD', system: 'respiratory' },
+    'copd_mastery': { id: 'copd', label: 'COPD', system: 'respiratory' },
+    'hemiplegia': { id: 'ischemic-stroke', label: 'Ischemic Stroke', system: 'neurology' },
+    'paraplegia': { id: 'spinal-cord-lesions', label: 'Spinal Cord Lesions', system: 'neurology' },
+    'gbs': { id: 'guillain-barre-syndrome', label: 'Guillain-Barr\u00e9 Syndrome', system: 'neurology' },
+    'parkinsons': { id: 'parkinsons-disease', label: "Parkinson's Disease", system: 'neurology' },
+    'cirrhosis_alcoholic': { id: 'cirrhosis', label: 'Cirrhosis', system: 'gastro' },
+    'dermatomyositis_long_case': { id: 'dermatomyositis', label: 'Dermatomyositis', system: 'gastro' }
   };
 
   var allData = {};
   var activeSystem = null;
+  var vivaForgeData = null;
+  var vivaForgeLoading = false;
 
   function esc(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
 
@@ -81,6 +84,38 @@
       });
     });
     return Promise.all(dataPromises);
+  }
+
+  /* ---------- Viva Forge ---------- */
+
+  function loadVivaForge(callback) {
+    if (vivaForgeData) { callback(vivaForgeData); return; }
+    if (vivaForgeLoading) return;
+    vivaForgeLoading = true;
+    fetch('/practicals/data/viva_forge_data.json')
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        vivaForgeData = data;
+        vivaForgeLoading = false;
+        callback(data);
+      })
+      .catch(function () { vivaForgeLoading = false; });
+  }
+
+  function findVivaForgeQuestions(caseName) {
+    if (!vivaForgeData) return [];
+    var cases = vivaForgeData.cases || vivaForgeData;
+    if (!Array.isArray(cases)) return [];
+    var name = caseName.toLowerCase().replace(/[^a-z0-9]/g, '');
+    var matches = [];
+    cases.forEach(function (c) {
+      var cName = (c.name || c.case_name || c.condition || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+      if (cName.indexOf(name) !== -1 || name.indexOf(cName) !== -1) {
+        var qs = c.vivas || c.questions || c.viva_questions || [];
+        matches = matches.concat(qs);
+      }
+    });
+    return matches;
   }
 
   function buildSystemButtons() {
@@ -257,7 +292,7 @@
 
   function renderComparisonTable(diff) {
     var html = '<details class="comparison"><summary>' + esc(diff.comparison) + '</summary>'
-      + '<table class="comparison-table"><thead><tr><th>Feature</th>';
+      + '<div class="table-wrap"><table class="comparison-table"><thead><tr><th>Feature</th>';
     diff.conditions.forEach(function (c) { html += '<th>' + esc(c) + '</th>'; });
     html += '</tr></thead><tbody>';
     diff.features.forEach(function (f) {
@@ -265,11 +300,19 @@
       f.values.forEach(function (v) { html += '<td>' + esc(v) + '</td>'; });
       html += '</tr>';
     });
-    html += '</tbody></table></details>';
+    html += '</tbody></table></div></details>';
     return html;
   }
 
-  function renderRelatedPills() { return ''; }
+  function buildTheoryLinks(caseId) {
+    var match = CASE_TOPIC_MAP[caseId];
+    if (!match) return '';
+    return '<div class="cross-links">' +
+      '<span class="cross-links-label">Theory:</span>' +
+      '<a class="cross-link cross-link--theory" href="/theory/?system=' + match.system + '#topic-' + match.id + '">' +
+      esc(match.label) +
+      '</a></div>';
+  }
 
   function renderCases(key) {
     var container = document.getElementById('case-list');
@@ -301,10 +344,11 @@
     // Individual cases
     cases.forEach(function (c) {
       var name = c.name || c.case_name || c.condition || c.title || 'Case';
+      var caseId = c.id || name.toLowerCase().replace(/[^a-z0-9]+/g, '_');
       var body = '';
 
-      // Related topics pills
-      body += renderRelatedPills(c.id);
+      // Theory cross-links
+      body += buildTheoryLinks(caseId);
 
       // Presentation
       if (c.presentation_script) body += renderSection('Presentation', c.presentation_script);
@@ -343,17 +387,78 @@
       // Vivas
       if (c.vivas) body += renderSection('Viva Questions', c.vivas);
 
-      html += '<details class="case"><summary>' + esc(name) + '</summary><div class="case-body">' + body + '</div></details>';
+      // Viva Forge trigger
+      body += '<div class="viva-forge-slot" data-case-name="' + esc(name) + '"></div>';
+
+      html += '<details class="case" id="case-' + esc(caseId) + '"><summary>' + esc(name) + '</summary><div class="case-body">' + body + '</div></details>';
     });
 
     container.innerHTML = html;
+
+    // Setup Viva Forge lazy-load triggers
+    setupVivaForgeSlots();
+
+    // Handle hash navigation (from theory cross-links)
+    handleHashNavigation();
+
+    // Setup table scroll indicators
+    setupTableScrollIndicators();
+  }
+
+  function setupVivaForgeSlots() {
+    var slots = document.querySelectorAll('.viva-forge-slot');
+    slots.forEach(function (slot) {
+      var caseName = slot.dataset.caseName;
+      var btn = document.createElement('button');
+      btn.className = 'viva-forge-trigger';
+      btn.textContent = 'Load more viva questions';
+      btn.addEventListener('click', function () {
+        btn.textContent = 'Loading...';
+        btn.disabled = true;
+        loadVivaForge(function () {
+          var questions = findVivaForgeQuestions(caseName);
+          if (questions.length > 0) {
+            slot.innerHTML = renderSection('More Viva Questions', questions);
+          } else {
+            slot.innerHTML = '<p style="font-size:0.85rem;color:var(--text-muted);margin-top:12px;">No additional viva questions found for this case.</p>';
+          }
+        });
+      });
+      slot.appendChild(btn);
+    });
+  }
+
+  function handleHashNavigation() {
+    var hash = window.location.hash;
+    if (!hash) return;
+    var target = document.getElementById(hash.substring(1));
+    if (target && target.tagName === 'DETAILS') {
+      target.open = true;
+      setTimeout(function () { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 100);
+    }
+  }
+
+  function setupTableScrollIndicators() {
+    document.querySelectorAll('.table-wrap').forEach(function (wrap) {
+      if (wrap.scrollWidth > wrap.clientWidth) {
+        wrap.classList.add('has-overflow');
+        wrap.addEventListener('scroll', function () {
+          var atEnd = wrap.scrollLeft + wrap.clientWidth >= wrap.scrollWidth - 4;
+          wrap.classList.toggle('scrolled-end', atEnd);
+        });
+      }
+    });
   }
 
   function init() {
     loadAll().then(function () {
       buildSystemButtons();
-      var first = DATA_FILES[0].key;
-      selectSystem(first);
+
+      // Check URL for system param
+      var params = new URLSearchParams(window.location.search);
+      var sys = params.get('system');
+      var valid = DATA_FILES.some(function (f) { return f.key === sys; });
+      selectSystem(valid ? sys : DATA_FILES[0].key);
     }).catch(function (err) {
       console.error('Practicals load error:', err);
       var container = document.getElementById('case-list');
