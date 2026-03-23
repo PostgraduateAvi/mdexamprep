@@ -1,5 +1,33 @@
 {
   "system": "Endocrinology",
+  "topicCount": 57,
+  "hyCount": 33,
+  "parts": [
+    {
+      "key": "dm",
+      "label": "Diabetes Mellitus"
+    },
+    {
+      "key": "bone",
+      "label": "Bone & Mineral Metabolism"
+    },
+    {
+      "key": "pth",
+      "label": "Parathyroid & Calcium Homeostasis"
+    },
+    {
+      "key": "porphyrias",
+      "label": "The Porphyrias"
+    },
+    {
+      "key": "repro",
+      "label": "Reproductive Endocrinology"
+    },
+    {
+      "key": "purine",
+      "label": "Purine & Pyrimidine Metabolism"
+    }
+  ],
   "topics": [
     {
       "id": "definition-and-classification",
@@ -8,7 +36,9 @@
       "source": "Harrison's 21e + ADA 2025",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "dm",
+      "num": 1
     },
     {
       "id": "diagnostic-criteria",
@@ -17,14 +47,18 @@
       "source": "Harrison's 21e + ADA 2025",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "dm",
+      "num": 2
     },
     {
       "id": "screening-recommendations",
       "title": "Screening Recommendations",
       "content": "<h5>Universal Screening</h5>\n<ul><li><strong>All adults</strong>: Begin at age 35, repeat every 3 years if normal</li><li><strong>Earlier/more frequent</strong> if BMI ≥25 (≥23 in Asian Americans) PLUS one or more risk factors:<ul><li>First-degree relative with diabetes</li><li>High-risk race/ethnicity (African American, Latino, Native American, Asian American, Pacific Islander)</li><li>History of CVD</li><li>Hypertension (≥140/90 or on therapy)</li><li>HDL &lt;35 mg/dL and/or triglycerides >250 mg/dL</li><li>Polycystic ovary syndrome</li><li>Physical inactivity</li><li>Conditions associated with insulin resistance (severe obesity, acanthosis nigricans)</li><li>History of GDM → lifelong screening every 3 years</li></ul></li></ul>\n<h5>Prediabetes Management</h5>\n<ul><li><strong>Lifestyle intervention</strong>: 7% body weight loss + 150 min/week moderate physical activity (DPP trial: 58% risk reduction vs. 31% with metformin)</li><li><strong>Metformin</strong> consideration: Age 25-59, BMI ≥35, history of GDM, rising HbA1c despite lifestyle changes</li></ul>\n<hr class=\"content-divider\">",
       "source": "Harrison's 21e + ADA 2025",
-      "tags": []
+      "tags": [],
+      "part": "dm",
+      "num": 3
     },
     {
       "id": "pathophysiology",
@@ -33,7 +67,9 @@
       "source": "Harrison's 21e + ADA 2025",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "dm",
+      "num": 4
     },
     {
       "id": "management-of-type-2-dm",
@@ -42,7 +78,9 @@
       "source": "Harrison's 21e + ADA 2025",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "dm",
+      "num": 5
     },
     {
       "id": "management-of-type-1-dm",
@@ -51,7 +89,9 @@
       "source": "Harrison's 21e + ADA 2025",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "dm",
+      "num": 6
     },
     {
       "id": "diabetic-ketoacidosis",
@@ -60,7 +100,9 @@
       "source": "Harrison's 21e + ADA 2025",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "dm",
+      "num": 7
     },
     {
       "id": "hyperosmolar-hyperglycemic-state",
@@ -69,7 +111,9 @@
       "source": "Harrison's 21e + ADA 2025",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "dm",
+      "num": 8
     },
     {
       "id": "hypoglycemia-in-diabetes",
@@ -78,7 +122,9 @@
       "source": "Harrison's 21e + ADA 2025",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "dm",
+      "num": 9
     },
     {
       "id": "chronic-complications-of-diabetes",
@@ -87,7 +133,9 @@
       "source": "Harrison's Ch 405",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "dm",
+      "num": 10
     },
     {
       "id": "hospital-management-of-diabetes",
@@ -96,7 +144,9 @@
       "source": "Harrison's 21e — ADA 2025, Section 16",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "dm",
+      "num": 11
     },
     {
       "id": "monogenic-diabetes",
@@ -105,28 +155,36 @@
       "source": "Harrison's 21e + ADA 2025",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "dm",
+      "num": 12
     },
     {
       "id": "gestational-diabetes-mellitus",
       "title": "Gestational Diabetes Mellitus",
       "content": "<h5>Screening</h5>\n<p><strong>Two approaches:</strong></p>\n<div class=\"table-wrap\"><table><thead><tr><th>Strategy</th><th>Method</th><th>Diagnostic Thresholds</th></tr></thead><tbody><tr><td><strong>One-step (IADPSG)</strong></td><td>75g OGTT at 24-28 weeks</td><td>Fasting ≥92, 1h ≥180, 2h ≥153 mg/dL — ANY one value diagnostic</td></tr><tr><td><strong>Two-step</strong></td><td>Step 1: 50g GCT (non-fasting); if ≥130-140 → Step 2: 100g OGTT</td><td>Carpenter-Coustan: Fasting ≥95, 1h ≥180, 2h ≥155, 3h ≥140 — TWO or more values diagnostic</td></tr></tbody></table></div>\n<h5>Management</h5>\n<ul><li><strong>MNT + exercise</strong> first</li><li><strong>Insulin</strong> if targets not met (preferred pharmacotherapy in pregnancy)<ul><li>Targets: Fasting &lt;95 mg/dL; 1h postprandial &lt;140; 2h postprandial &lt;120</li></ul></li><li><strong>Metformin/glyburide</strong>: Used in some settings but cross placenta; insulin preferred</li><li><strong>Postpartum</strong>: Test for persistent diabetes at 4-12 weeks (75g OGTT); then screen every 1-3 years lifelong</li></ul>\n<hr class=\"content-divider\">",
       "source": "Harrison's 21e + ADA 2025",
-      "tags": []
+      "tags": [],
+      "part": "dm",
+      "num": 13
     },
     {
       "id": "post-transplant-diabetes-mellitus",
       "title": "Post-Transplant Diabetes Mellitus",
       "content": "<ul><li>Risk factors: Tacrolimus > cyclosporine, corticosteroids, obesity, HCV, older age, ethnicity</li><li>Screen: FPG or OGTT (HbA1c unreliable early post-transplant due to blood loss/anemia)</li><li>Treatment: Lifestyle modification; insulin preferred initially; can transition to oral agents when stable</li></ul>\n<hr class=\"content-divider\">",
       "source": "Harrison's 21e + ADA 2025",
-      "tags": []
+      "tags": [],
+      "part": "dm",
+      "num": 14
     },
     {
       "id": "diabetes-and-comorbidities",
       "title": "Diabetes and Comorbidities",
       "content": "<h5>Comprehensive Medical Evaluation</h5>\n<p>A complete medical evaluation should be performed at initial visit and follow-up to: confirm diagnosis and classify diabetes, assess glycemic status, evaluate complications and comorbidities, assess social determinants of health, and formulate a care management plan.</p>\n<p><strong>Follow-up intervals</strong>: Every 3-6 months initially, then at least annually.</p>\n<h5>Autoimmune Disease Screening in T1DM</h5>\n<ul><li><strong>Thyroid disease</strong>: Screen with TSH soon after T1DM diagnosis; repeat at intervals if clinically indicated (high prevalence of autoimmune thyroiditis)</li><li><strong>Celiac disease</strong>: Screen in the presence of GI symptoms, signs, or laboratory findings suggestive (e.g., diarrhea, malabsorption, iron deficiency anemia, osteoporosis, vitamin deficiencies)</li><li><strong>Other associations</strong>: Pernicious anemia (B12 deficiency), Addison disease, vitiligo, autoimmune hepatitis, myasthenia gravis</li><li>May occur in context of <strong>polyglandular autoimmune syndromes</strong></li></ul>\n<h5>Immunizations in Diabetes</h5>\n<div class=\"table-wrap\"><table><thead><tr><th>Vaccine</th><th>Recommendation</th></tr></thead><tbody><tr><td><strong>COVID-19</strong></td><td>Updated vaccines as recommended for all ≥6 months</td></tr><tr><td><strong>Hepatitis B</strong></td><td>Adults with diabetes aged &lt;60 (recommended); ≥60 (may consider)</td></tr><tr><td><strong>Influenza</strong></td><td>Annual trivalent inactivated vaccine (avoid live attenuated in diabetes)</td></tr><tr><td><strong>Pneumococcal</strong></td><td>PPSV23 ages 19-64; PCV15 or PCV20 per CDC schedule; ≥65 if not prior</td></tr><tr><td><strong>Zoster (Shingrix)</strong></td><td>Two-dose series, ≥50 years</td></tr><tr><td><strong>RSV</strong></td><td>Single dose for adults ≥75, or ≥60 at high risk</td></tr><tr><td><strong>Tdap</strong></td><td>Booster every 10 years; extra dose in pregnancy</td></tr></tbody></table></div>\n<h5>Bone Health in Diabetes</h5>\n<p><strong>Fracture risk is increased in both T1DM and T2DM:</strong></p>\n<div class=\"table-wrap\"><table><thead><tr><th>Feature</th><th>T1DM</th><th>T2DM</th></tr></thead><tbody><tr><td>BMD</td><td>Often LOW</td><td>Normal or HIGH (paradoxically)</td></tr><tr><td>Hip fracture risk</td><td>4.35× increased</td><td>1.79× increased</td></tr><tr><td>BMD utility</td><td>Underestimates fracture risk</td><td>Underestimates fracture risk (T-score ≤-2.0 interpreted as equivalent to ≤-2.5 in non-diabetics)</td></tr><tr><td>Mechanism</td><td>Low bone mass, autoimmune factors</td><td>Impaired bone microarchitecture, accelerated bone loss despite normal BMD</td></tr></tbody></table></div>\n<p><strong>Screening (ADA Table 4.4)</strong>: DXA recommended for:</p>\n<ul><li>All adults ≥65 years</li><li>Postmenopausal women and men ≥50 with diabetes-specific risk factors: frequent hypoglycemia, diabetes duration >10 years, medications (insulin, TZDs, sulfonylureas), A1C >8%, neuropathy/retinopathy/nephropathy, frequent falls, glucocorticoid use</li></ul>\n<p><strong>Management considerations</strong>:</p>\n<ul><li>TZDs increase fracture risk — avoid in women at risk</li><li>Insulin and sulfonylureas increase fracture risk via hypoglycemia-related falls</li><li>Bisphosphonates, denosumab, and osteoanabolic agents have similar efficacy as in non-diabetics</li><li>Denosumab preferred if eGFR &lt;30-35 (bisphosphonates contraindicated)</li><li>Calcium intake 1,000-1,200 mg/day + vitamin D 600-800 IU/day</li></ul>\n<h5>MASLD/MASH (formerly NAFLD/NASH)</h5>\n<p><strong>Prevalence</strong>: >70% of T2DM patients have MASLD; 12-20% have \"at-risk\" MASH (≥F2 fibrosis)</p>\n<p><strong>Definition</strong>: MASLD = ≥5% hepatic steatosis + ≥1 cardiometabolic risk factor, without excessive alcohol consumption (>21 standard drinks/week men, >14 women)</p>\n<p><strong>Fibrosis staging</strong>: F0 (no fibrosis), F1 (mild), F2 (moderate/significant), F3 (severe/advanced), F4 (cirrhosis)</p>\n<p><strong>Screening Algorithm (ADA Figure 4.2)</strong>:</p>\n<ol><li>Calculate <strong>FIB-4 index</strong> (age, ALT, AST, platelets) — most cost-effective initial screening<ul><li>FIB-4 &lt;1.3 → Low risk → Repeat every 1-2 years</li><li>FIB-4 ≥1.3 → Needs further evaluation with <strong>liver stiffness measurement (LSM)</strong> by transient elastography</li><li>FIB-4 >2.67 → High risk → Refer to hepatologist directly</li></ul></li><li>If LSM &lt;8.0 kPa → Low risk for advanced fibrosis</li><li>If LSM ≥8.0 kPa → High risk (F3-F4) → Refer to liver specialist</li></ol>\n<p><strong>Alternative to LSM</strong>: Enhanced Liver Fibrosis (ELF) test — ELF &lt;9.8 = low risk; ELF ≥9.8 = high risk</p>\n<p><strong>Management (ADA Figure 4.3 — MASLD Treatment Algorithm)</strong>:</p>\n<div class=\"table-wrap\"><table><thead><tr><th>MASLD Stage</th><th>Obesity Rx</th><th>Diabetes Rx</th><th>MASH Rx</th></tr></thead><tbody><tr><td>F0-F1</td><td>GLP-1 RA, dual GIP/GLP-1 RA</td><td>GLP-1 RA, dual GIP/GLP-1 RA, pioglitazone, SGLT2i</td><td>Not indicated</td></tr><tr><td>F2-F3 (\"at-risk\")</td><td>GLP-1 RA, dual GIP/GLP-1 RA</td><td>GLP-1 RA, dual GIP/GLP-1 RA, pioglitazone</td><td>Resmetirom</td></tr><tr><td>Compensated cirrhosis</td><td>As F2-F3 with caution</td><td>As F2-F3 with caution</td><td>AVOID</td></tr><tr><td>Decompensated cirrhosis</td><td>AVOID</td><td>Only insulin</td><td>AVOID</td></tr></tbody></table></div>\n<p><strong>Resmetirom</strong>: Thyroid hormone receptor-β agonist, FDA-approved for MASLD with moderate (F2) or advanced (F3) liver fibrosis (not cirrhosis). Phase 3 RCT: resolution of MASH without worsening fibrosis in 29.9% (100mg) vs 9.7% placebo. May decrease free T4 and increase SHBG.</p>\n<div class=\"clinical-pearl\"><strong>Key pharmacotherapy points</strong>:</div>\n<ul><li><strong>Pioglitazone</strong>: Improves MASH histology; reverses steatohepatitis; but weight gain, fracture risk, HF risk</li><li><strong>GLP-1 RAs</strong>: Semaglutide resolved steatohepatitis in 59% (2.4 mg/week) vs 17% placebo; slowed fibrosis progression</li><li><strong>SGLT2 inhibitors</strong>: Reduce hepatic steatosis but effect on steatohepatitis unknown</li><li><strong>Metformin</strong>: No benefit for MASH</li><li><strong>Vitamin E</strong>: May help MASH in non-diabetics; ineffective in T2DM</li><li>Weight loss ≥5% improves steatosis; ≥10% may improve fibrosis</li><li>Statin therapy is safe in compensated cirrhosis; use with caution in decompensated</li></ul>\n<h5>Cognitive Impairment and Dementia</h5>\n<ul><li>Diabetes increases dementia risk: 43% higher all-type dementia, 43% higher Alzheimer, 91% higher vascular dementia</li><li>\"Diabetes-related dementia\" — distinct entity with slow progression, absence of typical AD neuroimaging, lean body habitus, high A1C, long duration, insulin use</li><li>Higher A1C → lower cognitive function; intensive glycemic management shows modest cognitive benefit</li><li><strong>Severe hypoglycemia</strong> increases risk of long-term psychomotor and cognitive decline</li><li>In cognitive impairment: simplify regimens, liberalize A1C goals, minimize hypoglycemia risk</li></ul>\n<h5>Obstructive Sleep Apnea (OSA)</h5>\n<ul><li>Prevalence in T2DM: up to 23%; with obesity may reach 58%</li><li>OSA is an independent risk factor for CVD</li><li>Screen with suggestive symptoms (excessive daytime sleepiness, snoring, witnessed apnea)</li><li>Treatment (CPAP, lifestyle, oral appliances) improves quality of life and BP</li><li>Tirzepatide (dual GIP/GLP-1 RA) reduced sleep apnea severity in two phase 3 RCTs</li></ul>\n<h5>Sexual Dysfunction in Diabetes</h5>\n<p><strong>Erectile dysfunction (ED)</strong> in men:</p>\n<ul><li>Prevalence: 52.5% in men with diabetes; best predictors: age >40, CVD, hypertension, obesity, metabolic syndrome</li><li>Screen men with diabetes for ED, particularly with high CV risk, neuropathy, retinopathy</li><li>Check morning total testosterone if symptoms of hypogonadism</li><li>First-line treatment: PDE5 inhibitors (sildenafil, tadalafil); may be less responsive in diabetes</li><li>Low testosterone: replacement may improve sexual function, well-being, muscle mass, bone density</li></ul>\n<p><strong>Female sexual dysfunction (FSD)</strong> in women:</p>\n<ul><li>More common in diabetes (OR 2.27 T1DM; 2.49 T2DM vs. non-diabetic)</li><li>Screen postmenopausal women for menopausal symptoms including vaginal dryness and dyspareunia</li><li>Management: lifestyle interventions, hormonal therapies, addressing glycemic control and psychosocial factors</li></ul>\n<h5>Cancer Risk</h5>\n<ul><li>Diabetes associated with increased risk of cancers of: liver, pancreas, endometrium, colon/rectum, breast, bladder</li><li>Metformin may have anticancer properties</li><li>GLP-1 RAs: No association with thyroid cancer, pancreatic cancer, or any other cancer in humans</li><li>Encourage recommended age/sex-appropriate cancer screenings</li></ul>\n<hr class=\"content-divider\">",
       "source": "Harrison's 21e — ADA 2025, Section 4",
-      "tags": []
+      "tags": [],
+      "part": "dm",
+      "num": 15
     },
     {
       "id": "diabetic-kidney-disease-expanded-management",
@@ -135,21 +193,27 @@
       "source": "Harrison's 21e — ADA 2025, Section 11",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "dm",
+      "num": 16
     },
     {
       "id": "diabetes-technology",
       "title": "Diabetes Technology",
       "content": "<h5>Blood Glucose Monitoring (BGM)</h5>\n<ul><li>Indicated for all patients on insulin; less clear benefit for non-insulin-treated T2DM</li><li>Frequency: T1DM on MDI/pump — 6-10 times daily (or use CGM); T2DM on basal insulin — at least fasting glucose daily</li><li><strong>Accuracy standards</strong>: FDA requires 95% of readings within 15% for BG ≥75 mg/dL and within 15 mg/dL for BG &lt;75 mg/dL</li><li>Substances causing <strong>falsely high</strong> readings: maltose, galactose, xylose, N-acetylcysteine, acetaminophen (at low BG), dopamine (at low BG)</li><li>Substances causing <strong>falsely low</strong> readings: furosemide, uric acid (at very low/very high BG), high hematocrit</li><li>Vitamin C: Can cause falsely lower OR higher readings depending on assay</li></ul>\n<h5>Continuous Glucose Monitoring (CGM)</h5>\n<p><strong>Types of CGM devices (Table 7.3)</strong>:</p>\n<div class=\"table-wrap\"><table><thead><tr><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><strong>rtCGM (real-time)</strong></td><td>Continuous display of glucose; includes alarms. Dexcom G6/G7, Medtronic Guardian</td></tr><tr><td><strong>isCGM (intermittently scanned)</strong></td><td>Requires scanning to view data; FreeStyle Libre 2/3. Newer models have optional alarms</td></tr><tr><td><strong>Professional CGM</strong></td><td>Clinic-based; worn 7-14 days for pattern analysis; may be blinded or unblinded</td></tr><tr><td><strong>Over-the-counter CGM</strong></td><td>Biosensors with insights (not alarms); for prediabetes/non-insulin diabetes</td></tr></tbody></table></div>\n<p><strong>CGM recommendations</strong>:</p>\n<ul><li>Offer to all T1DM patients early in disease, even at diagnosis</li><li>Recommend rtCGM or isCGM for T2DM on insulin therapy</li><li>Consider for T2DM on non-insulin glucose-lowering medications</li><li>Use rtCGM as close to daily as possible; scan isCGM at minimum every 8 hours</li></ul>\n<div class=\"clinical-pearl\"><strong>Key CGM metrics</strong> (International Consensus on Time in Range):</div>\n<ul><li><strong>Time in Range (TIR)</strong>: >70% between 70-180 mg/dL (correlates with A1C ~7%)</li><li><strong>Time Below Range (TBR)</strong>: &lt;4% below 70 mg/dL; &lt;1% below 54 mg/dL</li><li><strong>Time Above Range (TAR)</strong>: &lt;25% above 180 mg/dL; &lt;5% above 250 mg/dL</li><li><strong>Glucose Management Indicator (GMI)</strong>: CGM-derived estimated A1c</li><li><strong>Coefficient of Variation (CV)</strong>: Target ≤36% (glycemic variability)</li></ul>\n<p><strong>CGM Interfering Substances (Table 7.4)</strong>:</p>\n<div class=\"table-wrap\"><table><thead><tr><th>Substance</th><th>Effect</th></tr></thead><tbody><tr><td>Acetaminophen (>4g/day)</td><td>Higher sensor readings (Dexcom G6/G7, Medtronic Guardian)</td></tr><tr><td>Vitamin C (>500 mg/day)</td><td>Higher sensor readings (FreeStyle Libre 14-day, Libre 2, Libre 3)</td></tr><tr><td>Vitamin C (>1000 mg/day)</td><td>Higher sensor readings (FreeStyle Libre 2 Plus, Libre 3 Plus)</td></tr><tr><td>Hydroxyurea</td><td>Higher sensor readings (Dexcom G6/G7, Medtronic Guardian)</td></tr><tr><td>Mannitol (IV/peritoneal dialysis)</td><td>Higher sensor readings (Senseonics Eversense)</td></tr></tbody></table></div>\n<h5>Insulin Delivery Systems</h5>\n<p><strong>Insulin syringes and pens</strong>:</p>\n<ul><li>Pens preferred in most MDI patients for convenience, accuracy, reduced pain</li><li>Connected insulin pens: Log doses automatically, sync with CGM, provide reports</li><li>Needle gauge: 22-34 (higher = thinner); length 4-12.7 mm (shorter 4-5 mm needles reduce IM injection risk)</li></ul>\n<p><strong>Insulin pumps and Automated Insulin Delivery (AID) systems</strong>:</p>\n<div class=\"table-wrap\"><table><thead><tr><th>System</th><th>Description</th></tr></thead><tbody><tr><td><strong>Standard pump (CSII)</strong></td><td>Delivers rapid-acting insulin via preset basal rates + manual boluses</td></tr><tr><td><strong>Sensor-Augmented Pump (SAP)</strong></td><td>Pump + CGM with low-glucose suspend (insulin stops when glucose low/predicted low)</td></tr><tr><td><strong>Hybrid Closed-Loop (AID)</strong></td><td>Pump + CGM + algorithm that auto-adjusts basal rates; user still boluses for meals</td></tr></tbody></table></div>\n<p><strong>AID systems</strong> (current recommendation):</p>\n<ul><li>Preferred insulin delivery method for T1DM in youth and adults</li><li>Available for T2DM (one system FDA-approved)</li><li>Glucose targets typically 100-120 mg/dL (some adjustable to 150 mg/dL)</li><li>Consistent improvements: ↓ A1C, ↑ TIR (especially overnight), ↓ hypoglycemia, improved quality of life</li><li>Greatest improvements seen in those with highest baseline A1C or lowest baseline TIR</li></ul>\n<p><strong>Open-source AID</strong>: OpenAPS and Loop algorithms</p>\n<ul><li>Community-developed; provide precise control code</li><li>Supported by large real-world studies and a multicenter RCT</li><li>Health care professionals should support patients choosing these systems</li></ul>\n<h5>Inpatient Use of Diabetes Technology</h5>\n<ul><li>Continue personal CGM during hospitalization with confirmatory point-of-care glucose for insulin dosing</li><li>Continue insulin pump/AID if patient is alert, capable, and supplies are available</li><li>Point-of-care BGM remains the approved inpatient standard</li></ul>\n<hr class=\"content-divider\">\n<hr class=\"content-divider\">",
       "source": "Harrison's 21e — ADA 2025, Section 7",
-      "tags": []
+      "tags": [],
+      "part": "dm",
+      "num": 17
     },
     {
       "id": "bone-structure-and-remodeling",
       "title": "Bone Structure and Remodeling",
       "content": "<p><strong>Bone</strong> is a dynamic tissue remodeled constantly throughout life. It consists of compact (cortical) bone forming the cylindrical shell of long bones, and cancellous (trabecular) bone forming the plate-like meshwork internally.</p>\n<h5>Extracellular Matrix</h5>\n<ul><li><strong>Organic matrix</strong> (~90-95% is type I collagen) + noncollagenous proteins (osteocalcin, osteopontin, fibronectin, thrombospondin)</li><li><strong>Mineral phase</strong>: Poorly crystalline hydroxyapatite [calcium and phosphate]</li><li>Primary mineralization occurs soon after matrix secretion; secondary mineralization takes weeks to months</li></ul>\n<h5>Key Cell Types</h5>\n<div class=\"table-wrap\"><table><thead><tr><th>Cell</th><th>Origin</th><th>Function</th></tr></thead><tbody><tr><td><strong>Osteoblasts</strong></td><td>Mesenchymal stem cells</td><td>Synthesize organic matrix, regulate mineralization; express Runx2, secrete collagen I, ALP, osteocalcin</td></tr><tr><td><strong>Osteocytes</strong></td><td>Terminally differentiated osteoblasts</td><td>Mechanosensors; secrete FGF23 (major regulator of phosphate); secrete sclerostin (inhibits Wnt → inhibits bone formation)</td></tr><tr><td><strong>Osteoclasts</strong></td><td>Hematopoietic lineage (monocyte/macrophage precursors)</td><td>Resorb bone in Howship's lacunae; require M-CSF and RANK ligand for differentiation; secrete acid + cathepsin K</td></tr></tbody></table></div>\n<h5>RANK/RANKL/OPG System</h5>\n<ul><li><strong>RANK ligand</strong> (on osteoblasts/stromal cells) binds <strong>RANK</strong> (on osteoclast precursors) → stimulates osteoclast differentiation and activation</li><li><strong>Osteoprotegerin (OPG)</strong> = soluble decoy receptor for RANKL → inhibits osteoclast formation</li><li>PTH and 1,25(OH)₂D increase RANKL expression → ↑ osteoclast activity</li></ul>\n<h5>Bone Remodeling Cycle</h5>\n<ul><li>Resorption (~3 weeks) → Reversal → Bone Formation (~3 months) → Mineralization</li><li>Basic multicellular unit (BMU): coordinated group of osteoclasts and osteoblasts</li><li>In adults, ~4% of trabecular surface and ~18% of total skeletal calcium turned over per year</li></ul>\n<h5>Bone Markers</h5>\n<div class=\"table-wrap\"><table><thead><tr><th>Marker</th><th>Reflects</th></tr></thead><tbody><tr><td><strong>Bone-specific ALP</strong></td><td>Osteoblast activity (formation)</td></tr><tr><td><strong>Osteocalcin</strong></td><td>Osteoblast activity (formation)</td></tr><tr><td><strong>P1NP (procollagen I N-terminal propeptide)</strong></td><td>Bone formation</td></tr><tr><td><strong>CTX / NTX (cross-linked peptides)</strong></td><td>Collagen degradation (resorption)</td></tr><tr><td><strong>Hydroxyproline (urine)</strong></td><td>Bone resorption</td></tr></tbody></table></div>\n<hr class=\"content-divider\">",
       "source": "Harrison's Ch 409",
-      "tags": []
+      "tags": [],
+      "part": "bone",
+      "num": 18
     },
     {
       "id": "calcium-metabolism",
@@ -158,14 +222,18 @@
       "source": "Harrison's 21e + ADA 2025",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "bone",
+      "num": 19
     },
     {
       "id": "phosphorus-metabolism",
       "title": "Phosphorus Metabolism",
       "content": "<ul><li>~85% of body phosphorus in bone; also major intracellular constituent</li><li>Serum phosphate normal range: <strong>0.75-1.45 mmol/L (2.5-4.5 mg/dL)</strong></li><li>Circadian rhythm: nadir between 7-10 AM; measurements should be fasting</li></ul>\n<h5>Renal Phosphate Handling</h5>\n<ul><li>Filtered load reabsorbed mainly in <strong>proximal tubule</strong> via NaPi-2a and NaPi-2c co-transporters</li><li>Fractional excretion normally 10-15%</li><li><strong>PTH</strong> → ↓ NaPi-2a/2c → ↑ phosphate excretion (phosphaturic)</li><li><strong>FGF23</strong> → ↓ phosphate reabsorption + ↓ 1α-hydroxylase → ↓ 1,25(OH)₂D synthesis</li></ul>\n<h5>FGF23 — The Phosphatonin</h5>\n<ul><li>Produced primarily by <strong>osteocytes</strong></li><li>High-phosphate diets ↑ FGF23; low-phosphate diets ↓ FGF23</li><li>Requires co-receptor <strong>α-Klotho</strong> for signaling</li><li><strong>Activating FGF23 mutations</strong> → autosomal dominant hypophosphatemic rickets (ADHR)</li><li><strong>XLH (X-linked hypophosphatemia)</strong>: Most common genetic cause; due to inactivating mutations in <em>PHEX</em>; high FGF23 levels; treated with <strong>burosumab</strong> (anti-FGF23 monoclonal antibody)</li><li><strong>TIO (tumor-induced osteomalacia)</strong>: Mesenchymal tumors secrete FGF23 → hypophosphatemia; resolves with tumor resection</li></ul>\n<hr class=\"content-divider\">",
       "source": "Harrison's 21e + ADA 2025",
-      "tags": []
+      "tags": [],
+      "part": "bone",
+      "num": 20
     },
     {
       "id": "hypophosphatemia",
@@ -174,7 +242,9 @@
       "source": "Harrison's 21e + ADA 2025",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "bone",
+      "num": 21
     },
     {
       "id": "hyperphosphatemia",
@@ -183,7 +253,9 @@
       "source": "Harrison's 21e + ADA 2025",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "bone",
+      "num": 22
     },
     {
       "id": "magnesium-metabolism",
@@ -192,7 +264,9 @@
       "source": "Harrison's 21e + ADA 2025",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "bone",
+      "num": 23
     },
     {
       "id": "vitamin-d",
@@ -201,14 +275,18 @@
       "source": "Harrison's 21e + ADA 2025",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "bone",
+      "num": 24
     },
     {
       "id": "pth-structure-and-physiology",
       "title": "PTH — Structure and Physiology",
       "content": "<ul><li><strong>84-amino-acid peptide</strong>; amino-terminal PTH(1-34) is sufficient for biologic activity</li><li>Synthesized as preproPTH (115 aa) → proPTH → mature PTH (84 aa)</li><li>Half-life of intact PTH: ~minutes; cleared rapidly by liver and kidney</li><li><strong>CaSR (calcium-sensing receptor)</strong>: GPCR on parathyroid cells; high Ca²⁺ activates CaSR → suppresses PTH secretion; low Ca²⁺ → ↑ PTH</li></ul>\n<h5>PTH Actions</h5>\n<ul><li><strong>Bone</strong>: ↑ osteoclast activity (indirect via RANKL on osteoblasts); continuous PTH → net resorption; intermittent PTH → net bone formation (anabolic — basis for teriparatide therapy)</li><li><strong>Kidney</strong>: ↑ Ca reabsorption (DCT), ↑ phosphate excretion (proximal tubule via ↓ NaPi-2a), ↑ 1α-hydroxylase → ↑ 1,25(OH)₂D</li><li><strong>Intestine</strong> (indirect): Via ↑ 1,25(OH)₂D → ↑ calcium absorption</li></ul>\n<h5>PTHrP (PTH-related Peptide)</h5>\n<ul><li>Shares amino-terminal homology with PTH; activates same PTH/PTHrP receptor (PTHR1)</li><li>Normally paracrine factor (growth plate, breast, smooth muscle)</li><li><strong>Primary mediator of humoral hypercalcemia of malignancy (HHM)</strong> — especially squamous cell carcinomas (lung, kidney, head/neck)</li></ul>\n<hr class=\"content-divider\">",
       "source": "Harrison's Ch 410",
-      "tags": []
+      "tags": [],
+      "part": "pth",
+      "num": 25
     },
     {
       "id": "hypercalcemia",
@@ -217,7 +295,9 @@
       "source": "Harrison's Ch 410",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "pth",
+      "num": 26
     },
     {
       "id": "primary-hyperparathyroidism",
@@ -226,14 +306,18 @@
       "source": "Harrison's Ch 410",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "pth",
+      "num": 27
     },
     {
       "id": "familial-hypocalciuric-hypercalcemia",
       "title": "Familial Hypocalciuric Hypercalcemia",
       "content": "<ul><li><strong>Autosomal dominant</strong>; inactivating mutations in CaSR (FHH1), Gα11 (FHH2), or AP2S1 (FHH3)</li><li>Mild hypercalcemia, low-normal PTH, <strong>urinary calcium excretion &lt;99% fractional excretion</strong> (Ca/Cr clearance ratio &lt;0.01)</li><li>Key distinction from PHPT: FHH has >99% renal calcium reabsorption</li><li>Benign; <strong>parathyroidectomy NOT indicated</strong> (except rare homozygous neonatal severe hyperparathyroidism)</li></ul>\n<hr class=\"content-divider\">",
       "source": "Harrison's Ch 410",
-      "tags": []
+      "tags": [],
+      "part": "pth",
+      "num": 28
     },
     {
       "id": "malignancy-related-hypercalcemia",
@@ -242,7 +326,9 @@
       "source": "Harrison's Ch 410",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "pth",
+      "num": 29
     },
     {
       "id": "treatment-of-hypercalcemia",
@@ -251,7 +337,9 @@
       "source": "Harrison's Ch 410",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "pth",
+      "num": 30
     },
     {
       "id": "hypocalcemia",
@@ -260,7 +348,9 @@
       "source": "Harrison's Ch 410",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "pth",
+      "num": 31
     },
     {
       "id": "pseudohypoparathyroidism",
@@ -269,21 +359,27 @@
       "source": "Harrison's Ch 410",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "pth",
+      "num": 32
     },
     {
       "id": "overview-heme-biosynthesis-pathway",
       "title": "Overview — Heme Biosynthesis Pathway",
       "content": "<p>Heme is synthesized through an 8-step enzymatic pathway. The first and last three steps occur in <strong>mitochondria</strong>; the intermediate four steps occur in the <strong>cytosol</strong>. Each porphyria results from a deficiency in one of these enzymes (except ALA synthase, where a gain-of-function causes X-linked protoporphyria).</p>\n<h5>Pathway (Enzyme → Substrate/Product → Associated Porphyria)</h5>\n<div class=\"table-wrap\"><table><thead><tr><th>Step</th><th>Enzyme</th><th>Porphyria if Deficient</th></tr></thead><tbody><tr><td>1</td><td>ALA synthase 2 (ALAS2)</td><td>X-linked sideroblastic anemia (loss-of-function); <strong>X-linked protoporphyria (XLP)</strong> (gain-of-function)</td></tr><tr><td>2</td><td>ALA dehydratase (ALAD)</td><td>ALAD-deficient porphyria (ADP)</td></tr><tr><td>3</td><td>PBG deaminase (HMBS)</td><td><strong>Acute intermittent porphyria (AIP)</strong></td></tr><tr><td>4</td><td>Uroporphyrinogen III synthase</td><td>Congenital erythropoietic porphyria (CEP)</td></tr><tr><td>5</td><td>Uroporphyrinogen decarboxylase (UROD)</td><td><strong>Porphyria cutanea tarda (PCT)</strong></td></tr><tr><td>6</td><td>Coproporphyrinogen oxidase (CPOX)</td><td>Hereditary coproporphyria (HCP)</td></tr><tr><td>7</td><td>Protoporphyrinogen oxidase (PPOX)</td><td><strong>Variegate porphyria (VP)</strong></td></tr><tr><td>8</td><td>Ferrochelatase (FECH)</td><td><strong>Erythropoietic protoporphyria (EPP)</strong></td></tr></tbody></table></div>\n<div class=\"clinical-pearl\"><strong>Key substrate</strong>: Glycine + Succinyl-CoA → δ-aminolevulinic acid (ALA) — the rate-limiting step, catalyzed by ALAS.</div>",
       "source": "Harrison's Ch 416",
-      "tags": []
+      "tags": [],
+      "part": "porphyrias",
+      "num": 33
     },
     {
       "id": "classification",
       "title": "Classification",
       "content": "<h5>By Primary Site of Overproduction</h5>\n<ul><li><strong>Hepatic porphyrias</strong>: AIP, ADP, PCT, HCP, VP (enzyme deficiency primarily in the liver)</li><li><strong>Erythropoietic porphyrias</strong>: CEP, EPP, XLP (enzyme deficiency primarily in erythroid cells)</li></ul>\n<h5>By Clinical Presentation</h5>\n<ul><li><strong>Acute (neurovisceral) porphyrias</strong>: AIP, ADP, HCP, VP — characterized by <strong>acute attacks</strong> with abdominal pain, neuropsychiatric symptoms, autonomic dysfunction</li><li><strong>Cutaneous porphyrias</strong>: PCT, CEP, EPP, XLP, HCP, VP — characterized by <strong>photosensitivity</strong> (blistering or non-blistering)</li><li><strong>Mixed (acute + cutaneous)</strong>: HCP, VP</li></ul>",
       "source": "Harrison's Ch 416",
-      "tags": []
+      "tags": [],
+      "part": "porphyrias",
+      "num": 34
     },
     {
       "id": "acute-intermittent-porphyria-aip-most-common-acute-porphyria",
@@ -292,7 +388,9 @@
       "source": "Harrison's Ch 416",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "porphyrias",
+      "num": 35
     },
     {
       "id": "porphyria-cutanea-tarda-pct-most-common-porphyria-overall",
@@ -301,28 +399,36 @@
       "source": "Harrison's Ch 416",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "porphyrias",
+      "num": 36
     },
     {
       "id": "hereditary-coproporphyria",
       "title": "Hereditary Coproporphyria",
       "content": "<h5>HCP</h5>\n<ul><li>Autosomal dominant; deficiency of <strong>coproporphyrinogen oxidase (CPOX)</strong></li><li><strong>Both</strong> acute neurovisceral attacks AND cutaneous photosensitivity (blistering)</li><li>Diagnosis: ↑ urine ALA/PBG during attacks; <strong>↑↑ fecal coproporphyrin III</strong> (key diagnostic finding)</li><li>Treatment: Same as AIP for acute attacks</li></ul>\n<h5>VP</h5>\n<ul><li>Autosomal dominant; deficiency of <strong>protoporphyrinogen oxidase (PPOX)</strong></li><li>Most common in <strong>South Africa</strong> (founder effect in Afrikaners, ~1:300)</li><li>Both acute attacks and cutaneous blistering (identical to PCT skin lesions)</li><li>Diagnosis: ↑ urine ALA/PBG during attacks; <strong>↑↑ fecal protoporphyrin and coproporphyrin</strong>; <strong>plasma fluorescence emission peak at ~626 nm</strong> (distinguishes VP from PCT ~619 nm)</li><li>Treatment: Same as AIP for acute attacks; sun protection for skin disease</li></ul>",
       "source": "Harrison's Ch 416",
-      "tags": []
+      "tags": [],
+      "part": "porphyrias",
+      "num": 37
     },
     {
       "id": "erythropoietic-protoporphyria",
       "title": "Erythropoietic Protoporphyria",
       "content": "<h5>EPP</h5>\n<ul><li>Autosomal recessive; deficiency of <strong>ferrochelatase (FECH)</strong>, the last enzyme in heme biosynthesis</li><li>Most common erythropoietic porphyria in <strong>children</strong>; second most common porphyria in adults after PCT</li><li>FECH activity: 15-25% of normal in symptomatic patients</li></ul>\n<h5>XLP</h5>\n<ul><li>X-linked; <strong>gain-of-function</strong> mutations in ALAS2 → increased protoporphyrin IX production</li><li>~2-10% of patients with EPP phenotype; higher protoporphyrin levels than EPP</li></ul>\n<h5>Clinical Features (Both)</h5>\n<ul><li><strong>Acute painful photosensitivity</strong> — differs from other cutaneous porphyrias:<ul><li>Begins in <strong>early childhood</strong> on first sun exposure</li><li>Tingling, stinging, burning within minutes of sun exposure</li><li>Redness and swelling but <strong>NO blistering</strong> (unlike PCT/VP/HCP)</li><li>Pain out of proportion to visible skin changes</li><li>Lichenification, labial grooving, nail changes in chronic disease</li></ul></li><li><strong>Hepatic complications</strong>: Protoporphyrin IX accumulates in liver → cholestatic liver disease → can progress to <strong>liver failure</strong> requiring transplantation (5-20% develop significant liver disease); gallstones (protoporphyrin stones)</li></ul>\n<h5>Diagnosis</h5>\n<ul><li><strong>↑↑ Erythrocyte protoporphyrin IX</strong>: Free (not zinc-complexed) — hallmark</li><li>Distinguish EPP vs XLP: Proportion of free vs zinc protoporphyrin (EPP: predominantly free; XLP: up to 50% zinc-complexed)</li><li>Urine porphyrins: <strong>Normal</strong> (protoporphyrin is not water-soluble — excreted in bile/feces)</li><li>Fecal protoporphyrin: ↑</li><li>Erythrocytes show red fluorescence at 620 nm</li><li>FECH activity in lymphocytes/fibroblasts: ↓ in EPP</li><li>DNA analysis: FECH mutations in EPP; ALAS2 mutations in XLP</li></ul>\n<h5>Treatment</h5>\n<ul><li><strong>Strict sun avoidance</strong> and protective clothing (window glass does NOT protect — protoporphyrin absorbs visible light 400-410 nm, Soret band)</li><li><strong>Afamelanotide</strong> (α-MSH analogue): Subcutaneous implant, FDA-approved; stimulates melanin production → increased sun tolerance</li><li><strong>Monitor liver function</strong> closely; serum ferritin, protoporphyrin levels</li><li>Hepatic protoporphyrin accumulation: IV hematin, plasmapheresis, cholestyramine may help</li><li>Liver transplantation for end-stage liver disease (but disease can recur in transplanted liver due to ongoing bone marrow overproduction)</li><li>Bone marrow transplantation: Curative (eliminates source of excess protoporphyrin)</li></ul>",
       "source": "Harrison's Ch 416",
-      "tags": []
+      "tags": [],
+      "part": "porphyrias",
+      "num": 38
     },
     {
       "id": "congenital-erythropoietic-porphyria",
       "title": "Congenital Erythropoietic Porphyria",
       "content": "<ul><li>Autosomal recessive; deficiency of <strong>uroporphyrinogen III synthase</strong></li><li><strong>Rarest but most severe</strong> cutaneous porphyria</li><li>Massive overproduction of type I porphyrin isomers (uroporphyrin I, coproporphyrin I) in bone marrow</li><li>Clinical: <strong>Severe photosensitivity</strong> from infancy → blistering, scarring, mutilation of face/hands; <strong>erythrodontia</strong> (red fluorescent teeth under Wood's lamp); hemolytic anemia; splenomegaly</li><li>Treatment: Sun avoidance, transfusion to suppress erythropoiesis, splenectomy, bone marrow transplantation (curative)</li></ul>",
       "source": "Harrison's Ch 416",
-      "tags": []
+      "tags": [],
+      "part": "porphyrias",
+      "num": 39
     },
     {
       "id": "key-diagnostic-approach-to-porphyrias",
@@ -331,14 +437,18 @@
       "source": "Harrison's Ch 416",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "porphyrias",
+      "num": 40
     },
     {
       "id": "sex-development-overview",
       "title": "Sex Development — Overview",
       "content": "<p>Sex development has three components: <strong>chromosomal sex</strong> (XX or XY), <strong>gonadal sex</strong> (ovary or testis), and <strong>phenotypic sex</strong> (external/internal genitalia and secondary sexual characteristics).</p>\n<h5>Key Genetic Determinants</h5>\n<ul><li><strong>SRY</strong> (sex-determining region on Y chromosome): Master switch for testis development; activates SOX9</li><li><strong>SOX9</strong>: Upregulated in developing testis, suppressed in ovary</li><li><strong>WNT4, RSPO1, FOXL2</strong>: Promote ovarian development</li><li>Developing testis → <strong>Sertoli cells</strong> (produce AMH → müllerian regression) + <strong>Leydig cells</strong> (produce testosterone → wolffian development, and DHT → external male genitalia)</li></ul>\n<h5>Disorders of Sex Development (DSDs) — Classification</h5>\n<div class=\"table-wrap\"><table><thead><tr><th>Category</th><th>Examples</th></tr></thead><tbody><tr><td><strong>Sex chromosome DSD</strong></td><td>47,XXY (Klinefelter), 45,X (Turner), 45,X/46,XY mosaicism</td></tr><tr><td><strong>46,XY DSD</strong></td><td>Disorders of testis development (gonadal dysgenesis), disorders of androgen synthesis (CAH, 5α-reductase deficiency), disorders of androgen action (AIS)</td></tr><tr><td><strong>46,XX DSD</strong></td><td>Disorders of ovarian development, androgen excess (CAH — 21-hydroxylase deficiency), ovotesticular DSD</td></tr></tbody></table></div>",
       "source": "Ch 390",
-      "tags": []
+      "tags": [],
+      "part": "repro",
+      "num": 41
     },
     {
       "id": "klinefelter-syndrome",
@@ -347,7 +457,9 @@
       "source": "Harrison's Ch 390, 395-397",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "repro",
+      "num": 42
     },
     {
       "id": "turner-syndrome",
@@ -356,7 +468,9 @@
       "source": "Harrison's Ch 390, 395-397",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "repro",
+      "num": 43
     },
     {
       "id": "congenital-adrenal-hyperplasia-cah-21-hydroxylase-deficiency",
@@ -365,21 +479,27 @@
       "source": "Harrison's Ch 390, 395-397",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "repro",
+      "num": 44
     },
     {
       "id": "androgen-insensitivity-syndrome",
       "title": "Androgen Insensitivity Syndrome",
       "content": "<ul><li><strong>X-linked</strong>; mutations in the androgen receptor gene</li><li>46,XY individuals with testicular tissue but variable resistance to androgens</li></ul>\n<h5>Complete AIS (CAIS — formerly \"Testicular Feminization\")</h5>\n<ul><li>Female phenotype, normal breast development, short/blind vagina, <strong>no uterus</strong> (AMH is normal → müllerian regression)</li><li>Sparse/absent pubic and axillary hair</li><li>Testes: Inguinal or intra-abdominal (often discovered as inguinal hernia in infancy)</li><li>At puberty: Breast development (aromatization of testosterone), primary amenorrhea</li><li>Lab: ↑ testosterone (male range), ↑ LH, normal/↑ AMH</li><li>Gonadectomy: Traditionally recommended (GCC risk ~3%), but timing is debated; can be deferred until after pubertal breast development</li></ul>\n<h5>Partial AIS (Reifenstein Syndrome)</h5>\n<ul><li>Variable: Penoscrotal hypospadias, micropenis, undescended testes, gynecomastia at puberty</li><li>Gender identity variable</li></ul>",
       "source": "Harrison's Ch 390, 395-397",
-      "tags": []
+      "tags": [],
+      "part": "repro",
+      "num": 45
     },
     {
       "id": "5-reductase-type-2-deficiency",
       "title": "5α-Reductase Type 2 Deficiency",
       "content": "<ul><li>Autosomal recessive; mutations in <strong>SRD5A2</strong></li><li>46,XY individuals with impaired conversion of testosterone → DHT</li><li><strong>Birth</strong>: Ambiguous genitalia — micropenis, perineal hypospadias, blind vaginal pouch</li><li><strong>Puberty</strong>: Significant virilization (testosterone-mediated) — voice deepening, muscle development, phallic enlargement, but <strong>no male-pattern baldness</strong>, minimal prostate growth</li><li>Normal wolffian structures (testosterone-dependent), absent/reduced DHT-dependent structures</li><li>Gender role change from female to male at puberty reported in some cohorts</li></ul>",
       "source": "Harrison's Ch 390, 395-397",
-      "tags": []
+      "tags": [],
+      "part": "repro",
+      "num": 46
     },
     {
       "id": "menopause-and-postmenopausal-hormone-therapy",
@@ -388,21 +508,27 @@
       "source": "Ch 395",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "repro",
+      "num": 47
     },
     {
       "id": "infertility-key-points",
       "title": "Infertility  — Key Points",
       "content": "<h5>Definition</h5>\n<ul><li>Inability to achieve pregnancy after <strong>12 months</strong> of unprotected intercourse (6 months if female partner >35 years)</li><li>Prevalence: ~15% globally</li></ul>\n<h5>Etiology</h5>\n<ul><li><strong>Female factors (30-40%)</strong>: Tubal (30-35%), ovulatory dysfunction, uterine factors, endometriosis</li><li><strong>Male factors (40-50%)</strong>: Endocrine, anatomic, testicular defects, genetic</li><li><strong>Unexplained (15-30%)</strong>: After complete workup</li></ul>\n<h5>Key Investigations</h5>\n<ul><li><strong>Female</strong>: Ovulation assessment (day 21 progesterone), ovarian reserve (day 2-3 FSH, estradiol, AMH, antral follicle count), hysterosalpingogram (HSG), pelvic ultrasound</li><li><strong>Male</strong>: Semen analysis (after 2-7 days abstinence) — oligoasthenozoospermia if sperm &lt;15 million/mL, motility &lt;40%, normal morphology &lt;4%</li><li>Endocrine workup: TSH, prolactin, androgens</li></ul>\n<h5>Treatment</h5>\n<ul><li><strong>Ovulatory dysfunction</strong>: Letrozole or clomiphene citrate (first-line for PCOS); gonadotropins if refractory; metformin as adjunct</li><li><strong>Tubal factor</strong>: IVF is treatment of choice</li><li><strong>Male factor</strong>: IUI for mild; IVF with ICSI for severe</li><li><strong>Unexplained</strong>: Ovarian stimulation + IUI → IVF if unsuccessful</li></ul>",
       "source": "Ch 396",
-      "tags": []
+      "tags": [],
+      "part": "repro",
+      "num": 48
     },
     {
       "id": "erectile-dysfunction-key-points",
       "title": "Erectile Dysfunction  — Key Points",
       "content": "<h5>Definition and Epidemiology</h5>\n<ul><li>Inability to achieve/maintain erection sufficient for sexual intercourse</li><li>Prevalence: 52% of men aged 40-70 (10% complete, 25% moderate, 17% minimal)</li><li>Risk factors: Diabetes (35-75% prevalence), hypertension, CVD, obesity, smoking, medications</li></ul>\n<h5>Pathophysiology</h5>\n<ul><li>Erection requires: Nitric oxide (NO) → guanylyl cyclase → ↑ cGMP → smooth muscle relaxation → ↑ blood flow to corpora cavernosa</li><li>PDE-5 degrades cGMP; PDE-5 inhibitors maintain erection by blocking this degradation</li></ul>\n<h5>Causes (Remember: Vascular > Neurogenic > Endocrine > Psychogenic)</h5>\n<ul><li><strong>Vasculogenic</strong> (most common organic cause): Atherosclerosis, diabetes — ED may be \"sentinel symptom\" of CVD</li><li><strong>Neurogenic</strong>: Spinal cord injury, MS, diabetic neuropathy, post-prostatectomy</li><li><strong>Endocrinologic</strong>: Hypogonadism, hyperprolactinemia, thyroid disorders</li><li><strong>Medication-induced</strong> (~25% of cases): Antihypertensives (thiazides, beta-blockers), SSRIs (especially paroxetine, escitalopram), antipsychotics, antiandrogens</li><li><strong>Psychogenic</strong>: Performance anxiety, depression, relationship issues</li></ul>\n<h5>Treatment</h5>\n<ol><li><strong>PDE-5 inhibitors</strong> (first-line): Sildenafil, vardenafil, tadalafil, avanafil<ul><li>Contraindicated with nitrates (severe hypotension)</li><li>Effective in ~60-70% of men</li></ul></li><li><strong>Intracavernosal injection</strong>: Alprostadil (PGE1), papaverine, phentolamine</li><li><strong>Vacuum constriction devices</strong></li><li><strong>Penile prosthesis</strong>: For refractory cases</li><li><strong>Treat underlying cause</strong>: Testosterone replacement if hypogonadal, dopamine agonist if hyperprolactinemia</li></ol>\n<hr class=\"content-divider\">",
       "source": "Ch 397",
-      "tags": []
+      "tags": [],
+      "part": "repro",
+      "num": 49
     },
     {
       "id": "uric-acid-metabolism-overview",
@@ -411,21 +537,27 @@
       "source": "Harrison's Ch 417",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "purine",
+      "num": 50
     },
     {
       "id": "causes-of-hyperuricemia",
       "title": "Causes of Hyperuricemia",
       "content": "<h5>Increased Urate Production</h5>\n<ul><li><strong>Primary</strong>: Idiopathic, HPRT deficiency (Lesch-Nyhan), PRPP synthetase overactivity</li><li><strong>Secondary</strong>: Myeloproliferative/lymphoproliferative diseases, polycythemia vera, psoriasis, hemolysis, rhabdomyolysis, obesity, high-purine diet, alcohol, exercise, tumor lysis</li></ul>\n<h5>Decreased Uric Acid Excretion</h5>\n<ul><li><strong>Primary</strong>: Idiopathic</li><li><strong>Secondary</strong>: Renal insufficiency, lead nephropathy (saturnine gout), hypertension, metabolic syndrome, hypothyroidism, drugs (diuretics, low-dose salicylates, cyclosporine, pyrazinamide, ethambutol)</li></ul>\n<h5>Combined</h5>\n<ul><li>Alcohol (↑ production via ATP breakdown + ↓ excretion via lactate competition)</li><li>Glucose-6-phosphatase deficiency, fructose-1-phosphate aldolase deficiency</li></ul>",
       "source": "Harrison's Ch 417",
-      "tags": []
+      "tags": [],
+      "part": "purine",
+      "num": 51
     },
     {
       "id": "hyperuricemia-and-metabolic-syndrome",
       "title": "Hyperuricemia and Metabolic Syndrome",
       "content": "<ul><li>Hyperuricemia is a component of metabolic syndrome</li><li>Hyperinsulinemia → ↓ renal uric acid and sodium excretion</li><li>May precede onset of type 2 diabetes, hypertension, coronary artery disease, and gout</li></ul>",
       "source": "Harrison's Ch 417",
-      "tags": []
+      "tags": [],
+      "part": "purine",
+      "num": 52
     },
     {
       "id": "complications-of-hyperuricemia",
@@ -434,7 +566,9 @@
       "source": "Harrison's Ch 417",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "purine",
+      "num": 53
     },
     {
       "id": "management-of-hyperuricemia",
@@ -443,28 +577,36 @@
       "source": "Harrison's Ch 417",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "purine",
+      "num": 54
     },
     {
       "id": "hypouricemia",
       "title": "Hypouricemia",
       "content": "<ul><li>Serum urate &lt;120 μmol/L (&lt;2.0 mg/dL)</li><li>Usually from increased renal uric acid excretion</li><li><strong>Causes</strong>: Loss-of-function URAT1 mutations (SLC22A12 — familial renal hypouricemia), Fanconi syndrome, medications with uricosuric properties (losartan, high-dose salicylates)</li><li>Usually asymptomatic; rare complications: Exercise-induced renal failure, nephrolithiasis</li></ul>",
       "source": "Harrison's Ch 417",
-      "tags": []
+      "tags": [],
+      "part": "purine",
+      "num": 55
     },
     {
       "id": "inborn-errors-of-purine-metabolism",
       "title": "Inborn Errors of Purine Metabolism",
       "content": "<div class=\"table-wrap\"><table><thead><tr><th>Enzyme Defect</th><th>Inheritance</th><th>Key Clinical Features</th></tr></thead><tbody><tr><td><strong>HPRT complete deficiency (Lesch-Nyhan)</strong></td><td>X-linked</td><td>Self-mutilation, choreoathetosis, spasticity, mental retardation, hyperuricemia, gout, uric acid lithiasis</td></tr><tr><td><strong>HPRT partial deficiency (Kelley-Seegmiller)</strong></td><td>X-linked</td><td>Hyperuricemia, gout, nephrolithiasis — NO CNS involvement</td></tr><tr><td><strong>PRPP synthetase overactivity</strong></td><td>X-linked</td><td>Gout, uric acid lithiasis, deafness (some families)</td></tr><tr><td><strong>APRT deficiency</strong></td><td>AR</td><td>2,8-dihydroxyadenine kidney stones (allopurinol prevents)</td></tr><tr><td><strong>Xanthine oxidase deficiency</strong></td><td>AR</td><td>Xanthinuria, xanthine lithiasis; hypouricemia</td></tr><tr><td><strong>Adenosine deaminase deficiency</strong></td><td>AR</td><td><strong>Severe combined immunodeficiency (SCID)</strong></td></tr><tr><td><strong>Purine nucleoside phosphorylase deficiency</strong></td><td>AR</td><td>T cell–mediated immunodeficiency</td></tr></tbody></table></div>",
       "source": "Harrison's Ch 417",
-      "tags": []
+      "tags": [],
+      "part": "purine",
+      "num": 56
     },
     {
       "id": "inborn-errors-of-pyrimidine-metabolism",
       "title": "Inborn Errors of Pyrimidine Metabolism",
       "content": "<div class=\"table-wrap\"><table><thead><tr><th>Disorder</th><th>Key Features</th></tr></thead><tbody><tr><td><strong>Orotic aciduria</strong> (UMP synthase deficiency)</td><td>Megaloblastic anemia unresponsive to B₁₂/folate, growth retardation, orotic acid crystalluria; Rx: uridine 100-200 mg/kg/d</td></tr><tr><td><strong>Pyrimidine 5'-nucleotidase deficiency</strong></td><td>Hemolytic anemia, basophilic stippling of erythrocytes</td></tr><tr><td><strong>Dihydropyrimidine dehydrogenase deficiency</strong></td><td>Seizures, mental retardation; <strong>5-fluorouracil neurotoxicity</strong> (this enzyme is rate-limiting for 5-FU degradation)</td></tr></tbody></table></div>\n<h5>Drug Interactions with Pyrimidine Metabolism</h5>\n<ul><li><strong>5-Fluorouracil</strong>: Requires conversion to active metabolite by thymidylate synthase pathway; dihydropyrimidine dehydrogenase deficiency → severe 5-FU toxicity</li><li><strong>Leflunomide</strong>: Inhibits dihydroorotate dehydrogenase (de novo pyrimidine synthesis) — used for rheumatoid arthritis</li><li><strong>Allopurinol</strong>: Inhibits orotidine-5'-phosphate decarboxylase → ↑ orotidine and orotic acid excretion</li></ul>\n<hr class=\"content-divider\">\n<p><em>Sources: Harrison's Principles of Internal Medicine, 21st Edition (Chapters 390, 395-397, 403-405, 409-410, 416-417); ADA Standards of Care 2025 (Sections 2, 4, 7, 11, 16)</em></p>",
       "source": "Harrison's Ch 417",
-      "tags": []
+      "tags": [],
+      "part": "purine",
+      "num": 57
     }
   ]
 }

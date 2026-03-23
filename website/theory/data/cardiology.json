@@ -1,26 +1,80 @@
 {
   "system": "Cardiology",
+  "topicCount": 51,
+  "hyCount": 28,
+  "parts": [
+    {
+      "key": "intro",
+      "label": "Introduction & Cardiac Physiology"
+    },
+    {
+      "key": "ecg",
+      "label": "Electrocardiography"
+    },
+    {
+      "key": "imaging",
+      "label": "Non-Invasive Cardiac Imaging"
+    },
+    {
+      "key": "arrhythmias",
+      "label": "Arrhythmias & Electrophysiology"
+    },
+    {
+      "key": "hf",
+      "label": "Heart Failure & Cardiomyopathy"
+    },
+    {
+      "key": "valvular",
+      "label": "Valvular Heart Disease"
+    },
+    {
+      "key": "ihd",
+      "label": "Ischemic Heart Disease & ACS"
+    },
+    {
+      "key": "pericardial",
+      "label": "Pericardial Disease & Cardiac Tumors"
+    },
+    {
+      "key": "htn",
+      "label": "Hypertension"
+    },
+    {
+      "key": "vascular",
+      "label": "Aorta & Peripheral Vascular Disease"
+    },
+    {
+      "key": "chd",
+      "label": "Congenital Heart Disease"
+    }
+  ],
   "topics": [
     {
       "id": "approach-to-the-patient-with-cardiovascular-disease",
       "title": "Approach to the Patient with Cardiovascular Disease",
       "content": "<p>The evaluation of a patient with known or suspected cardiovascular disease (CVD) begins with a thorough history and physical examination. Key symptoms include chest pain/discomfort, dyspnea, palpitations, syncope, fatigue, and edema. The history should characterize the nature, onset, duration, provocative and relieving factors, and associated symptoms.</p>\n<p>The New York Heart Association (NYHA) functional classification is used to grade symptom severity:</p>\n<ul><li><strong>Class I</strong>: No limitation of physical activity; ordinary activity does not cause symptoms</li><li><strong>Class II</strong>: Slight limitation of activity; comfortable at rest; ordinary activity causes symptoms</li><li><strong>Class III</strong>: Marked limitation of activity; comfortable at rest; less-than-ordinary activity causes symptoms</li><li><strong>Class IV</strong>: Unable to carry out any physical activity without discomfort; symptoms at rest</li></ul>",
       "source": "Harrison's 21e, Ch 236",
-      "tags": []
+      "tags": [],
+      "part": "intro",
+      "num": 1
     },
     {
       "id": "basic-biology-of-the-cardiovascular-system",
       "title": "Basic Biology of the Cardiovascular System",
       "content": "<h5>Vascular Biology</h5>\n<p>The vascular endothelium is a dynamic organ that regulates vascular tone, inflammation, thrombosis, and vascular remodeling. The endothelium produces nitric oxide (NO), a potent vasodilator synthesized by endothelial nitric oxide synthase (eNOS). Endothelial dysfunction — characterized by reduced NO bioavailability — is an early event in atherosclerosis.</p>\n<p>Key endothelial-derived substances:</p>\n<ul><li><strong>Nitric oxide (NO)</strong>: Vasodilation, inhibits platelet aggregation and smooth muscle proliferation</li><li><strong>Prostacyclin (PGI2)</strong>: Vasodilation and inhibits platelet aggregation</li><li><strong>Endothelin-1 (ET-1)</strong>: Potent vasoconstrictor</li><li><strong>Von Willebrand factor (vWF)</strong>: Promotes platelet adhesion</li></ul>\n<h5>Cardiac Contraction and Relaxation</h5>\n<p>Cardiac myocytes contract through excitation-contraction coupling. The action potential triggers calcium release from the sarcoplasmic reticulum (calcium-induced calcium release), which binds troponin C, allowing actin-myosin crossbridge cycling.</p>\n<div class=\"clinical-pearl\"><strong>Key determinants of cardiac performance:</strong></div>\n<ul><li><strong>Preload</strong>: The ventricular wall stress at end-diastole, determined by ventricular volume. Governed by the Frank-Starling mechanism — increased preload increases stroke volume up to a point.</li><li><strong>Afterload</strong>: The resistance that the ventricle must overcome to eject blood. Determined primarily by systemic vascular resistance and aortic impedance.</li><li><strong>Contractility (Inotropy)</strong>: The intrinsic force of contraction independent of preload and afterload. Enhanced by sympathetic stimulation (catecholamines acting on β1-receptors) and digitalis.</li><li><strong>Heart rate (Chronotropy)</strong>: Cardiac output = Heart rate × Stroke volume</li></ul>\n<p><strong>Cardiac metabolism</strong>: The heart is primarily an aerobic organ, deriving ~60-70% of its energy from fatty acid oxidation, with the remainder from glucose, lactate, and ketone bodies. It consumes ~8 mL O2/min per 100g of tissue — the highest of any organ.</p>",
       "source": "Harrison's 21e, Ch 237",
-      "tags": []
+      "tags": [],
+      "part": "intro",
+      "num": 2
     },
     {
       "id": "epidemiology-of-cardiovascular-disease",
       "title": "Epidemiology of Cardiovascular Disease",
       "content": "<p>CVD is the leading cause of death globally, accounting for an estimated 17.9 million deaths annually. The epidemiologic transition describes how CVD patterns change as nations develop economically:</p>\n<p><strong>Stages of the Epidemiologic Transition:</strong></p>\n<ol><li><strong>Age of pestilence and famine</strong>: CVD accounts for &lt;10% of deaths; primarily rheumatic heart disease and infectious cardiomyopathies</li><li><strong>Age of receding pandemics</strong>: CVD accounts for 10-35% of deaths; rise in hypertensive and rheumatic heart disease</li><li><strong>Age of degenerative and man-made diseases</strong>: CVD accounts for 35-65% of deaths; dominance of atherosclerotic CVD and stroke</li><li><strong>Age of delayed degenerative diseases</strong>: CVD accounts for &lt;50% of deaths; decline due to prevention and treatment</li><li><strong>Age of inactivity and obesity</strong>: Re-emergence of CVD risk due to sedentary lifestyle, obesity, and diabetes</li></ol>\n<p><strong>Major modifiable risk factors for atherosclerotic CVD:</strong></p>\n<ul><li>Hypertension</li><li>Dyslipidemia (elevated LDL, low HDL)</li><li>Cigarette smoking</li><li>Diabetes mellitus</li><li>Obesity and physical inactivity</li></ul>\n<p><strong>Non-modifiable risk factors:</strong></p>\n<ul><li>Age (men ≥45 years, women ≥55 years)</li><li>Male sex</li><li>Family history of premature CVD (first-degree male relative &lt;55 years, female relative &lt;65 years)</li></ul>",
       "source": "Harrison's 21e, Ch 238",
-      "tags": []
+      "tags": [],
+      "part": "intro",
+      "num": 3
     },
     {
       "id": "physical-examination-of-the-cardiovascular-system",
@@ -29,21 +83,27 @@
       "source": "Harrison's 21e, Ch 239",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "intro",
+      "num": 4
     },
     {
       "id": "electrophysiologic-background",
       "title": "Electrophysiologic Background",
       "content": "<p>The ECG records the electrical activity of the heart from the body surface. The standard 12-lead ECG consists of 6 limb leads (I, II, III, aVR, aVL, aVF) and 6 precordial leads (V1-V6).</p>\n<p><strong>Normal ECG intervals:</strong></p>\n<ul><li><strong>PR interval</strong>: 0.12-0.20 seconds (120-200 ms) — represents atrial depolarization and AV conduction delay</li><li><strong>QRS duration</strong>: &lt;0.12 seconds (&lt;120 ms) — represents ventricular depolarization</li><li><strong>QT interval</strong>: Rate-dependent; corrected QT (QTc) using Bazett's formula: QTc = QT/√RR. Normal QTc: &lt;440 ms (men), &lt;460 ms (women)</li></ul>\n<p><strong>Heart rate calculation</strong>: 300 / number of large boxes between R-R intervals; or count R waves in 10 seconds × 6</p>",
       "source": "Harrison's 21e",
-      "tags": []
+      "tags": [],
+      "part": "ecg",
+      "num": 5
     },
     {
       "id": "normal-ecg-waveforms",
       "title": "Normal ECG Waveforms",
       "content": "<p><strong>P wave</strong>: Represents atrial depolarization. Normal duration &lt;120 ms, amplitude &lt;2.5 mm in lead II. Best seen in leads II and V1.</p>\n<ul><li>P mitrale (bifid P wave in lead II, with interpeak duration ≥40 ms): Left atrial enlargement</li><li>P pulmonale (peaked P wave >2.5 mm in lead II): Right atrial enlargement</li></ul>\n<p><strong>QRS complex</strong>: Represents ventricular depolarization. Normal septal depolarization proceeds left to right, producing small q waves in leads I, aVL, V5, V6 and a small r wave in V1.</p>\n<p><strong>T wave</strong>: Represents ventricular repolarization. Normally upright in leads I, II, V3-V6; inverted in aVR; variable in III, aVL, V1-V2.</p>\n<p><strong>U wave</strong>: Small deflection after the T wave. Prominent U waves may be seen with hypokalemia, bradycardia, or LV hypertrophy.</p>",
       "source": "Harrison's 21e",
-      "tags": []
+      "tags": [],
+      "part": "ecg",
+      "num": 6
     },
     {
       "id": "cardiac-axis",
@@ -52,7 +112,9 @@
       "source": "Harrison's 21e",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "ecg",
+      "num": 7
     },
     {
       "id": "ventricular-hypertrophy",
@@ -61,7 +123,9 @@
       "source": "Harrison's 21e",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "ecg",
+      "num": 8
     },
     {
       "id": "bundle-branch-blocks",
@@ -70,7 +134,9 @@
       "source": "Harrison's 21e",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "ecg",
+      "num": 9
     },
     {
       "id": "myocardial-ischemia-and-infarction-on-ecg",
@@ -79,7 +145,9 @@
       "source": "Harrison's 21e",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "ecg",
+      "num": 10
     },
     {
       "id": "metabolic-and-drug-effects-on-ecg",
@@ -88,7 +156,9 @@
       "source": "Harrison's 21e",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "ecg",
+      "num": 11
     },
     {
       "id": "echocardiography",
@@ -97,42 +167,54 @@
       "source": "Harrison's 21e",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "imaging",
+      "num": 12
     },
     {
       "id": "cardiac-magnetic-resonance-cmr",
       "title": "Cardiac Magnetic Resonance (CMR)",
       "content": "<p>CMR provides high-resolution imaging of cardiac structure and function without ionizing radiation. Key pulse sequences:</p>\n<ul><li><strong>Cine imaging</strong>: LV/RV volume and function (gold standard for volumes and EF)</li><li><strong>Late gadolinium enhancement (LGE)</strong>: Myocardial infarction and fibrosis. Detected acute and chronic infarcts with sensitivity of 99% and 94%, respectively.<ul><li>Subendocardial/transmural LGE in a coronary distribution → Ischemic etiology</li><li>Mid-wall or epicardial LGE → Nonischemic cardiomyopathy (myocarditis, sarcoidosis, DCM)</li></ul></li><li><strong>T1 and T2 mapping</strong>: T1 for fibrosis, T2 for myocardial edema (active inflammation)</li><li><strong>Perfusion imaging</strong>: Myocardial perfusion with pharmacologic stress (vasodilator agent or dobutamine)</li><li><strong>Iron content imaging (T2*)</strong>: Myocardial iron infiltration (hemochromatosis, thalassemia)</li></ul>\n<p><strong>CMR indications:</strong></p>\n<ul><li>Assessment of cardiomyopathy etiology (ischemic vs nonischemic)</li><li>Myocarditis (LGE in mid-wall/epicardial pattern, sparing subendocardium)</li><li>Cardiac amyloidosis (diffuse subendocardial LGE, inability to null myocardium)</li><li>Hypertrophic cardiomyopathy (fibrosis detection, risk stratification)</li><li>Arrhythmogenic right ventricular cardiomyopathy (ARVC)</li><li>Cardiac sarcoidosis</li><li>Iron overload quantification</li></ul>\n<p><strong>Safety</strong>: MRI-conditional devices (pacemakers, ICDs) can be safely scanned at 1.5T under appropriate protocols. Gadolinium-based contrast agents (GBCAs) — use macrocyclic agents; avoid in severe renal dysfunction (eGFR &lt;30) due to risk of nephrogenic systemic fibrosis (NSF) with older linear agents.</p>",
       "source": "Harrison's 21e",
-      "tags": []
+      "tags": [],
+      "part": "imaging",
+      "num": 13
     },
     {
       "id": "cardiac-ct",
       "title": "Cardiac CT",
       "content": "<p><strong>Coronary CT angiography (CTA):</strong></p>\n<ul><li>Sensitivity 99%, specificity 89% for detecting >50% coronary stenosis</li><li>Excellent negative predictive value — effectively excludes obstructive CAD</li><li>Most useful in low-to-intermediate risk patients with acute chest pain</li><li>Limitations: Blooming artifact from heavy calcification, metallic stents</li></ul>\n<p><strong>Coronary artery calcium (CAC) score (Agatston score):</strong></p>\n<ul><li>Quantifies coronary atherosclerotic burden</li><li>CAC = 0: Very low risk of obstructive CAD</li><li>CAC >400: High likelihood of obstructive CAD</li><li>Note: CAC scores are not specific markers of obstructive stenosis</li></ul>\n<p><strong>Radiation exposure</strong>: Current average coronary CTA dose: 3-15 mSv (can be as low as 1 mSv with newer techniques). Compare: invasive coronary angiography ~7 mSv; SPECT perfusion ~4-11 mSv; PET perfusion ~2-4 mSv.</p>",
       "source": "Harrison's 21e",
-      "tags": []
+      "tags": [],
+      "part": "imaging",
+      "num": 14
     },
     {
       "id": "nuclear-cardiology-stress-imaging",
       "title": "Nuclear Cardiology (Stress Imaging)",
       "content": "<p><strong>SPECT myocardial perfusion imaging:</strong></p>\n<ul><li>Most common stress imaging test for CAD evaluation</li><li>Reversible perfusion defect = Ischemia</li><li>Fixed perfusion defect = Prior infarction/scar</li><li>Normal study: &lt;1% annual rate of major adverse cardiac events</li><li>Sensitivity 88%, specificity 76% for detecting CAD</li></ul>\n<p><strong>PET myocardial perfusion imaging:</strong></p>\n<ul><li>Higher sensitivity (93%) and spatial resolution than SPECT</li><li>Provides quantitative myocardial blood flow and coronary flow reserve</li><li>Particularly useful for detecting balanced ischemia in multivessel CAD</li></ul>\n<p><strong>Comparative diagnostic accuracy for CAD:</strong></p>\n<div class=\"table-wrap\"><table><thead><tr><th>Modality</th><th>Sensitivity</th><th>Specificity</th></tr></thead><tbody><tr><td>Exercise ECG (treadmill)</td><td>68%</td><td>77%</td></tr><tr><td>Exercise echocardiography</td><td>84%</td><td>82%</td></tr><tr><td>Dobutamine echocardiography</td><td>80%</td><td>84%</td></tr><tr><td>SPECT MPI</td><td>88%</td><td>76%</td></tr><tr><td>PET perfusion</td><td>93%</td><td>81%</td></tr><tr><td>CMR perfusion</td><td>91%</td><td>81%</td></tr><tr><td>Coronary CTA</td><td>99%</td><td>89%</td></tr></tbody></table></div>\n<p><strong>Stress testing selection:</strong></p>\n<ul><li><strong>Can exercise + interpretable resting ECG</strong>: Exercise treadmill test (ETT) first</li><li><strong>Cannot exercise</strong>: Pharmacologic stress (vasodilator: adenosine/regadenoson for perfusion imaging; dobutamine for echo/CMR)</li><li><strong>Abnormal resting ECG</strong> (LBBB, LVH with strain, digoxin, paced rhythm): Imaging-based stress test (perfusion or echo), not exercise ECG alone</li></ul>\n<hr class=\"content-divider\">",
       "source": "Harrison's 21e",
-      "tags": []
+      "tags": [],
+      "part": "imaging",
+      "num": 15
     },
     {
       "id": "principles-of-clinical-cardiac-electrophysiology",
       "title": "Principles of Clinical Cardiac Electrophysiology",
       "content": "<h5>Cardiac Action Potential</h5>\n<p><strong>Phases of the ventricular action potential:</strong></p>\n<ul><li><strong>Phase 0 (Rapid depolarization)</strong>: Fast Na+ channel opening → rapid upstroke</li><li><strong>Phase 1 (Early repolarization)</strong>: Transient outward K+ current (Ito)</li><li><strong>Phase 2 (Plateau)</strong>: Balance of inward Ca2+ current (L-type channels) and outward K+ currents</li><li><strong>Phase 3 (Repolarization)</strong>: Outward K+ currents (IKr, IKs) predominate</li><li><strong>Phase 4 (Resting potential)</strong>: Maintained by IK1 (inward rectifier K+ channel) at ~−90 mV in ventricular myocytes</li></ul>\n<p><strong>Pacemaker cells (SA node, AV node):</strong></p>\n<ul><li>Phase 0: Slow upstroke mediated by L-type Ca2+ channels (not fast Na+ channels)</li><li>Phase 4: Spontaneous diastolic depolarization (automaticity) driven by funny current (If) and T-type Ca2+ channels</li><li>This explains why calcium channel blockers and beta blockers affect SA/AV node function</li></ul>\n<h5>Mechanisms of Arrhythmias</h5>\n<ol><li><strong>Enhanced automaticity</strong>: Increased rate of spontaneous depolarization in latent pacemaker cells (e.g., accelerated junctional rhythm, some atrial tachycardias). Catecholamines, hypoxia, hypokalemia, and ischemia can enhance automaticity.</li><li><strong>Triggered activity</strong>: Afterdepolarizations — oscillations in membrane potential that reach threshold and trigger a new action potential<ul><li><strong>Early afterdepolarizations (EADs)</strong>: Occur during phase 2 or 3, in setting of prolonged repolarization (long QT). Mechanism of Torsades de Pointes.</li><li><strong>Delayed afterdepolarizations (DADs)</strong>: Occur after full repolarization (phase 4), caused by intracellular calcium overload. Mechanism of digitalis-toxic arrhythmias and catecholaminergic polymorphic VT (CPVT).</li></ul></li><li><strong>Reentry</strong>: The most common mechanism of sustained arrhythmias. Requirements:<ul><li>Two functionally distinct pathways</li><li>Unidirectional block in one pathway</li><li>Slow conduction in the other pathway</li><li>Re-excitation of the initially blocked pathway after its refractory period</li><li>Examples: AVNRT, AVRT, atrial flutter, scar-related VT</li></ul></li></ol>\n<h5>Vaughan Williams Classification of Antiarrhythmic Drugs</h5>\n<ul><li><strong>Class I (Na+ channel blockers)</strong>:<ul><li><strong>Ia</strong> (moderate Na+ block, prolong repolarization): Quinidine, procainamide, disopyramide. Prolong QT, risk of Torsades.</li><li><strong>Ib</strong> (weak Na+ block, shorten repolarization): Lidocaine, mexiletine. Primarily for ventricular arrhythmias.</li><li><strong>Ic</strong> (strong Na+ block, minimal effect on repolarization): Flecainide, propafenone. Contraindicated in structural heart disease (CAST trial — increased mortality in post-MI patients).</li></ul></li><li><strong>Class II (Beta-adrenergic blockers)</strong>: Metoprolol, atenolol, propranolol, esmolol. Decrease automaticity and AV conduction. First-line for many supraventricular and ventricular arrhythmias.</li><li><strong>Class III (K+ channel blockers — prolong repolarization)</strong>: Amiodarone, sotalol, dofetilide, ibutilide. Prolong QT interval. Amiodarone is the most effective antiarrhythmic but has significant extracardiac toxicities (thyroid, pulmonary, hepatic, ocular, cutaneous, neurologic).</li><li><strong>Class IV (Ca2+ channel blockers)</strong>: Verapamil, diltiazem. Slow AV conduction. Used for rate control in AF/AFL and termination of AVNRT/AVRT.</li></ul>",
       "source": "Harrison's 21e, Ch 243",
-      "tags": []
+      "tags": [],
+      "part": "arrhythmias",
+      "num": 16
     },
     {
       "id": "bradyarrhythmias-sinus-node-disease",
       "title": "Bradyarrhythmias — Sinus Node Disease",
       "content": "<p><strong>Sinus Node Dysfunction (SND) / Sick Sinus Syndrome:</strong></p>\n<p>The sinus node is the dominant cardiac pacemaker, located at the junction of the superior vena cava and right atrium. Its intrinsic rate is 60-100 bpm, modulated by autonomic tone.</p>\n<p><strong>Manifestations of SND:</strong></p>\n<ul><li>Sinus bradycardia (inappropriate for physiologic state)</li><li>Sinus pauses / sinus arrest</li><li>Sinoatrial exit block</li><li>Chronotropic incompetence (failure to achieve ≥80% of age-predicted maximal heart rate during exercise)</li><li>Tachy-brady syndrome: Alternating tachyarrhythmias (typically AF) and bradycardia</li></ul>\n<p><strong>Causes:</strong></p>\n<ul><li>Idiopathic degenerative fibrosis (most common — age-related)</li><li>Drugs: Beta blockers, calcium channel blockers, digoxin, amiodarone, lithium</li><li>Ischemia (RCA supplies SA node in ~60% of patients)</li><li>Infiltrative diseases (amyloidosis, sarcoidosis)</li><li>Inflammatory conditions (myocarditis, pericarditis)</li><li>Post-cardiac surgery</li></ul>\n<p><strong>Treatment:</strong></p>\n<ul><li>Permanent pacemaker for symptomatic bradycardia</li><li>Preferred mode: AAI or DDD (with minimal ventricular pacing) rather than VVI to reduce risk of pacemaker syndrome and AF</li></ul>",
       "source": "Harrison's 21e, Ch 244",
-      "tags": []
+      "tags": [],
+      "part": "arrhythmias",
+      "num": 17
     },
     {
       "id": "bradyarrhythmias-av-conduction-disease",
@@ -141,7 +223,9 @@
       "source": "Harrison's 21e, Ch 245",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "arrhythmias",
+      "num": 18
     },
     {
       "id": "supraventricular-tachyarrhythmias",
@@ -150,7 +234,9 @@
       "source": "Harrison's 21e, Ch 246-251",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "arrhythmias",
+      "num": 19
     },
     {
       "id": "ventricular-arrhythmias",
@@ -159,7 +245,9 @@
       "source": "Harrison's 21e, Ch 252-256",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "arrhythmias",
+      "num": 20
     },
     {
       "id": "myocarditis",
@@ -168,7 +256,9 @@
       "source": "Harrison's 21e, Ch 259",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "hf",
+      "num": 21
     },
     {
       "id": "cardiomyopathies",
@@ -177,21 +267,27 @@
       "source": "Harrison's 21e, Ch 259",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "hf",
+      "num": 22
     },
     {
       "id": "cardiac-transplantation",
       "title": "Cardiac Transplantation",
       "content": "<p><strong>Indications</strong>: End-stage heart failure refractory to medical therapy (typically NYHA Class III-IV) with expected 1-year survival &lt;50% without transplantation.</p>\n<p><strong>Immunosuppression</strong>: Triple therapy — calcineurin inhibitor (tacrolimus or cyclosporine), antimetabolite (mycophenolate mofetil), and corticosteroids (tapered over time).</p>\n<p><strong>Rejection:</strong></p>\n<ul><li><strong>Acute cellular rejection (ACR)</strong>: Lymphocytic infiltration of the myocardium; diagnosed by endomyocardial biopsy; treated with pulse corticosteroids</li><li><strong>Antibody-mediated rejection (AMR)</strong>: Donor-specific antibodies; diagnosed by C4d staining on biopsy; treatment includes plasmapheresis, IVIG, rituximab</li></ul>\n<p><strong>Cardiac allograft vasculopathy (CAV)</strong>: Diffuse, concentric intimal hyperplasia affecting the entire coronary tree (unlike focal atherosclerosis). Leading cause of late graft failure and death. May not cause typical angina due to denervation. Diagnosed by intravascular ultrasound (IVUS) or angiography.</p>",
       "source": "Harrison's 21e, Ch 260",
-      "tags": []
+      "tags": [],
+      "part": "hf",
+      "num": 23
     },
     {
       "id": "mechanical-circulatory-support",
       "title": "Mechanical Circulatory Support",
       "content": "<p><strong>Left ventricular assist devices (LVADs):</strong></p>\n<ul><li>Continuous-flow devices (HeartMate 3 — centrifugal flow; HeartMate II — axial flow)</li><li>HeartMate 3: Lower rate of pump thrombosis than HeartMate II; fully magnetically levitated rotor</li><li>Used as bridge to transplant, bridge to decision, or destination therapy</li><li>Complications: Bleeding (GI arteriovenous malformations due to loss of pulsatility and acquired von Willebrand syndrome), pump thrombosis, driveline infection, right heart failure, stroke</li></ul>\n<hr class=\"content-divider\">",
       "source": "Harrison's 21e",
-      "tags": []
+      "tags": [],
+      "part": "hf",
+      "num": 24
     },
     {
       "id": "aortic-stenosis-as",
@@ -200,7 +296,9 @@
       "source": "Harrison's 21e",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "valvular",
+      "num": 25
     },
     {
       "id": "aortic-regurgitation-ar",
@@ -209,7 +307,9 @@
       "source": "Harrison's 21e",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "valvular",
+      "num": 26
     },
     {
       "id": "mitral-stenosis-ms",
@@ -218,7 +318,9 @@
       "source": "Harrison's 21e",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "valvular",
+      "num": 27
     },
     {
       "id": "mitral-regurgitation-mr",
@@ -227,7 +329,9 @@
       "source": "Harrison's 21e",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "valvular",
+      "num": 28
     },
     {
       "id": "mitral-valve-prolapse-mvp",
@@ -236,21 +340,27 @@
       "source": "Harrison's 21e",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "valvular",
+      "num": 29
     },
     {
       "id": "tricuspid-valve-disease",
       "title": "Tricuspid Valve Disease",
       "content": "<p><strong>Tricuspid regurgitation (TR):</strong></p>\n<ul><li>Secondary TR (functional) from RV dilatation: By far the most common etiology (pulmonary hypertension, left-sided heart disease, RV infarction)</li><li>Primary TR: Endocarditis (IV drug use), rheumatic, Ebstein anomaly, carcinoid syndrome, radiation, pacemaker/ICD leads</li><li>Carvallo sign: TR murmur increases with inspiration</li><li>Clinical features: Elevated JVP with prominent v wave, pulsatile liver (hepatomegaly), peripheral edema, ascites</li></ul>\n<p><strong>Tricuspid stenosis:</strong> Rare; almost always rheumatic (always coexists with mitral valve disease). Diastolic murmur at left lower sternal border, augmented by inspiration.</p>",
       "source": "Harrison's 21e",
-      "tags": []
+      "tags": [],
+      "part": "valvular",
+      "num": 30
     },
     {
       "id": "pulmonic-valve-disease",
       "title": "Pulmonic Valve Disease",
       "content": "<p><strong>Pulmonic stenosis</strong>: Usually congenital; systolic murmur at left upper sternal border; increases with inspiration. Treatment: Balloon valvuloplasty for significant stenosis.</p>\n<p><strong>Pulmonic regurgitation</strong>: Most commonly functional (due to pulmonary hypertension) — Graham Steell murmur (high-pitched, early diastolic). Primary PR: post-valvotomy, endocarditis, carcinoid.</p>\n<hr class=\"content-divider\">",
       "source": "Harrison's 21e",
-      "tags": []
+      "tags": [],
+      "part": "valvular",
+      "num": 31
     },
     {
       "id": "chronic-ischemic-heart-disease-stable-angina",
@@ -259,7 +369,9 @@
       "source": "Harrison's 21e, Ch 273",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "ihd",
+      "num": 32
     },
     {
       "id": "non-st-elevation-acs-nste-acs",
@@ -268,7 +380,9 @@
       "source": "Harrison's 21e, Ch 274",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "ihd",
+      "num": 33
     },
     {
       "id": "st-elevation-myocardial-infarction-stemi",
@@ -277,14 +391,18 @@
       "source": "Harrison's 21e, Ch 275",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "ihd",
+      "num": 34
     },
     {
       "id": "percutaneous-coronary-intervention",
       "title": "Percutaneous Coronary Intervention",
       "content": "<p><strong>Drug-eluting stents (DES)</strong>: Second-generation DES (everolimus-eluting, zotarolimus-eluting) are standard. Restenosis rates: 5-15% with DES (vs 20-30% with bare metal stents).</p>\n<p><strong>DAPT duration:</strong></p>\n<ul><li>Post-ACS: Typically 12 months</li><li>Elective PCI: 6 months (may be shortened to 3 months or extended to >12 months based on ischemic vs bleeding risk balance)</li><li>Early DAPT discontinuation (within first month) markedly increases stent thrombosis risk</li></ul>\n<p><strong>Stent thrombosis</strong>: Acute (&lt;24h), subacute (1-30 days), late (30 days-1 year), very late (>1 year). Presents as STEMI or sudden death. Mortality 10-20%. Prevention: DAPT adherence, adequate stent expansion.</p>\n<p><strong>Restenosis</strong>: Neointimal hyperplasia causing re-narrowing. Usually presents as recurrent angina within 12 months. Treatment: Repeat PCI with drug-eluting stent or balloon.</p>\n<hr class=\"content-divider\">",
       "source": "Harrison's 21e, Ch 276",
-      "tags": []
+      "tags": [],
+      "part": "ihd",
+      "num": 35
     },
     {
       "id": "acute-pericarditis",
@@ -293,7 +411,9 @@
       "source": "Harrison's 21e, Ch 270",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "pericardial",
+      "num": 36
     },
     {
       "id": "cardiac-tamponade",
@@ -302,7 +422,9 @@
       "source": "Harrison's 21e",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "pericardial",
+      "num": 37
     },
     {
       "id": "constrictive-pericarditis",
@@ -311,42 +433,54 @@
       "source": "Harrison's 21e",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "pericardial",
+      "num": 38
     },
     {
       "id": "cardiac-tumors",
       "title": "Cardiac Tumors",
       "content": "<ul><li><strong>Myxoma</strong>: Most common primary cardiac tumor. ~75% in left atrium, attached to interatrial septum near fossa ovalis. Can cause emboli, obstruction (mimicking mitral stenosis — \"tumor plop\"), and constitutional symptoms (fever, weight loss, elevated ESR). \"Wrecking ball\" effect. Treatment: Surgical excision.</li><li><strong>Papillary fibroelastoma</strong>: Second most common benign tumor; often on valve surfaces; risk of emboli.</li><li><strong>Rhabdomyoma</strong>: Most common cardiac tumor in children; associated with tuberous sclerosis; may regress spontaneously.</li><li><strong>Malignant primary tumors</strong>: Sarcomas (angiosarcoma most common — predilection for right atrium; poor prognosis).</li><li><strong>Metastatic tumors</strong>: ~20-fold more common than primary cardiac tumors. Most common primaries: Lung, breast, melanoma, lymphoma, leukemia.</li></ul>\n<hr class=\"content-divider\">",
       "source": "Harrison's 21e, Ch 271",
-      "tags": []
+      "tags": [],
+      "part": "pericardial",
+      "num": 39
     },
     {
       "id": "epidemiology-and-definition",
       "title": "Epidemiology and Definition",
       "content": "<p>Hypertension affects >1 billion people worldwide and is one of the leading causes of global morbidity and mortality. It doubles the risk of CHD, CHF, ischemic and hemorrhagic stroke, renal failure, and PAD.</p>\n<p><strong>2017 ACC/AHA Blood Pressure Classification:</strong></p>\n<div class=\"table-wrap\"><table><thead><tr><th>Category</th><th>Systolic (mmHg)</th><th></th><th>Diastolic (mmHg)</th></tr></thead><tbody><tr><td>Normal</td><td>&lt;120</td><td>and</td><td>&lt;80</td></tr><tr><td>Elevated</td><td>120-129</td><td>and</td><td>&lt;80</td></tr><tr><td><strong>Hypertension Stage 1</strong></td><td>130-139</td><td>or</td><td>80-89</td></tr><tr><td><strong>Hypertension Stage 2</strong></td><td>≥140</td><td>or</td><td>>90</td></tr></tbody></table></div>\n<p>Blood pressure should be measured in both arms at the first visit. An average of 2-3 readings on 2-3 separate occasions should be obtained. Out-of-office measurements (ambulatory or home BP monitoring) are helpful for confirming the diagnosis.</p>\n<p><strong>White coat hypertension</strong> (15-20% of patients): Elevated office BP but normal out-of-office BP. Long-term outcomes similar to normotensive individuals.</p>\n<p><strong>Masked hypertension</strong> (10-30%): Normal office BP but elevated out-of-office BP. Carries cardiovascular risk similar to sustained hypertension.</p>",
       "source": "Harrison's 21e",
-      "tags": []
+      "tags": [],
+      "part": "htn",
+      "num": 40
     },
     {
       "id": "mechanisms-of-hypertension",
       "title": "Mechanisms of Hypertension",
       "content": "<p><strong>Arterial pressure = Cardiac output × Peripheral resistance</strong></p>\n<div class=\"clinical-pearl\"><strong>Key regulatory systems:</strong></div>\n<ol><li><strong>Renal sodium handling (intravascular volume)</strong>: Kidney is both a target and cause of hypertension. NaCl retention → volume expansion → increased CO → increased BP. The \"pressure-natriuresis\" phenomenon requires higher pressures to excrete sodium in hypertensives.</li><li><strong>Autonomic nervous system</strong>: Sympathetic overactivity increases heart rate, contractility, vasoconstriction, and renal sodium reabsorption. α1-receptors: Vasoconstriction. β1-receptors: Increased HR and contractility. β2-receptors: Vasodilation.</li><li><strong>Renin-angiotensin-aldosterone system (RAAS)</strong>:<ul><li>Renin (from juxtaglomerular cells) → Converts angiotensinogen to angiotensin I</li><li>ACE (in pulmonary endothelium) → Converts angiotensin I to angiotensin II</li><li>Angiotensin II → AT1 receptor: Vasoconstriction, aldosterone secretion, sodium retention, sympathetic activation, cardiac/vascular remodeling</li><li>AT2 receptor: Vasodilation, sodium excretion, inhibits growth</li><li>Aldosterone → Sodium retention via ENaC in collecting duct; also promotes myocardial fibrosis, vascular inflammation</li></ul></li><li><strong>Vascular mechanisms</strong>: Vascular resistance is inversely proportional to the fourth power of the radius (small changes in lumen diameter have large effects). Vascular remodeling (hypertrophic or eutrophic) increases resistance. Endothelial dysfunction reduces NO bioavailability.</li></ol>",
       "source": "Harrison's 21e",
-      "tags": []
+      "tags": [],
+      "part": "htn",
+      "num": 41
     },
     {
       "id": "pathologic-consequences-of-hypertension",
       "title": "Pathologic Consequences of Hypertension",
       "content": "<p><strong>Heart</strong>: LV hypertrophy, diastolic dysfunction, heart failure (both HFpEF and HFrEF), coronary artery disease, atrial fibrillation, sudden death.</p>\n<p><strong>Brain</strong>: Ischemic stroke (85%), hemorrhagic stroke, TIA, vascular dementia, hypertensive encephalopathy (autoregulation failure at MAP >150-200 mmHg — headache, nausea, vomiting, visual disturbances, seizures, altered mental status).</p>\n<p><strong>Kidney</strong>: Nephrosclerosis, proteinuria, progressive CKD, ESRD. Renal risk more closely related to systolic than diastolic BP. Black men at greatest risk.</p>\n<p><strong>Peripheral arteries</strong>: Atherosclerotic PAD, aortic aneurysm, aortic dissection.</p>\n<p><strong>Eyes</strong>: Hypertensive retinopathy (arteriolar narrowing, AV nicking, hemorrhages, exudates, papilledema in malignant hypertension).</p>",
       "source": "Harrison's 21e",
-      "tags": []
+      "tags": [],
+      "part": "htn",
+      "num": 42
     },
     {
       "id": "primary-essential-hypertension",
       "title": "Primary (Essential) Hypertension",
       "content": "<p>Accounts for ~80-95% of hypertension. Multifactorial — genetic susceptibility interacting with environmental factors (high sodium intake, obesity, physical inactivity, excessive alcohol, psychosocial stress).</p>\n<p>Plasma renin activity (PRA) profiling: ~10-15% have high PRA (vasoconstrictor phenotype), ~25% have low PRA (volume-dependent phenotype).</p>\n<p>African Americans: Higher prevalence, more severe, earlier onset; tend to have low-renin, volume-dependent hypertension; respond better to diuretics and CCBs; may require higher doses of ACEi/ARBs.</p>",
       "source": "Harrison's 21e",
-      "tags": []
+      "tags": [],
+      "part": "htn",
+      "num": 43
     },
     {
       "id": "secondary-hypertension",
@@ -355,7 +489,9 @@
       "source": "Harrison's 21e",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "htn",
+      "num": 44
     },
     {
       "id": "treatment-of-hypertension",
@@ -364,7 +500,9 @@
       "source": "Harrison's 21e",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "htn",
+      "num": 45
     },
     {
       "id": "hypertensive-emergencies-and-urgencies",
@@ -373,7 +511,9 @@
       "source": "Harrison's 21e",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "htn",
+      "num": 46
     },
     {
       "id": "diseases-of-the-aorta",
@@ -382,21 +522,27 @@
       "source": "Harrison's 21e, Ch 280",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "vascular",
+      "num": 47
     },
     {
       "id": "peripheral-artery-disease",
       "title": "Peripheral Artery Disease",
       "content": "<p>Atherosclerotic PAD primarily affects the lower extremities. Risk factors are the same as for coronary atherosclerosis; smoking and diabetes are particularly strong risk factors.</p>\n<p><strong>Clinical features</strong>: Intermittent claudication (most common symptom — exertional leg pain relieved by rest); critical limb ischemia (rest pain, ulcers, gangrene). Physical findings: Diminished/absent pulses, bruits, skin changes, hair loss, cool extremities.</p>\n<p><strong>Ankle-brachial index (ABI)</strong>: Normal 1.00-1.40; borderline 0.91-0.99; diagnostic of PAD &lt;0.90; >1.40 suggests noncompressible arteries (calcification).</p>\n<p><strong>Prognosis</strong>: ~1/3 to 1/2 have coexisting CAD. 5-year mortality 15-25%. Death most commonly from cardiovascular causes.</p>\n<p><strong>Treatment</strong>: Risk factor modification (smoking cessation is critical), antiplatelet therapy (aspirin or clopidogrel), statins, ACE inhibitors. Exercise training (supervised walking program 30-45 min, 3×/week for 12 weeks). Cilostazol (PDE3 inhibitor — increases claudication distance by 40-60%). Revascularization for disabling claudication refractory to exercise/medical therapy, or critical limb ischemia.</p>",
       "source": "Harrison's 21e, Ch 281",
-      "tags": []
+      "tags": [],
+      "part": "vascular",
+      "num": 48
     },
     {
       "id": "other-vascular-conditions",
       "title": "Other Vascular Conditions",
       "content": "<p><strong>Thromboangiitis obliterans (Buerger disease)</strong>: Inflammatory occlusive disease of small and medium arteries and veins in distal extremities. Young male smokers. Segmental occlusions, no atherosclerosis proximally. Treatment: Smoking cessation (only effective measure).</p>\n<p><strong>Raynaud phenomenon</strong>: Episodic digital ischemia — blanching → cyanosis → rubor on cold exposure. Primary (idiopathic, benign, young women) vs secondary (scleroderma [80-90%], SLE, dermatomyositis, atherosclerosis, thoracic outlet syndrome, vibration injury, drugs). Treatment: Avoid cold, calcium channel blockers (nifedipine), PDE5 inhibitors for severe cases.</p>",
       "source": "Harrison's 21e",
-      "tags": []
+      "tags": [],
+      "part": "vascular",
+      "num": 49
     },
     {
       "id": "pulmonary-hypertension",
@@ -405,14 +551,18 @@
       "source": "Harrison's 21e, Ch 283",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "vascular",
+      "num": 50
     },
     {
       "id": "congenital-heart-disease-common-lesions",
       "title": "Congenital Heart Disease — Common Lesions",
       "content": "<p><strong>Atrial Septal Defect (ASD):</strong></p>\n<ul><li>Ostium secundum (most common, ~75%): Defect at fossa ovalis</li><li>Ostium primum: Part of AV canal defect; associated with mitral valve cleft</li><li>Sinus venosus: Near SVC-RA junction; associated with partial anomalous pulmonary venous return</li><li>Physical: Fixed split S2 (hallmark), systolic flow murmur across pulmonic valve (increased flow)</li><li>May present in adulthood with dyspnea, AF, paradoxical embolism, or RV failure</li><li>Closure: Percutaneous device closure for secundum ASD; surgical for primum and sinus venosus</li></ul>\n<p><strong>Ventricular Septal Defect (VSD):</strong></p>\n<ul><li>Most common congenital heart defect at birth; many close spontaneously</li><li>Membranous (most common in adults), muscular, inlet, outlet</li><li>Small restrictive VSD: Loud pansystolic murmur, minimal hemodynamic effect</li><li>Large nonrestrictive VSD: May lead to Eisenmenger syndrome</li></ul>\n<p><strong>Coarctation of the Aorta:</strong></p>\n<ul><li>Narrowing of the aorta, usually just distal to left subclavian artery</li><li>Upper extremity hypertension, diminished femoral pulses, radio-femoral delay</li><li>Rib notching on chest X-ray (from dilated intercostal collateral arteries)</li><li>Associated with bicuspid aortic valve, cerebral aneurysms (Berry aneurysms)</li></ul>\n<p><strong>Tetralogy of Fallot</strong> (most common cyanotic CHD surviving to adulthood):</p>\n<ul><li>VSD, overriding aorta, RVOT obstruction (infundibular/valvular), RV hypertrophy</li><li>\"Tet spells\" in childhood: Cyanotic episodes treated with knee-chest position</li><li>Adults post-repair: Pulmonary regurgitation (most common long-term issue), RV dilatation, arrhythmias</li></ul>\n<p><strong>Eisenmenger Syndrome:</strong></p>\n<ul><li>Irreversible pulmonary vascular disease from long-standing left-to-right shunt → Shunt reversal (right-to-left) → Cyanosis</li><li>Once established, the underlying defect should NOT be closed</li><li>Features: Cyanosis, clubbing, polycythemia, hemoptysis, paradoxical emboli</li><li>PAH-targeted therapy may improve symptoms. Heart-lung transplant for severe cases.</li></ul>\n<hr class=\"content-divider\">\n<p><em>Source: Harrison's Principles of Internal Medicine, 21st Edition. Chapters 236-283.</em></p>\n<p><em>This study guide is intended as a revision aid and should be used alongside the original textbook for comprehensive understanding.</em></p>",
       "source": "Harrison's 21e, Ch 269",
-      "tags": []
+      "tags": [],
+      "part": "chd",
+      "num": 51
     }
   ]
 }

@@ -271,7 +271,13 @@ a:hover { color: var(--accent-hover); }
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
+  position: sticky;
+  top: 57px;
+  z-index: 50;
+  background: var(--bg);
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-glass);
 }
 .system-btn {
   padding: 10px 18px;
@@ -302,6 +308,19 @@ a:hover { color: var(--accent-hover); }
 }
 .system-btn:active {
   transform: scale(0.97);
+}
+.system-btn-count {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--border);
+  border-radius: var(--radius-full);
+  padding: 1px 7px;
+  margin-left: 6px;
+}
+.system-btn.active .system-btn-count {
+  color: var(--accent);
+  background: rgba(129, 140, 248, 0.15);
 }
 
 /* === Search === */
@@ -395,6 +414,119 @@ a:hover { color: var(--accent-hover); }
 }
 .case-body strong, .topic-body strong { color: var(--text); font-weight: 600; }
 .case-body em, .topic-body em { color: var(--pearl); font-style: normal; }
+
+/* === Part Headers === */
+.part-header {
+  margin: 28px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+.part-header:first-child { margin-top: 8px; }
+.part-header-label {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  letter-spacing: -0.01em;
+}
+
+/* === Topic Number Badge === */
+.topic-num {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+  padding: 2px 7px;
+  margin-right: 10px;
+  flex-shrink: 0;
+  min-width: 20px;
+  text-align: center;
+  transition: all var(--transition);
+}
+.topic-title {
+  flex: 1;
+  min-width: 0;
+}
+
+/* === Read State === */
+.topic-card[data-read] .topic-num {
+  color: var(--accent);
+  background: var(--accent-dim);
+}
+
+/* === Theory Toolbar === */
+.theory-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  gap: 12px;
+}
+.hy-toggle {
+  padding: 8px 14px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  color: var(--text-secondary);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition);
+  min-height: 44px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.hy-toggle:hover {
+  color: var(--text);
+  border-color: var(--border-hover);
+}
+.hy-toggle.active {
+  color: var(--pearl);
+  background: var(--pearl-dim);
+  border-color: var(--pearl);
+}
+.read-progress {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* === HY Filter === */
+#topic-deck.hy-only .topic-card:not([data-hy]) { display: none; }
+
+/* === Scroll to Top === */
+.scroll-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--surface-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-glass);
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  cursor: pointer;
+  z-index: 90;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.scroll-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.scroll-top:hover {
+  color: var(--text);
+  border-color: var(--border-hover);
+}
 
 /* Practicals-specific */
 .system-technique > summary,
@@ -600,7 +732,7 @@ a:hover { color: var(--accent-hover); }
   .landing-card { padding: 28px 22px 26px; min-height: 170px; }
   .landing-card h3 { font-size: 1.2rem; }
   .page-header { padding: 36px 0 24px; }
-  .system-btns { gap: 6px; }
+  .system-btns { gap: 6px; top: 53px; }
 }
 
 @media (max-width: 480px) {
@@ -620,7 +752,20 @@ a:hover { color: var(--accent-hover); }
   .case > summary, .topic-card > summary { padding: 14px 16px; font-size: 0.925rem; }
   .case-body, .topic-body { padding: 0 16px 16px; }
   .system-btn { padding: 8px 14px; font-size: 0.8rem; min-height: 44px; }
+  .system-btns {
+    top: 49px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin: 0 -16px;
+  }
+  .system-btns::-webkit-scrollbar { display: none; }
   .topic-search { padding: 12px 16px; font-size: 0.9rem; }
+  .part-header { margin: 20px 0 8px; }
+  .scroll-top { bottom: 16px; right: 16px; }
 }
 
 /* === Reduced Motion === */

@@ -1,12 +1,54 @@
 {
   "system": "Hematology",
+  "topicCount": 18,
+  "hyCount": 14,
+  "parts": [
+    {
+      "key": "intro",
+      "label": "Introduction to Hematology"
+    },
+    {
+      "key": "anemias",
+      "label": "Anemias"
+    },
+    {
+      "key": "hemolytic",
+      "label": "Hemolytic Anemias"
+    },
+    {
+      "key": "bmf",
+      "label": "Bone Marrow Failure & MPNs"
+    },
+    {
+      "key": "leukemias",
+      "label": "Leukemias"
+    },
+    {
+      "key": "plasma",
+      "label": "Plasma Cell Disorders & Amyloidosis"
+    },
+    {
+      "key": "hemostasis",
+      "label": "Hemostasis & Coagulation"
+    },
+    {
+      "key": "thrombosis",
+      "label": "Thrombosis & Antithrombotic Drugs"
+    },
+    {
+      "key": "transfusion",
+      "label": "Transfusion Medicine & HSCT"
+    }
+  ],
   "topics": [
     {
       "id": "hematopoietic-stem-cells",
       "title": "Hematopoietic Stem Cells",
       "content": "<p><strong>Hematopoietic stem cells (HSCs)</strong> are defined by two cardinal properties: <strong>self-renewal</strong> and <strong>multipotent differentiation</strong> into all mature blood cell lineages. They reside in the <strong>bone marrow microenvironment</strong> (stem cell niche), which includes osteoblasts, endothelial cells, mesenchymal stromal cells, and CXCL12-abundant reticular (CAR) cells.</p>\n<h5>Hematopoiesis Hierarchy</h5>\n<p>HSC → <strong>Common Myeloid Progenitor (CMP)</strong> → granulocytes, monocytes, erythrocytes, megakaryocytes HSC → <strong>Common Lymphoid Progenitor (CLP)</strong> → B cells, T cells, NK cells</p>\n<p><strong>CD34+</strong> is the key surface marker used to identify and enumerate HSCs for clinical purposes (e.g., stem cell harvest for transplant).</p>\n<h5>Key Hematopoietic Growth Factors</h5>\n<div class=\"table-wrap\"><table><thead><tr><th>Growth Factor</th><th>Target Lineage</th><th>Clinical Use</th></tr></thead><tbody><tr><td><strong>Erythropoietin (EPO)</strong></td><td>Red blood cells</td><td>Anemia of CKD, MDS</td></tr><tr><td><strong>Thrombopoietin (TPO)</strong></td><td>Megakaryocytes/Platelets</td><td>TPO-RAs for ITP, AA</td></tr><tr><td><strong>G-CSF</strong></td><td>Neutrophils</td><td>Febrile neutropenia, stem cell mobilization</td></tr><tr><td><strong>GM-CSF</strong></td><td>Granulocytes + Monocytes</td><td>Post-chemotherapy recovery</td></tr></tbody></table></div>\n<hr class=\"content-divider\">",
       "source": "Harrison's 21e, Ch 96",
-      "tags": []
+      "tags": [],
+      "part": "intro",
+      "num": 1
     },
     {
       "id": "iron-deficiency-anemias-of-chronic-disease",
@@ -15,7 +57,9 @@
       "source": "Harrison's 21e, Ch 97",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "anemias",
+      "num": 2
     },
     {
       "id": "hemoglobin-disorders",
@@ -24,7 +68,9 @@
       "source": "Harrison's 21e, Ch 98",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "anemias",
+      "num": 3
     },
     {
       "id": "megaloblastic-anemias",
@@ -33,7 +79,9 @@
       "source": "Harrison's 21e, Ch 99",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "anemias",
+      "num": 4
     },
     {
       "id": "hemolytic-anemias",
@@ -42,7 +90,9 @@
       "source": "Harrison's 21e, Ch 100",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "hemolytic",
+      "num": 5
     },
     {
       "id": "aplastic-anemia-mds",
@@ -51,7 +101,9 @@
       "source": "Harrison's 21e, Ch 102",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "bmf",
+      "num": 6
     },
     {
       "id": "myeloproliferative-neoplasms",
@@ -60,7 +112,9 @@
       "source": "Harrison's 21e, Ch 103",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "bmf",
+      "num": 7
     },
     {
       "id": "acute-myeloid-leukemia",
@@ -69,7 +123,9 @@
       "source": "Harrison's 21e, Ch 104",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "leukemias",
+      "num": 8
     },
     {
       "id": "chronic-myeloid-leukemia",
@@ -78,14 +134,18 @@
       "source": "Harrison's 21e, Ch 105",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "leukemias",
+      "num": 9
     },
     {
       "id": "acute-lymphoblastic-leukemia",
       "title": "Acute Lymphoblastic Leukemia",
       "content": "<h5>Immunologic Subtypes (Table 106-2)</h5>\n<div class=\"table-wrap\"><table><thead><tr><th>Subtype</th><th>Frequency</th><th>Markers</th></tr></thead><tbody><tr><td><strong>B-ALL</strong></td><td>76%</td><td>CD19, CD22, CD10 (CALLA), CD79a</td></tr><tr><td><strong>T-ALL</strong></td><td>24%</td><td>CD3, CD7, CD5, CD2</td></tr></tbody></table></div>\n<h5>Key Cytogenetics</h5>\n<div class=\"table-wrap\"><table><thead><tr><th>Translocation</th><th>Gene</th><th>Prognosis</th></tr></thead><tbody><tr><td><strong>t(9;22)</strong> BCR-ABL (Ph+)</td><td>BCR-ABL1</td><td>Poor (25% of adult B-ALL) → add TKI</td></tr><tr><td>t(12;21)</td><td>ETV6-RUNX1</td><td>Good (children)</td></tr><tr><td>t(4;11)</td><td>MLL</td><td>Poor (infants)</td></tr><tr><td>Hyperdiploidy >50</td><td>—</td><td>Good (children)</td></tr><tr><td>Hypodiploidy &lt;44</td><td>—</td><td>Very poor</td></tr></tbody></table></div>\n<h5>Treatment Phases</h5>\n<div class=\"table-wrap\"><table><thead><tr><th>Phase</th><th>Key Drugs</th></tr></thead><tbody><tr><td><strong>Pre-phase</strong></td><td><em>Dexamethasone</em> + <em>cyclophosphamide</em> (tumor lysis prevention)</td></tr><tr><td><strong>Induction</strong></td><td><em>Vincristine</em> + <em>prednisone/dexamethasone</em> + <em>anthracycline</em> + <em>asparaginase</em> ± TKI if Ph+</td></tr><tr><td><strong>Consolidation</strong></td><td>High-dose <em>methotrexate</em>, <em>cytarabine</em></td></tr><tr><td><strong>Maintenance</strong> (2–2.5 years)</td><td>Daily <em>6-mercaptopurine</em> + weekly <em>methotrexate</em></td></tr></tbody></table></div>\n<ul><li><strong>CNS prophylaxis</strong>: Intrathecal <em>methotrexate</em> ± <em>cytarabine</em> ± radiation — <strong>mandatory in ALL</strong></li><li><strong>MRD</strong>: Minimal residual disease assessment is critical. MRD-positive after induction → high risk → consider HSCT</li></ul>\n<h5>Novel Immunotherapies</h5>\n<div class=\"table-wrap\"><table><thead><tr><th>Agent</th><th>Mechanism</th><th>Indication</th></tr></thead><tbody><tr><td><em>Blinatumomab</em></td><td>Bispecific anti-CD3/CD19 (BiTE)</td><td>Relapsed/refractory B-ALL, MRD+</td></tr><tr><td><em>Inotuzumab ozogamicin</em></td><td>Anti-CD22 ADC</td><td>Relapsed/refractory B-ALL</td></tr><tr><td><em>Tisagenlecleucel</em></td><td>CAR-T cells (anti-CD19)</td><td>Relapsed B-ALL (age ≤25)</td></tr></tbody></table></div>\n<hr class=\"content-divider\">",
       "source": "Harrison's 21e, Ch 106",
-      "tags": []
+      "tags": [],
+      "part": "leukemias",
+      "num": 10
     },
     {
       "id": "multiple-myeloma-plasma-cell-disorders",
@@ -94,14 +154,18 @@
       "source": "Harrison's 21e, Ch 111",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "plasma",
+      "num": 11
     },
     {
       "id": "amyloidosis",
       "title": "Amyloidosis",
       "content": "<h5>Classification (Table 112-1)</h5>\n<div class=\"table-wrap\"><table><thead><tr><th>Type</th><th>Precursor Protein</th><th>Associated Disease</th></tr></thead><tbody><tr><td><strong>AL</strong></td><td>Immunoglobulin light chain</td><td>Plasma cell dyscrasia</td></tr><tr><td><strong>AA</strong></td><td>Serum amyloid A</td><td>Chronic inflammation (RA, FMF, TB, bronchiectasis)</td></tr><tr><td><strong>ATTR wild-type</strong></td><td>Transthyretin (normal)</td><td>Senile cardiac amyloidosis (age >70)</td></tr><tr><td><strong>ATTR hereditary</strong></td><td>Mutant transthyretin</td><td>Familial (Val30Met most common)</td></tr><tr><td><strong>Aβ2M</strong></td><td>β2-microglobulin</td><td>Dialysis-related (carpal tunnel, arthropathy)</td></tr></tbody></table></div>\n<h5>Diagnosis</h5>\n<ul><li><strong>Congo red staining</strong> → <strong>apple-green birefringence</strong> under polarized light</li><li><strong>Biopsy sites</strong>: Abdominal fat pad aspirate (sensitivity ~80%), rectal biopsy, or affected organ biopsy</li><li><strong>Typing</strong>: Mass spectrometry (gold standard) or immunohistochemistry — <strong>CRITICAL to determine type before treatment</strong></li></ul>\n<h5>AL Amyloidosis</h5>\n<ul><li><strong>Cardiac involvement</strong> = #1 cause of death (restrictive cardiomyopathy, low-voltage ECG, thickened walls on echo)</li><li><strong>Staging</strong>: BNP/NT-proBNP and troponin (Mayo staging)</li><li><strong>Treatment</strong>: High-dose melphalan/ASCT if fit; otherwise <strong>CyBorD</strong> (<em>cyclophosphamide</em> + <em>bortezomib</em> + <em>dexamethasone</em>) or <strong>Dara-VCd</strong> (<em>daratumumab</em> + VCd)</li></ul>\n<h5>AA Amyloidosis</h5>\n<ul><li>Treat the underlying inflammatory condition</li><li><em>Colchicine</em> for FMF (prevents AA amyloidosis)</li></ul>\n<h5>ATTR Amyloidosis</h5>\n<div class=\"table-wrap\"><table><thead><tr><th>Agent</th><th>Mechanism</th><th>Indication</th></tr></thead><tbody><tr><td><em>Tafamidis</em></td><td>TTR stabilizer</td><td>ATTR-cardiomyopathy (approved, ↓ mortality)</td></tr><tr><td><em>Patisiran</em></td><td>siRNA (TTR gene silencer)</td><td>ATTR-polyneuropathy</td></tr><tr><td><em>Inotersen</em></td><td>Antisense oligonucleotide (TTR)</td><td>ATTR-polyneuropathy</td></tr></tbody></table></div>\n<hr class=\"content-divider\">",
       "source": "Harrison's 21e, Ch 112",
-      "tags": []
+      "tags": [],
+      "part": "plasma",
+      "num": 12
     },
     {
       "id": "disorders-of-platelets-vessel-wall",
@@ -110,7 +174,9 @@
       "source": "Harrison's 21e, Ch 115",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "hemostasis",
+      "num": 13
     },
     {
       "id": "coagulation-disorders",
@@ -119,7 +185,9 @@
       "source": "Harrison's 21e, Ch 116",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "hemostasis",
+      "num": 14
     },
     {
       "id": "arterial-venous-thrombosis",
@@ -128,7 +196,9 @@
       "source": "Harrison's 21e, Ch 117",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "thrombosis",
+      "num": 15
     },
     {
       "id": "antithrombotic-drugs",
@@ -137,7 +207,9 @@
       "source": "Harrison's 21e, Ch 118",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "thrombosis",
+      "num": 16
     },
     {
       "id": "transfusion-medicine",
@@ -146,14 +218,18 @@
       "source": "Harrison's 21e, Ch 113",
       "tags": [
         "high-yield"
-      ]
+      ],
+      "part": "transfusion",
+      "num": 17
     },
     {
       "id": "hematopoietic-cell-transplantation",
       "title": "Hematopoietic Cell Transplantation",
       "content": "<h5>Types of HCT</h5>\n<div class=\"table-wrap\"><table><thead><tr><th>Type</th><th>Source</th><th>Use</th></tr></thead><tbody><tr><td><strong>Autologous</strong></td><td>Patient's own HSCs</td><td>Myeloma, lymphoma (no GVHD risk)</td></tr><tr><td><strong>Allogeneic</strong></td><td>Donor: matched sibling, MUD, haploidentical</td><td>AML, ALL, MDS, AA (GVL effect)</td></tr><tr><td><strong>Syngeneic</strong></td><td>Identical twin</td><td>No GVHD, no GVL</td></tr></tbody></table></div>\n<h5>Conditioning Regimens</h5>\n<div class=\"table-wrap\"><table><thead><tr><th>Type</th><th>Intensity</th><th>Regimens</th><th>Indications</th></tr></thead><tbody><tr><td><strong>Myeloablative</strong></td><td>High</td><td>BuCy (busulfan + cyclophosphamide), TBI + Cy</td><td>Younger, fit patients</td></tr><tr><td><strong>Reduced-intensity (RIC)</strong></td><td>Lower</td><td>Fludarabine-based</td><td>Older patients, comorbidities</td></tr></tbody></table></div>\n<h5>Graft-versus-Host Disease (GVHD)</h5>\n<p>##### Acute GVHD (classically within 100 days)</p>\n<div class=\"table-wrap\"><table><thead><tr><th>Organ</th><th>Manifestation</th></tr></thead><tbody><tr><td><strong>Skin</strong></td><td>Maculopapular rash (palms/soles early)</td></tr><tr><td><strong>Liver</strong></td><td>↑ Bilirubin, hepatitis</td></tr><tr><td><strong>GI</strong></td><td>Watery/bloody diarrhea, nausea, abdominal pain</td></tr></tbody></table></div>\n<ul><li><strong>Prophylaxis</strong>: Calcineurin inhibitor (<em>tacrolimus</em> or <em>cyclosporine</em>) + <em>methotrexate</em> or <em>mycophenolate</em></li><li><strong>Treatment</strong>: <em>Methylprednisolone</em> 2 mg/kg; <strong>steroid-refractory</strong> → <em>ruxolitinib</em></li></ul>\n<p>##### Chronic GVHD (typically >100 days)</p>\n<ul><li><strong>Sclerodermatous skin changes</strong>, sicca syndrome (dry eyes/mouth), <strong>bronchiolitis obliterans</strong>, oral lichenoid changes, fasciitis, hepatitis</li><li>Resembles autoimmune diseases (Sjögren's, systemic sclerosis)</li></ul>\n<h5>Post-HCT Infection Timeline (Table 114-3)</h5>\n<div class=\"table-wrap\"><table><thead><tr><th>Phase</th><th>Time</th><th>Key Pathogens</th><th>Prevention</th></tr></thead><tbody><tr><td><strong>Pre-engraftment</strong></td><td>0–30 days</td><td>Bacteria (gram-neg/pos), <em>Candida</em>, HSV</td><td>Fluoroquinolone, fluconazole, <em>acyclovir</em></td></tr><tr><td><strong>Post-engraftment</strong></td><td>30–100 days</td><td><strong>CMV</strong>, <em>Aspergillus</em>, PCP</td><td>CMV monitoring/preemptive <em>ganciclovir</em>, TMP-SMX</td></tr><tr><td><strong>Late</strong></td><td>>100 days</td><td>VZV, encapsulated bacteria, PCP</td><td><em>Acyclovir</em>, TMP-SMX, revaccination</td></tr></tbody></table></div>\n<h5>5-Year Survival after Allogeneic HCT (Table 114-4)</h5>\n<div class=\"table-wrap\"><table><thead><tr><th>Disease</th><th>5-Year Survival</th></tr></thead><tbody><tr><td>AML (CR1)</td><td>50–60%</td></tr><tr><td>ALL (CR1)</td><td>50–55%</td></tr><tr><td>CML (chronic phase)</td><td>>70%</td></tr><tr><td>MDS</td><td>~40%</td></tr><tr><td>Aplastic anemia (matched sibling)</td><td><strong>80–90%</strong></td></tr></tbody></table></div>\n<hr class=\"content-divider\">\n<p>## HIGH-YIELD SUMMARY TABLES</p>\n<p>### Quick-Reference: Coagulation Test Patterns</p>\n<div class=\"table-wrap\"><table><thead><tr><th>Condition</th><th>PT</th><th>aPTT</th><th>Bleeding Time</th><th>Platelet Count</th></tr></thead><tbody><tr><td>Hemophilia A/B</td><td>Normal</td><td><strong>↑</strong></td><td>Normal</td><td>Normal</td></tr><tr><td>VWD (Type 1)</td><td>Normal</td><td>↑</td><td>↑</td><td>Normal</td></tr><tr><td>DIC</td><td>↑</td><td>↑</td><td>↑</td><td>↓</td></tr><tr><td>Liver disease</td><td>↑</td><td>↑</td><td>Normal/↑</td><td>Normal/↓</td></tr><tr><td>Vitamin K deficiency</td><td><strong>↑</strong></td><td>↑</td><td>Normal</td><td>Normal</td></tr><tr><td>Warfarin</td><td>↑</td><td>↑</td><td>Normal</td><td>Normal</td></tr><tr><td>Heparin (UFH)</td><td>Normal/↑</td><td><strong>↑</strong></td><td>Normal</td><td>Normal</td></tr><tr><td>ITP</td><td>Normal</td><td>Normal</td><td>↑</td><td><strong>↓</strong></td></tr><tr><td>TTP</td><td>Normal</td><td>Normal</td><td>↑</td><td>↓</td></tr></tbody></table></div>\n<p>### Quick-Reference: Anemia Classification by MCV</p>\n<div class=\"table-wrap\"><table><thead><tr><th>MCV</th><th>Differential</th></tr></thead><tbody><tr><td><strong>Microcytic (&lt;80)</strong></td><td>Iron deficiency, thalassemia, ACD, sideroblastic, lead poisoning</td></tr><tr><td><strong>Normocytic (80–100)</strong></td><td>ACD, CKD, acute blood loss, hemolysis, mixed deficiency, BM failure</td></tr><tr><td><strong>Macrocytic (>100)</strong></td><td>B12/folate deficiency, MDS, liver disease, hypothyroidism, drugs (hydroxyurea, MTX), reticulocytosis</td></tr></tbody></table></div>\n<hr class=\"content-divider\">\n<p><em>Study guide compiled from Harrison's Principles of Internal Medicine, 21st Edition — Chapters 96–118. For examination preparation purposes.</em></p>",
       "source": "Harrison's 21e, Ch 114",
-      "tags": []
+      "tags": [],
+      "part": "transfusion",
+      "num": 18
     }
   ]
 }
