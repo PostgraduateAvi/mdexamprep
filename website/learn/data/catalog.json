@@ -154,7 +154,7 @@
     "title": "CRISPR-Cas9 & Gene Editing",
     "subtitle": "Reference Sheet",
     "category": "genetics",
-    "filename": "paper-1/crispr_cas9_exam_stats.html",
+    "filename": "genetics/crispr_cas9_exam_stats.html",
     "type": "reference",
     "description": "CRISPR-Cas9 mechanism, applications, FDA-approved therapies, and emerging gene editing technologies",
     "sizeKB": 28
@@ -174,7 +174,7 @@
     "title": "Common Mistakes Drill",
     "subtitle": "Polarity Fixes + Common Traps",
     "category": "study-skills",
-    "filename": "paper-1/PI_FINAL_WEAPON.html",
+    "filename": "study-skills/PI_FINAL_WEAPON.html",
     "type": "drill",
     "description": "Error pattern analysis — direction inversions, name swaps, tail drops, and vocabulary traps with mnemonic anchors",
     "sizeKB": 21
@@ -184,7 +184,7 @@
     "title": "Comprehensive Review",
     "subtitle": "Multi-System Drill",
     "category": "study-skills",
-    "filename": "paper-1/pi_final_review.html",
+    "filename": "study-skills/pi_final_review.html",
     "type": "drill",
     "description": "Comprehensive review with keyword-scored recall across nutrition, cardiac, renal, and pharmacology topics",
     "sizeKB": 52
@@ -194,7 +194,7 @@
     "title": "Progress Tracker",
     "subtitle": "Study Progress Tracker",
     "category": "study-skills",
-    "filename": "paper-1/pi_slot_dashboard.html",
+    "filename": "study-skills/pi_slot_dashboard.html",
     "type": "reference",
     "description": "Topic coverage tracking with gap identification, risk stratification, and study progress visualization",
     "sizeKB": 48
@@ -204,7 +204,7 @@
     "title": "Topic Map",
     "subtitle": "Visual Network",
     "category": "study-skills",
-    "filename": "paper-1/pi_spider_web_full_map.html",
+    "filename": "study-skills/pi_spider_web_full_map.html",
     "type": "interactive",
     "description": "Visual network mapping topic interconnections — see how concepts relate across systems",
     "sizeKB": 35
@@ -214,7 +214,7 @@
     "title": "Nutrition Network Map",
     "subtitle": "Vitamin & Mineral Connections",
     "category": "study-skills",
-    "filename": "paper-1/slot1_nutrition_network.html",
+    "filename": "study-skills/slot1_nutrition_network.html",
     "type": "interactive",
     "description": "Interactive network showing relationships between vitamins, minerals, deficiency syndromes, and metabolic pathways",
     "sizeKB": 27
@@ -224,9 +224,99 @@
     "title": "Active Recall Tester",
     "subtitle": "25 Clinical Topics",
     "category": "study-skills",
-    "filename": "paper-3/PIII_Recall_Tester.html",
+    "filename": "study-skills/PIII_Recall_Tester.html",
     "type": "drill",
     "description": "Active recall engine with keyword-matched scoring across 25 clinical topics — tracks session history and improvement",
     "sizeKB": 98
+  },
+  {
+    "id": "cardiac-cycle-auscultation",
+    "title": "Cardiac Cycle & Auscultation",
+    "subtitle": "Valves, Sounds & Murmurs",
+    "category": "clinical-medicine",
+    "filename": "clinical-medicine/cardiac_cycle_auscultation.html",
+    "type": "interactive",
+    "description": "Cardiac cycle phases, heart sounds (S1-S4), auscultation areas, classic murmur patterns with quick recall drill",
+    "sizeKB": 26
+  },
+  {
+    "id": "ecg-interpretation",
+    "title": "ECG Interpretation",
+    "subtitle": "Systematic Algorithm",
+    "category": "clinical-medicine",
+    "filename": "clinical-medicine/ecg_interpretation.html",
+    "type": "interactive",
+    "description": "Systematic ECG reading — rate, rhythm, axis, intervals, ST-T changes, pattern recognition for STEMI, arrhythmias, blocks",
+    "sizeKB": 27
+  },
+  {
+    "id": "coagulation-cascade",
+    "title": "Coagulation Cascade",
+    "subtitle": "Hemostasis & Anticoagulants",
+    "category": "clinical-medicine",
+    "filename": "clinical-medicine/coagulation_cascade.html",
+    "type": "diagram",
+    "description": "Intrinsic/extrinsic/common pathways, PT/aPTT correlation, anticoagulant drug targets, DIC pathophysiology",
+    "sizeKB": 33
+  },
+  {
+    "id": "anemia-classification",
+    "title": "Anemia Classification",
+    "subtitle": "MCV-Based Algorithm",
+    "category": "clinical-medicine",
+    "filename": "clinical-medicine/anemia_classification.html",
+    "type": "interactive",
+    "description": "MCV-based classification tree, iron studies interpretation, peripheral smear findings, B12 vs folate workup",
+    "sizeKB": 22
+  },
+  {
+    "id": "lft-interpretation",
+    "title": "LFT Interpretation",
+    "subtitle": "Hepatocellular vs Cholestatic",
+    "category": "clinical-medicine",
+    "filename": "clinical-medicine/lft_interpretation.html",
+    "type": "interactive",
+    "description": "Liver function test patterns — hepatocellular vs cholestatic, bilirubin metabolism, Child-Pugh/MELD scoring, disease patterns",
+    "sizeKB": 41
+  },
+  {
+    "id": "autoimmune-antibody-map",
+    "title": "Autoimmune Antibody Map",
+    "subtitle": "Disease-Antibody Matrix",
+    "category": "clinical-medicine",
+    "filename": "clinical-medicine/autoimmune_antibody_map.html",
+    "type": "reference",
+    "description": "ANA patterns, disease-antibody associations (SLE, RA, SSc, vasculitis, myopathies), complement levels, drill mode",
+    "sizeKB": 24
+  },
+  {
+    "id": "thyroid-adrenal-axis",
+    "title": "Thyroid-Adrenal Axis",
+    "subtitle": "HPT & HPA Pathways",
+    "category": "clinical-medicine",
+    "filename": "clinical-medicine/thyroid_adrenal_axis.html",
+    "type": "interactive",
+    "description": "HPT and HPA axis diagrams, TFT interpretation matrix, Cushing's workup algorithm, adrenal insufficiency",
+    "sizeKB": 32
+  },
+  {
+    "id": "antibiotic-spectrum",
+    "title": "Antibiotic Spectrum",
+    "subtitle": "Classes & Resistance",
+    "category": "clinical-medicine",
+    "filename": "clinical-medicine/antibiotic_spectrum.html",
+    "type": "reference",
+    "description": "Antibiotic classes with spectrum coverage, empiric therapy reference, resistance mechanisms, anti-TB regimen",
+    "sizeKB": 29
+  },
+  {
+    "id": "cxr-interpretation",
+    "title": "CXR Interpretation",
+    "subtitle": "ABCDE Systematic Approach",
+    "category": "clinical-medicine",
+    "filename": "clinical-medicine/cxr_interpretation.html",
+    "type": "interactive",
+    "description": "Systematic chest X-ray reading — ABCDE approach, CXR patterns, lobar collapse signs, disease-specific findings",
+    "sizeKB": 29
   }
 ]

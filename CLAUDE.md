@@ -1,6 +1,6 @@
 # MBBEasy (formerly MD Exam Prep) -- Project Root
 
-## Status: LIVE (Mar 23, 2026 -- Session 26: Data-driven learning system restructuring)
+## Status: LIVE (Mar 23, 2026 -- Session 28: Theory content restructuring)
 
 **Brand**: MBBEasy — "Clinical medicine, decoded."
 **Built by Avinash Jothish.** Free. Static HTML/JS. No framework. Client-side only.
@@ -16,15 +16,15 @@ Single CSS file (`style.css`). "Warm Indigo" design system (indigo `#818cf8` + v
 - Only renders for returning users (localStorage keys present).
 
 **Learn** (`learn/index.html`) -- Topic browser + Study Path + inline flashcards + spaced repetition.
-- 397 curated topics across 12 systems, yield-scored (72 high, 40 medium, 285 low).
+- 390 curated topics across 12 systems, yield-scored (72 high, 40 medium, 285 low).
 - Two view modes: Browse (grouped by system, expandable cards) and Study Path (topological sort by prerequisites + yield priority).
 - Expanded: prerequisites box, study hints (amber), yield/MCQ count/card count badges, inline flashcards (539 cards), linked study tools, related topics (clickable pills), "Practice N MCQs" button (links to topic-filtered MCQ page).
 - Spaced repetition: 5-bucket Leitner (New/Learning/Familiar/Confident/Mastered), intervals 0/1/3/7/14 days, progress bar + session summary in review overlay.
 - Yield filter toggle: "High-yield only" button.
 - Search filter + system filter buttons + localStorage persistence.
 - URL params: `?system=X` (filter), `?highlight=topic-id` (scroll + expand), `?review=true` (open SR overlay).
-- Study Tools catalog at bottom (23 tools in 6 categories). Filters contextually when system filter is active.
-- Knowledge graph: `graph.json` maps 161 topic↔topic edges, 37 prerequisite edges, 129 related_topics, 21 tool→topic mappings.
+- Study Tools catalog at bottom (32 tools in 7 categories). Filters contextually when system filter is active.
+- Knowledge graph: `graph.json` maps 161 topic↔topic edges, 38 prerequisite edges, 130 related_topics, 30 tool→topic mappings.
 
 **MCQs** (`mcqs/index.html`) -- Practice page with difficulty filters + persistent scoring + quiz modes.
 - 1,000 AIIMS/NEET PG MCQs with difficulty (300 easy / 450 medium / 250 hard), Bloom's taxonomy (recall/understand/apply/analyze), and topic_id cross-links (397 linked).
@@ -68,7 +68,7 @@ MDExamPrep/
 |   +-- learn/                (index.html, learn.js, data/topics.json + flashcards.json + catalog.json + graph.json)
 |   +-- mcqs/                 (index.html, mcqs.js, data/mcqs.json)
 |   +-- practicals/           (index.html, practicals.js, data/*.json)
-|   +-- theory/tools/         (23 HTML study tools -- anatomy, pharma, micro, pulm, genetics, study-skills)
+|   +-- theory/tools/         (32 HTML study tools -- anatomy, clinical-medicine, pharma, micro, pulm, genetics, study-skills)
 +-- CLAUDE.md, README.md, vercel.json, .gitignore, .gitattributes
 ```
 
@@ -79,7 +79,7 @@ MDExamPrep/
 | File | Purpose |
 |------|---------|
 | All JSON in `website/practicals/data/` | Practicals case data (812 KB) |
-| All 23 HTML files in `website/theory/tools/` | Study tools (being consolidated into 6 hub pages in future sessions) |
+| All 32 HTML files in `website/theory/tools/` | Study tools across 7 categories |
 
 ---
 
@@ -104,7 +104,7 @@ MDExamPrep/
 - **Redirects**: /predictor → /learn/, /theory → /learn/ (301 permanent)
 - **Security headers**: CSP (script-src self + cdnjs, font-src self), X-Frame-Options DENY, nosniff
 - **Cache**: Fonts 30d immutable, data JSON 1d+SWR, JS 1h+SWR, sw.js no-cache, manifest 1d
-- **PWA**: Service worker v13 (precache shell, SWR data, network-first HTML), auto-reload on SW update via controllerchange listener, installable manifest
+- **PWA**: Service worker v15 (precache shell, SWR data, network-first HTML), auto-reload on SW update via controllerchange listener, installable manifest
 - **OG tags**: All pages have og:title/description/image + twitter:card for social previews
 
 ---
@@ -126,6 +126,8 @@ MDExamPrep/
 | 24 | Mar 23 | WCAG AA accessibility audit: touch targets ≥48px, contrast fixes (--text-muted bumped), font-size minimums, design-sight structural verification across all pages, SW v11 |
 | 25 | Mar 23 | "Warm Indigo" redesign: new color palette (indigo/violet replacing sky-blue), landing page rework (gradient hero, 3-column feature grid, section transitions), sub-page headers, SW auto-reload on update (controllerchange listener — no more hard-refresh needed on mobile), SW v13 |
 | 26 | Mar 23 | Data-driven learning system: MCQ difficulty tags (30/45/25 easy/medium/hard), MCQ↔topic cross-links (397/1000 linked), Bloom's taxonomy classification (recall/understand/apply/analyze), topic yield scoring (72 high/40 medium/285 low), knowledge graph (161 topic↔topic edges, 37 prerequisite edges), flashcard↔topic fix (115→191), Study Path view (topological sort by prereqs + yield), difficulty filter on MCQs, 5-bucket SR (migrated from 3-bucket), SW v14 |
+| 27 | Mar 23 | UX polish: fix difficulty filter bug (counts respect active system filter), mobile layout fix (stacked controls), terminology simplification (Topics/Guided Order/Exam Focus/Key Points/See Also), remove MCQ source text, reorder study tools categories, rename jargon tools, SW v15 |
+| 28 | Mar 23 | Theory content restructuring: folder cleanup (paper-1/paper-3 → study-skills/genetics), ~30 misclassified topics fixed (390 from 397), 9 new Clinical Medicine tools (cardiac cycle, ECG, coagulation, anemia, LFT, autoimmune antibodies, thyroid-adrenal, antibiotics, CXR), knowledge graph enriched (10 related_topics edges, 5 prerequisites, tool_topics fixes), 142 topics with tool links (up from 95), SW v16 |
 
 ---
 

@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ECG Interpretation Algorithm | MBBEasy</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0a0e17;--bg2:#111827;--bg3:#1e2536;--text:#eef0f6;--text2:#9ca3af;--accent:#818cf8;--accent2:#c084fc;--success:#34d399;--warn:#fbbf24;--danger:#f87171;--border:#2d3548;--radius:10px}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+a{color:var(--accent);text-decoration:none}
+
+.container{max-width:860px;margin:0 auto;padding:16px}
+
+/* Header */
+.header{text-align:center;padding:32px 0 24px}
+.header h1{font-size:1.75rem;font-weight:700;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.header p{color:var(--text2);font-size:.9rem;margin-top:4px}
+.badge{display:inline-block;background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:4px 12px;font-size:.75rem;color:var(--accent);margin-top:8px}
+
+/* Tabs */
+.tabs{display:flex;gap:4px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px;margin-bottom:24px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab-btn{flex-shrink:0;padding:10px 16px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg2);color:var(--text2);font-size:.85rem;font-weight:500;cursor:pointer;transition:all .2s;-webkit-tap-highlight-color:transparent}
+.tab-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+/* Sections */
+.section{display:none}
+.section.active{display:block}
+
+/* Cards */
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px}
+.card h3{font-size:1.05rem;margin-bottom:8px;color:var(--accent)}
+.card h4{font-size:.95rem;color:var(--accent2);margin:12px 0 6px}
+
+/* Step checklist */
+.step{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+.step.checked{border-color:var(--success)}
+.step-header{display:flex;align-items:center;gap:12px;padding:16px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.step-number{width:36px;height:36px;border-radius:50%;background:var(--bg3);border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem;color:var(--accent);flex-shrink:0;transition:all .2s}
+.step.checked .step-number{background:var(--success);border-color:var(--success);color:#fff}
+.step-title{font-weight:600;font-size:1rem;flex:1}
+.step-chevron{color:var(--text2);transition:transform .2s;font-size:1.2rem}
+.step.open .step-chevron{transform:rotate(180deg)}
+.step-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.step.open .step-body{max-height:1000px}
+.step-content{padding:0 16px 16px;color:var(--text2);font-size:.9rem;line-height:1.7}
+.step-content strong{color:var(--text)}
+.step-content .val{color:var(--accent);font-weight:600}
+.step-content .warn-val{color:var(--warn);font-weight:600}
+.step-content .danger-val{color:var(--danger);font-weight:600}
+
+.sub-item{background:var(--bg3);border-radius:8px;padding:10px 14px;margin:6px 0;font-size:.85rem}
+
+/* Progress bar */
+.progress-bar{background:var(--bg3);border-radius:20px;height:8px;margin-bottom:20px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--success));border-radius:20px;transition:width .3s;width:0}
+.progress-label{font-size:.8rem;color:var(--text2);margin-bottom:6px;text-align:right}
+
+/* Pattern cards */
+.pattern-grid{display:grid;gap:12px}
+.pattern-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:border-color .2s}
+.pattern-card:hover,.pattern-card.flipped{border-color:var(--accent)}
+.pattern-front{padding:16px}
+.pattern-name{font-weight:700;font-size:1rem;color:var(--accent);margin-bottom:6px}
+.pattern-features{font-size:.88rem;color:var(--text2);line-height:1.5}
+.pattern-back{max-height:0;overflow:hidden;transition:max-height .3s;background:var(--bg3)}
+.pattern-card.flipped .pattern-back{max-height:200px}
+.pattern-significance{padding:14px 16px;font-size:.88rem;color:var(--success);line-height:1.5}
+.pattern-significance span{display:block;font-size:.75rem;color:var(--text2);margin-bottom:2px;text-transform:uppercase;letter-spacing:.5px}
+.tap-hint{font-size:.75rem;color:var(--text2);text-align:right;padding-right:4px}
+
+/* Filter pills */
+.filter-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.filter-pill{padding:6px 14px;border-radius:20px;border:1px solid var(--border);background:var(--bg2);color:var(--text2);font-size:.8rem;cursor:pointer;transition:all .2s}
+.filter-pill.active{background:var(--accent2);color:#fff;border-color:var(--accent2)}
+
+/* Territory */
+.territory-map{display:grid;gap:12px}
+.territory-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:16px;display:flex;gap:14px;align-items:flex-start}
+.territory-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;font-weight:700}
+.territory-info h4{font-size:.95rem;font-weight:600;margin-bottom:4px}
+.territory-leads{color:var(--accent);font-weight:600;font-size:.95rem}
+.territory-artery{color:var(--text2);font-size:.85rem;margin-top:2px}
+
+/* Drill */
+.drill-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:12px}
+.drill-num{font-size:.75rem;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.drill-q{font-size:.95rem;line-height:1.6;margin-bottom:12px;color:var(--text);font-style:italic}
+.drill-toggle{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border-radius:8px;border:1px solid var(--accent);background:transparent;color:var(--accent);font-size:.85rem;font-weight:500;cursor:pointer;transition:all .2s;-webkit-tap-highlight-color:transparent}
+.drill-toggle:hover{background:var(--accent);color:#fff}
+.drill-answer{max-height:0;overflow:hidden;transition:max-height .3s}
+.drill-card.revealed .drill-answer{max-height:100px}
+.drill-card.revealed .drill-toggle{background:var(--accent);color:#fff}
+.drill-answer-text{padding-top:12px;font-weight:700;font-size:1.05rem;color:var(--success)}
+.drill-score{text-align:center;padding:16px;background:var(--bg2);border-radius:var(--radius);border:1px solid var(--border);margin-bottom:16px}
+.drill-score-num{font-size:2rem;font-weight:700;color:var(--accent)}
+.drill-score-label{font-size:.85rem;color:var(--text2)}
+.drill-actions{display:flex;gap:8px;justify-content:center;margin-bottom:20px}
+.drill-btn{padding:8px 20px;border-radius:8px;border:none;font-size:.85rem;font-weight:500;cursor:pointer;transition:all .2s}
+.drill-btn.primary{background:var(--accent);color:#fff}
+.drill-btn.secondary{background:var(--bg3);color:var(--text2);border:1px solid var(--border)}
+
+/* Self-assessment buttons */
+.self-assess{display:flex;gap:8px;margin-top:8px}
+.assess-btn{padding:6px 14px;border-radius:6px;border:1px solid var(--border);background:var(--bg3);font-size:.8rem;cursor:pointer;transition:all .2s}
+.assess-btn.correct{color:var(--success);border-color:var(--success)}
+.assess-btn.wrong{color:var(--danger);border-color:var(--danger)}
+.assess-btn.chosen{opacity:1;font-weight:700}
+.assess-btn:not(.chosen){opacity:.5}
+
+@media(min-width:640px){
+  .container{padding:24px}
+  .header h1{font-size:2rem}
+  .pattern-grid{grid-template-columns:1fr 1fr}
+  .territory-map{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>ECG Interpretation Algorithm</h1>
+    <p>Systematic approach to 12-lead ECG reading</p>
+    <div class="badge">Harrison's Ch. 268</div>
+  </div>
+
+  <div class="tabs" id="tabs">
+    <button class="tab-btn active" data-tab="systematic">Systematic Reading</button>
+    <button class="tab-btn" data-tab="patterns">Pattern Cards</button>
+    <button class="tab-btn" data-tab="territory">Territory Map</button>
+    <button class="tab-btn" data-tab="drill">Quick Drill</button>
+  </div>
+
+  <!-- SECTION 1: Systematic Reading -->
+  <div class="section active" id="sec-systematic">
+    <div class="progress-label"><span id="prog-text">0 / 7 steps</span></div>
+    <div class="progress-bar"><div class="progress-fill" id="prog-fill"></div></div>
+
+    <div class="step" data-step="1">
+      <div class="step-header">
+        <div class="step-number">1</div>
+        <div class="step-title">Rate</div>
+        <div class="step-chevron">&#9662;</div>
+      </div>
+      <div class="step-body"><div class="step-content">
+        <strong>Method:</strong> <span class="val">300 &divide; RR interval</span> (number of large boxes between R waves)<br><br>
+        <div class="sub-item"><span class="val">60&ndash;100 bpm</span> &rarr; Normal</div>
+        <div class="sub-item"><span class="warn-val">&lt;60 bpm</span> &rarr; Bradycardia</div>
+        <div class="sub-item"><span class="danger-val">&gt;100 bpm</span> &rarr; Tachycardia</div>
+        <br><strong>Irregular rhythm?</strong> Count QRS complexes in 6 seconds (30 large boxes) &times; 10.
+      </div></div>
+    </div>
+
+    <div class="step" data-step="2">
+      <div class="step-header">
+        <div class="step-number">2</div>
+        <div class="step-title">Rhythm</div>
+        <div class="step-chevron">&#9662;</div>
+      </div>
+      <div class="step-body"><div class="step-content">
+        <strong>Ask:</strong> Regular or irregular? P waves before every QRS? P:QRS ratio 1:1?<br><br>
+        <div class="sub-item"><span class="val">Regular + P before QRS</span> &rarr; Sinus rhythm</div>
+        <div class="sub-item"><span class="warn-val">Irregularly irregular</span> &rarr; Atrial Fibrillation</div>
+        <div class="sub-item"><span class="danger-val">Regular, no P waves</span> &rarr; Junctional or VT</div>
+      </div></div>
+    </div>
+
+    <div class="step" data-step="3">
+      <div class="step-header">
+        <div class="step-number">3</div>
+        <div class="step-title">Axis</div>
+        <div class="step-chevron">&#9662;</div>
+      </div>
+      <div class="step-body"><div class="step-content">
+        <strong>Quadrant method:</strong> Check net QRS deflection in Lead I and aVF<br><br>
+        <div class="sub-item"><span class="val">Both positive</span> &rarr; Normal axis (&minus;30&deg; to +90&deg;)</div>
+        <div class="sub-item"><span class="warn-val">I positive, aVF negative</span> &rarr; Left axis deviation</div>
+        <div class="sub-item"><span class="warn-val">I negative, aVF positive</span> &rarr; Right axis deviation</div>
+        <div class="sub-item"><span class="danger-val">Both negative</span> &rarr; Extreme axis deviation</div>
+      </div></div>
+    </div>
+
+    <div class="step" data-step="4">
+      <div class="step-header">
+        <div class="step-number">4</div>
+        <div class="step-title">Intervals</div>
+        <div class="step-chevron">&#9662;</div>
+      </div>
+      <div class="step-body"><div class="step-content">
+        <h4>PR Interval</h4>
+        <div class="sub-item"><span class="val">0.12&ndash;0.20s</span> &rarr; Normal</div>
+        <div class="sub-item"><span class="warn-val">&lt;0.12s</span> &rarr; WPW / preexcitation</div>
+        <div class="sub-item"><span class="warn-val">&gt;0.20s</span> &rarr; 1st degree heart block</div>
+
+        <h4>QRS Duration</h4>
+        <div class="sub-item"><span class="val">&lt;0.12s</span> &rarr; Normal</div>
+        <div class="sub-item"><span class="danger-val">&ge;0.12s</span> &rarr; BBB, ventricular origin, or preexcitation</div>
+
+        <h4>QT / QTc</h4>
+        <div class="sub-item"><span class="val">QTc &lt;440ms</span> (men), <span class="val">&lt;460ms</span> (women) &rarr; Normal</div>
+        <div class="sub-item"><span class="danger-val">Prolonged QTc</span> &rarr; Risk of Torsades de Pointes</div>
+      </div></div>
+    </div>
+
+    <div class="step" data-step="5">
+      <div class="step-header">
+        <div class="step-number">5</div>
+        <div class="step-title">P-Wave Morphology</div>
+        <div class="step-chevron">&#9662;</div>
+      </div>
+      <div class="step-body"><div class="step-content">
+        <h4>Right Atrial Enlargement (P pulmonale)</h4>
+        <div class="sub-item">Tall peaked P wave <span class="warn-val">&gt;2.5mm</span> in lead II</div>
+
+        <h4>Left Atrial Enlargement (P mitrale)</h4>
+        <div class="sub-item">Wide notched P wave <span class="warn-val">&gt;0.12s</span> in lead II</div>
+        <div class="sub-item">Biphasic P wave in V1 (deep terminal negative component)</div>
+      </div></div>
+    </div>
+
+    <div class="step" data-step="6">
+      <div class="step-header">
+        <div class="step-number">6</div>
+        <div class="step-title">QRS Morphology</div>
+        <div class="step-chevron">&#9662;</div>
+      </div>
+      <div class="step-body"><div class="step-content">
+        <h4>Bundle Branch Blocks</h4>
+        <div class="sub-item"><strong>RBBB:</strong> rsR&prime; in V1 (&ldquo;M-shaped&rdquo;), wide S in V6</div>
+        <div class="sub-item"><strong>LBBB:</strong> Absent R in V1, broad notched R in V5&ndash;V6</div>
+
+        <h4>Ventricular Hypertrophy</h4>
+        <div class="sub-item"><strong>LVH</strong> (Sokolow-Lyon): S in V1 + R in V5/V6 <span class="warn-val">&ge;35mm</span></div>
+        <div class="sub-item"><strong>RVH:</strong> R &gt; S in V1, right axis deviation</div>
+      </div></div>
+    </div>
+
+    <div class="step" data-step="7">
+      <div class="step-header">
+        <div class="step-number">7</div>
+        <div class="step-title">ST-Segment &amp; T-Wave</div>
+        <div class="step-chevron">&#9662;</div>
+      </div>
+      <div class="step-body"><div class="step-content">
+        <h4>ST Elevation</h4>
+        <div class="sub-item"><span class="danger-val">STEMI</span>, pericarditis, Brugada syndrome</div>
+
+        <h4>ST Depression</h4>
+        <div class="sub-item"><span class="warn-val">Ischemia</span>, digoxin effect, LV strain pattern</div>
+
+        <h4>T-Wave Inversion</h4>
+        <div class="sub-item">Ischemia, PE, HCM, Wellens&rsquo; syndrome</div>
+
+        <h4>Tall Peaked T Waves</h4>
+        <div class="sub-item"><span class="danger-val">Hyperkalemia</span> &mdash; check K+ urgently</div>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: Pattern Cards -->
+  <div class="section" id="sec-patterns">
+    <div class="filter-row" id="filter-row">
+      <button class="filter-pill active" data-filter="all">All</button>
+      <button class="filter-pill" data-filter="acs">ACS</button>
+      <button class="filter-pill" data-filter="arrhythmia">Arrhythmia</button>
+      <button class="filter-pill" data-filter="block">Blocks</button>
+      <button class="filter-pill" data-filter="electrolyte">Electrolytes</button>
+      <button class="filter-pill" data-filter="other">Other</button>
+    </div>
+    <p class="tap-hint">Tap a card to reveal clinical significance</p>
+    <div class="pattern-grid" id="pattern-grid"></div>
+  </div>
+
+  <!-- SECTION 3: Territory Map -->
+  <div class="section" id="sec-territory">
+    <div class="territory-map">
+      <div class="territory-card">
+        <div class="territory-icon" style="background:#dc262620;color:var(--danger)">A</div>
+        <div class="territory-info">
+          <h4>Anterior Wall</h4>
+          <div class="territory-leads">V1, V2, V3, V4</div>
+          <div class="territory-artery">LAD (Left Anterior Descending)</div>
+        </div>
+      </div>
+      <div class="territory-card">
+        <div class="territory-icon" style="background:#818cf820;color:var(--accent)">L</div>
+        <div class="territory-info">
+          <h4>Lateral Wall</h4>
+          <div class="territory-leads">I, aVL, V5, V6</div>
+          <div class="territory-artery">LCx (Left Circumflex)</div>
+        </div>
+      </div>
+      <div class="territory-card">
+        <div class="territory-icon" style="background:#fbbf2420;color:var(--warn)">I</div>
+        <div class="territory-info">
+          <h4>Inferior Wall</h4>
+          <div class="territory-leads">II, III, aVF</div>
+          <div class="territory-artery">RCA (Right Coronary Artery)</div>
+        </div>
+      </div>
+      <div class="territory-card">
+        <div class="territory-icon" style="background:#34d39920;color:var(--success)">R</div>
+        <div class="territory-info">
+          <h4>Right Ventricle</h4>
+          <div class="territory-leads">V4R</div>
+          <div class="territory-artery">RCA (Proximal)</div>
+        </div>
+      </div>
+      <div class="territory-card">
+        <div class="territory-icon" style="background:#c084fc20;color:var(--accent2)">P</div>
+        <div class="territory-info">
+          <h4>Posterior Wall</h4>
+          <div class="territory-leads">V7, V8, V9 (tall R in V1-V2 = mirror)</div>
+          <div class="territory-artery">LCx or RCA</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:20px">
+      <h3>Reciprocal Changes</h3>
+      <p style="color:var(--text2);font-size:.9rem;line-height:1.7">
+        ST depression in leads <strong style="color:var(--text)">opposite</strong> to the infarct territory supports the diagnosis of STEMI over pericarditis.<br><br>
+        <strong>Inferior STEMI:</strong> Reciprocal depression in I, aVL<br>
+        <strong>Anterior STEMI:</strong> Reciprocal depression in II, III, aVF<br>
+        <strong>Lateral STEMI:</strong> Reciprocal depression in III, aVF
+      </p>
+    </div>
+  </div>
+
+  <!-- SECTION 4: Quick Drill -->
+  <div class="section" id="sec-drill">
+    <div class="drill-score">
+      <div class="drill-score-num" id="drill-score-num">0 / 10</div>
+      <div class="drill-score-label">self-assessed correct</div>
+    </div>
+    <div class="drill-actions">
+      <button class="drill-btn secondary" onclick="resetDrill()">Reset All</button>
+      <button class="drill-btn primary" onclick="revealAll()">Reveal All</button>
+    </div>
+    <div id="drill-list"></div>
+  </div>
+</div>
+
+<script>
+// Tab switching
+const tabs = document.querySelectorAll('.tab-btn');
+tabs.forEach(btn => {
+  btn.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.getElementById('sec-' + btn.dataset.tab).classList.add('active');
+  });
+});
+
+// Steps — toggle & checklist
+const steps = document.querySelectorAll('.step');
+let checkedSteps = new Set();
+
+steps.forEach(step => {
+  const header = step.querySelector('.step-header');
+  header.addEventListener('click', () => {
+    const wasOpen = step.classList.contains('open');
+    // Close all
+    steps.forEach(s => s.classList.remove('open'));
+    if (!wasOpen) step.classList.add('open');
+  });
+
+  // Double-tap to check
+  let lastTap = 0;
+  header.addEventListener('touchend', (e) => {
+    const now = Date.now();
+    if (now - lastTap < 300) {
+      e.preventDefault();
+      toggleCheck(step);
+    }
+    lastTap = now;
+  });
+  header.addEventListener('dblclick', () => toggleCheck(step));
+});
+
+function toggleCheck(step) {
+  const n = step.dataset.step;
+  if (checkedSteps.has(n)) {
+    checkedSteps.delete(n);
+    step.classList.remove('checked');
+  } else {
+    checkedSteps.add(n);
+    step.classList.add('checked');
+  }
+  updateProgress();
+}
+
+function updateProgress() {
+  const pct = (checkedSteps.size / 7) * 100;
+  document.getElementById('prog-fill').style.width = pct + '%';
+  document.getElementById('prog-text').textContent = checkedSteps.size + ' / 7 steps';
+}
+
+// Pattern cards data
+const patterns = [
+  {name:"STEMI",cat:"acs",features:"ST elevation ≥1mm limb leads or ≥2mm chest leads in ≥2 contiguous leads",significance:"Acute MI — emergent PCI within 90 min"},
+  {name:"NSTEMI",cat:"acs",features:"ST depression or T-wave inversion without ST elevation + elevated troponin",significance:"ACS — urgent risk stratification and management"},
+  {name:"Atrial Fibrillation",cat:"arrhythmia",features:"Absent P waves, irregularly irregular QRS, fibrillatory baseline",significance:"Most common sustained arrhythmia — stroke risk (CHA₂DS₂-VASc)"},
+  {name:"Atrial Flutter",cat:"arrhythmia",features:"Sawtooth flutter waves (best in II, III, aVF), usually 2:1 block → 150 bpm",significance:"Often 2:1 conduction — consider ablation"},
+  {name:"1st Degree HB",cat:"block",features:"PR interval >0.20s, every P followed by QRS",significance:"Usually benign — no treatment needed"},
+  {name:"2nd Degree Mobitz I",cat:"block",features:"Progressive PR prolongation then dropped QRS (Wenckebach)",significance:"Usually benign — monitor, rarely needs pacing"},
+  {name:"2nd Degree Mobitz II",cat:"block",features:"Constant PR with sudden dropped QRS",significance:"Risk of complete heart block — may need permanent pacing"},
+  {name:"3rd Degree (Complete)",cat:"block",features:"P waves march through, QRS independent of P waves, bradycardia",significance:"Emergency — needs temporary then permanent pacing"},
+  {name:"VT",cat:"arrhythmia",features:"Wide QRS tachycardia (≥0.12s), rate 100–250 bpm",significance:"Life-threatening — cardioversion or amiodarone"},
+  {name:"VF",cat:"arrhythmia",features:"Chaotic undulating baseline, no organized QRS complexes",significance:"Cardiac arrest — immediate defibrillation + CPR"},
+  {name:"WPW",cat:"arrhythmia",features:"Short PR (<0.12s), delta wave, wide QRS",significance:"Preexcitation — risk of AF with rapid ventricular response"},
+  {name:"Hyperkalemia",cat:"electrolyte",features:"Tall peaked T waves → widened QRS → sine wave pattern",significance:"K⁺ >6.5 = emergency — IV calcium, insulin/dextrose, dialysis"},
+  {name:"Hypokalemia",cat:"electrolyte",features:"Flattened T waves, prominent U waves, ST depression",significance:"K⁺ <3.0 = significant arrhythmia risk — replace K⁺"},
+  {name:"Brugada",cat:"other",features:"Coved ST elevation in V1–V3 (type 1 pattern)",significance:"Risk of sudden cardiac death — consider ICD"},
+  {name:"Long QT",cat:"other",features:"QTc >500ms (drug-induced, congenital, or electrolyte)",significance:"Risk of Torsades de Pointes — remove offending agents"},
+  {name:"Pericarditis",cat:"other",features:"Diffuse concave-up ST elevation + PR depression (except aVR: PR elevation)",significance:"Distinguish from STEMI: diffuse, concave ST, no reciprocal changes"},
+  {name:"Digoxin Effect",cat:"other",features:"Reverse-tick / Salvador Dalí moustache ST depression, shortened QT",significance:"Therapeutic level sign — not toxicity per se"},
+  {name:"PE (Right Heart Strain)",cat:"other",features:"S1Q3T3, right axis, RBBB, T-wave inversion V1–V4, sinus tachycardia",significance:"Massive PE — CTPA, anticoagulation, consider thrombolysis"}
+];
+
+const catColors = {acs:'var(--danger)',arrhythmia:'var(--accent)',block:'var(--warn)',electrolyte:'var(--accent2)',other:'var(--text2)'};
+
+function renderPatterns(filter) {
+  const grid = document.getElementById('pattern-grid');
+  grid.innerHTML = '';
+  const filtered = filter === 'all' ? patterns : patterns.filter(p => p.cat === filter);
+  filtered.forEach(p => {
+    const div = document.createElement('div');
+    div.className = 'pattern-card';
+    div.innerHTML = `
+      <div class="pattern-front">
+        <div class="pattern-name" style="color:${catColors[p.cat]}">${p.name}</div>
+        <div class="pattern-features">${p.features}</div>
+      </div>
+      <div class="pattern-back">
+        <div class="pattern-significance"><span>Clinical Significance</span>${p.significance}</div>
+      </div>`;
+    div.addEventListener('click', () => div.classList.toggle('flipped'));
+    grid.appendChild(div);
+  });
+}
+
+document.querySelectorAll('.filter-pill').forEach(pill => {
+  pill.addEventListener('click', () => {
+    document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
+    renderPatterns(pill.dataset.filter);
+  });
+});
+
+renderPatterns('all');
+
+// Drill
+const drills = [
+  {q:"Irregularly irregular narrow-complex tachycardia, no P waves",a:"Atrial Fibrillation"},
+  {q:"Sawtooth waves at 300/min with 2:1 block, ventricular rate 150 bpm",a:"Atrial Flutter"},
+  {q:"Wide QRS tachycardia, rate 180 bpm, AV dissociation",a:"Ventricular Tachycardia (VT)"},
+  {q:"Progressive PR prolongation then dropped beat",a:"2nd Degree AV Block — Mobitz Type I (Wenckebach)"},
+  {q:"ST elevation in II, III, aVF with reciprocal ST depression in I, aVL",a:"Inferior STEMI (RCA territory)"},
+  {q:"Tall peaked T waves, wide QRS, bradycardia",a:"Hyperkalemia"},
+  {q:"Short PR interval, delta wave, wide QRS in a young patient with palpitations",a:"Wolff-Parkinson-White (WPW) Syndrome"},
+  {q:"Diffuse concave-up ST elevation with PR depression",a:"Acute Pericarditis"},
+  {q:"S1Q3T3 with right axis deviation and sinus tachycardia",a:"Pulmonary Embolism (right heart strain)"},
+  {q:"Absent P waves, complete AV dissociation, narrow escape rhythm at 40 bpm",a:"Complete (3rd Degree) Heart Block"}
+];
+
+let drillCorrect = 0;
+let drillAssessed = new Set();
+
+function renderDrills() {
+  const list = document.getElementById('drill-list');
+  list.innerHTML = '';
+  drills.forEach((d, i) => {
+    const div = document.createElement('div');
+    div.className = 'drill-card';
+    div.id = 'drill-' + i;
+    div.innerHTML = `
+      <div class="drill-num">Scenario ${i + 1}</div>
+      <div class="drill-q">"${d.q}"</div>
+      <button class="drill-toggle" onclick="toggleDrill(${i})">Reveal Answer</button>
+      <div class="drill-answer">
+        <div class="drill-answer-text">${d.a}</div>
+        <div class="self-assess" id="assess-${i}">
+          <button class="assess-btn correct" onclick="assessDrill(${i},true)">Got it right</button>
+          <button class="assess-btn wrong" onclick="assessDrill(${i},false)">Got it wrong</button>
+        </div>
+      </div>`;
+    list.appendChild(div);
+  });
+}
+
+function toggleDrill(i) {
+  document.getElementById('drill-' + i).classList.toggle('revealed');
+}
+
+function assessDrill(i, correct) {
+  if (drillAssessed.has(i)) return;
+  drillAssessed.add(i);
+  if (correct) drillCorrect++;
+  const assess = document.getElementById('assess-' + i);
+  const btns = assess.querySelectorAll('.assess-btn');
+  btns.forEach(b => {
+    if ((correct && b.classList.contains('correct')) || (!correct && b.classList.contains('wrong'))) {
+      b.classList.add('chosen');
+    }
+  });
+  document.getElementById('drill-score-num').textContent = drillCorrect + ' / 10';
+}
+
+function resetDrill() {
+  drillCorrect = 0;
+  drillAssessed = new Set();
+  document.getElementById('drill-score-num').textContent = '0 / 10';
+  renderDrills();
+}
+
+function revealAll() {
+  drills.forEach((_, i) => {
+    document.getElementById('drill-' + i).classList.add('revealed');
+  });
+}
+
+renderDrills();
+</script>
+</body>
+</html>

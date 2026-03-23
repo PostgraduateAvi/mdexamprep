@@ -13,7 +13,8 @@ var LearnUI = (function () {
     'pharmacology': 'Pharmacology',
     'pulmonology': 'Pulmonology',
     'genetics': 'Molecular Biology',
-    'study-skills': 'Study Skills'
+    'study-skills': 'Study Skills',
+    'clinical-medicine': 'Clinical Medicine'
   };
 
   var allTopics = [];

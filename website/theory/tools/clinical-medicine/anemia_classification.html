@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anemia Classification Algorithm | MBBEasy</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0a0e17;--bg2:#111827;--bg3:#1e2536;--text:#eef0f6;--text2:#9ca3af;--accent:#818cf8;--accent2:#c084fc;--success:#34d399;--warn:#fbbf24;--danger:#f87171;--border:#2d3548;--radius:10px;--micro:#f87171;--normo:#fbbf24;--macro:#818cf8}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+a{color:var(--accent);text-decoration:none}
+
+.container{max-width:860px;margin:0 auto;padding:16px}
+
+.header{text-align:center;padding:32px 0 24px}
+.header h1{font-size:1.75rem;font-weight:700;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.header p{color:var(--text2);font-size:.9rem;margin-top:4px}
+.badge{display:inline-block;background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:4px 12px;font-size:.75rem;color:var(--accent);margin-top:8px}
+
+.tabs{display:flex;gap:4px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px;margin-bottom:24px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab-btn{flex-shrink:0;padding:10px 16px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg2);color:var(--text2);font-size:.85rem;font-weight:500;cursor:pointer;transition:all .2s;-webkit-tap-highlight-color:transparent;min-height:44px}
+.tab-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+.section{display:none}
+.section.active{display:block}
+
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px}
+.card h3{font-size:1.05rem;margin-bottom:8px;color:var(--accent)}
+.card h4{font-size:.95rem;color:var(--accent2);margin:12px 0 6px}
+
+/* Decision Tree */
+.tree-node{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:12px;overflow:hidden;transition:border-color .2s;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.tree-node:hover{border-color:var(--accent)}
+.tree-header{display:flex;align-items:center;gap:12px;padding:16px}
+.tree-label{font-weight:700;font-size:.95rem;flex:1}
+.tree-badge{padding:4px 12px;border-radius:20px;font-size:.75rem;font-weight:600;flex-shrink:0}
+.tree-badge.micro{background:rgba(248,113,113,.15);color:var(--micro);border:1px solid rgba(248,113,113,.3)}
+.tree-badge.normo{background:rgba(251,191,36,.15);color:var(--normo);border:1px solid rgba(251,191,36,.3)}
+.tree-badge.macro{background:rgba(129,140,248,.15);color:var(--macro);border:1px solid rgba(129,140,248,.3)}
+.tree-chevron{color:var(--text2);transition:transform .2s;font-size:1.2rem;flex-shrink:0}
+.tree-node.open .tree-chevron{transform:rotate(180deg)}
+.tree-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.tree-node.open .tree-body{max-height:800px}
+.tree-content{padding:0 16px 16px}
+.cause-tag{display:inline-block;background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:4px 10px;margin:3px;font-size:.82rem;color:var(--text2)}
+.sub-group{margin-top:10px}
+.sub-group-title{font-size:.85rem;font-weight:600;color:var(--accent2);margin-bottom:6px}
+.sub-note{font-size:.8rem;color:var(--text2);font-style:italic;margin-top:4px}
+
+/* Iron Studies Table */
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-bottom:16px;border-radius:var(--radius);border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;font-size:.85rem;min-width:500px}
+th{background:var(--bg3);color:var(--accent);padding:12px 10px;text-align:left;font-weight:600;position:sticky;top:0;white-space:nowrap}
+td{padding:10px;border-top:1px solid var(--border);color:var(--text2)}
+tr:hover td{background:rgba(129,140,248,.05)}
+.val-down{color:var(--danger);font-weight:600}
+.val-up{color:var(--success);font-weight:600}
+.val-normal{color:var(--warn);font-weight:600}
+.val-special{color:var(--accent2);font-weight:600}
+
+/* Highlight row on tap */
+.iron-row{cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background .2s}
+.iron-row.highlighted td{background:rgba(129,140,248,.1)}
+
+/* Reticulocyte */
+.retic-branch{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px}
+.retic-branch h3{font-size:1.05rem;margin-bottom:4px}
+.retic-value{font-size:.85rem;margin-bottom:12px}
+.marker-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin-top:10px}
+.marker{background:var(--bg3);border-radius:8px;padding:8px 12px;font-size:.82rem;text-align:center}
+.marker .dir{font-weight:700;font-size:1rem}
+.coombs-box{background:var(--bg3);border-radius:8px;padding:14px;margin-top:12px}
+.coombs-box strong{color:var(--accent)}
+
+/* Smear cards */
+.smear-grid{display:grid;gap:12px}
+.smear-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:border-color .2s}
+.smear-card:hover,.smear-card.flipped{border-color:var(--accent)}
+.smear-front{padding:16px}
+.smear-name{font-weight:700;font-size:1rem;color:var(--accent);margin-bottom:2px}
+.smear-hint{font-size:.8rem;color:var(--text2)}
+.smear-back{max-height:0;overflow:hidden;transition:max-height .3s;background:var(--bg3)}
+.smear-card.flipped .smear-back{max-height:120px}
+.smear-conditions{padding:14px 16px;font-size:.88rem;color:var(--success);line-height:1.6}
+
+/* B12 vs Folate */
+.compare-row{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid var(--border)}
+.compare-row:last-child{border-bottom:none}
+.compare-label{grid-column:1/-1;padding:10px 14px;font-weight:600;font-size:.85rem;color:var(--accent);background:var(--bg3)}
+.compare-val{padding:10px 14px;font-size:.85rem;color:var(--text2);border-right:1px solid var(--border)}
+.compare-val:last-child{border-right:none}
+.compare-header{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--bg3);border-bottom:1px solid var(--border);border-radius:var(--radius) var(--radius) 0 0}
+.compare-header div{padding:12px 14px;font-weight:700;font-size:.9rem;text-align:center}
+.compare-header div:first-child{color:var(--accent);border-right:1px solid var(--border)}
+.compare-header div:last-child{color:var(--accent2)}
+
+/* Drill */
+.drill-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:12px;overflow:hidden}
+.drill-q{padding:16px;cursor:pointer;-webkit-tap-highlight-color:transparent;display:flex;gap:12px;align-items:flex-start}
+.drill-num{width:28px;height:28px;border-radius:50%;background:var(--bg3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;color:var(--accent);flex-shrink:0}
+.drill-text{font-size:.9rem;flex:1;color:var(--text2);line-height:1.5}
+.drill-text em{color:var(--text);font-style:normal;font-weight:500}
+.drill-reveal{font-size:.75rem;color:var(--accent);flex-shrink:0;align-self:center}
+.drill-a{max-height:0;overflow:hidden;transition:max-height .3s;background:var(--bg3)}
+.drill-card.revealed .drill-a{max-height:100px}
+.drill-answer{padding:14px 16px;font-size:.92rem;font-weight:600;color:var(--success)}
+.drill-card.revealed .drill-num{background:var(--success);border-color:var(--success);color:#fff}
+.drill-card.revealed .drill-reveal{display:none}
+
+.score-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;padding:12px 16px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius)}
+.score-text{font-size:.9rem;color:var(--text2)}
+.score-text strong{color:var(--accent)}
+.reset-btn{padding:6px 14px;border-radius:8px;border:1px solid var(--border);background:var(--bg3);color:var(--text2);font-size:.8rem;cursor:pointer;min-height:36px}
+.reset-btn:hover{border-color:var(--accent);color:var(--accent)}
+
+.tap-hint{font-size:.75rem;color:var(--text2);text-align:right;padding-right:4px;margin-bottom:8px}
+
+@media(max-width:600px){
+  .header h1{font-size:1.4rem}
+  .tab-btn{padding:8px 12px;font-size:.8rem}
+  .compare-row{grid-template-columns:1fr 1fr}
+  table{font-size:.78rem}
+  th,td{padding:8px 6px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>Anemia Classification</h1>
+    <p>Systematic approach to diagnosis</p>
+    <span class="badge">Harrison's Ch. 93</span>
+  </div>
+
+  <div class="tabs" role="tablist">
+    <button class="tab-btn active" onclick="showTab(0)">MCV Tree</button>
+    <button class="tab-btn" onclick="showTab(1)">Iron Studies</button>
+    <button class="tab-btn" onclick="showTab(2)">Reticulocytes</button>
+    <button class="tab-btn" onclick="showTab(3)">Smear</button>
+    <button class="tab-btn" onclick="showTab(4)">B12 vs Folate</button>
+    <button class="tab-btn" onclick="showTab(5)">Quick Drill</button>
+  </div>
+
+  <!-- Section 1: MCV Decision Tree -->
+  <div class="section active" id="sec-0">
+    <div class="card" style="margin-bottom:16px;padding:14px 20px">
+      <p style="font-size:.9rem;color:var(--text2)"><strong style="color:var(--accent)">Step 1:</strong> Check MCV to classify anemia, then narrow with iron studies, reticulocyte count, and peripheral smear.</p>
+    </div>
+
+    <div class="tree-node" onclick="toggleTree(this)">
+      <div class="tree-header">
+        <span class="tree-badge micro">MCV &lt;80 fL</span>
+        <span class="tree-label">Microcytic</span>
+        <span class="tree-chevron">&#9662;</span>
+      </div>
+      <div class="tree-body"><div class="tree-content">
+        <div class="cause-tag">Iron deficiency</div>
+        <div class="cause-tag">Thalassemia</div>
+        <div class="cause-tag">Anemia of chronic disease</div>
+        <div class="cause-tag">Sideroblastic anemia</div>
+        <div class="cause-tag">Lead poisoning</div>
+      </div></div>
+    </div>
+
+    <div class="tree-node" onclick="toggleTree(this)">
+      <div class="tree-header">
+        <span class="tree-badge normo">MCV 80-100 fL</span>
+        <span class="tree-label">Normocytic</span>
+        <span class="tree-chevron">&#9662;</span>
+      </div>
+      <div class="tree-body"><div class="tree-content">
+        <div class="cause-tag">Acute blood loss</div>
+        <div class="cause-tag">Anemia of chronic disease</div>
+        <div class="cause-tag">Hemolytic anemia</div>
+        <div class="cause-tag">Renal failure (&darr;EPO)</div>
+        <div class="cause-tag">Mixed deficiency</div>
+        <div class="cause-tag">Bone marrow failure</div>
+      </div></div>
+    </div>
+
+    <div class="tree-node" onclick="toggleTree(this)">
+      <div class="tree-header">
+        <span class="tree-badge macro">MCV &gt;100 fL</span>
+        <span class="tree-label">Macrocytic</span>
+        <span class="tree-chevron">&#9662;</span>
+      </div>
+      <div class="tree-body"><div class="tree-content">
+        <div class="sub-group">
+          <div class="sub-group-title">Megaloblastic</div>
+          <div class="cause-tag">B12 deficiency</div>
+          <div class="cause-tag">Folate deficiency</div>
+          <div class="sub-note">Clues: hypersegmented neutrophils, macro-ovalocytes</div>
+        </div>
+        <div class="sub-group">
+          <div class="sub-group-title">Non-megaloblastic</div>
+          <div class="cause-tag">Liver disease</div>
+          <div class="cause-tag">Hypothyroidism</div>
+          <div class="cause-tag">Myelodysplastic syndrome</div>
+          <div class="cause-tag">Reticulocytosis</div>
+          <div class="cause-tag">Drugs (MTX, AZT, hydroxyurea)</div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- Section 2: Iron Studies -->
+  <div class="section" id="sec-1">
+    <p class="tap-hint">Tap a row to highlight</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Parameter</th><th>IDA</th><th>ACD</th><th>Thalassemia</th><th>Sideroblastic</th></tr>
+        </thead>
+        <tbody>
+          <tr class="iron-row" onclick="highlightRow(this)">
+            <td style="color:var(--text);font-weight:600">Serum Iron</td>
+            <td class="val-down">&darr;</td>
+            <td class="val-down">&darr;</td>
+            <td class="val-normal">N/&uarr;</td>
+            <td class="val-up">&uarr;</td>
+          </tr>
+          <tr class="iron-row" onclick="highlightRow(this)">
+            <td style="color:var(--text);font-weight:600">TIBC</td>
+            <td class="val-up">&uarr;</td>
+            <td class="val-down">&darr;</td>
+            <td class="val-normal">N</td>
+            <td class="val-normal">N</td>
+          </tr>
+          <tr class="iron-row" onclick="highlightRow(this)">
+            <td style="color:var(--text);font-weight:600">Ferritin</td>
+            <td class="val-down">&darr; (&lt;30)</td>
+            <td class="val-up">&uarr; (&gt;100)</td>
+            <td class="val-normal">N/&uarr;</td>
+            <td class="val-up">&uarr;</td>
+          </tr>
+          <tr class="iron-row" onclick="highlightRow(this)">
+            <td style="color:var(--text);font-weight:600">Transferrin Sat</td>
+            <td class="val-down">&darr; (&lt;20%)</td>
+            <td class="val-down">&darr;</td>
+            <td class="val-normal">N/&uarr;</td>
+            <td class="val-up">&uarr;</td>
+          </tr>
+          <tr class="iron-row" onclick="highlightRow(this)">
+            <td style="color:var(--text);font-weight:600">BM Iron</td>
+            <td class="val-down">Absent</td>
+            <td class="val-up">Present</td>
+            <td class="val-up">Present</td>
+            <td class="val-special">Ring sideroblasts</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <h3>Key Differentiators</h3>
+      <p style="font-size:.88rem;color:var(--text2);line-height:1.7">
+        <strong style="color:var(--micro)">IDA vs ACD:</strong> TIBC is high in IDA (body craving iron) but low in ACD (iron trapped in stores). Ferritin &lt;30 is diagnostic for IDA; &gt;100 favors ACD.<br>
+        <strong style="color:var(--warn)">Thalassemia:</strong> Iron studies are normal/high. Look for target cells, elevated HbA2 (beta-thal), and family history.<br>
+        <strong style="color:var(--accent2)">Sideroblastic:</strong> Ring sideroblasts on Prussian blue stain are pathognomonic.
+      </p>
+    </div>
+  </div>
+
+  <!-- Section 3: Reticulocyte Count -->
+  <div class="section" id="sec-2">
+    <div class="retic-branch" style="border-left:3px solid var(--success)">
+      <h3 style="color:var(--success)">High Reticulocyte Count</h3>
+      <div class="retic-value" style="color:var(--success)">&gt;2% or RPI &gt;2 &mdash; Adequate marrow response</div>
+      <p style="font-size:.88rem;color:var(--text2);margin-bottom:12px">Points to <strong style="color:var(--text)">hemolysis</strong> or <strong style="color:var(--text)">blood loss</strong></p>
+
+      <h4 style="font-size:.9rem;color:var(--accent);margin-bottom:8px">Hemolysis Markers</h4>
+      <div class="marker-grid">
+        <div class="marker"><span class="dir" style="color:var(--success)">&uarr;</span> LDH</div>
+        <div class="marker"><span class="dir" style="color:var(--success)">&uarr;</span> Indirect bilirubin</div>
+        <div class="marker"><span class="dir" style="color:var(--danger)">&darr;</span> Haptoglobin</div>
+        <div class="marker"><span class="dir" style="color:var(--success)">&uarr;</span> Reticulocytes</div>
+      </div>
+
+      <div class="coombs-box">
+        <strong>Coombs Test</strong><br>
+        <span style="font-size:.88rem;color:var(--text2)">
+          <strong style="color:var(--success)">Positive</strong> = Autoimmune hemolytic anemia<br>
+          <strong style="color:var(--danger)">Negative</strong> = Non-immune: TTP, HUS, DIC, mechanical valves, sickle cell, G6PD, hereditary spherocytosis
+        </span>
+      </div>
+    </div>
+
+    <div class="retic-branch" style="border-left:3px solid var(--danger)">
+      <h3 style="color:var(--danger)">Low Reticulocyte Count</h3>
+      <div class="retic-value" style="color:var(--danger)">&lt;2% &mdash; Inadequate marrow response</div>
+      <p style="font-size:.88rem;color:var(--text2)">Points to a <strong style="color:var(--text)">production problem</strong>: nutritional deficiency (iron, B12, folate), bone marrow failure, anemia of chronic disease, renal failure.</p>
+    </div>
+  </div>
+
+  <!-- Section 4: Peripheral Smear -->
+  <div class="section" id="sec-3">
+    <p class="tap-hint">Tap to reveal associated conditions</p>
+    <div class="smear-grid" id="smear-grid"></div>
+  </div>
+
+  <!-- Section 5: B12 vs Folate -->
+  <div class="section" id="sec-4">
+    <div style="border:1px solid var(--border);border-radius:var(--radius);overflow:hidden">
+      <div class="compare-header">
+        <div>B12 Deficiency</div>
+        <div>Folate Deficiency</div>
+      </div>
+      <div id="compare-body"></div>
+    </div>
+  </div>
+
+  <!-- Section 6: Quick Drill -->
+  <div class="section" id="sec-5">
+    <div class="score-bar">
+      <span class="score-text">Revealed: <strong id="drill-score">0</strong>/10</span>
+      <button class="reset-btn" onclick="resetDrill()">Reset</button>
+    </div>
+    <div id="drill-list"></div>
+  </div>
+
+</div>
+
+<script>
+// Tabs
+function showTab(i){
+  document.querySelectorAll('.tab-btn').forEach((b,j)=>b.classList.toggle('active',j===i));
+  document.querySelectorAll('.section').forEach((s,j)=>s.classList.toggle('active',j===i));
+}
+
+// Tree toggle
+function toggleTree(el){el.classList.toggle('open')}
+
+// Iron row highlight
+function highlightRow(el){
+  document.querySelectorAll('.iron-row').forEach(r=>r.classList.remove('highlighted'));
+  el.classList.add('highlighted');
+}
+
+// Smear data
+const smearData=[
+  {name:'Target cells',conditions:'Thalassemia, liver disease, IDA, post-splenectomy'},
+  {name:'Schistocytes',hint:'Fragmented RBCs',conditions:'TTP/HUS, DIC, mechanical valve, HELLP'},
+  {name:'Spherocytes',conditions:'Hereditary spherocytosis, autoimmune hemolytic anemia'},
+  {name:'Sickle cells',conditions:'Sickle cell disease'},
+  {name:'Howell-Jolly bodies',conditions:'Post-splenectomy, hyposplenism'},
+  {name:'Rouleaux formation',conditions:'Multiple myeloma, chronic inflammation'},
+  {name:'Basophilic stippling',conditions:'Lead poisoning, thalassemia, sideroblastic anemia'},
+  {name:'Tear-drop cells',hint:'Dacrocytes',conditions:'Myelofibrosis, myelophthisic anemia'},
+  {name:'Macro-ovalocytes',conditions:'Megaloblastic anemia (B12/folate)'},
+  {name:'Hypersegmented neutrophils',hint:'\u22655 lobes or \u22655% with 5 lobes',conditions:'Megaloblastic anemia'},
+  {name:'Bite cells',conditions:'G6PD deficiency'},
+  {name:'Pencil cells',conditions:'Iron deficiency anemia'}
+];
+const sg=document.getElementById('smear-grid');
+smearData.forEach(d=>{
+  const c=document.createElement('div');
+  c.className='smear-card';
+  c.innerHTML=`<div class="smear-front"><div class="smear-name">${d.name}</div>${d.hint?`<div class="smear-hint">${d.hint}</div>`:''}</div><div class="smear-back"><div class="smear-conditions">${d.conditions}</div></div>`;
+  c.onclick=()=>c.classList.toggle('flipped');
+  sg.appendChild(c);
+});
+
+// B12 vs Folate
+const compareData=[
+  {label:'Neurological symptoms',b12:'YES (SACD, peripheral neuropathy)',folate:'NO'},
+  {label:'Serum level',b12:'\u2193 B12',folate:'\u2193 Folate'},
+  {label:'Methylmalonic acid',b12:'\u2191',folate:'Normal'},
+  {label:'Homocysteine',b12:'\u2191',folate:'\u2191'},
+  {label:'Causes',b12:'Pernicious anemia, strict vegan, ileal disease/resection, fish tapeworm, metformin',folate:'Pregnancy, alcoholism, hemolytic anemia, phenytoin, methotrexate, poor diet'},
+  {label:'Treatment',b12:'IM B12 (1000 mcg)',folate:'Oral folic acid (5 mg)'},
+  {label:'SACD',b12:'Dorsal column (vibration/proprioception) + lateral corticospinal (spasticity)',folate:'Not seen'}
+];
+const cb=document.getElementById('compare-body');
+compareData.forEach(d=>{
+  cb.innerHTML+=`<div class="compare-row"><div class="compare-label">${d.label}</div><div class="compare-val">${d.b12}</div><div class="compare-val">${d.folate}</div></div>`;
+});
+
+// Drill
+const drillData=[
+  {q:'Microcytic anemia, <em>low ferritin</em>, <em>high TIBC</em>',a:'Iron Deficiency Anemia'},
+  {q:'Microcytic anemia, <em>normal/high ferritin</em>, target cells, <em>HbA2 elevated</em>',a:'Beta-Thalassemia Trait'},
+  {q:'Macrocytic anemia, <em>hypersegmented neutrophils</em>, numbness in feet',a:'B12 Deficiency'},
+  {q:'Normocytic anemia, <em>low reticulocytes</em>, <em>high creatinine</em>',a:'Anemia of CKD (\u2193EPO)'},
+  {q:'Anemia with <em>schistocytes</em>, thrombocytopenia, elevated LDH, low haptoglobin',a:'TTP/HUS or DIC'},
+  {q:'<em>Coombs-positive</em> hemolytic anemia',a:'Autoimmune Hemolytic Anemia'},
+  {q:'Microcytic anemia, <em>basophilic stippling</em>, abdominal pain, wrist drop',a:'Lead Poisoning'},
+  {q:'Pancytopenia, <em>tear-drop cells</em>, dry tap on bone marrow',a:'Myelofibrosis'},
+  {q:'Episodic hemolysis after fava beans, <em>bite cells</em> on smear',a:'G6PD Deficiency'},
+  {q:'Normocytic anemia, <em>rouleaux</em>, back pain, hypercalcemia',a:'Multiple Myeloma'}
+];
+let drillRevealed=0;
+const dl=document.getElementById('drill-list');
+drillData.forEach((d,i)=>{
+  const c=document.createElement('div');
+  c.className='drill-card';
+  c.innerHTML=`<div class="drill-q" onclick="revealDrill(this.parentElement,${i})"><span class="drill-num">${i+1}</span><span class="drill-text">${d.q}</span><span class="drill-reveal">Tap to reveal</span></div><div class="drill-a"><div class="drill-answer">${d.a}</div></div>`;
+  dl.appendChild(c);
+});
+
+function revealDrill(el){
+  if(!el.classList.contains('revealed')){
+    el.classList.add('revealed');
+    drillRevealed++;
+    document.getElementById('drill-score').textContent=drillRevealed;
+  }
+}
+
+function resetDrill(){
+  drillRevealed=0;
+  document.getElementById('drill-score').textContent='0';
+  document.querySelectorAll('.drill-card').forEach(c=>c.classList.remove('revealed'));
+}
+</script>
+</body>
+</html>

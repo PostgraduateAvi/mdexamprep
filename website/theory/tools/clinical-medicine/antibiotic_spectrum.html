@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Antibiotic Spectrum & Resistance Ladder | MBBEasy</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0a0e17;--bg2:#111827;--bg3:#1e2536;--text:#eef0f6;--text2:#9ca3af;--accent:#818cf8;--accent2:#c084fc;--success:#34d399;--warn:#fbbf24;--danger:#f87171;--border:#2d3548;--radius:10px;
+--cl-penicillin:#818cf8;--cl-ceph:#60a5fa;--cl-carbapenem:#f472b6;--cl-monobactam:#a78bfa;
+--cl-aminoglycoside:#fb923c;--cl-fq:#fbbf24;--cl-macrolide:#34d399;--cl-tetracycline:#2dd4bf;
+--cl-glycopeptide:#f87171;--cl-linezolid:#e879f9;--cl-metro:#a3e635;--cl-cotri:#38bdf8;
+--cl-clinda:#f9a8d4;--cl-nitro:#94a3b8;--cl-tb:#c084fc}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+a{color:var(--accent);text-decoration:none}
+.container{max-width:900px;margin:0 auto;padding:16px}
+.header{text-align:center;padding:32px 0 24px}
+.header h1{font-size:1.7rem;font-weight:700;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.header p{color:var(--text2);font-size:.9rem;margin-top:4px}
+.badge{display:inline-block;background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:4px 12px;font-size:.75rem;color:var(--accent);margin-top:8px}
+
+.tabs{display:flex;gap:4px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px;margin-bottom:24px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab-btn{flex-shrink:0;padding:10px 16px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg2);color:var(--text2);font-size:.85rem;font-weight:500;cursor:pointer;transition:all .2s;-webkit-tap-highlight-color:transparent;min-height:44px}
+.tab-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+.section{display:none}.section.active{display:block}
+
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:16px;overflow:hidden}
+.card-head{display:flex;align-items:center;justify-content:space-between;padding:16px;cursor:pointer;-webkit-tap-highlight-color:transparent;gap:12px;min-height:52px}
+.card-head h3{font-size:1rem;font-weight:600;flex:1}
+.card-chevron{color:var(--text2);transition:transform .25s;font-size:1.1rem;flex-shrink:0}
+.card.open .card-chevron{transform:rotate(180deg)}
+.card-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.card.open .card-body{max-height:5000px}
+.card-inner{padding:0 16px 16px}
+
+.class-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:8px;border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;font-size:.82rem;min-width:520px}
+th{background:var(--bg3);color:var(--accent);padding:10px 10px;text-align:left;font-weight:600;white-space:nowrap;position:sticky;top:0}
+td{padding:10px;border-top:1px solid var(--border);color:var(--text2);vertical-align:top}
+tr:hover td{background:rgba(129,140,248,.05)}
+td:first-child{font-weight:600;color:var(--text)}
+
+.spectrum-tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:.75rem;margin:2px;font-weight:500}
+.gp{background:rgba(129,140,248,.15);color:var(--accent)}
+.gn{background:rgba(251,191,36,.15);color:var(--warn)}
+.an{background:rgba(163,230,53,.15);color:#a3e635}
+.at{background:rgba(45,212,191,.15);color:#2dd4bf}
+.ps{background:rgba(244,114,182,.15);color:#f472b6}
+.br{background:rgba(192,132,252,.15);color:var(--accent2)}
+
+.key-note{font-size:.8rem;color:var(--warn);font-style:italic}
+
+/* Empiric table */
+.emp-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:12px;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:border-color .2s}
+.emp-card:hover,.emp-card.highlight{border-color:var(--accent)}
+.emp-infection{font-weight:700;font-size:.95rem;margin-bottom:4px}
+.emp-rx{color:var(--accent);font-size:.88rem;font-weight:500}
+.emp-path{color:var(--text2);font-size:.8rem;margin-top:4px}
+
+/* Resistance cards */
+.res-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:12px}
+.res-head{padding:16px;cursor:pointer;-webkit-tap-highlight-color:transparent;display:flex;align-items:center;gap:12px;min-height:52px}
+.res-head h3{flex:1;font-size:.95rem;font-weight:600}
+.res-badge{padding:3px 10px;border-radius:16px;font-size:.72rem;font-weight:600;background:rgba(248,113,113,.15);color:var(--danger);border:1px solid rgba(248,113,113,.25)}
+.res-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.res-card.open .res-body{max-height:400px}
+.res-card.open .card-chevron{transform:rotate(180deg)}
+.res-inner{padding:0 16px 16px}
+.res-row{display:flex;gap:8px;margin-bottom:8px;font-size:.85rem}
+.res-label{color:var(--text2);min-width:90px;flex-shrink:0;font-weight:500}
+.res-val{color:var(--text)}
+
+/* TB */
+.tb-phase{background:var(--bg3);border-radius:8px;padding:14px;margin-bottom:12px}
+.tb-phase h4{color:var(--accent2);font-size:.9rem;margin-bottom:8px}
+.tb-drug{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);font-size:.85rem}
+.tb-drug:last-child{border:none}
+.tb-name{font-weight:700;color:var(--accent);min-width:100px}
+.tb-mech{color:var(--text2);flex:1}
+.tb-se{color:var(--warn);flex:1}
+
+/* Drill */
+.drill-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:12px;overflow:hidden}
+.drill-q{padding:16px;cursor:pointer;-webkit-tap-highlight-color:transparent;display:flex;gap:12px;align-items:flex-start;min-height:52px}
+.drill-num{background:var(--accent);color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;flex-shrink:0}
+.drill-text{font-size:.9rem;flex:1;line-height:1.5}
+.drill-reveal{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.drill-card.open .drill-reveal{max-height:200px}
+.drill-answer{padding:0 16px 16px 56px;color:var(--success);font-weight:600;font-size:.9rem}
+
+.back-link{display:inline-flex;align-items:center;gap:6px;color:var(--text2);font-size:.85rem;padding:8px 0;min-height:44px}
+.back-link:hover{color:var(--accent)}
+
+.score-bar{display:flex;align-items:center;gap:12px;background:var(--bg3);border-radius:var(--radius);padding:12px 16px;margin-bottom:16px}
+.score-text{font-size:.85rem;color:var(--text2)}
+.score-count{font-size:1.1rem;font-weight:700;color:var(--accent)}
+.score-reset{margin-left:auto;padding:6px 14px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:.8rem;cursor:pointer;min-height:44px}
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../../" class="back-link">&#8592; Back to Learn</a>
+<div class="header">
+<h1>Antibiotic Spectrum & Resistance Ladder</h1>
+<p>Harrison's Chapters 139-143</p>
+<span class="badge">Interactive Reference</span>
+</div>
+
+<div class="tabs" id="tabs">
+<button class="tab-btn active" data-tab="classes">Classes</button>
+<button class="tab-btn" data-tab="empiric">Empiric Rx</button>
+<button class="tab-btn" data-tab="resistance">Resistance</button>
+<button class="tab-btn" data-tab="tb">Anti-TB</button>
+<button class="tab-btn" data-tab="drill">Quick Drill</button>
+</div>
+
+<!-- SECTION 1: ANTIBIOTIC CLASSES -->
+<div class="section active" id="sec-classes">
+
+<div class="card open" id="card-betalactams">
+<div class="card-head" onclick="toggleCard(this)">
+<span class="class-dot" style="background:var(--cl-penicillin)"></span>
+<h3>Beta-Lactams</h3>
+<span class="card-chevron">&#9662;</span>
+</div>
+<div class="card-body"><div class="card-inner">
+<div class="table-wrap"><table>
+<tr><th>Class</th><th>Examples</th><th>Spectrum</th><th>Key Notes</th></tr>
+<tr><td>Natural Penicillin</td><td>Pen G, Pen V</td><td><span class="spectrum-tag gp">Strep</span><span class="spectrum-tag gp">Meningococcus</span><span class="spectrum-tag at">Treponema</span></td><td class="key-note">Drug of choice for syphilis</td></tr>
+<tr><td>Aminopenicillin</td><td>Amoxicillin, Ampicillin</td><td><span class="spectrum-tag gn">E. coli</span><span class="spectrum-tag gn">H. influenzae</span><span class="spectrum-tag gp">Listeria</span><span class="spectrum-tag gp">Enterococcus</span></td><td class="key-note">Amox = better oral absorption</td></tr>
+<tr><td>Anti-staph Penicillin</td><td>Flucloxacillin, Nafcillin</td><td><span class="spectrum-tag gp">MSSA</span> (penicillinase-resistant)</td><td class="key-note">NO gram-negative cover</td></tr>
+<tr><td>Anti-pseudomonal</td><td>Piperacillin-Tazobactam</td><td><span class="spectrum-tag br">Broad: G+, G-, Pseudomonas, anaerobes</span></td><td class="key-note">Hospital workhorse</td></tr>
+<tr><td>1st gen Ceph</td><td>Cefazolin, Cephalexin</td><td><span class="spectrum-tag gp">MSSA</span><span class="spectrum-tag gp">Strep</span><span class="spectrum-tag gn">some G-</span></td><td class="key-note">Surgical prophylaxis</td></tr>
+<tr><td>2nd gen Ceph</td><td>Cefuroxime</td><td><span class="spectrum-tag gn">H. flu</span><span class="spectrum-tag gn">Moraxella</span></td><td class="key-note">CAP empiric</td></tr>
+<tr><td>3rd gen Ceph</td><td>Ceftriaxone, Cefotaxime</td><td><span class="spectrum-tag gn">Gram- predominant</span>, crosses BBB</td><td class="key-note">Meningitis, gonorrhea</td></tr>
+<tr><td>3rd gen (anti-Pseudomonal)</td><td>Ceftazidime</td><td><span class="spectrum-tag gn">Gram-</span><span class="spectrum-tag ps">Pseudomonas</span></td><td class="key-note">Less G+ than ceftriaxone</td></tr>
+<tr><td>4th gen Ceph</td><td>Cefepime</td><td><span class="spectrum-tag br">Broad: G+, G-, Pseudomonas</span></td><td class="key-note">Febrile neutropenia</td></tr>
+<tr><td>5th gen Ceph</td><td>Ceftaroline</td><td><span class="spectrum-tag gp">MRSA</span><span class="spectrum-tag gn">Gram-</span></td><td class="key-note">Only ceph active vs MRSA</td></tr>
+<tr><td>Carbapenems</td><td>Meropenem, Imipenem</td><td><span class="spectrum-tag br">Broadest: G+, G-, anaerobes, ESBL</span></td><td class="key-note">NOT vs MRSA. Reserve drug</td></tr>
+<tr><td>Monobactam</td><td>Aztreonam</td><td><span class="spectrum-tag gn">Gram- only</span><span class="spectrum-tag ps">Pseudomonas</span></td><td class="key-note">Safe in penicillin allergy</td></tr>
+</table></div>
+</div></div>
+</div>
+
+<div class="card" id="card-others">
+<div class="card-head" onclick="toggleCard(this)">
+<span class="class-dot" style="background:var(--cl-aminoglycoside)"></span>
+<h3>Aminoglycosides</h3>
+<span class="card-chevron">&#9662;</span>
+</div>
+<div class="card-body"><div class="card-inner">
+<div class="table-wrap"><table>
+<tr><th>Examples</th><th>Spectrum</th><th>Key Notes</th></tr>
+<tr><td>Gentamicin, Amikacin</td><td><span class="spectrum-tag gn">Gram- aerobic</span> (synergy with beta-lactam vs Enterococcus)</td><td class="key-note">Nephrotoxic, ototoxic</td></tr>
+</table></div>
+</div></div>
+</div>
+
+<div class="card">
+<div class="card-head" onclick="toggleCard(this)">
+<span class="class-dot" style="background:var(--cl-fq)"></span>
+<h3>Fluoroquinolones</h3>
+<span class="card-chevron">&#9662;</span>
+</div>
+<div class="card-body"><div class="card-inner">
+<div class="table-wrap"><table>
+<tr><th>Examples</th><th>Spectrum</th><th>Key Notes</th></tr>
+<tr><td>Ciprofloxacin</td><td><span class="spectrum-tag gn">Gram-</span><span class="spectrum-tag ps">Pseudomonas</span></td><td class="key-note">Best FQ for Pseudomonas</td></tr>
+<tr><td>Levofloxacin, Moxifloxacin</td><td><span class="spectrum-tag gn">Gram-</span><span class="spectrum-tag gp">Strep</span><span class="spectrum-tag at">Atypicals</span></td><td class="key-note">Tendon rupture, QT prolongation</td></tr>
+</table></div>
+</div></div>
+</div>
+
+<div class="card">
+<div class="card-head" onclick="toggleCard(this)">
+<span class="class-dot" style="background:var(--cl-macrolide)"></span>
+<h3>Macrolides</h3>
+<span class="card-chevron">&#9662;</span>
+</div>
+<div class="card-body"><div class="card-inner">
+<div class="table-wrap"><table>
+<tr><th>Examples</th><th>Spectrum</th><th>Key Notes</th></tr>
+<tr><td>Azithromycin, Clarithromycin</td><td><span class="spectrum-tag at">Mycoplasma</span><span class="spectrum-tag at">Chlamydia</span><span class="spectrum-tag at">Legionella</span><span class="spectrum-tag gp">some G+</span></td><td class="key-note">CAP (atypical cover)</td></tr>
+</table></div>
+</div></div>
+</div>
+
+<div class="card">
+<div class="card-head" onclick="toggleCard(this)">
+<span class="class-dot" style="background:var(--cl-tetracycline)"></span>
+<h3>Tetracyclines</h3>
+<span class="card-chevron">&#9662;</span>
+</div>
+<div class="card-body"><div class="card-inner">
+<div class="table-wrap"><table>
+<tr><th>Examples</th><th>Spectrum</th><th>Key Notes</th></tr>
+<tr><td>Doxycycline</td><td><span class="spectrum-tag at">Atypicals</span><span class="spectrum-tag at">Rickettsia</span><span class="spectrum-tag at">Brucella</span><span class="spectrum-tag at">Chlamydia</span><span class="spectrum-tag at">Lyme</span></td><td class="key-note">Drug of choice for Rickettsial infections</td></tr>
+</table></div>
+</div></div>
+</div>
+
+<div class="card">
+<div class="card-head" onclick="toggleCard(this)">
+<span class="class-dot" style="background:var(--cl-glycopeptide)"></span>
+<h3>Glycopeptides</h3>
+<span class="card-chevron">&#9662;</span>
+</div>
+<div class="card-body"><div class="card-inner">
+<div class="table-wrap"><table>
+<tr><th>Examples</th><th>Spectrum</th><th>Key Notes</th></tr>
+<tr><td>Vancomycin, Teicoplanin</td><td><span class="spectrum-tag gp">MRSA</span><span class="spectrum-tag gp">C. diff (oral)</span><span class="spectrum-tag gp">Enterococcus</span></td><td class="key-note">IV for MRSA, oral for C. diff</td></tr>
+</table></div>
+</div></div>
+</div>
+
+<div class="card">
+<div class="card-head" onclick="toggleCard(this)">
+<span class="class-dot" style="background:var(--cl-linezolid)"></span>
+<h3>Linezolid</h3>
+<span class="card-chevron">&#9662;</span>
+</div>
+<div class="card-body"><div class="card-inner">
+<div class="table-wrap"><table>
+<tr><th>Examples</th><th>Spectrum</th><th>Key Notes</th></tr>
+<tr><td>Linezolid</td><td><span class="spectrum-tag gp">MRSA</span><span class="spectrum-tag gp">VRE</span></td><td class="key-note">Myelosuppression, serotonin syndrome</td></tr>
+</table></div>
+</div></div>
+</div>
+
+<div class="card">
+<div class="card-head" onclick="toggleCard(this)">
+<span class="class-dot" style="background:var(--cl-metro)"></span>
+<h3>Metronidazole</h3>
+<span class="card-chevron">&#9662;</span>
+</div>
+<div class="card-body"><div class="card-inner">
+<div class="table-wrap"><table>
+<tr><th>Examples</th><th>Spectrum</th><th>Key Notes</th></tr>
+<tr><td>Metronidazole</td><td><span class="spectrum-tag an">Anaerobes</span><span class="spectrum-tag at">Giardia</span><span class="spectrum-tag at">Amoeba</span><span class="spectrum-tag gp">C. diff</span></td><td class="key-note">Disulfiram reaction with alcohol</td></tr>
+</table></div>
+</div></div>
+</div>
+
+<div class="card">
+<div class="card-head" onclick="toggleCard(this)">
+<span class="class-dot" style="background:var(--cl-cotri)"></span>
+<h3>Co-trimoxazole (TMP-SMX)</h3>
+<span class="card-chevron">&#9662;</span>
+</div>
+<div class="card-body"><div class="card-inner">
+<div class="table-wrap"><table>
+<tr><th>Examples</th><th>Spectrum</th><th>Key Notes</th></tr>
+<tr><td>TMP-SMX</td><td><span class="spectrum-tag gn">UTI (E. coli)</span><span class="spectrum-tag at">PJP</span><span class="spectrum-tag at">Nocardia</span><span class="spectrum-tag gp">MRSA (mild)</span></td><td class="key-note">Folate antagonist</td></tr>
+</table></div>
+</div></div>
+</div>
+
+<div class="card">
+<div class="card-head" onclick="toggleCard(this)">
+<span class="class-dot" style="background:var(--cl-clinda)"></span>
+<h3>Clindamycin</h3>
+<span class="card-chevron">&#9662;</span>
+</div>
+<div class="card-body"><div class="card-inner">
+<div class="table-wrap"><table>
+<tr><th>Examples</th><th>Spectrum</th><th>Key Notes</th></tr>
+<tr><td>Clindamycin</td><td><span class="spectrum-tag gp">Gram+</span><span class="spectrum-tag an">Anaerobes (above diaphragm)</span></td><td class="key-note">C. diff risk, toxin suppression</td></tr>
+</table></div>
+</div></div>
+</div>
+
+<div class="card">
+<div class="card-head" onclick="toggleCard(this)">
+<span class="class-dot" style="background:var(--cl-nitro)"></span>
+<h3>Nitrofurantoin</h3>
+<span class="card-chevron">&#9662;</span>
+</div>
+<div class="card-body"><div class="card-inner">
+<div class="table-wrap"><table>
+<tr><th>Examples</th><th>Spectrum</th><th>Key Notes</th></tr>
+<tr><td>Nitrofurantoin</td><td><span class="spectrum-tag gn">E. coli</span> (uncomplicated lower UTI only)</td><td class="key-note">Does NOT reach systemic levels</td></tr>
+</table></div>
+</div></div>
+</div>
+
+</div>
+
+<!-- SECTION 2: EMPIRIC THERAPY -->
+<div class="section" id="sec-empiric">
+<div class="emp-card" onclick="this.classList.toggle('highlight')">
+<div class="emp-infection">CAP (outpatient)</div>
+<div class="emp-rx">Amoxicillin +/- Macrolide</div>
+<div class="emp-path">S. pneumoniae, H. flu, atypicals</div>
+</div>
+<div class="emp-card" onclick="this.classList.toggle('highlight')">
+<div class="emp-infection">CAP (inpatient)</div>
+<div class="emp-rx">Ceftriaxone + Azithromycin</div>
+<div class="emp-path">S. pneumoniae, Legionella, atypicals</div>
+</div>
+<div class="emp-card" onclick="this.classList.toggle('highlight')">
+<div class="emp-infection">HAP / VAP</div>
+<div class="emp-rx">Pip-Tazo or Meropenem +/- Vancomycin</div>
+<div class="emp-path">Pseudomonas, MRSA, gram-negatives</div>
+</div>
+<div class="emp-card" onclick="this.classList.toggle('highlight')">
+<div class="emp-infection">Uncomplicated UTI</div>
+<div class="emp-rx">Nitrofurantoin or TMP-SMX</div>
+<div class="emp-path">E. coli</div>
+</div>
+<div class="emp-card" onclick="this.classList.toggle('highlight')">
+<div class="emp-infection">Pyelonephritis</div>
+<div class="emp-rx">Ceftriaxone or Fluoroquinolone</div>
+<div class="emp-path">E. coli, Klebsiella</div>
+</div>
+<div class="emp-card" onclick="this.classList.toggle('highlight')">
+<div class="emp-infection">Bacterial Meningitis (adult)</div>
+<div class="emp-rx">Ceftriaxone + Vancomycin +/- Ampicillin (if >50yr for Listeria)</div>
+<div class="emp-path">S. pneumoniae, N. meningitidis, Listeria</div>
+</div>
+<div class="emp-card" onclick="this.classList.toggle('highlight')">
+<div class="emp-infection">Sepsis (empiric)</div>
+<div class="emp-rx">Pip-Tazo or Meropenem +/- Vancomycin</div>
+<div class="emp-path">Broad coverage pending cultures</div>
+</div>
+<div class="emp-card" onclick="this.classList.toggle('highlight')">
+<div class="emp-infection">Cellulitis (non-purulent)</div>
+<div class="emp-rx">Cefazolin or Flucloxacillin</div>
+<div class="emp-path">Strep, MSSA</div>
+</div>
+<div class="emp-card" onclick="this.classList.toggle('highlight')">
+<div class="emp-infection">Cellulitis (purulent / MRSA risk)</div>
+<div class="emp-rx">Vancomycin or TMP-SMX + Doxycycline</div>
+<div class="emp-path">MRSA</div>
+</div>
+<div class="emp-card" onclick="this.classList.toggle('highlight')">
+<div class="emp-infection">Infective Endocarditis (empiric)</div>
+<div class="emp-rx">Vancomycin + Gentamicin</div>
+<div class="emp-path">Staph, Strep, Enterococcus</div>
+</div>
+<div class="emp-card" onclick="this.classList.toggle('highlight')">
+<div class="emp-infection">Intra-abdominal</div>
+<div class="emp-rx">Pip-Tazo or Meropenem + Metronidazole</div>
+<div class="emp-path">Gram-negatives, anaerobes, Enterococcus</div>
+</div>
+</div>
+
+<!-- SECTION 3: RESISTANCE -->
+<div class="section" id="sec-resistance">
+
+<div class="res-card">
+<div class="res-head" onclick="toggleRes(this)">
+<h3>MRSA</h3>
+<span class="res-badge">mecA</span>
+<span class="card-chevron">&#9662;</span>
+</div>
+<div class="res-body"><div class="res-inner">
+<div class="res-row"><span class="res-label">Mechanism</span><span class="res-val">mecA gene &#8594; altered PBP2a &#8594; beta-lactam resistance</span></div>
+<div class="res-row"><span class="res-label">Treatment</span><span class="res-val" style="color:var(--success)">Vancomycin, Linezolid, Daptomycin, Ceftaroline</span></div>
+</div></div>
+</div>
+
+<div class="res-card">
+<div class="res-head" onclick="toggleRes(this)">
+<h3>ESBL-producing Gram-negatives</h3>
+<span class="res-badge">ESBL</span>
+<span class="card-chevron">&#9662;</span>
+</div>
+<div class="res-body"><div class="res-inner">
+<div class="res-row"><span class="res-label">Mechanism</span><span class="res-val">Extended-spectrum beta-lactamases &#8594; resist 3rd gen cephalosporins</span></div>
+<div class="res-row"><span class="res-label">Treatment</span><span class="res-val" style="color:var(--success)">Carbapenems</span></div>
+</div></div>
+</div>
+
+<div class="res-card">
+<div class="res-head" onclick="toggleRes(this)">
+<h3>CRE (Carbapenem-resistant Enterobacteriaceae)</h3>
+<span class="res-badge">KPC/NDM/OXA</span>
+<span class="card-chevron">&#9662;</span>
+</div>
+<div class="res-body"><div class="res-inner">
+<div class="res-row"><span class="res-label">Mechanism</span><span class="res-val">Carbapenemases (KPC, NDM, OXA)</span></div>
+<div class="res-row"><span class="res-label">Treatment</span><span class="res-val" style="color:var(--success)">Ceftazidime-avibactam, Colistin, Tigecycline</span></div>
+</div></div>
+</div>
+
+<div class="res-card">
+<div class="res-head" onclick="toggleRes(this)">
+<h3>VRE (Vancomycin-resistant Enterococcus)</h3>
+<span class="res-badge">vanA/vanB</span>
+<span class="card-chevron">&#9662;</span>
+</div>
+<div class="res-body"><div class="res-inner">
+<div class="res-row"><span class="res-label">Mechanism</span><span class="res-val">vanA/vanB genes &#8594; altered D-Ala-D-Ala target</span></div>
+<div class="res-row"><span class="res-label">Treatment</span><span class="res-val" style="color:var(--success)">Linezolid, Daptomycin</span></div>
+</div></div>
+</div>
+
+<div class="res-card">
+<div class="res-head" onclick="toggleRes(this)">
+<h3>MDR-TB</h3>
+<span class="res-badge">INH+RIF resistant</span>
+<span class="card-chevron">&#9662;</span>
+</div>
+<div class="res-body"><div class="res-inner">
+<div class="res-row"><span class="res-label">Mechanism</span><span class="res-val">Resistant to Isoniazid + Rifampicin</span></div>
+<div class="res-row"><span class="res-label">Treatment</span><span class="res-val" style="color:var(--success)">Bedaquiline, Linezolid, Fluoroquinolone, Clofazimine</span></div>
+</div></div>
+</div>
+
+<div class="res-card">
+<div class="res-head" onclick="toggleRes(this)">
+<h3>MDR Pseudomonas</h3>
+<span class="res-badge">Multi-mechanism</span>
+<span class="card-chevron">&#9662;</span>
+</div>
+<div class="res-body"><div class="res-inner">
+<div class="res-row"><span class="res-label">Mechanism</span><span class="res-val">Efflux pumps, porin loss, AmpC beta-lactamase</span></div>
+<div class="res-row"><span class="res-label">Treatment</span><span class="res-val" style="color:var(--success)">Colistin, Ceftolozane-tazobactam</span></div>
+</div></div>
+</div>
+
+</div>
+
+<!-- SECTION 4: ANTI-TB -->
+<div class="section" id="sec-tb">
+
+<div class="card open">
+<div class="card-head" style="cursor:default">
+<h3>Standard Regimen: 2HRZE / 4HR</h3>
+</div>
+<div class="card-body" style="max-height:none"><div class="card-inner">
+<div class="tb-phase">
+<h4>Intensive Phase (2 months) -- HRZE</h4>
+</div>
+<div class="tb-phase">
+<h4>Continuation Phase (4 months) -- HR</h4>
+</div>
+</div></div>
+</div>
+
+<div class="card open">
+<div class="card-head" style="cursor:default">
+<h3>Drug Details</h3>
+</div>
+<div class="card-body" style="max-height:none"><div class="card-inner">
+
+<div class="table-wrap"><table>
+<tr><th>Drug</th><th>Mechanism</th><th>Side Effects</th></tr>
+<tr><td style="color:var(--cl-tb)">Isoniazid (H)</td><td>Inhibits mycolic acid synthesis</td><td class="key-note">Hepatotoxic, peripheral neuropathy (prevent with B6), SLE-like</td></tr>
+<tr><td style="color:var(--cl-tb)">Rifampicin (R)</td><td>Inhibits RNA polymerase</td><td class="key-note">Hepatotoxic, orange body fluids, CYP450 inducer</td></tr>
+<tr><td style="color:var(--cl-tb)">Pyrazinamide (Z)</td><td>Disrupts membrane (acidic pH)</td><td class="key-note">Hepatotoxic, hyperuricemia</td></tr>
+<tr><td style="color:var(--cl-tb)">Ethambutol (E)</td><td>Inhibits arabinosyl transferase</td><td class="key-note">Optic neuritis (red-green color blindness)</td></tr>
+<tr><td style="color:var(--cl-tb)">Streptomycin</td><td>Aminoglycoside (30S ribosome)</td><td class="key-note">Ototoxic, nephrotoxic</td></tr>
+</table></div>
+
+</div></div>
+</div>
+
+</div>
+
+<!-- SECTION 5: QUICK DRILL -->
+<div class="section" id="sec-drill">
+
+<div class="score-bar">
+<span class="score-text">Revealed:</span>
+<span class="score-count" id="drill-score">0</span>
+<span class="score-text">/ 10</span>
+<button class="score-reset" onclick="resetDrill()">Reset</button>
+</div>
+
+<div class="drill-card">
+<div class="drill-q" onclick="revealDrill(this)">
+<span class="drill-num">1</span>
+<span class="drill-text">Gram-positive cocci in clusters, methicillin-resistant</span>
+</div>
+<div class="drill-reveal"><div class="drill-answer">Vancomycin (or Linezolid)</div></div>
+</div>
+
+<div class="drill-card">
+<div class="drill-q" onclick="revealDrill(this)">
+<span class="drill-num">2</span>
+<span class="drill-text">Young adult with CAP, outpatient</span>
+</div>
+<div class="drill-reveal"><div class="drill-answer">Amoxicillin + Azithromycin</div></div>
+</div>
+
+<div class="drill-card">
+<div class="drill-q" onclick="revealDrill(this)">
+<span class="drill-num">3</span>
+<span class="drill-text">Gram-negative rod, ESBL-producing, UTI</span>
+</div>
+<div class="drill-reveal"><div class="drill-answer">Meropenem</div></div>
+</div>
+
+<div class="drill-card">
+<div class="drill-q" onclick="revealDrill(this)">
+<span class="drill-num">4</span>
+<span class="drill-text">Meningitis in a 65-year-old</span>
+</div>
+<div class="drill-reveal"><div class="drill-answer">Ceftriaxone + Vancomycin + Ampicillin (Listeria cover)</div></div>
+</div>
+
+<div class="drill-card">
+<div class="drill-q" onclick="revealDrill(this)">
+<span class="drill-num">5</span>
+<span class="drill-text">Rickettsial infection (scrub typhus)</span>
+</div>
+<div class="drill-reveal"><div class="drill-answer">Doxycycline</div></div>
+</div>
+
+<div class="drill-card">
+<div class="drill-q" onclick="revealDrill(this)">
+<span class="drill-num">6</span>
+<span class="drill-text">C. difficile infection, first episode</span>
+</div>
+<div class="drill-reveal"><div class="drill-answer">Oral Vancomycin (or Fidaxomicin)</div></div>
+</div>
+
+<div class="drill-card">
+<div class="drill-q" onclick="revealDrill(this)">
+<span class="drill-num">7</span>
+<span class="drill-text">Patient on isoniazid develops peripheral neuropathy</span>
+</div>
+<div class="drill-reveal"><div class="drill-answer">Pyridoxine (B6) deficiency</div></div>
+</div>
+
+<div class="drill-card">
+<div class="drill-q" onclick="revealDrill(this)">
+<span class="drill-num">8</span>
+<span class="drill-text">Febrile neutropenia</span>
+</div>
+<div class="drill-reveal"><div class="drill-answer">Cefepime or Pip-Tazo or Meropenem</div></div>
+</div>
+
+<div class="drill-card">
+<div class="drill-q" onclick="revealDrill(this)">
+<span class="drill-num">9</span>
+<span class="drill-text">Post-splenectomy patient with fulminant sepsis</span>
+</div>
+<div class="drill-reveal"><div class="drill-answer">Ceftriaxone (encapsulated organisms: S. pneumoniae, H. flu, N. meningitidis)</div></div>
+</div>
+
+<div class="drill-card">
+<div class="drill-q" onclick="revealDrill(this)">
+<span class="drill-num">10</span>
+<span class="drill-text">Patient on rifampicin, OCP failure</span>
+</div>
+<div class="drill-reveal"><div class="drill-answer">CYP450 induction by rifampicin</div></div>
+</div>
+
+</div>
+
+</div>
+
+<script>
+// Tab switching
+document.getElementById('tabs').addEventListener('click',function(e){
+  var btn=e.target.closest('.tab-btn');
+  if(!btn)return;
+  document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active')});
+  btn.classList.add('active');
+  document.querySelectorAll('.section').forEach(function(s){s.classList.remove('active')});
+  document.getElementById('sec-'+btn.dataset.tab).classList.add('active');
+});
+
+// Expandable cards
+function toggleCard(el){
+  el.closest('.card').classList.toggle('open');
+}
+
+// Resistance cards
+function toggleRes(el){
+  el.closest('.res-card').classList.toggle('open');
+}
+
+// Drill reveal
+var drillCount=0;
+function revealDrill(el){
+  var card=el.closest('.drill-card');
+  if(!card.classList.contains('open')){
+    card.classList.add('open');
+    drillCount++;
+    document.getElementById('drill-score').textContent=drillCount;
+  }
+}
+function resetDrill(){
+  drillCount=0;
+  document.getElementById('drill-score').textContent='0';
+  document.querySelectorAll('.drill-card').forEach(function(c){c.classList.remove('open')});
+}
+</script>
+</body>
+</html>

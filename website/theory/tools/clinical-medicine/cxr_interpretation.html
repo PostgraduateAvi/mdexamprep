@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CXR Interpretation | MBBEasy</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0a0e17;--bg2:#111827;--bg3:#1e2536;--text:#eef0f6;--text2:#9ca3af;--accent:#818cf8;--accent2:#c084fc;--success:#34d399;--warn:#fbbf24;--danger:#f87171;--border:#2d3548;--radius:10px}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+a{color:var(--accent);text-decoration:none}
+
+.container{max-width:860px;margin:0 auto;padding:16px}
+
+.header{text-align:center;padding:32px 0 24px}
+.header h1{font-size:1.75rem;font-weight:700;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.header p{color:var(--text2);font-size:.9rem;margin-top:4px}
+.badge{display:inline-block;background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:4px 12px;font-size:.75rem;color:var(--accent);margin-top:8px}
+
+.tabs{display:flex;gap:4px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px;margin-bottom:24px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab-btn{flex-shrink:0;padding:10px 16px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg2);color:var(--text2);font-size:.85rem;font-weight:500;cursor:pointer;transition:all .2s;-webkit-tap-highlight-color:transparent}
+.tab-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+.section{display:none}
+.section.active{display:block}
+
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px}
+.card h3{font-size:1.05rem;margin-bottom:8px;color:var(--accent)}
+
+/* Progress bar */
+.progress-bar{background:var(--bg3);border-radius:20px;height:8px;margin-bottom:20px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--success));border-radius:20px;transition:width .3s;width:0}
+.progress-label{font-size:.8rem;color:var(--text2);margin-bottom:6px;text-align:right}
+
+/* Steps */
+.step{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+.step.checked{border-color:var(--success)}
+.step-header{display:flex;align-items:center;gap:12px;padding:16px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.step-number{width:40px;height:40px;border-radius:50%;background:var(--bg3);border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;color:var(--accent);flex-shrink:0;transition:all .2s}
+.step.checked .step-number{background:var(--success);border-color:var(--success);color:#fff}
+.step-title{font-weight:600;font-size:1rem;flex:1}
+.step-letter{color:var(--accent2);font-size:.8rem;margin-top:2px}
+.step-chevron{color:var(--text2);transition:transform .2s;font-size:1.2rem}
+.step.open .step-chevron{transform:rotate(180deg)}
+.step-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.step.open .step-body{max-height:2000px}
+.step-content{padding:0 16px 16px;color:var(--text2);font-size:.9rem;line-height:1.7}
+.step-content strong{color:var(--text)}
+.step-content .val{color:var(--accent);font-weight:600}
+.step-content .warn-val{color:var(--warn);font-weight:600}
+.step-content .danger-val{color:var(--danger);font-weight:600}
+
+.sub-item{background:var(--bg3);border-radius:8px;padding:10px 14px;margin:6px 0;font-size:.85rem}
+.sub-item strong{color:var(--text)}
+
+.check-row{display:flex;align-items:center;gap:10px;padding:8px 0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.check-box{width:22px;height:22px;border-radius:6px;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s;font-size:.8rem;color:transparent}
+.check-row.done .check-box{background:var(--success);border-color:var(--success);color:#fff}
+
+/* Pattern cards */
+.pattern-grid{display:grid;gap:12px}
+.pattern-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:border-color .2s}
+.pattern-card:hover,.pattern-card.flipped{border-color:var(--accent)}
+.pattern-front{padding:16px}
+.pattern-name{font-weight:700;font-size:1rem;color:var(--accent);margin-bottom:6px}
+.pattern-features{font-size:.88rem;color:var(--text2);line-height:1.5}
+.pattern-back{max-height:0;overflow:hidden;transition:max-height .3s;background:var(--bg3)}
+.pattern-card.flipped .pattern-back{max-height:300px}
+.pattern-detail{padding:14px 16px;font-size:.88rem;color:var(--success);line-height:1.5}
+.pattern-detail span{display:block;font-size:.75rem;color:var(--text2);margin-bottom:2px;text-transform:uppercase;letter-spacing:.5px}
+.tap-hint{font-size:.75rem;color:var(--text2);text-align:right;padding-right:4px;margin-bottom:8px}
+
+/* Color tags */
+.tag{display:inline-block;padding:2px 8px;border-radius:12px;font-size:.72rem;font-weight:600;margin-right:4px}
+.tag-consolidation{background:rgba(251,191,36,.15);color:var(--warn)}
+.tag-interstitial{background:rgba(129,140,248,.15);color:var(--accent)}
+.tag-lucent{background:rgba(52,211,153,.15);color:var(--success)}
+.tag-cardiac{background:rgba(248,113,113,.15);color:var(--danger)}
+.tag-nodular{background:rgba(192,132,252,.15);color:var(--accent2)}
+.tag-effusion{background:rgba(96,165,250,.15);color:#60a5fa}
+.tag-other{background:rgba(156,163,175,.15);color:var(--text2)}
+
+/* Table cards */
+.table-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:12px}
+.table-row{display:grid;grid-template-columns:1fr 2fr;gap:0;border-bottom:1px solid var(--border);font-size:.88rem}
+.table-row:last-child{border-bottom:none}
+.table-row.header-row{background:var(--bg3)}
+.table-row.header-row .table-cell{color:var(--accent);font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:.5px}
+.table-cell{padding:12px 14px;line-height:1.5}
+.table-cell:first-child{border-right:1px solid var(--border);color:var(--text);font-weight:600}
+.table-cell:last-child{color:var(--text2)}
+.table-row-3{display:grid;grid-template-columns:1fr 1.5fr .8fr;gap:0;border-bottom:1px solid var(--border);font-size:.85rem}
+.table-row-3:last-child{border-bottom:none}
+.table-row-3.header-row{background:var(--bg3)}
+.table-row-3.header-row .table-cell{color:var(--accent);font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:.5px}
+.table-row-3 .table-cell{padding:10px 12px;border-right:1px solid var(--border)}
+.table-row-3 .table-cell:last-child{border-right:none}
+
+/* Drill */
+.drill-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:18px;margin-bottom:12px;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:border-color .2s}
+.drill-card.revealed{border-color:var(--success)}
+.drill-q{font-size:.95rem;color:var(--text);line-height:1.6;margin-bottom:4px}
+.drill-q .q-num{color:var(--accent);font-weight:700;margin-right:6px}
+.drill-hint{font-size:.8rem;color:var(--text2);font-style:italic}
+.drill-answer{max-height:0;overflow:hidden;transition:max-height .3s}
+.drill-card.revealed .drill-answer{max-height:120px}
+.drill-answer-inner{padding-top:12px;border-top:1px solid var(--border);margin-top:12px;color:var(--success);font-weight:600;font-size:.95rem}
+
+/* Silhouette card */
+.highlight-card{background:var(--bg2);border:1px solid var(--accent);border-radius:var(--radius);padding:18px;margin-bottom:16px}
+.highlight-card h4{color:var(--accent);font-size:.95rem;margin-bottom:10px}
+.highlight-card ul{list-style:none;padding:0}
+.highlight-card li{padding:6px 0;font-size:.88rem;color:var(--text2);border-bottom:1px solid var(--border)}
+.highlight-card li:last-child{border-bottom:none}
+.highlight-card li strong{color:var(--text)}
+
+/* Score bar */
+.score-bar{display:flex;justify-content:space-between;align-items:center;background:var(--bg3);border-radius:var(--radius);padding:12px 16px;margin-bottom:16px}
+.score-text{font-size:.9rem;color:var(--text2)}
+.score-text strong{color:var(--success)}
+.reset-btn{padding:6px 14px;border-radius:8px;border:1px solid var(--border);background:var(--bg2);color:var(--text2);font-size:.8rem;cursor:pointer;transition:all .2s}
+.reset-btn:hover{border-color:var(--danger);color:var(--danger)}
+
+/* Back link */
+.back-link{display:inline-flex;align-items:center;gap:6px;color:var(--text2);font-size:.85rem;margin-bottom:16px;padding:8px 0;min-height:48px}
+.back-link:hover{color:var(--accent)}
+
+@media(max-width:600px){
+  .header h1{font-size:1.4rem}
+  .tab-btn{padding:8px 12px;font-size:.8rem}
+  .table-row{grid-template-columns:1fr 1.5fr}
+  .table-row-3{grid-template-columns:1fr 1.2fr .7fr;font-size:.8rem}
+  .table-row-3 .table-cell{padding:8px 10px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../../learn/" class="back-link">&#8592; Back to Learn</a>
+
+<div class="header">
+<h1>CXR Interpretation</h1>
+<p>Systematic Approach to Chest X-Ray Reading</p>
+<div class="badge">Harrison's Ch. 262</div>
+</div>
+
+<div class="tabs">
+<button class="tab-btn active" onclick="showTab(0)">ABCDE</button>
+<button class="tab-btn" onclick="showTab(1)">Patterns</button>
+<button class="tab-btn" onclick="showTab(2)">Collapse</button>
+<button class="tab-btn" onclick="showTab(3)">Diseases</button>
+<button class="tab-btn" onclick="showTab(4)">Quick Drill</button>
+</div>
+
+<!-- Section 0: ABCDE -->
+<div class="section active" id="sec-0">
+<div class="progress-label"><span id="prog-text">0 / 5 complete</span></div>
+<div class="progress-bar"><div class="progress-fill" id="prog-fill"></div></div>
+
+<div class="step" data-step="0">
+<div class="step-header" onclick="toggleStep(this)">
+<div class="step-number">A</div>
+<div style="flex:1"><div class="step-title">Airway & Apparatus</div><div class="step-letter">Technical quality, tubes, trachea</div></div>
+<div class="step-chevron">&#9662;</div>
+</div>
+<div class="step-body"><div class="step-content">
+<div class="check-row" onclick="toggleCheck(this)"><div class="check-box">&#10003;</div><div><strong>Trachea</strong> — Midline?</div></div>
+<div class="sub-item">Deviation <span class="danger-val">away</span> = tension pneumothorax, large effusion<br>Deviation <span class="warn-val">toward</span> = lung collapse, post-pneumonectomy, fibrosis</div>
+
+<div class="check-row" onclick="toggleCheck(this)"><div class="check-box">&#10003;</div><div><strong>ETT position</strong> — Tip <span class="val">2-4 cm above carina</span></div></div>
+
+<div class="check-row" onclick="toggleCheck(this)"><div class="check-box">&#10003;</div><div><strong>Lines & tubes</strong> — CVP, NG, chest drain positions</div></div>
+<div class="sub-item">CVP tip in SVC. NG below diaphragm. Chest drain in pleural space.</div>
+
+<div class="check-row" onclick="toggleCheck(this)"><div class="check-box">&#10003;</div><div><strong>Technical quality</strong></div></div>
+<div class="sub-item">
+<strong>PA vs AP</strong> — AP magnifies heart (portable films are AP)<br>
+<strong>Rotation</strong> — Spinous processes midline between clavicular heads<br>
+<strong>Inspiration</strong> — <span class="val">6 anterior ribs</span> visible = adequate
+</div>
+</div></div>
+</div>
+
+<div class="step" data-step="1">
+<div class="step-header" onclick="toggleStep(this)">
+<div class="step-number">B</div>
+<div style="flex:1"><div class="step-title">Bones & Soft Tissues</div><div class="step-letter">Ribs, spine, subcutaneous tissues</div></div>
+<div class="step-chevron">&#9662;</div>
+</div>
+<div class="step-body"><div class="step-content">
+<div class="check-row" onclick="toggleCheck(this)"><div class="check-box">&#10003;</div><div><strong>Rib fractures</strong></div></div>
+<div class="sub-item"><span class="danger-val">1st-3rd rib fractures</span> = high-energy trauma (check for aortic injury)<br>Lytic lesions = metastases<br>Rib notching = <span class="val">coarctation of aorta</span></div>
+
+<div class="check-row" onclick="toggleCheck(this)"><div class="check-box">&#10003;</div><div><strong>Spine</strong> — Vertebral body height, compression fractures</div></div>
+
+<div class="check-row" onclick="toggleCheck(this)"><div class="check-box">&#10003;</div><div><strong>Soft tissues</strong></div></div>
+<div class="sub-item">Subcutaneous emphysema (crepitus, air tracking)<br>Absent breast shadow = mastectomy</div>
+</div></div>
+</div>
+
+<div class="step" data-step="2">
+<div class="step-header" onclick="toggleStep(this)">
+<div class="step-number">C</div>
+<div style="flex:1"><div class="step-title">Cardiac</div><div class="step-letter">Heart size, silhouette, specific signs</div></div>
+<div class="step-chevron">&#9662;</div>
+</div>
+<div class="step-body"><div class="step-content">
+<div class="check-row" onclick="toggleCheck(this)"><div class="check-box">&#10003;</div><div><strong>Cardiothoracic ratio</strong> — Normal <span class="val">&lt;50%</span> on PA film</div></div>
+<div class="sub-item">&gt;50% = <span class="danger-val">cardiomegaly</span> (only valid on PA, not AP)</div>
+
+<div class="check-row" onclick="toggleCheck(this)"><div class="check-box">&#10003;</div><div><strong>Cardiac borders</strong></div></div>
+<div class="sub-item">
+Right heart border = <span class="val">Right atrium</span><br>
+Left heart border = <span class="val">Left ventricle</span><br>
+Upper left border = <span class="val">LA appendage / Pulmonary artery</span>
+</div>
+
+<div class="check-row" onclick="toggleCheck(this)"><div class="check-box">&#10003;</div><div><strong>Specific shapes</strong></div></div>
+<div class="sub-item">
+<span class="val">Boot-shaped</span> = RVH / Tetralogy of Fallot<br>
+<span class="val">Water-bottle</span> = Pericardial effusion<br>
+<span class="val">Globular</span> = Dilated cardiomyopathy
+</div>
+</div></div>
+</div>
+
+<div class="step" data-step="3">
+<div class="step-header" onclick="toggleStep(this)">
+<div class="step-number">D</div>
+<div style="flex:1"><div class="step-title">Diaphragm</div><div class="step-letter">Position, shape, free air, CP angles</div></div>
+<div class="step-chevron">&#9662;</div>
+</div>
+<div class="step-body"><div class="step-content">
+<div class="check-row" onclick="toggleCheck(this)"><div class="check-box">&#10003;</div><div><strong>Position</strong> — Right slightly higher than left (liver)</div></div>
+
+<div class="check-row" onclick="toggleCheck(this)"><div class="check-box">&#10003;</div><div><strong>Shape</strong></div></div>
+<div class="sub-item">
+<span class="val">Flattened</span> = hyperinflation (COPD/emphysema)<br>
+<span class="warn-val">Elevated</span> = phrenic nerve palsy, hepatomegaly, subphrenic abscess
+</div>
+
+<div class="check-row" onclick="toggleCheck(this)"><div class="check-box">&#10003;</div><div><strong>Free air under diaphragm</strong></div></div>
+<div class="sub-item"><span class="danger-val">Pneumoperitoneum</span> = bowel perforation (surgical emergency)</div>
+
+<div class="check-row" onclick="toggleCheck(this)"><div class="check-box">&#10003;</div><div><strong>Costophrenic angles</strong></div></div>
+<div class="sub-item">Blunting = effusion (<span class="val">&gt;200 ml</span> needed to blunt on PA film)</div>
+</div></div>
+</div>
+
+<div class="step" data-step="4">
+<div class="step-header" onclick="toggleStep(this)">
+<div class="step-number">E</div>
+<div style="flex:1"><div class="step-title">Edges & Lung Fields</div><div class="step-letter">Zones, hila, systematic comparison</div></div>
+<div class="step-chevron">&#9662;</div>
+</div>
+<div class="step-body"><div class="step-content">
+<div class="check-row" onclick="toggleCheck(this)"><div class="check-box">&#10003;</div><div><strong>Lung zones</strong> — Upper, mid, lower</div></div>
+<div class="sub-item">Zones ≠ lobes (zones are CXR-specific divisions)<br>Compare right to left systematically</div>
+
+<div class="check-row" onclick="toggleCheck(this)"><div class="check-box">&#10003;</div><div><strong>Hidden areas</strong></div></div>
+<div class="sub-item">Behind heart, behind diaphragm, apices, periphery — commonly missed pathology</div>
+
+<div class="check-row" onclick="toggleCheck(this)"><div class="check-box">&#10003;</div><div><strong>Hilar regions</strong></div></div>
+<div class="sub-item">
+Lymphadenopathy = <span class="val">sarcoidosis, lymphoma, TB</span><br>
+Hilar prominence = pulmonary hypertension
+</div>
+</div></div>
+</div>
+</div>
+
+<!-- Section 1: Patterns -->
+<div class="section" id="sec-1">
+<p class="tap-hint">Tap a card to reveal causes</p>
+<div class="pattern-grid">
+<div class="pattern-card" onclick="this.classList.toggle('flipped')">
+<div class="pattern-front">
+<div class="pattern-name"><span class="tag tag-consolidation">Opacification</span> Consolidation</div>
+<div class="pattern-features">Homogeneous opacity, air bronchograms, lobar/segmental distribution</div>
+</div>
+<div class="pattern-back"><div class="pattern-detail"><span>Common Causes</span>Pneumonia (bacterial), pulmonary hemorrhage, organizing pneumonia</div></div>
+</div>
+
+<div class="pattern-card" onclick="this.classList.toggle('flipped')">
+<div class="pattern-front">
+<div class="pattern-name"><span class="tag tag-interstitial">Interstitial</span> Ground-Glass Opacity</div>
+<div class="pattern-features">Hazy increased density — vessels still visible through the opacity</div>
+</div>
+<div class="pattern-back"><div class="pattern-detail"><span>Common Causes</span>Viral pneumonia (COVID-19), PJP, pulmonary edema, interstitial lung disease</div></div>
+</div>
+
+<div class="pattern-card" onclick="this.classList.toggle('flipped')">
+<div class="pattern-front">
+<div class="pattern-name"><span class="tag tag-interstitial">Interstitial</span> Reticular (Interstitial)</div>
+<div class="pattern-features">Fine net-like lines throughout lung fields</div>
+</div>
+<div class="pattern-back"><div class="pattern-detail"><span>Common Causes</span>ILD (IPF), pulmonary edema (Kerley B lines), lymphangitis carcinomatosa</div></div>
+</div>
+
+<div class="pattern-card" onclick="this.classList.toggle('flipped')">
+<div class="pattern-front">
+<div class="pattern-name"><span class="tag tag-nodular">Nodular</span> Nodular Pattern</div>
+<div class="pattern-features">Discrete round opacities of varying sizes</div>
+</div>
+<div class="pattern-back"><div class="pattern-detail"><span>Common Causes</span>Miliary TB (&lt;3mm), metastases (cannonball), sarcoidosis, silicosis</div></div>
+</div>
+
+<div class="pattern-card" onclick="this.classList.toggle('flipped')">
+<div class="pattern-front">
+<div class="pattern-name"><span class="tag tag-lucent">Lucency</span> Ring Shadow / Cavity</div>
+<div class="pattern-features">Round lucency with visible wall — thin or thick walled</div>
+</div>
+<div class="pattern-back"><div class="pattern-detail"><span>Common Causes</span>TB (upper lobe), lung abscess (thick wall + air-fluid level), cavitating carcinoma, granulomatosis with polyangiitis (Wegener's)</div></div>
+</div>
+
+<div class="pattern-card" onclick="this.classList.toggle('flipped')">
+<div class="pattern-front">
+<div class="pattern-name"><span class="tag tag-consolidation">Opacification</span> White-Out (Complete Opacification)</div>
+<div class="pattern-features">Complete hemithorax opacity — check mediastinal position!</div>
+</div>
+<div class="pattern-back"><div class="pattern-detail"><span>Key Distinction</span>Mediastinum shifted <strong style="color:var(--danger)">away</strong> = massive effusion<br>Mediastinum shifted <strong style="color:var(--warn)">toward</strong> = lung collapse<br>Midline = post-pneumonectomy</div></div>
+</div>
+
+<div class="pattern-card" onclick="this.classList.toggle('flipped')">
+<div class="pattern-front">
+<div class="pattern-name"><span class="tag tag-lucent">Lucency</span> Hyperlucent Lung</div>
+<div class="pattern-features">Increased blackness, fewer vascular markings than opposite side</div>
+</div>
+<div class="pattern-back"><div class="pattern-detail"><span>Common Causes</span>Pneumothorax, emphysema, compensatory hyperinflation, Swyer-James syndrome</div></div>
+</div>
+
+<div class="pattern-card" onclick="this.classList.toggle('flipped')">
+<div class="pattern-front">
+<div class="pattern-name"><span class="tag tag-effusion">Fluid</span> Air-Fluid Level</div>
+<div class="pattern-features">Horizontal line (gravity-dependent) within a cavity or pleural space</div>
+</div>
+<div class="pattern-back"><div class="pattern-detail"><span>Common Causes</span>Lung abscess, hydropneumothorax, empyema with bronchopleural fistula</div></div>
+</div>
+
+<div class="pattern-card" onclick="this.classList.toggle('flipped')">
+<div class="pattern-front">
+<div class="pattern-name"><span class="tag tag-other">Hilar</span> Bilateral Hilar Lymphadenopathy</div>
+<div class="pattern-features">Prominent bilateral hila — symmetrical or asymmetrical enlargement</div>
+</div>
+<div class="pattern-back"><div class="pattern-detail"><span>Common Causes</span>Sarcoidosis (bilateral symmetric), lymphoma, metastatic disease</div></div>
+</div>
+
+<div class="pattern-card" onclick="this.classList.toggle('flipped')">
+<div class="pattern-front">
+<div class="pattern-name"><span class="tag tag-interstitial">Interstitial</span> Kerley B Lines</div>
+<div class="pattern-features">Short horizontal lines at periphery, near costophrenic angles (1-2 cm)</div>
+</div>
+<div class="pattern-back"><div class="pattern-detail"><span>Common Causes</span>Pulmonary edema (heart failure) — thickened interlobular septa<br>Lymphangitis carcinomatosa</div></div>
+</div>
+</div>
+</div>
+
+<!-- Section 2: Lobar Collapse -->
+<div class="section" id="sec-2">
+<div class="card"><h3>Lobar Collapse Signs</h3></div>
+
+<div class="table-card">
+<div class="table-row header-row"><div class="table-cell">Lobe</div><div class="table-cell">CXR Sign</div></div>
+<div class="table-row"><div class="table-cell">RUL collapse</div><div class="table-cell">Elevated minor fissure, tracheal deviation to right</div></div>
+<div class="table-row"><div class="table-cell">RML collapse</div><div class="table-cell">Loss of right heart border (silhouette sign), triangular opacity on lateral</div></div>
+<div class="table-row"><div class="table-cell">RLL collapse</div><div class="table-cell">Loss of right hemidiaphragm, triangular retrocardiac opacity</div></div>
+<div class="table-row"><div class="table-cell">LUL collapse</div><div class="table-cell">Veil sign (hazy left hemithorax), elevated left hilum</div></div>
+<div class="table-row"><div class="table-cell">LLL collapse</div><div class="table-cell">Loss of left hemidiaphragm, sail sign behind heart</div></div>
+</div>
+
+<div class="highlight-card">
+<h4>Silhouette Sign</h4>
+<p style="font-size:.88rem;color:var(--text2);margin-bottom:12px">Loss of a normally visible border means pathology is in the <strong style="color:var(--text)">same anatomical plane</strong> as that structure.</p>
+<ul>
+<li><strong>Lost right heart border</strong> &#8594; RML pathology</li>
+<li><strong>Lost left heart border</strong> &#8594; Lingula pathology</li>
+<li><strong>Lost right hemidiaphragm</strong> &#8594; RLL pathology</li>
+<li><strong>Lost left hemidiaphragm</strong> &#8594; LLL pathology</li>
+</ul>
+</div>
+</div>
+
+<!-- Section 3: Disease patterns -->
+<div class="section" id="sec-3">
+<div class="table-card">
+<div class="table-row-3 header-row"><div class="table-cell">Disease</div><div class="table-cell">Classic CXR Finding</div><div class="table-cell">Zone</div></div>
+<div class="table-row-3"><div class="table-cell">Lobar pneumonia</div><div class="table-cell">Homogeneous consolidation with air bronchograms</div><div class="table-cell">Any lobe</div></div>
+<div class="table-row-3"><div class="table-cell">TB (primary)</div><div class="table-cell">Ghon focus (mid-zone) + hilar lymphadenopathy = Ghon complex</div><div class="table-cell">Mid-zone</div></div>
+<div class="table-row-3"><div class="table-cell">TB (reactivation)</div><div class="table-cell">Cavitation, fibrosis, calcification</div><div class="table-cell" style="color:var(--warn)">Upper zone</div></div>
+<div class="table-row-3"><div class="table-cell">Miliary TB</div><div class="table-cell">Tiny (1-3mm) uniform nodules throughout both lungs</div><div class="table-cell">Diffuse</div></div>
+<div class="table-row-3"><div class="table-cell">Lung cancer</div><div class="table-cell">Hilar mass, collapse, effusion, rib erosion</div><div class="table-cell">Any</div></div>
+<div class="table-row-3"><div class="table-cell">Pleural effusion</div><div class="table-cell">Meniscus sign, blunted CP angle, white-out if massive</div><div class="table-cell">Dependent</div></div>
+<div class="table-row-3"><div class="table-cell">Pneumothorax</div><div class="table-cell">Visceral pleural line, absent lung markings beyond</div><div class="table-cell">Apex (upright)</div></div>
+<div class="table-row-3"><div class="table-cell">Tension pneumothorax</div><div class="table-cell" style="color:var(--danger)">Pneumothorax + mediastinal shift away + flattened diaphragm</div><div class="table-cell">&#8212;</div></div>
+<div class="table-row-3"><div class="table-cell">COPD / Emphysema</div><div class="table-cell">Hyperinflation (flat diaphragm, &gt;6 anterior ribs), increased AP diameter</div><div class="table-cell">Diffuse</div></div>
+<div class="table-row-3"><div class="table-cell">Pulmonary edema</div><div class="table-cell">Bilateral perihilar bat-wing opacity, Kerley B lines, upper lobe diversion</div><div class="table-cell" style="color:var(--warn)">Central</div></div>
+<div class="table-row-3"><div class="table-cell">ARDS</div><div class="table-cell">Bilateral diffuse opacities, normal heart size (non-cardiogenic)</div><div class="table-cell">Diffuse</div></div>
+<div class="table-row-3"><div class="table-cell">Sarcoidosis</div><div class="table-cell">Bilateral hilar lymphadenopathy &plusmn; upper zone fibrosis</div><div class="table-cell" style="color:var(--warn)">Upper zone</div></div>
+<div class="table-row-3"><div class="table-cell">IPF</div><div class="table-cell">Bilateral basal reticular opacities, honeycombing</div><div class="table-cell" style="color:var(--accent)">Lower zone</div></div>
+<div class="table-row-3"><div class="table-cell">Pericardial effusion</div><div class="table-cell">Globular / water-bottle heart silhouette</div><div class="table-cell">&#8212;</div></div>
+</div>
+</div>
+
+<!-- Section 4: Quick Drill -->
+<div class="section" id="sec-4">
+<div class="score-bar">
+<div class="score-text">Score: <strong id="drill-score">0</strong> / 10</div>
+<button class="reset-btn" onclick="resetDrill()">Reset</button>
+</div>
+
+<div id="drill-list"></div>
+</div>
+
+</div>
+
+<script>
+// Tabs
+function showTab(i){
+  document.querySelectorAll('.tab-btn').forEach((b,j)=>b.classList.toggle('active',j===i));
+  document.querySelectorAll('.section').forEach((s,j)=>s.classList.toggle('active',j===i));
+}
+
+// Steps (ABCDE)
+function toggleStep(header){
+  const step=header.parentElement;
+  const wasOpen=step.classList.contains('open');
+  step.classList.toggle('open');
+  if(!wasOpen&&!step.classList.contains('checked')){
+    step.classList.add('checked');
+    updateProgress();
+  }
+}
+
+function toggleCheck(row){
+  row.classList.toggle('done');
+}
+
+function updateProgress(){
+  const steps=document.querySelectorAll('.step');
+  const done=document.querySelectorAll('.step.checked').length;
+  document.getElementById('prog-text').textContent=done+' / '+steps.length+' complete';
+  document.getElementById('prog-fill').style.width=(done/steps.length*100)+'%';
+}
+
+// Pattern cards handled inline with onclick
+
+// Drill
+const drills=[
+  {q:"Homogeneous opacity right lower zone, air bronchograms, fever",a:"Right lower lobe pneumonia"},
+  {q:"Bilateral perihilar hazy opacities, Kerley B lines, cardiomegaly",a:"Pulmonary edema (heart failure)"},
+  {q:"Visible pleural line at right apex, absent lung markings beyond",a:"Right pneumothorax"},
+  {q:"Right-sided white-out with mediastinal shift to LEFT",a:"Massive right pleural effusion"},
+  {q:"Right-sided white-out with mediastinal shift to RIGHT",a:"Right lung collapse"},
+  {q:"Bilateral hilar lymphadenopathy, upper zone reticular opacities",a:"Sarcoidosis"},
+  {q:"Cavitating lesion in right upper zone, immigrant patient",a:"Reactivation tuberculosis"},
+  {q:"Bilateral basal honeycombing, reduced lung volumes",a:"IPF (Usual Interstitial Pneumonia)"},
+  {q:"Flattened diaphragms, >7 anterior ribs visible, increased translucency",a:"COPD / Emphysema"},
+  {q:"Free air under both hemidiaphragms",a:"Pneumoperitoneum (bowel perforation)"}
+];
+
+let drillRevealed=new Set();
+
+function buildDrill(){
+  const list=document.getElementById('drill-list');
+  list.innerHTML=drills.map((d,i)=>`
+    <div class="drill-card${drillRevealed.has(i)?' revealed':''}" onclick="revealDrill(this,${i})">
+      <div class="drill-q"><span class="q-num">${i+1}.</span>${d.q}</div>
+      ${drillRevealed.has(i)?'':'<div class="drill-hint">Tap to reveal answer</div>'}
+      <div class="drill-answer"><div class="drill-answer-inner">${d.a}</div></div>
+    </div>
+  `).join('');
+  document.getElementById('drill-score').textContent=drillRevealed.size;
+}
+
+function revealDrill(card,i){
+  if(drillRevealed.has(i))return;
+  drillRevealed.add(i);
+  card.classList.add('revealed');
+  card.querySelector('.drill-hint').style.display='none';
+  document.getElementById('drill-score').textContent=drillRevealed.size;
+}
+
+function resetDrill(){
+  drillRevealed.clear();
+  buildDrill();
+}
+
+buildDrill();
+</script>
+</body>
+</html>

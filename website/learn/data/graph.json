@@ -1,8 +1,6 @@
 {
   "tool_topics": {
-    "autonomic-ns": [
-      "cerebral-venous-system"
-    ],
+    "autonomic-ns": [],
     "brainstem-cortical": [
       "brainstem",
       "brainstem-syndromes",
@@ -22,7 +20,11 @@
     "cranial-nerves": [
       "facial-nerve",
       "recurrent-laryngeal-nerve",
-      "trigeminal-sensory-neuropathy"
+      "trigeminal-sensory-neuropathy",
+      "brainstem",
+      "brainstem-syndromes",
+      "bulbar-palsy",
+      "pseudobulbar-palsy"
     ],
     "mediastinum-crosssection": [
       "mediastinum",
@@ -56,7 +58,10 @@
       "electrolyte-imbalance"
     ],
     "spinal-cord-tracts": [
-      "spinal-cord-lesions"
+      "spinal-cord-lesions",
+      "multiple-sclerosis",
+      "amyotrophic-lateral-sclerosis",
+      "gait-disorders"
     ],
     "parasite-lifecycle": [
       "malaria",
@@ -89,7 +94,9 @@
       "calcium-channel-blockers",
       "diuretics",
       "nephron-physiology",
-      "renal-blood-flow"
+      "renal-blood-flow",
+      "coronary-artery-disease",
+      "chronic-kidney-disease"
     ],
     "dm-pathophysiology": [
       "diabetes-mellitus",
@@ -114,7 +121,9 @@
       "dyspnea",
       "breathlessness",
       "pleural-effusion",
-      "chest-x-ray"
+      "chest-x-ray",
+      "tuberculosis",
+      "pneumothorax"
     ],
     "crispr-cas9": [
       "gene-therapy",
@@ -152,6 +161,101 @@
       "enteral-nutrition",
       "parenteral-nutrition",
       "malnutrition"
+    ],
+    "cardiac-cycle-auscultation": [
+      "cardiac-cycle",
+      "heart-auscultation",
+      "aortic-stenosis",
+      "aortic-regurgitation",
+      "mitral-stenosis",
+      "mitral-regurgitation",
+      "sa-node",
+      "action-potential",
+      "heart-failure"
+    ],
+    "ecg-interpretation": [
+      "electrocardiogram-ecg",
+      "acute-myocardial-infarction",
+      "atrial-fibrillation",
+      "hyperkalemia",
+      "hypokalemia",
+      "action-potential",
+      "coronary-artery-disease",
+      "pericarditis",
+      "pulmonary-embolism"
+    ],
+    "coagulation-cascade": [
+      "blood-coagulation",
+      "hemostasis",
+      "dic",
+      "anticoagulants",
+      "anticoagulant-therapy",
+      "thrombocytopenia",
+      "hemophilia"
+    ],
+    "anemia-classification": [
+      "anemia",
+      "iron-deficiency-anemia",
+      "megaloblastic-anemia",
+      "pernicious-anemia",
+      "thalassemia",
+      "anemia-of-chronic-disease-vs-ida",
+      "aplastic-anemia",
+      "iron-metabolism",
+      "folic-acid-metabolism",
+      "sickle-cell"
+    ],
+    "lft-interpretation": [
+      "jaundice",
+      "bilirubin-metabolism",
+      "hepatitis",
+      "cirrhosis",
+      "liver-disease",
+      "autoimmune-hepatitis",
+      "ascites",
+      "hepatocellular-carcinoma"
+    ],
+    "autoimmune-antibody-map": [
+      "systemic-lupus-erythematosus",
+      "rheumatoid-arthritis",
+      "vasculitis",
+      "scleroderma",
+      "systemic-sclerosis-ssc",
+      "dermatomyositis",
+      "polymyositis",
+      "autoimmune-disorders",
+      "ankylosing-spondylitis"
+    ],
+    "thyroid-adrenal-axis": [
+      "hyperthyroidism",
+      "hypothyroidism",
+      "thyroid-storm",
+      "thyroid-emergencies",
+      "thyroid-function",
+      "cushing",
+      "cushing-syndrome",
+      "addison-disease",
+      "pheochromocytoma",
+      "acromegaly"
+    ],
+    "antibiotic-spectrum": [
+      "sepsis",
+      "tuberculosis",
+      "community-acquired-pneumonia-cap",
+      "malaria",
+      "hospital-acquired-infection",
+      "antimicrobial-resistance",
+      "mrsa"
+    ],
+    "cxr-interpretation": [
+      "chest-x-ray",
+      "pneumonia",
+      "tuberculosis",
+      "pleural-effusion",
+      "pneumothorax",
+      "lung-cancer",
+      "interstitial-lung-disease",
+      "sarcoidosis"
     ],
     "piii-recall-tester": [
       "hyperthyroidism",
@@ -200,7 +304,8 @@
       "coronary-artery-disease",
       "chest-pain-angina",
       "electrocardiogram-ecg",
-      "cardiac-tamponade"
+      "cardiac-tamponade",
+      "heart-failure"
     ],
     "coronary-artery-disease": [
       "acute-myocardial-infarction",
@@ -212,7 +317,8 @@
       "mitral-stenosis",
       "anticoagulants",
       "ischemic-stroke",
-      "syncope"
+      "syncope",
+      "heart-failure"
     ],
     "mitral-stenosis": [
       "atrial-fibrillation",
@@ -310,7 +416,9 @@
       "metformin",
       "insulin-therapy",
       "sglt-2-inhibitors",
-      "gestational-diabetes"
+      "gestational-diabetes",
+      "coronary-artery-disease",
+      "chronic-kidney-disease"
     ],
     "diabetic-ketoacidosis": [
       "diabetes-mellitus",
@@ -403,7 +511,9 @@
       "hepatorenal-syndrome",
       "hepatocellular-carcinoma",
       "jaundice",
-      "gi-bleeding"
+      "gi-bleeding",
+      "thrombocytopenia",
+      "hemostasis"
     ],
     "ascites": [
       "cirrhosis",
@@ -508,6 +618,9 @@
       "hemostasis",
       "blood-coagulation",
       "thrombocytopenia"
+    ],
+    "blood-coagulation": [
+      "hemostasis"
     ],
     "thrombocytopenia": [
       "dic",
@@ -647,7 +760,8 @@
       "community-acquired-pneumonia-cap",
       "pleural-effusion",
       "hemoptysis",
-      "sputum-analysis"
+      "sputum-analysis",
+      "hiv"
     ],
     "pleural-effusion": [
       "tuberculosis",
@@ -742,13 +856,15 @@
       "lupus-nephritis",
       "autoimmune-disorders",
       "vasculitis",
-      "dermatomyositis"
+      "dermatomyositis",
+      "thrombocytopenia"
     ],
     "rheumatoid-arthritis": [
       "osteoarthritis",
       "ankylosing-spondylitis",
       "jak-inhibitors",
-      "autoimmune-disorders"
+      "autoimmune-disorders",
+      "interstitial-lung-disease"
     ],
     "ankylosing-spondylitis": [
       "psoriatic-arthritis",
@@ -790,7 +906,8 @@
       "septic-shock",
       "dic",
       "pneumonia",
-      "fever"
+      "fever",
+      "acute-kidney-injury"
     ],
     "septic-shock": [
       "sepsis",
@@ -1746,8 +1863,16 @@
       "nephron-physiology"
     ],
     "lupus-nephritis": [
-      "ckd-complications",
+      "systemic-lupus-erythematosus",
+      "glomerulonephritis",
       "nephron-physiology"
+    ],
+    "thyroid-storm": [
+      "hyperthyroidism"
+    ],
+    "hepatorenal-syndrome": [
+      "cirrhosis",
+      "acute-kidney-injury"
     ],
     "insulin-therapy": [
       "thyroid-function"
@@ -1771,17 +1896,7 @@
       "community-acquired-pneumonia-cap",
       "sarcoidosis"
     ],
-    "ankylosing-spondylitis": [
-      "bony-anatomy",
-      "sleep-cycle-disturbances"
-    ],
-    "chronic-intranasal-cocaine": [
-      "bony-anatomy",
-      "sleep-cycle-disturbances"
-    ],
-    "gout": [
-      "bony-anatomy",
-      "sleep-cycle-disturbances"
-    ]
+    "ankylosing-spondylitis": [],
+    "gout": []
   }
 }

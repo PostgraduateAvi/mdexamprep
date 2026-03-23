@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thyroid-Adrenal Axis | MBBEasy</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0a0e17;--bg2:#111827;--bg3:#1e2536;--text:#eef0f6;--text2:#9ca3af;--accent:#818cf8;--accent2:#c084fc;--success:#34d399;--warn:#fbbf24;--danger:#f87171;--border:#2d3548;--radius:10px;--thyroid:#38bdf8;--adrenal:#fb923c}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+a{color:var(--accent);text-decoration:none}
+
+.container{max-width:860px;margin:0 auto;padding:16px}
+
+.header{text-align:center;padding:32px 0 24px}
+.header h1{font-size:1.75rem;font-weight:700;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.header p{color:var(--text2);font-size:.9rem;margin-top:4px}
+.badge{display:inline-block;background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:4px 12px;font-size:.75rem;color:var(--accent);margin-top:8px}
+
+.tabs{display:flex;gap:4px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px;margin-bottom:24px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab-btn{flex-shrink:0;padding:10px 16px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg2);color:var(--text2);font-size:.82rem;font-weight:500;cursor:pointer;transition:all .2s;-webkit-tap-highlight-color:transparent}
+.tab-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.tab-btn[data-color="thyroid"].active{background:var(--thyroid);border-color:var(--thyroid)}
+.tab-btn[data-color="adrenal"].active{background:var(--adrenal);border-color:var(--adrenal)}
+
+.section{display:none}
+.section.active{display:block}
+
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px}
+.card h3{font-size:1.05rem;margin-bottom:8px}
+.card h4{font-size:.95rem;margin:12px 0 6px}
+.card.thyroid-card{border-left:3px solid var(--thyroid)}
+.card.thyroid-card h3{color:var(--thyroid)}
+.card.adrenal-card{border-left:3px solid var(--adrenal)}
+.card.adrenal-card h3{color:var(--adrenal)}
+
+.section-label{display:inline-block;font-size:.7rem;text-transform:uppercase;letter-spacing:1px;padding:3px 10px;border-radius:12px;margin-bottom:16px;font-weight:600}
+.section-label.thyroid{background:rgba(56,189,248,.15);color:var(--thyroid)}
+.section-label.adrenal{background:rgba(251,146,60,.15);color:var(--adrenal)}
+
+/* Axis diagram */
+.axis-diagram{background:var(--bg3);border-radius:var(--radius);padding:24px 16px;margin:12px 0;text-align:center}
+.axis-node{display:inline-block;background:var(--bg2);border:2px solid var(--thyroid);border-radius:8px;padding:8px 16px;font-weight:600;font-size:.9rem;margin:4px 0}
+.axis-node.adrenal-node{border-color:var(--adrenal)}
+.axis-arrow{display:block;color:var(--text2);font-size:1.4rem;margin:2px 0;line-height:1}
+.axis-hormone{color:var(--warn);font-size:.8rem;font-weight:600}
+.axis-feedback{display:inline-block;margin-top:12px;padding:6px 14px;background:rgba(248,113,113,.1);border:1px dashed var(--danger);border-radius:8px;font-size:.8rem;color:var(--danger)}
+.axis-note{font-size:.82rem;color:var(--text2);margin-top:10px;line-height:1.5}
+.axis-note strong{color:var(--text)}
+
+/* TFT table */
+.tft-table{width:100%;border-collapse:collapse;font-size:.85rem;margin:12px 0}
+.tft-table th{background:var(--bg3);padding:10px 8px;text-align:left;font-weight:600;color:var(--thyroid);border-bottom:2px solid var(--border);font-size:.8rem}
+.tft-table td{padding:10px 8px;border-bottom:1px solid var(--border);vertical-align:top}
+.tft-table tr{cursor:pointer;transition:background .2s}
+.tft-table tr:hover{background:var(--bg3)}
+.tft-table .arrow-up{color:var(--danger);font-weight:700}
+.tft-table .arrow-down{color:var(--success);font-weight:700}
+.tft-table .arrow-normal{color:var(--text2);font-weight:700}
+.tft-table .dx{color:var(--accent);font-weight:600}
+.tft-table .detail{color:var(--text2);font-size:.8rem;margin-top:4px}
+.tft-table tr.expanded{background:var(--bg3)}
+.tft-table .expand-row td{padding:8px 8px 14px;border-bottom:2px solid var(--border)}
+.tft-table .expand-row{display:none}
+.tft-table .expand-row.show{display:table-row}
+
+/* Algorithm steps */
+.algo-step{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:12px;overflow:hidden}
+.algo-header{display:flex;align-items:center;gap:12px;padding:14px 16px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.algo-num{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;flex-shrink:0}
+.algo-num.thyroid-num{background:rgba(56,189,248,.15);color:var(--thyroid);border:2px solid var(--thyroid)}
+.algo-num.adrenal-num{background:rgba(251,146,60,.15);color:var(--adrenal);border:2px solid var(--adrenal)}
+.algo-title{font-weight:600;font-size:.95rem;flex:1}
+.algo-chevron{color:var(--text2);transition:transform .2s;font-size:1.2rem}
+.algo-step.open .algo-chevron{transform:rotate(180deg)}
+.algo-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.algo-step.open .algo-body{max-height:2000px}
+.algo-content{padding:0 16px 16px;color:var(--text2);font-size:.88rem;line-height:1.7}
+.algo-content strong{color:var(--text)}
+
+.sub-box{background:var(--bg3);border-radius:8px;padding:12px 14px;margin:8px 0;font-size:.85rem;line-height:1.6}
+.sub-box .label{font-weight:700;margin-bottom:4px}
+.sub-box.thyroid-sub{border-left:3px solid var(--thyroid)}
+.sub-box.adrenal-sub{border-left:3px solid var(--adrenal)}
+.sub-box.danger-sub{border-left:3px solid var(--danger)}
+
+.highlight{color:var(--accent);font-weight:600}
+.thyroid-hl{color:var(--thyroid);font-weight:600}
+.adrenal-hl{color:var(--adrenal);font-weight:600}
+.warn-hl{color:var(--warn);font-weight:600}
+.danger-hl{color:var(--danger);font-weight:600}
+.success-hl{color:var(--success);font-weight:600}
+
+/* Cortex layers */
+.cortex-layers{display:grid;gap:8px;margin:12px 0}
+.cortex-layer{display:flex;align-items:center;gap:12px;background:var(--bg3);border-radius:8px;padding:12px 14px}
+.cortex-layer .zone{font-weight:700;font-size:.85rem;min-width:100px}
+.cortex-layer .product{font-size:.85rem;color:var(--text2)}
+.cortex-layer .mnemonic{color:var(--warn);font-weight:600;font-size:.8rem}
+
+/* Drill */
+.drill-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:12px;overflow:hidden;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:border-color .2s}
+.drill-card:hover,.drill-card.revealed{border-color:var(--accent)}
+.drill-q{padding:16px;font-size:.9rem;line-height:1.5}
+.drill-q .q-num{display:inline-block;background:var(--bg3);border-radius:6px;padding:2px 8px;font-size:.75rem;font-weight:700;color:var(--accent);margin-right:8px}
+.drill-a{max-height:0;overflow:hidden;transition:max-height .3s;background:var(--bg3)}
+.drill-card.revealed .drill-a{max-height:200px}
+.drill-answer{padding:14px 16px;font-size:.88rem;line-height:1.5}
+.drill-answer .dx-name{color:var(--success);font-weight:700;font-size:1rem}
+.drill-answer .dx-detail{color:var(--text2);font-size:.82rem;margin-top:4px}
+.tap-hint{font-size:.75rem;color:var(--text2);text-align:right;padding-right:4px;margin-bottom:8px}
+
+/* Score */
+.drill-score{text-align:center;padding:16px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);margin-top:16px}
+.drill-score .score-num{font-size:2rem;font-weight:700;color:var(--accent)}
+.drill-score .score-label{font-size:.85rem;color:var(--text2)}
+.score-actions{display:flex;gap:8px;justify-content:center;margin-top:12px}
+.btn{padding:10px 20px;border-radius:var(--radius);border:none;font-size:.85rem;font-weight:600;cursor:pointer;transition:all .2s}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-ghost{background:transparent;border:1px solid var(--border);color:var(--text2)}
+
+@media(max-width:600px){
+ .header h1{font-size:1.4rem}
+ .tab-btn{padding:8px 12px;font-size:.78rem}
+ .tft-table{font-size:.78rem}
+ .tft-table th,.tft-table td{padding:8px 6px}
+ .cortex-layer .zone{min-width:80px;font-size:.8rem}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+ <h1>Thyroid-Adrenal Axis</h1>
+ <p>HPT + HPA axis physiology, workup algorithms, and interpretation</p>
+ <div class="badge">Harrison's Ch. 376, 379</div>
+</div>
+
+<div class="tabs" id="tabs">
+ <button class="tab-btn active" data-tab="hpt" data-color="thyroid">HPT Axis</button>
+ <button class="tab-btn" data-tab="tft" data-color="thyroid">TFT Matrix</button>
+ <button class="tab-btn" data-tab="hyper" data-color="thyroid">Hyperthyroid Workup</button>
+ <button class="tab-btn" data-tab="hpa" data-color="adrenal">HPA Axis</button>
+ <button class="tab-btn" data-tab="cushing" data-color="adrenal">Cushing's Workup</button>
+ <button class="tab-btn" data-tab="ai" data-color="adrenal">Adrenal Insufficiency</button>
+ <button class="tab-btn" data-tab="drill" data-color="">Quick Drill</button>
+</div>
+
+<!-- Section 1: HPT Axis -->
+<div class="section active" id="sec-hpt">
+ <span class="section-label thyroid">Thyroid</span>
+ <div class="card thyroid-card">
+  <h3>Hypothalamic-Pituitary-Thyroid Axis</h3>
+  <div class="axis-diagram">
+   <div class="axis-node">Hypothalamus</div>
+   <div class="axis-arrow">&darr; <span class="axis-hormone">TRH</span></div>
+   <div class="axis-node">Anterior Pituitary</div>
+   <div class="axis-arrow">&darr; <span class="axis-hormone">TSH</span></div>
+   <div class="axis-node">Thyroid Gland</div>
+   <div class="axis-arrow">&darr; <span class="axis-hormone">T4 (90%) + T3 (10%)</span></div>
+   <div class="axis-node" style="border-color:var(--success)">Peripheral Tissues</div>
+   <div class="axis-arrow"><span class="axis-hormone" style="color:var(--success)">T4 &rarr; T3 (by Deiodinase)</span></div>
+   <br>
+   <div class="axis-feedback">&uarr; T3/T4 &rarr; Negative Feedback &rarr; &darr; TRH + TSH</div>
+  </div>
+  <div class="axis-note">
+   <strong>T3 is the active hormone</strong> &mdash; 3-5x more potent than T4.<br>
+   T4 serves as a circulating reservoir, converted peripherally to T3 by <strong>5'-deiodinase</strong>.<br>
+   &gt;99% of T3/T4 is protein-bound (TBG); only <strong>free</strong> fractions are biologically active.
+  </div>
+ </div>
+</div>
+
+<!-- Section 2: TFT Matrix -->
+<div class="section" id="sec-tft">
+ <span class="section-label thyroid">Thyroid</span>
+ <div class="card thyroid-card">
+  <h3>Thyroid Function Test Interpretation</h3>
+  <p class="tap-hint">Tap a row to expand</p>
+  <table class="tft-table">
+   <thead><tr><th>TSH</th><th>Free T4</th><th>Diagnosis</th></tr></thead>
+   <tbody>
+    <tr class="tft-row" data-detail="Hashimoto's thyroiditis (anti-TPO, anti-Tg), post-thyroidectomy, radioiodine ablation, iodine deficiency, lithium, amiodarone">
+     <td><span class="arrow-up">&uarr;</span></td>
+     <td><span class="arrow-down">&darr;</span></td>
+     <td><span class="dx">Primary Hypothyroidism</span></td>
+    </tr>
+    <tr class="expand-row"><td colspan="3"><div class="detail"></div></td></tr>
+    <tr class="tft-row" data-detail="TSH 4.5-10: monitor. TSH >10: treat. Risk of progression to overt hypothyroidism ~2-5%/year if anti-TPO positive.">
+     <td><span class="arrow-up">&uarr;</span></td>
+     <td><span class="arrow-normal">N</span></td>
+     <td><span class="dx">Subclinical Hypothyroidism</span></td>
+    </tr>
+    <tr class="expand-row"><td colspan="3"><div class="detail"></div></td></tr>
+    <tr class="tft-row" data-detail="Graves' disease (TSI/TRAb positive, diffuse goiter, ophthalmopathy), toxic multinodular goiter, toxic adenoma (hot nodule on scan).">
+     <td><span class="arrow-down">&darr;</span></td>
+     <td><span class="arrow-up">&uarr;</span></td>
+     <td><span class="dx">Primary Hyperthyroidism</span></td>
+    </tr>
+    <tr class="expand-row"><td colspan="3"><div class="detail"></div></td></tr>
+    <tr class="tft-row" data-detail="Risk of atrial fibrillation, osteoporosis in postmenopausal women. Treat if TSH <0.1 or symptomatic.">
+     <td><span class="arrow-down">&darr;</span></td>
+     <td><span class="arrow-normal">N</span></td>
+     <td><span class="dx">Subclinical Hyperthyroidism</span></td>
+    </tr>
+    <tr class="expand-row"><td colspan="3"><div class="detail"></div></td></tr>
+    <tr class="tft-row" data-detail="Pituitary adenoma (nonfunctioning), Sheehan's syndrome, pituitary surgery/radiation, hypothalamic lesion. TSH is inappropriately low/normal for the low T4.">
+     <td><span class="arrow-down">&darr;</span> / <span class="arrow-normal">N</span></td>
+     <td><span class="arrow-down">&darr;</span></td>
+     <td><span class="dx">Secondary/Central Hypothyroidism</span></td>
+    </tr>
+    <tr class="expand-row"><td colspan="3"><div class="detail"></div></td></tr>
+    <tr class="tft-row" data-detail="TSH-oma: macroadenoma, elevated alpha-subunit, no suppression with T3. Thyroid hormone resistance (RTH): mutation in TR-beta, usually asymptomatic.">
+     <td><span class="arrow-up">&uarr;</span></td>
+     <td><span class="arrow-up">&uarr;</span></td>
+     <td><span class="dx">TSH-oma / Hormone Resistance</span></td>
+    </tr>
+    <tr class="expand-row"><td colspan="3"><div class="detail"></div></td></tr>
+   </tbody>
+  </table>
+ </div>
+</div>
+
+<!-- Section 3: Hyperthyroidism Workup -->
+<div class="section" id="sec-hyper">
+ <span class="section-label thyroid">Thyroid</span>
+ <div class="card thyroid-card">
+  <h3>Hyperthyroidism Workup Algorithm</h3>
+
+  <div class="algo-step open">
+   <div class="algo-header" onclick="toggleAlgo(this)">
+    <div class="algo-num thyroid-num">1</div>
+    <div class="algo-title">Confirm: TSH &darr;, T3/T4 &uarr;</div>
+    <span class="algo-chevron">&#9662;</span>
+   </div>
+   <div class="algo-body"><div class="algo-content">
+    Low TSH with elevated free T4 (and/or free T3) confirms thyrotoxicosis.<br>
+    <strong>T3 thyrotoxicosis</strong>: elevated T3 with normal T4 &mdash; can be early Graves' or toxic adenoma.
+   </div></div>
+  </div>
+
+  <div class="algo-step">
+   <div class="algo-header" onclick="toggleAlgo(this)">
+    <div class="algo-num thyroid-num">2</div>
+    <div class="algo-title">Radioactive Iodine Uptake (RAIU)</div>
+    <span class="algo-chevron">&#9662;</span>
+   </div>
+   <div class="algo-body"><div class="algo-content">
+    <div class="sub-box thyroid-sub"><div class="label">Diffuse High Uptake</div><span class="thyroid-hl">Graves' Disease</span> &mdash; TSI/TRAb positive, diffuse goiter, ophthalmopathy, pretibial myxedema</div>
+    <div class="sub-box thyroid-sub"><div class="label">Focal High Uptake</div><span class="thyroid-hl">Toxic Adenoma</span> &mdash; Single hot nodule, rest of gland suppressed</div>
+    <div class="sub-box thyroid-sub"><div class="label">Patchy Uptake</div><span class="thyroid-hl">Toxic MNG</span> &mdash; Multiple autonomous nodules</div>
+    <div class="sub-box danger-sub"><div class="label">Low / Absent Uptake</div><span class="danger-hl">Thyroiditis</span> (subacute/de Quervain, postpartum, painless), exogenous thyroid hormone, ectopic thyroid tissue (struma ovarii)</div>
+   </div></div>
+  </div>
+
+  <div class="algo-step">
+   <div class="algo-header" onclick="toggleAlgo(this)">
+    <div class="algo-num thyroid-num">3</div>
+    <div class="algo-title">Treatment</div>
+    <span class="algo-chevron">&#9662;</span>
+   </div>
+   <div class="algo-body"><div class="algo-content">
+    <div class="sub-box thyroid-sub">
+     <div class="label">Graves' Disease</div>
+     <strong>Antithyroid drugs:</strong> Carbimazole / Methimazole &mdash; block <span class="thyroid-hl">TPO</span> (thyroperoxidase).<br>
+     <strong>PTU:</strong> also blocks peripheral T4&rarr;T3 conversion. Preferred in <span class="warn-hl">1st trimester</span> and <span class="danger-hl">thyroid storm</span>.<br>
+     Radioactive iodine (RAI) or surgery for definitive treatment.
+    </div>
+    <div class="sub-box danger-sub">
+     <div class="label">Thyroid Storm (Emergency)</div>
+     <strong>1.</strong> <span class="danger-hl">PTU</span> (loading dose) &mdash; blocks synthesis + peripheral conversion<br>
+     <strong>2.</strong> Beta-blockers (propranolol) &mdash; symptomatic control<br>
+     <strong>3.</strong> Steroids (hydrocortisone) &mdash; block T4&rarr;T3, adrenal support<br>
+     <strong>4.</strong> Iodine (Lugol's) &mdash; <strong>AFTER</strong> antithyroid drugs (Wolff-Chaikoff effect)<br>
+     <strong>5.</strong> Supportive (cooling, fluids, treat precipitant)
+    </div>
+   </div></div>
+  </div>
+ </div>
+</div>
+
+<!-- Section 4: HPA Axis -->
+<div class="section" id="sec-hpa">
+ <span class="section-label adrenal">Adrenal</span>
+ <div class="card adrenal-card">
+  <h3>Hypothalamic-Pituitary-Adrenal Axis</h3>
+  <div class="axis-diagram">
+   <div class="axis-node adrenal-node">Hypothalamus</div>
+   <div class="axis-arrow">&darr; <span class="axis-hormone" style="color:var(--adrenal)">CRH</span></div>
+   <div class="axis-node adrenal-node">Anterior Pituitary</div>
+   <div class="axis-arrow">&darr; <span class="axis-hormone" style="color:var(--adrenal)">ACTH</span></div>
+   <div class="axis-node adrenal-node">Adrenal Cortex</div>
+   <div class="axis-arrow">&darr; <span class="axis-hormone" style="color:var(--adrenal)">Cortisol</span></div>
+   <br>
+   <div class="axis-feedback">&uarr; Cortisol &rarr; Negative Feedback &rarr; &darr; CRH + ACTH</div>
+  </div>
+  <div class="axis-note">
+   <strong>Diurnal variation:</strong> Peak <span class="adrenal-hl">6-8 AM</span>, nadir at midnight.<br>
+   Cortisol is pulsatile and stress-responsive.
+  </div>
+ </div>
+
+ <div class="card adrenal-card">
+  <h3>Adrenal Cortex Zones</h3>
+  <div class="cortex-layers">
+   <div class="cortex-layer">
+    <div class="zone" style="color:var(--adrenal)">Glomerulosa</div>
+    <div class="product"><strong>Aldosterone</strong> (mineralocorticoid) &mdash; regulated by RAAS, not ACTH</div>
+    <div class="mnemonic">Salt</div>
+   </div>
+   <div class="cortex-layer">
+    <div class="zone" style="color:var(--warn)">Fasciculata</div>
+    <div class="product"><strong>Cortisol</strong> (glucocorticoid) &mdash; ACTH-dependent</div>
+    <div class="mnemonic">Sugar</div>
+   </div>
+   <div class="cortex-layer">
+    <div class="zone" style="color:var(--accent2)">Reticularis</div>
+    <div class="product"><strong>Androgens</strong> (DHEA, androstenedione)</div>
+    <div class="mnemonic">Sex</div>
+   </div>
+  </div>
+  <div class="axis-note" style="margin-top:14px;text-align:center">
+   Mnemonic: <strong style="color:var(--warn)">"GFR"</strong> from outside in &rarr; <strong style="color:var(--warn)">"Salt, Sugar, Sex"</strong>
+  </div>
+ </div>
+</div>
+
+<!-- Section 5: Cushing's Workup -->
+<div class="section" id="sec-cushing">
+ <span class="section-label adrenal">Adrenal</span>
+ <div class="card adrenal-card">
+  <h3>Cushing's Syndrome Workup</h3>
+
+  <div class="algo-step open">
+   <div class="algo-header" onclick="toggleAlgo(this)">
+    <div class="algo-num adrenal-num">1</div>
+    <div class="algo-title">Screening (any 2 of 3 positive)</div>
+    <span class="algo-chevron">&#9662;</span>
+   </div>
+   <div class="algo-body"><div class="algo-content">
+    <div class="sub-box adrenal-sub"><strong>24-hour urinary free cortisol</strong> &mdash; elevated (&gt;3x ULN highly specific)</div>
+    <div class="sub-box adrenal-sub"><strong>Late-night salivary cortisol</strong> &mdash; elevated (loss of diurnal nadir)</div>
+    <div class="sub-box adrenal-sub"><strong>1 mg overnight dexamethasone suppression test</strong> &mdash; 8 AM cortisol NOT suppressed (remains <span class="danger-hl">&gt;1.8 &micro;g/dL</span>)</div>
+   </div></div>
+  </div>
+
+  <div class="algo-step">
+   <div class="algo-header" onclick="toggleAlgo(this)">
+    <div class="algo-num adrenal-num">2</div>
+    <div class="algo-title">Determine ACTH Dependence</div>
+    <span class="algo-chevron">&#9662;</span>
+   </div>
+   <div class="algo-body"><div class="algo-content">
+    <div class="sub-box adrenal-sub">
+     <div class="label">ACTH Suppressed (&lt;5 pg/mL)</div>
+     <span class="adrenal-hl">ACTH-Independent</span> &rarr; Adrenal source<br>
+     CT adrenals &rarr; adenoma, carcinoma, bilateral hyperplasia
+    </div>
+    <div class="sub-box adrenal-sub">
+     <div class="label">ACTH Elevated / Normal</div>
+     <span class="adrenal-hl">ACTH-Dependent</span> &rarr; Pituitary vs Ectopic &rarr; proceed to Step 3
+    </div>
+   </div></div>
+  </div>
+
+  <div class="algo-step">
+   <div class="algo-header" onclick="toggleAlgo(this)">
+    <div class="algo-num adrenal-num">3</div>
+    <div class="algo-title">Localize ACTH Source</div>
+    <span class="algo-chevron">&#9662;</span>
+   </div>
+   <div class="algo-body"><div class="algo-content">
+    <strong>High-dose dexamethasone suppression test (8 mg):</strong>
+    <div class="sub-box adrenal-sub">
+     <div class="label">Suppresses (&gt;50% drop)</div>
+     <span class="success-hl">Cushing Disease</span> (pituitary adenoma) &rarr; MRI pituitary
+    </div>
+    <div class="sub-box danger-sub">
+     <div class="label">Does NOT suppress</div>
+     <span class="danger-hl">Ectopic ACTH</span> &mdash; small cell lung carcinoma, bronchial carcinoid, thymic carcinoid &rarr; CT chest/abdomen
+    </div>
+    <div class="axis-note"><strong>IPSS</strong> (Inferior Petrosal Sinus Sampling): Gold standard when high-dose dex is equivocal. Central-to-peripheral ACTH ratio &gt;2 (basal) or &gt;3 (after CRH) &rarr; pituitary source.</div>
+   </div></div>
+  </div>
+ </div>
+</div>
+
+<!-- Section 6: Adrenal Insufficiency -->
+<div class="section" id="sec-ai">
+ <span class="section-label adrenal">Adrenal</span>
+
+ <div class="card adrenal-card">
+  <h3>Primary Adrenal Insufficiency (Addison's Disease)</h3>
+  <div class="algo-content" style="padding:0">
+   <div class="sub-box adrenal-sub">
+    <div class="label">Hormone Pattern</div>
+    <span class="danger-hl">&darr; Cortisol</span>, <span class="danger-hl">&darr; Aldosterone</span>, <span class="adrenal-hl">&uarr; ACTH</span> (loss of negative feedback)
+   </div>
+   <div class="sub-box adrenal-sub">
+    <div class="label">Clinical Features</div>
+    <strong style="color:var(--adrenal)">Hyperpigmentation</strong> (&uarr;ACTH &rarr; &uarr;MSH, shared POMC precursor)<br>
+    Fatigue, weight loss, orthostatic hypotension<br>
+    <span class="warn-hl">Hyperkalemia</span> + <span class="warn-hl">hyponatremia</span> (aldosterone loss)<br>
+    Salt craving, hypoglycemia
+   </div>
+   <div class="sub-box adrenal-sub">
+    <div class="label">Diagnosis</div>
+    <strong>ACTH stimulation test (Synacthen)</strong>: Cortisol fails to rise <span class="danger-hl">&gt;18 &micro;g/dL</span> (or &gt;500 nmol/L) at 30/60 min
+   </div>
+   <div class="sub-box adrenal-sub">
+    <div class="label">Causes</div>
+    <strong>Developed world:</strong> Autoimmune adrenalitis (#1) &mdash; anti-21-hydroxylase antibodies<br>
+    <strong>Developing world:</strong> Tuberculosis (#1)<br>
+    <strong>Acute:</strong> Adrenal hemorrhage &mdash; <span class="danger-hl">Waterhouse-Friderichsen</span> (meningococcal sepsis), anticoagulants
+   </div>
+  </div>
+ </div>
+
+ <div class="card adrenal-card">
+  <h3>Secondary Adrenal Insufficiency (Pituitary)</h3>
+  <div class="algo-content" style="padding:0">
+   <div class="sub-box adrenal-sub">
+    <div class="label">Hormone Pattern</div>
+    <span class="danger-hl">&darr; Cortisol</span>, <span class="danger-hl">&darr; ACTH</span>, <span class="success-hl">Aldosterone PRESERVED</span> (RAAS-regulated, not ACTH-dependent)
+   </div>
+   <div class="sub-box adrenal-sub">
+    <div class="label">Key Differences from Primary</div>
+    <strong>NO hyperpigmentation</strong> (ACTH is low)<br>
+    <strong>NO hyperkalemia</strong> (aldosterone intact)<br>
+    Most common cause: <span class="warn-hl">Chronic steroid use &rarr; sudden withdrawal</span>
+   </div>
+  </div>
+ </div>
+
+ <div class="card" style="border-left:3px solid var(--danger)">
+  <h3 style="color:var(--danger)">Adrenal Crisis (Emergency)</h3>
+  <div class="algo-content" style="padding:0">
+   <div class="sub-box danger-sub">
+    <div class="label">Precipitants</div>
+    Stress/surgery/illness in undiagnosed Addison's<br>
+    Sudden steroid withdrawal in chronic steroid user<br>
+    Bilateral adrenal hemorrhage
+   </div>
+   <div class="sub-box danger-sub">
+    <div class="label">Features</div>
+    Cardiovascular <span class="danger-hl">shock</span>, hypoglycemia, hyponatremia, hyperkalemia, fever, altered consciousness
+   </div>
+   <div class="sub-box danger-sub">
+    <div class="label">Treatment</div>
+    <strong>1.</strong> <span class="danger-hl">IV Hydrocortisone 100 mg stat</span> then 50 mg q6-8h<br>
+    <strong>2.</strong> IV Normal Saline (aggressive fluid resuscitation)<br>
+    <strong>3.</strong> IV Dextrose if hypoglycemic<br>
+    <strong>4.</strong> Identify and treat precipitant<br>
+    <em style="color:var(--text2)">No need for separate mineralocorticoid &mdash; high-dose hydrocortisone has mineralocorticoid activity</em>
+   </div>
+  </div>
+ </div>
+</div>
+
+<!-- Section 7: Quick Drill -->
+<div class="section" id="sec-drill">
+ <div class="card">
+  <h3 style="color:var(--accent)">Quick Drill &mdash; 10 Scenarios</h3>
+  <p class="tap-hint">Tap each scenario to reveal the answer</p>
+  <div class="drill-score" id="drillScore" style="display:none">
+   <div class="score-num" id="scoreNum">0/10</div>
+   <div class="score-label">scenarios reviewed</div>
+   <div class="score-actions"><button class="btn btn-ghost" onclick="resetDrill()">Reset</button></div>
+  </div>
+ </div>
+
+ <div class="drill-card" onclick="revealDrill(this)">
+  <div class="drill-q"><span class="q-num">1</span>TSH elevated, free T4 low, anti-TPO antibodies positive</div>
+  <div class="drill-a"><div class="drill-answer"><div class="dx-name">Hashimoto's Thyroiditis (Primary Hypothyroidism)</div><div class="dx-detail">Most common cause of hypothyroidism in iodine-sufficient areas. Anti-TPO and anti-thyroglobulin antibodies. Lymphocytic infiltration of thyroid.</div></div></div>
+ </div>
+
+ <div class="drill-card" onclick="revealDrill(this)">
+  <div class="drill-q"><span class="q-num">2</span>TSH suppressed, free T4 elevated, diffuse goiter, exophthalmos</div>
+  <div class="drill-a"><div class="drill-answer"><div class="dx-name">Graves' Disease</div><div class="dx-detail">TSI/TRAb stimulates TSH receptor. Classic triad: hyperthyroidism + ophthalmopathy + pretibial myxedema. Diffuse high RAIU.</div></div></div>
+ </div>
+
+ <div class="drill-card" onclick="revealDrill(this)">
+  <div class="drill-q"><span class="q-num">3</span>TSH suppressed, free T4 elevated, low RAIU, tender thyroid</div>
+  <div class="drill-a"><div class="drill-answer"><div class="dx-name">Subacute Thyroiditis (de Quervain's)</div><div class="dx-detail">Viral post-URI, painful tender thyroid, elevated ESR. Self-limiting: thyrotoxic phase &rarr; hypothyroid phase &rarr; recovery. Low RAIU because gland is inflamed, not overproducing.</div></div></div>
+ </div>
+
+ <div class="drill-card" onclick="revealDrill(this)">
+  <div class="drill-q"><span class="q-num">4</span>Cortisol not suppressed by 1 mg dex, ACTH elevated, suppresses with high-dose dex</div>
+  <div class="drill-a"><div class="drill-answer"><div class="dx-name">Cushing Disease (Pituitary Adenoma)</div><div class="dx-detail">ACTH-dependent Cushing's where high-dose dex suppresses the pituitary adenoma. MRI pituitary for microadenoma. IPSS if imaging equivocal.</div></div></div>
+ </div>
+
+ <div class="drill-card" onclick="revealDrill(this)">
+  <div class="drill-q"><span class="q-num">5</span>Cortisol elevated, ACTH suppressed, adrenal mass on imaging</div>
+  <div class="drill-a"><div class="drill-answer"><div class="dx-name">Adrenal Cushing's (Adenoma/Carcinoma)</div><div class="dx-detail">ACTH-independent: autonomous cortisol production by adrenal tumor suppresses pituitary ACTH. CT adrenals. Carcinoma if large (&gt;4 cm), irregular, or mixed hormone secretion.</div></div></div>
+ </div>
+
+ <div class="drill-card" onclick="revealDrill(this)">
+  <div class="drill-q"><span class="q-num">6</span>Hyperpigmentation, hyperkalemia, low cortisol, high ACTH</div>
+  <div class="drill-a"><div class="drill-answer"><div class="dx-name">Addison's Disease (Primary Adrenal Insufficiency)</div><div class="dx-detail">High ACTH (loss of feedback) &rarr; MSH co-secretion &rarr; hyperpigmentation. Aldosterone loss &rarr; hyperkalemia + hyponatremia. Confirm with ACTH stimulation test.</div></div></div>
+ </div>
+
+ <div class="drill-card" onclick="revealDrill(this)">
+  <div class="drill-q"><span class="q-num">7</span>Patient on long-term prednisolone, abrupt discontinuation, now hypotensive and confused</div>
+  <div class="drill-a"><div class="drill-answer"><div class="dx-name">Adrenal Crisis (Secondary Insufficiency)</div><div class="dx-detail">Chronic exogenous steroids suppress HPA axis. Sudden withdrawal &rarr; adrenal crisis. Treatment: IV hydrocortisone 100 mg stat + fluids. Taper steroids gradually.</div></div></div>
+ </div>
+
+ <div class="drill-card" onclick="revealDrill(this)">
+  <div class="drill-q"><span class="q-num">8</span>TSH low, free T4 low, panhypopituitarism</div>
+  <div class="drill-a"><div class="drill-answer"><div class="dx-name">Central/Secondary Hypothyroidism</div><div class="dx-detail">TSH is inappropriately low/normal for a low T4 &mdash; pituitary failure. Causes: pituitary adenoma, Sheehan's, surgery, radiation. TSH is unreliable for monitoring; follow free T4.</div></div></div>
+ </div>
+
+ <div class="drill-card" onclick="revealDrill(this)">
+  <div class="drill-q"><span class="q-num">9</span>Cortisol high, ACTH high, no suppression with high-dose dex, small cell lung cancer</div>
+  <div class="drill-a"><div class="drill-answer"><div class="dx-name">Ectopic ACTH Syndrome</div><div class="dx-detail">SCLC produces ACTH autonomously &mdash; not suppressible by high-dose dex. Also: bronchial carcinoid, thymic carcinoid, pheochromocytoma. Often presents with hypokalemic alkalosis.</div></div></div>
+ </div>
+
+ <div class="drill-card" onclick="revealDrill(this)">
+  <div class="drill-q"><span class="q-num">10</span>TSH normal but high free T4 and T3, no symptoms of hyperthyroidism</div>
+  <div class="drill-a"><div class="drill-answer"><div class="dx-name">Thyroid Hormone Resistance (RTH)</div><div class="dx-detail">Mutation in thyroid hormone receptor beta (TR-beta). Tissues resistant to T3/T4 &rarr; compensatory &uarr;TSH &rarr; &uarr;T3/T4. Usually asymptomatic. Differentiate from TSH-oma by family history and alpha-subunit levels.</div></div></div>
+ </div>
+</div>
+
+</div>
+
+<script>
+// Tabs
+const tabs = document.querySelectorAll('.tab-btn');
+const sections = document.querySelectorAll('.section');
+tabs.forEach(btn => {
+ btn.addEventListener('click', () => {
+  tabs.forEach(t => t.classList.remove('active'));
+  sections.forEach(s => s.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('sec-' + btn.dataset.tab).classList.add('active');
+ });
+});
+
+// TFT table expand
+document.querySelectorAll('.tft-row').forEach(row => {
+ row.addEventListener('click', () => {
+  const next = row.nextElementSibling;
+  const isShow = next.classList.contains('show');
+  document.querySelectorAll('.expand-row').forEach(r => r.classList.remove('show'));
+  document.querySelectorAll('.tft-row').forEach(r => r.classList.remove('expanded'));
+  if (!isShow) {
+   next.classList.add('show');
+   row.classList.add('expanded');
+   next.querySelector('.detail').textContent = row.dataset.detail;
+  }
+ });
+});
+
+// Algorithm toggle
+function toggleAlgo(header) {
+ header.parentElement.classList.toggle('open');
+}
+
+// Drill
+let drillCount = 0;
+function revealDrill(card) {
+ if (!card.classList.contains('revealed')) {
+  card.classList.add('revealed');
+  drillCount++;
+  document.getElementById('scoreNum').textContent = drillCount + '/10';
+  document.getElementById('drillScore').style.display = 'block';
+ }
+}
+function resetDrill() {
+ drillCount = 0;
+ document.querySelectorAll('.drill-card').forEach(c => c.classList.remove('revealed'));
+ document.getElementById('drillScore').style.display = 'none';
+}
+</script>
+</body>
+</html>

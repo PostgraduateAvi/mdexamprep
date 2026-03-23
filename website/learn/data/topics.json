@@ -15,7 +15,10 @@
       "What is the potential consequence of cyst formation within e",
       "What is the potential risk associated with taking Pembrolizu"
     ],
-    "tool_ids": [],
+    "tool_ids": [
+      "cardiac-cycle-auscultation",
+      "ecg-interpretation"
+    ],
     "yield": "medium",
     "bloom_level": "understand"
   },
@@ -30,7 +33,9 @@
       "In myocardial infarction, which artery is commonly associate",
       "What are Kerley B lines and how are they related to acute de"
     ],
-    "tool_ids": [],
+    "tool_ids": [
+      "ecg-interpretation"
+    ],
     "yield": "high",
     "bloom_level": "recall"
   },
@@ -53,7 +58,9 @@
     "flashcard_topics": [
       "What are H2 receptor antagonists, and for what conditions ar"
     ],
-    "tool_ids": [],
+    "tool_ids": [
+      "cardiac-cycle-auscultation"
+    ],
     "yield": "high",
     "bloom_level": "recall"
   },
@@ -71,7 +78,9 @@
       "What liver enzyme is elevated in cholestasis, such as biliar",
       "Which molecule serves as the precursor to thromboxane A2"
     ],
-    "tool_ids": [],
+    "tool_ids": [
+      "cardiac-cycle-auscultation"
+    ],
     "yield": "medium",
     "bloom_level": "recall"
   },
@@ -99,7 +108,9 @@
       "Atrial Fibrillation",
       "In cases of atrial fibrillation, where is the most common lo"
     ],
-    "tool_ids": [],
+    "tool_ids": [
+      "ecg-interpretation"
+    ],
     "yield": "high",
     "bloom_level": "recall"
   },
@@ -112,7 +123,9 @@
     "flashcard_topics": [
       "Does the Cahill cycle lead to the regeneration of NAD+"
     ],
-    "tool_ids": [],
+    "tool_ids": [
+      "cardiac-cycle-auscultation"
+    ],
     "yield": "low"
   },
   {
@@ -162,7 +175,9 @@
       "How do central retinal artery occlusion and central retinal"
     ],
     "tool_ids": [
-      "pi-final-review"
+      "ecg-interpretation",
+      "pi-final-review",
+      "raas-arni-recall"
     ],
     "yield": "high",
     "bloom_level": "analyze"
@@ -213,7 +228,9 @@
     "system": "CVS",
     "what_to_memorize": "",
     "flashcard_topics": [],
-    "tool_ids": [],
+    "tool_ids": [
+      "ecg-interpretation"
+    ],
     "yield": "low"
   },
   {
@@ -225,7 +242,9 @@
     "flashcard_topics": [
       "What is the abnormal heart sound that may be audible during"
     ],
-    "tool_ids": [],
+    "tool_ids": [
+      "cardiac-cycle-auscultation"
+    ],
     "yield": "low"
   },
   {
@@ -239,8 +258,9 @@
       "What type of heart failure can be associated with severe ane"
     ],
     "tool_ids": [
-      "raas-arni-recall",
-      "pi-final-review"
+      "cardiac-cycle-auscultation",
+      "pi-final-review",
+      "raas-arni-recall"
     ],
     "yield": "medium",
     "bloom_level": "recall"
@@ -274,7 +294,9 @@
     "flashcard_topics": [
       "Hypokalemia"
     ],
-    "tool_ids": [],
+    "tool_ids": [
+      "ecg-interpretation"
+    ],
     "yield": "low"
   },
   {
@@ -317,7 +339,7 @@
     "id": "ischemic-third-nerve-palsies",
     "topic": "Ischemic third nerve palsies",
     "subtitle": "",
-    "system": "CVS",
+    "system": "Neuro",
     "what_to_memorize": "",
     "flashcard_topics": [],
     "tool_ids": [],
@@ -340,7 +362,7 @@
     "id": "lacunar-infarction",
     "topic": "Lacunar infarction",
     "subtitle": "",
-    "system": "CVS",
+    "system": "Neuro",
     "what_to_memorize": "",
     "flashcard_topics": [],
     "tool_ids": [],
@@ -353,7 +375,9 @@
     "system": "CVS",
     "what_to_memorize": "",
     "flashcard_topics": [],
-    "tool_ids": [],
+    "tool_ids": [
+      "cardiac-cycle-auscultation"
+    ],
     "yield": "low"
   },
   {
@@ -363,7 +387,9 @@
     "system": "CVS",
     "what_to_memorize": "",
     "flashcard_topics": [],
-    "tool_ids": [],
+    "tool_ids": [
+      "cardiac-cycle-auscultation"
+    ],
     "yield": "low"
   },
   {
@@ -384,7 +410,9 @@
     "system": "CVS",
     "what_to_memorize": "",
     "flashcard_topics": [],
-    "tool_ids": [],
+    "tool_ids": [
+      "ecg-interpretation"
+    ],
     "yield": "low"
   },
   {
@@ -421,7 +449,9 @@
       "What is systemic embolism, and what is the most common cause",
       "What is the cause of pulmonary anthrax, and how is it contra"
     ],
-    "tool_ids": [],
+    "tool_ids": [
+      "ecg-interpretation"
+    ],
     "yield": "medium",
     "bloom_level": "understand"
   },
@@ -458,7 +488,9 @@
     "flashcard_topics": [
       "SA Node Physiology"
     ],
-    "tool_ids": [],
+    "tool_ids": [
+      "cardiac-cycle-auscultation"
+    ],
     "yield": "medium",
     "bloom_level": "recall"
   },
@@ -507,7 +539,7 @@
     "id": "vertebrobasilar-transient-ischemic-attack",
     "topic": "Vertebrobasilar transient ischemic attack",
     "subtitle": "",
-    "system": "CVS",
+    "system": "Neuro",
     "what_to_memorize": "",
     "flashcard_topics": [],
     "tool_ids": [],
@@ -578,7 +610,9 @@
     "system": "Neuro",
     "what_to_memorize": "",
     "flashcard_topics": [],
-    "tool_ids": [],
+    "tool_ids": [
+      "spinal-cord-tracts"
+    ],
     "yield": "low",
     "bloom_level": "recall"
   },
@@ -668,6 +702,7 @@
     ],
     "tool_ids": [
       "brainstem-cortical",
+      "cranial-nerves",
       "medulla-crosssection"
     ],
     "yield": "high",
@@ -698,6 +733,7 @@
     ],
     "tool_ids": [
       "brainstem-cortical",
+      "cranial-nerves",
       "medulla-crosssection"
     ],
     "yield": "low"
@@ -722,7 +758,8 @@
     "what_to_memorize": "",
     "flashcard_topics": [],
     "tool_ids": [
-      "brainstem-cortical"
+      "brainstem-cortical",
+      "cranial-nerves"
     ],
     "yield": "low"
   },
@@ -780,9 +817,7 @@
     "flashcard_topics": [
       "Cerebral Venous System"
     ],
-    "tool_ids": [
-      "autonomic-ns"
-    ],
+    "tool_ids": [],
     "yield": "medium",
     "bloom_level": "recall"
   },
@@ -1020,7 +1055,9 @@
     "flashcard_topics": [
       "Gait Disorders"
     ],
-    "tool_ids": [],
+    "tool_ids": [
+      "spinal-cord-tracts"
+    ],
     "yield": "low"
   },
   {
@@ -1129,7 +1166,8 @@
       "What is the relationship between RET mutation and multiple e"
     ],
     "tool_ids": [
-      "piii-recall-tester"
+      "piii-recall-tester",
+      "spinal-cord-tracts"
     ],
     "yield": "high",
     "bloom_level": "recall"
@@ -1298,7 +1336,8 @@
     "what_to_memorize": "",
     "flashcard_topics": [],
     "tool_ids": [
-      "brainstem-cortical"
+      "brainstem-cortical",
+      "cranial-nerves"
     ],
     "yield": "low"
   },
@@ -1553,7 +1592,8 @@
       "Chronic Kidney Disease"
     ],
     "tool_ids": [
-      "nephron-diagram"
+      "nephron-diagram",
+      "raas-arni-recall"
     ],
     "yield": "high",
     "bloom_level": "recall"
@@ -1665,7 +1705,9 @@
     "flashcard_topics": [
       "What is the recommended next step in management for a patien"
     ],
-    "tool_ids": [],
+    "tool_ids": [
+      "ecg-interpretation"
+    ],
     "yield": "high",
     "bloom_level": "apply"
   },
@@ -1768,8 +1810,8 @@
     "tool_ids": [
       "nephron-diagram",
       "nephron-sequential",
-      "raas-arni-recall",
-      "pi-final-review"
+      "pi-final-review",
+      "raas-arni-recall"
     ],
     "yield": "low"
   },
@@ -1878,7 +1920,8 @@
     "what_to_memorize": "",
     "flashcard_topics": [],
     "tool_ids": [
-      "piii-recall-tester"
+      "piii-recall-tester",
+      "thyroid-adrenal-axis"
     ],
     "yield": "low"
   },
@@ -1889,7 +1932,9 @@
     "system": "Endocrine",
     "what_to_memorize": "",
     "flashcard_topics": [],
-    "tool_ids": [],
+    "tool_ids": [
+      "thyroid-adrenal-axis"
+    ],
     "yield": "low"
   },
   {
@@ -1924,7 +1969,8 @@
     "what_to_memorize": "",
     "flashcard_topics": [],
     "tool_ids": [
-      "piii-recall-tester"
+      "piii-recall-tester",
+      "thyroid-adrenal-axis"
     ],
     "yield": "low",
     "bloom_level": "analyze"
@@ -1937,7 +1983,8 @@
     "what_to_memorize": "",
     "flashcard_topics": [],
     "tool_ids": [
-      "piii-recall-tester"
+      "piii-recall-tester",
+      "thyroid-adrenal-axis"
     ],
     "yield": "low"
   },
@@ -2049,7 +2096,8 @@
       "What is the cause of neonatal hyperthyroidism"
     ],
     "tool_ids": [
-      "piii-recall-tester"
+      "piii-recall-tester",
+      "thyroid-adrenal-axis"
     ],
     "yield": "low"
   },
@@ -2085,7 +2133,9 @@
     "flashcard_topics": [
       "Is hepatomegaly a symptom of congenital hypothyroidism"
     ],
-    "tool_ids": [],
+    "tool_ids": [
+      "thyroid-adrenal-axis"
+    ],
     "yield": "high",
     "bloom_level": "recall"
   },
@@ -2162,7 +2212,9 @@
     "system": "Endocrine",
     "what_to_memorize": "",
     "flashcard_topics": [],
-    "tool_ids": [],
+    "tool_ids": [
+      "thyroid-adrenal-axis"
+    ],
     "yield": "low",
     "bloom_level": "recall"
   },
@@ -2204,7 +2256,8 @@
     "what_to_memorize": "Burch–Wartofsky idea, multi-drug sequence; myxedema coma supportive bundle.",
     "flashcard_topics": [],
     "tool_ids": [
-      "piii-recall-tester"
+      "piii-recall-tester",
+      "thyroid-adrenal-axis"
     ],
     "yield": "low"
   },
@@ -2229,7 +2282,9 @@
       "What is a forcing function and how does it contribute to imp",
       "What is the function of the lipid membrane of a host cell th"
     ],
-    "tool_ids": [],
+    "tool_ids": [
+      "thyroid-adrenal-axis"
+    ],
     "yield": "medium",
     "bloom_level": "apply"
   },
@@ -2252,7 +2307,8 @@
     "what_to_memorize": "",
     "flashcard_topics": [],
     "tool_ids": [
-      "piii-recall-tester"
+      "piii-recall-tester",
+      "thyroid-adrenal-axis"
     ],
     "yield": "low",
     "bloom_level": "recall"
@@ -2360,6 +2416,7 @@
     "what_to_memorize": "",
     "flashcard_topics": [],
     "tool_ids": [
+      "cxr-interpretation",
       "pft-algorithms"
     ],
     "yield": "high",
@@ -2407,7 +2464,9 @@
     "system": "RS",
     "what_to_memorize": "CURB-65; empiric regimens; severity triage; follow-up imaging.",
     "flashcard_topics": [],
-    "tool_ids": [],
+    "tool_ids": [
+      "antibiotic-spectrum"
+    ],
     "yield": "low"
   },
   {
@@ -2494,6 +2553,7 @@
     "what_to_memorize": "",
     "flashcard_topics": [],
     "tool_ids": [
+      "cxr-interpretation",
       "pft-algorithms"
     ],
     "yield": "high",
@@ -2514,7 +2574,8 @@
       "What is the effect of obstructive lung diseases on residual"
     ],
     "tool_ids": [
-      "bronchopulmonary-segments"
+      "bronchopulmonary-segments",
+      "cxr-interpretation"
     ],
     "yield": "medium",
     "bloom_level": "recall"
@@ -2551,6 +2612,7 @@
     "what_to_memorize": "",
     "flashcard_topics": [],
     "tool_ids": [
+      "cxr-interpretation",
       "pft-algorithms"
     ],
     "yield": "low",
@@ -2566,7 +2628,8 @@
       "In infants, what is the most frequent cause of pneumonia"
     ],
     "tool_ids": [
-      "bronchopulmonary-segments"
+      "bronchopulmonary-segments",
+      "cxr-interpretation"
     ],
     "yield": "high",
     "bloom_level": "recall"
@@ -2578,7 +2641,10 @@
     "system": "RS",
     "what_to_memorize": "",
     "flashcard_topics": [],
-    "tool_ids": [],
+    "tool_ids": [
+      "cxr-interpretation",
+      "pft-algorithms"
+    ],
     "yield": "low"
   },
   {
@@ -2613,6 +2679,7 @@
     "what_to_memorize": "Stage I–IV schema; indications for steroids; extrapulmonary red flags.",
     "flashcard_topics": [],
     "tool_ids": [
+      "cxr-interpretation",
       "pft-algorithms",
       "piii-recall-tester"
     ],
@@ -2673,7 +2740,11 @@
     "system": "RS",
     "what_to_memorize": "",
     "flashcard_topics": [],
-    "tool_ids": [],
+    "tool_ids": [
+      "antibiotic-spectrum",
+      "cxr-interpretation",
+      "pft-algorithms"
+    ],
     "yield": "high",
     "bloom_level": "recall"
   },
@@ -2709,7 +2780,9 @@
     "system": "GI",
     "what_to_memorize": "",
     "flashcard_topics": [],
-    "tool_ids": [],
+    "tool_ids": [
+      "lft-interpretation"
+    ],
     "yield": "high",
     "bloom_level": "analyze"
   },
@@ -2722,7 +2795,9 @@
     "flashcard_topics": [
       "What autoimmune disorder is typically linked to the presence"
     ],
-    "tool_ids": [],
+    "tool_ids": [
+      "lft-interpretation"
+    ],
     "yield": "low"
   },
   {
@@ -2732,7 +2807,9 @@
     "system": "GI",
     "what_to_memorize": "",
     "flashcard_topics": [],
-    "tool_ids": [],
+    "tool_ids": [
+      "lft-interpretation"
+    ],
     "yield": "low",
     "bloom_level": "recall"
   },
@@ -2791,6 +2868,7 @@
     "what_to_memorize": "",
     "flashcard_topics": [],
     "tool_ids": [
+      "lft-interpretation",
       "piii-recall-tester"
     ],
     "yield": "medium",
@@ -2828,16 +2906,6 @@
     "bloom_level": "recall"
   },
   {
-    "id": "gastrocnemius",
-    "topic": "Gastrocnemius",
-    "subtitle": "",
-    "system": "GI",
-    "what_to_memorize": "",
-    "flashcard_topics": [],
-    "tool_ids": [],
-    "yield": "low"
-  },
-  {
     "id": "gi-bleeding",
     "topic": "Gi Bleeding",
     "subtitle": "",
@@ -2856,7 +2924,9 @@
     "system": "GI",
     "what_to_memorize": "",
     "flashcard_topics": [],
-    "tool_ids": [],
+    "tool_ids": [
+      "lft-interpretation"
+    ],
     "yield": "high",
     "bloom_level": "recall"
   },
@@ -2867,7 +2937,9 @@
     "system": "GI",
     "what_to_memorize": "",
     "flashcard_topics": [],
-    "tool_ids": [],
+    "tool_ids": [
+      "lft-interpretation"
+    ],
     "yield": "low"
   },
   {
@@ -2910,6 +2982,7 @@
     "what_to_memorize": "",
     "flashcard_topics": [],
     "tool_ids": [
+      "lft-interpretation",
       "pi-final-weapon"
     ],
     "yield": "high",
@@ -2925,7 +2998,9 @@
       "What does a liver biopsy of a patient with hemochromatosis t",
       "When cancer metastasizes to the liver, is it more likely to"
     ],
-    "tool_ids": [],
+    "tool_ids": [
+      "lft-interpretation"
+    ],
     "yield": "high",
     "bloom_level": "recall"
   },
@@ -3017,7 +3092,9 @@
       "Anemia Classified Based On Red",
       "What is one cause of anemia due to underproduction and what"
     ],
-    "tool_ids": [],
+    "tool_ids": [
+      "anemia-classification"
+    ],
     "yield": "low"
   },
   {
@@ -3027,7 +3104,9 @@
     "system": "Heme",
     "what_to_memorize": "Ferritin/TfS patterns; CRP context; trial of iron vs investigate route.",
     "flashcard_topics": [],
-    "tool_ids": [],
+    "tool_ids": [
+      "anemia-classification"
+    ],
     "yield": "low"
   },
   {
@@ -3037,7 +3116,9 @@
     "system": "Heme",
     "what_to_memorize": "",
     "flashcard_topics": [],
-    "tool_ids": [],
+    "tool_ids": [
+      "coagulation-cascade"
+    ],
     "yield": "low"
   },
   {
@@ -3047,7 +3128,9 @@
     "system": "Heme",
     "what_to_memorize": "",
     "flashcard_topics": [],
-    "tool_ids": [],
+    "tool_ids": [
+      "anemia-classification"
+    ],
     "yield": "high",
     "bloom_level": "analyze"
   },
@@ -3055,7 +3138,7 @@
     "id": "appendiceal-pain",
     "topic": "Appendiceal pain",
     "subtitle": "",
-    "system": "Heme",
+    "system": "GI",
     "what_to_memorize": "",
     "flashcard_topics": [],
     "tool_ids": [],
@@ -3072,6 +3155,7 @@
       "Which culture media contains red blood cells that are lysed"
     ],
     "tool_ids": [
+      "coagulation-cascade",
       "pi-final-weapon"
     ],
     "yield": "medium",
@@ -3098,6 +3182,7 @@
     "what_to_memorize": "",
     "flashcard_topics": [],
     "tool_ids": [
+      "coagulation-cascade",
       "piii-recall-tester"
     ],
     "yield": "low"
@@ -3112,6 +3197,7 @@
       "Folic Acid Metabolism"
     ],
     "tool_ids": [
+      "anemia-classification",
       "b-vitamin-cluster",
       "slot1-nutrition"
     ],
@@ -3144,7 +3230,9 @@
     "system": "Heme",
     "what_to_memorize": "",
     "flashcard_topics": [],
-    "tool_ids": [],
+    "tool_ids": [
+      "coagulation-cascade"
+    ],
     "yield": "low",
     "bloom_level": "recall"
   },
@@ -3156,6 +3244,7 @@
     "what_to_memorize": "",
     "flashcard_topics": [],
     "tool_ids": [
+      "coagulation-cascade",
       "pi-final-weapon"
     ],
     "yield": "low",
@@ -3168,7 +3257,9 @@
     "system": "Heme",
     "what_to_memorize": "",
     "flashcard_topics": [],
-    "tool_ids": [],
+    "tool_ids": [
+      "anemia-classification"
+    ],
     "yield": "high",
     "bloom_level": "recall"
   },
@@ -3182,6 +3273,7 @@
       "What is heme iron, and how is it absorbed by the body"
     ],
     "tool_ids": [
+      "anemia-classification",
       "b-vitamin-cluster",
       "pi-final-weapon",
       "slot1-nutrition"
@@ -3238,7 +3330,7 @@
     "id": "medical-research-council-scale",
     "topic": "Medical Research Council scale",
     "subtitle": "",
-    "system": "Heme",
+    "system": "Neuro",
     "what_to_memorize": "",
     "flashcard_topics": [],
     "tool_ids": [],
@@ -3252,6 +3344,7 @@
     "what_to_memorize": "",
     "flashcard_topics": [],
     "tool_ids": [
+      "anemia-classification",
       "b-vitamin-cluster",
       "pi-final-weapon",
       "slot1-nutrition"
@@ -3286,7 +3379,7 @@
     "id": "nasopharyngeal-carcinoma",
     "topic": "Nasopharyngeal carcinoma",
     "subtitle": "",
-    "system": "Heme",
+    "system": "General",
     "what_to_memorize": "",
     "flashcard_topics": [
       "Which virus is associated with nasopharyngeal carcinoma"
@@ -3323,6 +3416,7 @@
     "what_to_memorize": "",
     "flashcard_topics": [],
     "tool_ids": [
+      "anemia-classification",
       "b-vitamin-cluster",
       "slot1-nutrition"
     ],
@@ -3370,7 +3464,9 @@
       "What is the primary risk factor associated with basal cell c",
       "What type of stromal cell tumor is commonly associated with"
     ],
-    "tool_ids": [],
+    "tool_ids": [
+      "anemia-classification"
+    ],
     "yield": "high",
     "bloom_level": "recall"
   },
@@ -3401,7 +3497,9 @@
     "system": "Heme",
     "what_to_memorize": "",
     "flashcard_topics": [],
-    "tool_ids": [],
+    "tool_ids": [
+      "anemia-classification"
+    ],
     "yield": "low"
   },
   {
@@ -3413,7 +3511,9 @@
     "flashcard_topics": [
       "What are the symptoms of gestational thrombocytopenia"
     ],
-    "tool_ids": [],
+    "tool_ids": [
+      "coagulation-cascade"
+    ],
     "yield": "high",
     "bloom_level": "recall"
   },
@@ -3451,7 +3551,9 @@
       "How does sympathetic innervation affect airway resistance",
       "The Mechanisms Of Antibiotic Resistance"
     ],
-    "tool_ids": [],
+    "tool_ids": [
+      "antibiotic-spectrum"
+    ],
     "yield": "low"
   },
   {
@@ -3468,7 +3570,7 @@
     "id": "behavioral-variant-of-ftd",
     "topic": "Behavioral variant of FTD",
     "subtitle": "",
-    "system": "ID",
+    "system": "Neuro",
     "what_to_memorize": "",
     "flashcard_topics": [],
     "tool_ids": [],
@@ -3569,7 +3671,7 @@
     "id": "foixchavanymarie-syndrome",
     "topic": "Foix–Chavany–Marie syndrome",
     "subtitle": "",
-    "system": "ID",
+    "system": "Neuro",
     "what_to_memorize": "",
     "flashcard_topics": [],
     "tool_ids": [],
@@ -3643,7 +3745,9 @@
     "flashcard_topics": [
       "What method is used to detect active coronavirus infection"
     ],
-    "tool_ids": [],
+    "tool_ids": [
+      "antibiotic-spectrum"
+    ],
     "yield": "high",
     "bloom_level": "analyze"
   },
@@ -3663,7 +3767,7 @@
     "id": "imitation-behavior",
     "topic": "Imitation behavior",
     "subtitle": "",
-    "system": "ID",
+    "system": "Neuro",
     "what_to_memorize": "",
     "flashcard_topics": [],
     "tool_ids": [],
@@ -3699,6 +3803,7 @@
     "what_to_memorize": "",
     "flashcard_topics": [],
     "tool_ids": [
+      "antibiotic-spectrum",
       "parasite-lifecycle",
       "parasite-lifecycle-v2"
     ],
@@ -3712,7 +3817,9 @@
     "system": "ID",
     "what_to_memorize": "",
     "flashcard_topics": [],
-    "tool_ids": [],
+    "tool_ids": [
+      "antibiotic-spectrum"
+    ],
     "yield": "low"
   },
   {
@@ -3775,7 +3882,9 @@
     "system": "ID",
     "what_to_memorize": "",
     "flashcard_topics": [],
-    "tool_ids": [],
+    "tool_ids": [
+      "antibiotic-spectrum"
+    ],
     "yield": "low"
   },
   {
@@ -3797,7 +3906,7 @@
     "id": "utilization-behavior",
     "topic": "Utilization behavior",
     "subtitle": "",
-    "system": "ID",
+    "system": "Neuro",
     "what_to_memorize": "",
     "flashcard_topics": [],
     "tool_ids": [],
@@ -3826,26 +3935,6 @@
     "yield": "low"
   },
   {
-    "id": "anarthria",
-    "topic": "Anarthria",
-    "subtitle": "",
-    "system": "Rheum",
-    "what_to_memorize": "",
-    "flashcard_topics": [],
-    "tool_ids": [],
-    "yield": "low"
-  },
-  {
-    "id": "anatomists",
-    "topic": "Anatomists",
-    "subtitle": "",
-    "system": "Rheum",
-    "what_to_memorize": "",
-    "flashcard_topics": [],
-    "tool_ids": [],
-    "yield": "low"
-  },
-  {
     "id": "ankylosing-spondylitis",
     "topic": "Ankylosing spondylitis",
     "subtitle": "diagnosis & therapy",
@@ -3855,6 +3944,7 @@
       "What could be the possible diagnosis for an elderly woman wh"
     ],
     "tool_ids": [
+      "autoimmune-antibody-map",
       "piii-recall-tester"
     ],
     "yield": "high",
@@ -3869,19 +3959,11 @@
     "flashcard_topics": [
       "What medical condition is suggested by the autoimmune destru"
     ],
-    "tool_ids": [],
+    "tool_ids": [
+      "autoimmune-antibody-map"
+    ],
     "yield": "medium",
     "bloom_level": "recall"
-  },
-  {
-    "id": "bony-anatomy",
-    "topic": "Bony anatomy",
-    "subtitle": "",
-    "system": "Rheum",
-    "what_to_memorize": "",
-    "flashcard_topics": [],
-    "tool_ids": [],
-    "yield": "low"
   },
   {
     "id": "canadian-neuro-ophthalmology-group",
@@ -3897,7 +3979,7 @@
     "id": "central-canal",
     "topic": "Central canal",
     "subtitle": "",
-    "system": "Rheum",
+    "system": "Neuro",
     "what_to_memorize": "",
     "flashcard_topics": [],
     "tool_ids": [],
@@ -3936,7 +4018,9 @@
       "How is the diagnosis of polymyositis or dermatomyositis made",
       "What is dermatomyositis and what are its characteristic feat"
     ],
-    "tool_ids": [],
+    "tool_ids": [
+      "autoimmune-antibody-map"
+    ],
     "yield": "medium",
     "bloom_level": "recall"
   },
@@ -3944,7 +4028,7 @@
     "id": "dorellos-canal",
     "topic": "Dorello’s canal",
     "subtitle": "",
-    "system": "Rheum",
+    "system": "Neuro",
     "what_to_memorize": "",
     "flashcard_topics": [],
     "tool_ids": [],
@@ -3978,7 +4062,7 @@
     "id": "guyons-canal",
     "topic": "Guyon’s canal",
     "subtitle": "",
-    "system": "Rheum",
+    "system": "Neuro",
     "what_to_memorize": "",
     "flashcard_topics": [],
     "tool_ids": [],
@@ -3988,7 +4072,7 @@
     "id": "internal-auditory-canal",
     "topic": "Internal auditory canal",
     "subtitle": "",
-    "system": "Rheum",
+    "system": "Neuro",
     "what_to_memorize": "",
     "flashcard_topics": [],
     "tool_ids": [],
@@ -4003,16 +4087,6 @@
     "flashcard_topics": [
       "JAK Inhibitors"
     ],
-    "tool_ids": [],
-    "yield": "low"
-  },
-  {
-    "id": "neuroanatomy-through-clinical-ases",
-    "topic": "Neuroanatomy Through Clinical ases",
-    "subtitle": "",
-    "system": "Rheum",
-    "what_to_memorize": "",
-    "flashcard_topics": [],
     "tool_ids": [],
     "yield": "low"
   },
@@ -4036,7 +4110,9 @@
     "system": "Rheum",
     "what_to_memorize": "",
     "flashcard_topics": [],
-    "tool_ids": [],
+    "tool_ids": [
+      "autoimmune-antibody-map"
+    ],
     "yield": "low"
   },
   {
@@ -4081,6 +4157,7 @@
     "what_to_memorize": "",
     "flashcard_topics": [],
     "tool_ids": [
+      "autoimmune-antibody-map",
       "piii-recall-tester"
     ],
     "yield": "high",
@@ -4093,7 +4170,9 @@
     "system": "Rheum",
     "what_to_memorize": "",
     "flashcard_topics": [],
-    "tool_ids": [],
+    "tool_ids": [
+      "autoimmune-antibody-map"
+    ],
     "yield": "high",
     "bloom_level": "recall"
   },
@@ -4101,7 +4180,7 @@
     "id": "sleep-cycle-disturbances",
     "topic": "Sleep cycle disturbances",
     "subtitle": "",
-    "system": "Rheum",
+    "system": "Neuro",
     "what_to_memorize": "",
     "flashcard_topics": [],
     "tool_ids": [],
@@ -4111,7 +4190,7 @@
     "id": "sleep-paralysis",
     "topic": "Sleep paralysis",
     "subtitle": "",
-    "system": "Rheum",
+    "system": "Neuro",
     "what_to_memorize": "",
     "flashcard_topics": [
       "Is it common for patients with REM sleep behavior disorder t",
@@ -4125,7 +4204,7 @@
     "id": "sleep-related-dyskinesias",
     "topic": "Sleep-related dyskinesias",
     "subtitle": "",
-    "system": "Rheum",
+    "system": "Neuro",
     "what_to_memorize": "",
     "flashcard_topics": [],
     "tool_ids": [],
@@ -4140,6 +4219,7 @@
     "what_to_memorize": "",
     "flashcard_topics": [],
     "tool_ids": [
+      "autoimmune-antibody-map",
       "piii-recall-tester"
     ],
     "yield": "low",
@@ -4153,6 +4233,7 @@
     "what_to_memorize": "Diffuse vs limited; ILD and PAH screening; renal crisis precautions.",
     "flashcard_topics": [],
     "tool_ids": [
+      "autoimmune-antibody-map",
       "piii-recall-tester"
     ],
     "yield": "low"
@@ -4178,6 +4259,7 @@
       "Vasculitis"
     ],
     "tool_ids": [
+      "autoimmune-antibody-map",
       "piii-recall-tester"
     ],
     "yield": "high",
@@ -4187,27 +4269,7 @@
     "id": "vertebral-canal",
     "topic": "Vertebral canal",
     "subtitle": "",
-    "system": "Rheum",
-    "what_to_memorize": "",
-    "flashcard_topics": [],
-    "tool_ids": [],
-    "yield": "low"
-  },
-  {
-    "id": "wechsler-adult-intelligence-scale",
-    "topic": "Wechsler Adult Intelligence Scale",
-    "subtitle": "",
-    "system": "Rheum",
-    "what_to_memorize": "",
-    "flashcard_topics": [],
-    "tool_ids": [],
-    "yield": "low"
-  },
-  {
-    "id": "anatomical-snuff-box",
-    "topic": "“Anatomical snuff box,”",
-    "subtitle": "",
-    "system": "Rheum",
+    "system": "Neuro",
     "what_to_memorize": "",
     "flashcard_topics": [],
     "tool_ids": [],
@@ -4283,7 +4345,9 @@
     "system": "Pharmacology",
     "what_to_memorize": "",
     "flashcard_topics": [],
-    "tool_ids": [],
+    "tool_ids": [
+      "coagulation-cascade"
+    ],
     "yield": "low",
     "bloom_level": "recall"
   },
