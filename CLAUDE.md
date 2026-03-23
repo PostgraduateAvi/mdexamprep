@@ -1,30 +1,74 @@
 # MBBEasy — Project Root
 
-## Status: LIVE (Mar 23, 2026 — Session 29: Architecture reset)
+## Status: LIVE (Mar 23, 2026 — Session 30: First content insertion)
 
 **Brand**: MBBEasy — "Clinical medicine, decoded."
 **Built by Avinash Jothish.** Free. Static HTML/JS. No framework. Client-side only.
 
 ---
 
-## Architecture (Session 29)
+## Architecture (Session 30)
 
-Stripped to two sections: **Theory** + **Practicals**. All prior complexity removed (Learn page, MCQs, flashcards, spaced repetition, knowledge graphs, 32 study tools).
+Two sections: **Theory** + **Practicals**. Session 29 stripped all prior complexity (Learn page, MCQs, flashcards, SR, knowledge graphs, 32 study tools). Session 30 inserted the first real content (Cardiology) and established the content pipeline.
 
-Single CSS file (`style.css`). "Warm Indigo" design system with glass morphism (indigo `#818cf8` + violet `#c084fc` accents on warm dark `#0f1117`). Self-hosted fonts (DM Sans body + Source Serif 4 headings). PWA with offline support (SW v18 + auto-reload on update).
+Single CSS file (`style.css`). "Warm Indigo" design system with glass morphism (indigo `#818cf8` + violet `#c084fc` accents on warm dark `#0f1117`). Self-hosted fonts (DM Sans body + Source Serif 4 headings). PWA with offline support (SW v20 + auto-reload on update).
 
 **Landing** (`index.html`) — Gradient hero + two glass cards (Theory / Practicals) + footer.
 
 **Theory** (`theory/index.html`) — System browser with accordion topics.
 - 7 systems: Cardiology, Respiratory, Neurology, Nephrology, Gastroenterology, Hematology, Endocrinology.
 - Content loaded from `theory/data/{system}.json` per system.
+- **Cardiology**: 51 topics from Harrison's 21e, 28 high-yield. First system with real content.
 - Empty systems show "Coming soon" placeholder.
 - URL param: `?system=X` (auto-select system).
-- Content built by co-work agents parsing textbooks → placed as JSON files.
 
 **Practicals** (`practicals/index.html`) — Clinical case browser.
 - 5 system buttons (Cardiac, Respiratory, Neuro, GI, General), 21 cases total.
 - Cases rendered as `<details>` accordions.
+
+---
+
+## Theory Content Pipeline
+
+### Conversion Process
+1. Source markdown in project root or `~/Downloads/textbooks/` (Harrison's 21e per system)
+2. Python conversion script (`~/convert_{system}.py`) parses `### X.X Title (Chapter Y)` sections
+3. Converts markdown → HTML: headers, lists, tables, bold/italic, clinical pearls, HR dividers
+4. Outputs JSON to `website/theory/data/{system}.json`
+5. Commit + push → auto-deploys. No code changes needed.
+
+### JSON Schema
+```json
+{
+  "system": "Cardiology",
+  "topics": [
+    {
+      "id": "topic-slug",
+      "title": "Topic Title",
+      "content": "<p>Pre-formatted HTML content</p>",
+      "source": "Harrison's 21e, Ch X",
+      "tags": ["high-yield"]
+    }
+  ]
+}
+```
+
+### Content CSS Classes (in `style.css`, `.content-html` scope)
+- `.clinical-pearl` — Amber left-border callout for KEY/NOTE/AVOID/IMPORTANT statements
+- `.table-wrap` — Horizontal scroll wrapper for mobile-friendly tables
+- `.content-divider` — Subtle `<hr>` between content sections
+- `ol/li` — Styled ordered lists
+
+### Content Status
+| System | Status | Topics | Source |
+|--------|--------|--------|--------|
+| Cardiology | DONE | 51 (28 high-yield) | Harrison's 21e |
+| Respiratory | Placeholder | 0 | — |
+| Neurology | Placeholder | 0 | — |
+| Nephrology | Placeholder | 0 | — |
+| Gastroenterology | Placeholder | 0 | — |
+| Hematology | Placeholder | 0 | — |
+| Endocrinology | Placeholder | 0 | Markdown exists at project root |
 
 ---
 
@@ -55,29 +99,6 @@ MDExamPrep/
 
 ---
 
-## Theory Content Pipeline
-
-Co-work agents parse textbooks from `~/Downloads/textbooks/` → produce JSON per system → place in `website/theory/data/`. Schema:
-
-```json
-{
-  "system": "Cardiology",
-  "topics": [
-    {
-      "id": "topic-id",
-      "title": "Topic Title",
-      "content": "<p>Pre-formatted HTML content</p>",
-      "source": "Harrison's Ch X",
-      "tags": ["high-yield"]
-    }
-  ]
-}
-```
-
-When a system JSON is placed, commit + push → auto-deploys. No code changes needed.
-
----
-
 ## Build Rules
 
 1. **Static HTML/JS only** — no frameworks, no build tools, no server
@@ -97,9 +118,21 @@ When a system JSON is placed, commit + push → auto-deploys. No code changes ne
 - **Auto-deploy**: `git push origin main` → Vercel builds ~30s → live
 - **Redirects**: /learn → /theory/, /mcqs → /, /predictor → /theory/, /theory/tools/* → /theory/ (all 301)
 - **Security headers**: CSP (script-src self + unsafe-inline), X-Frame-Options DENY, nosniff
-- **Cache**: Fonts 30d immutable, data JSON 1d+SWR, JS 1h+SWR, sw.js no-cache, manifest 1d
-- **PWA**: SW v18 (precache shell, SWR data, network-first HTML), auto-reload on SW update
-- **OG tags**: All pages have og:title/description/image + twitter:card
+- **Cache**: Fonts 30d immutable, data JSON 1d, JS 1h+SWR, sw.js no-cache, manifest 1d
+
+---
+
+## PWA & Service Worker (v20)
+
+- **Precache**: App shell (HTML pages, CSS, template.js, fonts, favicon, manifest)
+- **Fonts**: Cache-first (immutable binary)
+- **JS assets**: Stale-while-revalidate (versioned via query param)
+- **Data JSON**: Network-first with cache fallback (content changes without URL changes)
+- **HTML/navigation**: Network-first with cache fallback
+- **Auto-reload**: `controllerchange` listener on all pages + `skipWaiting()` + `clients.claim()`
+- **Cache cleanup**: Old version caches deleted on activate
+
+**CRITICAL**: Always bump `CACHE_VERSION` in `sw.js` when deploying ANY frontend change. Data JSON uses network-first so new content appears immediately without SW bump, but SW bump ensures old caches are purged.
 
 ---
 
@@ -110,7 +143,8 @@ When a system JSON is placed, commit + push → auto-deploys. No code changes ne
 | 1-13 | Mar 4-5 | Full build: data pipeline, predictor, practicals, theory, landing, deploy, audit |
 | 14-20 | Mar 6 | Deployment sync, simplification, directory reorg, design upgrades, PWA, rebrand to MBBEasy |
 | 21-28 | Mar 22-23 | Learn page, MCQs, flashcards, SR, knowledge graph, study tools, accessibility, Warm Indigo redesign, data pipeline |
-| 29 | Mar 23 | **Architecture reset**: stripped to Theory + Practicals. Removed Learn, MCQs, 32 study tools, flashcards, SR, knowledge graph. Glass morphism redesign. Theory content pipeline for co-work agents. SW v18. |
+| 29 | Mar 23 | Architecture reset: stripped to Theory + Practicals. Glass morphism redesign. SW v18. |
+| 30 | Mar 23 | First content insertion: Cardiology (51 topics). Content CSS. SW data strategy fix (SWR → network-first). SW v20. |
 
 ---
 
@@ -119,3 +153,5 @@ When a system JSON is placed, commit + push → auto-deploys. No code changes ne
 - **EEXIST errors**: Write/Edit tools fail on project dir. Workaround: write .py to home dir, run with Python.
 - **Heredoc + apostrophes**: Use .py workaround instead.
 - **macOS Python**: `python3` via Homebrew
+- **SW data caching**: Data JSON MUST use network-first strategy, not SWR. SWR serves stale cached content (e.g., empty placeholder) even after new content is deployed.
+- **zsh URL globbing**: Quote URLs with `?` params in shell commands (zsh treats `?` as glob).

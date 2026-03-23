@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'v19';
+const CACHE_VERSION = 'v20';
 const PRECACHE = 'precache-' + CACHE_VERSION;
 const RUNTIME = 'runtime-' + CACHE_VERSION;
 
@@ -71,17 +71,16 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  // Data JSON: stale-while-revalidate
+  // Data JSON: network-first (content changes without URL changes)
   if (url.pathname.includes('/data/') && url.pathname.endsWith('.json')) {
     event.respondWith(
-      caches.match(event.request).then(cached => {
-        const fetchPromise = fetch(event.request).then(response => {
+      fetch(event.request)
+        .then(response => {
           const clone = response.clone();
           caches.open(RUNTIME).then(cache => cache.put(event.request, clone));
           return response;
-        });
-        return cached || fetchPromise;
-      })
+        })
+        .catch(() => caches.match(event.request))
     );
     return;
   }
