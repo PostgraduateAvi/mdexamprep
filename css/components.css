@@ -160,9 +160,6 @@
   opacity: 0.5;
 }
 
-.med-breadcrumb__separator::after {
-  content: '/';
-}
 
 .med-breadcrumb__current {
   color: var(--text-primary);

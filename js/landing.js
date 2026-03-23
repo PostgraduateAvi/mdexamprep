@@ -81,6 +81,12 @@
       book.style.perspective = '800px';
     }
 
+    // Set z-index so pages stack correctly
+    pages.forEach(function(page, i) {
+      page.style.zIndex = i + 1;
+    });
+    cover.style.zIndex = pages.length + 1;
+
     // Create a continuous page-flip timeline
     var flipTl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
 
@@ -132,6 +138,19 @@
   }
 
   // ==================== BODY SILHOUETTE ANIMATION ====================
+  var SYSTEM_COLORS = {
+    neurology: '#8B5CF6',
+    cardiology: '#EF4444',
+    respiratory: '#0EA5E9',
+    gi: '#F59E0B',
+    nephrology: '#14B8A6',
+    endocrinology: '#F97316',
+    hematology: '#F43F5E'
+  };
+  function getSystemColor(system) {
+    return SYSTEM_COLORS[system] || '#fff';
+  }
+
   function startBodyAnimation() {
     var regions = document.querySelectorAll('.body-silhouette__region');
     var labels = document.querySelectorAll('.body-silhouette__label');
@@ -152,6 +171,7 @@
       // Remove previous highlight
       regions.forEach(function(r) {
         r.classList.remove('body-silhouette__region--active');
+        r.style.filter = '';
       });
       labels.forEach(function(l) {
         l.classList.remove('body-silhouette__label--active');
@@ -165,11 +185,7 @@
 
       if (region) {
         region.classList.add('body-silhouette__region--active');
-        // Add glow effect via GSAP
-        gsap.fromTo(region,
-          { filter: 'drop-shadow(0 0 2px currentColor)' },
-          { filter: 'drop-shadow(0 0 12px currentColor)', duration: 0.6, ease: 'power2.out' }
-        );
+        region.style.filter = 'drop-shadow(0 0 12px ' + getSystemColor(system) + ')';
       }
       if (label) {
         label.classList.add('body-silhouette__label--active');
@@ -182,9 +198,15 @@
       currentIndex = (currentIndex + 1) % systems.length;
     }
 
-    // Start cycling
+    // Start cycling with GSAP-managed timing
+    function scheduleNext() {
+      gsap.delayedCall(1.5, function() {
+        highlightNext();
+        scheduleNext();
+      });
+    }
     highlightNext();
-    setInterval(highlightNext, 1500);
+    scheduleNext();
 
     // Subtle float animation on the whole silhouette
     gsap.to('#body-silhouette', {
