@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MD Exam Prep — Internal Medicine</title>
+  <meta name="description" content="Comprehensive MD Internal Medicine exam preparation tool">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components.css">
+
+  <!-- Tailwind (runtime config) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            primary: { DEFAULT: '#2563EB', light: '#3B82F6' },
+            surface: { DEFAULT: '#F8F9FB', dark: '#0B0F19' }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Inline critical styles for preloader and landing-specific layout -->
+  <style>
+    /* Preloader */
+    #preloader {
+      position: fixed;
+      inset: 0;
+      background: var(--bg-primary);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 16px;
+    }
+    #preloader .spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid var(--border-subtle);
+      border-top-color: var(--accent-primary);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg) } }
+    #preloader .preloader-text {
+      font-family: var(--font-sans);
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* Views */
+    .view {
+      display: none;
+      min-height: 100dvh;
+    }
+    .view--active {
+      display: block;
+    }
+
+    /* Landing-specific */
+    .landing-container {
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-6) var(--space-4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Entry overlay for animation */
+    #entry-overlay {
+      position: fixed;
+      inset: 0;
+      background: var(--bg-primary);
+      z-index: 500;
+      pointer-events: none;
+    }
+
+    /* Landing title */
+    .landing-title {
+      font-size: var(--text-hero);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+      text-align: center;
+      line-height: 1.1;
+      margin-bottom: var(--space-3);
+    }
+    .landing-title .char {
+      display: inline-block;
+      opacity: 0;
+    }
+    .landing-subtitle {
+      font-size: var(--text-lg);
+      color: var(--text-secondary);
+      text-align: center;
+      font-weight: 500;
+      opacity: 0;
+      margin-bottom: var(--space-12);
+    }
+
+    /* Card grid */
+    .landing-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-6);
+      width: 100%;
+      max-width: 700px;
+    }
+
+    /* Landing card specific */
+    .landing-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: var(--space-8) var(--space-6);
+      cursor: pointer;
+      opacity: 0;
+      transform: scale(0.85);
+    }
+    .landing-card__icon-container {
+      width: 180px;
+      height: 180px;
+      margin-bottom: var(--space-6);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .landing-card__title {
+      font-size: var(--text-2xl);
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: var(--space-2);
+    }
+    .landing-card__desc {
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      line-height: 1.6;
+      max-width: 260px;
+    }
+
+    /* 3D Book animation container */
+    .book-3d {
+      width: 120px;
+      height: 160px;
+      position: relative;
+      perspective: 800px;
+      transform-style: preserve-3d;
+    }
+    .book-3d__spine {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 16px;
+      height: 100%;
+      background: linear-gradient(90deg, #1e40af, #2563eb);
+      border-radius: 3px 0 0 3px;
+      transform-origin: left center;
+      transform: rotateY(0deg);
+    }
+    .book-3d__cover-back {
+      position: absolute;
+      left: 16px;
+      top: 0;
+      width: calc(100% - 16px);
+      height: 100%;
+      background: linear-gradient(135deg, #1e40af, #1d4ed8);
+      border-radius: 0 6px 6px 0;
+      box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+    }
+    .book-3d__page {
+      position: absolute;
+      left: 16px;
+      top: 3px;
+      width: calc(100% - 22px);
+      height: calc(100% - 6px);
+      background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+      border-radius: 0 4px 4px 0;
+      transform-origin: left center;
+      backface-visibility: hidden;
+      box-shadow: 1px 0 3px rgba(0,0,0,0.1);
+    }
+    .book-3d__page--back {
+      background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+      transform: rotateY(-0.5deg);
+    }
+    /* Page lines to simulate text */
+    .book-3d__page::after {
+      content: '';
+      position: absolute;
+      top: 15%;
+      left: 12%;
+      right: 12%;
+      height: 60%;
+      background: repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent 8px,
+        #cbd5e1 8px,
+        #cbd5e1 9px
+      );
+      opacity: 0.5;
+      border-radius: 2px;
+    }
+    .book-3d__cover-front {
+      position: absolute;
+      left: 16px;
+      top: 0;
+      width: calc(100% - 16px);
+      height: 100%;
+      background: linear-gradient(135deg, #3b82f6, #2563eb, #1d4ed8);
+      border-radius: 0 6px 6px 0;
+      transform-origin: left center;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .book-3d__cover-front::after {
+      content: 'MD';
+      font-family: var(--font-sans);
+      font-size: 24px;
+      font-weight: 800;
+      color: rgba(255,255,255,0.9);
+      letter-spacing: 0.05em;
+    }
+
+    /* Body silhouette animation */
+    .body-silhouette {
+      width: 100px;
+      height: 180px;
+      position: relative;
+    }
+    .body-silhouette svg {
+      width: 100%;
+      height: 100%;
+    }
+    .body-silhouette__region {
+      opacity: 0;
+      transition: opacity 0.6s ease, filter 0.6s ease;
+    }
+    .body-silhouette__region--active {
+      opacity: 0.7;
+    }
+    .body-silhouette__label {
+      position: absolute;
+      font-size: var(--text-xs);
+      font-weight: 600;
+      color: var(--text-secondary);
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+    }
+    .body-silhouette__label--active {
+      opacity: 1;
+    }
+
+    /* Background ambient decorations */
+    .landing-bg-gradient {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(ellipse 60% 50% at 20% 50%, rgba(37,99,235,0.06) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 50% at 80% 50%, rgba(139,92,246,0.05) 0%, transparent 70%),
+        radial-gradient(ellipse 80% 40% at 50% 100%, rgba(249,115,22,0.04) 0%, transparent 60%);
+    }
+    .dark .landing-bg-gradient {
+      background:
+        radial-gradient(ellipse 60% 50% at 20% 50%, rgba(37,99,235,0.1) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 50% at 80% 50%, rgba(139,92,246,0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 80% 40% at 50% 100%, rgba(249,115,22,0.06) 0%, transparent 60%);
+    }
+
+    /* Footer links */
+    .landing-footer {
+      margin-top: var(--space-12);
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+      justify-content: center;
+      opacity: 0;
+    }
+    .landing-footer a {
+      font-size: var(--text-sm);
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: color var(--duration-fast);
+    }
+    .landing-footer a:hover {
+      color: var(--accent-primary);
+    }
+
+    /* Body view */
+    .body-view-container {
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px var(--space-4) var(--space-6);
+    }
+
+    .body-view-title {
+      font-size: var(--text-3xl);
+      font-weight: 700;
+      color: var(--text-primary);
+      text-align: center;
+      margin-bottom: var(--space-2);
+    }
+    .body-view-subtitle {
+      font-size: var(--text-base);
+      color: var(--text-secondary);
+      text-align: center;
+      margin-bottom: var(--space-8);
+    }
+
+    /* System node graph view */
+    .system-view-container {
+      min-height: 100dvh;
+      padding: 80px var(--space-4) var(--space-6);
+    }
+    .system-view-header {
+      text-align: center;
+      margin-bottom: var(--space-8);
+    }
+    .system-view-title {
+      font-size: var(--text-3xl);
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    #graph-container {
+      width: 100%;
+      max-width: 900px;
+      min-height: 500px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    /* Content panel close button */
+    .panel-close {
+      position: absolute;
+      top: var(--space-4);
+      right: var(--space-4);
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+  <!-- Background gradient decoration -->
+  <div class="landing-bg-gradient" aria-hidden="true"></div>
+
+  <!-- Preloader -->
+  <div id="preloader" role="status" aria-label="Loading application">
+    <div class="spinner" aria-hidden="true"></div>
+    <div class="preloader-text">Loading</div>
+  </div>
+
+  <!-- Entry animation overlay -->
+  <div id="entry-overlay" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="med-header" role="banner">
+    <div style="display:flex;align-items:center;gap:var(--space-3)">
+      <button id="back-btn" class="med-btn med-btn--icon med-btn--ghost" style="display:none" aria-label="Go back">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M13 4l-6 6 6 6"/></svg>
+      </button>
+      <nav id="breadcrumb" class="med-breadcrumb" aria-label="Breadcrumb"></nav>
+    </div>
+    <button id="dark-toggle" class="med-btn med-btn--icon med-btn--ghost" aria-label="Toggle dark mode">&#9789;</button>
+  </header>
+
+  <!-- ==================== VIEW: LANDING ==================== -->
+  <main>
+    <div id="view-landing" class="view view--active" role="region" aria-label="Landing">
+      <div class="landing-container">
+        <h1 class="landing-title" id="landing-title"></h1>
+        <p class="landing-subtitle" id="landing-subtitle">Internal Medicine — Exam Preparation</p>
+
+        <div class="landing-cards" role="list">
+          <!-- Theory Card -->
+          <div class="landing-card med-card med-card--interactive" id="card-theory" role="listitem" tabindex="0" onclick="window.location.hash='theory'" onkeydown="if(event.key==='Enter')window.location.hash='theory'" aria-label="Theory — Harrison's-based study guides across all organ systems">
+            <div class="landing-card__icon-container" aria-hidden="true">
+              <div class="book-3d" id="book-3d">
+                <div class="book-3d__spine"></div>
+                <div class="book-3d__cover-back"></div>
+                <div class="book-3d__page book-3d__page--back" data-page="4"></div>
+                <div class="book-3d__page" data-page="3"></div>
+                <div class="book-3d__page" data-page="2"></div>
+                <div class="book-3d__page" data-page="1"></div>
+                <div class="book-3d__cover-front"></div>
+              </div>
+            </div>
+            <h2 class="landing-card__title">Theory</h2>
+            <p class="landing-card__desc">Harrison's-based study guides across all organ systems</p>
+          </div>
+
+          <!-- Practicals Card -->
+          <div class="landing-card med-card med-card--interactive" id="card-practicals" role="listitem" tabindex="0" onclick="window.location.hash='practicals'" onkeydown="if(event.key==='Enter')window.location.hash='practicals'" aria-label="Clinical Medicine — Bedside examination techniques and clinical skills">
+            <div class="landing-card__icon-container" aria-hidden="true">
+              <div class="body-silhouette" id="body-silhouette">
+                <!-- SVG body silhouette with organ overlay regions -->
+                <svg viewBox="0 0 100 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <!-- Body outline -->
+                  <path d="M50 8 C50 8 42 8 40 14 C38 20 38 24 38 28 L36 32 C30 34 22 40 20 48 L16 62 C14 68 16 72 20 72 L24 70 L26 80 C26 84 26 90 28 96 L28 100 C26 106 24 114 24 120 L22 160 C22 166 24 168 28 168 L34 168 L36 172 C38 174 40 174 42 172 L42 168 L42 160 L40 120 C40 116 42 108 44 100 L46 94 L50 94 L54 94 L56 100 C58 108 60 116 60 120 L58 160 L58 168 L58 172 C60 174 62 174 64 172 L66 168 L72 168 C76 168 78 166 78 160 L76 120 C76 114 74 106 72 100 L72 96 C74 90 74 84 74 80 L76 70 L80 72 C84 72 86 68 84 62 L80 48 C78 40 70 34 64 32 L62 28 C62 24 62 20 60 14 C58 8 50 8 50 8Z"
+                    stroke="var(--text-tertiary)" stroke-width="1.5" fill="none" opacity="0.5"/>
+
+                  <!-- Organ regions (clickable highlights) -->
+                  <ellipse class="body-silhouette__region" data-system="neurology" cx="50" cy="12" rx="10" ry="8" fill="#8B5CF6"/>
+                  <ellipse class="body-silhouette__region" data-system="cardiology" cx="46" cy="52" rx="8" ry="7" fill="#EF4444"/>
+                  <ellipse class="body-silhouette__region" data-system="respiratory" cx="50" cy="48" rx="16" ry="10" fill="#0EA5E9"/>
+                  <ellipse class="body-silhouette__region" data-system="gi" cx="42" cy="68" rx="10" ry="6" fill="#F59E0B"/>
+                  <ellipse class="body-silhouette__region" data-system="nephrology" cx="50" cy="78" rx="12" ry="5" fill="#14B8A6"/>
+                  <ellipse class="body-silhouette__region" data-system="endocrinology" cx="50" cy="30" rx="6" ry="4" fill="#F97316"/>
+                  <ellipse class="body-silhouette__region" data-system="hematology" cx="50" cy="94" rx="14" ry="6" fill="#F43F5E"/>
+                </svg>
+
+                <!-- System labels positioned around the body -->
+                <span class="body-silhouette__label" data-system="neurology" style="top:-5px;left:50%;transform:translateX(-50%)">Neurology</span>
+                <span class="body-silhouette__label" data-system="cardiology" style="top:45px;right:-60px">Cardiology</span>
+                <span class="body-silhouette__label" data-system="respiratory" style="top:35px;left:-70px">Respiratory</span>
+                <span class="body-silhouette__label" data-system="gi" style="top:62px;right:-80px">Gastroenterology</span>
+                <span class="body-silhouette__label" data-system="nephrology" style="top:75px;left:-65px">Nephrology</span>
+                <span class="body-silhouette__label" data-system="endocrinology" style="top:22px;right:-75px">Endocrinology</span>
+                <span class="body-silhouette__label" data-system="hematology" style="top:90px;left:50%;transform:translateX(-50%)">Hematology</span>
+              </div>
+            </div>
+            <h2 class="landing-card__title">Clinical Medicine</h2>
+            <p class="landing-card__desc">Bedside examination techniques and clinical skills</p>
+          </div>
+        </div>
+
+        <!-- Footer links to existing tools -->
+        <div class="landing-footer" id="landing-footer">
+          <a href="id-dashboard.html">Infectious Diseases Dashboard</a>
+          <span style="color:var(--text-tertiary)" aria-hidden="true">&middot;</span>
+          <a href="Textbooks/Main/Neurology/Neurology_Clinical_Examination.html">Neurology Clinical Exam</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== VIEW: BODY (Theory/Practicals) ==================== -->
+    <div id="view-body" class="view" role="region" aria-label="Organ system selection">
+      <div class="body-view-container">
+        <h2 class="body-view-title" id="body-view-title">Theory</h2>
+        <p class="body-view-subtitle" id="body-view-subtitle">Select an organ system to explore</p>
+        <div id="interactive-body" style="width:100%;max-width:500px;min-height:600px;position:relative;"></div>
+      </div>
+    </div>
+
+    <!-- ==================== VIEW: SYSTEM (Node Graph) ==================== -->
+    <div id="view-system" class="view" role="region" aria-label="System topic graph">
+      <div class="system-view-container">
+        <div class="system-view-header">
+          <h2 class="system-view-title" id="system-title">Cardiology</h2>
+        </div>
+        <div id="graph-container"></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ==================== CONTENT PANEL (Slide-in) ==================== -->
+  <aside id="content-panel" class="med-panel" role="dialog" aria-label="Content panel" aria-hidden="true">
+    <button class="med-btn med-btn--icon med-btn--ghost panel-close" onclick="App.closePanel && App.closePanel()" aria-label="Close panel">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l8 8M14 6l-8 8"/></svg>
+    </button>
+    <div id="content-panel-body" class="md-content"></div>
+  </aside>
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <!-- D3.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+
+  <!-- Marked.js for markdown rendering -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <!-- App modules -->
+  <script src="js/app.js"></script>
+  <script src="js/landing.js"></script>
+  <script src="js/body-scene.js"></script>
+  <script src="js/node-graph.js"></script>
+  <script src="js/data/theory-topics.js"></script>
+  <script src="js/data/practical-topics.js"></script>
+</body>
+</html>

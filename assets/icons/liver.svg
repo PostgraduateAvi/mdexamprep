@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="organ-icon">
+  <defs>
+    <filter id="liverShadow" x="-10%" y="-10%" width="130%" height="140%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    <radialGradient id="liverGrad" cx="40%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#FDE68A"/>
+      <stop offset="30%" stop-color="#F59E0B"/>
+      <stop offset="70%" stop-color="#D97706"/>
+      <stop offset="100%" stop-color="#92400E"/>
+    </radialGradient>
+    <radialGradient id="liverHighlight" cx="35%" cy="22%" r="28%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="liverDepth" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#92400E" stop-opacity="0.4"/>
+    </linearGradient>
+  </defs>
+  <!-- Main liver body — right-lobe dominant -->
+  <path d="M8 28 C6 22 10 14 20 12 C30 10 40 10 52 14 C58 16 60 22 58 30 C56 38 50 46 42 50 C36 53 30 52 26 50 C20 48 14 44 10 38 C8 34 8 32 8 28Z" fill="url(#liverGrad)" filter="url(#liverShadow)"/>
+  <!-- Depth overlay for bottom -->
+  <path d="M8 28 C6 22 10 14 20 12 C30 10 40 10 52 14 C58 16 60 22 58 30 C56 38 50 46 42 50 C36 53 30 52 26 50 C20 48 14 44 10 38 C8 34 8 32 8 28Z" fill="url(#liverDepth)"/>
+  <!-- Falciform ligament -->
+  <path d="M28 12 C27 18 26 28 26 40 C26 44 27 48 28 50" fill="none" stroke="#92400E" stroke-width="1" opacity="0.6"/>
+  <path d="M29 12 C28 18 27 28 27 40 C27 44 28 48 29 50" fill="none" stroke="#FDE68A" stroke-width="0.4" opacity="0.3"/>
+  <!-- Hepatic vein branches -->
+  <path d="M40 16 C38 22 36 28 34 34" fill="none" stroke="#92400E" stroke-width="0.5" opacity="0.35"/>
+  <path d="M48 18 C44 24 42 30 40 38" fill="none" stroke="#92400E" stroke-width="0.5" opacity="0.35"/>
+  <path d="M36 20 C38 26 38 32 36 38" fill="none" stroke="#92400E" stroke-width="0.4" opacity="0.3"/>
+  <!-- Portal vein (thicker, at hilum area) -->
+  <path d="M30 36 C28 40 26 44 28 48" fill="none" stroke="#B45309" stroke-width="1.2" opacity="0.5" stroke-linecap="round"/>
+  <path d="M30 38 C32 42 34 44 36 46" fill="none" stroke="#B45309" stroke-width="0.8" opacity="0.4" stroke-linecap="round"/>
+  <!-- Caudate lobe hint -->
+  <path d="M24 18 C22 22 22 26 24 30" fill="none" stroke="#92400E" stroke-width="0.5" opacity="0.3"/>
+  <!-- Surface texture lines -->
+  <path d="M14 22 C18 20 22 20 26 22" fill="none" stroke="#D97706" stroke-width="0.3" opacity="0.2"/>
+  <path d="M34 14 C40 14 46 16 50 20" fill="none" stroke="#D97706" stroke-width="0.3" opacity="0.2"/>
+  <path d="M12 32 C16 30 20 30 24 32" fill="none" stroke="#D97706" stroke-width="0.3" opacity="0.2"/>
+  <path d="M42 24 C46 24 50 26 54 28" fill="none" stroke="#D97706" stroke-width="0.3" opacity="0.2"/>
+  <!-- Right lobe surface details -->
+  <path d="M44 30 C48 32 52 34 54 36" fill="none" stroke="#92400E" stroke-width="0.3" opacity="0.2"/>
+  <path d="M38 36 C42 38 46 40 48 44" fill="none" stroke="#92400E" stroke-width="0.3" opacity="0.2"/>
+  <!-- Specular highlight -->
+  <ellipse cx="36" cy="20" rx="10" ry="6" fill="url(#liverHighlight)" transform="rotate(-10 36 20)"/>
+  <ellipse cx="38" cy="18" rx="5" ry="3" fill="white" opacity="0.12" transform="rotate(-10 38 18)"/>
+</svg>

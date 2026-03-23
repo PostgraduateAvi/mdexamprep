@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="organ-icon">
+  <defs>
+    <filter id="brainShadow" x="-10%" y="-10%" width="130%" height="140%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+    <radialGradient id="brainGrad" cx="40%" cy="35%" r="55%">
+      <stop offset="0%" stop-color="#C4B5FD"/>
+      <stop offset="35%" stop-color="#8B5CF6"/>
+      <stop offset="75%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#5B21B6"/>
+    </radialGradient>
+    <radialGradient id="brainHighlight" cx="30%" cy="22%" r="30%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cerebellumGrad" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#A78BFA"/>
+      <stop offset="60%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#5B21B6"/>
+    </radialGradient>
+    <linearGradient id="stemGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#5B21B6"/>
+    </linearGradient>
+  </defs>
+  <!-- Cerebral hemisphere (lateral view) -->
+  <path d="M10 30 C8 18 14 8 28 6 C42 4 54 10 56 22 C58 32 56 40 48 46 C42 50 34 50 28 48 C20 46 12 40 10 30Z" fill="url(#brainGrad)" filter="url(#brainShadow)"/>
+  <!-- Gyri and sulci — wavy surface lines -->
+  <path d="M16 16 C20 14 26 16 30 14 C34 12 38 14 42 12 C46 10 50 14 52 16" fill="none" stroke="#5B21B6" stroke-width="0.7" opacity="0.5"/>
+  <path d="M12 22 C16 20 22 24 28 20 C32 18 38 22 44 18 C48 16 52 20 56 22" fill="none" stroke="#5B21B6" stroke-width="0.7" opacity="0.5"/>
+  <path d="M10 30 C16 28 22 32 28 28 C34 26 40 30 46 26 C50 24 54 28 56 30" fill="none" stroke="#5B21B6" stroke-width="0.6" opacity="0.45"/>
+  <path d="M14 36 C18 34 24 38 30 34 C36 32 42 36 48 34 C52 32 54 36 54 38" fill="none" stroke="#5B21B6" stroke-width="0.6" opacity="0.4"/>
+  <path d="M18 42 C24 40 30 44 36 40 C40 38 44 42 48 42" fill="none" stroke="#5B21B6" stroke-width="0.5" opacity="0.35"/>
+  <!-- Lobe division lines (subtle) -->
+  <!-- Central sulcus (frontal/parietal) -->
+  <path d="M34 8 C32 14 30 22 32 30" fill="none" stroke="#4C1D95" stroke-width="0.8" opacity="0.4"/>
+  <!-- Lateral sulcus (temporal) -->
+  <path d="M22 34 C28 32 36 34 44 36" fill="none" stroke="#4C1D95" stroke-width="0.8" opacity="0.35"/>
+  <!-- Parieto-occipital -->
+  <path d="M48 14 C46 22 46 32 48 40" fill="none" stroke="#4C1D95" stroke-width="0.6" opacity="0.3"/>
+  <!-- Cerebellum -->
+  <path d="M42 46 C48 44 54 46 56 50 C56 54 50 58 44 58 C38 58 36 54 38 50 C39 48 40 46 42 46Z" fill="url(#cerebellumGrad)" stroke="#5B21B6" stroke-width="0.3"/>
+  <!-- Cerebellar folia (horizontal lines) -->
+  <path d="M40 50 C44 49 50 49 54 50" fill="none" stroke="#5B21B6" stroke-width="0.4" opacity="0.5"/>
+  <path d="M40 52 C44 51 50 51 54 52" fill="none" stroke="#5B21B6" stroke-width="0.4" opacity="0.45"/>
+  <path d="M40 54 C44 53 50 53 54 54" fill="none" stroke="#5B21B6" stroke-width="0.4" opacity="0.4"/>
+  <path d="M42 56 C46 55 50 55 52 56" fill="none" stroke="#5B21B6" stroke-width="0.3" opacity="0.35"/>
+  <!-- Brain stem -->
+  <path d="M38 50 C36 54 34 58 34 62 L38 62 C38 58 40 54 42 50" fill="url(#stemGrad)" stroke="#5B21B6" stroke-width="0.3"/>
+  <!-- Specular highlight -->
+  <ellipse cx="26" cy="16" rx="8" ry="5" fill="url(#brainHighlight)" transform="rotate(-15 26 16)"/>
+  <ellipse cx="24" cy="14" rx="4" ry="2.5" fill="white" opacity="0.12" transform="rotate(-15 24 14)"/>
+</svg>

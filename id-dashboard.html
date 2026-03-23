@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0d9488">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Kerala ID Dashboard</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        primary: { 50:'#f0fdfa',100:'#ccfbf1',200:'#99f6e4',300:'#5eead4',400:'#2dd4bf',500:'#14b8a6',600:'#0d9488',700:'#0f766e',800:'#115e59',900:'#134e4a' },
+        surface: { 50:'#f8fafc',100:'#f1f5f9',200:'#e2e8f0',300:'#cbd5e1',700:'#334155',800:'#1e293b',900:'#0f172a',950:'#020617' }
+      }
+    }
+  }
+}
+</script>
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{font-size:16px;-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
+    background:#f8fafc;color:#1e293b;min-height:100dvh;
+    padding-top:56px;padding-bottom:calc(68px + env(safe-area-inset-bottom,0px));
+    transition:background .3s,color .3s}
+  .dark body{background:#0f172a;color:#e2e8f0}
+
+  /* Header */
+  #header{position:fixed;top:0;left:0;right:0;z-index:100;height:56px;
+    background:rgba(248,250,252,.85);backdrop-filter:blur(16px) saturate(1.4);
+    border-bottom:1px solid rgba(0,0,0,.06);display:flex;align-items:center;
+    padding:0 16px;justify-content:space-between;
+    padding-top:env(safe-area-inset-top,0px)}
+  .dark #header{background:rgba(15,23,42,.85);border-color:rgba(255,255,255,.06)}
+  #header h1{font-size:1.125rem;font-weight:700;color:#0d9488;letter-spacing:-.02em}
+  .dark #header h1{color:#2dd4bf}
+  .header-actions{display:flex;gap:8px}
+  .header-btn{width:48px;height:48px;border-radius:12px;border:none;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;font-size:1.25rem;
+    background:transparent;color:#64748b;transition:background .2s}
+  .header-btn:hover,.header-btn:active{background:rgba(0,0,0,.05)}
+  .dark .header-btn{color:#94a3b8}
+  .dark .header-btn:hover{background:rgba(255,255,255,.08)}
+
+  /* Bottom Nav */
+  #bottom-nav{position:fixed;bottom:0;left:0;right:0;z-index:100;
+    background:rgba(248,250,252,.9);backdrop-filter:blur(16px) saturate(1.4);
+    border-top:1px solid rgba(0,0,0,.06);display:flex;
+    padding-bottom:env(safe-area-inset-bottom,0px);height:auto}
+  .dark #bottom-nav{background:rgba(15,23,42,.9);border-color:rgba(255,255,255,.06)}
+  .nav-btn{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:8px 4px 10px;border:none;cursor:pointer;background:transparent;
+    color:#94a3b8;font-size:.625rem;font-weight:600;letter-spacing:.03em;
+    text-transform:uppercase;gap:3px;transition:color .2s;min-height:56px;
+    -webkit-tap-highlight-color:transparent}
+  .nav-btn.active{color:#0d9488}
+  .dark .nav-btn.active{color:#2dd4bf}
+  .nav-btn svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+  /* Views */
+  .view{display:none;padding:16px;max-width:960px;margin:0 auto;animation:fadeIn .25s ease}
+  .view.active{display:block}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+
+  /* Stat Cards */
+  .stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:20px}
+  .stat-card{background:white;border-radius:14px;padding:16px;
+    border:1px solid rgba(0,0,0,.04);box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  .dark .stat-card{background:#1e293b;border-color:rgba(255,255,255,.04)}
+  .stat-card .stat-val{font-size:1.75rem;font-weight:800;letter-spacing:-.03em;line-height:1.1}
+  .stat-card .stat-label{font-size:.75rem;color:#64748b;margin-top:4px;font-weight:500}
+  .dark .stat-card .stat-label{color:#94a3b8}
+  .stat-teal{color:#0d9488}.stat-rose{color:#e11d48}.stat-amber{color:#d97706}.stat-emerald{color:#059669}
+
+  /* Section heading */
+  .section-title{font-size:.8125rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;
+    color:#94a3b8;margin:24px 0 12px;display:flex;align-items:center;gap:8px}
+  .section-title::after{content:'';flex:1;height:1px;background:currentColor;opacity:.2}
+
+  /* Chart container */
+  .chart-box{background:white;border-radius:14px;padding:16px;margin-bottom:16px;
+    border:1px solid rgba(0,0,0,.04);box-shadow:0 1px 3px rgba(0,0,0,.04);overflow:hidden}
+  .dark .chart-box{background:#1e293b;border-color:rgba(255,255,255,.04)}
+  .chart-box h3{font-size:.9375rem;font-weight:700;margin-bottom:12px}
+
+  /* Disease Grid */
+  .filter-bar{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px;margin-bottom:16px;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .filter-bar::-webkit-scrollbar{display:none}
+  .filter-chip{white-space:nowrap;padding:8px 16px;border-radius:20px;border:1.5px solid #e2e8f0;
+    background:white;font-size:.8125rem;font-weight:600;cursor:pointer;transition:all .2s;
+    color:#64748b;-webkit-tap-highlight-color:transparent;min-height:40px}
+  .dark .filter-chip{background:#1e293b;border-color:#334155;color:#94a3b8}
+  .filter-chip.active{background:#0d9488;color:white;border-color:#0d9488}
+  .dark .filter-chip.active{background:#0d9488;border-color:#0d9488;color:white}
+
+  .disease-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:12px}
+  .disease-card{background:white;border-radius:14px;padding:16px;cursor:pointer;
+    border:1px solid rgba(0,0,0,.04);box-shadow:0 1px 3px rgba(0,0,0,.04);
+    transition:transform .15s,box-shadow .15s;-webkit-tap-highlight-color:transparent}
+  .disease-card:active{transform:scale(.97)}
+  .dark .disease-card{background:#1e293b;border-color:rgba(255,255,255,.04)}
+  .disease-card .d-icon{font-size:1.75rem;margin-bottom:8px}
+  .disease-card .d-name{font-size:.875rem;font-weight:700;line-height:1.2;margin-bottom:4px}
+  .disease-card .d-tag{font-size:.6875rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;
+    padding:3px 8px;border-radius:6px;display:inline-block}
+  .tag-high{background:#fef2f2;color:#e11d48}.tag-moderate{background:#fffbeb;color:#d97706}
+  .tag-bacterial{background:#f0fdfa;color:#0d9488}.tag-viral{background:#faf5ff;color:#7c3aed}
+  .tag-fungal{background:#fefce8;color:#a16207}.tag-cross{background:#f1f5f9;color:#475569}
+  .dark .tag-high{background:rgba(225,29,72,.15)}.dark .tag-moderate{background:rgba(217,119,6,.15)}
+  .dark .tag-bacterial{background:rgba(13,148,136,.15)}.dark .tag-viral{background:rgba(124,58,237,.15)}
+  .dark .tag-fungal{background:rgba(161,98,7,.15)}.dark .tag-cross{background:rgba(71,85,105,.15)}
+
+  /* Disease Detail Overlay */
+  #disease-detail{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.4);
+    display:none;align-items:flex-end;justify-content:center;
+    -webkit-tap-highlight-color:transparent}
+  #disease-detail.open{display:flex}
+  .detail-sheet{background:white;width:100%;max-width:640px;max-height:92dvh;
+    border-radius:20px 20px 0 0;overflow-y:auto;overscroll-behavior:contain;
+    animation:sheetUp .3s ease;padding-bottom:env(safe-area-inset-bottom,0px)}
+  .dark .detail-sheet{background:#0f172a}
+  @keyframes sheetUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+  .detail-header{position:sticky;top:0;z-index:1;padding:16px 20px;
+    background:inherit;border-bottom:1px solid rgba(0,0,0,.06)}
+  .dark .detail-header{border-color:rgba(255,255,255,.06)}
+  .detail-handle{width:36px;height:4px;border-radius:2px;background:#cbd5e1;
+    margin:0 auto 12px}
+  .dark .detail-handle{background:#475569}
+  .detail-header h2{font-size:1.25rem;font-weight:800;display:flex;align-items:center;gap:10px}
+  .detail-tabs{display:flex;gap:4px;margin-top:12px;overflow-x:auto;
+    scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .detail-tabs::-webkit-scrollbar{display:none}
+  .dtab{padding:7px 14px;border-radius:8px;border:none;cursor:pointer;font-size:.8125rem;
+    font-weight:600;background:transparent;color:#64748b;transition:all .2s;
+    white-space:nowrap;min-height:36px;-webkit-tap-highlight-color:transparent}
+  .dtab.active{background:#0d9488;color:white}
+  .dark .dtab{color:#94a3b8}
+  .dark .dtab.active{background:#0d9488;color:white}
+  .detail-body{padding:20px}
+
+  /* Detail content */
+  .info-block{margin-bottom:20px}
+  .info-block h4{font-size:.8125rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;
+    color:#0d9488;margin-bottom:8px}
+  .dark .info-block h4{color:#2dd4bf}
+  .info-row{display:flex;gap:8px;padding:8px 0;border-bottom:1px solid rgba(0,0,0,.04);
+    font-size:.875rem;line-height:1.5}
+  .dark .info-row{border-color:rgba(255,255,255,.04)}
+  .info-row .label{font-weight:600;min-width:100px;color:#64748b;flex-shrink:0}
+  .dark .info-row .label{color:#94a3b8}
+  .red-flag{display:flex;align-items:flex-start;gap:8px;padding:10px 12px;
+    background:#fef2f2;border-radius:10px;margin-bottom:8px;font-size:.875rem;line-height:1.5}
+  .dark .red-flag{background:rgba(225,29,72,.1)}
+  .red-flag::before{content:'';width:8px;height:8px;border-radius:50%;background:#e11d48;
+    flex-shrink:0;margin-top:6px}
+  .pearl-card{padding:12px 14px;background:#f0fdfa;border-left:3px solid #0d9488;
+    border-radius:0 10px 10px 0;margin-bottom:8px;font-size:.875rem;line-height:1.5}
+  .dark .pearl-card{background:rgba(13,148,136,.1)}
+  .pearl-type{font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;
+    color:#0d9488;margin-bottom:4px}
+  .rx-card{padding:12px 14px;background:#f8fafc;border-radius:10px;margin-bottom:8px;
+    border:1px solid rgba(0,0,0,.04)}
+  .dark .rx-card{background:#1e293b;border-color:rgba(255,255,255,.04)}
+  .rx-card .rx-label{font-size:.75rem;font-weight:700;text-transform:uppercase;color:#64748b;margin-bottom:4px}
+  .rx-card .rx-drug{font-size:.9375rem;font-weight:700;color:#1e293b}
+  .dark .rx-card .rx-drug{color:#e2e8f0}
+  .rx-card .rx-note{font-size:.8125rem;color:#64748b;margin-top:2px}
+  .dark .rx-card .rx-note{color:#94a3b8}
+  .trap-card{padding:10px 12px;background:#fef2f2;border-radius:10px;margin-bottom:8px;
+    font-size:.8125rem;line-height:1.5;color:#be123c;font-weight:500}
+  .dark .trap-card{background:rgba(225,29,72,.08);color:#fb7185}
+  .trap-card::before{content:'Avoid: ';font-weight:700}
+
+  /* Algorithm */
+  .algo-section{margin-bottom:20px}
+  .algo-section > label{font-size:.8125rem;font-weight:700;text-transform:uppercase;
+    letter-spacing:.05em;color:#64748b;margin-bottom:8px;display:block}
+  .dark .algo-section > label{color:#94a3b8}
+  .chip-group{display:flex;flex-wrap:wrap;gap:8px}
+  .algo-chip{padding:8px 14px;border-radius:20px;border:1.5px solid #e2e8f0;
+    background:white;font-size:.8125rem;font-weight:500;cursor:pointer;
+    transition:all .2s;color:#475569;-webkit-tap-highlight-color:transparent;min-height:40px}
+  .dark .algo-chip{background:#1e293b;border-color:#334155;color:#94a3b8}
+  .algo-chip.selected{background:#0d9488;color:white;border-color:#0d9488}
+  .result-card{display:flex;align-items:center;gap:12px;padding:14px;
+    background:white;border-radius:12px;margin-bottom:8px;
+    border:1px solid rgba(0,0,0,.04);box-shadow:0 1px 2px rgba(0,0,0,.03)}
+  .dark .result-card{background:#1e293b;border-color:rgba(255,255,255,.04)}
+  .result-card .r-rank{font-size:1.25rem;font-weight:800;color:#94a3b8;min-width:28px}
+  .result-card .r-body{flex:1;min-width:0}
+  .result-card .r-name{font-size:.9375rem;font-weight:700}
+  .result-card .r-reason{font-size:.75rem;color:#64748b;margin-top:2px}
+  .dark .result-card .r-reason{color:#94a3b8}
+  .prob-bar-bg{height:6px;background:#e2e8f0;border-radius:3px;margin-top:6px;overflow:hidden}
+  .dark .prob-bar-bg{background:#334155}
+  .prob-bar{height:100%;border-radius:3px;transition:width .6s ease}
+  .prob-high{background:#e11d48}.prob-mod{background:#d97706}.prob-low{background:#0d9488}
+
+  /* Stewardship */
+  .amr-table{width:100%;border-collapse:collapse;font-size:.8125rem;margin-bottom:16px}
+  .amr-table th{text-align:left;padding:10px 8px;font-weight:700;border-bottom:2px solid #e2e8f0;
+    font-size:.75rem;text-transform:uppercase;letter-spacing:.04em;color:#64748b}
+  .dark .amr-table th{border-color:#334155;color:#94a3b8}
+  .amr-table td{padding:10px 8px;border-bottom:1px solid rgba(0,0,0,.04);vertical-align:top}
+  .dark .amr-table td{border-color:rgba(255,255,255,.04)}
+  .r-badge{display:inline-block;padding:2px 8px;border-radius:6px;font-weight:700;font-size:.75rem}
+  .r-high{background:#fef2f2;color:#e11d48}.r-mod{background:#fffbeb;color:#d97706}
+  .r-low{background:#f0fdf4;color:#059669}
+  .dark .r-high{background:rgba(225,29,72,.15)}.dark .r-mod{background:rgba(217,119,6,.15)}
+  .dark .r-low{background:rgba(5,150,105,.15)}
+  .guide-card{padding:14px;background:white;border-radius:12px;margin-bottom:10px;
+    border:1px solid rgba(0,0,0,.04)}
+  .dark .guide-card{background:#1e293b;border-color:rgba(255,255,255,.04)}
+  .guide-card h4{font-size:.9375rem;font-weight:700;margin-bottom:8px}
+  .guide-row{font-size:.8125rem;line-height:1.6;padding:4px 0}
+  .guide-row strong{color:#0d9488}
+  .steward-rule{display:flex;align-items:flex-start;gap:8px;padding:8px 0;
+    font-size:.8125rem;line-height:1.5;border-bottom:1px solid rgba(0,0,0,.04)}
+  .dark .steward-rule{border-color:rgba(255,255,255,.04)}
+  .steward-rule::before{content:'';width:6px;height:6px;border-radius:50%;background:#0d9488;
+    flex-shrink:0;margin-top:6px}
+
+  /* Tools */
+  .calc-card{background:white;border-radius:14px;padding:16px;margin-bottom:16px;
+    border:1px solid rgba(0,0,0,.04);box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  .dark .calc-card{background:#1e293b;border-color:rgba(255,255,255,.04)}
+  .calc-card h3{font-size:1rem;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .calc-field label{display:block;font-size:.75rem;font-weight:600;color:#64748b;margin-bottom:4px;
+    text-transform:uppercase;letter-spacing:.04em}
+  .dark .calc-field label{color:#94a3b8}
+  .calc-field input,.calc-field select{width:100%;padding:10px 12px;border:1.5px solid #e2e8f0;
+    border-radius:10px;font-size:.9375rem;font-weight:500;background:white;color:#1e293b;
+    min-height:44px}
+  .dark .calc-field input,.dark .calc-field select{background:#0f172a;border-color:#334155;color:#e2e8f0}
+  .calc-result{margin-top:12px;padding:12px;background:#f0fdfa;border-radius:10px;
+    font-size:1rem;font-weight:700;color:#0d9488;text-align:center}
+  .dark .calc-result{background:rgba(13,148,136,.1);color:#2dd4bf}
+
+  /* CD4 Slider */
+  .cd4-slider{width:100%;margin:12px 0;accent-color:#0d9488;height:8px}
+  .cd4-val{font-size:2rem;font-weight:800;text-align:center;color:#0d9488;margin-bottom:8px}
+  .dark .cd4-val{color:#2dd4bf}
+  .oi-list{display:flex;flex-direction:column;gap:6px}
+  .oi-item{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;
+    border-radius:10px;font-size:.875rem;transition:all .3s}
+  .oi-active{background:#fef2f2;font-weight:600}
+  .dark .oi-active{background:rgba(225,29,72,.1)}
+  .oi-inactive{background:#f8fafc;color:#94a3b8}
+  .dark .oi-inactive{background:#1e293b;color:#475569}
+  .oi-item .oi-thresh{font-size:.75rem;font-weight:700;padding:2px 8px;border-radius:6px}
+
+  /* Drug interactions */
+  .dxi-card{padding:12px;background:white;border-radius:10px;margin-bottom:8px;
+    border:1px solid rgba(0,0,0,.04);font-size:.8125rem}
+  .dark .dxi-card{background:#1e293b;border-color:rgba(255,255,255,.04)}
+  .dxi-card .dxi-pair{font-weight:700;font-size:.875rem;margin-bottom:4px}
+  .dxi-card .dxi-effect{color:#e11d48;font-weight:600}
+  .dxi-card .dxi-action{color:#64748b;margin-top:2px}
+  .dark .dxi-card .dxi-action{color:#94a3b8}
+
+  /* Attribution */
+  .attribution{text-align:center;padding:24px 16px;margin-top:20px;
+    border-top:1px solid rgba(0,0,0,.06);font-size:.8125rem;color:#94a3b8;line-height:1.6}
+  .dark .attribution{border-color:rgba(255,255,255,.06)}
+  .attribution strong{color:#0d9488;font-weight:700}
+  .dark .attribution strong{color:#2dd4bf}
+
+  /* Nipah timeline */
+  .timeline{position:relative;padding-left:20px}
+  .timeline::before{content:'';position:absolute;left:7px;top:0;bottom:0;width:2px;background:#e2e8f0}
+  .dark .timeline::before{background:#334155}
+  .tl-item{position:relative;padding:0 0 16px 16px;font-size:.875rem}
+  .tl-item::before{content:'';position:absolute;left:-16px;top:4px;width:10px;height:10px;
+    border-radius:50%;background:#e11d48;border:2px solid white}
+  .dark .tl-item::before{border-color:#0f172a}
+  .tl-item .tl-year{font-weight:800;color:#e11d48}
+  .tl-item .tl-detail{color:#64748b;font-size:.8125rem;margin-top:2px}
+  .dark .tl-item .tl-detail{color:#94a3b8}
+
+  /* Print */
+  @media print{
+    #header,#bottom-nav,#disease-detail,.header-btn,.filter-bar{display:none!important}
+    body{padding:0!important;background:white!important;color:black!important;font-size:10pt}
+    .view{display:block!important;padding:8pt!important;animation:none!important}
+    .view:not(#view-diseases){display:none!important}
+    #view-diseases{display:block!important}
+    .disease-grid{grid-template-columns:1fr!important}
+    .disease-card{break-inside:avoid;box-shadow:none!important;border:1px solid #ccc!important}
+    .stat-card,.chart-box,.calc-card{break-inside:avoid}
+    @page{margin:1.5cm;size:A4}
+    .print-footer{display:block!important;text-align:center;padding-top:12pt;
+      border-top:1pt solid #ccc;font-size:9pt;color:#666;margin-top:16pt}
+  }
+  .print-footer{display:none}
+
+  /* Reduced motion */
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition-duration:0s!important}
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div id="header">
+  <h1>Kerala ID Dashboard</h1>
+  <div class="header-actions">
+    <button class="header-btn" id="btn-dark" title="Toggle dark mode" aria-label="Toggle dark mode">
+      <span id="dark-icon">&#9789;</span>
+    </button>
+    <button class="header-btn" onclick="window.print()" title="Print" aria-label="Print">&#9113;</button>
+  </div>
+</div>
+
+<!-- Views -->
+<div id="view-container">
+
+  <!-- OVERVIEW -->
+  <div id="view-overview" class="view active" role="tabpanel" aria-labelledby="tab-overview">
+    <div class="stats-grid" id="stats-grid"></div>
+    <div class="section-title">Seasonal Disease Calendar</div>
+    <div class="chart-box"><div id="chart-heatmap"></div></div>
+    <div class="section-title">Nipah Virus — Kerala Outbreak Timeline</div>
+    <div class="chart-box">
+      <div class="timeline" id="nipah-timeline"></div>
+    </div>
+    <div class="attribution">
+      <strong>Kerala Infectious Diseases Clinical Dashboard</strong><br>
+      Built by Dr. Avinash Jothish, MD Internal Medicine<br>
+      Systems engineering meets clinical medicine<br>
+      <span style="font-size:.75rem;margin-top:4px;display:inline-block">Data: Kerala DHS 2025, WHO, ICMR, Harrison's 21e</span>
+    </div>
+  </div>
+
+  <!-- DISEASES -->
+  <div id="view-diseases" class="view" role="tabpanel" aria-labelledby="tab-diseases">
+    <div class="filter-bar" id="disease-filters" role="tablist"></div>
+    <div class="disease-grid" id="disease-grid"></div>
+    <div class="print-footer">Kerala ID Clinical Reference — Dr. Avinash Jothish, MD Internal Medicine</div>
+  </div>
+
+  <!-- ALGORITHM -->
+  <div id="view-algorithm" class="view" role="tabpanel" aria-labelledby="tab-algorithm">
+    <h2 style="font-size:1.125rem;font-weight:800;margin-bottom:4px">Syndromic Fever Algorithm</h2>
+    <p style="font-size:.8125rem;color:#64748b;margin-bottom:20px">Select clinical context — differentials rank in real-time</p>
+    <div class="algo-section">
+      <label>Season</label>
+      <div class="chip-group" id="algo-season"></div>
+    </div>
+    <div class="algo-section">
+      <label>Exposure</label>
+      <div class="chip-group" id="algo-exposure"></div>
+    </div>
+    <div class="algo-section">
+      <label>Key Findings</label>
+      <div class="chip-group" id="algo-findings"></div>
+    </div>
+    <div class="section-title">Ranked Differentials</div>
+    <div id="algo-results" aria-live="polite"></div>
+  </div>
+
+  <!-- STEWARDSHIP -->
+  <div id="view-stewardship" class="view" role="tabpanel" aria-labelledby="tab-stewardship">
+    <h2 style="font-size:1.125rem;font-weight:800;margin-bottom:4px">Antimicrobial Stewardship</h2>
+    <p style="font-size:.8125rem;color:#64748b;margin-bottom:20px">Kerala/India resistance patterns &amp; empiric guidance</p>
+    <div class="section-title">Resistance Patterns (% Resistant)</div>
+    <div style="overflow-x:auto;margin-bottom:20px">
+      <table class="amr-table" id="amr-table"></table>
+    </div>
+    <div class="section-title">Empiric Antibiotic Guidance</div>
+    <div id="empiric-guides"></div>
+    <div class="section-title">Stewardship Principles</div>
+    <div id="steward-rules"></div>
+  </div>
+
+  <!-- TOOLS -->
+  <div id="view-tools" class="view" role="tabpanel" aria-labelledby="tab-tools">
+    <h2 style="font-size:1.125rem;font-weight:800;margin-bottom:16px">Clinical Tools</h2>
+
+    <!-- CrCl Calculator -->
+    <div class="calc-card">
+      <h3>Creatinine Clearance (Cockcroft-Gault)</h3>
+      <div class="calc-grid">
+        <div class="calc-field"><label>Age (yr)</label><input type="number" id="crcl-age" value="50" min="1" max="120"></div>
+        <div class="calc-field"><label>Weight (kg)</label><input type="number" id="crcl-wt" value="70" min="1" max="300"></div>
+        <div class="calc-field"><label>Creatinine (mg/dL)</label><input type="number" id="crcl-cr" value="1.0" min="0.1" max="30" step="0.1"></div>
+        <div class="calc-field"><label>Sex</label><select id="crcl-sex"><option value="M">Male</option><option value="F">Female</option></select></div>
+      </div>
+      <div class="calc-result" id="crcl-result">—</div>
+    </div>
+
+    <!-- SOFA Score -->
+    <div class="calc-card">
+      <h3>SOFA Score</h3>
+      <div class="calc-grid">
+        <div class="calc-field"><label>PaO2/FiO2</label><select id="sofa-resp"><option value="0">&ge;400</option><option value="1">300-399</option><option value="2">200-299</option><option value="3" selected>100-199 + vent</option><option value="4">&lt;100 + vent</option></select></div>
+        <div class="calc-field"><label>Platelets (x10&sup3;)</label><select id="sofa-plt"><option value="0">&ge;150</option><option value="1">100-149</option><option value="2" selected>50-99</option><option value="3">20-49</option><option value="4">&lt;20</option></select></div>
+        <div class="calc-field"><label>Bilirubin (mg/dL)</label><select id="sofa-bil"><option value="0">&lt;1.2</option><option value="1" selected>1.2-1.9</option><option value="2">2.0-5.9</option><option value="3">6.0-11.9</option><option value="4">&ge;12</option></select></div>
+        <div class="calc-field"><label>MAP / Vasopressors</label><select id="sofa-cvs"><option value="0">MAP &ge;70</option><option value="1" selected>MAP &lt;70</option><option value="2">Dopa &le;5</option><option value="3">Dopa &gt;5</option><option value="4">Dopa &gt;15</option></select></div>
+        <div class="calc-field"><label>GCS</label><select id="sofa-cns"><option value="0">15</option><option value="1">13-14</option><option value="2" selected>10-12</option><option value="3">6-9</option><option value="4">&lt;6</option></select></div>
+        <div class="calc-field"><label>Creatinine (mg/dL)</label><select id="sofa-renal"><option value="0">&lt;1.2</option><option value="1" selected>1.2-1.9</option><option value="2">2.0-3.4</option><option value="3">3.5-4.9</option><option value="4">&ge;5.0</option></select></div>
+      </div>
+      <div class="calc-result" id="sofa-result">—</div>
+    </div>
+
+    <!-- Child-Pugh -->
+    <div class="calc-card">
+      <h3>Child-Pugh Score</h3>
+      <div class="calc-grid">
+        <div class="calc-field"><label>Bilirubin</label><select id="cp-bil"><option value="1">&lt;2</option><option value="2">2-3</option><option value="3">&gt;3</option></select></div>
+        <div class="calc-field"><label>Albumin (g/dL)</label><select id="cp-alb"><option value="1">&gt;3.5</option><option value="2">2.8-3.5</option><option value="3">&lt;2.8</option></select></div>
+        <div class="calc-field"><label>INR</label><select id="cp-inr"><option value="1">&lt;1.7</option><option value="2">1.7-2.3</option><option value="3">&gt;2.3</option></select></div>
+        <div class="calc-field"><label>Ascites</label><select id="cp-asc"><option value="1">None</option><option value="2">Mild</option><option value="3">Moderate-Severe</option></select></div>
+        <div class="calc-field" style="grid-column:span 2"><label>Encephalopathy</label><select id="cp-enc"><option value="1">None</option><option value="2">Grade I-II</option><option value="3">Grade III-IV</option></select></div>
+      </div>
+      <div class="calc-result" id="cp-result">—</div>
+    </div>
+
+    <!-- CD4 OI Map -->
+    <div class="calc-card">
+      <h3>CD4 — Opportunistic Infection Risk Map</h3>
+      <div class="cd4-val" id="cd4-val">350</div>
+      <input type="range" class="cd4-slider" id="cd4-slider" min="0" max="500" value="350" step="10">
+      <div class="oi-list" id="oi-list"></div>
+    </div>
+
+    <!-- Drug Interactions -->
+    <div class="calc-card">
+      <h3>Key ID Drug Interactions</h3>
+      <div id="dxi-list"></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Disease Detail Overlay -->
+<div id="disease-detail" role="dialog" aria-modal="true">
+  <div class="detail-sheet" id="detail-sheet">
+    <div class="detail-header">
+      <div class="detail-handle"></div>
+      <h2 id="detail-title"></h2>
+      <div class="detail-tabs" id="detail-tabs" role="tablist"></div>
+    </div>
+    <div class="detail-body" id="detail-body"></div>
+  </div>
+</div>
+
+<!-- Bottom Nav -->
+<nav id="bottom-nav" role="tablist" aria-label="Main navigation">
+  <button class="nav-btn active" data-view="overview" id="tab-overview" role="tab" aria-selected="true">
+    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+    Overview
+  </button>
+  <button class="nav-btn" data-view="diseases" id="tab-diseases" role="tab" aria-selected="false">
+    <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+    Diseases
+  </button>
+  <button class="nav-btn" data-view="algorithm" id="tab-algorithm" role="tab" aria-selected="false">
+    <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+    Algorithm
+  </button>
+  <button class="nav-btn" data-view="stewardship" id="tab-stewardship" role="tab" aria-selected="false">
+    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    AMR
+  </button>
+  <button class="nav-btn" data-view="tools" id="tab-tools" role="tab" aria-selected="false">
+    <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+    Tools
+  </button>
+</nav>
+
+<script>
+// ============================================================================
+// DATA CONSTANTS
+// ============================================================================
+
+var DISEASES = [
+  {
+    id:'leptospirosis',name:'Leptospirosis',category:'bacterial',severity:'high',icon:'\u{1F400}',
+    tagline:'Kerala = 30\u201340% of India\u2019s burden',
+    kerala:{cases:3259,deaths:209,cfr:6.4,districts:['Kozhikode','Thrissur','Ernakulam','Kannur'],trend:'stable',source:'Kerala DHS 2025'},
+    epi:{season:[6,7,8,9,10],transmission:'Rat urine-contaminated floodwater, soil',incubation:'2\u201330 days (avg 10)',risk:['Paddy farmers','Flood-exposed','Sewer workers','Plantation workers'],global:'WHO neglected tropical disease. ~1M cases/yr globally.'},
+    clinical:{
+      phases:['Septicaemic (days 1\u20137)','Immune (days 7\u201314)'],
+      red_flags:[
+        {sign:'Conjunctival suffusion',note:'Hyperemia WITHOUT purulent discharge \u2014 classic and specific'},
+        {sign:'Calf muscle tenderness',note:'Disproportionate gastrocnemius tenderness \u2014 elicit by squeezing'},
+        {sign:'Weil\u2019s triad: Jaundice + AKI + Bleeding',note:'Only 10% present this way \u2014 do not anchor'},
+        {sign:'Pulmonary hemorrhage / ARDS',note:'CFR >50%, can occur WITHOUT jaundice'}
+      ],
+      complications:['Weil\u2019s disease','Pulmonary hemorrhage','Myocarditis','Meningitis','Uveitis']
+    },
+    diagnosis:{
+      bedside:['Conjunctival suffusion','Calf tenderness','Hepatomegaly'],
+      labs:[
+        {test:'IgM ELISA',timing:'After day 5\u20137',note:'Do NOT wait for MAT (takes 2 weeks, reference lab only)'},
+        {test:'LFT',expected:'High conjugated bilirubin, LOW transaminases (AST/ALT <200)',note:'Bilirubin-transaminase dissociation \u2014 distinguishes from viral hepatitis'},
+        {test:'RFT',expected:'Hypokalemic AKI',note:'Almost pathognomonic \u2014 most other AKIs are hyperkalemic'},
+        {test:'CBC',expected:'Thrombocytopenia + leukocytosis',note:'Unlike dengue where WBC is low'},
+        {test:'CPK',expected:'Elevated (myositis)',note:'Correlates with calf tenderness'}
+      ],
+      differentiator:'Hypokalemic AKI + disproportionate jaundice + low transaminases = leptospirosis'
+    },
+    treatment:{
+      first:{drug:'IV Penicillin G 1.5 MU q6h \u00d7 7 days',note:'Or Ceftriaxone 1g IV OD (preferred if CNS involvement)'},
+      mild:{drug:'Doxycycline 100mg BD \u00d7 7 days',note:'Or Amoxicillin 500mg TDS'},
+      alternatives:['Azithromycin 500mg OD (pregnancy)','Ceftriaxone 1g IV OD'],
+      traps:['Do NOT wait for serology to treat \u2014 empiric in monsoon AUF','Jarisch-Herxheimer reaction possible \u2014 warn patient','Steroids in pulmonary hemorrhage controversial \u2014 no RCT evidence'],
+      prophylaxis:'Doxycycline 200mg weekly during outbreaks (ICMR)'
+    },
+    pearls:[
+      {text:'Hypokalemic AKI is almost pathognomonic \u2014 no other AUF does this',type:'diagnostic'},
+      {text:'In Kerala monsoon: treat empirically for BOTH lepto AND scrub typhus with Doxy + Ceftriaxone',type:'treatment'},
+      {text:'Pulmonary hemorrhage can occur WITHOUT Weil\u2019s disease \u2014 check for hemoptysis in anicteric cases',type:'clinical'},
+      {text:'Bilirubin rises but AST/ALT barely budge \u2014 this dissociation is the key LFT clue',type:'diagnostic'}
+    ]
+  },
+  {
+    id:'nipah',name:'Nipah Virus',category:'viral',severity:'high',icon:'\u{1F987}',
+    tagline:'9 Kerala outbreaks since 2018, CFR 40\u201375%',
+    kerala:{cases:35,deaths:19,cfr:54,districts:['Kozhikode','Malappuram','Ernakulam','Palakkad'],trend:'recurring',source:'WHO Disease Outbreak News 2025'},
+    epi:{season:[5,6,7,8,9],transmission:'Bat (Pteropus medius) \u2192 human; limited human-to-human via respiratory route',incubation:'4\u201314 days (up to 45)',risk:['Fruit bat exposure','Date palm sap drinkers','Healthcare workers','Close contacts'],global:'WHO Priority Pathogen A. BSL-4 agent.'},
+    clinical:{
+      phases:['Prodrome (fever, headache, myalgia)','Encephalitic phase (rapid)'],
+      red_flags:[
+        {sign:'Rapid encephalitis: altered sensorium + focal deficits',note:'Brainstem signs early \u2014 distinguishes from other viral encephalitides'},
+        {sign:'Atypical pneumonia component',note:'Respiratory route \u2014 unique to Kerala/Bangladesh strains'},
+        {sign:'NO rash, NO hemorrhage',note:'Distinguishes from viral hemorrhagic fevers'},
+        {sign:'Relapsing encephalitis',note:'Can occur months after apparent recovery'}
+      ],
+      complications:['Brainstem herniation','Relapsing encephalitis','Respiratory failure','Segmental myoclonus']
+    },
+    diagnosis:{
+      bedside:['Encephalitis signs','Cranial nerve palsies','Brainstem signs','Myoclonus'],
+      labs:[
+        {test:'RT-PCR (throat swab, urine, CSF)',timing:'Send to NIV Pune (BSL-4)',note:'STRICT AIIR isolation before sampling'},
+        {test:'IgM/IgG ELISA',timing:'Serology at NIV Pune',note:'Paired sera needed'},
+        {test:'MRI Brain',expected:'T2/FLAIR hyperintensities in cortex, white matter, brainstem',note:'Confluent lesions with microhemorrhages'},
+        {test:'CSF',expected:'Lymphocytic pleocytosis, elevated protein',note:'Low glucose less common than bacterial'}
+      ],
+      differentiator:'Rapid encephalitis + NO rash + exposure history + Kerala setting = Nipah until excluded'
+    },
+    treatment:{
+      first:{drug:'Supportive care (no approved antiviral)',note:'Raised ICP management, ventilatory support'},
+      mild:{drug:'Ribavirin (in vitro activity only)',note:'Used in 2018 outbreak \u2014 clinical benefit unproven'},
+      alternatives:['Remdesivir (animal models only)','m102.4 monoclonal Ab (compassionate use)','Favipiravir (experimental)'],
+      traps:['Do NOT perform aerosol-generating procedures without full PPE','Contact tracing is CRITICAL \u2014 notify state surveillance immediately','No proven antiviral \u2014 do not delay supportive care waiting for drugs'],
+      prophylaxis:'None. Avoid raw date palm sap. Avoid fruit partially eaten by bats.'
+    },
+    pearls:[
+      {text:'Kerala\u2019s strain shows human-to-human transmission (unlike Malaysia 1999 pig-amplified strain)',type:'clinical'},
+      {text:'Relapsing encephalitis can occur months later \u2014 requires long-term follow-up',type:'clinical'},
+      {text:'Kerala\u2019s Nipah response is now a WHO case study in outbreak containment',type:'epidemiology'},
+      {text:'MRI pattern: cortex + white matter + brainstem involvement \u2014 more diffuse than HSV encephalitis',type:'diagnostic'}
+    ]
+  },
+  {
+    id:'scrub_typhus',name:'Scrub Typhus',category:'bacterial',severity:'high',icon:'\u{1FAB0}',
+    tagline:'Most underdiagnosed febrile illness in India',
+    kerala:{cases:1150,deaths:23,cfr:2.0,districts:['Wayanad','Idukki','Palakkad','Kannur'],trend:'increasing',source:'Kerala DHS / ICMR Lab Data 2024'},
+    epi:{season:[7,8,9,10,11,12],transmission:'Trombiculid mite larva (chigger) bite in scrub vegetation',incubation:'6\u201321 days (avg 10)',risk:['Plantation workers','Trekkers','Tea/coffee estate workers','Forest-dwelling communities'],global:'Re-emerging rickettsial infection. 1M+ cases/yr in Asia-Pacific.'},
+    clinical:{
+      phases:['Early febrile (days 1\u20135)','Systemic/complicated (days 5\u201314)'],
+      red_flags:[
+        {sign:'Eschar (pathognomonic)',note:'Found in only 50\u201370% \u2014 HUNT for it: axilla, groin, behind ears, scalp, belt line, under breasts, between toes'},
+        {sign:'Regional lymphadenopathy draining eschar',note:'Node nearest the eschar \u2014 look for it'},
+        {sign:'Maculopapular rash (day 5\u20137)',note:'Centrifugal: trunk to periphery'},
+        {sign:'Hepatosplenomegaly',note:'Common but nonspecific'}
+      ],
+      complications:['Meningoencephalitis','Myocarditis','ARDS','AKI','DIC','Hearing loss']
+    },
+    diagnosis:{
+      bedside:['Eschar search (systematic skin exam)','Regional lymphadenopathy','Hepatosplenomegaly'],
+      labs:[
+        {test:'IgM ELISA (Scrub typhus)',timing:'Positive by day 7',note:'Sensitivity >90% \u2014 gold standard serological'},
+        {test:'Weil-Felix (OX-K)',timing:'After week 1',note:'Sensitivity only 50\u201360% \u2014 if positive, supports diagnosis; if negative, does NOT exclude'},
+        {test:'LFT',expected:'Elevated transaminases (AST often > ALT)',note:'Hepatitis component common'},
+        {test:'CBC',expected:'Thrombocytopenia, leukopenia early then leukocytosis',note:'Similar to dengue initially'}
+      ],
+      differentiator:'Eschar + fever + transaminitis = scrub typhus. Doxycycline response in 48h confirms it.'
+    },
+    treatment:{
+      first:{drug:'Doxycycline 100mg BD \u00d7 7\u201314 days',note:'Defervescence within 24\u201348h = diagnostic therapeutic response'},
+      mild:{drug:'Azithromycin 500mg OD \u00d7 3 days',note:'For pregnancy and children <8 years'},
+      alternatives:['Chloramphenicol (third line \u2014 resistance emerging)','Rifampicin (doxycycline-refractory cases)'],
+      traps:['Do NOT dismiss fever without eschar search \u2014 50% of cases have no eschar','Co-infection with leptospirosis documented in Kerala \u2014 same exposure setting','Weil-Felix negative does NOT exclude scrub typhus'],
+      prophylaxis:'DEET-based repellents. Protective clothing in endemic areas.'
+    },
+    pearls:[
+      {text:'The eschar hunt is a clinical SKILL \u2014 systematically examine every skin fold',type:'clinical'},
+      {text:'Doxycycline defervescence in 24\u201348h is itself a diagnostic test',type:'treatment'},
+      {text:'Co-infection: In Kerala monsoon, lepto + scrub typhus share same exposure \u2014 treat both empirically',type:'treatment'},
+      {text:'OX-K positive = scrub typhus; OX-19/OX-2 positive = spotted fever group (SFGR) \u2014 know the Weil-Felix patterns',type:'diagnostic'}
+    ]
+  },
+  {
+    id:'dengue',name:'Dengue',category:'viral',severity:'moderate',icon:'\u{1F99F}',
+    tagline:'All 4 serotypes circulate in Kerala year-round',
+    kerala:{cases:8200,deaths:32,cfr:0.4,districts:['Thiruvananthapuram','Kochi','Kozhikode','Thrissur'],trend:'stable',source:'Kerala DHS 2024'},
+    epi:{season:[5,6,7,8,9,10,11],transmission:'Aedes aegypti (day-biting mosquito); Ae. albopictus co-vector in forested areas',incubation:'4\u20137 days',risk:['Urban dwellers','All age groups','Secondary infection at higher risk for severe dengue'],global:'~400M infections/yr globally. Expanding range with climate change.'},
+    clinical:{
+      phases:['Febrile (days 1\u20133)','Critical/plasma leak (days 3\u20137)','Recovery (days 7\u201310)'],
+      red_flags:[
+        {sign:'WHO 2009 Warning Signs',note:'Abdominal pain, persistent vomiting, clinical fluid accumulation, mucosal bleed, lethargy, liver >2cm, rapid HCT rise with platelet drop'},
+        {sign:'Tourniquet test positive',note:'Inflate BP cuff to midpoint for 5 min \u2014 >10 petechiae/inch\u00b2'},
+        {sign:'Biphasic (saddleback) fever',note:'Fever drops at critical phase \u2014 paradoxically most dangerous time'},
+        {sign:'Relative bradycardia (Faget\u2019s sign)',note:'High fever with inappropriately low heart rate \u2014 also seen in enteric fever'}
+      ],
+      complications:['Severe dengue (plasma leakage)','Dengue hemorrhagic fever','Myocarditis','Encephalitis','Hepatic failure']
+    },
+    diagnosis:{
+      bedside:['Tourniquet test','Serial blood pressure','Check for third-spacing (pleural effusion, ascites)'],
+      labs:[
+        {test:'NS1 antigen',timing:'Day 1\u20135 (high sensitivity early)',note:'Order immediately in suspected dengue'},
+        {test:'IgM ELISA',timing:'Positive from day 4\u20135',note:'Persists 3\u20136 months'},
+        {test:'IgG ELISA',timing:'Positive day 1\u20132 in secondary infection',note:'Early IgG rise = secondary infection = higher risk of severe dengue'},
+        {test:'Serial CBC',expected:'Rising HCT (>20% = plasma leakage) + falling platelets',note:'Trend matters more than single value'}
+      ],
+      differentiator:'NS1-positive + rising HCT + falling platelets + warning signs = severe dengue management pathway'
+    },
+    treatment:{
+      first:{drug:'Crystalloid IV guided by HCT and hemodynamics',note:'Group B (warning signs): admit and monitor q4h'},
+      mild:{drug:'Oral hydration + paracetamol',note:'Group A: outpatient with daily review'},
+      alternatives:['Colloids (Dextran, gelatin) only for refractory shock','Blood products for active significant bleeding'],
+      traps:['Do NOT transfuse platelets prophylactically >20,000 without bleeding','AVOID NSAIDs and aspirin (bleeding risk)','AVOID corticosteroids (no benefit, may worsen)','Do NOT give excessive IV fluids after critical phase \u2014 fluid overload risk'],
+      prophylaxis:'Vector control. Dengvaxia only for seropositive individuals.'
+    },
+    pearls:[
+      {text:'Antibody-dependent enhancement (ADE) in secondary infection explains why second dengue is worse',type:'clinical'},
+      {text:'Know when NOT to transfuse platelets \u2014 this is a stewardship question ID professors love to ask',type:'treatment'},
+      {text:'Critical phase begins when fever DROPS \u2014 paradox: patient "feels better" but is entering danger zone',type:'clinical'},
+      {text:'Crystalloids > colloids for plasma leakage \u2014 when endothelium leaks, albumin also leaks (Starling forces)',type:'treatment'}
+    ]
+  },
+  {
+    id:'melioidosis',name:'Melioidosis',category:'bacterial',severity:'high',icon:'\u{1F9EB}',
+    tagline:'The great mimicker \u2014 massively underdiagnosed in Kerala',
+    kerala:{cases:58,deaths:6,cfr:10,districts:['Kannur','Malappuram','Kozhikode','Kasaragod'],trend:'increasing',source:'IJCMPH 2024 / Amrita retrospective'},
+    epi:{season:[6,7,8,9,10],transmission:'Inhalation or inoculation from soil/water containing B. pseudomallei',incubation:'1\u201321 days (can be years \u2014 latent reactivation)',risk:['Diabetics (60% of cases)','Farmers','Chronic kidney disease','Alcoholism','Thalassemia'],global:'Estimated 165,000 cases/yr globally. 89,000 deaths. Massively underreported.'},
+    clinical:{
+      phases:['Acute (septicemic, pneumonic)','Chronic (>2 months)','Latent reactivation (years)'],
+      red_flags:[
+        {sign:'Pneumonia with upper lobe cavitation in a diabetic',note:'Mimics TB \u2014 but does NOT respond to ATT'},
+        {sign:'Septicemia without obvious focus',note:'Septic shock in diabetic farmer = think melioidosis'},
+        {sign:'Multiple organ abscesses (liver, spleen, prostate)',note:'Disseminated disease'},
+        {sign:'Suppurative parotitis',note:'Almost pathognomonic in children \u2014 rare in other infections'}
+      ],
+      complications:['Septic shock (CFR >40% if delayed)','Multi-organ abscesses','Osteomyelitis','Septic arthritis','Mycotic aneurysm']
+    },
+    diagnosis:{
+      bedside:['Signs of pneumonia','Abdominal organomegaly','Parotid swelling','Skin pustules/nodules'],
+      labs:[
+        {test:'Blood culture (GOLD STANDARD)',timing:'Takes 2\u20134 days',note:'ALERT the lab \u2014 often dismissed as contaminant. Request Ashdown\u2019s medium if available.'},
+        {test:'Gram stain',expected:'GNB with \u201csafety pin\u201d bipolar staining',note:'Better seen with Wayson stain'},
+        {test:'MALDI-TOF',timing:'Rapid identification',note:'Available at tertiary centers \u2014 request if GNB grows'},
+        {test:'CT Chest',expected:'Consolidation + cavitation mimicking TB',note:'Upper lobe involvement common'}
+      ],
+      differentiator:'Diabetic + monsoon + upper lobe cavitation + culture-negative for TB = think melioidosis, ALERT microbiology lab'
+    },
+    treatment:{
+      first:{drug:'Ceftazidime 2g IV q8h \u00d7 10\u201314 days',note:'Or Meropenem 1g IV q8h (preferred for severe/neurological/bacteremic)'},
+      mild:{drug:'Eradication phase: TMP-SMX 160/800mg BD \u00d7 3\u20136 months',note:'Critical for preventing relapse \u2014 must complete full course'},
+      alternatives:['Amoxicillin-clavulanate (second-line eradication ONLY)','Meropenem for CNS/severe disease'],
+      traps:['INTRINSICALLY resistant to aminoglycosides, polymyxins, older penicillins','Do NOT use amoxicillin-clavulanate as monotherapy','10% relapse rate \u2014 ensure 3\u20136 month eradication course is completed','Voriconazole prophylaxis in transplant patients may SELECT for melioidosis'],
+      prophylaxis:'Avoid barefoot walking in endemic wet soil. DM control.'
+    },
+    pearls:[
+      {text:'This is the diagnosis that separates someone who READS from someone who THINKS',type:'clinical'},
+      {text:'Culture B. pseudomallei often dismissed as contaminant \u2014 ALERT the lab proactively',type:'diagnostic'},
+      {text:'Upper lobe cavitation in a diabetic: TB vs melioidosis is the critical differential in Kerala',type:'diagnostic'},
+      {text:'Amrita Kochi has published on Kerala melioidosis \u2014 it is a department research interest',type:'epidemiology'}
+    ]
+  },
+  {
+    id:'tb',name:'Tuberculosis',category:'bacterial',severity:'moderate',icon:'\u{1FAC1}',
+    tagline:'DR-TB, IRIS, and BPaL \u2014 the depth that matters',
+    kerala:{cases:28000,deaths:1400,cfr:5,districts:['Statewide \u2014 declining incidence but persistent burden'],trend:'decreasing',source:'NTEP India TB Report 2024'},
+    epi:{season:[1,2,3,4,5,6,7,8,9,10,11,12],transmission:'Airborne droplet nuclei from pulmonary TB',incubation:'2\u201312 weeks (latent TB can reactivate years later)',risk:['HIV co-infection','DM','Malnutrition','Immunosuppression','Close contacts'],global:'10.6M cases/yr globally. India = 27% of global burden. Leading infectious killer until COVID-19.'},
+    clinical:{
+      phases:['Latent TB (asymptomatic, IGRA/TST positive)','Active TB (pulmonary or extrapulmonary)'],
+      red_flags:[
+        {sign:'Cough >2 weeks + fever + weight loss + night sweats',note:'Cardinal symptoms \u2014 screen with sputum'},
+        {sign:'Choroidal tubercles on fundoscopy',note:'Pathognomonic for miliary TB \u2014 always check'},
+        {sign:'Cold abscess (no warmth, no erythema)',note:'Pott\u2019s spine tracking abscess \u2014 psoas or groin'},
+        {sign:'Paradoxical worsening on ART (IRIS)',note:'In HIV-TB: new or enlarging lymph nodes, worsening infiltrates after starting ART'}
+      ],
+      complications:['Miliary TB','TB meningitis (high mortality)','Spinal TB (Pott\u2019s)','IRIS in HIV co-infection','DR-TB']
+    },
+    diagnosis:{
+      bedside:['Sputum exam','Lymph node exam','Fundoscopy (choroidal tubercles)','Spine exam (gibbus)'],
+      labs:[
+        {test:'GeneXpert MTB/RIF Ultra',timing:'Same day',note:'Detects MTB + rifampicin resistance simultaneously \u2014 first-line rapid test'},
+        {test:'Sputum AFB smear + culture',timing:'Culture takes 2\u20138 weeks',note:'MGIT liquid culture faster than LJ'},
+        {test:'ADA (adenosine deaminase)',expected:'Pleural >40 U/L, Peritoneal >40 U/L, CSF >10 U/L',note:'Key for extrapulmonary TB diagnosis'},
+        {test:'IGRA (QuantiFERON)',timing:'For latent TB screening',note:'Not affected by BCG vaccination \u2014 better specificity than TST in India'}
+      ],
+      differentiator:'GeneXpert is the first test. ADA for body fluid TB. IGRA for latent TB. Know the cutoffs.'
+    },
+    treatment:{
+      first:{drug:'HRZE \u00d7 2 months then HR \u00d7 4 months (drug-sensitive)',note:'Standard NTEP regimen \u2014 daily fixed-dose combination'},
+      mild:{drug:'BPaL regimen for XDR-TB',note:'Bedaquiline + Pretomanid + Linezolid \u00d7 6 months (TB-PRACTECAL trial)'},
+      alternatives:['MDR-TB: longer regimen or BPaL','TB meningitis: HRZE + steroids (dexamethasone taper 6\u20138 weeks)'],
+      traps:['HIV-TB co-infection: ART timing depends on CD4 and site (2 weeks if CD4<50, 8 weeks if CD4>50, 4\u20138 weeks for TB meningitis)','IRIS management: do NOT stop ATT \u2014 add corticosteroids','Rifampicin enzyme induction \u2014 massive drug interactions (warfarin, OCP, ARVs, tacrolimus, azoles)'],
+      prophylaxis:'IPT (Isoniazid preventive therapy) 300mg OD \u00d7 6 months for LTBI in HIV+ patients.'
+    },
+    pearls:[
+      {text:'BPaL regimen for XDR-TB is landmark \u2014 know TB-PRACTECAL trial',type:'treatment'},
+      {text:'ADA cutoffs: pleural >40, peritoneal >40, CSF >10 \u2014 the numbers to know cold',type:'diagnostic'},
+      {text:'IRIS: new/worsening symptoms after starting ART = do NOT stop ATT or ART, ADD steroids',type:'treatment'},
+      {text:'ART timing in HIV-TB with meningitis: delay to 4\u20138 weeks (not 2 weeks) \u2014 SAPIT subgroup analysis',type:'treatment'}
+    ]
+  },
+  {
+    id:'hiv',name:'HIV / Opportunistic Infections',category:'viral',severity:'moderate',icon:'\u{1F9EC}',
+    tagline:'CD4-guided OI prediction + ART timing mastery',
+    kerala:{cases:4200,deaths:210,cfr:5,districts:['Statewide \u2014 highest in urban centers'],trend:'stable',source:'NACO / Kerala SACS 2024'},
+    epi:{season:[1,2,3,4,5,6,7,8,9,10,11,12],transmission:'Sexual (MSM, heterosexual), IV drug use, perinatal',incubation:'2\u20134 weeks to seroconversion; AIDS at 8\u201310 years without ART',risk:['MSM','PWID (Malappuram cluster)','Commercial sex workers','Discordant couples'],global:'39M living with HIV globally. Universal Test-and-Treat since 2015.'},
+    clinical:{
+      phases:['Acute retroviral syndrome','Asymptomatic (years)','Symptomatic / AIDS-defining illness'],
+      red_flags:[
+        {sign:'CD4 <200: PCP, Toxoplasma, Cryptococcal meningitis',note:'These three are the critical OIs to identify and treat urgently'},
+        {sign:'CD4 <100: CMV retinitis, MAC',note:'Fundoscopy mandatory at this CD4 level'},
+        {sign:'Oral candidiasis + weight loss + chronic diarrhea',note:'Clinical AIDS markers \u2014 test for HIV immediately'},
+        {sign:'Paradoxical worsening after ART (IRIS)',note:'Unmasking OI or worsening known OI'}
+      ],
+      complications:['PCP pneumonia','Cryptococcal meningitis','Toxoplasma encephalitis','CMV retinitis','TB co-infection','Kaposi sarcoma']
+    },
+    diagnosis:{
+      bedside:['Oral thrush','Lymphadenopathy','Dermatologic signs (seborrheic dermatitis, herpes zoster)','Fundoscopy'],
+      labs:[
+        {test:'HIV 1/2 rapid test + ELISA',timing:'Same day',note:'Confirm with Western blot or p24 antigen'},
+        {test:'CD4 count',timing:'At diagnosis, then q6 months',note:'Guides OI prophylaxis and ART urgency'},
+        {test:'Viral load',timing:'At diagnosis, then q6\u201312 months',note:'Treatment success = undetectable VL'},
+        {test:'Cryptococcal antigen (CrAg)',timing:'Screen all with CD4 <200',note:'Pre-emptive screening prevents meningitis'}
+      ],
+      differentiator:'CD4 count predicts which OIs to expect. Viral load monitors treatment response.'
+    },
+    treatment:{
+      first:{drug:'TLD regimen: Tenofovir + Lamivudine + Dolutegravir',note:'First-line ART per NACO/WHO 2024 \u2014 once daily, well-tolerated'},
+      mild:{drug:'Cryptococcal meningitis: Liposomal AmB 3\u20134mg/kg/day + Flucytosine \u00d7 14 days',note:'LP opening pressure is therapeutic \u2014 drain if >20 cmH\u2082O'},
+      alternatives:['PCP: TMP-SMX 15\u201320mg/kg/day (TMP) IV \u00d7 21 days + prednisone if PaO\u2082 <70','Toxoplasma: Pyrimethamine + Sulfadiazine + Leucovorin \u00d7 6 weeks'],
+      traps:['ART in TB-HIV: CD4<50 = start ART at 2 weeks; CD4>50 = start at 8 weeks','TB meningitis: delay ART to 4\u20138 weeks (SAPIT, CAMELIA)','Do NOT give dextrose-containing fluids before LP in suspected cryptococcal meningitis','TMP-SMX prophylaxis at CD4<200 prevents PCP AND toxoplasma'],
+      prophylaxis:'TMP-SMX at CD4 <200. Fluconazole at CD4 <100 in endemic areas. MAC prophylaxis at CD4 <50.'
+    },
+    pearls:[
+      {text:'CD4 count is your roadmap: it tells you which OI to expect BEFORE it declares itself',type:'diagnostic'},
+      {text:'ART timing in TB co-infection: the CD4 cutoff of 50 is the magic number (CAMELIA trial)',type:'treatment'},
+      {text:'Cryptococcal meningitis: LP opening pressure is BOTH diagnostic AND therapeutic \u2014 drain to normalize',type:'treatment'},
+      {text:'PWID cluster in Malappuram is a Kerala-specific epidemiological fact \u2014 know it for local context',type:'epidemiology'}
+    ]
+  },
+  {
+    id:'enteric',name:'Enteric Fever',category:'bacterial',severity:'moderate',icon:'\u{1F321}',
+    tagline:'Fluoroquinolone resistance demands updated protocols',
+    kerala:{cases:3500,deaths:18,cfr:0.5,districts:['Statewide \u2014 urban and semi-urban'],trend:'stable',source:'IDSP / Kerala DHS 2024'},
+    epi:{season:[3,4,5,6,7,8,9,10],transmission:'Fecal-oral: contaminated water and food',incubation:'7\u201314 days (range 3\u201360)',risk:['Travelers','Street food consumers','Areas with poor sanitation','Children and young adults'],global:'11\u201320M cases/yr globally. India is high-burden.'},
+    clinical:{
+      phases:['Week 1: stepladder fever, bacteremia','Week 2: rose spots, hepatosplenomegaly','Week 3: complications (perforation, hemorrhage)','Week 4: resolution or death'],
+      red_flags:[
+        {sign:'Stepladder fever pattern rising over 5\u20137 days',note:'Classic but not always present'},
+        {sign:'Relative bradycardia (Faget\u2019s sign)',note:'Pulse-temperature dissociation \u2014 also in dengue and drug fever'},
+        {sign:'Rose spots (faint pink macules on trunk)',note:'Seen in only 5% of Indian patients \u2014 look on fair skin'},
+        {sign:'Hepatosplenomegaly + coated tongue',note:'Common by week 2'}
+      ],
+      complications:['Intestinal perforation (week 3)','GI hemorrhage (week 2\u20133)','Encephalopathy (typhoid psychosis)','Myocarditis','Osteomyelitis (sickle cell)']
+    },
+    diagnosis:{
+      bedside:['Stepladder fever pattern','Relative bradycardia','Hepatosplenomegaly','Coated tongue'],
+      labs:[
+        {test:'Blood culture (GOLD STANDARD)',timing:'80\u201390% sensitivity in week 1 before antibiotics',note:'Collect 10mL into adult bottle to maximize yield'},
+        {test:'Bone marrow culture',timing:'>95% sensitivity',note:'Use in culture-negative suspected typhoid \u2014 positive even after antibiotics started'},
+        {test:'Typhidot-M (IgM)',timing:'Better than Widal',note:'Widal is unreliable in endemic areas (high background titers)'},
+        {test:'CBC',expected:'Leukopenia, anemia, thrombocytopenia',note:'Leukocytosis suggests complications (perforation)'}
+      ],
+      differentiator:'Do NOT rely on Widal alone. Blood culture is gold standard. Bone marrow culture if already on antibiotics.'
+    },
+    treatment:{
+      first:{drug:'Azithromycin 1g OD \u00d7 5 days (uncomplicated)',note:'Excellent efficacy \u2014 TSAP trial data'},
+      mild:{drug:'Cefixime 400mg BD \u00d7 7\u201314 days (oral alternative)',note:'For outpatient management'},
+      alternatives:['Ceftriaxone 2g IV OD \u00d7 10\u201314 days (severe/complicated)','Meropenem (ESBL-producing Salmonella \u2014 last resort)'],
+      traps:['Fluoroquinolone resistance is >80% in India \u2014 do NOT use ciprofloxacin empirically','Widal test: single titer is meaningless in endemic areas','Dexamethasone for encephalopathy/shock (Hoffman regimen: 3mg/kg load, 1mg/kg q8h \u00d7 8 doses)'],
+      prophylaxis:'Typhoid conjugate vaccine (TCV). Safe water and food hygiene.'
+    },
+    pearls:[
+      {text:'Bone marrow culture in culture-negative typhoid \u2014 positive even after antibiotics. The definitive diagnostic move.',type:'diagnostic'},
+      {text:'Widal critique: in endemic India, single-titer Widal is meaningless. This shows you understand diagnostic limitations.',type:'diagnostic'},
+      {text:'Azithromycin for uncomplicated enteric fever \u2014 know the TSAP trial',type:'treatment'},
+      {text:'Fluoroquinolone resistance >80% in India: ciprofloxacin is no longer empiric first-line for enteric fever',type:'treatment'}
+    ]
+  },
+  {
+    id:'mucormycosis',name:'Mucormycosis',category:'fungal',severity:'high',icon:'\u{1F9AB}',
+    tagline:'India\u2019s 2021 CAM epidemic \u2014 the beta-D-glucan trap',
+    kerala:{cases:650,deaths:78,cfr:12,districts:['Statewide \u2014 DM-associated, post-COVID surge'],trend:'decreasing',source:'ICMR CAM Registry / Kerala DHS 2024'},
+    epi:{season:[1,2,3,4,5,6,7,8,9,10,11,12],transmission:'Inhalation of Mucorales sporangiospores from environment',incubation:'1\u201314 days in immunocompromised',risk:['DKA (highest risk)','Corticosteroid excess','Hematological malignancy','Solid organ transplant','Post-COVID (CAM)'],global:'India reported >47,000 cases during COVID-19 second wave (2021) \u2014 largest outbreak in history.'},
+    clinical:{
+      phases:['Rhino-orbital (most common in India)','Pulmonary','Cutaneous','Disseminated'],
+      red_flags:[
+        {sign:'Periorbital swelling + proptosis + ptosis + ophthalmoplegia',note:'Rhino-orbito-cerebral mucormycosis \u2014 EMERGENCY'},
+        {sign:'Black eschar on palate or nasal turbinate',note:'Tissue necrosis from angioinvasion \u2014 pathognomonic'},
+        {sign:'DKA + orbital/facial pain',note:'Mucormycosis until proven otherwise'},
+        {sign:'Reverse halo sign (Atoll sign) on CT chest',note:'Pulmonary mucormycosis \u2014 ring of consolidation around ground glass'}
+      ],
+      complications:['Cavernous sinus thrombosis','Carotid artery encasement (inoperable)','Orbital exenteration','Death (CFR 30\u201370% depending on form)']
+    },
+    diagnosis:{
+      bedside:['Nasal/palatal exam for black eschar','Orbital exam','Facial sensation (V2 involvement)','Dental exam'],
+      labs:[
+        {test:'Biopsy + histopathology (GOLD STANDARD)',timing:'Same day processing',note:'Broad, aseptate (pauci-septate), ribbon-like hyphae at 90\u00b0 angles'},
+        {test:'KOH mount of tissue',timing:'Rapid bedside',note:'Wide, irregular, rarely septate hyphae'},
+        {test:'Beta-D-glucan',expected:'NEGATIVE',note:'CRITICAL TRAP: Mucor has no beta-glucan in cell wall \u2014 negative BDG does NOT exclude fungal infection'},
+        {test:'Galactomannan',expected:'NEGATIVE',note:'Unlike Aspergillus \u2014 negative GM also does NOT exclude mucor'}
+      ],
+      differentiator:'Beta-D-glucan NEGATIVE + Galactomannan NEGATIVE + DKA + orbital signs = mucormycosis (NOT Aspergillus)'
+    },
+    treatment:{
+      first:{drug:'Liposomal Amphotericin B 5\u201310 mg/kg/day IV',note:'Minimum 4\u20136 weeks induction. Monitor creatinine, K+, Mg2+ daily.'},
+      mild:{drug:'Step-down: Isavuconazole or Posaconazole (delayed-release tabs)',note:'Months of maintenance therapy'},
+      alternatives:['Conventional AmB 1\u20131.5mg/kg/day if liposomal unavailable (more nephrotoxic)'],
+      traps:['INTRINSICALLY resistant to fluconazole AND voriconazole','Voriconazole prophylaxis in transplant patients may SELECT for mucormycosis','Surgical debridement is sine qua non \u2014 cannot treat medically alone','Correct DKA and hyperglycemia urgently \u2014 acidosis + hyperglycemia + free iron = fungal paradise'],
+      prophylaxis:'Strict DM control. Avoid unnecessary corticosteroids. Air quality in transplant wards.'
+    },
+    pearls:[
+      {text:'Beta-D-glucan and galactomannan are BOTH NEGATIVE in mucormycosis \u2014 the ultimate diagnostic trap',type:'diagnostic'},
+      {text:'Voriconazole has ZERO mucor activity \u2014 prophylaxis with voriconazole may select for mucormycosis',type:'treatment'},
+      {text:'India\u2019s CAM epidemic (47,000+ cases) linked to corticosteroids + DM + iron dysregulation \u2014 systems-level thinking',type:'epidemiology'},
+      {text:'90\u00b0 branching, broad, aseptate = Mucor. 45\u00b0 branching, narrow, septate = Aspergillus. Know the histopath.',type:'diagnostic'}
+    ]
+  },
+  {
+    id:'amr',name:'AMR & Stewardship',category:'cross-cutting',severity:'high',icon:'\u{1F9EC}',
+    tagline:'The lens through which ID specialists view everything',
+    kerala:{cases:0,deaths:0,cfr:0,districts:['Statewide'],trend:'increasing',source:'ICMR AMR Surveillance 2024'},
+    epi:{season:[1,2,3,4,5,6,7,8,9,10,11,12],transmission:'Selection pressure from antibiotic overuse; horizontal gene transfer',incubation:'N/A',risk:['ICU patients','Prior antibiotic exposure','Healthcare workers','Livestock (One Health)'],global:'1.27M deaths directly attributable to AMR in 2019. Predicted 10M/yr by 2050.'},
+    clinical:{
+      phases:['Prevention (stewardship)','Detection (cultures, susceptibility)','Treatment (targeted, combination)'],
+      red_flags:[
+        {sign:'ESBL E. coli/Klebsiella (>75% resistance to cephalosporins in India)',note:'Cannot use ceftriaxone empirically for hospital-acquired infections'},
+        {sign:'CRE (Carbapenem-resistant Enterobacteriaceae)',note:'NDM-1 gene originated in India \u2014 colistin may be only option'},
+        {sign:'CRAB (Carbapenem-resistant Acinetobacter baumannii)',note:'ICU ventilator-associated pneumonia \u2014 colistin + sulbactam'},
+        {sign:'Candida auris',note:'Multi-drug resistant, environmental persistence, outbreak-prone in ICUs'}
+      ],
+      complications:['Treatment failure','Prolonged hospitalization','Increased mortality','Colistin nephrotoxicity','Pan-drug resistance (untreatable infections)']
+    },
+    diagnosis:{
+      bedside:['Clinical assessment of infection vs colonization','Source identification'],
+      labs:[
+        {test:'Blood cultures (x2 sets BEFORE antibiotics)',timing:'Hour-1 sepsis bundle',note:'Never skip cultures \u2014 they drive de-escalation'},
+        {test:'Antibiotic susceptibility testing (AST)',timing:'48\u201372 hours',note:'CLSI or EUCAST breakpoints'},
+        {test:'Carbapenemase detection (CIM, mCIM)',timing:'If CRE suspected',note:'NDM, KPC, OXA-48 are common in India'},
+        {test:'Procalcitonin',expected:'<0.25 = consider stopping antibiotics',note:'PCT-guided discontinuation validated in ICU and CAP'}
+      ],
+      differentiator:'Stewardship IS the differential: infection vs colonization, empiric vs targeted, when to stop.'
+    },
+    treatment:{
+      first:{drug:'Stewardship principles: De-escalate at 48\u201372h based on culture',note:'Start empiric broad-spectrum, narrow based on susceptibility'},
+      mild:{drug:'Short-course therapy: 5 days for CAP, 7 days for most BSIs, 6 weeks for IE',note:'Evidence supports shorter courses \u2014 resist pressure to extend'},
+      alternatives:['Extended-infusion meropenem (4h infusion) for time-dependent killing against MDR','Ceftazidime-avibactam for KPC-producing CRE','Cefiderocol for CRAB and difficult GNB'],
+      traps:['NEVER use carbapenems empirically for community-acquired infections','Colistin: always check renal function, never monotherapy','Vancomycin monitoring: AUC/MIC-guided, NOT trough (2020 ASHP/IDSA guidelines)','IV-to-oral switch criteria: afebrile 24h + improving + functioning GI tract'],
+      prophylaxis:'Antibiotic stewardship programs. Hand hygiene. Isolation protocols.'
+    },
+    pearls:[
+      {text:'Vancomycin monitoring shifted from trough to AUC/MIC in 2020 \u2014 know the ASHP/IDSA consensus',type:'treatment'},
+      {text:'Extended-infusion meropenem (4h) improves time above MIC \u2014 PK/PD optimization for MDR organisms',type:'treatment'},
+      {text:'Procalcitonin <0.25 ng/mL = consider stopping antibiotics \u2014 validated biomarker for de-escalation',type:'diagnostic'},
+      {text:'"When to STOP antibiotics" is a harder and more important question than "when to START"',type:'clinical'}
+    ]
+  }
+];
+
+var SEASONAL_HEATMAP = {
+  diseases:['Leptospirosis','Scrub Typhus','Dengue','Nipah','Melioidosis','Enteric Fever','TB','Mucormycosis','HIV/OIs','AMR'],
+  months:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+  data:[
+    [0,0,0,1,2,4,4,4,3,2,1,0],
+    [1,0,0,0,1,2,3,4,4,3,2,1],
+    [1,1,1,2,3,3,3,3,3,3,2,1],
+    [0,0,0,0,1,2,2,1,2,1,0,0],
+    [1,1,1,2,2,3,3,3,3,2,1,1],
+    [1,1,2,2,3,3,2,2,2,2,2,1],
+    [2,2,2,2,2,2,2,2,2,2,2,2],
+    [1,1,1,1,1,1,1,1,1,1,1,1],
+    [2,2,2,2,2,2,2,2,2,2,2,2],
+    [2,2,2,2,2,2,2,2,2,2,2,2]
+  ]
+};
+
+var NIPAH_OUTBREAKS = [
+  {year:2018,district:'Kozhikode',cases:18,deaths:17,note:'First Kerala outbreak. CFR 94%. WHO deployed team.'},
+  {year:2019,district:'Ernakulam',cases:1,deaths:0,note:'Single case detected, rapidly contained. Zero mortality.'},
+  {year:2021,district:'Kozhikode',cases:1,deaths:1,note:'12-year-old boy. Identified within days, contacts traced.'},
+  {year:'2023 (Sep)',district:'Kozhikode',cases:6,deaths:2,note:'Largest since 2018. Two deaths. School contact tracing.'},
+  {year:'2024 (Jul)',district:'Malappuram',cases:1,deaths:1,note:'Encephalitis-predominant. Fatal case.'},
+  {year:'2024 (Sep)',district:'Malappuram',cases:1,deaths:1,note:'Second 2024 outbreak. Rapid containment.'},
+  {year:'2025',district:'Malappuram, Palakkad',cases:4,deaths:2,note:'First-ever Palakkad outbreak. Geographic spread.'}
+];
+
+var ALGO_SEASONS = ['Monsoon (Jun\u2013Sep)','Post-monsoon (Oct\u2013Dec)','Dry (Jan\u2013May)'];
+var ALGO_EXPOSURES = ['Flood/water','Farm/soil','Animal contact','Forest/trek','Healthcare','IV drug use','Travel','Immunosuppressed'];
+var ALGO_FINDINGS = ['Eschar','Conjunctival suffusion','Rash','Jaundice','Hemorrhage/bleeding','AKI','Hepatosplenomegaly','Altered sensorium','Cough/pneumonia','Thrombocytopenia','Lymphadenopathy','Cavitary lesion','Orbital swelling'];
+
+var ALGO_DISEASES = [
+  {id:'leptospirosis',name:'Leptospirosis',base:15,
+    mods:{season_0:15,exposure_0:20,finding_1:25,finding_3:10,finding_5:15,finding_9:5,finding_6:5}},
+  {id:'scrub_typhus',name:'Scrub Typhus',base:12,
+    mods:{season_0:10,season_1:8,exposure_1:12,exposure_3:10,finding_0:35,finding_6:10,finding_2:8,finding_9:5}},
+  {id:'dengue',name:'Dengue',base:15,
+    mods:{season_0:10,season_1:8,finding_4:15,finding_9:15,finding_2:10,finding_6:8}},
+  {id:'nipah',name:'Nipah Virus',base:2,
+    mods:{season_0:5,exposure_2:15,finding_7:25,finding_8:10}},
+  {id:'melioidosis',name:'Melioidosis',base:5,
+    mods:{season_0:10,exposure_1:15,exposure_0:8,finding_8:12,finding_11:20,finding_3:5,finding_5:8}},
+  {id:'tb',name:'Tuberculosis',base:10,
+    mods:{finding_8:10,finding_11:15,finding_6:5,finding_10:8,exposure_7:5}},
+  {id:'enteric',name:'Enteric Fever',base:10,
+    mods:{season_0:5,exposure_6:8,finding_6:10,finding_2:5}},
+  {id:'mucormycosis',name:'Mucormycosis',base:3,
+    mods:{exposure_7:5,finding_12:30,finding_3:5,finding_11:10}},
+  {id:'hiv',name:'HIV/OIs',base:3,
+    mods:{exposure_5:20,finding_8:8,finding_7:10,finding_10:5}},
+  {id:'amr',name:'Resistant Infection',base:5,
+    mods:{exposure_4:15,exposure_7:10,finding_8:5,finding_5:5}}
+];
+
+var AMR_PATHOGENS = [
+  {name:'E. coli (ESBL)',ceftriaxone:78,cipro:82,meropenem:5,colistin:1,vanc:'-'},
+  {name:'Klebsiella (CRE)',ceftriaxone:85,cipro:75,meropenem:35,colistin:5,vanc:'-'},
+  {name:'Acinetobacter (CRAB)',ceftriaxone:90,cipro:88,meropenem:65,colistin:8,vanc:'-'},
+  {name:'Pseudomonas (CRPA)',ceftriaxone:'-',cipro:45,meropenem:30,colistin:3,vanc:'-'},
+  {name:'S. aureus (MRSA)',ceftriaxone:'-',cipro:55,meropenem:'-',colistin:'-',vanc:2},
+  {name:'Candida auris',ceftriaxone:'-',cipro:'-',meropenem:'-',colistin:'-',vanc:'-'}
+];
+
+var EMPIRIC_GUIDES = [
+  {syndrome:'Community-Acquired Pneumonia',mild:'Amoxicillin 1g TDS or Doxycycline 100mg BD',moderate:'Ceftriaxone 2g + Azithromycin 500mg',severe:'Pip-tazo 4.5g q6h + Azithromycin',note:'High ESBL rates in Kerala \u2014 pip-tazo preferred over cephalosporins for hospital-acquired'},
+  {syndrome:'Urinary Tract Infection',mild:'Nitrofurantoin 100mg BD \u00d7 5d (uncomplicated)',moderate:'Ceftriaxone 1g IV (pending culture)',severe:'Meropenem 1g IV q8h (ESBL risk)',note:'Avoid empiric ciprofloxacin \u2014 >80% E. coli resistance in India'},
+  {syndrome:'Intra-Abdominal Infection',mild:'Amoxicillin-clavulanate 1.2g IV',moderate:'Pip-tazo 4.5g q6h + Metronidazole',severe:'Meropenem 1g q8h + Fluconazole if Candida risk',note:'Source control (surgery/drainage) is paramount'},
+  {syndrome:'Bacterial Meningitis',mild:'-',moderate:'Ceftriaxone 2g IV q12h + Vancomycin + Dexamethasone',severe:'Meropenem 2g IV q8h + Vancomycin',note:'Dexamethasone BEFORE or WITH first antibiotic dose (de Gans trial)'},
+  {syndrome:'Febrile Neutropenia',mild:'Augmentin + Ciprofloxacin (oral, low-risk MASCC \u226521)',moderate:'Pip-tazo 4.5g q6h or Cefepime 2g q8h',severe:'Meropenem 1g q8h + Vancomycin if MRSA risk',note:'Add antifungal at day 4\u20137 if persistent fever despite antibiotics'}
+];
+
+var STEWARDSHIP_RULES = [
+  'Always send cultures (blood \u00d72, urine, sputum) BEFORE starting antibiotics',
+  'Review antibiotics at 48\u201372 hours with culture and sensitivity results',
+  'De-escalate: switch from broad to narrow spectrum based on culture',
+  'IV-to-oral switch: afebrile 24h + improving + functioning GI tract',
+  'Short courses: 5 days for CAP, 7 days for most BSIs, 6 weeks for IE',
+  'Never use carbapenems empirically for community-acquired infections',
+  'Procalcitonin <0.25 ng/mL = consider stopping antibiotics',
+  'Vancomycin: AUC/MIC-guided monitoring, NOT trough (2020 ASHP/IDSA)',
+  'Extended-infusion meropenem (4h) for time-dependent killing against MDR',
+  'Colistin: always check renal function, never use as monotherapy'
+];
+
+var CD4_OI = [
+  {oi:'Herpes Zoster (multi-dermatomal)',threshold:500,prophylaxis:'None'},
+  {oi:'Oral/Vulvovaginal Candidiasis',threshold:400,prophylaxis:'Fluconazole PRN'},
+  {oi:'Pulmonary Tuberculosis',threshold:350,prophylaxis:'IPT 300mg OD \u00d7 6mo'},
+  {oi:'Kaposi Sarcoma (HHV-8)',threshold:300,prophylaxis:'ART initiation'},
+  {oi:'Pneumocystis jirovecii Pneumonia (PCP)',threshold:200,prophylaxis:'TMP-SMX DS daily'},
+  {oi:'Toxoplasma Encephalitis',threshold:200,prophylaxis:'TMP-SMX DS daily'},
+  {oi:'Cryptococcal Meningitis',threshold:150,prophylaxis:'Fluconazole 200mg; CrAg screen'},
+  {oi:'Histoplasma / Coccidioides',threshold:150,prophylaxis:'Itraconazole in endemic areas'},
+  {oi:'CMV Retinitis',threshold:100,prophylaxis:'Fundoscopy screening'},
+  {oi:'Disseminated MAC',threshold:50,prophylaxis:'Azithromycin 1200mg weekly'},
+  {oi:'CNS Lymphoma',threshold:50,prophylaxis:'ART + surveillance'},
+  {oi:'Progressive Multifocal Leukoencephalopathy',threshold:50,prophylaxis:'ART (no specific Rx)'}
+];
+
+var DRUG_INTERACTIONS = [
+  {pair:'Rifampicin + ARVs (PIs, DTG)',effect:'Massive CYP3A4 induction \u2014 subtherapeutic ARV levels',action:'Double DTG to BD dosing. Avoid most PIs. Use rifabutin if possible.'},
+  {pair:'Rifampicin + Warfarin',effect:'Reduced anticoagulation (CYP induction)',action:'Increase warfarin dose 2\u20133x. Monitor INR twice weekly.'},
+  {pair:'Vancomycin + Piperacillin-Tazobactam',effect:'Synergistic AKI risk (2019 meta-analysis)',action:'Prefer cefepime or meropenem if concurrent MRSA + GNB coverage needed.'},
+  {pair:'Amphotericin B + Aminoglycosides',effect:'Additive nephrotoxicity',action:'Avoid combination. If unavoidable, monitor Cr and electrolytes daily.'},
+  {pair:'Fluoroquinolones + QT-prolonging agents',effect:'Additive QTc prolongation \u2192 Torsades de Pointes',action:'Baseline + serial ECGs. Avoid with azithromycin, ondansetron, haloperidol.'},
+  {pair:'Linezolid + SSRIs / Tyramine-rich foods',effect:'Serotonin syndrome (MAO inhibition)',action:'Avoid SSRIs. Limit cheese, wine, fermented foods. Watch for agitation, clonus, hyperthermia.'},
+  {pair:'TMP-SMX + Methotrexate',effect:'Bone marrow suppression (folate antagonism)',action:'Avoid combination. If essential, add folinic acid rescue.'},
+  {pair:'Isoniazid + Paracetamol',effect:'Increased hepatotoxicity (CYP2E1 induction)',action:'Limit paracetamol to 2g/day. Monitor LFT.'}
+];
+
+
+// ============================================================================
+// APP LOGIC
+// ============================================================================
+(function(){
+  'use strict';
+
+  var currentView = 'overview';
+  var currentDisease = null;
+  var currentDtab = 'epi';
+  var algoState = {season:-1,exposures:new Set(),findings:new Set()};
+  var chartsRendered = {};
+
+  // ---- Helpers ----
+  function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML}
+  function $(id){return document.getElementById(id)}
+  function qa(sel,ctx){return Array.from((ctx||document).querySelectorAll(sel))}
+
+  // ---- Router ----
+  function navigate(view){
+    if(view===currentView) return;
+    qa('.view').forEach(function(v){v.classList.remove('active')});
+    qa('.nav-btn').forEach(function(b){b.classList.remove('active');b.setAttribute('aria-selected','false')});
+    var el=$('view-'+view);
+    var btn=$('tab-'+view);
+    if(el){el.classList.add('active');currentView=view}
+    if(btn){btn.classList.add('active');btn.setAttribute('aria-selected','true')}
+    // Lazy render charts
+    if(view==='overview'&&!chartsRendered.heatmap) renderHeatmap();
+    if(view==='algorithm') runAlgorithm();
+  }
+
+  $('bottom-nav').addEventListener('click',function(e){
+    var btn=e.target.closest('.nav-btn');
+    if(btn) navigate(btn.dataset.view);
+  });
+
+  // ---- Dark Mode ----
+  var darkPref = localStorage.getItem('id-dark');
+  if(darkPref==='1'||(darkPref===null&&window.matchMedia('(prefers-color-scheme:dark)').matches)){
+    document.documentElement.classList.add('dark');
+  }
+  $('btn-dark').addEventListener('click',function(){
+    document.documentElement.classList.toggle('dark');
+    localStorage.setItem('id-dark',document.documentElement.classList.contains('dark')?'1':'0');
+    $('dark-icon').textContent=document.documentElement.classList.contains('dark')?'\u2600':'\u263D';
+    // Redraw charts for theme
+    if(chartsRendered.heatmap){chartsRendered.heatmap.destroy();chartsRendered.heatmap=null;renderHeatmap()}
+  });
+  if(document.documentElement.classList.contains('dark')) $('dark-icon').textContent='\u2600';
+
+  // ---- Overview: Stats ----
+  function renderStats(){
+    var totalCases=0,totalDeaths=0;
+    DISEASES.forEach(function(d){totalCases+=d.kerala.cases;totalDeaths+=d.kerala.deaths});
+    var stats=[
+      {val:totalCases,label:'Cases Tracked (2024\u201325)',cls:'stat-teal'},
+      {val:totalDeaths,label:'Deaths Recorded',cls:'stat-rose'},
+      {val:DISEASES.length,label:'Diseases Mapped',cls:'stat-amber'},
+      {val:DISEASES.reduce(function(a,d){return a+d.pearls.length},0),label:'Clinical Pearls',cls:'stat-emerald'}
+    ];
+    var grid=$('stats-grid');
+    grid.innerHTML=stats.map(function(s){
+      return '<div class="stat-card"><div class="stat-val '+s.cls+'" data-target="'+s.val+'">0</div><div class="stat-label">'+esc(s.label)+'</div></div>';
+    }).join('');
+    // Animate counters
+    qa('.stat-val',grid).forEach(function(el){
+      var target=parseInt(el.dataset.target);
+      var start=0;var duration=1200;var startTime=null;
+      function step(ts){
+        if(!startTime)startTime=ts;
+        var progress=Math.min((ts-startTime)/duration,1);
+        var eased=1-Math.pow(1-progress,3);
+        el.textContent=Math.round(eased*target).toLocaleString();
+        if(progress<1)requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }
+
+  // ---- Overview: Heatmap ----
+  function renderHeatmap(){
+    var isDark=document.documentElement.classList.contains('dark');
+    var series=SEASONAL_HEATMAP.diseases.map(function(name,i){
+      return{name:name,data:SEASONAL_HEATMAP.months.map(function(m,j){return{x:m,y:SEASONAL_HEATMAP.data[i][j]}})};
+    }).reverse();
+    var opts={
+      chart:{type:'heatmap',height:320,toolbar:{show:false},fontFamily:'inherit',
+        background:'transparent',foreColor:isDark?'#94a3b8':'#64748b'},
+      series:series,
+      dataLabels:{enabled:false},
+      colors:['#0d9488'],
+      plotOptions:{heatmap:{
+        radius:4,
+        colorScale:{ranges:[
+          {from:0,to:0,color:isDark?'#1e293b':'#f1f5f9',name:'Rare'},
+          {from:1,to:1,color:'#99f6e4',name:'Low'},
+          {from:2,to:2,color:'#14b8a6',name:'Moderate'},
+          {from:3,to:3,color:'#f59e0b',name:'High'},
+          {from:4,to:4,color:'#e11d48',name:'Peak'}
+        ]}
+      }},
+      xaxis:{labels:{style:{fontSize:'11px'}},axisBorder:{show:false}},
+      yaxis:{labels:{style:{fontSize:'11px'}}},
+      grid:{show:false},
+      tooltip:{y:{formatter:function(v){return['Rare','Low','Moderate','High','Peak'][v]||''}}}
+    };
+    chartsRendered.heatmap=new ApexCharts($('chart-heatmap'),opts);
+    chartsRendered.heatmap.render();
+  }
+
+  // ---- Overview: Nipah Timeline ----
+  function renderTimeline(){
+    $('nipah-timeline').innerHTML=NIPAH_OUTBREAKS.map(function(o){
+      return '<div class="tl-item"><span class="tl-year">'+esc(String(o.year))+'</span> \u2014 '+esc(o.district)+
+        ' <span style="font-weight:700">('+o.cases+' cases, '+o.deaths+' deaths)</span>'+
+        '<div class="tl-detail">'+esc(o.note)+'</div></div>';
+    }).join('');
+  }
+
+  // ---- Diseases: Grid ----
+  function renderDiseaseGrid(filter){
+    var cats=[{k:'all',l:'All'},{k:'bacterial',l:'Bacterial'},{k:'viral',l:'Viral'},{k:'fungal',l:'Fungal'},{k:'cross-cutting',l:'Cross-cutting'}];
+    $('disease-filters').innerHTML=cats.map(function(c){
+      return '<button class="filter-chip'+(c.k===(filter||'all')?' active':'')+'" data-cat="'+c.k+'">'+c.l+'</button>';
+    }).join('');
+    var filtered=filter&&filter!=='all'?DISEASES.filter(function(d){return d.category===filter}):DISEASES;
+    $('disease-grid').innerHTML=filtered.map(function(d){
+      var tagCls=d.severity==='high'?'tag-high':'tag-moderate';
+      var catCls='tag-'+d.category.replace('-cutting','');
+      return '<div class="disease-card" data-id="'+d.id+'">'+
+        '<div class="d-icon">'+d.icon+'</div>'+
+        '<div class="d-name">'+esc(d.name)+'</div>'+
+        '<div style="display:flex;gap:4px;flex-wrap:wrap;margin-top:6px">'+
+          '<span class="d-tag '+tagCls+'">'+esc(d.severity)+'</span>'+
+          '<span class="d-tag '+catCls+'">'+esc(d.category)+'</span>'+
+        '</div>'+
+        '<div style="font-size:.75rem;color:#64748b;margin-top:8px;line-height:1.4">'+esc(d.tagline)+'</div>'+
+      '</div>';
+    }).join('');
+  }
+
+  $('disease-filters').addEventListener('click',function(e){
+    var chip=e.target.closest('.filter-chip');
+    if(chip) renderDiseaseGrid(chip.dataset.cat);
+  });
+
+  $('disease-grid').addEventListener('click',function(e){
+    var card=e.target.closest('.disease-card');
+    if(card) openDiseaseDetail(card.dataset.id);
+  });
+
+  // ---- Disease Detail ----
+  function openDiseaseDetail(id){
+    var d=DISEASES.find(function(x){return x.id===id});
+    if(!d) return;
+    currentDisease=d;
+    currentDtab='epi';
+    renderDetail();
+    $('disease-detail').classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+
+  function closeDiseaseDetail(){
+    $('disease-detail').classList.remove('open');
+    document.body.style.overflow='';
+    currentDisease=null;
+  }
+
+  $('disease-detail').addEventListener('click',function(e){
+    if(e.target===$('disease-detail')) closeDiseaseDetail();
+  });
+
+  function renderDetail(){
+    var d=currentDisease;
+    if(!d) return;
+    var sevColor=d.severity==='high'?'#e11d48':'#d97706';
+    $('detail-title').innerHTML=d.icon+' '+esc(d.name)+'<span style="font-size:.75rem;padding:3px 8px;border-radius:6px;background:'+(d.severity==='high'?'#fef2f2':'#fffbeb')+';color:'+sevColor+';margin-left:auto">'+esc(d.severity)+'</span>';
+
+    var tabs=['epi','clinical','dx','rx','pearls'];
+    var tabLabels=['Epi','Clinical','Dx','Rx','Pearls'];
+    $('detail-tabs').innerHTML=tabs.map(function(t,i){
+      return '<button class="dtab'+(t===currentDtab?' active':'')+'" data-tab="'+t+'">'+tabLabels[i]+'</button>';
+    }).join('');
+    renderDetailContent();
+  }
+
+  $('detail-tabs').addEventListener('click',function(e){
+    var tab=e.target.closest('.dtab');
+    if(tab){currentDtab=tab.dataset.tab;renderDetail()}
+  });
+
+  function renderDetailContent(){
+    var d=currentDisease;
+    var body=$('detail-body');
+    if(!d){body.innerHTML='';return}
+
+    if(currentDtab==='epi'){
+      var html='<div class="info-block"><h4>Kerala Burden</h4>';
+      if(d.kerala.cases>0){
+        html+='<div class="info-row"><span class="label">Cases</span><span>'+d.kerala.cases.toLocaleString()+'</span></div>';
+        html+='<div class="info-row"><span class="label">Deaths</span><span>'+d.kerala.deaths+'</span></div>';
+        html+='<div class="info-row"><span class="label">CFR</span><span>'+d.kerala.cfr+'%</span></div>';
+      }
+      html+='<div class="info-row"><span class="label">Trend</span><span>'+esc(d.kerala.trend)+'</span></div>';
+      html+='<div class="info-row"><span class="label">Key Districts</span><span>'+d.kerala.districts.map(esc).join(', ')+'</span></div>';
+      html+='<div class="info-row"><span class="label">Source</span><span>'+esc(d.kerala.source)+'</span></div>';
+      html+='</div>';
+      html+='<div class="info-block"><h4>Epidemiology</h4>';
+      html+='<div class="info-row"><span class="label">Transmission</span><span>'+esc(d.epi.transmission)+'</span></div>';
+      html+='<div class="info-row"><span class="label">Incubation</span><span>'+esc(d.epi.incubation)+'</span></div>';
+      html+='<div class="info-row"><span class="label">Risk Groups</span><span>'+d.epi.risk.map(esc).join(', ')+'</span></div>';
+      var seasonNames=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      html+='<div class="info-row"><span class="label">Peak Season</span><span>'+d.epi.season.map(function(m){return seasonNames[m-1]}).join(', ')+'</span></div>';
+      html+='<div class="info-row"><span class="label">Global</span><span>'+esc(d.epi.global)+'</span></div>';
+      html+='</div>';
+      body.innerHTML=html;
+
+    } else if(currentDtab==='clinical'){
+      var html='<div class="info-block"><h4>Phases</h4>';
+      d.clinical.phases.forEach(function(p){html+='<div class="info-row">'+esc(p)+'</div>'});
+      html+='</div><div class="info-block"><h4>Red Flags</h4>';
+      d.clinical.red_flags.forEach(function(r){
+        html+='<div class="red-flag"><div><strong>'+esc(r.sign)+'</strong><br><span style="font-size:.8125rem;color:#64748b">'+esc(r.note)+'</span></div></div>';
+      });
+      html+='</div><div class="info-block"><h4>Complications</h4>';
+      d.clinical.complications.forEach(function(c){html+='<div class="info-row">\u2022 '+esc(c)+'</div>'});
+      html+='</div>';
+      body.innerHTML=html;
+
+    } else if(currentDtab==='dx'){
+      var html='<div class="info-block"><h4>Bedside Findings</h4>';
+      d.diagnosis.bedside.forEach(function(b){html+='<div class="info-row">\u2022 '+esc(b)+'</div>'});
+      html+='</div><div class="info-block"><h4>Investigations</h4>';
+      d.diagnosis.labs.forEach(function(l){
+        html+='<div class="rx-card"><div class="rx-label">'+esc(l.test)+'</div>';
+        if(l.timing)html+='<div style="font-size:.8125rem;color:#0d9488;font-weight:600">'+esc(l.timing)+'</div>';
+        if(l.expected)html+='<div style="font-size:.8125rem;margin-top:2px">Expected: '+esc(l.expected)+'</div>';
+        html+='<div class="rx-note">'+esc(l.note)+'</div></div>';
+      });
+      html+='</div>';
+      html+='<div class="pearl-card"><div class="pearl-type">Key Differentiator</div>'+esc(d.diagnosis.differentiator)+'</div>';
+      body.innerHTML=html;
+
+    } else if(currentDtab==='rx'){
+      var html='<div class="info-block"><h4>Treatment</h4>';
+      html+='<div class="rx-card" style="border-left:3px solid #0d9488"><div class="rx-label">First Line</div><div class="rx-drug">'+esc(d.treatment.first.drug)+'</div><div class="rx-note">'+esc(d.treatment.first.note)+'</div></div>';
+      html+='<div class="rx-card"><div class="rx-label">Mild / Oral</div><div class="rx-drug">'+esc(d.treatment.mild.drug)+'</div><div class="rx-note">'+esc(d.treatment.mild.note)+'</div></div>';
+      if(d.treatment.alternatives.length){
+        html+='<div class="info-block"><h4>Alternatives</h4>';
+        d.treatment.alternatives.forEach(function(a){html+='<div class="info-row">\u2022 '+esc(a)+'</div>'});
+        html+='</div>';
+      }
+      html+='<div class="info-block"><h4>Traps to Avoid</h4>';
+      d.treatment.traps.forEach(function(t){html+='<div class="trap-card">'+esc(t)+'</div>'});
+      html+='</div>';
+      if(d.treatment.prophylaxis){
+        html+='<div class="pearl-card"><div class="pearl-type">Prophylaxis</div>'+esc(d.treatment.prophylaxis)+'</div>';
+      }
+      body.innerHTML=html;
+
+    } else if(currentDtab==='pearls'){
+      var html='';
+      d.pearls.forEach(function(p){
+        html+='<div class="pearl-card"><div class="pearl-type">'+esc(p.type)+'</div>'+esc(p.text)+'</div>';
+      });
+      body.innerHTML=html;
+    }
+  }
+
+  // Back gesture for detail
+  var touchStartY=0;
+  $('detail-sheet').addEventListener('touchstart',function(e){
+    if($('detail-sheet').scrollTop===0) touchStartY=e.touches[0].clientY;
+  },{passive:true});
+  $('detail-sheet').addEventListener('touchmove',function(e){
+    if($('detail-sheet').scrollTop===0){
+      var dy=e.touches[0].clientY-touchStartY;
+      if(dy>80) closeDiseaseDetail();
+    }
+  },{passive:true});
+
+  // ---- Algorithm ----
+  function renderAlgoInputs(){
+    $('algo-season').innerHTML=ALGO_SEASONS.map(function(s,i){
+      return '<button class="algo-chip'+(algoState.season===i?' selected':'')+'" data-idx="'+i+'">'+esc(s)+'</button>';
+    }).join('');
+    $('algo-exposure').innerHTML=ALGO_EXPOSURES.map(function(s,i){
+      return '<button class="algo-chip'+(algoState.exposures.has(i)?' selected':'')+'" data-idx="'+i+'">'+esc(s)+'</button>';
+    }).join('');
+    $('algo-findings').innerHTML=ALGO_FINDINGS.map(function(s,i){
+      return '<button class="algo-chip'+(algoState.findings.has(i)?' selected':'')+'" data-idx="'+i+'">'+esc(s)+'</button>';
+    }).join('');
+  }
+
+  $('algo-season').addEventListener('click',function(e){
+    var c=e.target.closest('.algo-chip');
+    if(c){var i=+c.dataset.idx;algoState.season=algoState.season===i?-1:i;renderAlgoInputs();runAlgorithm()}
+  });
+  $('algo-exposure').addEventListener('click',function(e){
+    var c=e.target.closest('.algo-chip');
+    if(c){var i=+c.dataset.idx;algoState.exposures.has(i)?algoState.exposures.delete(i):algoState.exposures.add(i);renderAlgoInputs();runAlgorithm()}
+  });
+  $('algo-findings').addEventListener('click',function(e){
+    var c=e.target.closest('.algo-chip');
+    if(c){var i=+c.dataset.idx;algoState.findings.has(i)?algoState.findings.delete(i):algoState.findings.add(i);renderAlgoInputs();runAlgorithm()}
+  });
+
+  function runAlgorithm(){
+    var results=ALGO_DISEASES.map(function(ad){
+      var score=ad.base;
+      var reasons=[];
+      if(algoState.season>=0&&ad.mods['season_'+algoState.season]){
+        score+=ad.mods['season_'+algoState.season];
+        reasons.push(ALGO_SEASONS[algoState.season]);
+      }
+      algoState.exposures.forEach(function(ei){
+        if(ad.mods['exposure_'+ei]){score+=ad.mods['exposure_'+ei];reasons.push(ALGO_EXPOSURES[ei])}
+      });
+      algoState.findings.forEach(function(fi){
+        if(ad.mods['finding_'+fi]){score+=ad.mods['finding_'+fi];reasons.push(ALGO_FINDINGS[fi])}
+      });
+      return{name:ad.name,score:score,reasons:reasons};
+    });
+    results.sort(function(a,b){return b.score-a.score});
+    var maxScore=Math.max(results[0].score,1);
+    $('algo-results').innerHTML=results.map(function(r,i){
+      var pct=Math.round(r.score/maxScore*100);
+      var cls=pct>70?'prob-high':pct>40?'prob-mod':'prob-low';
+      return '<div class="result-card"><div class="r-rank">'+(i+1)+'</div><div class="r-body">'+
+        '<div class="r-name">'+esc(r.name)+' <span style="float:right;color:#0d9488;font-size:.8125rem">'+pct+'%</span></div>'+
+        '<div class="prob-bar-bg"><div class="prob-bar '+cls+'" style="width:'+pct+'%"></div></div>'+
+        (r.reasons.length?'<div class="r-reason">\u2191 '+r.reasons.map(esc).join(' + ')+'</div>':'')+
+        '</div></div>';
+    }).join('');
+  }
+
+  // ---- Stewardship ----
+  function renderStewardship(){
+    // AMR table
+    var thead='<thead><tr><th>Pathogen</th><th>CTX</th><th>CIP</th><th>MEM</th><th>CST</th><th>VAN</th></tr></thead>';
+    var tbody='<tbody>'+AMR_PATHOGENS.map(function(p){
+      function badge(v){
+        if(v==='-') return '<span style="color:#94a3b8">\u2014</span>';
+        var n=parseInt(v);
+        var cls=n>50?'r-high':n>20?'r-mod':'r-low';
+        return '<span class="r-badge '+cls+'">'+v+'%</span>';
+      }
+      return '<tr><td style="font-weight:600;font-size:.8125rem">'+esc(p.name)+'</td><td>'+badge(p.ceftriaxone)+'</td><td>'+badge(p.cipro)+'</td><td>'+badge(p.meropenem)+'</td><td>'+badge(p.colistin)+'</td><td>'+badge(p.vanc)+'</td></tr>';
+    }).join('')+'</tbody>';
+    $('amr-table').innerHTML=thead+tbody;
+
+    // Empiric guides
+    $('empiric-guides').innerHTML=EMPIRIC_GUIDES.map(function(g){
+      var html='<div class="guide-card"><h4>'+esc(g.syndrome)+'</h4>';
+      if(g.mild!=='-')html+='<div class="guide-row"><strong>Mild: </strong>'+esc(g.mild)+'</div>';
+      html+='<div class="guide-row"><strong>Moderate: </strong>'+esc(g.moderate)+'</div>';
+      html+='<div class="guide-row"><strong>Severe: </strong>'+esc(g.severe)+'</div>';
+      html+='<div style="font-size:.75rem;color:#d97706;margin-top:6px;font-weight:500">'+esc(g.note)+'</div>';
+      html+='</div>';
+      return html;
+    }).join('');
+
+    // Stewardship rules
+    $('steward-rules').innerHTML=STEWARDSHIP_RULES.map(function(r){
+      return '<div class="steward-rule">'+esc(r)+'</div>';
+    }).join('');
+  }
+
+  // ---- Tools: CrCl ----
+  function calcCrCl(){
+    var age=+$('crcl-age').value;var wt=+$('crcl-wt').value;
+    var cr=+$('crcl-cr').value;var sex=$('crcl-sex').value;
+    if(!age||!wt||!cr){$('crcl-result').textContent='\u2014';return}
+    var crcl=(140-age)*wt/(72*cr);
+    if(sex==='F') crcl*=0.85;
+    var stage=crcl>=90?'Normal':crcl>=60?'Mild \u2193':crcl>=30?'Moderate \u2193':crcl>=15?'Severe \u2193':'ESRD';
+    $('crcl-result').textContent='CrCl: '+Math.round(crcl)+' mL/min \u2014 '+stage;
+  }
+  qa('#crcl-age,#crcl-wt,#crcl-cr,#crcl-sex').forEach(function(el){el.addEventListener('input',calcCrCl)});
+
+  // ---- Tools: SOFA ----
+  function calcSOFA(){
+    var ids=['sofa-resp','sofa-plt','sofa-bil','sofa-cvs','sofa-cns','sofa-renal'];
+    var total=ids.reduce(function(s,id){return s+ +$(id).value},0);
+    var mort=total<=1?'<1.5%':total<=3?'<5%':total<=5?'<10%':total<=7?'15\u201320%':total<=9?'33\u201340%':total<=11?'40\u201350%':'>95%';
+    $('sofa-result').textContent='SOFA Score: '+total+' \u2014 Est. Mortality: '+mort;
+  }
+  qa('#sofa-resp,#sofa-plt,#sofa-bil,#sofa-cvs,#sofa-cns,#sofa-renal').forEach(function(el){el.addEventListener('change',calcSOFA)});
+
+  // ---- Tools: Child-Pugh ----
+  function calcCP(){
+    var ids=['cp-bil','cp-alb','cp-inr','cp-asc','cp-enc'];
+    var total=ids.reduce(function(s,id){return s+ +$(id).value},0);
+    var cls=total<=6?'A (5\u20136) \u2014 Well-compensated':total<=9?'B (7\u20139) \u2014 Significant dysfunction':'C (10\u201315) \u2014 Decompensated';
+    $('cp-result').textContent='Child-Pugh Class '+cls;
+  }
+  qa('#cp-bil,#cp-alb,#cp-inr,#cp-asc,#cp-enc').forEach(function(el){el.addEventListener('change',calcCP)});
+
+  // ---- Tools: CD4 OI Slider ----
+  function renderCD4(){
+    var val=+$('cd4-slider').value;
+    $('cd4-val').textContent='CD4: '+val+' cells/\u00B5L';
+    $('oi-list').innerHTML=CD4_OI.map(function(o){
+      var active=val<=o.threshold;
+      return '<div class="oi-item '+(active?'oi-active':'oi-inactive')+'">'+
+        '<span>'+esc(o.oi)+'</span>'+
+        '<span class="oi-thresh" style="background:'+(active?'#fef2f2':'#f1f5f9')+';color:'+(active?'#e11d48':'#94a3b8')+'">CD4 &lt;'+o.threshold+'</span>'+
+      '</div>';
+    }).join('');
+  }
+  $('cd4-slider').addEventListener('input',renderCD4);
+
+  // ---- Tools: Drug Interactions ----
+  function renderDXI(){
+    $('dxi-list').innerHTML=DRUG_INTERACTIONS.map(function(d){
+      return '<div class="dxi-card"><div class="dxi-pair">'+esc(d.pair)+'</div>'+
+        '<div class="dxi-effect">'+esc(d.effect)+'</div>'+
+        '<div class="dxi-action">\u2192 '+esc(d.action)+'</div></div>';
+    }).join('');
+  }
+
+  // ---- Init ----
+  function init(){
+    renderStats();
+    renderTimeline();
+    renderDiseaseGrid('all');
+    renderAlgoInputs();
+    renderStewardship();
+    calcCrCl();
+    calcSOFA();
+    calcCP();
+    renderCD4();
+    renderDXI();
+  }
+
+  document.addEventListener('DOMContentLoaded',init);
+
+})();
+</script>
+</body>
+</html>

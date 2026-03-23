@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="organ-icon">
+  <defs>
+    <filter id="heartShadow" x="-10%" y="-10%" width="130%" height="140%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    <radialGradient id="heartGrad" cx="40%" cy="35%" r="55%">
+      <stop offset="0%" stop-color="#FCA5A5"/>
+      <stop offset="40%" stop-color="#EF4444"/>
+      <stop offset="85%" stop-color="#B91C1C"/>
+      <stop offset="100%" stop-color="#991B1B"/>
+    </radialGradient>
+    <radialGradient id="heartHighlight" cx="30%" cy="25%" r="30%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="heartVesselGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#EF4444"/>
+      <stop offset="100%" stop-color="#991B1B"/>
+    </linearGradient>
+    <linearGradient id="aortaGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#DC2626"/>
+      <stop offset="100%" stop-color="#7F1D1D"/>
+    </linearGradient>
+  </defs>
+  <!-- Main heart body -->
+  <path d="M32 56 C32 56 8 40 8 24 C8 16 14 10 22 10 C26 10 30 13 32 16 C34 13 38 10 42 10 C50 10 56 16 56 24 C56 40 32 56 32 56Z" fill="url(#heartGrad)" filter="url(#heartShadow)"/>
+  <!-- Aortic arch -->
+  <path d="M30 16 C30 12 28 8 32 6 C36 4 40 6 42 10 L40 11 C38 8 36 6 33 7 C30 8 31 12 31 16Z" fill="url(#aortaGrad)" stroke="#991B1B" stroke-width="0.3"/>
+  <!-- Superior vena cava -->
+  <path d="M44 10 C46 6 48 4 47 2" fill="none" stroke="#7F1D1D" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M44 10 C46 6 48 4 47 2" fill="none" stroke="#DC2626" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Inferior vena cava -->
+  <path d="M46 32 C50 36 52 38 51 42" fill="none" stroke="#7F1D1D" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M46 32 C50 36 52 38 51 42" fill="none" stroke="#DC2626" stroke-width="1.2" stroke-linecap="round"/>
+  <!-- Pulmonary arteries -->
+  <path d="M28 14 C24 8 20 6 16 7" fill="none" stroke="#7F1D1D" stroke-width="2" stroke-linecap="round"/>
+  <path d="M28 14 C24 8 20 6 16 7" fill="none" stroke="#F87171" stroke-width="1" stroke-linecap="round"/>
+  <path d="M34 13 C36 8 34 5 30 4" fill="none" stroke="#991B1B" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Chamber dividing lines -->
+  <path d="M32 20 L32 50" fill="none" stroke="#991B1B" stroke-width="0.6" opacity="0.5"/>
+  <path d="M18 28 C24 30 40 30 48 28" fill="none" stroke="#991B1B" stroke-width="0.5" opacity="0.4"/>
+  <!-- Interventricular septum detail -->
+  <path d="M32 30 C30 34 30 40 32 48" fill="none" stroke="#7F1D1D" stroke-width="0.4" opacity="0.3"/>
+  <!-- Vessel detail lines on surface -->
+  <path d="M20 22 C22 26 24 32 22 38" fill="none" stroke="#B91C1C" stroke-width="0.4" opacity="0.35"/>
+  <path d="M42 22 C40 28 42 34 40 40" fill="none" stroke="#B91C1C" stroke-width="0.4" opacity="0.35"/>
+  <path d="M26 18 C24 22 26 28 24 34" fill="none" stroke="#B91C1C" stroke-width="0.3" opacity="0.25"/>
+  <path d="M38 18 C40 22 38 30 40 36" fill="none" stroke="#B91C1C" stroke-width="0.3" opacity="0.25"/>
+  <!-- Specular highlight -->
+  <path d="M20 14 C24 12 28 14 30 20 C26 18 22 16 20 18Z" fill="url(#heartHighlight)"/>
+  <ellipse cx="22" cy="18" rx="6" ry="4" fill="white" opacity="0.15" transform="rotate(-20 22 18)"/>
+</svg>
