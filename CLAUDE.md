@@ -67,7 +67,7 @@ Single CSS file (`style.css`). "Warm Indigo" design system with glass morphism (
 | Neurology | Placeholder | 0 | — |
 | Nephrology | Placeholder | 0 | — |
 | Gastroenterology | Placeholder | 0 | — |
-| Hematology | Placeholder | 0 | — |
+| Hematology | DONE | 18 (14 high-yield) | Harrison's 21e, Ch 96-118 |
 | Endocrinology | DONE | 57 (33 high-yield) | Harrison's 21e + ADA 2025 |
 
 ---
