@@ -1,7 +1,7 @@
 {
   "system": "Hematology",
-  "topicCount": 18,
-  "hyCount": 14,
+  "topicCount": 20,
+  "hyCount": 16,
   "parts": [
     {
       "key": "intro",
@@ -38,6 +38,10 @@
     {
       "key": "transfusion",
       "label": "Transfusion Medicine & HSCT"
+    },
+    {
+      "key": "reference",
+      "label": "Quick Reference Tables"
     }
   ],
   "topics": [
@@ -230,6 +234,28 @@
       "tags": [],
       "part": "transfusion",
       "num": 18
+    },
+    {
+      "id": "coagulation-test-patterns",
+      "title": "Quick-Reference: Coagulation Test Patterns",
+      "content": "<div class=\"table-wrap\"><table class=\"comparison-table\"><thead><tr><th>Condition</th><th>PT</th><th>aPTT</th><th>Bleeding Time</th><th>Platelet Count</th></tr></thead><tbody><tr><td>Hemophilia A/B</td><td>Normal</td><td><strong>↑</strong></td><td>Normal</td><td>Normal</td></tr><tr><td>VWD (Type 1)</td><td>Normal</td><td>↑</td><td>↑</td><td>Normal</td></tr><tr><td>DIC</td><td>↑</td><td>↑</td><td>↑</td><td>↓</td></tr><tr><td>Liver disease</td><td>↑</td><td>↑</td><td>Normal/↑</td><td>Normal/↓</td></tr><tr><td>Vitamin K deficiency</td><td><strong>↑</strong></td><td>↑</td><td>Normal</td><td>Normal</td></tr><tr><td>Warfarin</td><td>↑</td><td>↑</td><td>Normal</td><td>Normal</td></tr><tr><td>Heparin (UFH)</td><td>Normal/↑</td><td><strong>↑</strong></td><td>Normal</td><td>Normal</td></tr><tr><td>ITP</td><td>Normal</td><td>Normal</td><td>↑</td><td><strong>↓</strong></td></tr><tr><td>TTP</td><td>Normal</td><td>Normal</td><td>↑</td><td>↓</td></tr></tbody></table></div>",
+      "source": "Harrison's 21e, Ch 96-118 (Summary)",
+      "tags": [
+        "high-yield"
+      ],
+      "part": "reference",
+      "num": 19
+    },
+    {
+      "id": "anemia-classification-by-mcv",
+      "title": "Quick-Reference: Anemia Classification by MCV",
+      "content": "<div class=\"table-wrap\"><table class=\"comparison-table\"><thead><tr><th>MCV</th><th>Differential</th></tr></thead><tbody><tr><td><strong>Microcytic (&lt;80)</strong></td><td>Iron deficiency, thalassemia, ACD, sideroblastic, lead poisoning</td></tr><tr><td><strong>Normocytic (80–100)</strong></td><td>ACD, CKD, acute blood loss, hemolysis, mixed deficiency, BM failure</td></tr><tr><td><strong>Macrocytic (&gt;100)</strong></td><td>B12/folate deficiency, MDS, liver disease, hypothyroidism, drugs (hydroxyurea, MTX), reticulocytosis</td></tr></tbody></table></div>",
+      "source": "Harrison's 21e, Ch 96-118 (Summary)",
+      "tags": [
+        "high-yield"
+      ],
+      "part": "reference",
+      "num": 20
     }
   ]
 }
