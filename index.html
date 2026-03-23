@@ -82,7 +82,7 @@
       justify-content: center;
       padding: var(--space-6) var(--space-4);
       position: relative;
-      overflow: hidden;
+      overflow: visible;
     }
 
     /* Entry overlay for animation */
@@ -321,8 +321,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding: 80px var(--space-4) var(--space-6);
+      justify-content: flex-start;
+      padding: 72px var(--space-4) var(--space-4);
     }
 
     .body-view-title {
@@ -342,7 +342,7 @@
     /* System node graph view */
     .system-view-container {
       min-height: 100dvh;
-      padding: 80px var(--space-4) var(--space-6);
+      padding: 72px var(--space-4) var(--space-4);
     }
     .system-view-header {
       text-align: center;
@@ -468,7 +468,7 @@
       <div class="body-view-container">
         <h2 class="body-view-title" id="body-view-title">Theory</h2>
         <p class="body-view-subtitle" id="body-view-subtitle">Select an organ system to explore</p>
-        <div id="interactive-body" style="width:100%;max-width:500px;min-height:600px;position:relative;"></div>
+        <div id="interactive-body" style="width:100%;max-width:600px;min-height:70vh;position:relative;"></div>
       </div>
     </div>
 

@@ -1,396 +1,341 @@
+// Interactive SVG Body Scene — Theory + Practicals
 (function() {
   'use strict';
 
-  // Organ positions on the body (relative to SVG viewBox 0 0 200 500)
-  const ORGAN_POSITIONS = {
-    neurology:      { cx: 100, cy: 42,  rx: 28, ry: 24, iconX: 76, iconY: 18, labelY: -5 },
-    endocrinology:  { cx: 100, cy: 88,  rx: 14, ry: 10, iconX: 86, iconY: 78, labelY: 0 },
-    respiratory:    { cx: 100, cy: 135, rx: 38, ry: 28, iconX: 68, iconY: 107, labelY: 0 },
-    cardiology:     { cx: 90,  cy: 145, rx: 18, ry: 16, iconX: 72, iconY: 129, labelY: 0 },
-    gi:             { cx: 100, cy: 195, rx: 28, ry: 20, iconX: 72, iconY: 175, labelY: 0 },
-    nephrology:     { cx: 100, cy: 220, rx: 24, ry: 14, iconX: 76, iconY: 206, labelY: 0 },
-    hematology:     { cx: 100, cy: 260, rx: 30, ry: 16, iconX: 70, iconY: 244, labelY: 0 },
-    id:             { cx: 100, cy: 300, rx: 30, ry: 20, iconX: 70, iconY: 280, labelY: 0 }
+  var iconCache = {};
+
+  // System colors (duplicated here to avoid dependency timing issues)
+  var SYS_COLORS = {
+    cardiology: '#EF4444', respiratory: '#0EA5E9', gi: '#F59E0B',
+    neurology: '#8B5CF6', nephrology: '#14B8A6', endocrinology: '#F97316',
+    hematology: '#F43F5E', id: '#22C55E'
   };
 
-  let iconCache = {};
-  let currentMode = null; // 'theory' or 'practicals'
+  var SYS_NAMES = {
+    cardiology: 'Cardiology', respiratory: 'Respiratory', gi: 'Gastroenterology',
+    neurology: 'Neurology', nephrology: 'Nephrology', endocrinology: 'Endocrinology',
+    hematology: 'Hematology', id: 'Infectious Diseases'
+  };
 
-  // Load SVG icon as text
-  async function loadIcon(name) {
-    if (iconCache[name]) return iconCache[name];
-    try {
-      const resp = await fetch(`assets/icons/${name}.svg`);
-      const text = await resp.text();
-      iconCache[name] = text;
-      return text;
-    } catch(e) {
-      console.warn('Failed to load icon:', name, e);
-      return '';
-    }
+  // Organ positions — arranged around a central body silhouette
+  // The body SVG viewBox is 300 x 520. Organs are placed at anatomical positions
+  // with labels offset to left or right to avoid overlap
+  var ORGANS = [
+    { key: 'neurology',     cx: 150, cy: 45,  r: 24, labelSide: 'right', labelText: 'Neurology' },
+    { key: 'endocrinology', cx: 150, cy: 100, r: 16, labelSide: 'left',  labelText: 'Endocrinology' },
+    { key: 'respiratory',   cx: 150, cy: 155, r: 28, labelSide: 'right', labelText: 'Respiratory' },
+    { key: 'cardiology',    cx: 135, cy: 170, r: 18, labelSide: 'left',  labelText: 'Cardiology' },
+    { key: 'gi',            cx: 150, cy: 225, r: 22, labelSide: 'right', labelText: 'Gastroenterology' },
+    { key: 'nephrology',    cx: 150, cy: 265, r: 18, labelSide: 'left',  labelText: 'Nephrology' },
+    { key: 'hematology',    cx: 150, cy: 310, r: 20, labelSide: 'right', labelText: 'Hematology' },
+    { key: 'id',            cx: 150, cy: 360, r: 20, labelSide: 'left',  labelText: 'Infectious Diseases' }
+  ];
+
+  // Load SVG icon as text (cached)
+  function loadIcon(name) {
+    if (iconCache[name]) return Promise.resolve(iconCache[name]);
+    return fetch('assets/icons/' + name + '.svg')
+      .then(function(r) { return r.text(); })
+      .then(function(text) { iconCache[name] = text; return text; })
+      .catch(function() { return ''; });
   }
 
-  // Build the interactive body SVG
-  async function renderBody(container, mode) {
-    currentMode = mode;
+  // Build the full interactive body
+  function renderBody(container, mode) {
     container.innerHTML = '';
 
-    // Create wrapper with perspective for 3D effect
-    const wrapper = document.createElement('div');
+    // Wrapper with perspective
+    var wrapper = document.createElement('div');
     wrapper.id = 'body-wrapper';
-    wrapper.style.cssText = `
-      perspective: 1200px;
-      width: 100%;
-      max-width: 400px;
-      margin: 0 auto;
-      position: relative;
-    `;
+    wrapper.style.cssText = 'perspective:1200px;width:100%;max-width:500px;margin:0 auto;position:relative;';
 
-    const inner = document.createElement('div');
+    var inner = document.createElement('div');
     inner.id = 'body-inner';
-    inner.style.cssText = `
-      transform-style: preserve-3d;
-      transition: transform 0.1s ease-out;
-      position: relative;
-    `;
+    inner.style.cssText = 'transform-style:preserve-3d;transition:transform 0.15s ease-out;position:relative;';
 
-    // Create the SVG
-    const svgNS = 'http://www.w3.org/2000/svg';
-    const svg = document.createElementNS(svgNS, 'svg');
-    svg.setAttribute('viewBox', '0 0 200 500');
+    // Create SVG
+    var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', '0 0 300 520');
     svg.setAttribute('width', '100%');
-    svg.setAttribute('height', '100%');
-    svg.style.cssText = 'max-height: 70vh; display: block; margin: 0 auto;';
+    svg.style.cssText = 'max-height:72vh;display:block;margin:0 auto;overflow:visible;';
 
-    // Defs for filters
-    const defs = document.createElementNS(svgNS, 'defs');
-
-    // Glow filter for each system
-    Object.entries(App.SYSTEMS).forEach(([key, sys]) => {
-      const filter = document.createElementNS(svgNS, 'filter');
-      filter.setAttribute('id', `glow-${key}`);
-      filter.setAttribute('x', '-50%');
-      filter.setAttribute('y', '-50%');
-      filter.setAttribute('width', '200%');
-      filter.setAttribute('height', '200%');
-
-      const blur = document.createElementNS(svgNS, 'feGaussianBlur');
-      blur.setAttribute('stdDeviation', '4');
-      blur.setAttribute('result', 'blur');
-
-      const merge = document.createElementNS(svgNS, 'feMerge');
-      const m1 = document.createElementNS(svgNS, 'feMergeNode');
-      m1.setAttribute('in', 'blur');
-      const m2 = document.createElementNS(svgNS, 'feMergeNode');
-      m2.setAttribute('in', 'SourceGraphic');
-      merge.appendChild(m1);
-      merge.appendChild(m2);
-
-      filter.appendChild(blur);
-      filter.appendChild(merge);
+    // --- Defs: glow filters ---
+    var defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+    ORGANS.forEach(function(org) {
+      var filter = document.createElementNS('http://www.w3.org/2000/svg', 'filter');
+      filter.setAttribute('id', 'glow-' + org.key);
+      filter.setAttribute('x', '-50%'); filter.setAttribute('y', '-50%');
+      filter.setAttribute('width', '200%'); filter.setAttribute('height', '200%');
+      var blur = document.createElementNS('http://www.w3.org/2000/svg', 'feGaussianBlur');
+      blur.setAttribute('stdDeviation', '6'); blur.setAttribute('result', 'blur');
+      var merge = document.createElementNS('http://www.w3.org/2000/svg', 'feMerge');
+      var mn1 = document.createElementNS('http://www.w3.org/2000/svg', 'feMergeNode');
+      mn1.setAttribute('in', 'blur');
+      var mn2 = document.createElementNS('http://www.w3.org/2000/svg', 'feMergeNode');
+      mn2.setAttribute('in', 'SourceGraphic');
+      merge.appendChild(mn1); merge.appendChild(mn2);
+      filter.appendChild(blur); filter.appendChild(merge);
       defs.appendChild(filter);
     });
     svg.appendChild(defs);
 
-    // Human body outline — anatomical silhouette
-    // Head, neck, shoulders, torso, arms, pelvis, legs, feet
-    const bodyPath = document.createElementNS(svgNS, 'path');
-    bodyPath.setAttribute('d', [
-      // Head (cranium)
-      'M100 10',
-      'C82 10 74 22 74 35',
-      'C74 48 82 58 100 58',
-      'C118 58 126 48 126 35',
-      'C126 22 118 10 100 10 Z',
+    // --- Body silhouette (separate elements for head, neck, torso, arms, legs) ---
+    var bodyGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    bodyGroup.setAttribute('opacity', '0.3');
+    bodyGroup.setAttribute('fill', 'none');
+    bodyGroup.setAttribute('stroke', 'var(--text-tertiary)');
+    bodyGroup.setAttribute('stroke-width', '1.5');
+    bodyGroup.setAttribute('stroke-linejoin', 'round');
+    bodyGroup.setAttribute('stroke-linecap', 'round');
 
-      // Neck
-      'M92 58 L90 70 L110 70 L108 58',
+    // Head
+    var head = document.createElementNS('http://www.w3.org/2000/svg', 'ellipse');
+    head.setAttribute('cx', '150'); head.setAttribute('cy', '40');
+    head.setAttribute('rx', '22'); head.setAttribute('ry', '26');
+    bodyGroup.appendChild(head);
 
-      // Torso + arms (single continuous outline)
-      // Left shoulder → left arm
-      'M90 70',
-      'C72 72 56 76 46 84',
-      'L34 100',
-      'C28 108 24 118 22 130',
-      'L18 160',
-      'C16 168 14 176 16 180',
-      'L22 180',
-      'C24 176 24 168 26 160',
-      'L32 132',
-      'L38 120',
+    // Neck
+    var neck = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    neck.setAttribute('d', 'M140 64 L138 80 L162 80 L160 64');
+    bodyGroup.appendChild(neck);
 
-      // Left torso side
-      'L42 140',
-      'L40 180',
-      'L38 220',
-      'L40 250',
+    // Torso
+    var torso = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    torso.setAttribute('d', 'M138 80 C120 82 100 90 90 100 L82 120 L80 160 L78 200 L80 240 L84 280 C88 295 100 300 120 305 L150 310 L180 305 C200 300 212 295 216 280 L220 240 L222 200 L220 160 L218 120 L210 100 C200 90 180 82 162 80');
+    bodyGroup.appendChild(torso);
 
-      // Left hip → left leg
-      'L42 270',
-      'C44 290 44 310 44 330',
-      'L44 370',
-      'L42 410',
-      'C40 425 40 435 42 440',
-      'L36 455',
-      'C34 462 36 468 42 470',
-      'L56 470',
-      'C60 468 60 462 58 458',
-      'L54 440',
-      'L56 410',
-      'L58 370',
-      'L60 330',
+    // Left arm
+    var lArm = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    lArm.setAttribute('d', 'M90 100 C78 108 68 120 60 140 L50 170 L42 200 C38 212 36 220 38 226 L44 228 C48 222 50 212 54 200 L62 172 L72 148');
+    bodyGroup.appendChild(lArm);
 
-      // Crotch
-      'L66 290',
-      'L76 280',
-      'L100 276',
-      'L124 280',
-      'L134 290',
+    // Right arm
+    var rArm = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    rArm.setAttribute('d', 'M210 100 C222 108 232 120 240 140 L250 170 L258 200 C262 212 264 220 262 226 L256 228 C252 222 250 212 246 200 L238 172 L228 148');
+    bodyGroup.appendChild(rArm);
 
-      // Right leg
-      'L140 330',
-      'L142 370',
-      'L144 410',
-      'L146 440',
-      'L142 458',
-      'C140 462 140 468 144 470',
-      'L158 470',
-      'C164 468 166 462 164 455',
-      'L158 440',
-      'C160 435 160 425 158 410',
-      'L156 370',
-      'L156 330',
-      'C156 310 156 290 158 270',
+    // Left leg
+    var lLeg = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    lLeg.setAttribute('d', 'M120 305 L116 340 L112 380 L108 420 L106 450 C104 462 102 470 104 478 L98 490 C96 496 100 500 106 500 L118 500 C122 498 122 494 120 490 L116 478 L118 450 L120 420 L124 380 L128 340 L132 310');
+    bodyGroup.appendChild(lLeg);
 
-      // Right hip → right torso
-      'L160 250',
-      'L162 220',
-      'L160 180',
-      'L158 140',
+    // Right leg
+    var rLeg = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    rLeg.setAttribute('d', 'M180 305 L184 340 L188 380 L192 420 L194 450 C196 462 198 470 196 478 L202 490 C204 496 200 500 194 500 L182 500 C178 498 178 494 180 490 L184 478 L182 450 L180 420 L176 380 L172 340 L168 310');
+    bodyGroup.appendChild(rLeg);
 
-      // Right arm
-      'L162 120',
-      'L168 132',
-      'L174 160',
-      'C176 168 176 176 178 180',
-      'L184 180',
-      'C186 176 184 168 182 160',
-      'L178 130',
-      'C176 118 172 108 166 100',
-      'L154 84',
-      'C144 76 128 72 110 70',
+    svg.appendChild(bodyGroup);
 
-      'Z'
-    ].join(' '));
-    bodyPath.setAttribute('fill', 'none');
-    bodyPath.setAttribute('stroke', 'var(--text-tertiary)');
-    bodyPath.setAttribute('stroke-width', '1.2');
-    bodyPath.setAttribute('opacity', '0.4');
-    bodyPath.setAttribute('stroke-linejoin', 'round');
-    svg.appendChild(bodyPath);
-
-    // Add organ regions
-    for (const [key, pos] of Object.entries(ORGAN_POSITIONS)) {
-      const sys = App.SYSTEMS[key];
-      if (!sys) continue;
-
-      // Create group for this organ
-      const g = document.createElementNS(svgNS, 'g');
+    // --- Organ interactive regions ---
+    ORGANS.forEach(function(org, idx) {
+      var color = SYS_COLORS[org.key];
+      var g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
       g.setAttribute('class', 'organ-region');
-      g.setAttribute('data-system', key);
+      g.setAttribute('data-system', org.key);
       g.style.cursor = 'pointer';
+      g.setAttribute('tabindex', '0');
+      g.setAttribute('role', 'button');
+      g.setAttribute('aria-label', org.labelText + ' — click to explore topics');
 
-      // Invisible hit area (larger than visual for easy clicking)
-      const hitArea = document.createElementNS(svgNS, 'ellipse');
-      hitArea.setAttribute('cx', pos.cx);
-      hitArea.setAttribute('cy', pos.cy);
-      hitArea.setAttribute('rx', pos.rx + 5);
-      hitArea.setAttribute('ry', pos.ry + 5);
-      hitArea.setAttribute('fill', 'transparent');
-      g.appendChild(hitArea);
+      // Hit area (invisible, larger)
+      var hit = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+      hit.setAttribute('cx', org.cx); hit.setAttribute('cy', org.cy);
+      hit.setAttribute('r', org.r + 8);
+      hit.setAttribute('fill', 'transparent');
+      g.appendChild(hit);
 
-      // Glow ellipse (visible on hover)
-      const glow = document.createElementNS(svgNS, 'ellipse');
-      glow.setAttribute('cx', pos.cx);
-      glow.setAttribute('cy', pos.cy);
-      glow.setAttribute('rx', pos.rx);
-      glow.setAttribute('ry', pos.ry);
-      glow.setAttribute('fill', sys.color);
+      // Glow circle (shows on hover)
+      var glow = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+      glow.setAttribute('cx', org.cx); glow.setAttribute('cy', org.cy);
+      glow.setAttribute('r', org.r);
+      glow.setAttribute('fill', color);
       glow.setAttribute('opacity', '0');
       glow.setAttribute('class', 'organ-glow');
-      glow.setAttribute('filter', `url(#glow-${key})`);
+      glow.setAttribute('filter', 'url(#glow-' + org.key + ')');
       g.appendChild(glow);
 
-      // Organ icon (loaded async, placed via foreignObject)
-      const fo = document.createElementNS(svgNS, 'foreignObject');
-      fo.setAttribute('x', pos.iconX);
-      fo.setAttribute('y', pos.iconY);
-      fo.setAttribute('width', '48');
-      fo.setAttribute('height', '48');
-      fo.setAttribute('class', 'organ-icon-fo');
+      // Icon container (circle with clipped icon inside)
+      var iconCircle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+      iconCircle.setAttribute('cx', org.cx); iconCircle.setAttribute('cy', org.cy);
+      iconCircle.setAttribute('r', org.r - 2);
+      iconCircle.setAttribute('fill', 'var(--bg-surface)');
+      iconCircle.setAttribute('stroke', color);
+      iconCircle.setAttribute('stroke-width', '2');
+      iconCircle.setAttribute('class', 'organ-circle');
+      g.appendChild(iconCircle);
 
-      const iconDiv = document.createElement('div');
-      iconDiv.style.cssText = 'width:48px;height:48px;display:flex;align-items:center;justify-content:center;';
+      // Icon via foreignObject
+      var fo = document.createElementNS('http://www.w3.org/2000/svg', 'foreignObject');
+      var iconSize = Math.round(org.r * 1.4);
+      fo.setAttribute('x', org.cx - iconSize / 2);
+      fo.setAttribute('y', org.cy - iconSize / 2);
+      fo.setAttribute('width', iconSize);
+      fo.setAttribute('height', iconSize);
+
+      var iconDiv = document.createElement('div');
+      iconDiv.setAttribute('xmlns', 'http://www.w3.org/1999/xhtml');
+      iconDiv.style.cssText = 'width:100%;height:100%;display:flex;align-items:center;justify-content:center;';
       iconDiv.className = 'organ-icon-wrapper';
-      iconDiv.setAttribute('data-system', key);
+      iconDiv.setAttribute('data-system', org.key);
 
-      // Load icon async
-      loadIcon(sys.icon).then(svgText => {
+      var iconName = (App && App.SYSTEMS && App.SYSTEMS[org.key]) ? App.SYSTEMS[org.key].icon : org.key;
+      loadIcon(iconName).then(function(svgText) {
         iconDiv.innerHTML = svgText;
-        const svgEl = iconDiv.querySelector('svg');
+        var svgEl = iconDiv.querySelector('svg');
         if (svgEl) {
-          svgEl.style.width = '40px';
-          svgEl.style.height = '40px';
+          svgEl.style.width = '100%';
+          svgEl.style.height = '100%';
         }
       });
-
       fo.appendChild(iconDiv);
       g.appendChild(fo);
 
-      // System label
-      const text = document.createElementNS(svgNS, 'text');
-      text.setAttribute('x', pos.cx);
-      text.setAttribute('y', pos.cy + pos.ry + 16);
-      text.setAttribute('text-anchor', 'middle');
-      text.setAttribute('fill', 'var(--text-secondary)');
-      text.setAttribute('font-size', '9');
-      text.setAttribute('font-weight', '600');
-      text.setAttribute('font-family', 'Inter, system-ui, sans-serif');
-      text.setAttribute('class', 'organ-label');
-      text.textContent = sys.name;
-      g.appendChild(text);
+      // Label — positioned to left or right
+      var label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      label.setAttribute('y', org.cy + 4);
+      label.setAttribute('fill', 'var(--text-secondary)');
+      label.setAttribute('font-size', '11');
+      label.setAttribute('font-weight', '600');
+      label.setAttribute('font-family', 'Inter, system-ui, sans-serif');
+      label.setAttribute('class', 'organ-label');
+      label.textContent = org.labelText;
 
-      // Hover and click handlers
-      g.addEventListener('mouseenter', () => handleOrganHover(key, true));
-      g.addEventListener('mouseleave', () => handleOrganHover(key, false));
-      g.addEventListener('click', () => handleOrganClick(key));
-      g.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          handleOrganClick(key);
-        }
+      // Connector line from organ to label
+      var connector = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      connector.setAttribute('y1', org.cy); connector.setAttribute('y2', org.cy);
+      connector.setAttribute('stroke', color);
+      connector.setAttribute('stroke-width', '1');
+      connector.setAttribute('opacity', '0.3');
+      connector.setAttribute('class', 'organ-connector');
+
+      if (org.labelSide === 'right') {
+        label.setAttribute('x', org.cx + org.r + 30);
+        label.setAttribute('text-anchor', 'start');
+        connector.setAttribute('x1', org.cx + org.r + 2);
+        connector.setAttribute('x2', org.cx + org.r + 26);
+      } else {
+        label.setAttribute('x', org.cx - org.r - 30);
+        label.setAttribute('text-anchor', 'end');
+        connector.setAttribute('x1', org.cx - org.r - 2);
+        connector.setAttribute('x2', org.cx - org.r - 26);
+      }
+
+      g.appendChild(connector);
+      g.appendChild(label);
+
+      // --- Event handlers ---
+      g.addEventListener('mouseenter', function() { hoverOrgan(org.key, true); });
+      g.addEventListener('mouseleave', function() { hoverOrgan(org.key, false); });
+      g.addEventListener('click', function() { clickOrgan(org.key, mode); });
+      g.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); clickOrgan(org.key, mode); }
       });
-      g.setAttribute('tabindex', '0');
-      g.setAttribute('role', 'button');
-      g.setAttribute('aria-label', `${sys.name} - click to explore topics`);
 
       svg.appendChild(g);
-    }
+    });
 
     inner.appendChild(svg);
     wrapper.appendChild(inner);
     container.appendChild(wrapper);
 
-    // Parallax mouse tracking
+    // Parallax
     setupParallax(wrapper, inner);
 
     // Entry animation
-    animateBodyEntry(svg);
+    var regions = svg.querySelectorAll('.organ-region');
+    gsap.fromTo(regions,
+      { opacity: 0, scale: 0.5, transformOrigin: 'center center' },
+      { opacity: 1, scale: 1, duration: 0.5, stagger: 0.06, ease: 'back.out(1.4)', delay: 0.15 }
+    );
 
-    // If practicals mode, add breathing animation to organs
+    // Practicals mode: subtle breathing on glows
     if (mode === 'practicals') {
-      startBreathingAnimation();
+      svg.querySelectorAll('.organ-glow').forEach(function(glow, i) {
+        gsap.to(glow, {
+          opacity: 0.15,
+          duration: 2 + Math.random(),
+          ease: 'sine.inOut',
+          repeat: -1,
+          yoyo: true,
+          delay: i * 0.25
+        });
+      });
     }
   }
 
-  function handleOrganHover(systemKey, isEnter) {
-    const glow = document.querySelector(`.organ-region[data-system="${systemKey}"] .organ-glow`);
-    const icon = document.querySelector(`.organ-icon-wrapper[data-system="${systemKey}"]`);
-    const label = document.querySelector(`.organ-region[data-system="${systemKey}"] .organ-label`);
+  function hoverOrgan(key, isEnter) {
+    var g = document.querySelector('.organ-region[data-system="' + key + '"]');
+    if (!g) return;
+    var glow = g.querySelector('.organ-glow');
+    var circle = g.querySelector('.organ-circle');
+    var label = g.querySelector('.organ-label');
+    var connector = g.querySelector('.organ-connector');
+    var color = SYS_COLORS[key];
 
     if (isEnter) {
-      gsap.to(glow, { opacity: 0.25, duration: 0.3 });
-      gsap.to(icon, { scale: 1.15, duration: 0.3, ease: 'elastic.out(1, 0.7)' });
-      if (label) gsap.to(label, { fill: App.SYSTEMS[systemKey]?.color || '#fff', duration: 0.2 });
+      gsap.to(glow, { opacity: 0.35, duration: 0.3 });
+      gsap.to(circle, { scale: 1.1, transformOrigin: 'center center', duration: 0.3, ease: 'elastic.out(1, 0.6)' });
+      if (label) { label.setAttribute('fill', color); label.style.fontWeight = '700'; }
+      if (connector) gsap.to(connector, { opacity: 0.7, duration: 0.2 });
     } else {
       gsap.to(glow, { opacity: 0, duration: 0.3 });
-      gsap.to(icon, { scale: 1, duration: 0.3 });
-      if (label) gsap.to(label, { fill: 'var(--text-secondary)', duration: 0.2 });
+      gsap.to(circle, { scale: 1, duration: 0.3 });
+      if (label) { label.setAttribute('fill', 'var(--text-secondary)'); label.style.fontWeight = '600'; }
+      if (connector) gsap.to(connector, { opacity: 0.3, duration: 0.2 });
     }
   }
 
-  function handleOrganClick(systemKey) {
-    const mode = App.state.mode || 'theory';
+  function clickOrgan(key, mode) {
+    var m = mode || (App && App.state && App.state.mode) || 'theory';
+    var g = document.querySelector('.organ-region[data-system="' + key + '"]');
 
-    // Animate the clicked organ expanding
-    const region = document.querySelector(`.organ-region[data-system="${systemKey}"]`);
-    if (region) {
-      gsap.to(region, {
-        scale: 1.3,
-        opacity: 0.8,
-        duration: 0.3,
-        ease: 'power2.in',
-        onComplete: () => {
-          window.location.hash = `${mode}/${systemKey}`;
-        }
+    if (g) {
+      // Pulse the clicked organ
+      gsap.to(g.querySelector('.organ-glow'), { opacity: 0.6, duration: 0.2 });
+      gsap.to(g.querySelector('.organ-circle'), { scale: 1.2, duration: 0.2, ease: 'power2.in' });
+
+      // Fade others
+      document.querySelectorAll('.organ-region:not([data-system="' + key + '"])').forEach(function(el) {
+        gsap.to(el, { opacity: 0.15, duration: 0.3 });
       });
 
-      // Fade out other organs
-      document.querySelectorAll(`.organ-region:not([data-system="${systemKey}"])`).forEach(el => {
-        gsap.to(el, { opacity: 0.2, duration: 0.3 });
+      // Navigate after brief delay for visual feedback
+      gsap.delayedCall(0.35, function() {
+        window.location.hash = m + '/' + key;
       });
     }
   }
 
   function setupParallax(wrapper, inner) {
-    let rafId = null;
-
+    var rafId = null;
     function onMove(e) {
       if (rafId) return;
-      rafId = requestAnimationFrame(() => {
-        const rect = wrapper.getBoundingClientRect();
-        const x = (e.clientX - rect.left) / rect.width - 0.5; // -0.5 to 0.5
-        const y = (e.clientY - rect.top) / rect.height - 0.5;
-
-        inner.style.transform = `rotateY(${x * 8}deg) rotateX(${-y * 5}deg)`;
+      rafId = requestAnimationFrame(function() {
+        var rect = wrapper.getBoundingClientRect();
+        var x = (e.clientX - rect.left) / rect.width - 0.5;
+        var y = (e.clientY - rect.top) / rect.height - 0.5;
+        inner.style.transform = 'rotateY(' + (x * 6) + 'deg) rotateX(' + (-y * 4) + 'deg)';
         rafId = null;
       });
     }
-
     function onLeave() {
       gsap.to(inner, { rotateY: 0, rotateX: 0, duration: 0.5, ease: 'power2.out' });
     }
-
-    // Mouse
     wrapper.addEventListener('mousemove', onMove);
     wrapper.addEventListener('mouseleave', onLeave);
-
-    // Touch (simplified - use tilt based on touch position)
-    wrapper.addEventListener('touchmove', (e) => {
-      const touch = e.touches[0];
-      onMove({ clientX: touch.clientX, clientY: touch.clientY });
+    wrapper.addEventListener('touchmove', function(e) {
+      var t = e.touches[0];
+      onMove({ clientX: t.clientX, clientY: t.clientY });
     }, { passive: true });
     wrapper.addEventListener('touchend', onLeave);
   }
 
-  function animateBodyEntry(svg) {
-    const organs = svg.querySelectorAll('.organ-region');
-    gsap.fromTo(organs,
-      { opacity: 0, scale: 0.5 },
-      { opacity: 1, scale: 1, duration: 0.6, stagger: 0.08, ease: 'elastic.out(1, 0.7)', delay: 0.2 }
-    );
-  }
-
-  function startBreathingAnimation() {
-    const glows = document.querySelectorAll('.organ-glow');
-    glows.forEach((glow, i) => {
-      gsap.to(glow, {
-        opacity: 0.15,
-        duration: 2 + Math.random(),
-        ease: 'sine.inOut',
-        repeat: -1,
-        yoyo: true,
-        delay: i * 0.3
-      });
-    });
-  }
-
-  // ==================== LISTEN FOR VIEW CHANGES ====================
+  // Listen for view changes
   window.addEventListener('viewchange', function(e) {
-    if (e.detail.view === 'body') {
-      const container = document.getElementById('interactive-body');
-      const titleEl = document.getElementById('body-view-title');
-      const subtitleEl = document.getElementById('body-view-subtitle');
+    if (e.detail && e.detail.view === 'body') {
+      var container = document.getElementById('interactive-body');
+      var titleEl = document.getElementById('body-view-title');
+      var subtitleEl = document.getElementById('body-view-subtitle');
 
       if (titleEl) titleEl.textContent = e.detail.mode === 'theory' ? 'Theory' : 'Clinical Medicine';
       if (subtitleEl) subtitleEl.textContent = 'Select an organ system to explore';
@@ -401,6 +346,5 @@
     }
   });
 
-  // Expose for external use
-  window.BodyScene = { renderBody };
+  window.BodyScene = { renderBody: renderBody };
 })();

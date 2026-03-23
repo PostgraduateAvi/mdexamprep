@@ -1,82 +1,87 @@
+// D3.js Force-Directed Topic Node Graph
 (function() {
   'use strict';
 
-  let simulation = null;
-  let currentSvg = null;
+  var simulation = null;
+  var currentSvg = null;
+
+  // Lighten a hex color by mixing with white
+  function lightenColor(hex, amount) {
+    var r = parseInt(hex.slice(1, 3), 16);
+    var g = parseInt(hex.slice(3, 5), 16);
+    var b = parseInt(hex.slice(5, 7), 16);
+    r = Math.round(r + (255 - r) * amount);
+    g = Math.round(g + (255 - g) * amount);
+    b = Math.round(b + (255 - b) * amount);
+    return '#' + [r, g, b].map(function(c) { return c.toString(16).padStart(2, '0'); }).join('');
+  }
 
   function renderGraph(container, systemKey, mode) {
-    // Clear previous
     container.innerHTML = '';
-    if (simulation) simulation.stop();
+    if (simulation) { simulation.stop(); simulation = null; }
 
-    const sys = App.SYSTEMS[systemKey];
+    var sys = App.SYSTEMS[systemKey];
     if (!sys) return;
 
-    // Get topic data
-    const topicData = mode === 'theory'
+    var topicData = mode === 'theory'
       ? (window.TheoryTopics && window.TheoryTopics[systemKey])
       : (window.PracticalTopics && window.PracticalTopics[systemKey]);
 
     if (!topicData) {
-      container.innerHTML = `
-        <div style="text-align:center;padding:var(--space-12);color:var(--text-secondary)">
-          <p style="font-size:var(--text-xl);margin-bottom:var(--space-4)">Coming Soon</p>
-          <p style="font-size:var(--text-sm)">Content for ${sys.name} ${mode} is being prepared</p>
-        </div>
-      `;
+      container.innerHTML =
+        '<div style="text-align:center;padding:48px 16px;color:var(--text-secondary)">' +
+        '<div style="font-size:48px;margin-bottom:16px;opacity:0.3">\u2022\u2022\u2022</div>' +
+        '<p style="font-size:1.25rem;margin-bottom:8px;font-weight:600">Coming Soon</p>' +
+        '<p style="font-size:0.875rem">Content for ' + sys.name + ' ' + mode + ' is being prepared</p>' +
+        '</div>';
       return;
     }
 
-    const nodes = topicData.nodes.map(d => ({...d}));
-    const links = topicData.links.map(d => ({...d}));
+    var nodes = topicData.nodes.map(function(d) { return Object.assign({}, d); });
+    var links = topicData.links.map(function(d) { return Object.assign({}, d); });
 
     // Dimensions
-    const width = container.clientWidth || 800;
-    const height = Math.max(500, window.innerHeight - 200);
+    var width = container.clientWidth || 800;
+    var height = Math.max(500, Math.min(700, window.innerHeight - 180));
 
-    // Create SVG
-    const svg = d3.select(container)
+    var svg = d3.select(container)
       .append('svg')
       .attr('width', width)
       .attr('height', height)
-      .attr('viewBox', `0 0 ${width} ${height}`);
+      .attr('viewBox', '0 0 ' + width + ' ' + height)
+      .style('overflow', 'visible');
 
     currentSvg = svg;
 
-    // Arrow marker for directed links
-    svg.append('defs').append('marker')
-      .attr('id', 'arrowhead')
-      .attr('viewBox', '0 -5 10 10')
-      .attr('refX', 20)
-      .attr('refY', 0)
-      .attr('markerWidth', 6)
-      .attr('markerHeight', 6)
-      .attr('orient', 'auto')
-      .append('path')
-      .attr('d', 'M0,-5L10,0L0,5')
-      .attr('fill', 'var(--border-subtle)');
+    // Colors
+    var mainColor = sys.color;
+    var lightColor = lightenColor(mainColor, 0.8);
+    var isDashed = mode === 'practicals';
 
-    // Links
-    const link = svg.append('g')
-      .attr('class', 'links')
+    // Get computed CSS variable values for SVG
+    var cs = getComputedStyle(document.documentElement);
+    var textColor = cs.getPropertyValue('--text-primary').trim() || '#1A1D23';
+    var borderColor = cs.getPropertyValue('--border-subtle').trim() || '#E5E7EB';
+    var bgSurface = cs.getPropertyValue('--bg-surface').trim() || '#FFFFFF';
+
+    // --- Links ---
+    var link = svg.append('g')
       .selectAll('line')
       .data(links)
       .join('line')
-      .attr('stroke', 'var(--border-subtle)')
-      .attr('stroke-width', 1.5)
-      .attr('stroke-dasharray', mode === 'practicals' ? '6,3' : 'none')
-      .attr('opacity', 0.6);
+      .style('stroke', borderColor)
+      .style('stroke-width', '1.5')
+      .style('stroke-dasharray', isDashed ? '6,3' : 'none')
+      .style('opacity', '0');
 
-    // Node groups
-    const node = svg.append('g')
-      .attr('class', 'nodes')
+    // --- Nodes ---
+    var node = svg.append('g')
       .selectAll('g')
       .data(nodes)
       .join('g')
       .attr('class', 'node-group')
-      .attr('cursor', 'pointer')
-      .attr('tabindex', '0')
-      .attr('role', 'button')
+      .style('cursor', 'pointer')
+      .style('opacity', '0')
       .call(d3.drag()
         .on('start', dragStarted)
         .on('drag', dragged)
@@ -84,223 +89,211 @@
 
     // Node shapes
     if (mode === 'theory') {
-      // Circles for theory
       node.append('circle')
-        .attr('r', d => d.type === 'category' ? 28 : 20)
-        .attr('fill', d => d.type === 'category' ? sys.color : `color-mix(in srgb, ${sys.color} 20%, var(--bg-surface))`)
-        .attr('stroke', sys.color)
-        .attr('stroke-width', d => d.type === 'category' ? 2.5 : 1.5)
+        .attr('r', function(d) { return d.type === 'category' ? 30 : 22; })
+        .style('fill', function(d) { return d.type === 'category' ? mainColor : lightColor; })
+        .style('stroke', mainColor)
+        .style('stroke-width', function(d) { return d.type === 'category' ? '2.5' : '1.5'; })
         .attr('class', 'node-shape');
     } else {
-      // Rounded rectangles for practicals
       node.append('rect')
-        .attr('width', d => d.type === 'category' ? 56 : 40)
-        .attr('height', d => d.type === 'category' ? 56 : 40)
-        .attr('x', d => d.type === 'category' ? -28 : -20)
-        .attr('y', d => d.type === 'category' ? -28 : -20)
-        .attr('rx', 10)
-        .attr('fill', d => d.type === 'category' ? sys.color : `color-mix(in srgb, ${sys.color} 20%, var(--bg-surface))`)
-        .attr('stroke', sys.color)
-        .attr('stroke-width', d => d.type === 'category' ? 2.5 : 1.5)
+        .attr('width', function(d) { return d.type === 'category' ? 60 : 44; })
+        .attr('height', function(d) { return d.type === 'category' ? 60 : 44; })
+        .attr('x', function(d) { return d.type === 'category' ? -30 : -22; })
+        .attr('y', function(d) { return d.type === 'category' ? -30 : -22; })
+        .attr('rx', '12')
+        .style('fill', function(d) { return d.type === 'category' ? mainColor : lightColor; })
+        .style('stroke', mainColor)
+        .style('stroke-width', function(d) { return d.type === 'category' ? '2.5' : '1.5'; })
         .attr('class', 'node-shape');
     }
 
-    // Node labels
+    // Inner icon: arrow for linked nodes, circle for coming soon
     node.append('text')
-      .text(d => d.label)
+      .text(function(d) { return d.url ? '\u2192' : '\u25CB'; })
       .attr('text-anchor', 'middle')
-      .attr('dy', d => (d.type === 'category' ? 28 : 20) + 14)
-      .attr('font-size', d => d.type === 'category' ? '11' : '9')
-      .attr('font-weight', d => d.type === 'category' ? '700' : '500')
-      .attr('font-family', 'Inter, system-ui, sans-serif')
-      .attr('fill', 'var(--text-primary)')
+      .attr('dy', function(d) { return d.url ? '5' : '4'; })
+      .style('font-size', function(d) { return d.url ? '16px' : '10px'; })
+      .style('font-weight', '700')
+      .style('fill', function(d) {
+        return d.type === 'category' ? 'rgba(255,255,255,0.9)' : mainColor;
+      })
+      .style('pointer-events', 'none');
+
+    // Labels below nodes
+    node.append('text')
+      .text(function(d) { return d.label; })
+      .attr('text-anchor', 'middle')
+      .attr('dy', function(d) { return (d.type === 'category' ? 30 : 22) + 16; })
+      .style('font-size', function(d) { return d.type === 'category' ? '12px' : '10px'; })
+      .style('font-weight', function(d) { return d.type === 'category' ? '700' : '500'; })
+      .style('font-family', 'Inter, system-ui, sans-serif')
+      .style('fill', textColor)
       .attr('class', 'node-label');
-
-    // "Coming Soon" or URL indicator
-    node.filter(d => !d.url)
-      .append('text')
-      .text('\u25CB')
-      .attr('text-anchor', 'middle')
-      .attr('dy', '4')
-      .attr('font-size', '10')
-      .attr('fill', 'rgba(255,255,255,0.6)');
-
-    node.filter(d => !!d.url)
-      .append('text')
-      .text('\u2192')
-      .attr('text-anchor', 'middle')
-      .attr('dy', '5')
-      .attr('font-size', '14')
-      .attr('font-weight', '700')
-      .attr('fill', 'rgba(255,255,255,0.9)');
 
     // Hover effects
     node.on('mouseenter', function(event, d) {
       d3.select(this).select('.node-shape')
-        .transition()
-        .duration(200)
-        .attr('filter', `drop-shadow(0 0 8px ${sys.color})`);
+        .transition().duration(200)
+        .style('filter', 'drop-shadow(0 0 10px ' + mainColor + ')');
       d3.select(this).select('.node-label')
-        .transition()
-        .duration(200)
-        .attr('font-weight', '700')
-        .attr('fill', sys.color);
+        .transition().duration(200)
+        .style('fill', mainColor).style('font-weight', '700');
     })
     .on('mouseleave', function(event, d) {
       d3.select(this).select('.node-shape')
-        .transition()
-        .duration(200)
-        .attr('filter', 'none');
+        .transition().duration(200)
+        .style('filter', 'none');
       d3.select(this).select('.node-label')
-        .transition()
-        .duration(200)
-        .attr('font-weight', d => d.type === 'category' ? '700' : '500')
-        .attr('fill', 'var(--text-primary)');
+        .transition().duration(200)
+        .style('fill', textColor)
+        .style('font-weight', function() { return d.type === 'category' ? '700' : '500'; });
     })
     .on('click', function(event, d) {
       handleNodeClick(d, mode);
     });
 
+    // Keyboard support
+    node.each(function() {
+      var el = this;
+      el.setAttribute('tabindex', '0');
+      el.setAttribute('role', 'button');
+      el.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          var d = d3.select(el).datum();
+          handleNodeClick(d, mode);
+        }
+      });
+    });
+
     // Force simulation
     simulation = d3.forceSimulation(nodes)
-      .force('link', d3.forceLink(links).id(d => d.id).distance(80))
-      .force('charge', d3.forceManyBody().strength(-200))
+      .force('link', d3.forceLink(links).id(function(d) { return d.id; }).distance(90).strength(0.8))
+      .force('charge', d3.forceManyBody().strength(-250))
       .force('center', d3.forceCenter(width / 2, height / 2))
-      .force('collision', d3.forceCollide().radius(d => d.type === 'category' ? 45 : 35))
-      .force('x', d3.forceX(width / 2).strength(0.05))
-      .force('y', d3.forceY(height / 2).strength(0.05))
-      .on('tick', () => {
-        // Constrain to bounds
-        nodes.forEach(d => {
-          d.x = Math.max(40, Math.min(width - 40, d.x));
-          d.y = Math.max(40, Math.min(height - 40, d.y));
+      .force('collision', d3.forceCollide().radius(function(d) { return d.type === 'category' ? 50 : 38; }))
+      .force('x', d3.forceX(width / 2).strength(0.06))
+      .force('y', d3.forceY(height / 2).strength(0.06))
+      .on('tick', function() {
+        nodes.forEach(function(d) {
+          d.x = Math.max(50, Math.min(width - 50, d.x));
+          d.y = Math.max(50, Math.min(height - 50, d.y));
         });
 
         link
-          .attr('x1', d => d.source.x)
-          .attr('y1', d => d.source.y)
-          .attr('x2', d => d.target.x)
-          .attr('y2', d => d.target.y);
+          .attr('x1', function(d) { return d.source.x; })
+          .attr('y1', function(d) { return d.source.y; })
+          .attr('x2', function(d) { return d.target.x; })
+          .attr('y2', function(d) { return d.target.y; });
 
-        node.attr('transform', d => `translate(${d.x},${d.y})`);
+        node.attr('transform', function(d) { return 'translate(' + d.x + ',' + d.y + ')'; });
       });
 
-    // Entry animation: nodes start from center and spread out
-    nodes.forEach(d => {
-      d.x = width / 2 + (Math.random() - 0.5) * 50;
-      d.y = height / 2 + (Math.random() - 0.5) * 50;
+    // Scatter initial positions from center
+    nodes.forEach(function(d) {
+      d.x = width / 2 + (Math.random() - 0.5) * 80;
+      d.y = height / 2 + (Math.random() - 0.5) * 80;
     });
 
-    // Fade in nodes
-    node.attr('opacity', 0);
+    // Entry animation
     node.transition()
-      .delay((d, i) => i * 50)
-      .duration(400)
-      .attr('opacity', 1);
+      .delay(function(d, i) { return i * 60; })
+      .duration(500)
+      .style('opacity', '1');
 
-    link.attr('opacity', 0);
     link.transition()
-      .delay(200)
-      .duration(400)
-      .attr('opacity', 0.6);
+      .delay(300)
+      .duration(500)
+      .style('opacity', '0.5');
   }
 
   // Drag handlers
   function dragStarted(event, d) {
     if (!event.active) simulation.alphaTarget(0.3).restart();
-    d.fx = d.x;
-    d.fy = d.y;
+    d.fx = d.x; d.fy = d.y;
   }
-
   function dragged(event, d) {
-    d.fx = event.x;
-    d.fy = event.y;
+    d.fx = event.x; d.fy = event.y;
   }
-
   function dragEnded(event, d) {
     if (!event.active) simulation.alphaTarget(0);
-    d.fx = null;
-    d.fy = null;
+    d.fx = null; d.fy = null;
   }
 
-  // Handle node clicks
+  // Node click handler
   function handleNodeClick(d, mode) {
     if (d.url) {
-      // Check if it's a markdown file
       if (d.url.endsWith('.md')) {
         openMarkdownPanel(d.url, d.label);
       } else if (d.url.startsWith('http') || d.url.endsWith('.html')) {
-        // External link or HTML file - open directly
         window.open(d.url, '_blank');
       } else {
-        // Hash navigation
         window.location.hash = d.url;
       }
     } else {
-      // Show "Coming Soon" tooltip briefly
       showComingSoon(d);
     }
   }
 
-  // Open markdown content in slide-in panel
-  async function openMarkdownPanel(url, title) {
-    const panel = document.getElementById('content-panel');
-    const body = document.getElementById('content-panel-body');
+  // Markdown panel
+  function openMarkdownPanel(url, title) {
+    var panel = document.getElementById('content-panel');
+    var body = document.getElementById('content-panel-body');
     if (!panel || !body) return;
 
-    body.innerHTML = '<div style="text-align:center;padding:var(--space-12);color:var(--text-secondary)">Loading...</div>';
+    body.innerHTML = '<div style="text-align:center;padding:48px;color:var(--text-secondary)"><p>Loading ' + title + '...</p></div>';
     panel.classList.add('med-panel--open');
     panel.setAttribute('aria-hidden', 'false');
 
-    try {
-      const resp = await fetch(url);
-      if (!resp.ok) throw new Error('Failed to load');
-      const md = await resp.text();
-      body.innerHTML = marked.parse(md);
-    } catch(e) {
-      body.innerHTML = `<div style="text-align:center;padding:var(--space-12);color:var(--text-secondary)">
-        <p>Could not load content</p>
-        <p style="font-size:var(--text-sm);margin-top:var(--space-2)">${e.message}</p>
-      </div>`;
-    }
+    fetch(url)
+      .then(function(resp) {
+        if (!resp.ok) throw new Error('Failed to load');
+        return resp.text();
+      })
+      .then(function(md) {
+        body.innerHTML = '<h1 style="margin-bottom:24px;font-size:1.5rem;font-weight:800">' + title + '</h1>' + marked.parse(md);
+      })
+      .catch(function(e) {
+        body.innerHTML =
+          '<div style="text-align:center;padding:48px;color:var(--text-secondary)">' +
+          '<p>Could not load content</p>' +
+          '<p style="font-size:0.8125rem;margin-top:8px">' + e.message + '</p></div>';
+      });
   }
 
-  // Close panel
   function closePanel() {
-    const panel = document.getElementById('content-panel');
+    var panel = document.getElementById('content-panel');
     if (panel) {
       panel.classList.remove('med-panel--open');
       panel.setAttribute('aria-hidden', 'true');
     }
   }
 
-  // Show "Coming Soon" indicator on a node
   function showComingSoon(d) {
-    const nodeEl = currentSvg?.selectAll('.node-group')
-      .filter(n => n.id === d.id);
+    if (!currentSvg) return;
+    var nodeEl = currentSvg.selectAll('.node-group').filter(function(n) { return n.id === d.id; });
+    if (nodeEl.empty()) return;
 
-    if (nodeEl) {
-      // Briefly show a tooltip
-      const tooltip = nodeEl.append('text')
-        .text('Coming Soon')
-        .attr('text-anchor', 'middle')
-        .attr('dy', -30)
-        .attr('font-size', '9')
-        .attr('font-weight', '600')
-        .attr('fill', 'var(--accent-warm)')
-        .attr('opacity', 0);
+    var tooltip = nodeEl.append('text')
+      .text('Coming Soon')
+      .attr('text-anchor', 'middle')
+      .attr('dy', '-35')
+      .style('font-size', '10px')
+      .style('font-weight', '600')
+      .style('fill', 'var(--accent-warm)')
+      .style('opacity', '0');
 
-      tooltip.transition().duration(200).attr('opacity', 1);
-      tooltip.transition().delay(1500).duration(300).attr('opacity', 0).remove();
-    }
+    tooltip.transition().duration(200).style('opacity', '1');
+    tooltip.transition().delay(1800).duration(300).style('opacity', '0').remove();
   }
 
   // Listen for view changes
   window.addEventListener('viewchange', function(e) {
-    if (e.detail.view === 'system' && e.detail.system) {
-      const container = document.getElementById('graph-container');
-      const titleEl = document.getElementById('system-title');
-      const sys = App.SYSTEMS[e.detail.system];
+    if (e.detail && e.detail.view === 'system' && e.detail.system) {
+      var container = document.getElementById('graph-container');
+      var titleEl = document.getElementById('system-title');
+      var sys = App.SYSTEMS[e.detail.system];
 
       if (titleEl && sys) {
         titleEl.textContent = sys.name;
@@ -312,8 +305,14 @@
     }
   });
 
-  // Expose close panel
-  App.closePanel = closePanel;
+  // Expose close panel on App
+  if (window.App) {
+    App.closePanel = closePanel;
+  } else {
+    window.addEventListener('DOMContentLoaded', function() {
+      if (window.App) App.closePanel = closePanel;
+    });
+  }
 
-  window.NodeGraph = { renderGraph, closePanel };
+  window.NodeGraph = { renderGraph: renderGraph, closePanel: closePanel };
 })();
