@@ -11,7 +11,7 @@
 
 Two sections: **Theory** + **Practicals**. Session 29 stripped all prior complexity (Learn page, MCQs, flashcards, SR, knowledge graphs, 32 study tools). Session 30 inserted the first real content (Cardiology) and established the content pipeline.
 
-Single CSS file (`style.css`). "Warm Indigo" design system with glass morphism (indigo `#818cf8` + violet `#c084fc` accents on warm dark `#0f1117`). Self-hosted fonts (DM Sans body + Source Serif 4 headings). PWA with offline support (SW v20 + auto-reload on update).
+Single CSS file (`style.css`). "Warm Indigo" design system with glass morphism (indigo `#818cf8` + violet `#c084fc` accents on warm dark `#0f1117`). Self-hosted fonts (DM Sans body + Source Serif 4 headings). PWA with offline support (SW v21 + auto-reload on update).
 
 **Landing** (`index.html`) — Gradient hero + two glass cards (Theory / Practicals) + footer.
 
@@ -68,7 +68,7 @@ Single CSS file (`style.css`). "Warm Indigo" design system with glass morphism (
 | Nephrology | Placeholder | 0 | — |
 | Gastroenterology | Placeholder | 0 | — |
 | Hematology | Placeholder | 0 | — |
-| Endocrinology | Placeholder | 0 | Markdown exists at project root |
+| Endocrinology | DONE | 57 (33 high-yield) | Harrison's 21e + ADA 2025 |
 
 ---
 
@@ -145,6 +145,7 @@ MDExamPrep/
 | 21-28 | Mar 22-23 | Learn page, MCQs, flashcards, SR, knowledge graph, study tools, accessibility, Warm Indigo redesign, data pipeline |
 | 29 | Mar 23 | Architecture reset: stripped to Theory + Practicals. Glass morphism redesign. SW v18. |
 | 30 | Mar 23 | First content insertion: Cardiology (51 topics). Content CSS. SW data strategy fix (SWR → network-first). SW v20. |
+| 30b | Mar 23 | Endocrinology content (57 topics, 33 high-yield). SW v21. |
 
 ---
 
