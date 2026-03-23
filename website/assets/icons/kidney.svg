@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="organ-icon">
+  <defs>
+    <filter id="kidneyShadow" x="-10%" y="-10%" width="130%" height="140%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    <radialGradient id="kidneyGrad" cx="55%" cy="35%" r="55%">
+      <stop offset="0%" stop-color="#5EEAD4"/>
+      <stop offset="35%" stop-color="#14B8A6"/>
+      <stop offset="75%" stop-color="#0D9488"/>
+      <stop offset="100%" stop-color="#0F766E"/>
+    </radialGradient>
+    <radialGradient id="kidneyHighlight" cx="35%" cy="25%" r="28%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="medullaGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2DD4BF"/>
+      <stop offset="100%" stop-color="#0F766E"/>
+    </radialGradient>
+    <radialGradient id="pelvisGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#5EEAD4"/>
+      <stop offset="60%" stop-color="#99F6E4"/>
+      <stop offset="100%" stop-color="#5EEAD4"/>
+    </radialGradient>
+    <linearGradient id="ureterGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#14B8A6"/>
+      <stop offset="100%" stop-color="#0F766E"/>
+    </linearGradient>
+  </defs>
+  <!-- Outer kidney shape (bean) -->
+  <path d="M22 8 C34 6 46 10 50 20 C54 30 52 42 48 50 C44 58 34 60 26 56 C18 52 14 44 16 36 C18 30 22 28 22 24 C22 20 18 16 18 12 C18 10 20 8 22 8Z" fill="url(#kidneyGrad)" filter="url(#kidneyShadow)"/>
+  <!-- Cortex-medulla boundary (inner line) -->
+  <path d="M26 14 C34 12 42 16 44 24 C46 32 44 40 42 46 C38 52 32 54 28 50 C22 46 20 40 22 34 C24 30 26 28 26 24 C26 20 24 18 24 14" fill="none" stroke="#0F766E" stroke-width="0.6" opacity="0.4"/>
+  <!-- Medullary pyramids (triangular shapes pointing inward) -->
+  <path d="M30 16 L34 24 L26 24Z" fill="url(#medullaGrad)" opacity="0.5"/>
+  <path d="M38 20 L40 28 L34 26Z" fill="url(#medullaGrad)" opacity="0.5"/>
+  <path d="M42 28 L42 36 L36 32Z" fill="url(#medullaGrad)" opacity="0.5"/>
+  <path d="M40 38 L38 46 L34 40Z" fill="url(#medullaGrad)" opacity="0.5"/>
+  <path d="M34 44 L30 50 L28 44Z" fill="url(#medullaGrad)" opacity="0.5"/>
+  <path d="M28 18 L30 26 L24 22Z" fill="url(#medullaGrad)" opacity="0.4"/>
+  <!-- Renal pelvis/calyx system -->
+  <path d="M24 28 C22 32 22 36 26 38 C28 34 26 30 24 28Z" fill="url(#pelvisGrad)" opacity="0.6"/>
+  <path d="M24 28 C20 26 18 30 20 34 C22 32 22 30 24 28Z" fill="url(#pelvisGrad)" opacity="0.5"/>
+  <!-- Calyx branches -->
+  <path d="M28 24 C26 26 24 28 24 30" fill="none" stroke="#99F6E4" stroke-width="0.8" opacity="0.5" stroke-linecap="round"/>
+  <path d="M32 28 C28 30 26 32 24 34" fill="none" stroke="#99F6E4" stroke-width="0.7" opacity="0.45" stroke-linecap="round"/>
+  <path d="M30 36 C28 36 26 36 24 36" fill="none" stroke="#99F6E4" stroke-width="0.7" opacity="0.45" stroke-linecap="round"/>
+  <path d="M28 42 C26 40 24 38 24 36" fill="none" stroke="#99F6E4" stroke-width="0.6" opacity="0.4" stroke-linecap="round"/>
+  <!-- Renal artery (entering hilum) -->
+  <path d="M10 30 C14 30 18 30 20 32" fill="none" stroke="#EF4444" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M10 30 C14 30 18 30 20 32" fill="none" stroke="#FCA5A5" stroke-width="0.8" stroke-linecap="round"/>
+  <!-- Renal vein -->
+  <path d="M10 34 C14 34 18 34 20 34" fill="none" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M10 34 C14 34 18 34 20 34" fill="none" stroke="#93C5FD" stroke-width="0.8" stroke-linecap="round"/>
+  <!-- Ureter -->
+  <path d="M22 40 C20 46 18 52 20 60" fill="none" stroke="url(#ureterGrad)" stroke-width="2" stroke-linecap="round"/>
+  <path d="M22 40 C20 46 18 52 20 60" fill="none" stroke="#5EEAD4" stroke-width="0.8" stroke-linecap="round"/>
+  <!-- Specular highlight -->
+  <ellipse cx="32" cy="16" rx="8" ry="5" fill="url(#kidneyHighlight)" transform="rotate(-10 32 16)"/>
+  <ellipse cx="34" cy="14" rx="4" ry="2.5" fill="white" opacity="0.12"/>
+</svg>

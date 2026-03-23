@@ -1,0 +1,369 @@
+/* components.css — Shared component styles for Medical Exam Prep SPA
+   Depends on custom properties from tokens.css */
+
+/* ==========================================================================
+   1. Card
+   ========================================================================== */
+
+.med-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-1);
+  transition:
+    transform var(--duration-normal) var(--ease-out),
+    box-shadow var(--duration-normal) var(--ease-out);
+}
+
+.med-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-2);
+}
+
+.med-card--interactive {
+  cursor: pointer;
+}
+
+.med-card--interactive:active {
+  transform: scale(0.98);
+}
+
+/* ==========================================================================
+   2. Button
+   ========================================================================== */
+
+.med-btn {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  letter-spacing: 0.02em;
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-6);
+  min-height: 44px;
+  transition: all var(--duration-fast) var(--ease-out);
+  cursor: pointer;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.med-btn--primary {
+  background: var(--accent-primary);
+  color: #fff;
+}
+
+.med-btn--primary:hover {
+  filter: brightness(1.1);
+}
+
+.med-btn--ghost {
+  background: transparent;
+  color: var(--text-secondary);
+}
+
+.med-btn--ghost:hover {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+}
+
+.med-btn--icon {
+  padding: var(--space-3);
+  min-width: 44px;
+  border-radius: var(--radius-full);
+}
+
+/* ==========================================================================
+   3. Toggle (Segmented Control)
+   ========================================================================== */
+
+.med-toggle {
+  display: inline-flex;
+  background: var(--bg-elevated);
+  border-radius: var(--radius-xl);
+  padding: 4px;
+  position: relative;
+}
+
+.med-toggle__option {
+  padding: var(--space-3) var(--space-6);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  border-radius: var(--radius-xl);
+  cursor: pointer;
+  transition: color var(--duration-fast);
+  position: relative;
+  z-index: 1;
+}
+
+.med-toggle__option--active {
+  color: var(--text-primary);
+}
+
+.med-toggle__slider {
+  position: absolute;
+  background: var(--bg-surface);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-1);
+  transition: transform var(--duration-normal) var(--ease-elastic);
+}
+
+/* ==========================================================================
+   4. Header
+   ========================================================================== */
+
+.med-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-4);
+  z-index: 100;
+}
+
+/* ==========================================================================
+   5. Section
+   ========================================================================== */
+
+.med-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-4);
+}
+
+/* ==========================================================================
+   6. Breadcrumb
+   ========================================================================== */
+
+.med-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+.med-breadcrumb__separator {
+  opacity: 0.5;
+}
+
+
+.med-breadcrumb__current {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   7. Overlay
+   ========================================================================== */
+
+.med-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-primary);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==========================================================================
+   8. Panel
+   ========================================================================== */
+
+.med-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(600px, 100vw);
+  background: var(--bg-surface);
+  box-shadow: var(--shadow-3);
+  transform: translateX(100%);
+  transition: transform var(--duration-normal) var(--ease-out);
+  overflow-y: auto;
+  z-index: 200;
+  padding: var(--space-6);
+}
+
+.med-panel--open {
+  transform: translateX(0);
+}
+
+@media (max-width: 640px) {
+  .med-panel {
+    width: 100vw;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    top: auto;
+    bottom: 0;
+    height: 85vh;
+    transform: translateY(100%);
+  }
+
+  .med-panel--open {
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   9. Badge
+   ========================================================================== */
+
+.med-badge {
+  display: inline-flex;
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: var(--radius-full);
+}
+
+.med-badge--coming {
+  background: var(--bg-elevated);
+  color: var(--text-tertiary);
+}
+
+.med-badge--active {
+  background: color-mix(in srgb, var(--accent-primary) 15%, transparent);
+  color: var(--accent-primary);
+}
+
+/* ==========================================================================
+   10. Tooltip
+   ========================================================================== */
+
+.med-tooltip {
+  position: absolute;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-xs);
+  box-shadow: var(--shadow-2);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(4px);
+  transition:
+    opacity var(--duration-fast),
+    transform var(--duration-fast);
+}
+
+.med-tooltip--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   11. Markdown Content
+   ========================================================================== */
+
+.md-content h1 {
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  margin-bottom: var(--space-4);
+  color: var(--text-primary);
+}
+
+.md-content h2 {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-3);
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: var(--space-2);
+}
+
+.md-content h3 {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  margin-top: var(--space-6);
+}
+
+.md-content p {
+  margin-bottom: var(--space-4);
+  line-height: 1.7;
+}
+
+.md-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-4) 0;
+}
+
+.md-content th {
+  background: var(--bg-elevated);
+  font-weight: 600;
+  text-align: left;
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 2px solid var(--border-subtle);
+}
+
+.md-content td {
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.md-content blockquote {
+  border-left: 3px solid var(--accent-warm);
+  padding-left: var(--space-4);
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.md-content code {
+  background: var(--bg-elevated);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+.md-content ul,
+.md-content ol {
+  padding-left: var(--space-6);
+  margin-bottom: var(--space-4);
+}
+
+.md-content li {
+  margin-bottom: var(--space-2);
+  line-height: 1.6;
+}
+
+.md-content strong {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* ==========================================================================
+   Responsive Utilities
+   ========================================================================== */
+
+@media (max-width: 640px) {
+  .hide-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 641px) {
+  .hide-desktop {
+    display: none;
+  }
+}
+
+.full-height {
+  min-height: 100dvh;
+}

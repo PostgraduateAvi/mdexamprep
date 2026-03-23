@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="organ-icon">
+  <defs>
+    <filter id="lungShadow" x="-10%" y="-10%" width="130%" height="140%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+    <radialGradient id="lungGradR" cx="45%" cy="35%" r="55%">
+      <stop offset="0%" stop-color="#7DD3FC"/>
+      <stop offset="40%" stop-color="#0EA5E9"/>
+      <stop offset="85%" stop-color="#0369A1"/>
+      <stop offset="100%" stop-color="#075985"/>
+    </radialGradient>
+    <radialGradient id="lungGradL" cx="55%" cy="35%" r="55%">
+      <stop offset="0%" stop-color="#7DD3FC"/>
+      <stop offset="40%" stop-color="#0EA5E9"/>
+      <stop offset="85%" stop-color="#0369A1"/>
+      <stop offset="100%" stop-color="#075985"/>
+    </radialGradient>
+    <radialGradient id="lungHighlightR" cx="35%" cy="25%" r="35%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lungHighlightL" cx="65%" cy="25%" r="35%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="tracheaGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#BAE6FD"/>
+      <stop offset="50%" stop-color="#E0F2FE"/>
+      <stop offset="100%" stop-color="#BAE6FD"/>
+    </linearGradient>
+  </defs>
+  <!-- Trachea -->
+  <rect x="29" y="4" width="6" height="14" rx="2" fill="url(#tracheaGrad)" stroke="#0369A1" stroke-width="0.5"/>
+  <!-- Tracheal rings -->
+  <line x1="29.5" y1="7" x2="34.5" y2="7" stroke="#0369A1" stroke-width="0.4" opacity="0.5"/>
+  <line x1="29.5" y1="10" x2="34.5" y2="10" stroke="#0369A1" stroke-width="0.4" opacity="0.5"/>
+  <line x1="29.5" y1="13" x2="34.5" y2="13" stroke="#0369A1" stroke-width="0.4" opacity="0.5"/>
+  <!-- Right main bronchus -->
+  <path d="M32 18 C36 20 40 22 44 24" fill="none" stroke="#BAE6FD" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M32 18 C36 20 40 22 44 24" fill="none" stroke="#0369A1" stroke-width="0.4"/>
+  <!-- Left main bronchus -->
+  <path d="M32 18 C28 20 24 22 20 24" fill="none" stroke="#BAE6FD" stroke-width="2" stroke-linecap="round"/>
+  <path d="M32 18 C28 20 24 22 20 24" fill="none" stroke="#0369A1" stroke-width="0.4"/>
+  <!-- Right lung (larger) -->
+  <path d="M36 18 C42 16 54 22 56 34 C58 46 52 56 44 58 C38 59 34 56 34 50 L34 20Z" fill="url(#lungGradR)" filter="url(#lungShadow)"/>
+  <!-- Right lobe divisions (3 lobes) -->
+  <path d="M36 30 C42 28 50 30 54 34" fill="none" stroke="#075985" stroke-width="0.6" opacity="0.5"/>
+  <path d="M36 40 C42 39 50 42 54 44" fill="none" stroke="#075985" stroke-width="0.6" opacity="0.5"/>
+  <!-- Right bronchial tree -->
+  <path d="M38 24 C42 26 46 28 48 32" fill="none" stroke="#0369A1" stroke-width="0.5" opacity="0.4"/>
+  <path d="M40 28 C44 32 46 36 46 40" fill="none" stroke="#0369A1" stroke-width="0.4" opacity="0.35"/>
+  <path d="M38 34 C42 38 44 42 44 48" fill="none" stroke="#0369A1" stroke-width="0.4" opacity="0.35"/>
+  <path d="M44 28 C48 30 50 34 50 38" fill="none" stroke="#0369A1" stroke-width="0.3" opacity="0.25"/>
+  <path d="M42 36 C46 40 48 44 48 50" fill="none" stroke="#0369A1" stroke-width="0.3" opacity="0.25"/>
+  <!-- Left lung (smaller) -->
+  <path d="M28 18 C22 16 10 22 8 34 C6 46 12 54 20 56 C26 57 30 54 30 48 L30 20Z" fill="url(#lungGradL)" filter="url(#lungShadow)"/>
+  <!-- Left lobe divisions (2 lobes) -->
+  <path d="M28 34 C22 32 14 34 10 38" fill="none" stroke="#075985" stroke-width="0.6" opacity="0.5"/>
+  <!-- Left bronchial tree -->
+  <path d="M26 24 C22 26 18 28 16 32" fill="none" stroke="#0369A1" stroke-width="0.5" opacity="0.4"/>
+  <path d="M24 30 C20 34 18 38 18 42" fill="none" stroke="#0369A1" stroke-width="0.4" opacity="0.35"/>
+  <path d="M26 38 C22 42 20 46 20 50" fill="none" stroke="#0369A1" stroke-width="0.4" opacity="0.35"/>
+  <path d="M20 28 C16 30 14 34 14 38" fill="none" stroke="#0369A1" stroke-width="0.3" opacity="0.25"/>
+  <!-- Specular highlights -->
+  <path d="M40 20 C46 22 50 26 48 30 C44 26 40 22 38 20Z" fill="url(#lungHighlightR)"/>
+  <path d="M24 20 C18 22 14 26 16 30 C20 26 24 22 26 20Z" fill="url(#lungHighlightL)"/>
+  <ellipse cx="44" cy="24" rx="5" ry="3" fill="white" opacity="0.12" transform="rotate(-15 44 24)"/>
+  <ellipse cx="18" cy="24" rx="4" ry="3" fill="white" opacity="0.1" transform="rotate(15 18 24)"/>
+</svg>

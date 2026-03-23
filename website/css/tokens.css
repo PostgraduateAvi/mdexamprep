@@ -1,0 +1,148 @@
+/* ==========================================================================
+   Design Tokens — Medical Learning Tool
+   ========================================================================== */
+
+/* Fonts loaded via <link> in index.html */
+
+/* --------------------------------------------------------------------------
+   Light Mode (default)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Colors — Backgrounds */
+  --bg-primary: #F8F9FB;
+  --bg-surface: #FFFFFF;
+  --bg-elevated: #F1F3F7;
+
+  /* Colors — Text */
+  --text-primary: #1A1D23;
+  --text-secondary: #5F6B7A;
+  --text-tertiary: #9CA3AF;
+
+  /* Colors — Accent */
+  --accent-primary: #2563EB;
+  --accent-warm: #D97706;
+  --accent-success: #059669;
+  --accent-danger: #DC2626;
+
+  /* Colors — Border */
+  --border-subtle: #E5E7EB;
+
+  /* Colors — Glass */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.3);
+
+  /* System Accent Colors */
+  --sys-cardiology: #EF4444;
+  --sys-respiratory: #0EA5E9;
+  --sys-gi: #F59E0B;
+  --sys-neurology: #8B5CF6;
+  --sys-nephrology: #14B8A6;
+  --sys-endocrinology: #F97316;
+  --sys-hematology: #F43F5E;
+  --sys-id: #22C55E;
+
+  /* Spacing (4px base) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-1: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-2: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-3: 0 12px 40px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.06);
+
+  /* Transitions */
+  --ease-out: cubic-bezier(0.33, 1, 0.68, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-elastic: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+
+  /* Typography — Families */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'SF Mono', 'Fira Code', monospace;
+
+  /* Typography — Sizes */
+  --text-xs: 0.75rem;
+  --text-sm: 0.8125rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: clamp(1.75rem, 4vw, 2rem);
+  --text-hero: clamp(2rem, 5vw, 3.5rem);
+}
+
+/* --------------------------------------------------------------------------
+   Dark Mode
+   -------------------------------------------------------------------------- */
+html.dark {
+  --bg-primary: #0B0F19;
+  --bg-surface: #141923;
+  --bg-elevated: #1C2333;
+
+  --text-primary: #E8ECF1;
+  --text-secondary: #8B95A5;
+  --text-tertiary: #4B5563;
+
+  --accent-primary: #3B82F6;
+  --accent-warm: #F59E0B;
+  --accent-success: #10B981;
+  --accent-danger: #EF4444;
+
+  --border-subtle: #1E293B;
+
+  --glass-bg: rgba(20, 25, 35, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.08);
+
+  --shadow-1: 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.15);
+  --shadow-2: 0 4px 12px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-3: 0 12px 40px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* --------------------------------------------------------------------------
+   Base Reset / Normalization
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
