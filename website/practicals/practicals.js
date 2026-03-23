@@ -65,7 +65,6 @@
   };
 
   var allData = {};
-  var graphData = null;
   var activeSystem = null;
 
   function esc(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
@@ -81,11 +80,7 @@
         allData[f.key] = json;
       });
     });
-    var graphPromise = fetch('/learn/data/graph.json')
-      .then(function (r) { return r.json(); })
-      .then(function (json) { graphData = json; })
-      .catch(function () { graphData = null; });
-    return Promise.all(dataPromises.concat(graphPromise));
+    return Promise.all(dataPromises);
   }
 
   function buildSystemButtons() {
@@ -274,22 +269,7 @@
     return html;
   }
 
-  function renderRelatedPills(caseId) {
-    var topicId = CASE_TOPIC_MAP[caseId];
-    if (!topicId || !graphData || !graphData.related_topics) return '';
-    var related = graphData.related_topics[topicId];
-    if (!related || !related.length) return '';
-
-    var studyLink = '<a class="related-pill" href="/learn/?highlight=' + esc(topicId) + '">Study ' + esc(topicId.replace(/-/g, ' ')) + '</a>';
-    var pills = related.slice(0, 5).map(function (rid) {
-      return '<a class="related-pill" href="/learn/?highlight=' + esc(rid) + '">' + esc(rid.replace(/-/g, ' ')) + '</a>';
-    }).join('');
-
-    return '<div class="related-topics">'
-      + '<span class="related-topics-label">Related topics</span>'
-      + studyLink + pills
-      + '</div>';
-  }
+  function renderRelatedPills() { return ''; }
 
   function renderCases(key) {
     var container = document.getElementById('case-list');

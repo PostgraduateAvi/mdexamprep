@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theory &mdash; MBBEasy</title>
+  <meta name="description" content="Study medicine by system. Cardiology, Nephrology, Neurology, and more — grounded in Harrison's and standard textbooks.">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="canonical" href="https://mdexamprep.vercel.app/theory/">
+  <meta name="theme-color" content="#0f1117">
+  <link rel="manifest" href="/manifest.json">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mdexamprep.vercel.app/theory/">
+  <meta property="og:title" content="Theory — MBBEasy">
+  <meta property="og:description" content="Study medicine by system. Grounded in Harrison's and standard textbooks.">
+  <meta property="og:image" content="https://mdexamprep.vercel.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div id="site-nav"></div>
+  <main class="container" style="padding-bottom: 64px;">
+    <div class="page-header">
+      <h1>Theory</h1>
+      <p>Study by system. Select a system below to browse topics.</p>
+    </div>
+    <input type="search" class="topic-search" id="topic-search" placeholder="Search topics&hellip;" autocomplete="off" style="display:none;">
+    <div class="system-btns" id="system-btns"></div>
+    <div id="topic-deck"></div>
+  </main>
+  <div id="site-footer"></div>
+  <script>
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('/sw.js');
+  var _r=false;
+  navigator.serviceWorker.addEventListener('controllerchange',function(){
+    if(_r)return;_r=true;window.location.reload();
+  });
+}
+</script>
+  <script src="../assets/js/template.js?v=7"></script>
+  <script src="theory.js"></script>
+</body>
+</html>

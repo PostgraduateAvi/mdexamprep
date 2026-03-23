@@ -3,76 +3,52 @@
   "cleanUrls": true,
   "trailingSlash": true,
   "redirects": [
-    { "source": "/predictor", "destination": "/learn/", "permanent": true },
-    { "source": "/predictor/", "destination": "/learn/", "permanent": true },
-    { "source": "/theory", "destination": "/learn/", "permanent": true },
-    { "source": "/theory/", "destination": "/learn/", "permanent": true }
+    { "source": "/learn", "destination": "/theory/", "permanent": true },
+    { "source": "/learn/", "destination": "/theory/", "permanent": true },
+    { "source": "/mcqs", "destination": "/", "permanent": true },
+    { "source": "/mcqs/", "destination": "/", "permanent": true },
+    { "source": "/predictor", "destination": "/theory/", "permanent": true },
+    { "source": "/predictor/", "destination": "/theory/", "permanent": true },
+    { "source": "/theory/tools/:path*", "destination": "/theory/", "permanent": true }
   ],
   "headers": [
     {
       "source": "/sw.js",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
-        }
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
       ]
     },
     {
       "source": "/manifest.json",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=86400"
-        }
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
       ]
     },
     {
       "source": "/assets/fonts/(.*)",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=2592000, immutable"
-        }
+        { "key": "Cache-Control", "value": "public, max-age=2592000, immutable" }
       ]
     },
     {
       "source": "/assets/js/(.*)",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=3600, stale-while-revalidate=600"
-        }
+        { "key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=600" }
       ]
     },
     {
-      "source": "/(learn|mcqs|practicals|theory)/data/(.*)",
+      "source": "/(theory|practicals)/data/(.*)",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=86400, stale-while-revalidate=3600"
-        }
+        { "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=3600" }
       ]
     },
     {
       "source": "/(.*)",
       "headers": [
-        {
-          "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'"
-        },
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "DENY"
-        },
-        {
-          "key": "Referrer-Policy",
-          "value": "strict-origin-when-cross-origin"
-        }
+        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
       ]
     }
   ]

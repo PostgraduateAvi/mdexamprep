@@ -1,14 +1,13 @@
-const CACHE_VERSION = 'v17';
+const CACHE_VERSION = 'v18';
 const PRECACHE = 'precache-' + CACHE_VERSION;
 const RUNTIME = 'runtime-' + CACHE_VERSION;
 
 const PRECACHE_URLS = [
   '/',
-  '/learn/',
-  '/mcqs/',
+  '/theory/',
   '/practicals/',
   '/style.css',
-  '/assets/js/template.js?v=6',
+  '/assets/js/template.js?v=7',
   '/favicon.svg',
   '/manifest.json',
   '/assets/fonts/DMSans-Variable.woff2',
@@ -43,7 +42,7 @@ self.addEventListener('fetch', event => {
   // Only handle same-origin requests
   if (url.origin !== location.origin) return;
 
-  // Fonts: cache-first (immutable binary, never changes)
+  // Fonts: cache-first (immutable binary)
   if (url.pathname.startsWith('/assets/fonts/')) {
     event.respondWith(
       caches.match(event.request).then(cached =>
@@ -57,7 +56,7 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  // JS assets: stale-while-revalidate (template.js has mutable brand text)
+  // JS assets: stale-while-revalidate
   if (url.pathname.startsWith('/assets/js/')) {
     event.respondWith(
       caches.match(event.request).then(cached => {
