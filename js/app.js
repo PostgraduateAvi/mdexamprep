@@ -81,27 +81,75 @@
   }
 
   function navigateTo(view, system) {
-    // Hide all views
-    document.querySelectorAll('.view').forEach(function(v) {
-      v.classList.remove('view--active');
-    });
+    if (state.transitioning) return;
+    state.transitioning = true;
 
-    state.currentView = view;
-    state.currentSystem = system || null;
-
-    // Show target view
+    var currentActive = document.querySelector('.view--active');
     var target = document.getElementById('view-' + view);
-    if (target) {
-      target.classList.add('view--active');
+
+    if (!target) { state.transitioning = false; return; }
+
+    // If same view, just update state
+    if (currentActive === target) {
+      state.currentView = view;
+      state.currentSystem = system || null;
+      updateHeader();
+      state.transitioning = false;
+      window.dispatchEvent(new CustomEvent('viewchange', {
+        detail: { view: view, system: system, mode: state.mode }
+      }));
+      return;
     }
 
-    // Update header
-    updateHeader();
+    // Animate out current view
+    if (currentActive) {
+      gsap.to(currentActive, {
+        opacity: 0,
+        scale: 0.97,
+        duration: 0.25,
+        ease: 'power2.in',
+        onComplete: function() {
+          currentActive.classList.remove('view--active');
+          currentActive.style.opacity = '';
+          currentActive.style.transform = '';
 
-    // Dispatch custom event for view-specific init
-    window.dispatchEvent(new CustomEvent('viewchange', {
-      detail: { view: view, system: system, mode: state.mode }
-    }));
+          // Show and animate in new view
+          target.style.opacity = '0';
+          target.style.transform = 'scale(1.02)';
+          target.classList.add('view--active');
+
+          gsap.to(target, {
+            opacity: 1,
+            scale: 1,
+            duration: 0.3,
+            ease: 'power2.out',
+            onComplete: function() {
+              target.style.opacity = '';
+              target.style.transform = '';
+              state.transitioning = false;
+            }
+          });
+
+          state.currentView = view;
+          state.currentSystem = system || null;
+          updateHeader();
+
+          window.dispatchEvent(new CustomEvent('viewchange', {
+            detail: { view: view, system: system, mode: state.mode }
+          }));
+        }
+      });
+    } else {
+      // No current view (first load)
+      target.classList.add('view--active');
+      state.currentView = view;
+      state.currentSystem = system || null;
+      updateHeader();
+      state.transitioning = false;
+      window.dispatchEvent(new CustomEvent('viewchange', {
+        detail: { view: view, system: system, mode: state.mode }
+      }));
+    }
   }
 
   // ==================== HEADER ====================
@@ -179,6 +227,13 @@
     navigateTo: navigateTo,
     goBack: goBack,
     toggleDarkMode: toggleDarkMode,
+    closePanel: function() {
+      var panel = document.getElementById('content-panel');
+      if (panel) {
+        panel.classList.remove('med-panel--open');
+        panel.setAttribute('aria-hidden', 'true');
+      }
+    },
     init: init
   };
 
