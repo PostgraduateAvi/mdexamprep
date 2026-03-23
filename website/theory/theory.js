@@ -2,6 +2,22 @@
 (function () {
   'use strict';
 
+  var ICONS = {
+    cardiology: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>',
+    respiratory: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></svg>',
+    neurology: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg>',
+    nephrology: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.165 18.002C6.14 16.41 4 13.253 4 9.5a6.5 6.5 0 0 1 8-6.327A6.5 6.5 0 0 1 20 9.5c0 3.753-2.14 6.91-6.165 8.502a.993.993 0 0 1-.67 0Z"/></svg>',
+    gastro: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>',
+    hematology: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>',
+    endocrinology: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>',
+    search: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>',
+    flame: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>',
+    zap: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>',
+    chevronUp: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>',
+    x: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>',
+    bookDashed: '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 22h-2"/><path d="M20 15v2h-2"/><path d="M4 19.5V15"/><path d="M20 8v3"/><path d="M18 2h2v2"/><path d="M4 11V9"/><path d="M12 2h2"/><path d="M12 22h2"/><path d="M12 17h2"/><path d="M8 22H6.5a2.5 2.5 0 0 1 0-5H8"/><path d="M4 5v-.5A2.5 2.5 0 0 1 6.5 2H8"/></svg>'
+  };
+
   var SYSTEMS = [
     { key: 'cardiology', label: 'Cardiology' },
     { key: 'respiratory', label: 'Respiratory' },
@@ -13,22 +29,26 @@
   ];
 
   /* Theory topic ID → practicals case mapping */
+  /* NOTE: keys must match topic IDs in theory/data/{system}.json exactly */
+  /* Respiratory, Neurology, Gastro topics below are pending content (system data not yet created) */
   var TOPIC_CASE_MAP = {
-    'mitral-stenosis': { system: 'cardiac', case: 'mitral_stenosis', label: 'Mitral Stenosis' },
-    'mitral-regurgitation': { system: 'cardiac', case: 'mitral_regurgitation', label: 'Mitral Regurgitation' },
-    'aortic-stenosis': { system: 'cardiac', case: 'aortic_stenosis', label: 'Aortic Stenosis' },
-    'aortic-regurgitation': { system: 'cardiac', case: 'aortic_regurgitation', label: 'Aortic Regurgitation' },
-    'infective-endocarditis': { system: 'cardiac', case: 'infective_endocarditis', label: 'Infective Endocarditis' },
-    'valvular-heart-disease': { system: 'cardiac', case: 'mitral_stenosis', label: 'Valvular Cases' },
+    /* Cardiology — IDs from cardiology.json */
+    'mitral-stenosis-ms': { system: 'cardiac', case: 'mitral_stenosis', label: 'Mitral Stenosis' },
+    'mitral-regurgitation-mr': { system: 'cardiac', case: 'mitral_regurgitation', label: 'Mitral Regurgitation' },
+    'aortic-stenosis-as': { system: 'cardiac', case: 'aortic_stenosis', label: 'Aortic Stenosis' },
+    'aortic-regurgitation-ar': { system: 'cardiac', case: 'aortic_regurgitation', label: 'Aortic Regurgitation' },
+    /* Respiratory — pending content */
     'pleural-effusion': { system: 'respiratory', case: 'pleural_effusion', label: 'Pleural Effusion' },
     'pneumothorax': { system: 'respiratory', case: 'pneumothorax', label: 'Pneumothorax' },
     'pneumonia': { system: 'respiratory', case: 'consolidation', label: 'Consolidation' },
     'bronchial-asthma': { system: 'respiratory', case: 'bronchial_asthma', label: 'Bronchial Asthma' },
     'copd': { system: 'respiratory', case: 'copd_cor_pulmonale', label: 'COPD & Cor Pulmonale' },
+    /* Neurology — pending content */
     'guillain-barre-syndrome': { system: 'neuro', case: 'gbs', label: 'GBS' },
     'ischemic-stroke': { system: 'neuro', case: 'hemiplegia', label: 'Hemiplegia' },
     'spinal-cord-lesions': { system: 'neuro', case: 'paraplegia', label: 'Paraplegia' },
     'parkinsons-disease': { system: 'neuro', case: 'parkinsons', label: "Parkinson's Disease" },
+    /* Gastroenterology — pending content */
     'cirrhosis': { system: 'gi', case: 'cirrhosis_alcoholic', label: 'Alcoholic Cirrhosis' },
     'dermatomyositis': { system: 'gi', case: 'dermatomyositis_long_case', label: 'Dermatomyositis' }
   };
@@ -57,6 +77,7 @@
     if (!container) return;
     var html = SYSTEMS.map(function (s) {
       return '<button class="system-btn" data-system="' + s.key + '">' +
+        (ICONS[s.key] || '') +
         '<span class="system-btn-label">' + s.label + '</span>' +
         '</button>';
     }).join('');
@@ -122,7 +143,7 @@
         toolbar.style.display = 'none';
         deck.innerHTML =
           '<div class="coming-soon">' +
-          '<div class="coming-soon-icon" aria-hidden="true">&#128218;</div>' +
+          '<div class="coming-soon-icon" aria-hidden="true">' + ICONS.bookDashed + '</div>' +
           '<h3>Coming soon</h3>' +
           '<p>Content for this system is being prepared from textbooks.</p>' +
           '</div>';
@@ -152,7 +173,7 @@
       'then focus on <strong>High Yield</strong> topics' +
       (hyCount ? ' (' + hyCount + ' marked)' : '') +
       '. Practise with related clinical cases.</span>' +
-      '<button class="study-path-dismiss" aria-label="Dismiss" data-key="' + esc(dismissKey) + '">&times;</button>' +
+      '<button class="study-path-dismiss" aria-label="Dismiss" data-key="' + esc(dismissKey) + '">' + ICONS.x + '</button>' +
       '</div>';
   }
 
@@ -166,7 +187,7 @@
       toolbar.style.display = 'none';
       deck.innerHTML =
         '<div class="coming-soon">' +
-        '<div class="coming-soon-icon" aria-hidden="true">&#128218;</div>' +
+        '<div class="coming-soon-icon" aria-hidden="true">' + ICONS.bookDashed + '</div>' +
         '<h3>Coming soon</h3>' +
         '<p>Content for this system is being prepared from textbooks.</p>' +
         '</div>';
@@ -186,9 +207,9 @@
     toolbar.innerHTML =
       '<div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">' +
       (hyCount > 0
-        ? '<button class="hy-toggle" id="hy-toggle">High Yield &middot; ' + hyCount + '</button>'
+        ? '<button class="hy-toggle" id="hy-toggle">' + ICONS.flame + 'High Yield &middot; ' + hyCount + '</button>'
         : '') +
-      '<button class="qr-toggle" id="qr-toggle">Quick Review</button>' +
+      '<button class="qr-toggle" id="qr-toggle">' + ICONS.zap + 'Quick Review</button>' +
       '</div>' +
       '<span class="read-progress" id="read-progress">' + readSet.size + ' / ' + topics.length + ' read</span>';
 
@@ -280,9 +301,11 @@
           tags +
           '</summary>' +
           '<div class="topic-body">' +
+          '<div class="topic-body-inner">' +
           '<div class="content-html">' + (t.content || '<p>No content yet.</p>') + '</div>' +
           source +
           crossLinks +
+          '</div>' +
           '</div>' +
           '</details>';
       });
@@ -427,6 +450,18 @@
     buildSystemButtons();
     setupSearch();
     setupScrollTop();
+
+    var scrollBtn = document.getElementById('scroll-top');
+    if (scrollBtn) scrollBtn.innerHTML = ICONS.chevronUp;
+
+    var searchInput = document.getElementById('topic-search');
+    if (searchInput && !searchInput.parentElement.classList.contains('search-wrap')) {
+      var wrap = document.createElement('div');
+      wrap.className = 'search-wrap';
+      searchInput.parentElement.insertBefore(wrap, searchInput);
+      wrap.innerHTML = ICONS.search;
+      wrap.appendChild(searchInput);
+    }
 
     // Auto-select from URL param or first system
     var params = new URLSearchParams(window.location.search);

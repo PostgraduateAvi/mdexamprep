@@ -2,6 +2,14 @@
 (function () {
   'use strict';
 
+  var ICONS = {
+    cardiac: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>',
+    respiratory: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></svg>',
+    neuro: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg>',
+    gi: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>',
+    general: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"/><path d="M22 10a2 2 0 1 0-4 0v0a2 2 0 1 0 4 0"/></svg>'
+  };
+
   var DATA_FILES = [
     { key: 'cardiac', url: '/practicals/data/cardiac.json' },
     { key: 'respiratory', url: '/practicals/data/respiratory.json' },
@@ -45,22 +53,27 @@
   };
 
   /* Case ID → theory topic mapping (reverse of theory's TOPIC_CASE_MAP) */
+  /* NOTE: id values must match topic IDs in theory/data/{system}.json exactly */
+  /* Respiratory, Neurology, Gastro entries below are pending theory content */
   var CASE_TOPIC_MAP = {
-    'mitral_stenosis': { id: 'mitral-stenosis', label: 'Mitral Stenosis', system: 'cardiology' },
-    'mitral_regurgitation': { id: 'mitral-regurgitation', label: 'Mitral Regurgitation', system: 'cardiology' },
-    'aortic_stenosis': { id: 'aortic-stenosis', label: 'Aortic Stenosis', system: 'cardiology' },
-    'aortic_regurgitation': { id: 'aortic-regurgitation', label: 'Aortic Regurgitation', system: 'cardiology' },
-    'infective_endocarditis': { id: 'infective-endocarditis', label: 'Infective Endocarditis', system: 'cardiology' },
+    /* Cardiac — IDs from cardiology.json */
+    'mitral_stenosis': { id: 'mitral-stenosis-ms', label: 'Mitral Stenosis', system: 'cardiology' },
+    'mitral_regurgitation': { id: 'mitral-regurgitation-mr', label: 'Mitral Regurgitation', system: 'cardiology' },
+    'aortic_stenosis': { id: 'aortic-stenosis-as', label: 'Aortic Stenosis', system: 'cardiology' },
+    'aortic_regurgitation': { id: 'aortic-regurgitation-ar', label: 'Aortic Regurgitation', system: 'cardiology' },
+    /* Respiratory — pending content */
     'pleural_effusion': { id: 'pleural-effusion', label: 'Pleural Effusion', system: 'respiratory' },
     'pneumothorax': { id: 'pneumothorax', label: 'Pneumothorax', system: 'respiratory' },
     'consolidation': { id: 'pneumonia', label: 'Pneumonia / Consolidation', system: 'respiratory' },
     'bronchial_asthma': { id: 'bronchial-asthma', label: 'Bronchial Asthma', system: 'respiratory' },
     'copd_cor_pulmonale': { id: 'copd', label: 'COPD', system: 'respiratory' },
     'copd_mastery': { id: 'copd', label: 'COPD', system: 'respiratory' },
+    /* Neurology — pending content */
     'hemiplegia': { id: 'ischemic-stroke', label: 'Ischemic Stroke', system: 'neurology' },
     'paraplegia': { id: 'spinal-cord-lesions', label: 'Spinal Cord Lesions', system: 'neurology' },
     'gbs': { id: 'guillain-barre-syndrome', label: 'Guillain-Barr\u00e9 Syndrome', system: 'neurology' },
     'parkinsons': { id: 'parkinsons-disease', label: "Parkinson's Disease", system: 'neurology' },
+    /* Gastroenterology — pending content */
     'cirrhosis_alcoholic': { id: 'cirrhosis', label: 'Cirrhosis', system: 'gastro' },
     'dermatomyositis_long_case': { id: 'dermatomyositis', label: 'Dermatomyositis', system: 'gastro' }
   };
@@ -125,7 +138,11 @@
     DATA_FILES.forEach(function (f) {
       var label = SYSTEM_LABELS[f.key] || f.key;
       var count = getCases(f.key).length;
-      html += '<button class="system-btn" data-system="' + f.key + '">' + label + ' (' + count + ')</button>';
+      html += '<button class="system-btn" data-system="' + f.key + '">' +
+        (ICONS[f.key] || '') +
+        '<span class="system-btn-label">' + label + '</span>' +
+        '<span class="system-btn-count">' + count + '</span>' +
+        '</button>';
     });
     container.innerHTML = html;
     container.addEventListener('click', function (e) {
@@ -329,16 +346,16 @@
 
     // System-level sections
     if (d.system_examination_technique) {
-      html += '<details class="case system-technique"><summary>System Examination Technique</summary><div class="case-body">'
+      html += '<details class="case system-technique"><summary>System Examination Technique</summary><div class="case-body"><div class="case-body-inner">'
         + renderSection('Examination Technique', d.system_examination_technique)
-        + '</div></details>';
+        + '</div></div></details>';
     }
 
     if (d.cross_case_differentials && d.cross_case_differentials.length) {
       var tables = d.cross_case_differentials.map(renderComparisonTable).join('');
-      html += '<details class="case cross-case"><summary>Cross-Case Comparisons (' + d.cross_case_differentials.length + ')</summary><div class="case-body">'
+      html += '<details class="case cross-case"><summary>Cross-Case Comparisons (' + d.cross_case_differentials.length + ')</summary><div class="case-body"><div class="case-body-inner">'
         + tables
-        + '</div></details>';
+        + '</div></div></details>';
     }
 
     // Individual cases
@@ -390,7 +407,7 @@
       // Viva Forge trigger
       body += '<div class="viva-forge-slot" data-case-name="' + esc(name) + '"></div>';
 
-      html += '<details class="case" id="case-' + esc(caseId) + '"><summary>' + esc(name) + '</summary><div class="case-body">' + body + '</div></details>';
+      html += '<details class="case" id="case-' + esc(caseId) + '"><summary>' + esc(name) + '</summary><div class="case-body"><div class="case-body-inner">' + body + '</div></div></details>';
     });
 
     container.innerHTML = html;
